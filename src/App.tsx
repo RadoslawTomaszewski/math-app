@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Layout } from "./Layout";
+import "./styles/navbar.css";
+import Home from "./pages/home/Home";
+import Kalkulatory from "./pages/kalkulatoryPage/Kalkulatory";
+import Pogotowie from "./pages/pogotowiePage/Pogotowie";
+import BazaWiedzy from "./pages/bazawiedzyPage/BazaWiedzy";
+import Forum from "./pages/forumPage/Forum";
+import PrzelicznikDlugosci from "./components/kalkulatory/PrzelicznikDlugosci";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="baza-wiedzy" element={<BazaWiedzy />} />
+          <Route path="forum" element={<Forum />} />
+          <Route path="kalkulatory" element={<Kalkulatory />} />
+          <Route path="pogotowie" element={<Pogotowie />} />
+
+          <Route
+            path="kalkulatory/dlugosci"
+            element={<PrzelicznikDlugosci />}
+          />
+          <Route
+            path="kalkulatory/fkwadratowa"
+            element={<PrzelicznikDlugosci />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
