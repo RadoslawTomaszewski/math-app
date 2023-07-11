@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function BazaWiedzy() {
+export default function KnowledgeBasePage() {
   const [isPotegiExpanded, setIsPotegiExpanded] = useState(false);
   const [isProcentyExpanded, setIsProcentyExpanded] = useState(false);
   const [isLiczbyExpanded, setIsLiczbyExpanded] = useState(false);
@@ -23,17 +23,17 @@ export default function BazaWiedzy() {
   const toggleRownania = () => {
     setIsRownaniaExpanded(!isRownaniaExpanded);
   };
-
+  //gorsza praktyka
   const togglePlanimetria = () => {
     setIsPlanimetriaExpanded(!isPlanimetriaExpanded);
   };
-
+  //lepsza praktyka
   const toggleStereometria = () => {
-    setIsStereometriaExpanded(!isStereometriaExpanded);
+    setIsStereometriaExpanded((prev) => !prev);
   };
 
   return (
-    <div className="flex justify-center flex-col items-center bg-second">
+    <div className="flex justify-center flex-col items-center">
       <div className="min-w-[85vw] rounded border-first border-2 p-4 m-4 bg-fourth text-3xl font-bold">
         <div onClick={toggleLiczby} className="">
           Liczby

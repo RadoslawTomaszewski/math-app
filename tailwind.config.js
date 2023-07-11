@@ -2,6 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      amatic: ["Amatic SC", "cursive"],
+      math: ["Lora", "serif"],
+    },
     extend: {
       colors: {
         first: "#3EA1FA",
@@ -9,6 +13,8 @@ module.exports = {
         third: "#095FAD",
         fourth: "#FFBF59",
         fifth: "#875A12",
+        navColor: "#095FAD",
+        bgColor: "#fef7e5",
       },
     },
   },

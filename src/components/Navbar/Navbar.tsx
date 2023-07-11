@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar h-[60px] bg-[#fef7e5] .relative border-b-2">
+    <nav className="navbar h-[60px] bg-navColor .relative">
       <div className="container max-w-[1100px] my-0 mx-auto flex justify-between items-center h-full flex-row">
         <div className="flex items-center min-w-fit ">
           <NavLink to="/">

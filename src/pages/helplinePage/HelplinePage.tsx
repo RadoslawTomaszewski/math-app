@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Pogotowie() {
+export default function HelplinePage() {
   return <div>Pogotowie</div>;
 }
