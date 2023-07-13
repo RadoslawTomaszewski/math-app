@@ -23,57 +23,49 @@ const LengthConverterPage: FC = () => {
     au: null,
     lokiec: null,
   });
-  const convertFromMetres = (metres: Decimal) => {
+
+  const conversionToBasic: { [key in unitLength]: Decimal } = {
+    [unitLength.nm]: Decimal.pow(10, -9),
+    [unitLength.mikrom]: Decimal.pow(10, -6),
+    [unitLength.mm]: Decimal.pow(10, -3),
+    [unitLength.cm]: Decimal.pow(10, -2),
+    [unitLength.dm]: Decimal.pow(10, -1),
+    [unitLength.m]: new Decimal(1),
+    [unitLength.km]: Decimal.pow(10, 3),
+    [unitLength.inch]: new Decimal(0.0254),
+    [unitLength.ft]: new Decimal(0.3048),
+    [unitLength.yd]: new Decimal(0.9144),
+    [unitLength.mi]: new Decimal(1609.344),
+    [unitLength.NM]: new Decimal(1852),
+    [unitLength.au]: new Decimal(149597870700),
+    [unitLength.lokiec]: new Decimal(0.596),
+  };
+
+  const convertFromBasic = (metres: Decimal) => {
     setInputValues(() => ({
-      nm: metres.dividedBy(Decimal.pow(10, -9)),
-      mikrom: metres.dividedBy(Decimal.pow(10, -6)),
-      mm: metres.dividedBy(Decimal.pow(10, -3)),
-      cm: metres.dividedBy(Decimal.pow(10, -2)),
-      dm: metres.dividedBy(Decimal.pow(10, -1)),
-      m: metres,
-      km: metres.dividedBy(Decimal.pow(10, 3)),
-      inch: metres.dividedBy(new Decimal(0.0254)),
-      ft: metres.dividedBy(new Decimal(0.3048)),
-      yd: metres.dividedBy(new Decimal(0.9144)),
-      mi: metres.dividedBy(new Decimal(1609.344)),
-      NM: metres.dividedBy(new Decimal(1852)),
-      au: metres.dividedBy(new Decimal(149597870700)),
-      lokiec: metres.dividedBy(new Decimal(0.566)),
+      nm: metres.dividedBy(conversionToBasic[unitLength.nm]),
+      mikrom: metres.dividedBy(conversionToBasic[unitLength.mikrom]),
+      mm: metres.dividedBy(conversionToBasic[unitLength.mm]),
+      cm: metres.dividedBy(conversionToBasic[unitLength.cm]),
+      dm: metres.dividedBy(conversionToBasic[unitLength.dm]),
+      m: metres.dividedBy(conversionToBasic[unitLength.m]),
+      km: metres.dividedBy(conversionToBasic[unitLength.km]),
+      inch: metres.dividedBy(conversionToBasic[unitLength.inch]),
+      ft: metres.dividedBy(conversionToBasic[unitLength.ft]),
+      yd: metres.dividedBy(conversionToBasic[unitLength.yd]),
+      mi: metres.dividedBy(conversionToBasic[unitLength.mi]),
+      NM: metres.dividedBy(conversionToBasic[unitLength.NM]),
+      au: metres.dividedBy(conversionToBasic[unitLength.au]),
+      lokiec: metres.dividedBy(conversionToBasic[unitLength.lokiec]),
     }));
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = Number(event.target.value);
-    const inputName = event.target.name;
-    const DecimalInputValue: Decimal = new Decimal(inputValue);
-    let conversionFactor: Decimal;
-    if (inputName === unitLength.nm) conversionFactor = Decimal.pow(10, -9);
-    else if (inputName === unitLength.mikrom)
-      conversionFactor = Decimal.pow(10, -6);
-    else if (inputName === unitLength.mm)
-      conversionFactor = Decimal.pow(10, -3);
-    else if (inputName === unitLength.cm)
-      conversionFactor = Decimal.pow(10, -2);
-    else if (inputName === unitLength.dm)
-      conversionFactor = Decimal.pow(10, -1);
-    else if (inputName === unitLength.km) conversionFactor = Decimal.pow(10, 3);
-    else if (inputName === unitLength.inch)
-      conversionFactor = new Decimal(0.0254);
-    else if (inputName === unitLength.ft)
-      conversionFactor = new Decimal(0.3048);
-    else if (inputName === unitLength.yd)
-      conversionFactor = new Decimal(0.9144);
-    else if (inputName === unitLength.mi)
-      conversionFactor = new Decimal(1609.344);
-    else if (inputName === unitLength.NM) conversionFactor = new Decimal(1852);
-    else if (inputName === unitLength.au)
-      conversionFactor = new Decimal(149597870700);
-    else if (inputName === unitLength.lokiec)
-      conversionFactor = new Decimal(0.566);
-    else conversionFactor = new Decimal(1);
-
-    let lengthInMetres: Decimal = DecimalInputValue.times(conversionFactor);
-    convertFromMetres(lengthInMetres);
+    const DecimalInputValue: Decimal = new Decimal(Number(event.target.value));
+    const inputName = event.target.name as keyof typeof conversionToBasic;
+    const conversionFactor = conversionToBasic[inputName];
+    const lengthInBasic: Decimal = DecimalInputValue.times(conversionFactor);
+    convertFromBasic(lengthInBasic);
   };
 
   const unitFields = [
@@ -83,8 +75,8 @@ const LengthConverterPage: FC = () => {
       value: inputValues.mikrom,
       name: unitLength.mikrom,
     },
-    { label: unitLengthLabels.cm, value: inputValues.cm, name: unitLength.cm },
     { label: unitLengthLabels.mm, value: inputValues.mm, name: unitLength.mm },
+    { label: unitLengthLabels.cm, value: inputValues.cm, name: unitLength.cm },
     { label: unitLengthLabels.dm, value: inputValues.dm, name: unitLength.dm },
     { label: unitLengthLabels.m, value: inputValues.m, name: unitLength.m },
     { label: unitLengthLabels.km, value: inputValues.km, name: unitLength.km },

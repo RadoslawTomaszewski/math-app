@@ -9,6 +9,7 @@ import LengthConverterPage from "./pages/calculatorsPages/converters/LengthConve
 import AreaConverterPage from "./pages/calculatorsPages/converters/AreaConverterPage";
 import VolumeConverterPage from "./pages/calculatorsPages/converters/VolumeConverterPage";
 import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverterPage";
+import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
 import CalculatorsPage from "./pages/calculatorsPages/CalculatorsPage";
 
 const App = () => {
@@ -35,6 +36,10 @@ const App = () => {
               element={<VolumeConverterPage />}
             />
             <Route path="kalkulator-czasu" element={<TimeConverterPage />} />
+            <Route
+              path="kalkulator-informacji"
+              element={<InformationConverterPage />}
+            />
           </Route>
         </Route>
       </Routes>

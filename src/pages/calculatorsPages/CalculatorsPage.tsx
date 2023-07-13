@@ -23,8 +23,8 @@ export default function CalculatorsPage() {
       <NavLink to="kalkulator-predkosci">
         <Title text={"Przelicznik jednostek prędkości"} size={"H2"} />
       </NavLink>
-      <NavLink to="kalkulator-predkosci">
-        <Title text={"Przelicznik jednostek pamięci"} size={"H2"} />
+      <NavLink to="kalkulator-informacji">
+        <Title text={"Przelicznik jednostek informacji"} size={"H2"} />
       </NavLink>
     </div>
   );
