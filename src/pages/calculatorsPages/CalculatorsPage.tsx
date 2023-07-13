@@ -14,6 +14,9 @@ export default function CalculatorsPage() {
       <NavLink to="kalkulator-objetosci">
         <Title text={"Przelicznik jednostek objętości"} size={"H2"} />
       </NavLink>
+      <NavLink to="kalkulator-czasu">
+        <Title text={"Przelicznik jednostek czasu"} size={"H2"} />
+      </NavLink>
       <NavLink to="kalkulator-predkosci">
         <Title text={"Przelicznik jednostek ciężaru"} size={"H2"} />
       </NavLink>

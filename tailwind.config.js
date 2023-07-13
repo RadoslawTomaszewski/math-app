@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       amatic: ["Amatic SC", "cursive"],
       math: ["Lora", "serif"],
+      unit: ["Manrope", "sans-serif"],
     },
     extend: {
       colors: {

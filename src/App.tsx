@@ -5,7 +5,9 @@ import Home from "./pages/homePage/Home";
 import HelplinePage from "./pages/helplinePage/HelplinePage";
 import KnowledgeBasePage from "./pages/knowledgeBasePage/KnowledgeBasePage";
 import ForumPage from "./pages/forumPage/ForumPage";
-import LengthConverterPage from "./pages/calculatorsPages/lengthConverterPage/LengthConverterPage";
+import LengthConverterPage from "./pages/calculatorsPages/converters/LengthConverterPage";
+import AreaConverterPage from "./pages/calculatorsPages/converters/AreaConverterPage";
+import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverterPage";
 import CalculatorsPage from "./pages/calculatorsPages/CalculatorsPage";
 
 const App = () => {
@@ -13,7 +15,6 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* layouty można nadpisywać */}
           <Route index element={<Home />} />
           <Route path="baza-wiedzy" element={<KnowledgeBasePage />} />
           <Route path="forum" element={<ForumPage />} />
@@ -24,7 +25,11 @@ const App = () => {
               path="kalkulator-dlugosci"
               element={<LengthConverterPage />}
             />
-            {/* lenthconverter jako page */}
+            <Route
+              path="kalkulator-powierzchni"
+              element={<AreaConverterPage />}
+            />
+            <Route path="kalkulator-czasu" element={<TimeConverterPage />} />
           </Route>
         </Route>
       </Routes>
