@@ -24,56 +24,52 @@ const TimeConverterPage: FC = () => {
     wiek: null,
     tys: null,
   });
-  const convertFromSeconds = (seconds: Decimal) => {
+
+  const conversionToBasic: { [key in unitTime]: Decimal } = {
+    [unitTime.ns]: Decimal.pow(10, -9),
+    [unitTime.mikros]: Decimal.pow(10, -6),
+    [unitTime.ms]: Decimal.pow(10, -3),
+    //BASIC
+    [unitTime.s]: new Decimal(1),
+    [unitTime.q]: new Decimal(1).dividedBy(3600),
+    [unitTime.t]: new Decimal(1).dividedBy(60),
+    [unitTime.min]: new Decimal(60),
+    [unitTime.h]: new Decimal(3600),
+    [unitTime.d]: new Decimal(86400),
+    [unitTime.tyg]: new Decimal(604800),
+    [unitTime.m]: new Decimal(2629800),
+    [unitTime.lat]: new Decimal(31557600),
+    [unitTime.dek]: new Decimal(315576000),
+    [unitTime.wiek]: new Decimal(3155760000),
+    [unitTime.tys]: new Decimal(31557600000),
+  };
+
+  const convertFromBasic = (basic: Decimal) => {
     setInputValues(() => ({
-      ns: seconds.dividedBy(Decimal.pow(10, -9)),
-      mikros: seconds.dividedBy(Decimal.pow(10, -6)),
-      ms: seconds.dividedBy(Decimal.pow(10, -3)),
-      s: seconds,
-      q: seconds.dividedBy(new Decimal(1).dividedBy(3600)),
-      t: seconds.dividedBy(new Decimal(1).dividedBy(60)),
-      min: seconds.dividedBy(new Decimal(60)),
-      h: seconds.dividedBy(new Decimal(3600)),
-      d: seconds.dividedBy(new Decimal(86400)),
-      tyg: seconds.dividedBy(new Decimal(604800)),
-      m: seconds.dividedBy(new Decimal(2629800)),
-      lat: seconds.dividedBy(new Decimal(31557600)),
-      dek: seconds.dividedBy(new Decimal(315576000)),
-      wiek: seconds.dividedBy(new Decimal(3155760000)),
-      tys: seconds.dividedBy(new Decimal(31557600000)),
+      ns: basic.dividedBy(conversionToBasic[unitTime.ns]),
+      mikros: basic.dividedBy(conversionToBasic[unitTime.mikros]),
+      ms: basic.dividedBy(conversionToBasic[unitTime.ms]),
+      s: basic.dividedBy(conversionToBasic[unitTime.s]),
+      q: basic.dividedBy(conversionToBasic[unitTime.q]),
+      t: basic.dividedBy(conversionToBasic[unitTime.t]),
+      min: basic.dividedBy(conversionToBasic[unitTime.min]),
+      h: basic.dividedBy(conversionToBasic[unitTime.h]),
+      d: basic.dividedBy(conversionToBasic[unitTime.d]),
+      tyg: basic.dividedBy(conversionToBasic[unitTime.tyg]),
+      m: basic.dividedBy(conversionToBasic[unitTime.m]),
+      lat: basic.dividedBy(conversionToBasic[unitTime.lat]),
+      dek: basic.dividedBy(conversionToBasic[unitTime.dek]),
+      wiek: basic.dividedBy(conversionToBasic[unitTime.wiek]),
+      tys: basic.dividedBy(conversionToBasic[unitTime.tys]),
     }));
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = Number(event.target.value);
-    const inputName = event.target.name;
-    const DecimalInputValue: Decimal = new Decimal(inputValue);
-    let conversionFactor: Decimal;
-    if (inputName === unitTime.ns) conversionFactor = Decimal.pow(10, -9);
-    else if (inputName === unitTime.mikros)
-      conversionFactor = Decimal.pow(10, -6);
-    else if (inputName === unitTime.ms) conversionFactor = Decimal.pow(10, -3);
-    else if (inputName === unitTime.q)
-      conversionFactor = new Decimal(1).dividedBy(3600);
-    else if (inputName === unitTime.t)
-      conversionFactor = new Decimal(1).dividedBy(60);
-    else if (inputName === unitTime.min) conversionFactor = new Decimal(60);
-    else if (inputName === unitTime.h) conversionFactor = new Decimal(3600);
-    else if (inputName === unitTime.d) conversionFactor = new Decimal(86400);
-    else if (inputName === unitTime.tyg) conversionFactor = new Decimal(604800);
-    else if (inputName === unitTime.m) conversionFactor = new Decimal(2629800);
-    else if (inputName === unitTime.lat)
-      conversionFactor = new Decimal(31557600);
-    else if (inputName === unitTime.dek)
-      conversionFactor = new Decimal(315576000);
-    else if (inputName === unitTime.wiek)
-      conversionFactor = new Decimal(3155760000);
-    else if (inputName === unitTime.tys)
-      conversionFactor = new Decimal(31557600000);
-    else conversionFactor = new Decimal(1);
-
-    let timeInSeconds: Decimal = DecimalInputValue.times(conversionFactor);
-    convertFromSeconds(timeInSeconds);
+    const DecimalInputValue: Decimal = new Decimal(Number(event.target.value));
+    const inputName = event.target.name as keyof typeof conversionToBasic;
+    const conversionFactor = conversionToBasic[inputName];
+    const timeInBasic: Decimal = DecimalInputValue.times(conversionFactor);
+    convertFromBasic(timeInBasic);
   };
 
   const unitFields = [
@@ -125,18 +121,30 @@ const TimeConverterPage: FC = () => {
         <Title text={"Przelicznik jednostek czasu"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />
         {unitFields.slice(0, 4).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title
           text={"Jednostki w sześćdziesiątkowym systemie liczbowym:"}
           size={"H3"}
         />
         {unitFields.slice(4, 9).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Jednostki astronomiczne:"} size={"H3"} />
         {unitFields.slice(9).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
       </div>
     </div>

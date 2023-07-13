@@ -120,7 +120,7 @@ export enum unitTime {
     h = "h",
     d = "dni",
     tyg = "tyg",
-    m = "msc",
+    m = "m",
     lat = "lat",
     dek = "dek",
     wiek = "w",
@@ -142,6 +142,44 @@ export enum unitTimeLabels {
     dek = "Dekady",
     wiek = "Wieki",
     tys = "Tysiąclecia",
+};
+export enum unitWeight {
+    ng = "ng",
+    mikrog = "μg",
+    mg = "mg",
+    cg = "cg",
+    dg = "dg",
+    g = "g",
+    dag = "dag",
+    kg = "kg",
+    Mg = "Mg",
+    t = "t",
+    gr = "gr",
+    oz = "oz",
+    lb = "lb",
+    st = "st",
+    cwt = "cwt",
+    ct = "ct",
+    cwtPL = "c",
+  }
+  export enum unitWeightLabels {
+    ng = "Nanogramy",
+    mikrog = "Mikrogramy",
+    mg = "Miligramy",
+    cg = "Centygramy",
+    dg = "Decygramy",
+    g = "Gramy",
+    dag = "Dekagramy",
+    kg = "Kilogramy",
+    Mg = "Megagramy",
+    t = "Tony",
+    gr = "Grany (ziarna)",
+    oz = "Uncje",
+    lb = "Funty",
+    st = "Kamienie",
+    cwt = "Cetnary angielskie",
+    ct = "Karaty",
+    cwtPL = "Cetnary warszawskie",
 };
 export enum unitInformation {
     b = "b",
@@ -199,3 +237,23 @@ export enum unitInformationLabels {
     GBJEDEC = "Gigabajty",
     TBJEDEC = "Terabajty",
 }
+export enum unitSpeed {
+    mps = "m/s",
+    kph = "km/h",
+    mph = "mi/h",
+    kn = "kn",
+    ftps = "ft/s",
+    ss = "v",
+    c = "c",
+}
+export enum unitSpeedLabels {
+    mps = "Metry na sekundę",
+    kph = "Kilometry na godzinę",
+    mph = "Mile na godzinę",
+    kn = "Węzły",
+    ftps = "Stopy na sekundę",
+    ss = "Prędkości dźwięku",
+    c = "Prędkości światła",
+
+}
+

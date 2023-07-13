@@ -10,9 +10,9 @@ const ConverterInputField: FC<IConvertInputField> = ({
   return (
     <div className="flex justify-center align-middle p-1">
       <div className="mx-2 grid grid-cols-4 md:grid-cols-7">
-        <label className="mx-2 text-center md:text-left col-span-4 md:col-span-3">
+        <span className="mx-2 text-center md:text-left col-span-4 md:col-span-3">
           {label + ":"}
-        </label>
+        </span>
         <input
           className="ml-2 text-right font-math col-span-3 md:col-span-3 md:min-w-[220px] bg-bgColor border-y-2 border-y-black border-l-2 border-l-black rounded-l appearance-none focus:outline-none "
           placeholder="0"

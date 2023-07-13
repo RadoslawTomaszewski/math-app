@@ -1,9 +1,5 @@
 import { FC } from "react";
-
-export interface ITitle {
-  text: string;
-  size?: string;
-}
+import { ITitle } from "../interfaces/interfaces";
 
 const Title: FC<ITitle> = ({ text, size }) => {
   if (size === "H1")
@@ -16,7 +12,7 @@ const Title: FC<ITitle> = ({ text, size }) => {
     );
   else if (size === "H3")
     return (
-      <div className="font-amatic text-2xl text-center font-bold py-1">
+      <div className="bghover font-amatic text-2xl text-center font-bold">
         {text}
       </div>
     );

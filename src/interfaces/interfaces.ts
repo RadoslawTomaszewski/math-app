@@ -6,4 +6,8 @@ export interface IConvertInputField {
     value: Decimal | null;
     onChange: ChangeEventHandler<HTMLInputElement>;
     name: string;
-  }
+}
+export interface ITitle {
+    text: string;
+    size?: string;
+}

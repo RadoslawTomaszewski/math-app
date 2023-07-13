@@ -37,6 +37,7 @@ const InformationConverterPage: FC = () => {
   });
 
   const conversionToBasic: { [key in unitInformation]: Decimal } = {
+    //BASIC
     [unitInformation.b]: new Decimal(1),
     [unitInformation.B]: new Decimal(8),
     [unitInformation.kbSI]: Decimal.pow(1000, 1),
@@ -65,34 +66,34 @@ const InformationConverterPage: FC = () => {
     [unitInformation.TBJEDEC]: Decimal.pow(1024, 4).times(8),
   };
 
-  const convertFromBasic = (bits: Decimal) => {
+  const convertFromBasic = (basic: Decimal) => {
     setInputValues(() => ({
-      b: bits.dividedBy(conversionToBasic[unitInformation.b]),
-      B: bits.dividedBy(conversionToBasic[unitInformation.B]),
-      kbSI: bits.dividedBy(conversionToBasic[unitInformation.kbSI]),
-      MbSI: bits.dividedBy(conversionToBasic[unitInformation.MbSI]),
-      GbSI: bits.dividedBy(conversionToBasic[unitInformation.GbSI]),
-      TbSI: bits.dividedBy(conversionToBasic[unitInformation.TbSI]),
-      kBSI: bits.dividedBy(conversionToBasic[unitInformation.kBSI]),
-      MBSI: bits.dividedBy(conversionToBasic[unitInformation.MBSI]),
-      GBSI: bits.dividedBy(conversionToBasic[unitInformation.GBSI]),
-      TBSI: bits.dividedBy(conversionToBasic[unitInformation.TBSI]),
-      Kib: bits.dividedBy(conversionToBasic[unitInformation.Kib]),
-      Mib: bits.dividedBy(conversionToBasic[unitInformation.Mib]),
-      Gib: bits.dividedBy(conversionToBasic[unitInformation.Gib]),
-      Tib: bits.dividedBy(conversionToBasic[unitInformation.Tib]),
-      KiB: bits.dividedBy(conversionToBasic[unitInformation.KiB]),
-      MiB: bits.dividedBy(conversionToBasic[unitInformation.MiB]),
-      GiB: bits.dividedBy(conversionToBasic[unitInformation.GiB]),
-      TiB: bits.dividedBy(conversionToBasic[unitInformation.TiB]),
-      KbJEDEC: bits.dividedBy(conversionToBasic[unitInformation.KbJEDEC]),
-      MbJEDEC: bits.dividedBy(conversionToBasic[unitInformation.MbJEDEC]),
-      GbJEDEC: bits.dividedBy(conversionToBasic[unitInformation.GbJEDEC]),
-      TbJEDEC: bits.dividedBy(conversionToBasic[unitInformation.TbJEDEC]),
-      KBJEDEC: bits.dividedBy(conversionToBasic[unitInformation.KBJEDEC]),
-      MBJEDEC: bits.dividedBy(conversionToBasic[unitInformation.MBJEDEC]),
-      GBJEDEC: bits.dividedBy(conversionToBasic[unitInformation.GBJEDEC]),
-      TBJEDEC: bits.dividedBy(conversionToBasic[unitInformation.TBJEDEC]),
+      b: basic.dividedBy(conversionToBasic[unitInformation.b]),
+      B: basic.dividedBy(conversionToBasic[unitInformation.B]),
+      kbSI: basic.dividedBy(conversionToBasic[unitInformation.kbSI]),
+      MbSI: basic.dividedBy(conversionToBasic[unitInformation.MbSI]),
+      GbSI: basic.dividedBy(conversionToBasic[unitInformation.GbSI]),
+      TbSI: basic.dividedBy(conversionToBasic[unitInformation.TbSI]),
+      kBSI: basic.dividedBy(conversionToBasic[unitInformation.kBSI]),
+      MBSI: basic.dividedBy(conversionToBasic[unitInformation.MBSI]),
+      GBSI: basic.dividedBy(conversionToBasic[unitInformation.GBSI]),
+      TBSI: basic.dividedBy(conversionToBasic[unitInformation.TBSI]),
+      Kib: basic.dividedBy(conversionToBasic[unitInformation.Kib]),
+      Mib: basic.dividedBy(conversionToBasic[unitInformation.Mib]),
+      Gib: basic.dividedBy(conversionToBasic[unitInformation.Gib]),
+      Tib: basic.dividedBy(conversionToBasic[unitInformation.Tib]),
+      KiB: basic.dividedBy(conversionToBasic[unitInformation.KiB]),
+      MiB: basic.dividedBy(conversionToBasic[unitInformation.MiB]),
+      GiB: basic.dividedBy(conversionToBasic[unitInformation.GiB]),
+      TiB: basic.dividedBy(conversionToBasic[unitInformation.TiB]),
+      KbJEDEC: basic.dividedBy(conversionToBasic[unitInformation.KbJEDEC]),
+      MbJEDEC: basic.dividedBy(conversionToBasic[unitInformation.MbJEDEC]),
+      GbJEDEC: basic.dividedBy(conversionToBasic[unitInformation.GbJEDEC]),
+      TbJEDEC: basic.dividedBy(conversionToBasic[unitInformation.TbJEDEC]),
+      KBJEDEC: basic.dividedBy(conversionToBasic[unitInformation.KBJEDEC]),
+      MBJEDEC: basic.dividedBy(conversionToBasic[unitInformation.MBJEDEC]),
+      GBJEDEC: basic.dividedBy(conversionToBasic[unitInformation.GBJEDEC]),
+      TBJEDEC: basic.dividedBy(conversionToBasic[unitInformation.TBJEDEC]),
     }));
   };
 
@@ -100,8 +101,9 @@ const InformationConverterPage: FC = () => {
     const DecimalInputValue: Decimal = new Decimal(Number(event.target.value));
     const inputName = event.target.name as keyof typeof conversionToBasic;
     const conversionFactor = conversionToBasic[inputName];
-    const lengthInBasic: Decimal = DecimalInputValue.times(conversionFactor);
-    convertFromBasic(lengthInBasic);
+    const informationInBasic: Decimal =
+      DecimalInputValue.times(conversionFactor);
+    convertFromBasic(informationInBasic);
   };
 
   const unitFields = [
@@ -240,22 +242,38 @@ const InformationConverterPage: FC = () => {
   return (
     <div className="p-5 justify-center flex">
       <div className="p-3 border-2 border-navColor rounded w-fit">
-        <Title text={"Przelicznik jednostek objętości"} size={"H2"} />
+        <Title text={"Przelicznik jednostek informacji"} size={"H2"} />
         <Title text={"Podstawowe jednostki:"} size={"H3"} />
         {unitFields.slice(0, 2).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Standard SI:"} size={"H3"} />
         {unitFields.slice(2, 10).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Standard IEC:"} size={"H3"} />
         {unitFields.slice(10, 18).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Standard JEDEC:"} size={"H3"} />
         {unitFields.slice(18).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
       </div>
     </div>

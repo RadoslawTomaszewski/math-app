@@ -24,55 +24,51 @@ const AreaConverterPage: FC = () => {
     ac: null,
     morga: null,
   });
-  const convertFromMetres2 = (metres: Decimal) => {
+
+  const conversionToBasic: { [key in unitArea]: Decimal } = {
+    [unitArea.nm2]: Decimal.pow(10, -18),
+    [unitArea.mikrom2]: Decimal.pow(10, -12),
+    [unitArea.mm2]: Decimal.pow(10, -6),
+    [unitArea.cm2]: Decimal.pow(10, -4),
+    [unitArea.dm2]: Decimal.pow(10, -2),
+    //BASIC
+    [unitArea.m2]: new Decimal(1),
+    [unitArea.km2]: Decimal.pow(10, 6),
+    [unitArea.a]: Decimal.pow(10, 2),
+    [unitArea.ha]: Decimal.pow(10, 4),
+    [unitArea.inch2]: new Decimal(0.00064516),
+    [unitArea.ft2]: new Decimal(0.09290304),
+    [unitArea.yd2]: new Decimal(0.83612736),
+    [unitArea.mi2]: new Decimal(2589988.110336),
+    [unitArea.ac]: new Decimal(4046.8564224),
+    [unitArea.morga]: new Decimal(5598),
+  };
+  const convertFromBasic = (basic: Decimal) => {
     setInputValues(() => ({
-      nm2: metres.dividedBy(Decimal.pow(10, -18)),
-      mikrom2: metres.dividedBy(Decimal.pow(10, -12)),
-      mm2: metres.dividedBy(Decimal.pow(10, -6)),
-      cm2: metres.dividedBy(Decimal.pow(10, -4)),
-      dm2: metres.dividedBy(Decimal.pow(10, -2)),
-      m2: metres,
-      km2: metres.dividedBy(Decimal.pow(10, 6)),
-      a: metres.dividedBy(Decimal.pow(10, 2)),
-      ha: metres.dividedBy(Decimal.pow(10, 4)),
-      inch2: metres.dividedBy(new Decimal(0.00064516)),
-      ft2: metres.dividedBy(new Decimal(0.09290304)),
-      yd2: metres.dividedBy(new Decimal(0.83612736)),
-      mi2: metres.dividedBy(new Decimal(2589988.110336)),
-      ac: metres.dividedBy(new Decimal(4046.8564224)),
-      morga: metres.dividedBy(new Decimal(5598)),
+      nm2: basic.dividedBy(conversionToBasic[unitArea.nm2]),
+      mikrom2: basic.dividedBy(conversionToBasic[unitArea.mikrom2]),
+      mm2: basic.dividedBy(conversionToBasic[unitArea.mm2]),
+      cm2: basic.dividedBy(conversionToBasic[unitArea.cm2]),
+      dm2: basic.dividedBy(conversionToBasic[unitArea.dm2]),
+      m2: basic.dividedBy(conversionToBasic[unitArea.m2]),
+      km2: basic.dividedBy(conversionToBasic[unitArea.km2]),
+      a: basic.dividedBy(conversionToBasic[unitArea.a]),
+      ha: basic.dividedBy(conversionToBasic[unitArea.ha]),
+      inch2: basic.dividedBy(conversionToBasic[unitArea.inch2]),
+      ft2: basic.dividedBy(conversionToBasic[unitArea.ft2]),
+      yd2: basic.dividedBy(conversionToBasic[unitArea.yd2]),
+      mi2: basic.dividedBy(conversionToBasic[unitArea.mi2]),
+      ac: basic.dividedBy(conversionToBasic[unitArea.ac]),
+      morga: basic.dividedBy(conversionToBasic[unitArea.morga]),
     }));
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = Number(event.target.value);
-    const inputName = event.target.name;
-    const DecimalInputValue: Decimal = new Decimal(inputValue);
-    let conversionFactor: Decimal;
-    if (inputName === unitArea.nm2) conversionFactor = Decimal.pow(10, -18);
-    else if (inputName === unitArea.mikrom2)
-      conversionFactor = Decimal.pow(10, -12);
-    else if (inputName === unitArea.mm2) conversionFactor = Decimal.pow(10, -6);
-    else if (inputName === unitArea.cm2) conversionFactor = Decimal.pow(10, -4);
-    else if (inputName === unitArea.dm2) conversionFactor = Decimal.pow(10, -2);
-    else if (inputName === unitArea.km2) conversionFactor = Decimal.pow(10, 6);
-    else if (inputName === unitArea.a) conversionFactor = Decimal.pow(10, 2);
-    else if (inputName === unitArea.ha) conversionFactor = Decimal.pow(10, 4);
-    else if (inputName === unitArea.ac)
-      conversionFactor = new Decimal(4046.8564224);
-    else if (inputName === unitArea.inch2)
-      conversionFactor = new Decimal(0.00064516);
-    else if (inputName === unitArea.ft2)
-      conversionFactor = new Decimal(0.09290304);
-    else if (inputName === unitArea.yd2)
-      conversionFactor = new Decimal(0.83612736);
-    else if (inputName === unitArea.mi2)
-      conversionFactor = new Decimal(2589988.110336);
-    else if (inputName === unitArea.morga) conversionFactor = new Decimal(5598);
-    else conversionFactor = new Decimal(1);
-
-    let lengthInMetres2: Decimal = DecimalInputValue.times(conversionFactor);
-    convertFromMetres2(lengthInMetres2);
+    const DecimalInputValue: Decimal = new Decimal(Number(event.target.value));
+    const inputName = event.target.name as keyof typeof conversionToBasic;
+    const conversionFactor = conversionToBasic[inputName];
+    const areaInBasic: Decimal = DecimalInputValue.times(conversionFactor);
+    convertFromBasic(areaInBasic);
   };
 
   const unitFields = [
@@ -119,15 +115,27 @@ const AreaConverterPage: FC = () => {
         <Title text={"Przelicznik jednostek powierzchni"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />
         {unitFields.slice(0, 7).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Jednostki anglosaskie:"} size={"H3"} />
         {unitFields.slice(7, 12).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Pozostałe jednostki:"} size={"H3"} />
         {unitFields.slice(12).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
       </div>
     </div>

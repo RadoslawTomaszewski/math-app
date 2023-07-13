@@ -30,6 +30,7 @@ const LengthConverterPage: FC = () => {
     [unitLength.mm]: Decimal.pow(10, -3),
     [unitLength.cm]: Decimal.pow(10, -2),
     [unitLength.dm]: Decimal.pow(10, -1),
+    //BASIC
     [unitLength.m]: new Decimal(1),
     [unitLength.km]: Decimal.pow(10, 3),
     [unitLength.inch]: new Decimal(0.0254),
@@ -41,22 +42,22 @@ const LengthConverterPage: FC = () => {
     [unitLength.lokiec]: new Decimal(0.596),
   };
 
-  const convertFromBasic = (metres: Decimal) => {
+  const convertFromBasic = (basic: Decimal) => {
     setInputValues(() => ({
-      nm: metres.dividedBy(conversionToBasic[unitLength.nm]),
-      mikrom: metres.dividedBy(conversionToBasic[unitLength.mikrom]),
-      mm: metres.dividedBy(conversionToBasic[unitLength.mm]),
-      cm: metres.dividedBy(conversionToBasic[unitLength.cm]),
-      dm: metres.dividedBy(conversionToBasic[unitLength.dm]),
-      m: metres.dividedBy(conversionToBasic[unitLength.m]),
-      km: metres.dividedBy(conversionToBasic[unitLength.km]),
-      inch: metres.dividedBy(conversionToBasic[unitLength.inch]),
-      ft: metres.dividedBy(conversionToBasic[unitLength.ft]),
-      yd: metres.dividedBy(conversionToBasic[unitLength.yd]),
-      mi: metres.dividedBy(conversionToBasic[unitLength.mi]),
-      NM: metres.dividedBy(conversionToBasic[unitLength.NM]),
-      au: metres.dividedBy(conversionToBasic[unitLength.au]),
-      lokiec: metres.dividedBy(conversionToBasic[unitLength.lokiec]),
+      nm: basic.dividedBy(conversionToBasic[unitLength.nm]),
+      mikrom: basic.dividedBy(conversionToBasic[unitLength.mikrom]),
+      mm: basic.dividedBy(conversionToBasic[unitLength.mm]),
+      cm: basic.dividedBy(conversionToBasic[unitLength.cm]),
+      dm: basic.dividedBy(conversionToBasic[unitLength.dm]),
+      m: basic.dividedBy(conversionToBasic[unitLength.m]),
+      km: basic.dividedBy(conversionToBasic[unitLength.km]),
+      inch: basic.dividedBy(conversionToBasic[unitLength.inch]),
+      ft: basic.dividedBy(conversionToBasic[unitLength.ft]),
+      yd: basic.dividedBy(conversionToBasic[unitLength.yd]),
+      mi: basic.dividedBy(conversionToBasic[unitLength.mi]),
+      NM: basic.dividedBy(conversionToBasic[unitLength.NM]),
+      au: basic.dividedBy(conversionToBasic[unitLength.au]),
+      lokiec: basic.dividedBy(conversionToBasic[unitLength.lokiec]),
     }));
   };
 
@@ -103,15 +104,27 @@ const LengthConverterPage: FC = () => {
         <Title text={"Przelicznik jednostek długości"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />
         {unitFields.slice(0, 7).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Jednostki anglosaskie:"} size={"H3"} />
         {unitFields.slice(7, 11).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Pozostałe jednostki:"} size={"H3"} />
         {unitFields.slice(11).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
       </div>
     </div>

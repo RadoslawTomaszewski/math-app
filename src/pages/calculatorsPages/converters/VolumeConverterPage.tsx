@@ -29,71 +29,60 @@ const VolumeConverterPage: FC = () => {
     gal: null,
     bo: null,
   });
-  const convertFromMetres3 = (metres: Decimal) => {
+  const conversionToBasic: { [key in unitVolume]: Decimal } = {
+    [unitVolume.nm3]: Decimal.pow(10, -27),
+    [unitVolume.mikrom3]: Decimal.pow(10, -18),
+    [unitVolume.mm3]: Decimal.pow(10, -9),
+    [unitVolume.cm3]: Decimal.pow(10, -6),
+    [unitVolume.dm3]: Decimal.pow(10, -3),
+    //BASIC
+    [unitVolume.m3]: new Decimal(1),
+    [unitVolume.km3]: Decimal.pow(10, 9),
+    [unitVolume.inch3]: new Decimal(0.000016387064),
+    [unitVolume.ft3]: new Decimal(0.028316846592),
+    [unitVolume.yd3]: new Decimal(0.764554857984),
+    [unitVolume.mi3]: new Decimal(4168181825.440579584),
+    [unitVolume.acft]: new Decimal(1233.48183754752),
+    [unitVolume.mikrol]: Decimal.pow(10, -9),
+    [unitVolume.ml]: Decimal.pow(10, -6),
+    [unitVolume.cl]: Decimal.pow(10, -5),
+    [unitVolume.dl]: Decimal.pow(10, -4),
+    [unitVolume.l]: Decimal.pow(10, -3),
+    [unitVolume.hl]: Decimal.pow(10, -1),
+    [unitVolume.gal]: new Decimal(0.003785411784),
+    [unitVolume.bo]: new Decimal(0.158987294928),
+  };
+  const convertFromBasic = (basic: Decimal) => {
     setInputValues(() => ({
-      nm3: metres.dividedBy(Decimal.pow(10, -27)),
-      mikrom3: metres.dividedBy(Decimal.pow(10, -18)),
-      mm3: metres.dividedBy(Decimal.pow(10, -9)),
-      cm3: metres.dividedBy(Decimal.pow(10, -6)),
-      dm3: metres.dividedBy(Decimal.pow(10, -3)),
-      m3: metres,
-      km3: metres.dividedBy(Decimal.pow(10, 9)),
-      inch3: metres.dividedBy(new Decimal(0.000016387064)),
-      ft3: metres.dividedBy(new Decimal(0.028316846592)),
-      yd3: metres.dividedBy(new Decimal(0.764554857984)),
-      mi3: metres.dividedBy(new Decimal(4168181825.440579584)),
-      acft: metres.dividedBy(new Decimal(1233.48183754752)),
-      mikrol: metres.dividedBy(Decimal.pow(10, -9)),
-      ml: metres.dividedBy(Decimal.pow(10, -6)),
-      cl: metres.dividedBy(Decimal.pow(10, -5)),
-      dl: metres.dividedBy(Decimal.pow(10, -4)),
-      l: metres.dividedBy(Decimal.pow(10, -3)),
-      hl: metres.dividedBy(Decimal.pow(10, -1)),
-      gal: metres.dividedBy(new Decimal(0.003785411784)),
-      bo: metres.dividedBy(new Decimal(0.158987294928)),
+      nm3: basic.dividedBy(conversionToBasic[unitVolume.nm3]),
+      mikrom3: basic.dividedBy(conversionToBasic[unitVolume.mikrom3]),
+      mm3: basic.dividedBy(conversionToBasic[unitVolume.mm3]),
+      cm3: basic.dividedBy(conversionToBasic[unitVolume.cm3]),
+      dm3: basic.dividedBy(conversionToBasic[unitVolume.dm3]),
+      m3: basic.dividedBy(conversionToBasic[unitVolume.m3]),
+      km3: basic.dividedBy(conversionToBasic[unitVolume.km3]),
+      inch3: basic.dividedBy(conversionToBasic[unitVolume.inch3]),
+      ft3: basic.dividedBy(conversionToBasic[unitVolume.ft3]),
+      yd3: basic.dividedBy(conversionToBasic[unitVolume.yd3]),
+      mi3: basic.dividedBy(conversionToBasic[unitVolume.mi3]),
+      acft: basic.dividedBy(conversionToBasic[unitVolume.acft]),
+      mikrol: basic.dividedBy(conversionToBasic[unitVolume.mikrol]),
+      ml: basic.dividedBy(conversionToBasic[unitVolume.ml]),
+      cl: basic.dividedBy(conversionToBasic[unitVolume.cl]),
+      dl: basic.dividedBy(conversionToBasic[unitVolume.dl]),
+      l: basic.dividedBy(conversionToBasic[unitVolume.l]),
+      hl: basic.dividedBy(conversionToBasic[unitVolume.hl]),
+      gal: basic.dividedBy(conversionToBasic[unitVolume.gal]),
+      bo: basic.dividedBy(conversionToBasic[unitVolume.bo]),
     }));
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = Number(event.target.value);
-    const inputName = event.target.name;
-    const DecimalInputValue: Decimal = new Decimal(inputValue);
-    let conversionFactor: Decimal;
-    if (inputName === unitVolume.nm3) conversionFactor = Decimal.pow(10, -27);
-    else if (inputName === unitVolume.mikrom3)
-      conversionFactor = Decimal.pow(10, -18);
-    else if (inputName === unitVolume.mm3 || inputName === unitVolume.mikrol)
-      conversionFactor = Decimal.pow(10, -9);
-    else if (inputName === unitVolume.cm3 || inputName === unitVolume.ml)
-      conversionFactor = Decimal.pow(10, -6);
-    else if (inputName === unitVolume.dm3 || inputName === unitVolume.l)
-      conversionFactor = Decimal.pow(10, -3);
-    else if (inputName === unitVolume.km3)
-      conversionFactor = Decimal.pow(10, 9);
-    else if (inputName === unitVolume.inch3)
-      conversionFactor = new Decimal(0.000016387064);
-    else if (inputName === unitVolume.ft3)
-      conversionFactor = new Decimal(0.028316846592);
-    else if (inputName === unitVolume.yd3)
-      conversionFactor = new Decimal(0.764554857984);
-    else if (inputName === unitVolume.mi3)
-      conversionFactor = new Decimal(4168181825.440579584);
-    else if (inputName === unitVolume.acft)
-      conversionFactor = new Decimal(1233.48183754752);
-    else if (inputName === unitVolume.cl)
-      conversionFactor = Decimal.pow(10, -5);
-    else if (inputName === unitVolume.dl)
-      conversionFactor = Decimal.pow(10, -4);
-    else if (inputName === unitVolume.hl)
-      conversionFactor = Decimal.pow(10, -1);
-    else if (inputName === unitVolume.gal)
-      conversionFactor = new Decimal(0.003785411784);
-    else if (inputName === unitVolume.bo)
-      conversionFactor = new Decimal(0.158987294928);
-    else conversionFactor = new Decimal(1);
-
-    let lengthInMetres3: Decimal = DecimalInputValue.times(conversionFactor);
-    convertFromMetres3(lengthInMetres3);
+    const DecimalInputValue: Decimal = new Decimal(Number(event.target.value));
+    const inputName = event.target.name as keyof typeof conversionToBasic;
+    const conversionFactor = conversionToBasic[inputName];
+    const volumeInBasic: Decimal = DecimalInputValue.times(conversionFactor);
+    convertFromBasic(volumeInBasic);
   };
 
   const unitFields = [
@@ -201,15 +190,27 @@ const VolumeConverterPage: FC = () => {
         <Title text={"Przelicznik jednostek objętości"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />
         {unitFields.slice(0, 7).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Jednostki anglosaskie:"} size={"H3"} />
         {unitFields.slice(7, 12).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
         <Title text={"Pozaukładowe jednostki:"} size={"H3"} />
         {unitFields.slice(12).map((item) => (
-          <ConverterInputField onChange={handleInputChange} {...item} />
+          <ConverterInputField
+            key={item.name}
+            onChange={handleInputChange}
+            {...item}
+          />
         ))}
       </div>
     </div>
