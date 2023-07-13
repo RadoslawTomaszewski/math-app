@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./Layout";
 import "./styles/navbar.css";
-import Home from "./pages/homePage/Home";
+import Home from "./pages/homePages/Home";
 import HelplinePage from "./pages/helplinePage/HelplinePage";
-import KnowledgeBasePage from "./pages/knowledgeBasePage/KnowledgeBasePage";
-import ForumPage from "./pages/forumPage/ForumPage";
+import KnowledgeBasePage from "./pages/knowledgeBasePages/KnowledgeBasePage";
+import ForumPage from "./pages/forumPages/ForumPage";
 import LengthConverterPage from "./pages/calculatorsPages/converters/LengthConverterPage";
 import AreaConverterPage from "./pages/calculatorsPages/converters/AreaConverterPage";
 import VolumeConverterPage from "./pages/calculatorsPages/converters/VolumeConverterPage";
@@ -13,6 +13,7 @@ import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverter
 import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConverterPage";
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
 import CalculatorsPage from "./pages/calculatorsPages/CalculatorsPage";
+import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="baza-wiedzy">
             <Route index element={<KnowledgeBasePage />} />
-            <Route path="funkcja-liniowa" element={<LengthConverterPage />} />
+            <Route path="funkcja-liniowa" element={<LinearFunctionPage />} />
           </Route>
           <Route path="forum" element={<ForumPage />} />
           <Route path="pogotowie" element={<HelplinePage />} />
