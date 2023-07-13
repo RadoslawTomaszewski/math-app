@@ -65,6 +65,24 @@ export enum unitAreaLabels {
     ha = "Hektary",
     morga = "Morgi nowopolskie:",
 };
+export enum unitVolume {
+    nm3 = "nm³",
+    mikrom3 = "μm³",
+    mm3 = "mm³",
+    cm3 = "cm³",
+    dm3 = "dm³",
+    m3 = "m³",
+    km3 = "km³",
+}
+export enum unitVolumeLabels {
+    nm3 = "Nanometry sześcienne",
+    mikrom3 = "Mikrometry sześcienne",
+    mm3 = "Milimetry sześcienne",
+    cm3 = "Centymetry sześcienne",
+    dm3 = "Decymetry sześcienne",
+    m3 = "Metry sześcienne",
+    km3 = "Kilometry sześcienne",
+};
 export enum unitTime {
     ns = "ns",
     mikros = "μs",

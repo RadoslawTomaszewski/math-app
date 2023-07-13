@@ -7,6 +7,7 @@ import KnowledgeBasePage from "./pages/knowledgeBasePage/KnowledgeBasePage";
 import ForumPage from "./pages/forumPage/ForumPage";
 import LengthConverterPage from "./pages/calculatorsPages/converters/LengthConverterPage";
 import AreaConverterPage from "./pages/calculatorsPages/converters/AreaConverterPage";
+import VolumeConverterPage from "./pages/calculatorsPages/converters/VolumeConverterPage";
 import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverterPage";
 import CalculatorsPage from "./pages/calculatorsPages/CalculatorsPage";
 
@@ -28,6 +29,10 @@ const App = () => {
             <Route
               path="kalkulator-powierzchni"
               element={<AreaConverterPage />}
+            />
+            <Route
+              path="kalkulator-objetosci"
+              element={<VolumeConverterPage />}
             />
             <Route path="kalkulator-czasu" element={<TimeConverterPage />} />
           </Route>
