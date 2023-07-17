@@ -14,6 +14,7 @@ import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConvert
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
 import CalculatorsPage from "./pages/calculatorsPages/CalculatorsPage";
 import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
+import { KnowledgeBaseLayout } from "./Layout/knowledgeBaseLayout";
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="baza-wiedzy">
+          <Route path="baza-wiedzy" element={<KnowledgeBaseLayout />}>
             <Route index element={<KnowledgeBasePage />} />
             <Route path="funkcja-liniowa" element={<LinearFunctionPage />} />
           </Route>
