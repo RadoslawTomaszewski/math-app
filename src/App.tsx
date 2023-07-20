@@ -1,10 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Layout } from "./Layout";
 import "./styles/navbar.css";
+//LAYOUTS
+import { Layout } from "./Layout";
+import { KnowledgeBaseLayout } from "./Layout/knowledgeBaseLayout";
+//MAIN PAGES
 import Home from "./pages/homePages/Home";
 import HelplinePage from "./pages/helplinePage/HelplinePage";
 import KnowledgeBasePage from "./pages/knowledgeBasePages/KnowledgeBasePage";
 import ForumPage from "./pages/forumPages/ForumPage";
+import CalculatorsPage from "./pages/calculatorsPages/CalculatorsPage";
+//CALCULATORS
 import LengthConverterPage from "./pages/calculatorsPages/converters/LengthConverterPage";
 import AreaConverterPage from "./pages/calculatorsPages/converters/AreaConverterPage";
 import VolumeConverterPage from "./pages/calculatorsPages/converters/VolumeConverterPage";
@@ -12,9 +17,9 @@ import WeightConverterPage from "./pages/calculatorsPages/converters/WeightConve
 import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverterPage";
 import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConverterPage";
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
-import CalculatorsPage from "./pages/calculatorsPages/CalculatorsPage";
+//KNOWLEDGE BASE
 import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
-import { KnowledgeBaseLayout } from "./Layout/knowledgeBaseLayout";
+import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/QuadraticFunctionPage";
 
 const App = () => {
   return (
@@ -25,6 +30,10 @@ const App = () => {
           <Route path="baza-wiedzy" element={<KnowledgeBaseLayout />}>
             <Route index element={<KnowledgeBasePage />} />
             <Route path="funkcja-liniowa" element={<LinearFunctionPage />} />
+            <Route
+              path="funkcja-kwadratowa"
+              element={<QuadraticFunctionPage />}
+            />
           </Route>
           <Route path="forum" element={<ForumPage />} />
           <Route path="pogotowie" element={<HelplinePage />} />

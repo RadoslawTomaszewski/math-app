@@ -1,10 +1,12 @@
-import Title from "../../utilities/Title";
 import { NavLink } from "react-router-dom";
+// import { useState } from "react";
+//import { ReactComponent as Hamburger } from "../../assets/icons/hamburger.svg";
+import Title from "../../utilities/Title";
 
-export default function KnowledgeBasePage() {
+const Sidebar = () => {
   return (
-    <div className="p-5 justify-center flex">
-      <div className="flex flex-col items-start p-3 border-2 border-navColor rounded w-fit">
+    <>
+      <div className="flex flex-col">
         <Title text={"Funkcje"} size={"H2"} />
         <NavLink to="funkcja-liniowa">
           <Title text={"Funkcja liniowa"} size={"H3"} />
@@ -13,6 +15,8 @@ export default function KnowledgeBasePage() {
           <Title text={"Funkcja kwadratowa"} size={"H3"} />
         </NavLink>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Sidebar;

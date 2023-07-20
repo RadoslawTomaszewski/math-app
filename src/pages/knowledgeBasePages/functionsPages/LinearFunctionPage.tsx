@@ -12,21 +12,15 @@ import wyrazWolny from "../../../assets/images/function-graphs/wyraz-wolny.png";
 import GraphImage from "../../../utilities/articleItems/GraphImage";
 
 const LinearFunctionPage: FC = () => {
-  const zeroPlaceProof = [
-    `f(x_0)=0`,
-    `ax_0+b=0`,
-    `ax_0=-b`,
-    `x_0 = \\frac{-b}{a}`,
-  ];
+  const zeroPlaceProof = [`ax+b=0`, `ax=-b`, `x = \\frac{-b}{a}`];
 
   return (
     <div className="p-5 justify-center flex flex-col">
-      <div>Baza wiedzy → Funkcje → Funkcja Linowa</div>
+      <div>Baza wiedzy → Średnia → Funkcje → Funkcja Linowa</div>
       <div className="p-3 border-2 border-navColor rounded w-fit">
         <Title text={"Funkcja liniowa"} size={"H2"} />
         <p>
-          <b>Funkcja liniowa</b> to funkcja, której wykres wyraża się linią
-          prostą.
+          <b>Funkcja liniowa</b> to funkcja, której wykres jest linią prostą.
         </p>
         <p>Ogólny wzór funkcji liniowej:</p>
         <Formula formula={`f(x)=ax+b`} />
