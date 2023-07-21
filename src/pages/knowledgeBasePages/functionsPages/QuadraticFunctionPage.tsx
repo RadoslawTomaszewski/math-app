@@ -7,9 +7,10 @@ import Proof from "../../../utilities/articleItems/Proof";
 import MathExpression from "../../../utilities/articleItems/MathExpression";
 import kwadratowaUjemna from "../../../assets/images/function-graphs/kwadratowa-ujemna.png";
 import kwadratowaDodatnia from "../../../assets/images/function-graphs/kwadratowa-dodatnia.png";
-import kwadratowaRowna from "../../../assets/images/function-graphs/kwadratowa-rownolegla.png";
+import pseudokwadratowa from "../../../assets/images/function-graphs/pseudokwadratowa.png";
 import wierzcholek from "../../../assets/images/function-graphs/wierzcholek.png";
 import GraphImage from "../../../utilities/articleItems/GraphImage";
+import { NavLink } from "react-router-dom";
 
 const QuadraticFunctionPage: FC = () => {
   const zeroPlaceProof = [
@@ -25,13 +26,13 @@ const QuadraticFunctionPage: FC = () => {
     `\\left|x + \\frac{b}{2a}\\right| = \\frac{\\sqrt{\\Delta}}{2a}`,
     `x + \\frac{b}{2a} = \\frac{\\sqrt{\\Delta}}{2a} \\lor x + \\frac{b}{2a} = -\\frac{\\sqrt{\\Delta}}{2a}`,
     `x = -\\frac{b}{2a} + \\frac{\\sqrt{\\Delta}}{2a} \\lor x = -\\frac{b}{2a} - \\frac{\\sqrt{\\Delta}}{2a}`,
-    `x = \\frac{-b - \\sqrt{\\Delta}}{2a} \\lor x = \\frac{-b + \\sqrt{\\Delta}}{2a}`,
+    `x = \\frac{-b + \\sqrt{\\Delta}}{2a} \\lor x = \\frac{-b - \\sqrt{\\Delta}}{2a}`,
     `x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}`,
   ];
 
   return (
     <div className="p-5 justify-center flex flex-col">
-      <div>Baza wiedzy → Średnia → Funkcje → Funkcja Kwadratowa</div>
+      <div>Baza wiedzy → Funkcje → Funkcja Kwadratowa</div>
       <div className="p-3 border-2 border-navColor rounded w-fit">
         <Title text={"Funkcja kwadratowa"} size={"H2"} />
         <p>
@@ -57,27 +58,20 @@ const QuadraticFunctionPage: FC = () => {
         <p>Jeżeli Δ &lt; 0, to funkcja nie ma pierwiastków rzeczywistych.</p>
         <ArticleBorder />
         <p>
-          <b>Miejsce zerowe</b> funkcji kwadratowej wyraża się wzorem:
+          <b>Miejsce zerowe</b> (pierwiastek) funkcji kwadratowej wyraża się
+          wzorem:
         </p>
         <Formula formula={`x_0 = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}`} />
+        <p>Założenia:</p>
+        <Formula formula={`a \\neq 0`} />
+        <Formula formula={`\\Delta \\ge 0`} />
         <Proof steps={zeroPlaceProof} text="Dowód" />
         <ArticleBorder />
         <p>
-          <b>Współczynnik "a"</b> decyduje o kształcie paraboli:
+          <b>Współczynnik kierunkowy</b> funkcji kwadratowej określa, w którą
+          stronę skierowane są ramiona paraboli
         </p>
         <div className="my-2 grid md:grid-cols-3">
-          <div>
-            <GraphImage
-              src={kwadratowaUjemna}
-              size="full"
-              alt="wykres funkcji kwadratowej z ujemnym współczynnikiem a"
-            />
-            <div className="flex flex-wrap ml-2 my-2 justify-center">
-              <p>Jeżeli&nbsp;</p>
-              <MathExpression expression={`a < 0`} />
-              <p>&nbsp;parabola skierowana jest w dół</p>
-            </div>
-          </div>
           <div>
             <GraphImage
               src={kwadratowaDodatnia}
@@ -87,19 +81,32 @@ const QuadraticFunctionPage: FC = () => {
             <div className="flex flex-wrap ml-2 my-2 justify-center">
               <p>Jeżeli&nbsp;</p>
               <MathExpression expression={`a > 0`} />
-              <p>&nbsp;parabola skierowana jest w górę</p>
+              <p>&nbsp;ramiona paraboli są skierowane w górę</p>
             </div>
           </div>
           <div>
             <GraphImage
-              src={kwadratowaRowna}
+              src={kwadratowaUjemna}
+              size="full"
+              alt="wykres funkcji kwadratowej z ujemnym współczynnikiem a"
+            />
+            <div className="flex flex-wrap ml-2 my-2 justify-center">
+              <p>Jeżeli&nbsp;</p>
+              <MathExpression expression={`a < 0`} />
+              <p>&nbsp;ramiona paraboli są skierowane w dół</p>
+            </div>
+          </div>
+          <div>
+            <GraphImage
+              src={pseudokwadratowa}
               size="full"
               alt="wykres funkcji kwadratowej równoległej do osi X"
             />
             <div className="flex flex-wrap ml-2 my-2 justify-center">
               <p>Jeżeli&nbsp;</p>
               <MathExpression expression={`a = 0`} />
-              <p>&nbsp;funkcja jest równoległa do osi X</p>
+              <p>&nbsp;mamy doczynienia z&nbsp;</p>
+              <NavLink to="../funkcja-liniowa">funkcją liniową</NavLink>
             </div>
           </div>
         </div>

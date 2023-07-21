@@ -16,7 +16,7 @@ const LinearFunctionPage: FC = () => {
 
   return (
     <div className="p-5 justify-center flex flex-col">
-      <div>Baza wiedzy → Średnia → Funkcje → Funkcja Linowa</div>
+      <div>Baza wiedzy → Funkcje → Funkcja Linowa</div>
       <div className="p-3 border-2 border-navColor rounded w-fit">
         <Title text={"Funkcja liniowa"} size={"H2"} />
         <p>
