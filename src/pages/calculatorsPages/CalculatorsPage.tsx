@@ -27,6 +27,10 @@ export default function CalculatorsPage() {
         <NavLink to="kalkulator-informacji">
           <Title text={"Przelicznik jednostek informacji"} size={"H3"} />
         </NavLink>
+        <Title text={"Pozostałe kalkulatory"} size={"H2"} />
+        <NavLink to="czynnik-przed-pierwiastek">
+          <Title text={"Wyciąganie czynnika przed pierwiastek"} size={"H3"} />
+        </NavLink>
       </div>
     </div>
   );

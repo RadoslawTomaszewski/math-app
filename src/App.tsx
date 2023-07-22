@@ -17,6 +17,7 @@ import WeightConverterPage from "./pages/calculatorsPages/converters/WeightConve
 import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverterPage";
 import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConverterPage";
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
+import SquareRootCalculator from "./pages/calculatorsPages/otherCalculators/SquareRootCalculator";
 //KNOWLEDGE BASE
 import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
 import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/QuadraticFunctionPage";
@@ -60,6 +61,10 @@ const App = () => {
             <Route
               path="kalkulator-informacji"
               element={<InformationConverterPage />}
+            />
+            <Route
+              path="czynnik-przed-pierwiastek"
+              element={<SquareRootCalculator />}
             />
           </Route>
         </Route>
