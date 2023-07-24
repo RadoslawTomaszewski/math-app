@@ -2,57 +2,35 @@ import { NavLink } from "react-router-dom";
 import Title from "../../utilities/Title";
 import { FC } from "react";
 
-export const sidebarLinksKnowledgeBase = [
-  {
-    category: "Funkcje",
-    links: [
-      { to: "funkcja-liniowa", text: "Funkcja liniowa" },
-      { to: "funkcja-kwadratowa", text: "Funkcja kwadratowa" },
-    ],
-  },
-  {
-    category: "Ciągi",
-    links: [
-      { to: "ciag-arytmetyczny", text: "Ciąg arytmetyczny" },
-      { to: "ciag-geometryczny", text: "Ciąg geometryczny" },
-    ],
-  },
-];
+interface SidebarLink {
+  to: string;
+  text: string;
+}
 
-interface ISidebarProps {}
+export interface SidebarCategory {
+  category: string;
+  links: SidebarLink[];
+}
 
-const Sidebar: FC = () => {
-  // const sidebarLinksKnowledgeBase = [
-  //   {
-  //     category: "Funkcje",
-  //     links: [
-  //       { to: "funkcja-liniowa", text: "Funkcja liniowa" },
-  //       { to: "funkcja-kwadratowa", text: "Funkcja kwadratowa" },
-  //     ],
-  //   },
-  //   {
-  //     category: "Ciągi",
-  //     links: [
-  //       { to: "ciag-arytmetyczny", text: "Ciąg arytmetyczny" },
-  //       { to: "ciag-geometryczny", text: "Ciąg geometryczny" },
-  //     ],
-  //   },
-  // ];
+export interface ISidebarProps {
+  sidebarLinks: SidebarCategory[];
+}
 
+const Sidebar: FC<ISidebarProps> = ({ sidebarLinks }) => {
   return (
     <>
       <div className="flex flex-col">
-        {sidebarLinksKnowledgeBase.map((item) => (
-          <>
+        {sidebarLinks.map((item) => (
+          <div key={item.category}>
             <Title text={item.category} size={"H2"} />
-            {item.links.map((navlink) => (
-              <>
-                <NavLink to={navlink.to}>
+            <div className="flex flex-col">
+              {item.links.map((navlink) => (
+                <NavLink key={navlink.to} to={navlink.to}>
                   <Title text={navlink.text} size={"NavHover"} />
                 </NavLink>
-              </>
-            ))}
-          </>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </>
