@@ -1,19 +1,59 @@
 import { NavLink } from "react-router-dom";
-// import { useState } from "react";
-//import { ReactComponent as Hamburger } from "../../assets/icons/hamburger.svg";
 import Title from "../../utilities/Title";
+import { FC } from "react";
 
-const Sidebar = () => {
+export const sidebarLinksKnowledgeBase = [
+  {
+    category: "Funkcje",
+    links: [
+      { to: "funkcja-liniowa", text: "Funkcja liniowa" },
+      { to: "funkcja-kwadratowa", text: "Funkcja kwadratowa" },
+    ],
+  },
+  {
+    category: "Ciągi",
+    links: [
+      { to: "ciag-arytmetyczny", text: "Ciąg arytmetyczny" },
+      { to: "ciag-geometryczny", text: "Ciąg geometryczny" },
+    ],
+  },
+];
+
+interface ISidebarProps {}
+
+const Sidebar: FC = () => {
+  // const sidebarLinksKnowledgeBase = [
+  //   {
+  //     category: "Funkcje",
+  //     links: [
+  //       { to: "funkcja-liniowa", text: "Funkcja liniowa" },
+  //       { to: "funkcja-kwadratowa", text: "Funkcja kwadratowa" },
+  //     ],
+  //   },
+  //   {
+  //     category: "Ciągi",
+  //     links: [
+  //       { to: "ciag-arytmetyczny", text: "Ciąg arytmetyczny" },
+  //       { to: "ciag-geometryczny", text: "Ciąg geometryczny" },
+  //     ],
+  //   },
+  // ];
+
   return (
     <>
       <div className="flex flex-col">
-        <Title text={"Funkcje"} size={"H2"} />
-        <NavLink to="funkcja-liniowa">
-          <Title text={"Funkcja liniowa"} size={"NavHover"} />
-        </NavLink>
-        <NavLink to="funkcja-kwadratowa">
-          <Title text={"Funkcja kwadratowa"} size={"NavHover"} />
-        </NavLink>
+        {sidebarLinksKnowledgeBase.map((item) => (
+          <>
+            <Title text={item.category} size={"H2"} />
+            {item.links.map((navlink) => (
+              <>
+                <NavLink to={navlink.to}>
+                  <Title text={navlink.text} size={"NavHover"} />
+                </NavLink>
+              </>
+            ))}
+          </>
+        ))}
       </div>
     </>
   );

@@ -1,7 +1,11 @@
 import { FC } from "react";
-import { ITitle } from "../interfaces/interfaces";
 
-const Title: FC<ITitle> = ({ text, size }) => {
+export interface ITitleProps {
+  text: string;
+  size?: string;
+}
+
+const Title: FC<ITitleProps> = ({ text, size }) => {
   if (size === "H1")
     return <div className="text-4xl text-center font-bold py-2">{text}</div>;
   else if (size === "H2")

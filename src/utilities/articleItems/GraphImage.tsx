@@ -1,7 +1,12 @@
 import { FC } from "react";
-import { IGraphImage } from "../../interfaces/interfaces";
 
-const GraphImage: FC<IGraphImage> = ({ size, src, alt }) => {
+export interface IGraphImageProps {
+  size: string;
+  src: string;
+  alt: string;
+}
+
+const GraphImage: FC<IGraphImageProps> = ({ size, src, alt }) => {
   let sizeOption = <></>;
   if (size === "big")
     sizeOption = (

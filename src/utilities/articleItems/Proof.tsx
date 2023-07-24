@@ -2,9 +2,13 @@ import { FC, useState } from "react";
 import { MathComponent } from "mathjax-react";
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg";
 import { ReactComponent as CollapseIcon } from "../../assets/icons/collapse.svg";
-import { IProof } from "../../interfaces/interfaces";
 
-const Proof: FC<IProof> = ({ steps, text }) => {
+export interface IProofProps {
+  steps: string[];
+  text: string;
+}
+
+const Proof: FC<IProofProps> = ({ steps, text }) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpansion = () => {

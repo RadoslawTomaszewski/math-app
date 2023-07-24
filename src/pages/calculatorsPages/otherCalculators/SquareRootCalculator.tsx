@@ -3,7 +3,7 @@ import Title from "../../../utilities/Title";
 import { ChangeEvent } from "react";
 import Formula from "../../../utilities/articleItems/Formula";
 import { FC } from "react";
-import SquareRootNumber from "../../../types/objects/SquareRootCalculator";
+import SquareRootNumber from "../../../types/objects/SquareRootNumber";
 
 const SquareRootCalculator: FC = () => {
   const [inputValue, setInputValue] = useState<string | undefined>("0");

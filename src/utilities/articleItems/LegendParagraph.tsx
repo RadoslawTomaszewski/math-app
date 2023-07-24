@@ -1,8 +1,13 @@
 import { FC } from "react";
-import { ILegendParagraph } from "../../interfaces/interfaces";
 import { MathComponent } from "mathjax-react";
 
-const LegendParagraph: FC<ILegendParagraph> = ({
+export interface ILegendParagraphProps {
+  type: string;
+  notation: string;
+  explanation: string;
+}
+
+const LegendParagraph: FC<ILegendParagraphProps> = ({
   type,
   notation,
   explanation,

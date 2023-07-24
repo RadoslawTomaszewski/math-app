@@ -1,7 +1,15 @@
 import { FC } from "react";
-import { IConvertInputField } from "../interfaces/interfaces";
+import Decimal from "decimal.js";
+import { ChangeEventHandler } from "react";
 
-const ConverterInputField: FC<IConvertInputField> = ({
+export interface IConvertInputFieldProps {
+  label: string;
+  value: Decimal | null;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  name: string;
+}
+
+const ConverterInputField: FC<IConvertInputFieldProps> = ({
   label,
   value,
   onChange,

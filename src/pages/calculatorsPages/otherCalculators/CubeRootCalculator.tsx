@@ -3,7 +3,7 @@ import Title from "../../../utilities/Title";
 import { ChangeEvent } from "react";
 import Formula from "../../../utilities/articleItems/Formula";
 import { FC } from "react";
-import CubeRootNumber from "../../../types/objects/CubeRootCalculator";
+import CubeRootNumber from "../../../types/objects/CubeRootNumber";
 
 const CubeRootCalculator: FC = () => {
   const [inputValue, setInputValue] = useState<string | undefined>("0");

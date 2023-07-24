@@ -1,8 +1,11 @@
 import { FC } from "react";
 import { MathComponent } from "mathjax-react";
-import { IMathExpression } from "../../interfaces/interfaces";
 
-const MathExpression: FC<IMathExpression> = ({ expression }) => {
+export interface IMathExpressionProps {
+  expression: string;
+}
+
+const MathExpression: FC<IMathExpressionProps> = ({ expression }) => {
   return (
     <div className="mt-[0.24rem]">
       <MathComponent tex={expression} />
