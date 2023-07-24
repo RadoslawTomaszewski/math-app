@@ -3,12 +3,12 @@ import Title from "../../../utilities/Title";
 import { ChangeEvent } from "react";
 import Formula from "../../../utilities/articleItems/Formula";
 import { FC } from "react";
-import SquareRootNumber from "../../../types/objects/SquareRootCalculator";
+import CubeRootNumber from "../../../types/objects/CubeRootCalculator";
 
-const SquareRootCalculator: FC = () => {
+const CubeRootCalculator: FC = () => {
   const [inputValue, setInputValue] = useState<string | undefined>("0");
-  const [squareRoot, setSquareRoot] = useState<SquareRootNumber | null>(
-    new SquareRootNumber(0)
+  const [cubeRoot, setCubeRoot] = useState<CubeRootNumber | null>(
+    new CubeRootNumber(0)
   );
   const [errorMessage, setErrorMessage] = useState<string[]>([]);
 
@@ -25,7 +25,7 @@ const SquareRootCalculator: FC = () => {
       inputValue === "0"
     ) {
       errors = [];
-      setSquareRoot(new SquareRootNumber(inputValueNumber));
+      setCubeRoot(new CubeRootNumber(inputValueNumber));
     } else {
       if (!Number.isInteger(inputValueNumber) || inputValueNumber === 0)
         errors.push("Wprowadzona wartość nie jest liczbą całkowitą");
@@ -34,15 +34,15 @@ const SquareRootCalculator: FC = () => {
       if (inputValueNumber >= 10000000)
         errors.push("Maksymalna wartość to 10000000");
       setErrorMessage(errors);
-      setSquareRoot(null);
+      setCubeRoot(null);
     }
   };
 
   const steps = [
-    squareRoot?.getStep1(),
-    squareRoot?.getStep2(),
-    squareRoot?.getStep3(),
-    squareRoot?.getStep4(),
+    cubeRoot?.getStep1(),
+    cubeRoot?.getStep2(),
+    cubeRoot?.getStep3(),
+    cubeRoot?.getStep4(),
   ];
 
   const uniqueSteps = Array.from(
@@ -54,7 +54,7 @@ const SquareRootCalculator: FC = () => {
       <div className="p-3 border-2 border-navColor rounded w-fit max-w-full min-h-[500px]">
         <div className="flex flex-col justify-center w-full items-center">
           <Title
-            text="Wyciąganie czynnika całkowitego przed pierwiastek kwadratowy"
+            text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
             size="H2"
           />
           <p className="pt-4">Wprowadź liczbę naturalną pod pierwiastkiem:</p>
@@ -64,7 +64,7 @@ const SquareRootCalculator: FC = () => {
             type="number"
             value={inputValue}
             onChange={handleInputChange}
-            name="square"
+            name="cube"
             min="0"
           />
           <div className="pt-4">Rozwiązanie:</div>
@@ -87,4 +87,4 @@ const SquareRootCalculator: FC = () => {
   );
 };
 
-export default SquareRootCalculator;
+export default CubeRootCalculator;

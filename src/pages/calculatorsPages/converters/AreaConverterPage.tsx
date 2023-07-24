@@ -111,7 +111,7 @@ const AreaConverterPage: FC = () => {
 
   return (
     <div className="p-5 justify-center flex">
-      <div className="p-3 border-2 border-navColor rounded w-fit">
+      <div className="p-3 border-2 border-navColor rounded">
         <Title text={"Przelicznik jednostek powierzchni"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />
         {unitFields.slice(0, 7).map((item) => (

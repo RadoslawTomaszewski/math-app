@@ -4,7 +4,7 @@ import Title from "../../utilities/Title";
 export default function CalculatorsPage() {
   return (
     <div className="p-5 justify-center flex">
-      <div className="flex flex-col items-start p-3 border-2 border-navColor rounded w-fit">
+      <div className="flex flex-col items-start p-3 border-2 border-borderColor rounded w-fit">
         <Title text={"Przeliczniki"} size={"H2"} />
         <NavLink to="kalkulator-dlugosci">
           <Title text={"Przelicznik jednostek długości"} size={"H3"} />
@@ -28,8 +28,17 @@ export default function CalculatorsPage() {
           <Title text={"Przelicznik jednostek informacji"} size={"H3"} />
         </NavLink>
         <Title text={"Pozostałe kalkulatory"} size={"H2"} />
-        <NavLink to="czynnik-przed-pierwiastek">
-          <Title text={"Wyciąganie czynnika przed pierwiastek"} size={"H3"} />
+        <NavLink to="czynnik-przed-pierwiastek-kwadratowy">
+          <Title
+            text={"Wyciąganie czynnika przed pierwiastek kwadratowy"}
+            size={"H3"}
+          />
+        </NavLink>
+        <NavLink to="czynnik-przed-pierwiastek-szescienny">
+          <Title
+            text={"Wyciąganie czynnika przed pierwiastek szescienny"}
+            size={"H3"}
+          />
         </NavLink>
       </div>
     </div>

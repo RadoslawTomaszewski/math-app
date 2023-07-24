@@ -3,6 +3,7 @@ import "./styles/navbar.css";
 //LAYOUTS
 import { Layout } from "./Layout";
 import { KnowledgeBaseLayout } from "./Layout/knowledgeBaseLayout";
+import { CalculatorsLayout } from "./Layout/calculatorsLayout";
 //MAIN PAGES
 import Home from "./pages/homePages/Home";
 import HelplinePage from "./pages/helplinePage/HelplinePage";
@@ -18,6 +19,7 @@ import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverter
 import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConverterPage";
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
 import SquareRootCalculator from "./pages/calculatorsPages/otherCalculators/SquareRootCalculator";
+import CubeRootCalculator from "./pages/calculatorsPages/otherCalculators/CubeRootCalculator";
 //KNOWLEDGE BASE
 import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
 import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/QuadraticFunctionPage";
@@ -38,7 +40,7 @@ const App = () => {
           </Route>
           <Route path="forum" element={<ForumPage />} />
           <Route path="pogotowie" element={<HelplinePage />} />
-          <Route path="kalkulatory">
+          <Route path="kalkulatory" element={<CalculatorsLayout />}>
             <Route index element={<CalculatorsPage />} />
             <Route
               path="kalkulator-dlugosci"
@@ -63,8 +65,12 @@ const App = () => {
               element={<InformationConverterPage />}
             />
             <Route
-              path="czynnik-przed-pierwiastek"
+              path="czynnik-przed-pierwiastek-kwadratowy"
               element={<SquareRootCalculator />}
+            />
+            <Route
+              path="czynnik-przed-pierwiastek-szescienny"
+              element={<CubeRootCalculator />}
             />
           </Route>
         </Route>

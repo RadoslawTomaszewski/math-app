@@ -9,13 +9,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        first: "#3EA1FA",
-        second: "#FAB13F",
-        third: "#095FAD",
-        fourth: "#FFBF59",
-        fifth: "#875A12",
-        navColor: "#095FAD",
+        sideColor: "#DFD5BD",
         bgColor: "#fef7e5",
+        navColor: "#68B9FF",
+        borderColor: "#095FAD",
       },
     },
   },
