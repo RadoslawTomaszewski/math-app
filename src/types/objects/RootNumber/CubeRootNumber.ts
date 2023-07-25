@@ -1,17 +1,19 @@
-class CubeRootNumber {
+import { IRootNumber } from "./IRootNumber";
+
+class CubeRootNumber implements IRootNumber {
   private factors: number[] = [];
   private preFactors: number[] = [];
   private underFactors: number[] = [];
-  private preCube: number | null = null;
-  private underCube: number | null = null;
-
+  private preRoot: number | null = null;
+  private underRoot: number | null = null;
+  private steps: string[] = [];
 
     constructor(private num: number) {
       this.setFactors();
       this.setpreFactorsAndUnderFactors();
-      this.setPreCubeAndUnderCube();
+      this.setpreRootAndunderRoot();
+      this.setAllSteps();
     }
-
 
     private setFactors():void{
       let divident = this.num;
@@ -27,48 +29,25 @@ class CubeRootNumber {
         }
     }
 
-    //DO EDYCJI
     private setpreFactorsAndUnderFactors(): void {
       this.underFactors = this.factors.slice();
       const indicesToRemove: number[] = [];
-    
-      for (let i = 0; i < this.underFactors.length; i++) {
-        let foundDuplicate = false;
-        for (let j = i + 1; j < this.underFactors.length; j++) {
-          if (this.underFactors[i] === this.underFactors[j]) {
-            this.preFactors.push(this.underFactors[i]);
-            indicesToRemove.push(i, j);
-            foundDuplicate = true;
-            break;
-          }
-        }
-        if (foundDuplicate) {
-          break;
+      for(let i=0; i<this.underFactors.length;i++){
+        if(this.underFactors[i] === this.underFactors[i+1] && this.underFactors[i] === this.underFactors[i+2]){
+          indicesToRemove.push(i, i + 1, i + 2);
+          this.preFactors.push(this.underFactors[i]);
+          i+=2;
         }
       }
-      while (indicesToRemove.length > 0) {
+      if (indicesToRemove.length > 0) {
         for (let i = indicesToRemove.length - 1; i >= 0; i--) {
-          this.underFactors.splice(indicesToRemove[i], 1);
-        }
-        indicesToRemove.length = 0;
-        for (let i = 0; i < this.underFactors.length; i++) {
-          let foundDuplicate = false;
-          for (let j = i + 1; j < this.underFactors.length; j++) {
-            if (this.underFactors[i] === this.underFactors[j]) {
-              this.preFactors.push(this.underFactors[i]);
-              indicesToRemove.push(i, j);
-              foundDuplicate = true;
-              break;
-            }
-          }
-          if (foundDuplicate) {
-            break;
-          }
+          const indexToRemove = indicesToRemove[i];
+          this.underFactors.splice(indexToRemove, 1);
         }
       }
     }
-    
-    private setPreCubeAndUnderCube():void{
+
+    private setpreRootAndunderRoot():void{
       let productPre = 1;
       let productUnder = 1;
 
@@ -79,14 +58,23 @@ class CubeRootNumber {
         productUnder *= element;
       });
 
-      this.preCube = productPre;
-      this.underCube = productUnder;
+      this.preRoot = productPre;
+      this.underRoot = productUnder;
+    }
+
+    private setAllSteps():void{
+      this.steps = [
+        this.getStep1(),
+        this.getStep2(),
+        this.getStep3(),
+        this.getStep4(),
+      ];
     }
    
     getFactors(): string{
       return this.factors.join(", ")
     }
-    
+
     getStep1(): string{
       return `\\sqrt[3]{${this.num}}`
     }
@@ -106,17 +94,26 @@ class CubeRootNumber {
       }
     }
     getStep4():string{
-      if (this.underCube === 1) return `${this.preCube}`
-      if (this.preCube === 1) return `\\sqrt[3]{${this.underCube}}`;
-      return `${this.preCube}\\sqrt[3]{${this.underCube}}`;
+      if (this.underRoot === 1) return `${this.preRoot}`
+      if (this.preRoot === 1) return `\\sqrt[3]{${this.underRoot}}`;
+      return `${this.preRoot}\\sqrt[3]{${this.underRoot}}`;
     }
-    getPreCube():number | null {
-      return this.preCube;
+
+    getAllSteps():string[]{
+      return this.steps;
     }
-    getUnderCube():number | null {
-      return this.underCube;
+
+    getAllUniqueSteps():string[]{
+      return Array.from(new Set(this.steps));
     }
+
+    getPreRoot():number | null {
+      return this.preRoot;
     }
+    getUnderRoot():number | null {
+      return this.underRoot;
+    }
+  }
 
   
     

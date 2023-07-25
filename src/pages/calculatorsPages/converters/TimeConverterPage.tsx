@@ -116,8 +116,8 @@ const TimeConverterPage: FC = () => {
   ];
 
   return (
-    <div className="p-5 justify-center flex">
-      <div className="p-3 border-2 border-navColor rounded w-fit">
+    <div className="p-2 justify-center flex">
+      <div className="w-full">
         <Title text={"Przelicznik jednostek czasu"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />
         {unitFields.slice(0, 4).map((item) => (

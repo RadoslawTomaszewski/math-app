@@ -1,17 +1,19 @@
-class SquareRootNumber {
+import { IRootNumber } from "./IRootNumber";
+
+class SquareRootNumber implements IRootNumber {
   private factors: number[] = [];
   private preFactors: number[] = [];
   private underFactors: number[] = [];
   private preSquare: number | null = null;
   private underSquare: number | null = null;
-
+  private steps: string[] = [];
 
     constructor(private num: number) {
       this.setFactors();
       this.setpreFactorsAndUnderFactors();
       this.setPreSquareAndUnderSquare();
+      this.setAllSteps();
     }
-
 
     private setFactors():void{
       let divident = this.num;
@@ -30,43 +32,21 @@ class SquareRootNumber {
     private setpreFactorsAndUnderFactors(): void {
       this.underFactors = this.factors.slice();
       const indicesToRemove: number[] = [];
-    
-      for (let i = 0; i < this.underFactors.length; i++) {
-        let foundDuplicate = false;
-        for (let j = i + 1; j < this.underFactors.length; j++) {
-          if (this.underFactors[i] === this.underFactors[j]) {
-            this.preFactors.push(this.underFactors[i]);
-            indicesToRemove.push(i, j);
-            foundDuplicate = true;
-            break;
-          }
-        }
-        if (foundDuplicate) {
-          break;
+      for(let i=0; i<this.underFactors.length;i++){
+        if(this.underFactors[i] === this.underFactors[i+1]){
+          indicesToRemove.push(i, i + 1);
+          this.preFactors.push(this.underFactors[i]);
+          i++;
         }
       }
-      while (indicesToRemove.length > 0) {
+      if (indicesToRemove.length > 0) {
         for (let i = indicesToRemove.length - 1; i >= 0; i--) {
-          this.underFactors.splice(indicesToRemove[i], 1);
-        }
-        indicesToRemove.length = 0;
-        for (let i = 0; i < this.underFactors.length; i++) {
-          let foundDuplicate = false;
-          for (let j = i + 1; j < this.underFactors.length; j++) {
-            if (this.underFactors[i] === this.underFactors[j]) {
-              this.preFactors.push(this.underFactors[i]);
-              indicesToRemove.push(i, j);
-              foundDuplicate = true;
-              break;
-            }
-          }
-          if (foundDuplicate) {
-            break;
-          }
+          const indexToRemove = indicesToRemove[i];
+          this.underFactors.splice(indexToRemove, 1);
         }
       }
     }
-    
+
     private setPreSquareAndUnderSquare():void{
       let productPre = 1;
       let productUnder = 1;
@@ -81,11 +61,20 @@ class SquareRootNumber {
       this.preSquare = productPre;
       this.underSquare = productUnder;
     }
+
+    private setAllSteps():void{
+      this.steps = [
+        this.getStep1(),
+        this.getStep2(),
+        this.getStep3(),
+        this.getStep4(),
+      ];
+    }
    
     getFactors(): string{
       return this.factors.join(", ")
     }
-    
+
     getStep1(): string{
       return `\\sqrt{${this.num}}`
     }
@@ -109,13 +98,22 @@ class SquareRootNumber {
       if (this.preSquare === 1) return `\\sqrt{${this.underSquare}}`;
       return `${this.preSquare}\\sqrt{${this.underSquare}}`;
     }
-    getPreSquare():number | null {
+
+    getAllSteps():string[]{
+      return this.steps;
+    }
+
+    getAllUniqueSteps():string[]{
+      return Array.from(new Set(this.steps));
+    }
+
+    getPreRoot():number | null {
       return this.preSquare;
     }
-    getUnderSquare():number | null {
+    getUnderRoot():number | null {
       return this.underSquare;
     }
-    }
+  }
 
   
     

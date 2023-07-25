@@ -1,23 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { SidebarCategory } from "../../components/Sidebar/Sidebar";
 
-const sidebarLinksKnowledgeBase: SidebarCategory[] = [
-  {
-    category: "Funkcje",
-    links: [
-      { to: "funkcja-liniowa", text: "Funkcja liniowa" },
-      { to: "funkcja-kwadratowa", text: "Funkcja kwadratowa" },
-    ],
-  },
-  {
-    category: "Ciągi",
-    links: [
-      { to: "ciag-arytmetyczny", text: "Ciąg arytmetyczny" },
-      { to: "ciag-geometryczny", text: "Ciąg geometryczny" },
-    ],
-  },
-];
+import { sidebarLinksKnowledgeBase } from "../../components/Sidebar/sidebarData";
 
 export const KnowledgeBaseLayout = () => {
   return (

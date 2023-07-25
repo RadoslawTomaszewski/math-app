@@ -3,9 +3,11 @@ import Title from "../../../utilities/Title";
 import { ChangeEvent } from "react";
 import Formula from "../../../utilities/articleItems/Formula";
 import { FC } from "react";
-import CubeRootNumber from "../../../types/objects/CubeRootNumber";
+import CubeRootNumber from "../../../types/objects/RootNumber/CubeRootNumber";
 
 const CubeRootCalculator: FC = () => {
+  //WSZYSTKO DO WYWALENIA
+
   const [inputValue, setInputValue] = useState<string | undefined>("0");
   const [cubeRoot, setCubeRoot] = useState<CubeRootNumber | null>(
     new CubeRootNumber(0)
@@ -50,8 +52,8 @@ const CubeRootCalculator: FC = () => {
   );
 
   return (
-    <div className="p-5 justify-center flex">
-      <div className="p-3 border-2 border-navColor rounded w-fit max-w-full min-h-[500px]">
+    <div className="p-2 justify-center flex">
+      <div className="w-full">
         <div className="flex flex-col justify-center w-full items-center">
           <Title
             text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
