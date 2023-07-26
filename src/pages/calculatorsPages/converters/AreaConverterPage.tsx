@@ -3,6 +3,7 @@ import Decimal from "decimal.js";
 import ConverterInputField from "../../../utilities/ConverterInputField";
 import Title from "../../../utilities/Title";
 import { unitArea, unitAreaLabels } from "../../../types/units";
+import { NavLink } from "react-router-dom";
 
 const AreaConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -110,7 +111,11 @@ const AreaConverterPage: FC = () => {
   ];
 
   return (
-    <div className="p-2 justify-center flex">
+    <div className="p-2 justify-center flex flex-col">
+      <div>
+        <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
+        jednostek powierzchni
+      </div>
       <div className="w-full">
         <Title text={"Przelicznik jednostek powierzchni"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />

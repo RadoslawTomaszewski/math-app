@@ -20,6 +20,14 @@ const GraphImage: FC<IGraphImageProps> = ({ size, src, alt }) => {
         alt={alt}
       />
     );
+  } else if (size === "smaller") {
+    sizeOption = (
+      <img
+        className="max-w-full md:max-w-[20vw] align-middle"
+        src={src}
+        alt={alt}
+      />
+    );
   } else if (size === "full") {
     sizeOption = (
       <img className="max-w-[90%] align-middle" src={src} alt={alt} />

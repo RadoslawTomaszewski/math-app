@@ -9,7 +9,10 @@ import kwadratowaUjemna from "../../../assets/images/function-graphs/kwadratowa-
 import kwadratowaDodatnia from "../../../assets/images/function-graphs/kwadratowa-dodatnia.png";
 import pseudokwadratowa from "../../../assets/images/function-graphs/pseudokwadratowa.png";
 import wierzcholek from "../../../assets/images/function-graphs/wierzcholek.png";
+import wyrazWolny from "../../../assets/images/function-graphs/kwadratowa-wyraz-wolny.png";
+import osSymetrii from "../../../assets/images/function-graphs/kwadratowa-os-symetrii.png";
 import GraphImage from "../../../utilities/articleItems/GraphImage";
+
 import { NavLink } from "react-router-dom";
 
 const QuadraticFunctionPage: FC = () => {
@@ -30,16 +33,41 @@ const QuadraticFunctionPage: FC = () => {
     `x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}`,
   ];
 
+  const pProof = [
+    `p = \\frac{x_1+x_2}{2}`,
+    `p = \\frac{1}{2}\\left(\\frac{-b + \\sqrt{\\Delta}}{2a}+\\frac{-b - \\sqrt{\\Delta}}{2a}\\right)`,
+    `p = \\frac{1}{2}\\left(\\frac{-2b + \\sqrt{\\Delta}-\\sqrt{\\Delta}}{2a}\\right)`,
+    `p = \\frac{-b}{2a}`,
+  ];
+
+  const qProof = [
+    `q = f(p)`,
+    `q = ap^2 + bp + c`,
+    `q = a\\left(\\frac{-b}{2a}\\right)^2 + b\\left(\\frac{-b}{2a}\\right) + c`,
+    `q = a\\left(\\frac{b^2}{4a^2}\\right) + b\\left(\\frac{-b}{2a}\\right) + c`,
+    `q = \\frac{b^2}{4a} + \\frac{-b^2}{2a}+ c`,
+    `q = \\frac{b^2}{4a} + \\frac{-2b^2}{4a}+ \\frac{4ac}{4a}`,
+    `q = \\frac{-b^2+4ac}{4a}`,
+    `q = \\frac{-\\left(b^2-4ac\\right)}{4a}`,
+    `q = \\frac{-\\Delta}{4a}`,
+  ];
+
   return (
-    <div className="p-5 justify-center flex flex-col">
-      <div>Baza wiedzy → Funkcje → Funkcja Kwadratowa</div>
+    <div className="p-2 justify-center flex flex-col">
+      <div>
+        <NavLink to={"../"}>Baza wiedzy</NavLink> → Funkcje → Funkcja Kwadratowa
+      </div>
       <div className="p-3 border-2 border-navColor rounded w-fit">
         <Title text={"Funkcja kwadratowa"} size={"H2"} />
         <p>
           <b>Funkcja kwadratowa</b> to funkcja, której wykres jest parabolą.
         </p>
-        <p>Ogólny wzór funkcji kwadratowej:</p>
+        <p>
+          Wzór funkcji kwadratowej w <b>postaci ogólnej</b>:
+        </p>
         <Formula formula={`f(x) = ax^2 + bx + c`} />
+        <p>Założenie:</p>
+        <Formula formula={`a \\neq 0`} />
         <LegendParagraph
           type="short"
           notation="a"
@@ -47,6 +75,23 @@ const QuadraticFunctionPage: FC = () => {
         />
         <LegendParagraph type="top" notation="b" explanation="wyraz środkowy" />
         <LegendParagraph type="short" notation="c" explanation="wyraz wolny" />
+        <ArticleBorder />
+        <p>
+          Wzór funkcji kwadratowej w <b>postaci kanonicznej</b>:
+        </p>
+        <Formula formula={`f(x) = a(x-p)^2 + q`} />
+        <p>Założenie:</p>
+        <Formula formula={`a \\neq 0`} />
+        <LegendParagraph
+          type="short"
+          notation="p"
+          explanation="rzędna wierzchołka paraboli"
+        />
+        <LegendParagraph
+          type="short"
+          notation="q"
+          explanation="odcięta wierzchołka paraboli"
+        />
         <ArticleBorder />
         <p>
           <b>Wyróżnik</b> funkcji kwadratowej (delta) to wartość wyrażona
@@ -66,6 +111,41 @@ const QuadraticFunctionPage: FC = () => {
         <Formula formula={`a \\neq 0`} />
         <Formula formula={`\\Delta \\ge 0`} />
         <Proof steps={zeroPlaceProof} text="Dowód" />
+        <p className="flex">
+          W przypadku gdy funkcja kwadratowa ma dwa pierwiastki rzeczywiste
+          używa się oznaczeń:
+        </p>
+        <Formula formula={`x_1 = \\frac{-b - \\sqrt{\\Delta}}{2a}`} />
+        <Formula formula={`x_2 = \\frac{-b + \\sqrt{\\Delta}}{2a}`} />
+        <ArticleBorder />
+        <p>
+          Wzór funkcji kwadratowej w <b>postaci iloczynowej</b>
+          &nbsp;nie zawsze istnieje. Należy rozpatrzyć trzy przypadki:
+        </p>
+        <div className="my-2 grid md:grid-cols-3">
+          <div>
+            <Formula
+              formula={`f(x) = a\\left(x-x_1\\right)\\left(x-x_2\\right)`}
+            />
+            <div className="flex flex-wrap ml-2 my-2 justify-center">
+              gdy Δ &gt; 0
+            </div>
+          </div>
+          <div>
+            <Formula formula={`f(x) = a\\left(x-x_0\\right)^2`} />
+            <div className="flex flex-wrap ml-2 my-2 justify-center">
+              gdy Δ = 0
+            </div>
+          </div>
+          <div>
+            <Formula formula={`nie~istnieje`} />
+            <div className="flex flex-wrap ml-2 my-2 justify-center">
+              gdy Δ &lt; 0
+            </div>
+          </div>
+          <p>Założenie:</p>
+          <Formula formula={`a \\neq 0`} />
+        </div>
         <ArticleBorder />
         <p>
           <b>Współczynnik kierunkowy</b> funkcji kwadratowej określa, w którą
@@ -112,21 +192,63 @@ const QuadraticFunctionPage: FC = () => {
         </div>
         <ArticleBorder />
         <p>
-          <b>Wyznaczanie wierzchołka</b> paraboli:
+          <b>Wierzchołek paraboli</b> to punkt położony najniżej lub najwyżej na
+          wykresie funkcji w zależności od kierunku skierowania ramion.
         </p>
         <GraphImage src={wierzcholek} size="small" alt="Wierzchołek paraboli" />
+        <p>Współrzędne wierzchołka są oznaczane następująco:</p>
+        <Formula formula={`W = \\left(p , q \\right)`} />
+        <p>
+          Współrzędna iksowa wierzchołka jest równa takiej wartości argumentu,
+          która jest równo odległa od symetralnych punktów o tej samej wartości
+          (np miejsc zerowych):
+        </p>
+        <Formula formula={`p = \\frac{x_1+x_2}{2}`} />
+        <p>Częściej używana postać tego wzoru to:</p>
         <Formula formula={`p = \\frac{-b}{2a}`} />
-        <Formula formula={`q = f(p) = f\\left(\\frac{-b}{2a}\\right)`} />
+        <Proof steps={pProof} text="Dowód" />
+        <p>
+          Współrzędna igrekowa wierzchołka jest równa wartości funkcji dla
+          argumentu, który jest równo odległy od symetralnych punktów o tej
+          samej wartości (np miejsc zerowych):
+        </p>
+        <Formula formula={`q = f(p)`} />
+        <p>Częściej używana postać tego wzoru to:</p>
+        <Formula formula={`q = \\frac{-\\Delta}{4a}`} />
+        <Proof steps={qProof} text="Dowód" />
+        <ArticleBorder />
+        <p>
+          <b>Oś symetrii</b> paraboli to równanie prostej, które wyraża się
+          wzorem:
+        </p>
+        <Formula formula={`x = p`} />
+        <GraphImage
+          src={osSymetrii}
+          size="small"
+          alt="Punkt przecięcia z osią oy"
+        />
+        <ArticleBorder />
+        <p>
+          <b>Wyraz wolny</b> funkcji liniowej pozwala określić współrzędne
+          punktu przecięcia wykresu funkcji z osią OY:
+        </p>
+        <GraphImage
+          src={wyrazWolny}
+          size="small"
+          alt="Punkt przecięcia z osią oy"
+        />
+        <Formula formula={`P_{oy} = (0,c)`} />
         <ArticleBorder />
         <b>Rysowanie wykresu funkcji kwadratowej:</b>
         <p>
-          Aby narysować wykres funkcji kwadratowej, można zastosować kilka
-          metod, w tym znalezienie wierzchołka, wyznaczenie punktów przecięcia z
-          osiami, lub skorzystanie z dodatkowych punktów charakterystycznych.
-        </p>
-        <ArticleBorder />
-        <p>
-          Każda funkcja kwadratowa jest <b>równaniem wykresu paraboli</b>
+          Aby narysować wykres funkcji kwadratowej najpierw należy wyznaczyć
+          współrzędne wierzchołka paraboli. Następnie trzeba wyznaczyć kilka
+          dowolnych punktów po lewo i prawo od wierzchołka paraboli. Wartości
+          wylicza się poprzez podstawienie wybranego argumentu do wzoru funkcji
+          kwadratowej w dowolnej postaci. Im więcej punktów zostanie
+          wyznaczonych, tym szkic paraboli będzie dokładniejszy. Zalecane jest
+          wyznaczenie punktów przecięcia wykresu funkcji z osią OY oraz OX
+          (przez wyliczenie miejsc zerowych).
         </p>
       </div>
     </div>

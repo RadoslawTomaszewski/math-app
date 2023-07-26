@@ -3,6 +3,7 @@ import Decimal from "decimal.js";
 import ConverterInputField from "../../../utilities/ConverterInputField";
 import Title from "../../../utilities/Title";
 import { unitInformation, unitInformationLabels } from "../../../types/units";
+import { NavLink } from "react-router-dom";
 
 const InformationConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -240,7 +241,11 @@ const InformationConverterPage: FC = () => {
   ];
 
   return (
-    <div className="p-2 justify-center flex">
+    <div className="p-2 justify-center flex flex-col">
+      <div>
+        <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
+        jednostek informacji
+      </div>
       <div className="w-full">
         <Title text={"Przelicznik jednostek informacji"} size={"H2"} />
         <Title text={"Podstawowe jednostki:"} size={"H3"} />

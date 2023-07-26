@@ -1,53 +1,70 @@
-import React, { useState } from "react";
+import { useState, FC, ChangeEvent } from "react";
 import Title from "../../../utilities/Title";
-import { ChangeEvent } from "react";
 import Formula from "../../../utilities/articleItems/Formula";
-import { FC } from "react";
 import SquareRootNumber from "../../../types/objects/RootNumber/SquareRootNumber";
+import { NavLink } from "react-router-dom";
 
 const SquareRootCalculator: FC = () => {
-  const [inputValue, setInputValue] = useState<string | undefined>("0");
-  const [squareRoot, setSquareRoot] = useState<SquareRootNumber>(
-    new SquareRootNumber(0)
-  );
-  const [errorMessage, setErrorMessage] = useState<string[]>([]);
+  const [inputState, setInputState] = useState<{
+    value: string | undefined;
+    cubeRoot: SquareRootNumber;
+    errorMessage: string[];
+  }>({
+    value: "0",
+    cubeRoot: new SquareRootNumber(0),
+    errorMessage: [],
+  });
 
-  const isValidInput = (inputValueNumber: number) => {
+  const isValidInput = (valueNumber: number) => {
     return (
-      (Number.isInteger(inputValueNumber) &&
-        inputValueNumber > 0 &&
-        inputValueNumber <= 10000000) ||
-      inputValue === "0"
+      (Number.isInteger(valueNumber) &&
+        valueNumber > 0 &&
+        valueNumber <= 10000000) ||
+      inputState.value === "0"
     );
   };
 
-  const setError = (inputValueNumber: number, errors: string[]) => {
-    if (!Number.isInteger(inputValueNumber) || inputValueNumber === 0)
+  const setError = (valueNumber: number, errors: string[]) => {
+    if (!Number.isInteger(valueNumber) || valueNumber === 0)
       errors.push("Wprowadzona wartość nie jest liczbą naturalną dodatnią");
-    if (inputValueNumber < 0)
-      errors.push("Wprowadzona wartość jest liczbą ujemną");
-    if (inputValueNumber >= 10000000)
-      errors.push("Maksymalna wartość to 10000000");
-    setErrorMessage(errors);
+    if (valueNumber < 0) errors.push("Wprowadzona wartość jest liczbą ujemną");
+    if (valueNumber >= 10000000) errors.push("Maksymalna wartość to 10000000");
+    setInputState((prev) => ({
+      ...prev,
+      errorMessage: errors,
+    }));
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    let inputValue = event.target.value;
-    setInputValue(inputValue);
-    setErrorMessage([]);
+    let value = event.target.value;
+    setInputState((prev) => ({
+      ...prev,
+      value: value,
+      errorMessage: [],
+    }));
     let errors: string[] = [];
-    let inputValueNumber = Number(inputValue);
-    if (isValidInput(inputValueNumber)) {
+    let valueNumber = Number(value);
+    if (isValidInput(valueNumber)) {
       errors = [];
-      setSquareRoot(new SquareRootNumber(inputValueNumber));
+      setInputState((prev) => ({
+        ...prev,
+        cubeRoot: new SquareRootNumber(valueNumber),
+      }));
     } else {
-      setError(inputValueNumber, errors);
-      setSquareRoot(new SquareRootNumber(0));
+      setError(valueNumber, errors);
+      setInputState((prev) => ({
+        ...prev,
+        cubeRoot: new SquareRootNumber(0),
+      }));
     }
   };
 
   return (
-    <div className="p-2 justify-center flex">
+    <div className="p-2 justify-center flex flex-col">
+      <div>
+        <NavLink to={"../"}>Kalkulatory</NavLink> → Pierwiastki → Wyciąganie
+        czynnika przed pierwiastek kwadratowy
+      </div>
       <div className="w-full">
         <div className="flex flex-col justify-center w-full items-center">
           <Title
@@ -61,21 +78,21 @@ const SquareRootCalculator: FC = () => {
             className="m-2 text-center w-[80px] font-math bg-bgColor border-2 border-black rounded appearance-none focus:outline-none"
             placeholder="0"
             type="number"
-            value={inputValue}
+            value={inputState.value}
             onChange={handleInputChange}
-            name="square"
+            name="cube"
             min="0"
           />
           <div className="pt-4">Rozwiązanie:</div>
-          {errorMessage.length !== 0 ? (
+          {inputState.errorMessage.length !== 0 ? (
             <div className="text-red-600">
-              {errorMessage.map((error) => (
+              {inputState.errorMessage.map((error) => (
                 <div key={error}>{error}</div>
               ))}
             </div>
           ) : (
             <>
-              {squareRoot.getAllUniqueSteps().map((step, index) => (
+              {inputState.cubeRoot.getAllUniqueSteps().map((step, index) => (
                 <Formula key={index} formula={step} />
               ))}
             </>

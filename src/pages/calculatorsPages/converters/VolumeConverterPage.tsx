@@ -3,6 +3,7 @@ import Decimal from "decimal.js";
 import ConverterInputField from "../../../utilities/ConverterInputField";
 import Title from "../../../utilities/Title";
 import { unitVolume, unitVolumeLabels } from "../../../types/units";
+import { NavLink } from "react-router-dom";
 
 const VolumeConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -185,7 +186,11 @@ const VolumeConverterPage: FC = () => {
   ];
 
   return (
-    <div className="p-2 justify-center flex">
+    <div className="p-2 justify-center flex flex-col">
+      <div>
+        <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
+        jednostek objętości
+      </div>
       <div className="w-full">
         <Title text={"Przelicznik jednostek objętości"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />

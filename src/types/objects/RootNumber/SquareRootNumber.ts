@@ -4,17 +4,16 @@ class SquareRootNumber implements IRootNumber {
   private factors: number[] = [];
   private preFactors: number[] = [];
   private underFactors: number[] = [];
-  private preSquare: number | null = null;
-  private underSquare: number | null = null;
+  private preRoot: number | null = null;
+  private underRoot: number | null = null;
   private steps: string[] = [];
 
     constructor(private num: number) {
       this.setFactors();
-      this.setpreFactorsAndUnderFactors();
-      this.setPreSquareAndUnderSquare();
+      this.setPreFactorsAndUnderFactors();
+      this.setPreRootAndUnderRoot();
       this.setAllSteps();
     }
-
     private setFactors():void{
       let divident = this.num;
       if(divident === 0 || divident === 1) this.factors.push(divident);
@@ -28,8 +27,7 @@ class SquareRootNumber implements IRootNumber {
           divider += 1;
         }
     }
-
-    private setpreFactorsAndUnderFactors(): void {
+    private setPreFactorsAndUnderFactors(): void {
       this.underFactors = this.factors.slice();
       const indicesToRemove: number[] = [];
       for(let i=0; i<this.underFactors.length;i++){
@@ -46,8 +44,7 @@ class SquareRootNumber implements IRootNumber {
         }
       }
     }
-
-    private setPreSquareAndUnderSquare():void{
+    private setPreRootAndUnderRoot():void{
       let productPre = 1;
       let productUnder = 1;
 
@@ -58,10 +55,9 @@ class SquareRootNumber implements IRootNumber {
         productUnder *= element;
       });
 
-      this.preSquare = productPre;
-      this.underSquare = productUnder;
+      this.preRoot = productPre;
+      this.underRoot = productUnder;
     }
-
     private setAllSteps():void{
       this.steps = [
         this.getStep1(),
@@ -70,51 +66,76 @@ class SquareRootNumber implements IRootNumber {
         this.getStep4(),
       ];
     }
-   
+    convertToExponentialTable(num: number[]):number[][]{
+      const numbers: number[] = num.slice();
+      const pows: number[][] = [];
+      let exponent = 1;
+      if(numbers.length === 1){
+        pows.push([numbers[0],1]);
+        return pows;
+      } 
+      for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] !== numbers[i - 1]) {
+          pows.push([numbers[i - 1], exponent]);
+          exponent = 1;
+        } else {
+          exponent++;
+        }
+        if (i === numbers.length - 1) {
+          pows.push([numbers[i], exponent]);
+        }
+      }
+      return pows;
+    }
+    convertExponentialTableToString(arr: number[][]){
+      const formula = arr
+      .map(item => {
+        const base = item[0];
+        const exp = item[1];
+        return exp === 1 ? base.toString() : `${base}^{${exp}}`;
+      })
+      .join("\\cdot ");
+  
+    return formula;
+    }
     getFactors(): string{
       return this.factors.join(", ")
     }
-
     getStep1(): string{
       return `\\sqrt{${this.num}}`
     }
-
     getStep2():string{
-      const step2 = this.factors.join(" \\cdot ");
-      return `\\sqrt{${step2}}`
+      const pows = this.convertToExponentialTable(this.factors);
+      const step2 = this.convertExponentialTableToString(pows);
+    return `\\sqrt{${step2}}`;
     }
     getStep3():string{
-      const preFactorsString = this.preFactors.join(" \\cdot ");
-      const underFactorsString = this.underFactors.join(" \\cdot ");
+      const prePows = this.convertToExponentialTable(this.preFactors);
+      const preFactorsString = this.convertExponentialTableToString(prePows);
+
+      const underPows = this.convertToExponentialTable(this.underFactors);
+      const underFactorsString = this.convertExponentialTableToString(underPows);
   
-      if (underFactorsString === "") {
-        return `${preFactorsString}`;
-      } else {
-        return `${preFactorsString}\\sqrt{${underFactorsString}}`;
-      }
+      if (underFactorsString === "") return `${preFactorsString}`;
+      return `${preFactorsString}\\sqrt{${underFactorsString}}`;
     }
     getStep4():string{
-      if (this.underSquare === 1) return `${this.preSquare}`
-      if (this.preSquare === 1) return `\\sqrt{${this.underSquare}}`;
-      return `${this.preSquare}\\sqrt{${this.underSquare}}`;
+      if (this.underRoot === 1) return `${this.preRoot}`
+      if (this.preRoot === 1) return `\\sqrt{${this.underRoot}}`;
+      return `${this.preRoot}\\sqrt{${this.underRoot}}`;
     }
-
     getAllSteps():string[]{
       return this.steps;
     }
-
     getAllUniqueSteps():string[]{
       return Array.from(new Set(this.steps));
     }
-
     getPreRoot():number | null {
-      return this.preSquare;
+      return this.preRoot;
     }
     getUnderRoot():number | null {
-      return this.underSquare;
+      return this.underRoot;
     }
   }
 
-  
-    
   export default SquareRootNumber;

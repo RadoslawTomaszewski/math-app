@@ -3,6 +3,7 @@ import Decimal from "decimal.js";
 import ConverterInputField from "../../../utilities/ConverterInputField";
 import Title from "../../../utilities/Title";
 import { unitSpeed, unitSpeedLabels } from "../../../types/units";
+import { NavLink } from "react-router-dom";
 
 const SpeedConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -87,7 +88,11 @@ const SpeedConverterPage: FC = () => {
   ];
 
   return (
-    <div className="p-2 justify-center flex">
+    <div className="p-2 justify-center flex flex-col">
+      <div>
+        <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
+        jednostek prędkości
+      </div>
       <div className="w-full">
         <Title text={"Przelicznik jednostek prędkości"} size={"H2"} />
         <Title text={"Jednostki układu SI:"} size={"H3"} />

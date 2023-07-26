@@ -8,15 +8,18 @@ import MathExpression from "../../../utilities/articleItems/MathExpression";
 import liniowaRosnaca from "../../../assets/images/function-graphs/liniowa-rosnaca.png";
 import liniowaMalejaca from "../../../assets/images/function-graphs/liniowa-malejaca.png";
 import liniowaStala from "../../../assets/images/function-graphs/liniowa-stała.png";
-import wyrazWolny from "../../../assets/images/function-graphs/wyraz-wolny.png";
+import wyrazWolny from "../../../assets/images/function-graphs/liniowa-wyraz-wolny.png";
 import GraphImage from "../../../utilities/articleItems/GraphImage";
+import { NavLink } from "react-router-dom";
 
 const LinearFunctionPage: FC = () => {
   const zeroPlaceProof = [`ax+b=0`, `ax=-b`, `x = \\frac{-b}{a}`];
 
   return (
-    <div className="p-5 justify-center flex flex-col">
-      <div>Baza wiedzy → Funkcje → Funkcja Linowa</div>
+    <div className="p-2 justify-center flex flex-col">
+      <div>
+        <NavLink to={"../"}>Baza wiedzy</NavLink> → Funkcje → Funkcja Liniowa
+      </div>
       <div className="p-3 border-2 border-navColor rounded w-fit">
         <Title text={"Funkcja liniowa"} size={"H2"} />
         <p>
