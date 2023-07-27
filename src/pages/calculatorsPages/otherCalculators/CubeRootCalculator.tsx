@@ -66,11 +66,11 @@ const CubeRootCalculator: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Pierwiastki → Wyciąganie
         czynnika przed pierwiastek sześcienny
       </div>
-      <div className="w-full">
-        <div className="flex flex-col justify-center w-full items-center">
+      <div className="w-full h-full">
+        <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)] flex flex-col items-center">
           <Title
             text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
-            size="H2"
+            type="main-article"
           />
           <p className="pt-4">
             Wprowadź liczbę naturalną dodatnią pod pierwiastkiem:

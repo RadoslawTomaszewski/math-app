@@ -1,45 +1,27 @@
 import { NavLink } from "react-router-dom";
 import Title from "../../utilities/Title";
+import { SidebarCategory } from "../../components/Sidebar/SidebarCategoryItem";
+import { sidebarLinksCalculators } from "../../components/Sidebar/sidebarData";
 
 export default function CalculatorsPage() {
   return (
-    <div className="p-5 justify-center flex">
-      <div className="flex flex-col items-start p-3 border-2 border-borderColor rounded w-fit">
-        <Title text={"Przeliczniki"} size={"H2"} />
-        <NavLink to="kalkulator-dlugosci">
-          <Title text={"Przelicznik jednostek długości"} size={"H3"} />
-        </NavLink>
-        <NavLink to="kalkulator-powierzchni">
-          <Title text={"Przelicznik jednostek powierzchni"} size={"H3"} />
-        </NavLink>
-        <NavLink to="kalkulator-objetosci">
-          <Title text={"Przelicznik jednostek objętości"} size={"H3"} />
-        </NavLink>
-        <NavLink to="kalkulator-masy">
-          <Title text={"Przelicznik jednostek masy"} size={"H3"} />
-        </NavLink>
-        <NavLink to="kalkulator-czasu">
-          <Title text={"Przelicznik jednostek czasu"} size={"H3"} />
-        </NavLink>
-        <NavLink to="kalkulator-predkosci">
-          <Title text={"Przelicznik jednostek prędkości"} size={"H3"} />
-        </NavLink>
-        <NavLink to="kalkulator-informacji">
-          <Title text={"Przelicznik jednostek informacji"} size={"H3"} />
-        </NavLink>
-        <Title text={"Pozostałe kalkulatory"} size={"H2"} />
-        <NavLink to="czynnik-przed-pierwiastek-kwadratowy">
-          <Title
-            text={"Wyciąganie czynnika przed pierwiastek kwadratowy"}
-            size={"H3"}
-          />
-        </NavLink>
-        <NavLink to="czynnik-przed-pierwiastek-szescienny">
-          <Title
-            text={"Wyciąganie czynnika przed pierwiastek szescienny"}
-            size={"H3"}
-          />
-        </NavLink>
+    <div className="p-5 flex min-w-full">
+      <div className="flex flex-wrap min-w-full gap-2">
+        {sidebarLinksCalculators.map((item: SidebarCategory) => (
+          <div
+            key={item.category.text}
+            className="flex flex-col p-2 border-borderColor border-2 rounded min-w-[220px]"
+          >
+            <NavLink key={item.category.to} to={item.category.to}>
+              <Title text={item.category.text} type={"sidebar-category"} />
+            </NavLink>
+            {item.links.map((link) => (
+              <NavLink key={link.to} to={link.to}>
+                <Title text={link.text} type={"mainpage-link"} />
+              </NavLink>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

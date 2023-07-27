@@ -12,13 +12,13 @@ import wyrazWolny from "../../../assets/images/function-graphs/liniowa-wyraz-wol
 import GraphImage from "../../../utilities/articleItems/GraphImage";
 import { NavLink } from "react-router-dom";
 
-const LinearFunctionPage: FC = () => {
+const ArithmeticSequencePage: FC = () => {
   const zeroPlaceProof = [`ax+b=0`, `ax=-b`, `x = \\frac{-b}{a}`];
 
   return (
     <div className="p-2 justify-center flex flex-col">
       <div>
-        <NavLink to={"../"}>Baza wiedzy</NavLink> → Funkcje → Funkcja Liniowa
+        <NavLink to={"../"}>Baza wiedzy</NavLink> → Ciągi → Ciąg Arytmetyczny
       </div>
       <div className="p-3 border-2 border-navColor rounded w-full">
         <Title text={"Funkcja liniowa"} type={"main-article"} />
@@ -111,4 +111,4 @@ const LinearFunctionPage: FC = () => {
   );
 };
 
-export default LinearFunctionPage;
+export default ArithmeticSequencePage;

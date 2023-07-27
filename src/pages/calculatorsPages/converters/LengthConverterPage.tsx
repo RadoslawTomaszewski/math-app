@@ -105,9 +105,9 @@ const LengthConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek długości
       </div>
-      <div className="w-full">
-        <Title text={"Przelicznik jednostek długości"} size={"H2"} />
-        <Title text={"Jednostki układu SI:"} size={"H3"} />
+      <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
+        <Title text={"Przelicznik jednostek długości"} type={"main-article"} />
+        <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 7).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -115,7 +115,7 @@ const LengthConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Jednostki anglosaskie:"} size={"H3"} />
+        <Title text={"Jednostki anglosaskie:"} type={"submain-article"} />
         {unitFields.slice(7, 11).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -123,7 +123,7 @@ const LengthConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Pozostałe jednostki:"} size={"H3"} />
+        <Title text={"Pozostałe jednostki:"} type={"submain-article"} />
         {unitFields.slice(11).map((item) => (
           <ConverterInputField
             key={item.name}

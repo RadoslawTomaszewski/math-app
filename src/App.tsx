@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles/navbar.css";
+
 //LAYOUTS
 import { Layout } from "./Layout";
 import { KnowledgeBaseLayout } from "./Layout/knowledgeBaseLayout";
@@ -23,6 +24,8 @@ import CubeRootCalculator from "./pages/calculatorsPages/otherCalculators/CubeRo
 //KNOWLEDGE BASE
 import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
 import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/QuadraticFunctionPage";
+//WORK IN PROGRESS
+import WorkInProgress from "./components/WorkInProgress/WorkInProgress";
 
 const App = () => {
   return (
@@ -37,6 +40,7 @@ const App = () => {
               path="funkcja-kwadratowa"
               element={<QuadraticFunctionPage />}
             />
+            <Route path="*" element={<WorkInProgress />} />
           </Route>
           <Route path="forum" element={<ForumPage />} />
           <Route path="pogotowie" element={<HelplinePage />} />
@@ -72,6 +76,7 @@ const App = () => {
               path="czynnik-przed-pierwiastek-szescienny"
               element={<CubeRootCalculator />}
             />
+            <Route path="*" element={<WorkInProgress />} />
           </Route>
         </Route>
       </Routes>

@@ -2,35 +2,37 @@ import { FC } from "react";
 
 export interface ITitleProps {
   text: string;
-  size?: string;
+  type?: string;
 }
 
-const Title: FC<ITitleProps> = ({ text, size }) => {
-  if (size === "H1")
-    return <div className="text-4xl text-center font-bold py-2">{text}</div>;
-  else if (size === "H2")
-    return (
-      <div className="font-amatic text-3xl text-center font-bold py-1 hover:font-borderColor">
-        {text}
-      </div>
-    );
-  else if (size === "H3")
-    return (
-      <div className="font-amatic text-2xl text-center font-bold hover:font-borderColor">
-        {text}
-      </div>
-    );
-  else if (size === "NavHover")
-    return (
-      <div className="bghover font-amatic text-2xl text-center font-bold">
-        {text}
-      </div>
-    );
-  return (
-    <div className="font-amatic text-xl text-center font-bold py-1 hover:font-borderColor">
-      {text}
-    </div>
-  );
+const Title: FC<ITitleProps> = ({ text, type }) => {
+  let classNames = "font-amatic text-xl text-center font-bold py-1";
+
+  switch (type) {
+    case "main-article":
+      classNames = "font-amatic text-4xl text-center font-bold pb-2";
+      break;
+    case "submain-article":
+      classNames = "font-amatic text-2xl text-center font-bold pb-2";
+      break;
+    case "sidebar-category":
+      classNames =
+        "font-amatic text-3xl text-start font-bold hover:font-borderColor";
+      break;
+    case "sidebar-link":
+      classNames =
+        "font-amatic text-2xl mx-2 font-bold hover:font-borderColor bghover";
+      break;
+    case "mainpage-link":
+      classNames =
+        "font-amatic text-2xl font-bold hover:font-borderColor bghover";
+      break;
+    default:
+      classNames = "text-red-600 text-center font-bold border-red border-2";
+      break;
+  }
+
+  return <div className={classNames}>{text}</div>;
 };
 
 export default Title;

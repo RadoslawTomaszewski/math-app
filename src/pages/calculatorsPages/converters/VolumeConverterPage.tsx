@@ -191,9 +191,9 @@ const VolumeConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek objętości
       </div>
-      <div className="w-full">
-        <Title text={"Przelicznik jednostek objętości"} size={"H2"} />
-        <Title text={"Jednostki układu SI:"} size={"H3"} />
+      <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
+        <Title text={"Przelicznik jednostek objętości"} type={"main-article"} />
+        <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 7).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -201,7 +201,7 @@ const VolumeConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Jednostki anglosaskie:"} size={"H3"} />
+        <Title text={"Jednostki anglosaskie:"} type={"submain-article"} />
         {unitFields.slice(7, 12).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -209,7 +209,7 @@ const VolumeConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Pozaukładowe jednostki:"} size={"H3"} />
+        <Title text={"Pozaukładowe jednostki:"} type={"submain-article"} />
         {unitFields.slice(12).map((item) => (
           <ConverterInputField
             key={item.name}

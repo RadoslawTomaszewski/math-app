@@ -246,9 +246,12 @@ const InformationConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek informacji
       </div>
-      <div className="w-full">
-        <Title text={"Przelicznik jednostek informacji"} size={"H2"} />
-        <Title text={"Podstawowe jednostki:"} size={"H3"} />
+      <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
+        <Title
+          text={"Przelicznik jednostek informacji"}
+          type={"main-article"}
+        />
+        <Title text={"Podstawowe jednostki:"} type={"submain-article"} />
         {unitFields.slice(0, 2).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -256,7 +259,7 @@ const InformationConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Standard SI:"} size={"H3"} />
+        <Title text={"Standard SI:"} type={"submain-article"} />
         {unitFields.slice(2, 10).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -264,7 +267,7 @@ const InformationConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Standard IEC:"} size={"H3"} />
+        <Title text={"Standard IEC:"} type={"submain-article"} />
         {unitFields.slice(10, 18).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -272,7 +275,7 @@ const InformationConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Standard JEDEC:"} size={"H3"} />
+        <Title text={"Standard JEDEC:"} type={"submain-article"} />
         {unitFields.slice(18).map((item) => (
           <ConverterInputField
             key={item.name}

@@ -122,9 +122,9 @@ const TimeConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek czasu
       </div>
-      <div className="w-full">
-        <Title text={"Przelicznik jednostek czasu"} size={"H2"} />
-        <Title text={"Jednostki układu SI:"} size={"H3"} />
+      <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
+        <Title text={"Przelicznik jednostek czasu"} type={"main-article"} />
+        <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 4).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -134,7 +134,7 @@ const TimeConverterPage: FC = () => {
         ))}
         <Title
           text={"Jednostki w sześćdziesiątkowym systemie liczbowym:"}
-          size={"H3"}
+          type={"submain-article"}
         />
         {unitFields.slice(4, 9).map((item) => (
           <ConverterInputField
@@ -143,7 +143,7 @@ const TimeConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Jednostki astronomiczne:"} size={"H3"} />
+        <Title text={"Jednostki astronomiczne:"} type={"submain-article"} />
         {unitFields.slice(9).map((item) => (
           <ConverterInputField
             key={item.name}

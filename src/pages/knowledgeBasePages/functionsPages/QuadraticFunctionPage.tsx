@@ -58,7 +58,7 @@ const QuadraticFunctionPage: FC = () => {
         <NavLink to={"../"}>Baza wiedzy</NavLink> → Funkcje → Funkcja Kwadratowa
       </div>
       <div className="p-3 border-2 border-navColor rounded w-fit">
-        <Title text={"Funkcja kwadratowa"} size={"H2"} />
+        <Title text={"Funkcja kwadratowa"} type={"main-article"} />
         <p>
           <b>Funkcja kwadratowa</b> to funkcja, której wykres jest parabolą.
         </p>
@@ -218,8 +218,8 @@ const QuadraticFunctionPage: FC = () => {
         <Proof steps={qProof} text="Dowód" />
         <ArticleBorder />
         <p>
-          <b>Oś symetrii</b> paraboli to równanie prostej, które wyraża się
-          wzorem:
+          <b>Oś symetrii</b> paraboli to równanie prostej równoległej do osi OY,
+          które wyraża się wzorem:
         </p>
         <Formula formula={`x = p`} />
         <GraphImage
@@ -229,7 +229,7 @@ const QuadraticFunctionPage: FC = () => {
         />
         <ArticleBorder />
         <p>
-          <b>Wyraz wolny</b> funkcji liniowej pozwala określić współrzędne
+          <b>Wyraz wolny</b> funkcji kwadratowej pozwala określić współrzędne
           punktu przecięcia wykresu funkcji z osią OY:
         </p>
         <GraphImage

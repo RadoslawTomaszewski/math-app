@@ -6,7 +6,7 @@ export const CalculatorsLayout = () => {
   return (
     <div>
       <div className="relative flex flex-row min-w-full">
-        <div className="min-w-[200px] p-2 hidden md:block bg-sideColor">
+        <div className="min-w-[240px] p-2 hidden md:block bg-sideColor">
           <Sidebar sidebarLinks={sidebarLinksCalculators} />
         </div>
         <div className="w-full">

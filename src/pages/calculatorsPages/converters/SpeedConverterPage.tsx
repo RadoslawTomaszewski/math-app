@@ -93,9 +93,9 @@ const SpeedConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek prędkości
       </div>
-      <div className="w-full">
-        <Title text={"Przelicznik jednostek prędkości"} size={"H2"} />
-        <Title text={"Jednostki układu SI:"} size={"H3"} />
+      <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
+        <Title text={"Przelicznik jednostek prędkości"} type={"main-article"} />
+        <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 2).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -103,7 +103,7 @@ const SpeedConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Jednostki anglosaskie:"} size={"H3"} />
+        <Title text={"Jednostki anglosaskie:"} type={"submain-article"} />
         {unitFields.slice(2, 4).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -111,7 +111,7 @@ const SpeedConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Prędkości w fizyce:"} size={"H3"} />
+        <Title text={"Prędkości w fizyce:"} type={"submain-article"} />
         {unitFields.slice(4, 6).map((item) => (
           <ConverterInputField
             key={item.name}
@@ -119,7 +119,7 @@ const SpeedConverterPage: FC = () => {
             {...item}
           />
         ))}
-        <Title text={"Pozostałe jednostki:"} size={"H3"} />
+        <Title text={"Pozostałe jednostki:"} type={"submain-article"} />
         {unitFields.slice(6).map((item) => (
           <ConverterInputField
             key={item.name}

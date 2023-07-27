@@ -7,11 +7,11 @@ import { NavLink } from "react-router-dom";
 const SquareRootCalculator: FC = () => {
   const [inputState, setInputState] = useState<{
     value: string | undefined;
-    cubeRoot: SquareRootNumber;
+    squareRoot: SquareRootNumber;
     errorMessage: string[];
   }>({
     value: "0",
-    cubeRoot: new SquareRootNumber(0),
+    squareRoot: new SquareRootNumber(0),
     errorMessage: [],
   });
 
@@ -48,13 +48,13 @@ const SquareRootCalculator: FC = () => {
       errors = [];
       setInputState((prev) => ({
         ...prev,
-        cubeRoot: new SquareRootNumber(valueNumber),
+        squareRoot: new SquareRootNumber(valueNumber),
       }));
     } else {
       setError(valueNumber, errors);
       setInputState((prev) => ({
         ...prev,
-        cubeRoot: new SquareRootNumber(0),
+        squareRoot: new SquareRootNumber(0),
       }));
     }
   };
@@ -65,11 +65,11 @@ const SquareRootCalculator: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Pierwiastki → Wyciąganie
         czynnika przed pierwiastek kwadratowy
       </div>
-      <div className="w-full">
-        <div className="flex flex-col justify-center w-full items-center">
+      <div className="w-full h-full">
+        <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)] flex flex-col items-center">
           <Title
             text="Wyciąganie czynnika całkowitego przed pierwiastek kwadratowy"
-            size="H2"
+            type="main-article"
           />
           <p className="pt-4">
             Wprowadź liczbę naturalną dodatnią pod pierwiastkiem:
@@ -80,7 +80,7 @@ const SquareRootCalculator: FC = () => {
             type="number"
             value={inputState.value}
             onChange={handleInputChange}
-            name="cube"
+            name="square"
             min="0"
           />
           <div className="pt-4">Rozwiązanie:</div>
@@ -92,7 +92,7 @@ const SquareRootCalculator: FC = () => {
             </div>
           ) : (
             <>
-              {inputState.cubeRoot.getAllUniqueSteps().map((step, index) => (
+              {inputState.squareRoot.getAllUniqueSteps().map((step, index) => (
                 <Formula key={index} formula={step} />
               ))}
             </>

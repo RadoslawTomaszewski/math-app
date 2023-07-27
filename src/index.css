@@ -2,6 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Gotu&family=Lora:ital,wght@1,600&family=Manrope:wght@200;300;500;700;800&display=swap");
+
 body {
   font-family: "Gotu", sans-serif;
 }
