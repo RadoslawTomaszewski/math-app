@@ -1,3 +1,5 @@
+import WorkInProgress from "../../components/WorkInProgress/WorkInProgress";
+
 export default function ForumPage() {
-  return <div>Forum</div>;
+  return <WorkInProgress />;
 }

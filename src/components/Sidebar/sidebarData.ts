@@ -176,7 +176,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
     {
       category:  { to: "pozostale", text: "Pozostałe" },
       links: [
-        { to: "gra-w-zycie", text: "Gra-w-zycie" },
+        { to: "gra-w-zycie", text: "Gra w życie" },
       ],
     },
   ];

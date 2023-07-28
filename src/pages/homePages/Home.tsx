@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div className="flex justify-center">Home</div>;
+import WorkInProgress from "../../components/WorkInProgress/WorkInProgress";
+
+export default function HelplinePage() {
+  return <WorkInProgress />;
 }

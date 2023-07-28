@@ -1,3 +1,5 @@
+import WorkInProgress from "../../components/WorkInProgress/WorkInProgress";
+
 export default function HelplinePage() {
-  return <div className="flex justify-center">POGOTOWIE</div>;
+  return <WorkInProgress />;
 }

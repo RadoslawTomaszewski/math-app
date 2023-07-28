@@ -19,8 +19,9 @@ import WeightConverterPage from "./pages/calculatorsPages/converters/WeightConve
 import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverterPage";
 import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConverterPage";
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
-import SquareRootCalculator from "./pages/calculatorsPages/otherCalculators/SquareRootCalculator";
-import CubeRootCalculator from "./pages/calculatorsPages/otherCalculators/CubeRootCalculator";
+import SquareRootCalculator from "./pages/calculatorsPages/arithmeticCalculators/SquareRootCalculator";
+import CubeRootCalculator from "./pages/calculatorsPages/arithmeticCalculators/CubeRootCalculator";
+import GameOfLife from "./pages/calculatorsPages/otherCalculators/GameOfLife";
 //KNOWLEDGE BASE
 import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
 import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/QuadraticFunctionPage";
@@ -76,6 +77,7 @@ const App = () => {
               path="czynnik-przed-pierwiastek-szescienny"
               element={<CubeRootCalculator />}
             />
+            <Route path="gra-w-zycie" element={<GameOfLife />} />
             <Route path="*" element={<WorkInProgress />} />
           </Route>
         </Route>

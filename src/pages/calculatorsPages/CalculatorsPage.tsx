@@ -2,27 +2,38 @@ import { NavLink } from "react-router-dom";
 import Title from "../../utilities/Title";
 import { SidebarCategory } from "../../components/Sidebar/SidebarCategoryItem";
 import { sidebarLinksCalculators } from "../../components/Sidebar/sidebarData";
+import Masonry from "react-masonry-css";
 
 export default function CalculatorsPage() {
+  const breakpointColumnsObj = {
+    default: 4,
+    2000: 3,
+    1740: 2,
+    1260: 1,
+  };
   return (
-    <div className="p-5 flex min-w-full">
-      <div className="flex flex-wrap min-w-full gap-2">
+    <div className="p-5 min-w-full flex justify-center items-center">
+      <Masonry breakpointCols={breakpointColumnsObj} className="flex flex-wrap">
         {sidebarLinksCalculators.map((item: SidebarCategory) => (
           <div
             key={item.category.text}
-            className="flex flex-col p-2 border-borderColor border-2 rounded min-w-[220px]"
+            className="grid m-3 md:grid-cols p-2 border-borderColor border-2 rounded max-h-fit w-[95vw] md:w-[450px] "
           >
-            <NavLink key={item.category.to} to={item.category.to}>
-              <Title text={item.category.text} type={"sidebar-category"} />
-            </NavLink>
+            <div className="col-span-2">
+              <NavLink key={item.category.to} to={item.category.to}>
+                <Title text={item.category.text} type={"main-article"} />
+              </NavLink>
+            </div>
             {item.links.map((link) => (
               <NavLink key={link.to} to={link.to}>
-                <Title text={link.text} type={"mainpage-link"} />
+                <div className="px-3">
+                  <Title text={link.text} type={"mainpage-link"} />
+                </div>
               </NavLink>
             ))}
           </div>
         ))}
-      </div>
+      </Masonry>
     </div>
   );
 }

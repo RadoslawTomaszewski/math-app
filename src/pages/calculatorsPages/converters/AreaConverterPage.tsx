@@ -113,7 +113,8 @@ const AreaConverterPage: FC = () => {
   return (
     <div className="p-2 justify-center flex flex-col">
       <div>
-        <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
+        <NavLink to={"../"}>Kalkulatory</NavLink> →{" "}
+        <NavLink to={"przeliczniki"}>Przeliczniki</NavLink> → Przelicznik
         jednostek powierzchni
       </div>
       <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
