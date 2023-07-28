@@ -23,8 +23,12 @@ import SquareRootCalculator from "./pages/calculatorsPages/arithmeticCalculators
 import CubeRootCalculator from "./pages/calculatorsPages/arithmeticCalculators/CubeRootCalculator";
 import GameOfLife from "./pages/calculatorsPages/otherCalculators/GameOfLife";
 //KNOWLEDGE BASE
-import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/LinearFunctionPage";
-import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/QuadraticFunctionPage";
+import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/linearFunction/LinearFunctionPage";
+import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/quadraticFunction/QuadraticFunctionPage";
+import ArithmeticSequencePage from "./pages/knowledgeBasePages/sequencesPages/arithmeticSequence/ArithmeticSequencePage";
+import GeometricSequencePage from "./pages/knowledgeBasePages/sequencesPages/geometricSequence/GeometricSequencePage";
+import ShortMultiplicationFormulasPage from "./pages/knowledgeBasePages/algebraicExpressionPages/shortMultiplicationFormulas/ShortMultiplicationFormulasPage";
+
 //WORK IN PROGRESS
 import WorkInProgress from "./components/WorkInProgress/WorkInProgress";
 
@@ -40,6 +44,18 @@ const App = () => {
             <Route
               path="funkcja-kwadratowa"
               element={<QuadraticFunctionPage />}
+            />
+            <Route
+              path="ciag-arytmetyczny"
+              element={<ArithmeticSequencePage />}
+            />
+            <Route
+              path="ciag-geometryczny"
+              element={<GeometricSequencePage />}
+            />
+            <Route
+              path="wzory-skroconego-mnozenia"
+              element={<ShortMultiplicationFormulasPage />}
             />
             <Route path="*" element={<WorkInProgress />} />
           </Route>

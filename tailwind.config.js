@@ -13,6 +13,7 @@ module.exports = {
         bgColor: "#fef7e5",
         navColor: "#68B9FF",
         borderColor: "#095FAD",
+        articleColor: "#FFFFF5",
       },
     },
   },

@@ -10,8 +10,8 @@ export const KnowledgeBaseLayout = () => {
         <div className="min-w-[240px] p-2 hidden md:block bg-sideColor">
           <Sidebar sidebarLinks={sidebarLinksKnowledgeBase} />
         </div>
-        <div className="w-full">
-          <div className="min-h-[calc(100vh-114px)] max-w-[100vw]">
+        <div className="w-full flex justify-center">
+          <div className="min-h-[calc(100vh-114px)] max-w-[1500px] w-full">
             <Outlet />
           </div>
         </div>
