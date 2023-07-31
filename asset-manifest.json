@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/math-app/static/css/main.8dfbf448.css",
-    "main.js": "/math-app/static/js/main.23f62ea3.js",
+    "main.css": "/math-app/static/css/main.c97b944f.css",
+    "main.js": "/math-app/static/js/main.a022be9d.js",
     "static/media/kwadratowa-ujemna.png": "/math-app/static/media/kwadratowa-ujemna.1536b92c6215bf4b37f2.png",
     "static/media/kwadratowa-dodatnia.png": "/math-app/static/media/kwadratowa-dodatnia.f819c713a26724a4c081.png",
     "static/media/pseudokwadratowa.png": "/math-app/static/media/pseudokwadratowa.99b91dde980d77b18646.png",
+    "static/media/pi.gif": "/math-app/static/media/pi.ec795e57a3c34340e037.gif",
     "static/media/liniowa-malejaca.png": "/math-app/static/media/liniowa-malejaca.4665967c699eb5d4a609.png",
     "static/media/liniowa-rosnaca.png": "/math-app/static/media/liniowa-rosnaca.a8bf9929b8c9e54ec81d.png",
     "static/media/liniowa-stała.png": "/math-app/static/media/liniowa-stała.5ade4606325faa74f1c6.png",
     "static/media/kwadratowa-wyraz-wolny.png": "/math-app/static/media/kwadratowa-wyraz-wolny.170cbcc33eb3455d4867.png",
     "static/media/wierzcholek.png": "/math-app/static/media/wierzcholek.02a91553e1b577d57b52.png",
     "static/media/kwadratowa-os-symetrii.png": "/math-app/static/media/kwadratowa-os-symetrii.f3e8d80d0c4d32722a2f.png",
+    "static/media/skroconeMnozenie3.png": "/math-app/static/media/skroconeMnozenie3.172ddbfd1e8ec1113e35.png",
     "static/media/liniowa-wyraz-wolny.png": "/math-app/static/media/liniowa-wyraz-wolny.7b78a3e13d77b11672be.png",
+    "static/media/skroconeMnozenie.png": "/math-app/static/media/skroconeMnozenie.db179872ac83c322865d.png",
     "static/media/meme.jpg": "/math-app/static/media/meme.e50c8433e382a2eb6c02.jpg",
     "index.html": "/math-app/index.html",
     "static/media/hamburger.svg": "/math-app/static/media/hamburger.7576218048312e9d9b62930754a442fc.svg",
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
-    "main.8dfbf448.css.map": "/math-app/static/css/main.8dfbf448.css.map",
-    "main.23f62ea3.js.map": "/math-app/static/js/main.23f62ea3.js.map"
+    "main.c97b944f.css.map": "/math-app/static/css/main.c97b944f.css.map",
+    "main.a022be9d.js.map": "/math-app/static/js/main.a022be9d.js.map"
   },
   "entrypoints": [
-    "static/css/main.8dfbf448.css",
-    "static/js/main.23f62ea3.js"
+    "static/css/main.c97b944f.css",
+    "static/js/main.a022be9d.js"
   ]
 }
