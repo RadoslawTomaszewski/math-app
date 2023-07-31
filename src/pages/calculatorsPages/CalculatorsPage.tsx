@@ -17,7 +17,7 @@ export default function CalculatorsPage() {
         {sidebarLinksCalculators.map((item: SidebarCategory) => (
           <div
             key={item.category.text}
-            className="grid m-3 md:grid-cols p-2 border-borderColor border-2 rounded max-h-fit w-[95vw] md:w-[450px] "
+            className="grid m-3 md:grid-cols p-2 border-borderColor border-2 rounded max-h-fit w-[95vw] md:w-[450px] bg-articleColor"
           >
             <div className="col-span-2">
               <NavLink key={item.category.to} to={item.category.to}>

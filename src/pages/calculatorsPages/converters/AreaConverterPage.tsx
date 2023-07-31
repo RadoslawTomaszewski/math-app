@@ -117,7 +117,7 @@ const AreaConverterPage: FC = () => {
         <NavLink to={"przeliczniki"}>Przeliczniki</NavLink> → Przelicznik
         jednostek powierzchni
       </div>
-      <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
+      <div className="p-3 border-2 border-borderColor bg-articleColor rounded flex flex-col items-center">
         <Title
           text={"Przelicznik jednostek powierzchni"}
           type={"main-article"}

@@ -67,7 +67,7 @@ const CubeRootCalculator: FC = () => {
         czynnika przed pierwiastek sześcienny
       </div>
       <div className="w-full h-full">
-        <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)] flex flex-col items-center">
+        <div className="p-3 border-2 border-navColor bg-articleColor rounded flex flex-col items-center min-h-[480px]">
           <Title
             text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
             type="main-article"

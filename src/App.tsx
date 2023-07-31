@@ -27,14 +27,15 @@ import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/linear
 import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/quadraticFunction/QuadraticFunctionPage";
 import ArithmeticSequencePage from "./pages/knowledgeBasePages/sequencesPages/arithmeticSequence/ArithmeticSequencePage";
 import GeometricSequencePage from "./pages/knowledgeBasePages/sequencesPages/geometricSequence/GeometricSequencePage";
-import ShortMultiplicationFormulasPage from "./pages/knowledgeBasePages/algebraicExpressionPages/shortMultiplicationFormulas/ShortMultiplicationFormulasPage";
+import ShortMultiplicationPage from "./pages/knowledgeBasePages/algebraicExpressionPages/shortMultiplicationFormulas/ShortMultiplicationFormulasPage";
+import PiNumberPage from "./pages/knowledgeBasePages/constantsPages/PiNumber/PiNumberPage";
 
 //WORK IN PROGRESS
 import WorkInProgress from "./components/WorkInProgress/WorkInProgress";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -55,8 +56,9 @@ const App = () => {
             />
             <Route
               path="wzory-skroconego-mnozenia"
-              element={<ShortMultiplicationFormulasPage />}
+              element={<ShortMultiplicationPage />}
             />
+            <Route path="liczba-pi" element={<PiNumberPage />} />
             <Route path="*" element={<WorkInProgress />} />
           </Route>
           <Route path="forum" element={<ForumPage />} />

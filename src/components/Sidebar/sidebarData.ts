@@ -121,7 +121,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
     {
       category: { to: "stale-matematyczne", text: "Stałe matematyczne" },
       links: [
-        { to: "liczba-pi", text: "Stała Archimedesa" },
+        { to: "liczba-pi", text: "Liczba Pi" },
         { to: "liczba-e", text: "Liczba Eulera" },
         { to: "zloty-podzial", text: "Złoty podział" },
         { to: "srebrny-podzial", text: "Srebrny podział" },

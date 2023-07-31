@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,7 +13,6 @@
     "@types/node": "^16.18.38",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "gh-pages": "^5.0.0",
     "mathjax": "^3.2.2",
     "mathjax-full": "^3.2.2",
     "mathjax-react": "^2.0.1",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "daisyui": "^3.2.1",
+    "gh-pages": "^5.0.0",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "tailwindcss": "^3.3.2"
@@ -55,5 +58,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://RadoslawTomaszewski/github.io/math-app"
+  "homepage": "https://radoslawtomaszewski.github.io/math-app/"
 }

@@ -22,7 +22,7 @@ const ConverterInputField: FC<IConvertInputFieldProps> = ({
           {label + ":"}
         </span>
         <input
-          className="ml-2 text-right font-math col-span-3 md:col-span-3 md:min-w-[220px] bg-bgColor border-y-2 border-y-black border-l-2 border-l-black rounded-l appearance-none focus:outline-none "
+          className="ml-2 text-right font-math col-span-3 md:col-span-3 md:min-w-[220px] bg-articleColor border-y-2 border-y-black border-l-2 border-l-black rounded-l appearance-none focus:outline-none "
           placeholder="0"
           type="number"
           value={Number(value) || ""}

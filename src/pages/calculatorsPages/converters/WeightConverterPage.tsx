@@ -121,7 +121,7 @@ const WeightConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek masy
       </div>
-      <div className="p-3 border-2 border-navColor rounded w-full min-h-[calc(100vh-154px)]">
+      <div className="p-3 border-2 border-borderColor bg-articleColor rounded flex flex-col items-center">
         <Title text={"Przelicznik jednostek masy"} type={"main-article"} />
         <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 9).map((item) => (

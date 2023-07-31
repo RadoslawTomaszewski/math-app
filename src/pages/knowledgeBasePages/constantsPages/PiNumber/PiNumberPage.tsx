@@ -1,14 +1,14 @@
 import { FC } from "react";
 import LinksHeader from "../../../../utilities/LinksHeader";
-import ShortMultiplicationFormulasContent from "./ShortMultiplicationFormulasContent";
+import PiNumberContent from "./PiNumberContent";
 
-const ShortMultiplicationPage: FC = () => {
+const PiNumberPage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
   const parent = {
     link: "../wyrazenia-algebraiczne",
     name: "Wyrażenia algebraiczne",
   };
-  const childName = "Wzory skróconego mnożenia";
+  const childName = "Liczba Pi";
 
   return (
     <div className="p-2 justify-center flex flex-col">
@@ -18,10 +18,10 @@ const ShortMultiplicationPage: FC = () => {
         childName={childName}
       />
       <div className="p-3 border-2 border-navColor bg-articleColor rounded">
-        <ShortMultiplicationFormulasContent />
+        <PiNumberContent />
       </div>
     </div>
   );
 };
 
-export default ShortMultiplicationPage;
+export default PiNumberPage;
