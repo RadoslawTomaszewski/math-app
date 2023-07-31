@@ -29,6 +29,7 @@ import ArithmeticSequencePage from "./pages/knowledgeBasePages/sequencesPages/ar
 import GeometricSequencePage from "./pages/knowledgeBasePages/sequencesPages/geometricSequence/GeometricSequencePage";
 import ShortMultiplicationPage from "./pages/knowledgeBasePages/algebraicExpressionPages/shortMultiplicationFormulas/ShortMultiplicationFormulasPage";
 import PiNumberPage from "./pages/knowledgeBasePages/constantsPages/PiNumber/PiNumberPage";
+import NaturalNumberPage from "./pages/knowledgeBasePages/sets/naturalNumbers/NaturalNumberPage";
 
 //WORK IN PROGRESS
 import WorkInProgress from "./components/WorkInProgress/WorkInProgress";
@@ -59,6 +60,7 @@ const App = () => {
               element={<ShortMultiplicationPage />}
             />
             <Route path="liczba-pi" element={<PiNumberPage />} />
+            <Route path="liczby-naturalne" element={<NaturalNumberPage />} />
             <Route path="*" element={<WorkInProgress />} />
           </Route>
           <Route path="forum" element={<ForumPage />} />
