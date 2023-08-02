@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LinksHeader from "../../../../utilities/LinksHeader";
 import ArithmeticSequenceContent from "./ArithmeticSequenceContent";
+import { Wrapper } from "../../../../components/Wrapper/Wrapper";
 
 const ArithmeticSequencePage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
@@ -14,9 +15,9 @@ const ArithmeticSequencePage: FC = () => {
         parent={parent}
         childName={childName}
       />
-      <div className="p-3 border-2 border-navColor bg-articleColor rounded">
+      <Wrapper>
         <ArithmeticSequenceContent />
-      </div>
+      </Wrapper>
     </div>
   );
 };

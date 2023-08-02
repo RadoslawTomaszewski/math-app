@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LinksHeader from "../../../../utilities/LinksHeader";
 import LinearFunctionContent from "../linearFunction/LinearFunctionContent";
+import { Wrapper } from "../../../../components/Wrapper/Wrapper";
 
 const LinearFunctionPage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
@@ -14,9 +15,9 @@ const LinearFunctionPage: FC = () => {
         parent={parent}
         childName={childName}
       />
-      <div className="p-3 border-2 border-navColor bg-articleColor rounded w-fit">
+      <Wrapper>
         <LinearFunctionContent />
-      </div>
+      </Wrapper>
     </div>
   );
 };

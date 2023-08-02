@@ -6,24 +6,33 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
     links: [
       { to: "dodawanie", text: "Dodawanie" },
       { to: "odejmowanie", text: "Odejmowanie" },
-      { to: "mnożenie", text: "Mnożenie" },
+      { to: "mnozenie", text: "Mnożenie" },
       { to: "dzielenie", text: "Dzielenie" },
       { to: "modulo", text: "Modulo" },
-      { to: "potęgowanie", text: "Potęgowanie" },
+      { to: "potegowanie", text: "Potęgowanie" },
       { to: "pierwiastkowanie", text: "Pierwiastkowanie" },
       { to: "logarytmy", text: "Logarytmy" },
       { to: "rozniczkowanie", text: "Różniczkowanie" },
       { to: "całkowanie", text: "Całkowanie" },
-      { to: "wartosc-bezwzględna", text: "Wartość bezwzględna" },
+      { to: "wartosc-bezwzgledna", text: "Wartość bezwzględna" },
       { to: "silnia", text: "Silnia" },
       { to: "dwumian newtona", text: "Dwumian Newtona" },
       { to: "operatory-logiczne", text: "Operatory logiczne" },
     ],
   },  
   {
-    category: { to: "wyrazenia-algebraiczne", text: "Wyrażenia Algebraiczne" },
+    category: { to: "stale-matematyczne", text: "Stałe matematyczne" },
     links: [
-      { to: "wyrazenia-algebraiczne", text: "Wyrażenia Algebraiczne" },
+      { to: "liczba-pi", text: "Liczba Pi" },
+      { to: "liczba-e", text: "Liczba Eulera" },
+      { to: "zloty-podzial", text: "Złoty podział" },
+      { to: "srebrny-podzial", text: "Srebrny podział" },
+      { to: "liczba-plastikowa", text: "Liczba plastikowa" },
+    ],
+  },
+  {
+    category: { to: "wyrazenia-algebraiczne-main", text: "Wyrażenia Algebraiczne" },
+    links: [
       { to: "wielomiany", text: "Wielomiany" },
       { to: "wzory-skroconego-mnozenia", text: "Wzory Skr. Mnożenia" },
       { to: "rownania", text: "Równania" },
@@ -118,16 +127,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         { to: "rozklad-hipergeometryczny", text: "Rozkład hipergeometryczny" },
       ],
     },
-    {
-      category: { to: "stale-matematyczne", text: "Stałe matematyczne" },
-      links: [
-        { to: "liczba-pi", text: "Liczba Pi" },
-        { to: "liczba-e", text: "Liczba Eulera" },
-        { to: "zloty-podzial", text: "Złoty podział" },
-        { to: "srebrny-podzial", text: "Srebrny podział" },
-        { to: "liczba-plastikowa", text: "Liczba plastikowa" },
-      ],
-    },
+
     {
       category: { to: "twierdzenia", text: "Twierdzenia" },
       links: [
@@ -141,6 +141,15 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         { to: "twierdzenie-o-stycznych", text: "stycznych" },
         { to: "twierdzenie-o-siecznych", text: "siecznych" },
         { to: "twierdzenie-o-siecznej-i-stycznej", text: "siecznej i stycznej" },
+      ],
+    },
+    {
+      category: { to: "grafy", text: "Grafy" },
+      links: [
+        { to: "graf-planarny", text: "Graf planarny" },
+        { to: "graf-eulerowski", text: "Graf eulerowski" },
+        { to: "graf-hamiltonowski", text: "Graf hamiltonowski" },
+        { to: "drzewa", text: "drzewa" },
       ],
     },
   ];

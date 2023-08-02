@@ -43,6 +43,7 @@ export const SidebarCategoryItem: FC<SidebarCategoryItemProps> = ({
           )}
         </div>
       </div>
+      <div></div>
       {isExpanded && (
         <div className="flex flex-col">
           {links.map((navlink) => (

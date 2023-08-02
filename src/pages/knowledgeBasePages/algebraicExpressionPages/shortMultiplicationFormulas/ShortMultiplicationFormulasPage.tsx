@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LinksHeader from "../../../../utilities/LinksHeader";
 import ShortMultiplicationFormulasContent from "./ShortMultiplicationFormulasContent";
+import { Wrapper } from "../../../../components/Wrapper/Wrapper";
 
 const ShortMultiplicationPage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
@@ -17,9 +18,9 @@ const ShortMultiplicationPage: FC = () => {
         parent={parent}
         childName={childName}
       />
-      <div className="p-3 border-2 border-navColor bg-articleColor rounded">
+      <Wrapper>
         <ShortMultiplicationFormulasContent />
-      </div>
+      </Wrapper>
     </div>
   );
 };

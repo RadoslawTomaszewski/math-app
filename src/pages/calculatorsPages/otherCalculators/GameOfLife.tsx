@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Wrapper } from "../../../components/Wrapper/Wrapper";
+import Title from "../../../utilities/Title";
 
 const numRows = 30;
 const numCols = 15;
@@ -86,37 +88,40 @@ const GameOfLife = () => {
   };
 
   return (
-    <div className="m-2 flex flex-col justify-center items-center">
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${numCols}, ${cellSize}px)`,
-        }}
-      >
-        {grid.map((rows, i) =>
-          rows.map((col, j) => (
-            <div
-              key={`${i}-${j}`}
-              onClick={() => handleCellClick(i, j)}
-              style={{
-                width: cellSize,
-                height: cellSize,
-                backgroundColor: grid[i][j] ? "black" : "white",
-                border: "solid 1px black",
-              }}
-            />
-          ))
-        )}
+    <Wrapper>
+      <Title text="Gra w życie" type="main-article" />
+      <div className="m-2 flex flex-col justify-center items-center">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${numCols}, ${cellSize}px)`,
+          }}
+        >
+          {grid.map((rows, i) =>
+            rows.map((col, j) => (
+              <div
+                key={`${i}-${j}`}
+                onClick={() => handleCellClick(i, j)}
+                style={{
+                  width: cellSize,
+                  height: cellSize,
+                  backgroundColor: grid[i][j] ? "black" : "white",
+                  border: "solid 1px black",
+                }}
+              />
+            ))
+          )}
+        </div>
+        <div className="flex justify-center gap-2">
+          <button className="btn" onClick={handleStartClick}>
+            {running ? "Stop" : "Start"}
+          </button>
+          <button className="btn" onClick={handleClearClick}>
+            Clear
+          </button>
+        </div>
       </div>
-      <div className="flex justify-center gap-2">
-        <button className="btn" onClick={handleStartClick}>
-          {running ? "Stop" : "Start"}
-        </button>
-        <button className="btn" onClick={handleClearClick}>
-          Clear
-        </button>
-      </div>
-    </div>
+    </Wrapper>
   );
 };
 

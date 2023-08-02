@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LinksHeader from "../../../../utilities/LinksHeader";
 import GeometricSequenceContent from "./GeometricSequenceContent";
+import { Wrapper } from "../../../../components/Wrapper/Wrapper";
 
 const GeometricSequencePage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
@@ -14,9 +15,9 @@ const GeometricSequencePage: FC = () => {
         parent={parent}
         childName={childName}
       />
-      <div className="p-3 border-2 border-navColor bg-articleColor rounded">
+      <Wrapper>
         <GeometricSequenceContent />
-      </div>
+      </Wrapper>
     </div>
   );
 };

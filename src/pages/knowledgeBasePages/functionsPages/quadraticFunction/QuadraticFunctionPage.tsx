@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LinksHeader from "../../../../utilities/LinksHeader";
 import QuadraticFunctionContent from "./QuadraticFunctionContent";
+import { Wrapper } from "../../../../components/Wrapper/Wrapper";
 
 const QuadraticFunctionPage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
@@ -14,9 +15,9 @@ const QuadraticFunctionPage: FC = () => {
         parent={parent}
         childName={childName}
       />
-      <div className="p-3 border-2 border-navColor bg-articleColor rounded w-fit">
+      <Wrapper>
         <QuadraticFunctionContent />
-      </div>
+      </Wrapper>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import { FC, useState, ChangeEvent } from "react";
 import Decimal from "decimal.js";
-import ConverterInputField from "../../../utilities/ConverterInputField";
+import ConverterInputField from "./ConverterInputField";
 import Title from "../../../utilities/Title";
 import { unitArea, unitAreaLabels } from "../../../types/units";
 import { NavLink } from "react-router-dom";
+import { Wrapper } from "../../../components/Wrapper/Wrapper";
 
 const AreaConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -117,7 +118,7 @@ const AreaConverterPage: FC = () => {
         <NavLink to={"przeliczniki"}>Przeliczniki</NavLink> → Przelicznik
         jednostek powierzchni
       </div>
-      <div className="p-3 border-2 border-borderColor bg-articleColor rounded flex flex-col items-center">
+      <Wrapper>
         <Title
           text={"Przelicznik jednostek powierzchni"}
           type={"main-article"}
@@ -146,7 +147,7 @@ const AreaConverterPage: FC = () => {
             {...item}
           />
         ))}
-      </div>
+      </Wrapper>
     </div>
   );
 };
