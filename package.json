@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "daisyui": "^3.2.1",
     "gh-pages": "^5.0.0",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.3.0",
