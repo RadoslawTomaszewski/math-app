@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
 import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
-import SquareRootCalculatorContent from "./SquareRootCalculatorContent";
+import CubeRootCalculatorContent from "./CubeRootCalculatorContent";
 
-const SquareRootCalculatorPage: FC = () => {
+const CubeRootCalculatorPage: FC = () => {
   const grandparent = { link: "../", name: "Kalkulatory" };
   const parent = { link: "../arytmetyka", name: "Arytmetyka" };
   const childName = "Wyciąganie czynnika przed pierwiastek kwadratowy";
@@ -17,11 +17,11 @@ const SquareRootCalculatorPage: FC = () => {
       />
       <ArticleWrapper>
         <div className="p-2 flex flex-col items-center min-h-[350px]">
-          <SquareRootCalculatorContent />
+          <CubeRootCalculatorContent />
         </div>
       </ArticleWrapper>
     </div>
   );
 };
 
-export default SquareRootCalculatorPage;
+export default CubeRootCalculatorPage;

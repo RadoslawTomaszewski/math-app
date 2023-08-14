@@ -1,0 +1,1 @@
+export const InputRootCalculatorStyle = "m-2 text-center w-[90px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";

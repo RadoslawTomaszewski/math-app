@@ -4,32 +4,32 @@ import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { RegisterFormOptions } from "../../../../types/types";
 import { InputRootCalculatorStyle } from "../../../../utilities/styles";
-import SquareRootNumber from "../../../../types/objects/RootNumber/SquareRootNumber";
+import CubeRootNumber from "../../../../types/objects/RootNumber/CubeRootNumber";
 
 interface FormData {
-    squareNumber: string;
+    cubeNumber: string;
 }
 
-const SquareRootCalculatorContent: FC = () => {
-    const [squareRoot, setSquareRoot] = useState<SquareRootNumber>(
-        new SquareRootNumber(0)
+const CubeRootCalculatorContent: FC = () => {
+    const [cubeRoot, setCubeRoot] = useState<CubeRootNumber>(
+        new CubeRootNumber(0)
     );
     const {
         register,
         watch,
         setValue,
         formState: { errors },
-    } = useForm<FormData>({ defaultValues: { squareNumber: "0" } });
-    const watchSquareNumber = watch("squareNumber");
+    } = useForm<FormData>({ defaultValues: { cubeNumber: "0" } });
+    const watchCubeNumber = watch("cubeNumber");
 
     useEffect(() => {
-        if (!errors.squareNumber) {
-            setSquareRoot(new SquareRootNumber(Number(watchSquareNumber)));
+        if (!errors.cubeNumber) {
+            setCubeRoot(new CubeRootNumber(Number(watchCubeNumber)));
         }
-    }, [watchSquareNumber, errors.squareNumber]);
+    }, [watchCubeNumber, errors.cubeNumber]);
 
     const registerOptions: RegisterFormOptions<FormData> = {
-        squareNumber: {
+        cubeNumber: {
             max: {
                 value: 10000000,
                 message: "Maksymalna wartość to 10000000",
@@ -47,7 +47,7 @@ const SquareRootCalculatorContent: FC = () => {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
-        setValue("squareNumber", inputValue, { shouldValidate: true });
+        setValue("cubeNumber", inputValue, { shouldValidate: true });
     };
 
     return (
@@ -64,15 +64,15 @@ const SquareRootCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("squareNumber", registerOptions.squareNumber)}
+                        {...register("cubeNumber", registerOptions.cubeNumber)}
                         onChange={handleInputChange}
                     />
                 </label>
-                {errors.squareNumber ? (
-                    <span className="text-errorColor">{errors.squareNumber.message}</span>
+                {errors.cubeNumber ? (
+                    <span className="text-errorColor">{errors.cubeNumber.message}</span>
                 ) : (
                     <>
-                        {squareRoot.getAllUniqueSteps().map((step, index) => (
+                        {cubeRoot.getAllUniqueSteps().map((step, index) => (
                             <Formula key={index} formula={step} />
                         ))}
                     </>
@@ -82,4 +82,4 @@ const SquareRootCalculatorContent: FC = () => {
     );
 };
 
-export default SquareRootCalculatorContent;
+export default CubeRootCalculatorContent;

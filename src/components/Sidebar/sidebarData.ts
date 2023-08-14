@@ -154,6 +154,15 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
       { to: "liczba-plastikowa", text: "Liczba plastikowa" },
     ],
   },
+  {
+    category: { to: "systemy-liczbowe", text: "Systemy liczbowe" },
+    links: [
+      { to: "dziesietny", text: "rzymski" },
+      { to: "dziesietny", text: "dziesiętny" },
+      { to: "oktalny", text: "oktalny" },
+      { to: "heksadecymalny", text: "heksadecymalny" },
+    ],
+  },
 ];
 
 
@@ -173,8 +182,8 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
   {
     category: { to: "arytmetyka", text: "Arytmetyka" },
     links: [
-      { to: "czynnik-przed-pierwiastek-kwadratowy", text: "Kwadratowy" },
-      { to: "czynnik-przed-pierwiastek-szescienny", text: "Sześcienny" },
+      { to: "czynnik-przed-pierwiastek-kwadratowy", text: "Pierwiastek Kwadratowy" },
+      { to: "czynnik-przed-pierwiastek-szescienny", text: "Pierwiastek Sześcienny" },
       { to: "pisemne-dodawanie", text: "Dodawanie pisemne" },
     ],
   },

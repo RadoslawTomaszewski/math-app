@@ -14,6 +14,7 @@ module.exports = {
         navColor: "#68B9FF",
         borderColor: "#095FAD",
         articleColor: "#FFFFF5",
+        errorColor: "#FF0F0F",
       },
     },
   },

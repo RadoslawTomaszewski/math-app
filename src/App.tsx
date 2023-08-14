@@ -20,7 +20,7 @@ import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverter
 import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConverterPage";
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
 import SquareRootCalculatorPage from "./pages/calculatorsPages/arithmeticCalculators/SquareRootCalculator/SquareRootCalculatorPage";
-import CubeRootCalculator from "./pages/calculatorsPages/arithmeticCalculators/CubeRootCalculator";
+import CubeRootCalculatorPage from "./pages/calculatorsPages/arithmeticCalculators/CubeRootCalculator/CubeRootCalculatorPage";
 import GameOfLife from "./pages/calculatorsPages/otherCalculators/GameOfLife";
 import SumCalculator from "./pages/calculatorsPages/arithmeticCalculators/SumCalculator";
 //KNOWLEDGE BASE
@@ -96,7 +96,7 @@ const App = () => {
             />
             <Route
               path="czynnik-przed-pierwiastek-szescienny"
-              element={<CubeRootCalculator />}
+              element={<CubeRootCalculatorPage />}
             />
             <Route
               path="pisemne-dodawanie"
