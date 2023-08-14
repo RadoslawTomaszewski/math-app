@@ -1,10 +1,10 @@
 import { FC, useState, ChangeEvent } from "react";
 import Decimal from "decimal.js";
 import ConverterInputField from "./ConverterInputField";
-import Title from "../../../utilities/Title";
+import Title from "../../../components/articleItems/Title";
 import { unitTime, unitTimeLabels } from "../../../types/units";
 import { NavLink } from "react-router-dom";
-import { Wrapper } from "../../../components/Wrapper/Wrapper";
+import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
 
 const TimeConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -123,7 +123,7 @@ const TimeConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek czasu
       </div>
-      <Wrapper>
+      <ArticleWrapper>
         <Title text={"Przelicznik jednostek czasu"} type={"main-article"} />
         <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 4).map((item) => (
@@ -152,7 +152,7 @@ const TimeConverterPage: FC = () => {
             {...item}
           />
         ))}
-      </Wrapper>
+      </ArticleWrapper>
     </div>
   );
 };

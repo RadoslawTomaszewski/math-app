@@ -1,10 +1,10 @@
 import { FC, useState, ChangeEvent } from "react";
 import Decimal from "decimal.js";
 import ConverterInputField from "./ConverterInputField";
-import Title from "../../../utilities/Title";
+import Title from "../../../components/articleItems/Title";
 import { unitSpeed, unitSpeedLabels } from "../../../types/units";
 import { NavLink } from "react-router-dom";
-import { Wrapper } from "../../../components/Wrapper/Wrapper";
+import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
 
 const SpeedConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -94,7 +94,7 @@ const SpeedConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek prędkości
       </div>
-      <Wrapper>
+      <ArticleWrapper>
         <Title text={"Przelicznik jednostek prędkości"} type={"main-article"} />
         <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 2).map((item) => (
@@ -128,7 +128,7 @@ const SpeedConverterPage: FC = () => {
             {...item}
           />
         ))}
-      </Wrapper>
+      </ArticleWrapper>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Title from "../../utilities/Title";
+import Title from "../../components/articleItems/Title";
 import { SidebarCategory } from "../../components/Sidebar/SidebarCategoryItem";
 import { sidebarLinksCalculators } from "../../components/Sidebar/sidebarData";
 import Masonry from "react-masonry-css";

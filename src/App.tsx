@@ -19,9 +19,10 @@ import WeightConverterPage from "./pages/calculatorsPages/converters/WeightConve
 import TimeConverterPage from "./pages/calculatorsPages/converters/TimeConverterPage";
 import SpeedConverterPage from "./pages/calculatorsPages/converters/SpeedConverterPage";
 import InformationConverterPage from "./pages/calculatorsPages/converters/InformationConverterPage";
-import SquareRootCalculator from "./pages/calculatorsPages/arithmeticCalculators/SquareRootCalculator";
+import SquareRootCalculatorPage from "./pages/calculatorsPages/arithmeticCalculators/SquareRootCalculator/SquareRootCalculatorPage";
 import CubeRootCalculator from "./pages/calculatorsPages/arithmeticCalculators/CubeRootCalculator";
 import GameOfLife from "./pages/calculatorsPages/otherCalculators/GameOfLife";
+import SumCalculator from "./pages/calculatorsPages/arithmeticCalculators/SumCalculator";
 //KNOWLEDGE BASE
 import LinearFunctionPage from "./pages/knowledgeBasePages/functionsPages/linearFunction/LinearFunctionPage";
 import QuadraticFunctionPage from "./pages/knowledgeBasePages/functionsPages/quadraticFunction/QuadraticFunctionPage";
@@ -91,11 +92,15 @@ const App = () => {
             />
             <Route
               path="czynnik-przed-pierwiastek-kwadratowy"
-              element={<SquareRootCalculator />}
+              element={<SquareRootCalculatorPage />}
             />
             <Route
               path="czynnik-przed-pierwiastek-szescienny"
               element={<CubeRootCalculator />}
+            />
+            <Route
+              path="pisemne-dodawanie"
+              element={<SumCalculator />}
             />
             <Route path="gra-w-zycie" element={<GameOfLife />} />
             <Route path="*" element={<WorkInProgress />} />

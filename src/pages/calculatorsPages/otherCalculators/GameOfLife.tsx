@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Wrapper } from "../../../components/Wrapper/Wrapper";
-import Title from "../../../utilities/Title";
+import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
+import Title from "../../../components/articleItems/Title";
 
 const numRows = 30;
 const numCols = 15;
@@ -88,7 +88,7 @@ const GameOfLife = () => {
   };
 
   return (
-    <Wrapper>
+    <ArticleWrapper>
       <Title text="Gra w życie" type="main-article" />
       <div className="m-2 flex flex-col justify-center items-center">
         <div
@@ -121,7 +121,7 @@ const GameOfLife = () => {
           </button>
         </div>
       </div>
-    </Wrapper>
+    </ArticleWrapper>
   );
 };
 

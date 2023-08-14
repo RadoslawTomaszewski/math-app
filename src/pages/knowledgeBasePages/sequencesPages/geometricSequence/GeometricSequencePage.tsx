@@ -1,7 +1,7 @@
 import { FC } from "react";
-import LinksHeader from "../../../../utilities/LinksHeader";
+import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
 import GeometricSequenceContent from "./GeometricSequenceContent";
-import { Wrapper } from "../../../../components/Wrapper/Wrapper";
+import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
 
 const GeometricSequencePage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
@@ -10,14 +10,14 @@ const GeometricSequencePage: FC = () => {
 
   return (
     <div className="p-2 justify-center flex flex-col">
-      <LinksHeader
+      <Breadcrumb
         grandparent={grandparent}
         parent={parent}
         childName={childName}
       />
-      <Wrapper>
+      <ArticleWrapper>
         <GeometricSequenceContent />
-      </Wrapper>
+      </ArticleWrapper>
     </div>
   );
 };

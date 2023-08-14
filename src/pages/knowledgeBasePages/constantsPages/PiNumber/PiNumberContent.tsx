@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Title from "../../../../utilities/Title";
-import Formula from "../../../../utilities/articleItems/Formula";
-import ArticleBorder from "../../../../utilities/articleItems/ArticleBorder";
-import GraphImage from "../../../../utilities/articleItems/GraphImage";
+import Title from "../../../../components/articleItems/Title";
+import Formula from "../../../../components/articleItems/Formula";
+import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import GraphImage from "../../../../components/articleItems/GraphImage";
 import PiGif from "../../../../assets/images/function-graphs/pi.gif";
 import { useState } from "react";
 

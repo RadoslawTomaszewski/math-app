@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Title from "../../../../utilities/Title";
-import LegendParagraph from "../../../../utilities/articleItems/LegendParagraph";
-import Formula from "../../../../utilities/articleItems/Formula";
-import ArticleBorder from "../../../../utilities/articleItems/ArticleBorder";
-import Proof from "../../../../utilities/articleItems/Proof";
+import Title from "../../../../components/articleItems/Title";
+import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
+import Formula from "../../../../components/articleItems/Formula";
+import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Proof from "../../../../components/articleItems/Proof";
 
 const ArithmeticSequenceContent: FC = () => {
   const threeWords = [

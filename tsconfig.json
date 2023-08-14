@@ -21,6 +21,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-, "src/utilities/articleItems/.tsx"  ]
+    "src",
+    "src/components/articleItems/.tsx"
+  ]
 }

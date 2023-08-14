@@ -1,17 +1,18 @@
 import { useState, FC, ChangeEvent } from "react";
 import Title from "../../../components/articleItems/Title";
 import Formula from "../../../components/articleItems/Formula";
-import CubeRootNumber from "../../../types/objects/RootNumber/CubeRootNumber";
+import SquareRootNumber from "../../../types/objects/RootNumber/SquareRootNumber";
 import { NavLink } from "react-router-dom";
 
-const CubeRootCalculator: FC = () => {
+const SquareRootCalculator: FC = () => {
+
   const [inputState, setInputState] = useState<{
     value: string | undefined;
-    cubeRoot: CubeRootNumber;
+    squareRoot: SquareRootNumber;
     errorMessage: string[];
   }>({
     value: "0",
-    cubeRoot: new CubeRootNumber(0),
+    squareRoot: new SquareRootNumber(0),
     errorMessage: [],
   });
 
@@ -42,20 +43,19 @@ const CubeRootCalculator: FC = () => {
       value: value,
       errorMessage: [],
     }));
-
     let errors: string[] = [];
     let valueNumber = Number(value);
     if (isValidInput(valueNumber)) {
       errors = [];
       setInputState((prev) => ({
         ...prev,
-        cubeRoot: new CubeRootNumber(valueNumber),
+        squareRoot: new SquareRootNumber(valueNumber),
       }));
     } else {
       setError(valueNumber, errors);
       setInputState((prev) => ({
         ...prev,
-        cubeRoot: new CubeRootNumber(0),
+        squareRoot: new SquareRootNumber(0),
       }));
     }
   };
@@ -64,12 +64,12 @@ const CubeRootCalculator: FC = () => {
     <div className="p-2 justify-center flex flex-col">
       <div>
         <NavLink to={"../"}>Kalkulatory</NavLink> → Pierwiastki → Wyciąganie
-        czynnika przed pierwiastek sześcienny
+        czynnika przed pierwiastek kwadratowy
       </div>
       <div className="w-full h-full">
         <div className="p-3 border-2 border-navColor bg-articleColor rounded flex flex-col items-center min-h-[480px]">
           <Title
-            text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
+            text="Wyciąganie czynnika całkowitego przed pierwiastek kwadratowy"
             type="main-article"
           />
           <p className="pt-4">
@@ -81,7 +81,7 @@ const CubeRootCalculator: FC = () => {
             type="number"
             value={inputState.value}
             onChange={handleInputChange}
-            name="cube"
+            name="square"
             min="0"
           />
           <div className="pt-4">Rozwiązanie:</div>
@@ -93,7 +93,7 @@ const CubeRootCalculator: FC = () => {
             </div>
           ) : (
             <>
-              {inputState.cubeRoot.getAllUniqueSteps().map((step, index) => (
+              {inputState.squareRoot.getAllUniqueSteps().map((step, index) => (
                 <Formula key={index} formula={step} />
               ))}
             </>
@@ -104,4 +104,4 @@ const CubeRootCalculator: FC = () => {
   );
 };
 
-export default CubeRootCalculator;
+export default SquareRootCalculator;

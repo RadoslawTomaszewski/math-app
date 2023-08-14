@@ -1,11 +1,11 @@
 import { FC } from "react";
-import Title from "../../../../utilities/Title";
-import Formula from "../../../../utilities/articleItems/Formula";
-import ArticleBorder from "../../../../utilities/articleItems/ArticleBorder";
-import Proof from "../../../../utilities/articleItems/Proof";
+import Title from "../../../../components/articleItems/Title";
+import Formula from "../../../../components/articleItems/Formula";
+import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Proof from "../../../../components/articleItems/Proof";
 import skroconeMnozenie from "../../../../assets/images/function-graphs/skroconeMnozenie.png";
 import skroconeMnozenie3 from "../../../../assets/images/function-graphs/skroconeMnozenie3.png";
-import GraphImage from "../../../../utilities/articleItems/GraphImage";
+import GraphImage from "../../../../components/articleItems/GraphImage";
 import { useMediaQuery } from "@mui/material";
 
 const ShortMultiplicationContent: FC = () => {

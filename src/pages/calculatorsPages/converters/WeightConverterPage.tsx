@@ -1,10 +1,10 @@
 import { FC, useState, ChangeEvent } from "react";
 import Decimal from "decimal.js";
 import ConverterInputField from "./ConverterInputField";
-import Title from "../../../utilities/Title";
+import Title from "../../../components/articleItems/Title";
 import { unitWeight, unitWeightLabels } from "../../../types/units";
 import { NavLink } from "react-router-dom";
-import { Wrapper } from "../../../components/Wrapper/Wrapper";
+import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
 
 const WeightConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -122,7 +122,7 @@ const WeightConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek masy
       </div>
-      <Wrapper>
+      <ArticleWrapper>
         <Title text={"Przelicznik jednostek masy"} type={"main-article"} />
         <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 9).map((item) => (
@@ -148,7 +148,7 @@ const WeightConverterPage: FC = () => {
             {...item}
           />
         ))}
-      </Wrapper>
+      </ArticleWrapper>
     </div>
   );
 };

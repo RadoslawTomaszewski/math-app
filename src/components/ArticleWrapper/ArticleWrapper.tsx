@@ -1,12 +1,12 @@
 import React, { FC, ReactNode } from "react";
 import { classNames } from "../../utilities";
 
-interface IWrapperProps {
+interface IArticleWrapperProps {
   children: ReactNode;
   className?: string;
 }
 
-export const Wrapper: FC<IWrapperProps> = ({ children, className }) => {
+export const ArticleWrapper: FC<IArticleWrapperProps> = ({ children, className }) => {
   return (
     <div
       className={classNames(

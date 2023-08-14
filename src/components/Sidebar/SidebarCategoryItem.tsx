@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Title from "../../utilities/Title";
+import Title from "../articleItems/Title";
 import { FC, useState } from "react";
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg";
 import { ReactComponent as CollapseIcon } from "../../assets/icons/collapse.svg";

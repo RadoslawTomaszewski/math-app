@@ -1,7 +1,7 @@
 import { FC } from "react";
-import LinksHeader from "../../../../utilities/LinksHeader";
+import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
 import ShortMultiplicationFormulasContent from "./ShortMultiplicationFormulasContent";
-import { Wrapper } from "../../../../components/Wrapper/Wrapper";
+import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
 
 const ShortMultiplicationPage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
@@ -13,14 +13,14 @@ const ShortMultiplicationPage: FC = () => {
 
   return (
     <div className="p-2 justify-center flex flex-col">
-      <LinksHeader
+      <Breadcrumb
         grandparent={grandparent}
         parent={parent}
         childName={childName}
       />
-      <Wrapper>
+      <ArticleWrapper>
         <ShortMultiplicationFormulasContent />
-      </Wrapper>
+      </ArticleWrapper>
     </div>
   );
 };

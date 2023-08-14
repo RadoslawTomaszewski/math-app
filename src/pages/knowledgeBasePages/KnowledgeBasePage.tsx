@@ -1,4 +1,4 @@
-import Title from "../../utilities/Title";
+import Title from "../../components/articleItems/Title";
 import { NavLink } from "react-router-dom";
 import { sidebarLinksKnowledgeBase } from "../../components/Sidebar/sidebarData";
 import { SidebarCategory } from "../../components/Sidebar/SidebarCategoryItem";

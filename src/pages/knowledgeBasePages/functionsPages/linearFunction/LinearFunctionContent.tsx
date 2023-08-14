@@ -1,15 +1,15 @@
 import { FC } from "react";
-import Title from "../../../../utilities/Title";
-import LegendParagraph from "../../../../utilities/articleItems/LegendParagraph";
-import Formula from "../../../../utilities/articleItems/Formula";
-import ArticleBorder from "../../../../utilities/articleItems/ArticleBorder";
-import Proof from "../../../../utilities/articleItems/Proof";
-import MathExpression from "../../../../utilities/articleItems/MathExpression";
+import Title from "../../../../components/articleItems/Title";
+import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
+import Formula from "../../../../components/articleItems/Formula";
+import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Proof from "../../../../components/articleItems/Proof";
+import MathExpression from "../../../../components/articleItems/MathExpression";
 import liniowaRosnaca from "../../../../assets/images/function-graphs/liniowa-rosnaca.png";
 import liniowaMalejaca from "../../../../assets/images/function-graphs/liniowa-malejaca.png";
 import liniowaStala from "../../../../assets/images/function-graphs/liniowa-stała.png";
 import wyrazWolny from "../../../../assets/images/function-graphs/liniowa-wyraz-wolny.png";
-import GraphImage from "../../../../utilities/articleItems/GraphImage";
+import GraphImage from "../../../../components/articleItems/GraphImage";
 
 const LinearFunctionContent: FC = () => {
   const zeroPlaceProof = [`ax+b=0`, `ax=-b`, `x = \\frac{-b}{a}`];

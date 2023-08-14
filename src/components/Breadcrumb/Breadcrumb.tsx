@@ -10,13 +10,13 @@ interface parent {
   name: string;
 }
 
-interface ILinksHeaderProps {
+interface IBreadcrumb {
   grandparent: grandparent;
   parent: parent;
   childName: string;
 }
 
-const LinksHeader: FC<ILinksHeaderProps> = ({
+const Breadcrumb: FC<IBreadcrumb> = ({
   grandparent,
   parent,
   childName,
@@ -29,4 +29,4 @@ const LinksHeader: FC<ILinksHeaderProps> = ({
   );
 };
 
-export default LinksHeader;
+export default Breadcrumb;

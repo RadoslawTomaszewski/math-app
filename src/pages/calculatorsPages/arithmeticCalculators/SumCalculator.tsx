@@ -1,11 +1,19 @@
 import { useState, FC, ChangeEvent } from "react";
-import Title from "../../../utilities/Title";
-import Formula from "../../../utilities/articleItems/Formula";
+import Title from "../../../components/articleItems/Title";
+import Formula from "../../../components/articleItems/Formula";
 import SquareRootNumber from "../../../types/objects/RootNumber/SquareRootNumber";
 import { NavLink } from "react-router-dom";
 
-const SquareRootCalculator: FC = () => {
+
+const SumCalculator: FC = () => {
   const [inputState, setInputState] = useState<{
+    value: string | undefined;
+    errorMessage: string[];
+  }>({
+    value: "0",
+    errorMessage: [],
+  });
+  const [input1State, setInput1State] = useState<{
     value: string | undefined;
     squareRoot: SquareRootNumber;
     errorMessage: string[];
@@ -20,7 +28,7 @@ const SquareRootCalculator: FC = () => {
       (Number.isInteger(valueNumber) &&
         valueNumber > 0 &&
         valueNumber <= 10000000) ||
-      inputState.value === "0"
+      input1State.value === "0"
     );
   };
 
@@ -29,7 +37,7 @@ const SquareRootCalculator: FC = () => {
       errors.push("Wprowadzona wartość nie jest liczbą naturalną dodatnią");
     if (valueNumber < 0) errors.push("Wprowadzona wartość jest liczbą ujemną");
     if (valueNumber >= 10000000) errors.push("Maksymalna wartość to 10000000");
-    setInputState((prev) => ({
+    setInput1State((prev) => ({
       ...prev,
       errorMessage: errors,
     }));
@@ -37,7 +45,7 @@ const SquareRootCalculator: FC = () => {
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
-    setInputState((prev) => ({
+    setInput1State((prev) => ({
       ...prev,
       value: value,
       errorMessage: [],
@@ -46,15 +54,14 @@ const SquareRootCalculator: FC = () => {
     let valueNumber = Number(value);
     if (isValidInput(valueNumber)) {
       errors = [];
-      setInputState((prev) => ({
+      setInput1State((prev) => ({
         ...prev,
         squareRoot: new SquareRootNumber(valueNumber),
       }));
     } else {
       setError(valueNumber, errors);
-      setInputState((prev) => ({
+      setInput1State((prev) => ({
         ...prev,
-        squareRoot: new SquareRootNumber(0),
       }));
     }
   };
@@ -68,31 +75,40 @@ const SquareRootCalculator: FC = () => {
       <div className="w-full h-full">
         <div className="p-3 border-2 border-navColor bg-articleColor rounded flex flex-col items-center min-h-[480px]">
           <Title
-            text="Wyciąganie czynnika całkowitego przed pierwiastek kwadratowy"
+            text="Pisemne dodawanie"
             type="main-article"
           />
           <p className="pt-4">
-            Wprowadź liczbę naturalną dodatnią pod pierwiastkiem:
+            Wprowadź dwie liczby naturalne:
           </p>
           <input
             className="m-2 text-center w-[80px] font-math bg-bgColor border-2 border-black rounded appearance-none focus:outline-none"
             placeholder="0"
             type="number"
-            value={inputState.value}
+            value={input1State.value}
+            onChange={handleInputChange}
+            name="square"
+            min="0"
+          />
+          <input
+            className="m-2 text-center w-[80px] font-math bg-bgColor border-2 border-black rounded appearance-none focus:outline-none"
+            placeholder="0"
+            type="number"
+            value={input1State.value}
             onChange={handleInputChange}
             name="square"
             min="0"
           />
           <div className="pt-4">Rozwiązanie:</div>
-          {inputState.errorMessage.length !== 0 ? (
+          {input1State.errorMessage.length !== 0 ? (
             <div className="text-red-600">
-              {inputState.errorMessage.map((error) => (
+              {input1State.errorMessage.map((error) => (
                 <div key={error}>{error}</div>
               ))}
             </div>
           ) : (
             <>
-              {inputState.squareRoot.getAllUniqueSteps().map((step, index) => (
+              {input1State.squareRoot.getAllUniqueSteps().map((step, index) => (
                 <Formula key={index} formula={step} />
               ))}
             </>
@@ -103,4 +119,4 @@ const SquareRootCalculator: FC = () => {
   );
 };
 
-export default SquareRootCalculator;
+export default SumCalculator;

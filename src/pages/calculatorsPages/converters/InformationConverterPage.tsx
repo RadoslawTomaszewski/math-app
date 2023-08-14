@@ -1,10 +1,10 @@
 import { FC, useState, ChangeEvent } from "react";
 import Decimal from "decimal.js";
 import ConverterInputField from "./ConverterInputField";
-import Title from "../../../utilities/Title";
+import Title from "../../../components/articleItems/Title";
 import { unitInformation, unitInformationLabels } from "../../../types/units";
 import { NavLink } from "react-router-dom";
-import { Wrapper } from "../../../components/Wrapper/Wrapper";
+import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
 
 const InformationConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -247,7 +247,7 @@ const InformationConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek informacji
       </div>
-      <Wrapper>
+      <ArticleWrapper>
         <Title
           text={"Przelicznik jednostek informacji"}
           type={"main-article"}
@@ -284,7 +284,7 @@ const InformationConverterPage: FC = () => {
             {...item}
           />
         ))}
-      </Wrapper>
+      </ArticleWrapper>
     </div>
   );
 };

@@ -1,17 +1,17 @@
 import { FC } from "react";
-import Title from "../../../../utilities/Title";
-import LegendParagraph from "../../../../utilities/articleItems/LegendParagraph";
-import Formula from "../../../../utilities/articleItems/Formula";
-import ArticleBorder from "../../../../utilities/articleItems/ArticleBorder";
-import Proof from "../../../../utilities/articleItems/Proof";
-import MathExpression from "../../../../utilities/articleItems/MathExpression";
+import Title from "../../../../components/articleItems/Title";
+import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
+import Formula from "../../../../components/articleItems/Formula";
+import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Proof from "../../../../components/articleItems/Proof";
+import MathExpression from "../../../../components/articleItems/MathExpression";
 import kwadratowaUjemna from "../../../../assets/images/function-graphs/kwadratowa-ujemna.png";
 import kwadratowaDodatnia from "../../../../assets/images/function-graphs/kwadratowa-dodatnia.png";
 import pseudokwadratowa from "../../../../assets/images/function-graphs/pseudokwadratowa.png";
 import wierzcholek from "../../../../assets/images/function-graphs/wierzcholek.png";
 import wyrazWolny from "../../../../assets/images/function-graphs/kwadratowa-wyraz-wolny.png";
 import osSymetrii from "../../../../assets/images/function-graphs/kwadratowa-os-symetrii.png";
-import GraphImage from "../../../../utilities/articleItems/GraphImage";
+import GraphImage from "../../../../components/articleItems/GraphImage";
 import { NavLink } from "react-router-dom";
 
 const QuadraticFunctionContent: FC = () => {

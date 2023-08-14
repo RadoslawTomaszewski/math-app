@@ -1,10 +1,10 @@
 import { FC, useState, ChangeEvent } from "react";
 import Decimal from "decimal.js";
 import ConverterInputField from "./ConverterInputField";
-import Title from "../../../utilities/Title";
+import Title from "../../../components/articleItems/Title";
 import { unitLength, unitLengthLabels } from "../../../types/units";
 import { NavLink } from "react-router-dom";
-import { Wrapper } from "../../../components/Wrapper/Wrapper";
+import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
 
 const LengthConverterPage: FC = () => {
   const [inputValues, setInputValues] = useState<{
@@ -106,7 +106,7 @@ const LengthConverterPage: FC = () => {
         <NavLink to={"../"}>Kalkulatory</NavLink> → Przeliczniki → Przelicznik
         jednostek długości
       </div>
-      <Wrapper>
+      <ArticleWrapper>
         <Title text={"Przelicznik jednostek długości"} type={"main-article"} />
         <Title text={"Jednostki układu SI:"} type={"submain-article"} />
         {unitFields.slice(0, 7).map((item) => (
@@ -132,7 +132,7 @@ const LengthConverterPage: FC = () => {
             {...item}
           />
         ))}
-      </Wrapper>
+      </ArticleWrapper>
     </div>
   );
 };
