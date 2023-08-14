@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/math-app/static/css/main.c97b944f.css",
-    "main.js": "/math-app/static/js/main.a022be9d.js",
+    "main.css": "/math-app/static/css/main.40015297.css",
+    "main.js": "/math-app/static/js/main.c967b6fc.js",
     "static/media/kwadratowa-ujemna.png": "/math-app/static/media/kwadratowa-ujemna.1536b92c6215bf4b37f2.png",
     "static/media/kwadratowa-dodatnia.png": "/math-app/static/media/kwadratowa-dodatnia.f819c713a26724a4c081.png",
     "static/media/pseudokwadratowa.png": "/math-app/static/media/pseudokwadratowa.99b91dde980d77b18646.png",
@@ -16,15 +16,15 @@
     "static/media/liniowa-wyraz-wolny.png": "/math-app/static/media/liniowa-wyraz-wolny.7b78a3e13d77b11672be.png",
     "static/media/skroconeMnozenie.png": "/math-app/static/media/skroconeMnozenie.db179872ac83c322865d.png",
     "static/media/meme.jpg": "/math-app/static/media/meme.e50c8433e382a2eb6c02.jpg",
-    "index.html": "/math-app/index.html",
     "static/media/hamburger.svg": "/math-app/static/media/hamburger.7576218048312e9d9b62930754a442fc.svg",
+    "index.html": "/math-app/index.html",
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
-    "main.c97b944f.css.map": "/math-app/static/css/main.c97b944f.css.map",
-    "main.a022be9d.js.map": "/math-app/static/js/main.a022be9d.js.map"
+    "main.40015297.css.map": "/math-app/static/css/main.40015297.css.map",
+    "main.c967b6fc.js.map": "/math-app/static/js/main.c967b6fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.c97b944f.css",
-    "static/js/main.a022be9d.js"
+    "static/css/main.40015297.css",
+    "static/js/main.c967b6fc.js"
   ]
 }
