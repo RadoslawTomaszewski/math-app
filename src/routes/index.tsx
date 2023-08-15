@@ -1,0 +1,116 @@
+import { FC } from "react";
+import "../styles/navbar.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+//LAYOUTS
+import { Layout } from "../Layout";
+import { KnowledgeBaseLayout } from "../Layout/knowledgeBaseLayout";
+import { CalculatorsLayout } from "../Layout/calculatorsLayout";
+//MAIN PAGES
+import Home from "../pages/homePage/Home";
+import HelplinePage from "../pages/helplinePage/HelplinePage";
+import ForumPage from "../pages/forumPages/ForumPage";
+
+//WORK IN PROGRESS
+// import WorkInProgress from "../components/WorkInProgress/WorkInProgress";
+//ROUTES
+import KnowledgeBasePage from "../pages/knowledgeBasePages/KnowledgeBasePage";
+import LinearFunctionPage from "../pages/knowledgeBasePages/functionsPages/linearFunction/LinearFunctionPage";
+import WorkInProgress from "../components/WorkInProgress/WorkInProgress";
+import CalculatorsPage from "../pages/calculatorsPages/CalculatorsPage";
+import CubeRootCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/CubeRootCalculator/CubeRootCalculatorPage";
+import SquareRootCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/SquareRootCalculator/SquareRootCalculatorPage";
+import SumCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/SumCalculator/CubeRootCalculatorPage";
+import AreaConverterPage from "../pages/calculatorsPages/converters/AreaConverterPage";
+import InformationConverterPage from "../pages/calculatorsPages/converters/InformationConverterPage";
+import LengthConverterPage from "../pages/calculatorsPages/converters/LengthConverterPage";
+import SpeedConverterPage from "../pages/calculatorsPages/converters/SpeedConverterPage";
+import TimeConverterPage from "../pages/calculatorsPages/converters/TimeConverterPage";
+import VolumeConverterPage from "../pages/calculatorsPages/converters/VolumeConverterPage";
+import WeightConverterPage from "../pages/calculatorsPages/converters/WeightConverterPage";
+import GameOfLife from "../pages/calculatorsPages/otherCalculators/GameOfLife";
+import ShortMultiplicationPage from "../pages/knowledgeBasePages/algebraicExpressionPages/shortMultiplicationFormulas/ShortMultiplicationFormulasPage";
+import PiNumberPage from "../pages/knowledgeBasePages/constantsPages/PiNumber/PiNumberPage";
+import QuadraticFunctionPage from "../pages/knowledgeBasePages/functionsPages/quadraticFunction/QuadraticFunctionPage";
+import ArithmeticSequencePage from "../pages/knowledgeBasePages/sequencesPages/arithmeticSequence/ArithmeticSequencePage";
+import GeometricSequencePage from "../pages/knowledgeBasePages/sequencesPages/geometricSequence/GeometricSequencePage";
+import NaturalNumberPage from "../pages/knowledgeBasePages/sets/naturalNumbers/NaturalNumberPage";
+import AdditionPage from "../pages/knowledgeBasePages/arithmeticPages/addition/AdditionPage";
+
+
+
+export const Router: FC = () => {
+    return (
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="baza-wiedzy" element={<KnowledgeBaseLayout />}>
+                        <Route index element={<KnowledgeBasePage />} />
+                        <Route path="funkcja-liniowa" element={<LinearFunctionPage />} />
+                        <Route
+                            path="funkcja-kwadratowa"
+                            element={<QuadraticFunctionPage />}
+                        />
+                        <Route
+                            path="ciag-arytmetyczny"
+                            element={<ArithmeticSequencePage />}
+                        />
+                        <Route
+                            path="ciag-geometryczny"
+                            element={<GeometricSequencePage />}
+                        />
+                        <Route
+                            path="wzory-skroconego-mnozenia"
+                            element={<ShortMultiplicationPage />}
+                        />
+                        <Route path="liczba-pi" element={<PiNumberPage />} />
+                        <Route path="liczby-naturalne" element={<NaturalNumberPage />} />
+                        <Route path="dodawanie" element={<AdditionPage />} />
+                        <Route path="*" element={<WorkInProgress />} />
+                    </Route>
+                    <Route path="forum" element={<ForumPage />} />
+                    <Route path="pogotowie" element={<HelplinePage />} />
+                    <Route path="kalkulatory" element={<CalculatorsLayout />}>
+                        <Route index element={<CalculatorsPage />} />
+                        <Route
+                            path="kalkulator-dlugosci"
+                            element={<LengthConverterPage />}
+                        />
+                        <Route
+                            path="kalkulator-powierzchni"
+                            element={<AreaConverterPage />}
+                        />
+                        <Route
+                            path="kalkulator-objetosci"
+                            element={<VolumeConverterPage />}
+                        />
+                        <Route path="kalkulator-masy" element={<WeightConverterPage />} />
+                        <Route path="kalkulator-czasu" element={<TimeConverterPage />} />
+                        <Route
+                            path="kalkulator-predkosci"
+                            element={<SpeedConverterPage />}
+                        />
+                        <Route
+                            path="kalkulator-informacji"
+                            element={<InformationConverterPage />}
+                        />
+                        <Route
+                            path="czynnik-przed-pierwiastek-kwadratowy"
+                            element={<SquareRootCalculatorPage />}
+                        />
+                        <Route
+                            path="czynnik-przed-pierwiastek-szescienny"
+                            element={<CubeRootCalculatorPage />}
+                        />
+                        <Route
+                            path="pisemne-dodawanie"
+                            element={<SumCalculatorPage />}
+                        />
+                        <Route path="gra-w-zycie" element={<GameOfLife />} />
+                        <Route path="*" element={<WorkInProgress />} />
+                    </Route>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    )
+}
