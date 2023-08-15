@@ -35,6 +35,12 @@ import ArithmeticSequencePage from "../pages/knowledgeBasePages/sequencesPages/a
 import GeometricSequencePage from "../pages/knowledgeBasePages/sequencesPages/geometricSequence/GeometricSequencePage";
 import NaturalNumberPage from "../pages/knowledgeBasePages/sets/naturalNumbers/NaturalNumberPage";
 import AdditionPage from "../pages/knowledgeBasePages/arithmeticPages/addition/AdditionPage";
+import SubtractionPage from "../pages/knowledgeBasePages/arithmeticPages/subtraction/SubtractionPage";
+import MultiplicationPage from "../pages/knowledgeBasePages/arithmeticPages/multiplication/MultiplicationPage";
+import DivisionPage from "../pages/knowledgeBasePages/arithmeticPages/division/DivisionPage";
+import ExponentiationPage from "../pages/knowledgeBasePages/arithmeticPages/exponentiation/ExponentiationPage";
+import RootPage from "../pages/knowledgeBasePages/arithmeticPages/root/RootPage";
+import LogarithmPage from "../pages/knowledgeBasePages/arithmeticPages/logarithm/LogarithmPage";
 
 
 
@@ -66,6 +72,12 @@ export const Router: FC = () => {
                         <Route path="liczba-pi" element={<PiNumberPage />} />
                         <Route path="liczby-naturalne" element={<NaturalNumberPage />} />
                         <Route path="dodawanie" element={<AdditionPage />} />
+                        <Route path="odejmowanie" element={<SubtractionPage />} />
+                        <Route path="mnozenie" element={<MultiplicationPage />} />
+                        <Route path="dzielenie" element={<DivisionPage />} />
+                        <Route path="potegowanie" element={<ExponentiationPage />} />
+                        <Route path="pierwiastkowanie" element={<RootPage />} />
+                        <Route path="logarytmy" element={<LogarithmPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="forum" element={<ForumPage />} />

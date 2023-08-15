@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
-import { RegisterFormOptions } from "../../../../types/types";
+import { rootRegisterOptions } from "../../../../utilities/validation";
 import { InputRootCalculatorStyle } from "../../../../utilities/styles";
 import SquareRootNumber from "../../../../types/objects/RootNumber/SquareRootNumber";
 
@@ -28,22 +28,7 @@ const SquareRootCalculatorContent: FC = () => {
         }
     }, [watchSquareNumber, errors.squareNumber]);
 
-    const registerOptions: RegisterFormOptions<FormData> = {
-        squareNumber: {
-            max: {
-                value: 10000000,
-                message: "Maksymalna wartość to 10000000",
-            },
-            min: {
-                value: 0,
-                message: "Minimalna wartość to 0",
-            },
-            pattern: {
-                value: /^\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-    };
+
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
@@ -64,7 +49,7 @@ const SquareRootCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("squareNumber", registerOptions.squareNumber)}
+                        {...register("squareNumber", rootRegisterOptions.squareNumber)}
                         onChange={handleInputChange}
                     />
                 </label>

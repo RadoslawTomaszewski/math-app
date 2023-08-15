@@ -4,10 +4,6 @@ import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
 import Proof from "../../../../components/articleItems/Proof";
-import skroconeMnozenie from "../../../../assets/images/function-graphs/skroconeMnozenie.png";
-import skroconeMnozenie3 from "../../../../assets/images/function-graphs/skroconeMnozenie3.png";
-import GraphImage from "../../../../components/articleItems/GraphImage";
-import { useMediaQuery } from "@mui/material";
 
 const AdditionContent: FC = () => {
 
@@ -47,18 +43,20 @@ const AdditionContent: FC = () => {
       <Proof steps={["\\sum_{i=1}^{4} i^2=1^2+2^2+3^2+4^2=30"]} text={"Przykład"} />
       <ArticleBorder />
       <p>Dodawanie składników należących do poszczególnych zbiorów:</p>
-      <Formula formula="parzysta+parzysta=parzysta"></Formula>
-      <Formula formula="nieparzysta+nieparzysta=parzysta"></Formula>
-      <Formula formula="parzysta+nieparzysta=nieparzysta"></Formula>
-      <Formula formula="naturalna+naturalna=naturalna"></Formula>
-      <Formula formula="całkowita+całkowita=całkowita"></Formula>
-      <Formula formula="całkowita+niecałkowita=niecałkowita"></Formula>
-      <Formula formula="wymierna+wymierna=wymierna"></Formula>
-      <Formula formula="wymierna+niewymierna=niewymierna"></Formula>
-      <Formula formula="dodatnia+dodatnia=dodatnia"></Formula>
-      <Formula formula="ujemna+ujemna=ujemna"></Formula>
-      <Formula formula="rzeczywista+rzeczywista=rzeczywista"></Formula>
-      <Formula formula="zespolona+zespolona=zespolona"></Formula>
+      <div className="flex flex-col justify-center text-center items-center font-bold gap-2">
+        <p>parzysta+parzysta=parzysta</p>
+        <p>nieparzysta+nieparzysta=parzysta</p>
+        <p>parzysta+nieparzysta=nieparzysta</p>
+        <p>naturalna+naturalna=naturalna</p>
+        <p>całkowita+całkowita=całkowita</p>
+        <p>całkowita+niecałkowita=niecałkowita</p>
+        <p>wymierna+wymierna=wymierna</p>
+        <p>wymierna+niewymierna=niewymierna</p>
+        <p>dodatnia+dodatnia=dodatnia</p>
+        <p>ujemna+ujemna=ujemna</p>
+        <p>rzeczywista+rzeczywista=rzeczywista</p>
+        <p>zespolona+zespolona=zespolona</p>
+      </div>
       <ArticleBorder />
       <Title text={"Aksjomaty dodawania Pean'a"} type={"submain-article"} />
       <p>
