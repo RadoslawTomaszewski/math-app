@@ -31,7 +31,7 @@ const Proof: FC<IProofProps> = ({ steps, text }) => {
       {expanded && (
         <ul>
           {steps.map((step, index) => (
-            <li key={index} className="flex justify-center m-2">
+            <li key={index} className="flex justify-center my-4">
               <MathComponent tex={step} />
             </li>
           ))}
