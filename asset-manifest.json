@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/math-app/static/css/main.40015297.css",
-    "main.js": "/math-app/static/js/main.c967b6fc.js",
+    "main.css": "/math-app/static/css/main.5ffe50ae.css",
+    "main.js": "/math-app/static/js/main.961f79fb.js",
+    "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/kwadratowa-ujemna.png": "/math-app/static/media/kwadratowa-ujemna.1536b92c6215bf4b37f2.png",
     "static/media/kwadratowa-dodatnia.png": "/math-app/static/media/kwadratowa-dodatnia.f819c713a26724a4c081.png",
     "static/media/pseudokwadratowa.png": "/math-app/static/media/pseudokwadratowa.99b91dde980d77b18646.png",
@@ -20,11 +21,11 @@
     "index.html": "/math-app/index.html",
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
-    "main.40015297.css.map": "/math-app/static/css/main.40015297.css.map",
-    "main.c967b6fc.js.map": "/math-app/static/js/main.c967b6fc.js.map"
+    "main.5ffe50ae.css.map": "/math-app/static/css/main.5ffe50ae.css.map",
+    "main.961f79fb.js.map": "/math-app/static/js/main.961f79fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.40015297.css",
-    "static/js/main.c967b6fc.js"
+    "static/css/main.5ffe50ae.css",
+    "static/js/main.961f79fb.js"
   ]
 }
