@@ -9,7 +9,7 @@ const RootPage: FC = () => {
     link: "../arytmetyka",
     name: "Arytmetyka",
   };
-  const childName = "Mnożenie";
+  const childName = "Pierwiastkowanie";
 
   return (
     <div className="p-2 justify-center flex flex-col">

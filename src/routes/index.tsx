@@ -6,7 +6,7 @@ import { Layout } from "../Layout";
 import { KnowledgeBaseLayout } from "../Layout/knowledgeBaseLayout";
 import { CalculatorsLayout } from "../Layout/calculatorsLayout";
 //MAIN PAGES
-import Home from "../pages/homePage/Home";
+import Home from "../pages/homePage/HomePage";
 import HelplinePage from "../pages/helplinePage/HelplinePage";
 import ForumPage from "../pages/forumPages/ForumPage";
 
