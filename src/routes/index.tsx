@@ -41,6 +41,7 @@ import DivisionPage from "../pages/knowledgeBasePages/arithmeticPages/division/D
 import ExponentiationPage from "../pages/knowledgeBasePages/arithmeticPages/exponentiation/ExponentiationPage";
 import RootPage from "../pages/knowledgeBasePages/arithmeticPages/root/RootPage";
 import LogarithmPage from "../pages/knowledgeBasePages/arithmeticPages/logarithm/LogarithmPage";
+import SetOperationsPage from "../pages/knowledgeBasePages/sets/setOperations/SetOperationsPage";
 
 
 
@@ -78,6 +79,7 @@ export const Router: FC = () => {
                         <Route path="potegowanie" element={<ExponentiationPage />} />
                         <Route path="pierwiastkowanie" element={<RootPage />} />
                         <Route path="logarytmy" element={<LogarithmPage />} />
+                        <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="forum" element={<ForumPage />} />
