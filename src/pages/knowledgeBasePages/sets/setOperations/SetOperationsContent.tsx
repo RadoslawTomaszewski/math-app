@@ -60,6 +60,7 @@ const SetOperationsContent: FC = () => {
       <Formula formula="x \in A \cap B \iff x \in A \land x \in B" />
       <GraphImage size={"smallest"} src={AnB} alt={"A część wspólna B"} />
       <Formula formula="A \cap B = \{3\}" />
+      <p>W matematyce zamiennie możemy używać pojęć <b>iloczyn</b>/<b>przecięcie</b>/<b>część wspólna</b></p>
       <ArticleBorder />
       <Title text={"Różnica zbiorów"} type={"submain-article"} />
       <p>
@@ -80,7 +81,6 @@ const SetOperationsContent: FC = () => {
       <Formula formula="A' = \{4, 5, 6\}" />
       <GraphImage size={"smallest"} src={Bsupply} alt="dopełnienie B" />
       <Formula formula="B' = \{1, 2, 6\}" />
-      <ArticleBorder />
     </>
   );
 };
