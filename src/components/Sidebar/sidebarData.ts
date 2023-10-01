@@ -184,6 +184,8 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
     links: [
       { to: "czynnik-przed-pierwiastek-kwadratowy", text: "Pierwiastek Kwadratowy" },
       { to: "czynnik-przed-pierwiastek-szescienny", text: "Pierwiastek Sześcienny" },
+      { to: "rozklad-na-czynniki-pierwsze", text: "Rozkład na czynniki pierwsze" },
+      { to: "nww-i-nwd", text: "NWW i NWD"},
       { to: "pisemne-dodawanie", text: "Dodawanie pisemne" },
     ],
   },

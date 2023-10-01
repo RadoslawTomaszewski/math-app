@@ -42,6 +42,8 @@ import ExponentiationPage from "../pages/knowledgeBasePages/arithmeticPages/expo
 import RootPage from "../pages/knowledgeBasePages/arithmeticPages/root/RootPage";
 import LogarithmPage from "../pages/knowledgeBasePages/arithmeticPages/logarithm/LogarithmPage";
 import SetOperationsPage from "../pages/knowledgeBasePages/sets/setOperations/SetOperationsPage";
+import PrimeFactorCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/PrimeFactorsCalculator/PrimeFactorsCalculatorPage";
+import GCDandLCMCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/GCDandLCMCalculator/GCDandLCMCalculatorCalculatorPage";
 
 
 
@@ -119,6 +121,14 @@ export const Router: FC = () => {
                         <Route
                             path="pisemne-dodawanie"
                             element={<SumCalculatorPage />}
+                        />
+                        <Route
+                            path="rozklad-na-czynniki-pierwsze"
+                            element={<PrimeFactorCalculatorPage />}
+                        />
+                        <Route
+                            path="nww-i-nwd"
+                            element={<GCDandLCMCalculatorPage />}
                         />
                         <Route path="gra-w-zycie" element={<GameOfLife />} />
                         <Route path="*" element={<WorkInProgress />} />

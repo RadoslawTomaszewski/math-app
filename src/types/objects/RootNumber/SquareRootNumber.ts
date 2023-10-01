@@ -1,6 +1,4 @@
-import { IRootNumber } from "./IRootNumber";
-
-class SquareRootNumber implements IRootNumber {
+class SquareRootNumber {
   private factors: number[] = [];
   private preFactors: number[] = [];
   private underFactors: number[] = [];

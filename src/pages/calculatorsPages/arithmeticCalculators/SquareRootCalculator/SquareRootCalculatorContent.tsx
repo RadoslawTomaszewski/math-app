@@ -7,7 +7,7 @@ import { InputRootCalculatorStyle } from "../../../../utilities/styles";
 import SquareRootNumber from "../../../../types/objects/RootNumber/SquareRootNumber";
 
 interface FormData {
-    squareNumber: string;
+    rootNumber: string;
 }
 
 const SquareRootCalculatorContent: FC = () => {
@@ -19,20 +19,18 @@ const SquareRootCalculatorContent: FC = () => {
         watch,
         setValue,
         formState: { errors },
-    } = useForm<FormData>({ defaultValues: { squareNumber: "0" } });
-    const watchSquareNumber = watch("squareNumber");
+    } = useForm<FormData>({ defaultValues: { rootNumber: "0" } });
+    const watchRootNumber = watch("rootNumber");
 
     useEffect(() => {
-        if (!errors.squareNumber) {
-            setSquareRoot(new SquareRootNumber(Number(watchSquareNumber)));
+        if (!errors.rootNumber) {
+            setSquareRoot(new SquareRootNumber(Number(watchRootNumber)));
         }
-    }, [watchSquareNumber, errors.squareNumber]);
-
-
+    }, [watchRootNumber, errors.rootNumber]);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
-        setValue("squareNumber", inputValue, { shouldValidate: true });
+        setValue("rootNumber", inputValue, { shouldValidate: true });
     };
 
     return (
@@ -49,12 +47,12 @@ const SquareRootCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("squareNumber", rootRegisterOptions.squareNumber)}
+                        {...register("rootNumber", rootRegisterOptions.rootNumber)}
                         onChange={handleInputChange}
                     />
                 </label>
-                {errors.squareNumber ? (
-                    <span className="text-errorColor">{errors.squareNumber.message}</span>
+                {errors.rootNumber ? (
+                    <span className="text-errorColor">{errors.rootNumber.message}</span>
                 ) : (
                     <>
                         {squareRoot.getAllUniqueSteps().map((step, index) => (

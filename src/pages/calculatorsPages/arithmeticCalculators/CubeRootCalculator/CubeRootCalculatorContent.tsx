@@ -5,9 +5,10 @@ import Formula from "../../../../components/articleItems/Formula";
 import { RegisterFormOptions } from "../../../../types/types";
 import { InputRootCalculatorStyle } from "../../../../utilities/styles";
 import CubeRootNumber from "../../../../types/objects/RootNumber/CubeRootNumber";
+import { rootRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
-    cubeNumber: string;
+    rootNumber: string;
 }
 
 const CubeRootCalculatorContent: FC = () => {
@@ -19,35 +20,18 @@ const CubeRootCalculatorContent: FC = () => {
         watch,
         setValue,
         formState: { errors },
-    } = useForm<FormData>({ defaultValues: { cubeNumber: "0" } });
-    const watchCubeNumber = watch("cubeNumber");
+    } = useForm<FormData>({ defaultValues: { rootNumber: "0" } });
+    const watchRootNumber = watch("rootNumber");
 
     useEffect(() => {
-        if (!errors.cubeNumber) {
-            setCubeRoot(new CubeRootNumber(Number(watchCubeNumber)));
+        if (!errors.rootNumber) {
+            setCubeRoot(new CubeRootNumber(Number(watchRootNumber)));
         }
-    }, [watchCubeNumber, errors.cubeNumber]);
-
-    const registerOptions: RegisterFormOptions<FormData> = {
-        cubeNumber: {
-            max: {
-                value: 10000000,
-                message: "Maksymalna wartość to 10000000",
-            },
-            min: {
-                value: 0,
-                message: "Minimalna wartość to 0",
-            },
-            pattern: {
-                value: /^\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-    };
+    }, [watchRootNumber, errors.rootNumber]);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
-        setValue("cubeNumber", inputValue, { shouldValidate: true });
+        setValue("rootNumber", inputValue, { shouldValidate: true });
     };
 
     return (
@@ -64,12 +48,12 @@ const CubeRootCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("cubeNumber", registerOptions.cubeNumber)}
+                        {...register("rootNumber", rootRegisterOptions.rootNumber)}
                         onChange={handleInputChange}
                     />
                 </label>
-                {errors.cubeNumber ? (
-                    <span className="text-errorColor">{errors.cubeNumber.message}</span>
+                {errors.rootNumber ? (
+                    <span className="text-errorColor">{errors.rootNumber.message}</span>
                 ) : (
                     <>
                         {cubeRoot.getAllUniqueSteps().map((step, index) => (
