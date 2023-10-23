@@ -44,6 +44,7 @@ import LogarithmPage from "../pages/knowledgeBasePages/arithmeticPages/logarithm
 import SetOperationsPage from "../pages/knowledgeBasePages/sets/setOperations/SetOperationsPage";
 import PrimeFactorCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/PrimeFactorsCalculator/PrimeFactorsCalculatorPage";
 import GCDandLCMCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/GCDandLCMCalculator/GCDandLCMCalculatorCalculatorPage";
+import QuadraticFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/QuadraticFunctionCalculator/QuadraticFunctionCalculatorPage";
 
 
 
@@ -130,6 +131,7 @@ export const Router: FC = () => {
                             path="nww-i-nwd"
                             element={<GCDandLCMCalculatorPage />}
                         />
+                        <Route path="funkcji-kwadratowej" element={<QuadraticFunctionCalculatorPage />} />
                         <Route path="gra-w-zycie" element={<GameOfLife />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>

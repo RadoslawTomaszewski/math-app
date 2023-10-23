@@ -72,8 +72,11 @@ class PrimeFactors {
     return this.value;
   }
 
-  getFactors(): string {
+  getFactorsString(): string {
     return this.factors.join(" ");
+  }
+  getFactors():number[]{
+    return this.factors;
   }
 
   getDecomposition(): number[][] {

@@ -4,7 +4,9 @@ import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { RegisterFormOptions } from "../../../../types/types";
 import { InputNaturalNumberStyle } from "../../../../utilities/styles";
-import PrimeFactors from "../../../../types/objects/PrimeFactorsDecomposition/PrimeFactors";
+import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
+import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import TwoNumberPrimeFactors from "../../../../types/objects/PrimeFactors/TwoNumberPrimeFactors";
 
 interface FormData {
     naturalNumber1: string;
@@ -18,32 +20,38 @@ const GCDandLCMCalculatorContent: FC = () => {
     const [factorizedNumber2, setFactorizedNumber2] = useState<PrimeFactors>(
         new PrimeFactors(0)
     );
+    const [twoFactorizedNumbers, setTwoFactotizedNumbers] = useState<TwoNumberPrimeFactors>(
+        new TwoNumberPrimeFactors(new PrimeFactors(0), new PrimeFactors(0))
+    );
+
     const {
         register,
         watch,
         setValue,
         formState: { errors },
     } = useForm<FormData>({ defaultValues: { naturalNumber1: "0", naturalNumber2: "0" } });
+
     const watchNaturalNumber1 = watch("naturalNumber1");
     const watchNaturalNumber2 = watch("naturalNumber2");
 
     useEffect(() => {
-        if (!errors.naturalNumber1 && Number(watchNaturalNumber1) > 1) {
+        if (!errors.naturalNumber1 && Number(watchNaturalNumber1) >= 1) {
             setFactorizedNumber1(new PrimeFactors(Number(watchNaturalNumber1)));
         }
-    }, [watchNaturalNumber1, errors.naturalNumber1]);
-
-    useEffect(() => {
-        if (!errors.naturalNumber2 && Number(watchNaturalNumber2) > 1) {
+        if (!errors.naturalNumber2 && Number(watchNaturalNumber2) >= 1) {
             setFactorizedNumber2(new PrimeFactors(Number(watchNaturalNumber2)));
         }
-    }, [watchNaturalNumber2, errors.naturalNumber2]);
+        if (!errors.naturalNumber1 && !errors.naturalNumber2) {
+            setTwoFactotizedNumbers(new TwoNumberPrimeFactors(new PrimeFactors(Number(watchNaturalNumber1)), new PrimeFactors(Number(watchNaturalNumber2))));
+        }
+    }, [watchNaturalNumber1, watchNaturalNumber2, errors.naturalNumber1, errors.naturalNumber2]);
+
 
     const registerOptions: RegisterFormOptions<FormData> = {
         naturalNumber1: {
             max: {
-                value: 1_000_000_000_000,
-                message: "Maksymalna wartość to 1'000'000'000'000 (bilion)",
+                value: 1_000_000_000,
+                message: "Maksymalna wartość to 1'000'000'000 (miliard)",
             },
             min: {
                 value: 1,
@@ -56,12 +64,12 @@ const GCDandLCMCalculatorContent: FC = () => {
         },
         naturalNumber2: {
             max: {
-                value: 1_000_000_000_000,
-                message: "Maksymalna wartość to 1'000'000'000'000 (bilion)",
+                value: 1_000_000_000,
+                message: "Maksymalna wartość to 1'000'000'000 (miliard)",
             },
             min: {
-                value: 0,
-                message: "Minimalna wartość to 0",
+                value: 1,
+                message: "Minimalna wartość to 1",
             },
             pattern: {
                 value: /^\d+$/,
@@ -73,74 +81,97 @@ const GCDandLCMCalculatorContent: FC = () => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
         const inputName = event.target.name;
-        setValue(inputName, inputValue, { shouldValidate: true });
+        if (inputName === 'naturalNumber1' || inputName === 'naturalNumber2')
+            setValue(inputName, inputValue, { shouldValidate: true });
     };
 
     return (
         <>
             <Title
-                text="Najmniejszy wspólny dzielnik (NWD) i Najmniejsza wspólna wielokrotność (NWW)"
+                text="Największy wspólny dzielnik (NWD) i Najmniejsza wspólna wielokrotność (NWW)"
                 type="main-article"
             />
             <form className="text-center">
-                <div className="flex">
-                    <label className="flex pt-4 flex-col items-center mr-4">
+                <div className="flex justify-center">
+                    <label className="flex pt-4 flex-col items-center">
                         Wprowadź dwie liczby naturalne:
-                        <input
-                            className={InputNaturalNumberStyle}
-                            placeholder="0"
-                            type="number"
-                            min="0"
-                            {...register("naturalNumber1", registerOptions.naturalNumber1)}
-                            onChange={handleInputChange}
-                        />
+                        <div className="InputsWrapper">
+                            <input
+                                className={InputNaturalNumberStyle}
+                                placeholder="0"
+                                type="number"
+                                min="0"
+                                {...register("naturalNumber1", registerOptions.naturalNumber1)}
+                                onChange={handleInputChange}
+                            />
+                            <input
+                                className={InputNaturalNumberStyle}
+                                placeholder="0"
+                                type="number"
+                                min="0"
+                                {...register("naturalNumber2", registerOptions.naturalNumber2)}
+                                onChange={handleInputChange}
+                            />
+                        </div>
                         {errors.naturalNumber1 && (
                             <span className="text-errorColor">{errors.naturalNumber1.message}</span>
                         )}
-                        <input
-                            className={InputNaturalNumberStyle}
-                            placeholder="0"
-                            type="number"
-                            min="0"
-                            {...register("naturalNumber2", registerOptions.naturalNumber2)}
-                            onChange={handleInputChange}
-                        />
+                        {errors.naturalNumber2 && (
+                            <span className="text-errorColor">{errors.naturalNumber2.message}</span>
+                        )}
                     </label>
                 </div>
-                <div>
 
-                    {errors.naturalNumber2 && (
-                        <span className="text-errorColor">{errors.naturalNumber2.message}</span>
+                <div className="flex flex-wrap justify-center text-center">
+                    {!errors.naturalNumber1 && (
+                        <div>
+                            <Formula formula={factorizedNumber1.getValue() + "=" + (factorizedNumber1.getValue() > 2 ? factorizedNumber1.getFactorsInExponentialForm() : factorizedNumber1.getValue())} />
+                            {factorizedNumber1.getDecomposition().map((step, index) => (
+                                <div className="flex w-full items-center justify-center" key={index}>
+                                    <div className="flex w-1/2 justify-end border-r-2 border-black px-2">
+                                        {step[0]}
+                                    </div>
+                                    <div className="flex w-1/2 justify-start border-l-1 border-black px-2">
+                                        {step[1] === 1 ? '\u0020' : step[1]}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {!errors.naturalNumber2 && (
+                        <div>
+                            <Formula formula={factorizedNumber2.getValue() + "=" + (factorizedNumber2.getValue() > 2 ? factorizedNumber2.getFactorsInExponentialForm() : factorizedNumber2.getValue())} />
+                            {factorizedNumber2.getDecomposition().map((step, index) => (
+                                <div className="flex w-full items-center justify-center" key={index}>
+                                    <div className="flex w-1/2 justify-end border-r-2 border-black px-2">
+                                        {step[0]}
+                                    </div>
+                                    <div className="flex w-1/2 justify-start border-l-1 border-black px-2">
+                                        {step[1] === 1 ? '\u0020' : step[1]}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     )}
                 </div>
-                <div className="flex">
-                    <div className="mr-4">
-                        <Formula formula={factorizedNumber1.getValue() + "=" + (factorizedNumber1.getValue() > 2 ? factorizedNumber1.getFactorsInExponentialForm() : factorizedNumber1.getValue())} />
-                        {factorizedNumber1.getDecomposition().map((step, index) => (
-                            <div className="flex w-full items-center justify-center" key={index}>
-                                <div className="flex w-1/2 justify-end border-r-2 border-black px-2">
-                                    {step[0]}
-                                </div>
-                                <div className="flex w-1/2 justify-start border-l-1 border-black px-2">
-                                    {step[1] === 1 ? '\u0020' : step[1]}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                {!errors.naturalNumber1 && !errors.naturalNumber2 && (
                     <div>
-                        <Formula formula={factorizedNumber2.getValue() + "=" + (factorizedNumber2.getValue() > 2 ? factorizedNumber2.getFactorsInExponentialForm() : factorizedNumber2.getValue())} />
-                        {factorizedNumber2.getDecomposition().map((step, index) => (
-                            <div className="flex w-full items-center justify-center" key={index}>
-                                <div className="flex w-1/2 justify-end border-r-2 border-black px-2">
-                                    {step[0]}
-                                </div>
-                                <div className="flex w-1/2 justify-start border-l-1 border-black px-2">
-                                    {step[1] === 1 ? '\u0020' : step[1]}
-                                </div>
-                            </div>
-                        ))}
+                        <ArticleBorder />
+                        <Title
+                            text="Największy wspólny dzielnik:"
+                            type="submain-article"
+                        />
+                        <Formula formula={"NWD(" + factorizedNumber1.getValue() + "," + factorizedNumber2.getValue() + ") = "} />
+                        <Formula formula={twoFactorizedNumbers.getGCDString()} />
+                        <ArticleBorder />
+                        <Title
+                            text="Najmniejsza wspólna wielokrotność:"
+                            type="submain-article"
+                        />
+                        <Formula formula={"NWW(" + factorizedNumber1.getValue() + "," + factorizedNumber2.getValue() + ") = "} />
+                        <Formula formula={twoFactorizedNumbers.getLCMString()} />
                     </div>
-                </div>
+                )}
             </form>
         </>
     );

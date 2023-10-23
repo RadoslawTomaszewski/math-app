@@ -3,14 +3,22 @@ import { MathComponent } from "mathjax-react";
 
 export interface IFormulaProps {
   formula: string;
+  margin?: string;
 }
 
-const Formula: FC<IFormulaProps> = ({ formula }) => {
-  return (
-    <div className="flex justify-center m-3">
-      <MathComponent tex={formula} />
-    </div>
-  );
+const Formula: FC<IFormulaProps> = ({ formula, margin }) => {
+  if (margin === "none")
+    return (
+      <div className="flex justify-center">
+        <MathComponent tex={formula} />
+      </div>
+    );
+  else
+    return (
+      <div className="flex justify-center m-3">
+        <MathComponent tex={formula} />
+      </div>
+    );
 };
 
 export default Formula;

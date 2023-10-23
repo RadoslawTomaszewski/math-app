@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
 import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
-import GCDandLCMCalculatorContent from "./GCDandLCMCalculatorContent";
+import QuadraticFunctionCalculatorContent from "./QuadraticFunctionCalculatorContent";
 
-const GCDandLCMCalculatorPage: FC = () => {
+const QuadraticFunctionCalculatorPage: FC = () => {
   const grandparent = { link: "../", name: "Kalkulatory" };
-  const parent = { link: "../arytmetyka", name: "Arytmetyka" };
-  const childName = "Największy wspólny dzielnik (NWD) i Najmniejsza wspólna wielokrotność (NWW)";
+  const parent = { link: "../funkcje", name: "Funkcje" };
+  const childName = "Kalkulator Funkcji Kwadratowej";
 
   return (
     <div className="p-2 justify-center flex flex-col">
@@ -17,11 +17,11 @@ const GCDandLCMCalculatorPage: FC = () => {
       />
       <ArticleWrapper>
         <div className="p-2 flex flex-col items-center min-h-[350px]">
-          <GCDandLCMCalculatorContent />
+          <QuadraticFunctionCalculatorContent />
         </div>
       </ArticleWrapper>
     </div>
   );
 };
 
-export default GCDandLCMCalculatorPage;
+export default QuadraticFunctionCalculatorPage;

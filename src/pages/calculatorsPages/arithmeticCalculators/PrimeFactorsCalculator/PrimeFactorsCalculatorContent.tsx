@@ -4,7 +4,7 @@ import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { RegisterFormOptions } from "../../../../types/types";
 import { InputNaturalNumberStyle } from "../../../../utilities/styles";
-import PrimeFactors from "../../../../types/objects/PrimeFactorsDecomposition/PrimeFactors";
+import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
 
 interface FormData {
     naturalNumber: string;
