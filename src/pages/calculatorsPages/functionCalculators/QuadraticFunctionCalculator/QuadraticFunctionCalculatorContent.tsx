@@ -183,15 +183,15 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <div>Postać kanoniczna:</div>
                         <Formula margin="none" formula={`f(x)=${watchA}x^2${Number(watchB) < 0 ? '-' : '+'}${Math.abs(Number(watchB))}x${Number(watchC) < 0 ? '-' : '+'}${Math.abs(Number(watchC))}`} />
                         <Formula formula={`a=${watchA}`} />
-                        <Formula formula={`p=${watchB}`} />
-                        <Formula formula={`q=${watchC}`} />
+                        <Formula formula={`p=${''}`} />
+                        <Formula formula={`q=${''}`} />
                     </div>
                     <div className="m-2">
                         <div>Postać iloczynowa:</div>
                         <Formula margin="none" formula={`f(x)=${watchA}x^2${Number(watchB) < 0 ? '-' : '+'}${Math.abs(Number(watchB))}x${Number(watchC) < 0 ? '-' : '+'}${Math.abs(Number(watchC))}`} />
                         <Formula formula={`a=${watchA}`} />
-                        <Formula formula={`x_1=${watchB}`} />
-                        <Formula formula={`x_2=${watchC}`} />
+                        <Formula formula={`x_1=${''}`} />
+                        <Formula formula={`x_2=${''}`} />
                     </div>
                 </div>
                 <ArticleBorder />

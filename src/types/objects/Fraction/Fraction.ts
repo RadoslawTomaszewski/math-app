@@ -10,7 +10,8 @@ class Fraction {
     }
 
     private reduceFraction = ():void =>{
-        const GCD = new TwoNumberPrimeFactors(new PrimeFactors(this.fraction[0]), new PrimeFactors(this.fraction[1])).getGCD();
+        const twoNumberPrimeFactors = new TwoNumberPrimeFactors(new PrimeFactors(this.fraction[0]), new PrimeFactors(this.fraction[1]));
+        const GCD = twoNumberPrimeFactors.getGCD();
         console.log(GCD);
         if(GCD !== 0){
             this.fraction[0] = this.fraction[0]/GCD;
@@ -23,7 +24,7 @@ class Fraction {
         return this.fraction;
     }
     getFractionString(): string{
-        return `\\frac{${this.fraction[0]}}{${this.fraction[1]}`;
+        return `\\frac{${this.fraction[0]}}{${this.fraction[1]}}`;
     }
 
 }
