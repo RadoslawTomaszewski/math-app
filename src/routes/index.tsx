@@ -45,6 +45,8 @@ import SetOperationsPage from "../pages/knowledgeBasePages/sets/setOperations/Se
 import PrimeFactorCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/PrimeFactorsCalculator/PrimeFactorsCalculatorPage";
 import GCDandLCMCalculatorPage from "../pages/calculatorsPages/arithmeticCalculators/GCDandLCMCalculator/GCDandLCMCalculatorCalculatorPage";
 import QuadraticFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/QuadraticFunctionCalculator/QuadraticFunctionCalculatorPage";
+import HomographicFunctionPage from "../pages/knowledgeBasePages/functionsPages/homographicFunction/HomographicFunctionPage";
+import FractionReducerPage from "../pages/calculatorsPages/arithmeticCalculators/FractionReducer/FractionReducerPage";
 
 
 
@@ -60,6 +62,10 @@ export const Router: FC = () => {
                         <Route
                             path="funkcja-kwadratowa"
                             element={<QuadraticFunctionPage />}
+                        />
+                        <Route
+                            path="funkcja-homograficzna"
+                            element={<HomographicFunctionPage />}
                         />
                         <Route
                             path="ciag-arytmetyczny"
@@ -122,6 +128,10 @@ export const Router: FC = () => {
                         <Route
                             path="pisemne-dodawanie"
                             element={<SumCalculatorPage />}
+                        />
+                        <Route
+                            path="skracanie-ulamkow"
+                            element={<FractionReducerPage />}
                         />
                         <Route
                             path="rozklad-na-czynniki-pierwsze"

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { RegisterFormOptions } from "../../../../types/types";
-import { InputNaturalNumberStyle } from "../../../../utilities/styles";
+import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/styles";
 import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import TwoNumberPrimeFactors from "../../../../types/objects/PrimeFactors/TwoNumberPrimeFactors";
@@ -114,10 +114,10 @@ const GCDandLCMCalculatorContent: FC = () => {
                             />
                         </div>
                         {errors.naturalNumber1 && (
-                            <span className="text-errorColor">{errors.naturalNumber1.message}</span>
+                            <span className={ErrorMessage}>{errors.naturalNumber1.message}</span>
                         )}
                         {errors.naturalNumber2 && (
-                            <span className="text-errorColor">{errors.naturalNumber2.message}</span>
+                            <span className={ErrorMessage}>{errors.naturalNumber2.message}</span>
                         )}
                     </label>
                 </div>

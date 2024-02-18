@@ -63,7 +63,7 @@ const ExponentiationContent: FC = () => {
       <ArticleBorder />
       <Title text={"Potęga o wykładniku naturalnym"} type="submain-article" />
       <p>Potęgowanie definiuje się jako skrócona forma zapisu wielokrotnego mnożenia tego samego czynnika</p>
-      <Formula formula="a ^ b = \underbrace{b \cdot b \cdot \ldots \cdot b}_{a \text{ razy}}" />
+      <Formula formula="a ^ b = \underbrace{a \cdot a \cdot \ldots \cdot a}_{b \text{ razy}}" />
       <p>w szczególności</p>
       <Formula formula="a ^ 1 = a" />
       <p>Dodatkowo przyjmuje się zasadę</p>

@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import { RegisterFormOptions } from "../../../../types/types";
-import { InputCoefficientStyle } from "../../../../utilities/styles";
+import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
 import QuadraticFormula from "../../../../types/objects/QuadraticFormula/QuadraticFormula";
@@ -160,13 +160,13 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             />
                         </div>
                         {errors.a && (
-                            <span className="text-errorColor">{errors.a.message}</span>
+                            <span className={ErrorMessage}>{errors.a.message}</span>
                         )}
                         {errors.b && (
-                            <span className="text-errorColor">{errors.b.message}</span>
+                            <span className={ErrorMessage}>{errors.b.message}</span>
                         )}
                         {errors.c && (
-                            <span className="text-errorColor">{errors.c.message}</span>
+                            <span className={ErrorMessage}>{errors.c.message}</span>
                         )}
                     </label>
                 </div>

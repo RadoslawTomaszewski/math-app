@@ -1,4 +1,8 @@
-export const InputRootCalculatorStyle = "m-2 text-center w-[90px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
+//text colors
+export const ErrorMessage = "text-errorColor"
+
+//input styles
+export const InputShortNumberStyle = "m-2 text-center w-[90px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
 
 export const InputNaturalNumberStyle = "m-2 text-center w-[150px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
 

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { rootRegisterOptions } from "../../../../utilities/validation";
-import { InputRootCalculatorStyle } from "../../../../utilities/styles";
+import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
 import SquareRootNumber from "../../../../types/objects/RootNumber/SquareRootNumber";
 
 interface FormData {
@@ -43,7 +43,7 @@ const SquareRootCalculatorContent: FC = () => {
                 <label className="flex pt-4 flex-col items-center">
                     Wprowadź liczbę naturalną pod pierwiastkiem:
                     <input
-                        className={InputRootCalculatorStyle}
+                        className={InputShortNumberStyle}
                         placeholder="0"
                         type="number"
                         min="0"
@@ -52,7 +52,7 @@ const SquareRootCalculatorContent: FC = () => {
                     />
                 </label>
                 {errors.rootNumber ? (
-                    <span className="text-errorColor">{errors.rootNumber.message}</span>
+                    <span className={ErrorMessage}>{errors.rootNumber.message}</span>
                 ) : (
                     <>
                         {squareRoot.getAllUniqueSteps().map((step, index) => (

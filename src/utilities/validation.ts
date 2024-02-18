@@ -20,3 +20,42 @@ export const rootRegisterOptions: RegisterFormOptions<IRootFormData> = {
     },
   },
 };
+
+interface IIntegerFormData {
+  nominator: string;
+  denominator: string;
+}
+
+export const integerRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
+  nominator: {
+    max: {
+      value: 10000000,
+      message: "Maksymalna wartość to 10000000",
+    },
+    min: {
+      value: -10000000,
+      message: "Minimalna wartość to -10000000",
+    },
+    pattern: {
+      value: /^-?\d+$/,
+      message: "Wprowadzona wartość musi być liczbą całkowitą",
+    },
+  },
+  denominator:{
+    validate: {
+      notZero: value => parseInt(value) !== 0 || "Mianownik nie może być równy zero",
+    },
+    max: {
+      value: 10000000,
+      message: "Maksymalna wartość to 10000000",
+    },
+    min: {
+      value: -10000000,
+      message: "Minimalna wartość to -10000000",
+    },
+    pattern: {
+      value: /^-?\d+$/,
+      message: "Wprowadzona wartość musi być liczbą całkowitą różną od zera",
+    },
+  }
+};

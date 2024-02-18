@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { RegisterFormOptions } from "../../../../types/types";
-import { InputNaturalNumberStyle } from "../../../../utilities/styles";
+import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/styles";
 import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
 
 interface FormData {
@@ -69,7 +69,7 @@ const PrimeFactorCalculatorContent: FC = () => {
                     />
                 </label>
                 {errors.naturalNumber ? (
-                    <span className="text-errorColor">{errors.naturalNumber.message}</span>
+                    <span className={ErrorMessage}>{errors.naturalNumber.message}</span>
                 ) : (
                     <>
                         <Formula formula={factorizedNumber.getValue() + "=" + (factorizedNumber.getValue() > 2 ? factorizedNumber.getFactorsInExponentialForm() : factorizedNumber.getValue())} />
