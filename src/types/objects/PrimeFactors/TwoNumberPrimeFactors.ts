@@ -105,6 +105,10 @@ class TwoNumberPrimeFactors {
             return step1 + " = " + step2;
     }
 
+    getLCM = (): number =>{
+        return this.LCM;
+    }
+
 
 }
 export default TwoNumberPrimeFactors;
