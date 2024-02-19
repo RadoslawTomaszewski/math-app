@@ -26,7 +26,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
         watch,
         setValue,
         formState: { errors },
-    } = useForm<FormData>({ defaultValues: { a: "0", b: "0", c: "0" } });
+    } = useForm<FormData>({ defaultValues: { a: "", b: "", c: "" } });
 
     const watchA = watch("a");
     const watchB = watch("b");
@@ -44,13 +44,16 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
     const registerOptions: RegisterFormOptions<FormData> = {
         a: {
+            validate: {
+                notZero: value => parseInt(value) !== 0 || "To nie jest funkcja kwadratowa",
+            },
             max: {
-                value: 1_000,
-                message: "Maksymalna wartość to 1'000 (tysiąc)",
+                value: 1000,
+                message: "Maksymalna wartość to 1000",
             },
             min: {
-                value: -1_000,
-                message: "Minimalna wartość to -1'000 (tysiąc)",
+                value: -1000,
+                message: "Minimalna wartość to -1000",
             },
             pattern: {
                 value: /^-?\d+$/,
@@ -59,12 +62,12 @@ const QuadraticFunctionCalculatorContent: FC = () => {
         },
         b: {
             max: {
-                value: 1_000,
-                message: "Maksymalna wartość to 1'000 (tysiąc)",
+                value: 1000,
+                message: "Maksymalna wartość to 1000",
             },
             min: {
-                value: -1_000,
-                message: "Minimalna wartość to -1'000 (tysiąc)",
+                value: -1000,
+                message: "Minimalna wartość to -1000",
             },
             pattern: {
                 value: /^-?\d+$/,
@@ -73,12 +76,12 @@ const QuadraticFunctionCalculatorContent: FC = () => {
         },
         c: {
             max: {
-                value: 1_000,
-                message: "Maksymalna wartość to 1'000 (tysiąc)",
+                value: 1000,
+                message: "Maksymalna wartość to 1000",
             },
             min: {
-                value: -1_000,
-                message: "Minimalna wartość to -1'000 (tysiąc)",
+                value: -1000,
+                message: "Minimalna wartość to -1000",
             },
             pattern: {
                 value: /^-?\d+$/,
@@ -137,7 +140,6 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <div className="InputsWrapper flex flex-row items-end mt-2">
                             <input
                                 className={InputCoefficientStyle}
-                                placeholder="0"
                                 type="number"
                                 {...register("a", registerOptions.a)}
                                 onChange={handleInputChange}
@@ -145,7 +147,6 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             <div className="mx-1"><b>x<sup>2</sup> +</b></div>
                             <input
                                 className={InputCoefficientStyle}
-                                placeholder="0"
                                 type="number"
                                 {...register("b", registerOptions.b)}
                                 onChange={handleInputChange}
@@ -153,64 +154,74 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             <div className="mx-1"><b>x +</b></div>
                             <input
                                 className={InputCoefficientStyle}
-                                placeholder="0"
                                 type="number"
                                 {...register("c", registerOptions.c)}
                                 onChange={handleInputChange}
                             />
                         </div>
-                        {errors.a && (
-                            <span className={ErrorMessage}>{errors.a.message}</span>
-                        )}
-                        {errors.b && (
-                            <span className={ErrorMessage}>{errors.b.message}</span>
-                        )}
-                        {errors.c && (
-                            <span className={ErrorMessage}>{errors.c.message}</span>
-                        )}
+                        <div>
+                            {errors.a && (
+                                <span className={ErrorMessage}>{errors.a.message}</span>
+                            )}
+                            {errors.b && (
+                                <span className={ErrorMessage}>{errors.b.message}</span>
+                            )}
+                            {errors.c && (
+                                <span className={ErrorMessage}>{errors.c.message}</span>
+                            )}
+                        </div>
                     </label>
                 </div>
                 <ArticleBorder />
-                <div className="flex flex-row flex-wrap m-2 justify-center">
-                    <div className="m-2">
-                        <div>Postać ogólna:</div>
-                        <Formula margin="none" formula={`f(x)=${watchA}x^2${Number(watchB) < 0 ? '-' : '+'}${Math.abs(Number(watchB))}x${Number(watchC) < 0 ? '-' : '+'}${Math.abs(Number(watchC))}`} />
-                        <Formula formula={`a=${watchA}`} />
-                        <Formula formula={`b=${watchB}`} />
-                        <Formula formula={`c=${watchC}`} />
-                    </div>
-                    <div className="m-2">
-                        <div>Postać kanoniczna:</div>
-                        <Formula margin="none" formula={`f(x)=${watchA}x^2${Number(watchB) < 0 ? '-' : '+'}${Math.abs(Number(watchB))}x${Number(watchC) < 0 ? '-' : '+'}${Math.abs(Number(watchC))}`} />
-                        <Formula formula={`a=${watchA}`} />
-                        <Formula formula={`p=${''}`} />
-                        <Formula formula={`q=${''}`} />
-                    </div>
-                    <div className="m-2">
-                        <div>Postać iloczynowa:</div>
-                        <Formula margin="none" formula={`f(x)=${watchA}x^2${Number(watchB) < 0 ? '-' : '+'}${Math.abs(Number(watchB))}x${Number(watchC) < 0 ? '-' : '+'}${Math.abs(Number(watchC))}`} />
-                        <Formula formula={`a=${watchA}`} />
-                        <Formula formula={`x_1=${''}`} />
-                        <Formula formula={`x_2=${''}`} />
-                    </div>
-                </div>
-                <ArticleBorder />
-                <div>
-                    Współrzędne wierzchołka paraboli:
-                    <Formula formula={'p=\\frac{-b}{2a}=' + quadraticFormula.getP()} />
-                </div>
-                <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
-                    {showGraph ? 'odśwież wykres' : 'generuj wykres'}
-                </button>
-                {showGraph && (
-                    <>
-                        <div>Przycisk TRUE</div>
-                        <div>
-                            Wykres:
-                            <div id="graph-container" />
+                {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
+                {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
+                    <div className="flex flex-row flex-wrap m-2 justify-center">
+                        <div className="m-2">
+                            <div>Postać ogólna:</div>
+                            <Formula margin="none" formula={quadraticFormula.getStandardForm()} />
+                            <Formula formula={`a=${quadraticFormula.getA()}`} />
+                            <Formula formula={`b=${quadraticFormula.getB()}`} />
+                            <Formula formula={`c=${quadraticFormula.getC()}`} />
                         </div>
-                    </>
-                )}
+                        <div className="m-2">
+                            <div>Postać kanoniczna:</div>
+                            <Formula margin="none" formula={quadraticFormula.getCanonicalForm()} />
+                            <Formula formula={`a=${quadraticFormula.getA()}`} />
+                            <Formula formula={`p=${quadraticFormula.getPshort()}`} />
+                            <Formula formula={`q=${quadraticFormula.getQshort()}`} />
+                        </div>
+                        <div className="m-2">
+                            <div>Postać iloczynowa:</div>
+                            <Formula margin="none" formula={`f(x)=${watchA}x^2${Number(watchB) < 0 ? '-' : '+'}${Math.abs(Number(watchB))}x${Number(watchC) < 0 ? '-' : '+'}${Math.abs(Number(watchC))}`} />
+                            <Formula formula={`a=${watchA}`} />
+                            <Formula formula={`x_1=${''}`} />
+                            <Formula formula={`x_2=${''}`} />
+                        </div>
+                    </div>
+                    <span>
+                        Wyróżnik (delta):
+                        <Formula formula={`\\Delta=${quadraticFormula.getB()}^2-4 \\cdot ${quadraticFormula.getA()} \\cdot ${quadraticFormula.getC()} = ${quadraticFormula.getDelta()}`} />
+                    </span>
+                    <ArticleBorder />
+                    <div>
+                        Współrzędne wierzchołka paraboli:
+                        <Formula formula={`W=(${quadraticFormula.getPshort()},${quadraticFormula.getQshort()})`} />
+                        <Formula formula={'p=\\frac{-b}{2a}=' + quadraticFormula.getPlong()} />
+                        <Formula formula={'q=\\frac{-\\Delta}{4a}=' + quadraticFormula.getQlong()} />
+                    </div>
+                    <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
+                        {showGraph ? 'odśwież wykres' : 'generuj wykres'}
+                    </button>
+                    {showGraph && (
+                        <>
+                            <div>Przycisk TRUE</div>
+                            <div>
+                                Wykres:
+                                <div id="graph-container" />
+                            </div>
+                        </>
+                    )}
+                </>)}
             </form>
         </>
     );

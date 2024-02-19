@@ -5,6 +5,8 @@ import Formula from "../../../../components/articleItems/Formula";
 import { rootRegisterOptions } from "../../../../utilities/validation";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
 import SquareRootNumber from "../../../../types/objects/RootNumber/SquareRootNumber";
+import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import { NavLink } from "react-router-dom";
 
 interface FormData {
     rootNumber: string;
@@ -55,11 +57,23 @@ const SquareRootCalculatorContent: FC = () => {
                     <span className={ErrorMessage}>{errors.rootNumber.message}</span>
                 ) : (
                     <>
+                        <ArticleBorder />
                         {squareRoot.getAllUniqueSteps().map((step, index) => (
                             <Formula key={index} formula={step} />
                         ))}
+                        {squareRoot.getAllUniqueSteps().length < 3 && <span>Nie da się wyciągnąć całkowitego czynnika z tego pierwiastka</span>}
                     </>
                 )}
+                <ArticleBorder />
+                <Title text="Jak wyciągać czynnik przed pierwiastek kwadratowy?" type="submain-article" />
+                <span>Wyciąganie czynnika przed pierwiastek kwadratowy polega na rozłożeniu liczby pod pierwiastkiem na czynniki, wśród których są kwadraty liczb. </span>
+                <br />
+                <Formula formula={"\\sqrt{x^2 \\cdot y}=\\sqrt{x^2} \\cdot \\sqrt{y}=x\\sqrt{y}"} />
+                <span>Następnie zgodnie z powyższą regułą można odseparować pierwiastki z kwadratów, a następnie obliczyć ich wartość.</span>
+                <br />
+                <span>Aby znaleźć wszystkie możliwe do uzyskania kwadraty należy dokonać <NavLink to="../rozklad-na-czynniki-pierwsze"><b>rozkładu na czynniki pierwsze (faktoryzacji)</b></NavLink> liczby pod pierwiastkiem.</span>
+                <br />
+                <span>Ten kalkulator wykorzystuje faktoryzację, a następnie łączy identyczne czynniki w pary w celu znalezienia kwadratów liczb.</span>
             </form>
         </>
     );

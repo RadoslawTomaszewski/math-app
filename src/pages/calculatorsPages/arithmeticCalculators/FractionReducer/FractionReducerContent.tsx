@@ -6,7 +6,7 @@ import { integerRegisterOptions } from "../../../../utilities/validation";
 import Fraction from "../../../../types/objects/Fraction/Fraction";
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import { joinUniqueWithEquals } from "../../../../utilities";
+import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../../../utilities";
 import { NavLink } from "react-router-dom";
 
 interface FormData {
@@ -80,15 +80,20 @@ const FractionReducerContent: FC = () => {
                             <Formula formula={joinUniqueWithEquals(fraction.getStep0(), fraction.getStep1(), fraction.getFractionString())} />}
 
                         <span>Dokładna lub przybliżona wartość tego ułamka to:</span>
-                        <Formula formula={`${fraction.getValue()}`} />
-                        <ArticleBorder/>
+                        {fraction.getIsValueApproximate()
+                            ?
+                            <Formula formula={joinUniqueWithEquals(joinUniqueWithEquals(fraction.getFractionString(), fraction.getMixedFraction()), `${fraction.getValue()}`)} />
+                            :
+                            <Formula formula={joinUniqueWithApproximations(joinUniqueWithEquals(fraction.getFractionString(), fraction.getMixedFraction()), `${fraction.getValue()}`)} />
+                        }
+                        <ArticleBorder />
                     </>
                 )}
-                <Title text="Jak skracać ułamki?" type="submain-article"/>
+                <Title text="Jak skracać ułamki?" type="submain-article" />
                 <span>Skracanie ułamków polega na podzieleniu licznika i mianownika przez ich wspólny dzielnik.</span>
-                <br/>
+                <br />
                 <span>Aby otrzymać ułamek w postaci nieskracalnej należy znaleźć <NavLink to="../nww-i-nwd"><b>największy wspólny dzielnik (NWD)</b></NavLink>.</span>
-                <br/>
+                <br />
                 <span>Ten kalkulator wykorzystuje metodę znajdowania największego wspólnego dzielnika</span>
             </form>
         </>
