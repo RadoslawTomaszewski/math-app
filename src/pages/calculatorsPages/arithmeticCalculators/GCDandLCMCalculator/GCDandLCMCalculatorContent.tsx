@@ -2,11 +2,11 @@ import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
-import { RegisterFormOptions } from "../../../../types/types";
 import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/styles";
 import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import TwoNumberPrimeFactors from "../../../../types/objects/PrimeFactors/TwoNumberPrimeFactors";
+import { integerRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
     naturalNumber1: string;
@@ -46,38 +46,6 @@ const GCDandLCMCalculatorContent: FC = () => {
         }
     }, [watchNaturalNumber1, watchNaturalNumber2, errors.naturalNumber1, errors.naturalNumber2]);
 
-
-    const registerOptions: RegisterFormOptions<FormData> = {
-        naturalNumber1: {
-            max: {
-                value: 1_000_000_000,
-                message: "Maksymalna wartość to 1'000'000'000 (miliard)",
-            },
-            min: {
-                value: 1,
-                message: "Minimalna wartość to 1",
-            },
-            pattern: {
-                value: /^\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-        naturalNumber2: {
-            max: {
-                value: 1_000_000_000,
-                message: "Maksymalna wartość to 1'000'000'000 (miliard)",
-            },
-            min: {
-                value: 1,
-                message: "Minimalna wartość to 1",
-            },
-            pattern: {
-                value: /^\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-    };
-
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
         const inputName = event.target.name;
@@ -101,7 +69,7 @@ const GCDandLCMCalculatorContent: FC = () => {
                                 placeholder="0"
                                 type="number"
                                 min="0"
-                                {...register("naturalNumber1", registerOptions.naturalNumber1)}
+                                {...register("naturalNumber1", integerRegisterOptions.numberGCDandLCM)}
                                 onChange={handleInputChange}
                             />
                             <input
@@ -109,7 +77,7 @@ const GCDandLCMCalculatorContent: FC = () => {
                                 placeholder="0"
                                 type="number"
                                 min="0"
-                                {...register("naturalNumber2", registerOptions.naturalNumber2)}
+                                {...register("naturalNumber2", integerRegisterOptions.numberGCDandLCM)}
                                 onChange={handleInputChange}
                             />
                         </div>

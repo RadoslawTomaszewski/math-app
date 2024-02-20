@@ -2,9 +2,9 @@ import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
-import { RegisterFormOptions } from "../../../../types/types";
 import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/styles";
 import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
+import { integerRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
     naturalNumber: string;
@@ -28,23 +28,6 @@ const PrimeFactorCalculatorContent: FC = () => {
         }
     }, [watchNaturalNumber, errors.naturalNumber]);
 
-    const registerOptions: RegisterFormOptions<FormData> = {
-        naturalNumber: {
-            max: {
-                value: 1_000_000_000_000,
-                message: "Maksymalna wartość to 1'000'000'000'000 (bilion)",
-            },
-            min: {
-                value: 0,
-                message: "Minimalna wartość to 0",
-            },
-            pattern: {
-                value: /^\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-    };
-
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
         if (inputValue !== "0,") setValue("naturalNumber", inputValue, { shouldValidate: true });
@@ -64,7 +47,7 @@ const PrimeFactorCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("naturalNumber", registerOptions.naturalNumber)}
+                        {...register("naturalNumber", integerRegisterOptions.primeFactorNumber)}
                         onChange={handleInputChange}
                     />
                 </label>

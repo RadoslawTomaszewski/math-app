@@ -2,11 +2,11 @@ import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
-import { rootRegisterOptions } from "../../../../utilities/validation";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
 import SquareRootNumber from "../../../../types/objects/RootNumber/SquareRootNumber";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
+import { integerRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
     rootNumber: string;
@@ -49,7 +49,7 @@ const SquareRootCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("rootNumber", rootRegisterOptions.rootNumber)}
+                        {...register("rootNumber", integerRegisterOptions.squareRootNumber)}
                         onChange={handleInputChange}
                     />
                 </label>

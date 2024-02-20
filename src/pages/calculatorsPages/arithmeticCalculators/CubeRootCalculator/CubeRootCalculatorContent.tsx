@@ -4,7 +4,7 @@ import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
 import CubeRootNumber from "../../../../types/objects/RootNumber/CubeRootNumber";
-import { rootRegisterOptions } from "../../../../utilities/validation";
+import { integerRegisterOptions } from "../../../../utilities/validation";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
 
@@ -48,8 +48,7 @@ const CubeRootCalculatorContent: FC = () => {
                         className={InputShortNumberStyle}
                         placeholder="0"
                         type="number"
-                        min="0"
-                        {...register("rootNumber", rootRegisterOptions.rootNumber)}
+                        {...register("rootNumber", integerRegisterOptions.cubeRootNumber)}
                         onChange={handleInputChange}
                     />
                 </label>
@@ -61,7 +60,7 @@ const CubeRootCalculatorContent: FC = () => {
                         {cubeRoot.getAllUniqueSteps().map((step, index) => (
                             <Formula key={index} formula={step} />
                         ))}
-                        {cubeRoot.getAllUniqueSteps().length < 3 && <span>Nie da się wyciągnąć całkowitego czynnika z tego pierwiastka</span>}
+                        {(cubeRoot.getAllUniqueSteps().length < 3 && cubeRoot.getSign() !== "-") && <span>Nie da się wyciągnąć całkowitego czynnika z tego pierwiastka</span>}
                     </>
                 )}
                 <ArticleBorder />

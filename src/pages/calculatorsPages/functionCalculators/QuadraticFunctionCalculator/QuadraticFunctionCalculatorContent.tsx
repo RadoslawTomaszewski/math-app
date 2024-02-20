@@ -1,11 +1,11 @@
 import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
-import { RegisterFormOptions } from "../../../../types/types";
 import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
 import QuadraticFormula from "../../../../types/objects/QuadraticFormula/QuadraticFormula";
+import { integerRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
     a: string;
@@ -41,54 +41,6 @@ const QuadraticFunctionCalculatorContent: FC = () => {
             setQuadraticFormula(new QuadraticFormula(Number(watchA), Number(watchB), Number(watchC)));
         }
     }, [watchA, watchB, watchC, errors.a, errors.b, errors.c]);
-
-    const registerOptions: RegisterFormOptions<FormData> = {
-        a: {
-            validate: {
-                notZero: value => parseInt(value) !== 0 || "To nie jest funkcja kwadratowa",
-            },
-            max: {
-                value: 1000,
-                message: "Maksymalna wartość to 1000",
-            },
-            min: {
-                value: -1000,
-                message: "Minimalna wartość to -1000",
-            },
-            pattern: {
-                value: /^-?\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-        b: {
-            max: {
-                value: 1000,
-                message: "Maksymalna wartość to 1000",
-            },
-            min: {
-                value: -1000,
-                message: "Minimalna wartość to -1000",
-            },
-            pattern: {
-                value: /^-?\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-        c: {
-            max: {
-                value: 1000,
-                message: "Maksymalna wartość to 1000",
-            },
-            min: {
-                value: -1000,
-                message: "Minimalna wartość to -1000",
-            },
-            pattern: {
-                value: /^-?\d+$/,
-                message: "Wprowadzona wartość musi być liczbą całkowitą",
-            },
-        },
-    };
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
@@ -141,21 +93,21 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             <input
                                 className={InputCoefficientStyle}
                                 type="number"
-                                {...register("a", registerOptions.a)}
+                                {...register("a", integerRegisterOptions.coefficientNotZero)}
                                 onChange={handleInputChange}
                             />
                             <div className="mx-1"><b>x<sup>2</sup> +</b></div>
                             <input
                                 className={InputCoefficientStyle}
                                 type="number"
-                                {...register("b", registerOptions.b)}
+                                {...register("b", integerRegisterOptions.coefficient)}
                                 onChange={handleInputChange}
                             />
                             <div className="mx-1"><b>x +</b></div>
                             <input
                                 className={InputCoefficientStyle}
                                 type="number"
-                                {...register("c", registerOptions.c)}
+                                {...register("c", integerRegisterOptions.coefficient)}
                                 onChange={handleInputChange}
                             />
                         </div>
