@@ -38,7 +38,7 @@ const CubeRootCalculatorContent: FC = () => {
     return (
         <>
             <Title
-                text="Wyciąganie czynnika całkowitego przed pierwiastek kwadratowy"
+                text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
                 type="main-article"
             />
             <form className="text-center">

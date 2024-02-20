@@ -6,7 +6,7 @@ import CubeRootCalculatorContent from "./CubeRootCalculatorContent";
 const CubeRootCalculatorPage: FC = () => {
   const grandparent = { link: "../", name: "Kalkulatory" };
   const parent = { link: "../arytmetyka", name: "Arytmetyka" };
-  const childName = "Wyciąganie czynnika przed pierwiastek kwadratowy";
+  const childName = "Wyciąganie czynnika przed pierwiastek sześcienny";
 
   return (
     <div className="p-2 justify-center flex flex-col">

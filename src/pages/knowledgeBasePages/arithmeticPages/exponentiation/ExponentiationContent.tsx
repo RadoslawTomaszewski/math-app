@@ -10,7 +10,7 @@ const ExponentiationContent: FC = () => {
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{y \\text{ razy}}',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x+y \\text{ razy}}',
     'a^{x+y}'];
-  const exp2Proof = ['\\frac{a ^ x}{ b ^ x}',
+  const exp2Proof = ['\\frac{a ^ x}{ a ^ y}',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}\\cdot\\frac{1}{\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{y \\text{ razy}}}',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x-y \\text{ razy}}',
     'a^{x-y}'];

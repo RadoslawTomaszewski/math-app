@@ -5,10 +5,10 @@ class Fraction {
     private nominator: number = 0;
     private denominator: number = 1;
     private fraction: number[] = [];
-    //Dokladnosc do 14 miejsc po przecinku
     private isFractionPositive: boolean = true;
     private GCD: number = 1;
     private value: number = 0;
+    //Dokladnosc do 14 miejsc po przecinku
     private isValueApproximate: boolean = false;
     //Step 1 ulamek w pierwotnej formie z wylaczonym minusem
     private step1: string = "";
@@ -18,7 +18,6 @@ class Fraction {
     private step3: string = "";
     //AbstStep 3 modul ulamka w skroconej formie
     private absStep3: string = "";
-
 
     constructor(nominator: number, denominator: number) {
         if (denominator !== 0) {
@@ -34,7 +33,6 @@ class Fraction {
             this.setAbsStep3();
         }
     }
-
     private setFraction(nominator: number, denominator: number): void {
         this.nominator = nominator;
         this.denominator = denominator;
@@ -159,21 +157,19 @@ class Fraction {
     getAbsFractionString(): string {
         return this.absStep3;
     }
-    //TO DO ERROR
     getMixedFraction(): string {
         const wholePart = Math.floor(Math.abs(this.value));
-        const fractionalPart = this.value - wholePart;
+        const fractionalPart = Math.abs(this.value) - wholePart;
         let fractionSign = '';
         if (!this.isFractionPositive) fractionSign = '-';
 
         if (fractionalPart === 0) {
-            return `${wholePart}`;
+            return `${fractionSign}${wholePart}`;
         } else if (wholePart === 0) {
             return `${this.step3}`;
         } else {
             return `${fractionSign}${wholePart} \\frac{${this.fraction[0] - wholePart * this.fraction[1]}}{${this.fraction[1]}}`;
         }
     }
-
 }
 export default Fraction;

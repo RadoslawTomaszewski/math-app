@@ -22,7 +22,6 @@ class QuadraticFormula {
             this.setCanonicalForm();
         }
     }
-
     private setCoefficients = (A: number, B: number, C: number): void => {
         this.a = A;
         this.b = B;
@@ -38,7 +37,16 @@ class QuadraticFormula {
         this.q = new Fraction((-1) * this.delta, 4 * this.a);
     }
     private setStandardForm = (): void => {
-        this.standardForm = `f(x)=${this.a}x^2${this.b < 0 ? '-' : '+'}${Math.abs(this.b)}x${this.c < 0 ? '-' : '+'}${Math.abs(this.c)}`
+        let standardFormA = `${this.a}x^2`;
+        let standardFormB = "";
+        let standardFormC = "";
+
+        if (Math.abs(this.a) === 1) standardFormA = `${this.a < 0 ? '-' : ''}x^2`;
+        if (Math.abs(this.b) === 1) standardFormB = `${this.b < 0 ? '-' : '+'}x`;
+        else if (this.b !== 0) standardFormB = `${this.b < 0 ? '-' : '+'}${Math.abs(this.b)}x`;
+        if (this.c !== 0) standardFormC = `${this.c < 0 ? '-' : '+'}${Math.abs(this.c)}`;
+
+        this.standardForm = `f(x)=${standardFormA}${standardFormB}${standardFormC}`;
     }
     private setCanonicalForm = (): void => {
         if (this.a === 0) {
@@ -63,13 +71,12 @@ class QuadraticFormula {
         if (this.p.getNominator() === 0) {
             canonicalFormP = `x^2`;
         }
-        else canonicalFormP = `(x${signBeforeP}${this.p.getAbsFractionString()})^2`;
+        else canonicalFormP = `\\left(x${signBeforeP}${this.p.getAbsFractionString()}\\right)^2`;
 
         if (this.q.getNominator() !== 0) canonicalFormQ = `${signBeforeQ}${this.q.getAbsFractionString()}`;
 
         this.canonicalForm = 'f(x)=' + canonicalFormA + canonicalFormP + canonicalFormQ;
     }
-
     getA(): number {
         return this.a;
     }

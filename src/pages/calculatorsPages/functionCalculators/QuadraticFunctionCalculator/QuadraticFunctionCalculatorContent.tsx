@@ -159,20 +159,20 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
-                        <div>
-                            {errors.a && (
-                                <span className={ErrorMessage}>{errors.a.message}</span>
-                            )}
-                            {errors.b && (
-                                <span className={ErrorMessage}>{errors.b.message}</span>
-                            )}
-                            {errors.c && (
-                                <span className={ErrorMessage}>{errors.c.message}</span>
-                            )}
-                        </div>
                     </label>
                 </div>
                 <ArticleBorder />
+                <div>
+                    {errors.a && (
+                        <span className={ErrorMessage}>{errors.a.message}</span>
+                    )}
+                    {errors.b && (
+                        <span className={ErrorMessage}>{errors.b.message}</span>
+                    )}
+                    {errors.c && (
+                        <span className={ErrorMessage}>{errors.c.message}</span>
+                    )}
+                </div>
                 {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
                 {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
                     <div className="flex flex-row flex-wrap m-2 justify-center">
@@ -205,7 +205,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                     <ArticleBorder />
                     <div>
                         Współrzędne wierzchołka paraboli:
-                        <Formula formula={`W=(${quadraticFormula.getPshort()},${quadraticFormula.getQshort()})`} />
+                        <Formula formula={`W=\\left(${quadraticFormula.getPshort()},${quadraticFormula.getQshort()}\\right)`} />
                         <Formula formula={'p=\\frac{-b}{2a}=' + quadraticFormula.getPlong()} />
                         <Formula formula={'q=\\frac{-\\Delta}{4a}=' + quadraticFormula.getQlong()} />
                     </div>
