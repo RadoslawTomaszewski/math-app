@@ -6,7 +6,7 @@ export const classNames = (...classes: string[]) => {
 
 //String Functions
 export const joinUniqueWithEquals = (...expressions: string[]) => {
-  const uniqueExpressions = Array.from(new Set(expressions));
+  const uniqueExpressions = Array.from(new Set(expressions.filter(expression => expression !== '')));
   return uniqueExpressions.join("=");
 };
 

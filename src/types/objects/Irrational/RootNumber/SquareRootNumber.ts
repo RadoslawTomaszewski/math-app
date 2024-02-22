@@ -1,5 +1,4 @@
-class CubeRootNumber {
-  private sign: string = "";
+class SquareRootNumber {
   private factors: number[] = [];
   private preFactors: number[] = [];
   private underFactors: number[] = [];
@@ -7,17 +6,13 @@ class CubeRootNumber {
   private underRoot: number | null = null;
   private steps: string[] = [];
 
-  //TODO naprawić problem z ujemnymi pierwiastkami i komunikatem o braku mozliwosci wyciagniecia czynnika przed pierwiastek (brak komunikatu)
   constructor(private num: number) {
-    this.setSign();
-    this.setFactors();
-    this.setPreFactorsAndUnderFactors();
-    this.setPreRootAndUnderRoot();
-    this.setAllSteps();
-  }
-  private setSign(): void {
-    if (this.num < 0) this.sign = "-";
-    this.num = Math.abs(this.num);
+    if (num >= 0) {
+      this.setFactors();
+      this.setPreFactorsAndUnderFactors();
+      this.setPreRootAndUnderRoot();
+      this.setAllSteps();
+    }
   }
   private setFactors(): void {
     let divident = this.num;
@@ -36,10 +31,10 @@ class CubeRootNumber {
     this.underFactors = this.factors.slice();
     const indicesToRemove: number[] = [];
     for (let i = 0; i < this.underFactors.length; i++) {
-      if (this.underFactors[i] === this.underFactors[i + 1] && this.underFactors[i] === this.underFactors[i + 2]) {
-        indicesToRemove.push(i, i + 1, i + 2);
+      if (this.underFactors[i] === this.underFactors[i + 1]) {
+        indicesToRemove.push(i, i + 1);
         this.preFactors.push(this.underFactors[i]);
-        i += 2;
+        i++;
       }
     }
     if (indicesToRemove.length > 0) {
@@ -83,8 +78,12 @@ class CubeRootNumber {
       if (numbers[i] !== numbers[i - 1]) {
         pows.push([numbers[i - 1], exponent]);
         exponent = 1;
-      } else exponent++;
-      if (i === numbers.length - 1) pows.push([numbers[i], exponent]);
+      } else {
+        exponent++;
+      }
+      if (i === numbers.length - 1) {
+        pows.push([numbers[i], exponent]);
+      }
     }
     return pows;
   }
@@ -96,18 +95,19 @@ class CubeRootNumber {
         return exp === 1 ? base.toString() : `${base}^{${exp}}`;
       })
       .join("\\cdot ");
+
     return formula;
   }
   getFactors(): string {
     return this.factors.join(", ")
   }
   getStep1(): string {
-    return `\\sqrt[3]{${this.sign}${this.num}}`
+    return `\\sqrt{${this.num}}`
   }
   getStep2(): string {
     const pows = this.convertToExponentialTable(this.factors);
     const step2 = this.convertExponentialTableToString(pows);
-    return `${this.sign}\\sqrt[3]{${step2}}`;
+    return `\\sqrt{${step2}}`;
   }
   getStep3(): string {
     const prePows = this.convertToExponentialTable(this.preFactors);
@@ -116,13 +116,13 @@ class CubeRootNumber {
     const underPows = this.convertToExponentialTable(this.underFactors);
     const underFactorsString = this.convertExponentialTableToString(underPows);
 
-    if (underFactorsString === "") return `${this.sign}${preFactorsString}`;
-    return `${this.sign}${preFactorsString}\\sqrt[3]{${underFactorsString}}`;
+    if (underFactorsString === "") return `${preFactorsString}`;
+    return `${preFactorsString}\\sqrt{${underFactorsString}}`;
   }
   getStep4(): string {
-    if (this.underRoot === 1) return `${this.sign}${this.preRoot}`
-    if (this.preRoot === 1) return `${this.sign}\\sqrt[3]{${this.underRoot}}`;
-    return `${this.sign}${this.preRoot}\\sqrt[3]{${this.underRoot}}`;
+    if (this.underRoot === 1) return `${this.preRoot}`
+    if (this.preRoot === 1) return `\\sqrt{${this.underRoot}}`;
+    return `${this.preRoot}\\sqrt{${this.underRoot}}`;
   }
   getAllSteps(): string[] {
     return this.steps;
@@ -136,11 +136,6 @@ class CubeRootNumber {
   getUnderRoot(): number | null {
     return this.underRoot;
   }
-  getSign(): string {
-    return this.sign;
-  }
 }
 
-
-
-export default CubeRootNumber;
+export default SquareRootNumber;

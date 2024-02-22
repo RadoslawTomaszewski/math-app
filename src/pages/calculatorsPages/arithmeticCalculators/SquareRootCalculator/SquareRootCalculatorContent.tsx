@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
-import SquareRootNumber from "../../../../types/objects/RootNumber/SquareRootNumber";
+import SquareRootNumber from "../../../../types/objects/Irrational/RootNumber/SquareRootNumber";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
 import { integerRegisterOptions } from "../../../../utilities/validation";

@@ -2,8 +2,6 @@ import PrimeFactors from "../PrimeFactors/PrimeFactors";
 import TwoNumberPrimeFactors from "../PrimeFactors/TwoNumberPrimeFactors";
 
 class Fraction {
-    private nominator: number = 0;
-    private denominator: number = 1;
     private fraction: number[] = [];
     private isFractionPositive: boolean = true;
     private GCD: number = 1;
@@ -19,7 +17,7 @@ class Fraction {
     //AbstStep 3 modul ulamka w skroconej formie
     private absStep3: string = "";
 
-    constructor(nominator: number, denominator: number) {
+    constructor(private nominator: number, private denominator: number) {
         if (denominator !== 0) {
             this.setFraction(nominator, denominator);
             this.calculate();

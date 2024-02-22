@@ -6,6 +6,8 @@ import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
 import QuadraticFormula from "../../../../types/objects/QuadraticFormula/QuadraticFormula";
 import { integerRegisterOptions } from "../../../../utilities/validation";
+import { quadraticEquations } from "../../../../types/equations";
+import IrrationalSum from "../../../../types/objects/Irrational/IrrationalSum";
 
 interface FormData {
     a: string;
@@ -115,15 +117,14 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 </div>
                 <ArticleBorder />
                 <div>
-                    {errors.a && (
-                        <span className={ErrorMessage}>{errors.a.message}</span>
-                    )}
-                    {errors.b && (
-                        <span className={ErrorMessage}>{errors.b.message}</span>
-                    )}
-                    {errors.c && (
-                        <span className={ErrorMessage}>{errors.c.message}</span>
-                    )}
+                    {Object.entries(errors).map(([key, error]) => (
+                        error && (
+                            <>
+                                <span key={key} className={ErrorMessage}>{error.message}</span>
+                                <br />
+                            </>
+                        )
+                    ))}
                 </div>
                 {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
                 {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
@@ -139,27 +140,63 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             <div>Postać kanoniczna:</div>
                             <Formula margin="none" formula={quadraticFormula.getCanonicalForm()} />
                             <Formula formula={`a=${quadraticFormula.getA()}`} />
-                            <Formula formula={`p=${quadraticFormula.getPshort()}`} />
-                            <Formula formula={`q=${quadraticFormula.getQshort()}`} />
+                            <Formula formula={`p=${quadraticFormula.getPResult()}`} />
+                            <Formula formula={`q=${quadraticFormula.getQResult()}`} />
                         </div>
                         <div className="m-2">
                             <div>Postać iloczynowa:</div>
-                            <Formula margin="none" formula={`f(x)=${watchA}x^2${Number(watchB) < 0 ? '-' : '+'}${Math.abs(Number(watchB))}x${Number(watchC) < 0 ? '-' : '+'}${Math.abs(Number(watchC))}`} />
-                            <Formula formula={`a=${watchA}`} />
-                            <Formula formula={`x_1=${''}`} />
-                            <Formula formula={`x_2=${''}`} />
+                            {quadraticFormula.getDelta() < 0 &&
+                                <>
+                                    <span><b>{quadraticFormula.getFactoredForm()}</b></span>
+                                </>
+                            }
+                            {quadraticFormula.getDelta() === 0 &&
+                                <>
+                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                    <Formula formula={`a=${quadraticFormula.getA()}`} />
+                                    <Formula formula={`x_0=${quadraticFormula.getPResult()}`} />
+                                </>
+                            }
+                            {quadraticFormula.getDelta() > 0 &&
+                                <>
+                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                    <Formula formula={`a=${quadraticFormula.getA()}`} />
+                                    <Formula formula={`x_1=`} />
+                                    <Formula formula={`x_2=`} />
+                                </>
+                            }
+
+
                         </div>
                     </div>
+                    <ArticleBorder />
                     <span>
-                        Wyróżnik (delta):
-                        <Formula formula={`\\Delta=${quadraticFormula.getB()}^2-4 \\cdot ${quadraticFormula.getA()} \\cdot ${quadraticFormula.getC()} = ${quadraticFormula.getDelta()}`} />
+                        <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
+                        {quadraticFormula.getDelta() >= 0 &&
+                            <>
+                                <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
+                            </>
+                        }
+                        {quadraticFormula.getDelta() > 0 &&
+                            <>
+                                {/* TO DO CALCULATE THIS ON CLASS QUADRATIC FORMULA */}
+                                <Formula formula={`${quadraticEquations.X1}=\\frac{${quadraticFormula.getB() > 0 ? '-' : ''}${Math.abs(quadraticFormula.getB())}-${quadraticFormula.getSqrtDeltaString()}}{${quadraticFormula.getA() * 2}}`} />
+                                <Formula formula={`${new IrrationalSum(Math.abs(quadraticFormula.getB()), quadraticFormula.getSqrtDelta()).getProductForm()}`} />
+                                <Formula formula={`${quadraticEquations.X2}=\\frac{${quadraticFormula.getB() > 0 ? '-' : ''}${Math.abs(quadraticFormula.getB())}+${quadraticFormula.getSqrtDeltaString()}}{${quadraticFormula.getA() * 2}}`} />
+                            </>
+                        }
+                        {quadraticFormula.getDelta() === 0 &&
+                            <>
+                                {/* TO DO CALCULATE THIS ON CLASS QUADRATIC FORMULA */}
+                                <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getPCalculations()}`} />
+                            </>
+                        }
                     </span>
                     <ArticleBorder />
                     <div>
-                        Współrzędne wierzchołka paraboli:
-                        <Formula formula={`W=\\left(${quadraticFormula.getPshort()},${quadraticFormula.getQshort()}\\right)`} />
-                        <Formula formula={'p=\\frac{-b}{2a}=' + quadraticFormula.getPlong()} />
-                        <Formula formula={'q=\\frac{-\\Delta}{4a}=' + quadraticFormula.getQlong()} />
+                        <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
+                        <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
+                        <Formula formula={`W=\\left(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()}\\right)`} />
                     </div>
                     <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
                         {showGraph ? 'odśwież wykres' : 'generuj wykres'}

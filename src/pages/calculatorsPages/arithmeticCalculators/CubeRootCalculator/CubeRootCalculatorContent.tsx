@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
-import CubeRootNumber from "../../../../types/objects/RootNumber/CubeRootNumber";
+import CubeRootNumber from "../../../../types/objects/Irrational/RootNumber/CubeRootNumber";
 import { integerRegisterOptions } from "../../../../utilities/validation";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
@@ -73,8 +73,6 @@ const CubeRootCalculatorContent: FC = () => {
                 <span>Aby znaleźć wszystkie możliwe do uzyskania sześciany należy dokonać <NavLink to="../rozklad-na-czynniki-pierwsze"><b>rozkładu na czynniki pierwsze (faktoryzacji)</b></NavLink> liczby pod pierwiastkiem.</span>
                 <br />
                 <span>Ten kalkulator wykorzystuje faktoryzację, a następnie łączy identyczne czynniki w trójki w celu znalezienia sześcianów liczb.</span>
-
-
             </form>
         </>
     );
