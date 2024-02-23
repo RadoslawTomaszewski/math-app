@@ -194,6 +194,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
                     <ArticleBorder />
                     <Formula formula={`${quadraticFormula.getX1().getProductFormCalculation()}`} />
+                    <Formula formula={`${quadraticFormula.getX1Calculations()}`} />
 
                     <ArticleBorder />
                     <Formula formula={`${quadraticFormula.getX2().getProductFormCalculation()}`} />

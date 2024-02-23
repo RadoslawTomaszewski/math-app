@@ -81,9 +81,8 @@ class QuadraticFormula {
     }
     private setRootAndFactoredForm = (): void => {
         if (this.delta > 0) {
-            //to do usun abs
-            this.x1 = new IrrationalSum(this.b * (-1), true, this.sqrtDelta);
-            this.x2 = new IrrationalSum(this.b * (-1), false, this.sqrtDelta);
+            this.x1 = new IrrationalSum(this.b * (-1), false, this.sqrtDelta);
+            this.x2 = new IrrationalSum(this.b * (-1), true, this.sqrtDelta);
             this.factoredForm = "Do naprawienia";
             return;
         }
@@ -108,8 +107,7 @@ class QuadraticFormula {
         return this.delta;
     }
     getDeltaCalculations(): string {
-        const calcA = `${this.b < 0 ? `\\left(${this.b}\\right)^2` : `${this.b}^2`}-4\\cdot\\left(${this.a}\\right)\\cdot\\left(${this.c}\\right)`;
-
+        const calcA = `${this.b < 0 ? `\\left(${this.b}\\right)^2` : `${this.b}^2`}-4\\cdot${this.a < 0 ? `\\left(${this.a}\\right)` : `${this.a}`}\\cdot${this.c < 0 ? `\\left(${this.c}\\right)` : `${this.c}`}`;
         const calcB = `${this.getDelta()}`;
         return joinUniqueWithEquals(calcA, calcB);
     }
@@ -148,13 +146,21 @@ class QuadraticFormula {
         return this.x0;
     }
     getX0Calculations(): string {
-        return joinUniqueWithEquals(this.p.getStep1(), this.p.getFractionString(), this.p.getMixedFraction());
+        const substitution = `${this.b < 0 ? `\\frac{-\\left(${this.b}\\right)}{2\\cdot${this.a}}` : `\\frac{-${this.b}}{2\\cdot${this.a}}`}`;
+        return joinUniqueWithEquals(substitution, this.p.getStep1(), this.p.getFractionString(), this.p.getMixedFraction());
     }
     getX0Result() {
         return this.p.getFractionString();
     }
     getX1(): IrrationalSum {
         return this.x1;
+    }
+    getX1Calculations(): string {
+        const substitution = `${this.b < 0 ? `\\frac{-\\left(${this.b}\\right)-\\sqrt{${this.delta}}}{2\\cdot${this.a}}` : `\\frac{-${this.b}}{2\\cdot${this.a}}`}`;
+
+
+
+        return joinUniqueWithEquals(substitution);
     }
     getX2(): IrrationalSum {
         return this.x2;
