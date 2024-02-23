@@ -66,7 +66,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
             script.onload = () => {
                 const elt = document.createElement('div');
-                elt.style.width = '600px';
+                elt.style.width = '100%';
                 elt.style.height = '400px';
                 document.getElementById('graph-container')?.appendChild(elt);
 
@@ -171,11 +171,11 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                     <ArticleBorder />
                     <span>
                         <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
-                        {quadraticFormula.getDelta() >= 0 &&
+                        {quadraticFormula.getDelta() > 0 &&
                             <>
                                 <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
-                                <Formula formula={`${quadraticEquations.X1}=\\frac{${quadraticFormula.getB() > 0 ? '-' : ''}${Math.abs(quadraticFormula.getB())}-${quadraticFormula.getSqrtDeltaString()}}{${quadraticFormula.getA() * 2}}`} />
-                                <Formula formula={`${quadraticEquations.X2}=\\frac{${quadraticFormula.getB() > 0 ? '-' : ''}${Math.abs(quadraticFormula.getB())}+${quadraticFormula.getSqrtDeltaString()}}{${quadraticFormula.getA() * 2}}`} />
+                                <Formula formula={`${quadraticEquations.X1}=${quadraticFormula.getX1Calculations()}`} />
+                                <Formula formula={`${quadraticEquations.X2}=${quadraticFormula.getX2Calculations()}`} />
                             </>
                         }
                         {quadraticFormula.getDelta() === 0 &&
@@ -192,22 +192,11 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <Formula formula={`W=\\left(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()}\\right)`} />
                     </div>
 
-                    <ArticleBorder />
-                    <Formula formula={`${quadraticFormula.getX1().getProductFormCalculation()}`} />
-                    <Formula formula={`${quadraticFormula.getX1Calculations()}`} />
-
-                    <ArticleBorder />
-                    <Formula formula={`${quadraticFormula.getX2().getProductFormCalculation()}`} />
-
-
-
-
                     <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
                         {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                     </button>
                     {showGraph && (
                         <>
-                            <div>Przycisk TRUE</div>
                             <div>
                                 Wykres:
                                 <div id="graph-container" />

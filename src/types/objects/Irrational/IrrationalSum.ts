@@ -38,7 +38,6 @@ class IrrationalSum {
             if (!this.isPreRootPositive) this.results[0] = this.integer - this.squareRoot.getPreRoot()!;
         }
     }
-
     private setSigns(): void {
         if (this.integer >= 0) this.isIntegerPositive = true;
         else this.isIntegerPositive = false;
@@ -104,7 +103,6 @@ class IrrationalSum {
         if (this.signArray[3] === "-") this.results[4] *= (-1);
         if (this.signArray[4] === "-") this.results[5] *= (-1);
     }
-
     getCommonFactor(): number {
         return this.commonFactor;
     }
@@ -147,11 +145,11 @@ class IrrationalSum {
         }
         return joinUniqueWithEquals(`${this.signArray[0]}${this.integer}${this.signArray[1]}${this.squareRoot.getStep4()}`, this.getProductForm());
     }
+    getIsIrrational(): boolean {
+        return this.isIrrational;
+    }
     getResults(): number[] {
         return this.results;
     }
-
-
-
 }
 export default IrrationalSum;
