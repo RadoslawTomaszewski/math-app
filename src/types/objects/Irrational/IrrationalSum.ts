@@ -1,23 +1,70 @@
+import { joinUniqueWithEquals } from "../../../utilities";
 import PrimeFactors from "../PrimeFactors/PrimeFactors";
 import TwoNumberPrimeFactors from "../PrimeFactors/TwoNumberPrimeFactors";
 import SquareRootNumber from "./RootNumber/SquareRootNumber";
 
-//Zrób dodawanie, a potem zmodyfikujesz na odejmowanie dodajac isPlusSign (boolean)
+//IN:   A+sqrt(B) 
+//OUT:  C(D+sqrt(E))
 class IrrationalSum {
-    private commonFactor: number = 1;
+    private preRoot: number = 1;                                //B.1
+    private underRoot: number = 1;                              //B.2 && E.2
+    private commonFactor: number = 1;                           //C
+    private intDividedByCommonFactor: number = 1;               //D
+    private preRootDividedByCommonFactor: number = 1;           //E.1
+    private isIntegerPositive: boolean = true;
 
-    private preRoot: number = 1;
-    private underRoot: number = 1;
+    // (0: int, 1: root) = (2: commonFactor, 3: intDivided, 4:preRootDivided)
+    private signArray: string[] = ["+", "+", "+", "+", "+"];
+    // (0: integer, 1: preRoot, 2:underRoot) = (3: commonFactor, 4:intDivided, 5:preRootDivided, 6:underRootDivided)
+    private results: number[] = [1, 1, 1, 1, 1, 1, 1];
 
-    private intDividedByCommonFactor: number = 1;
-    private preRootDividedByCommonFactor: number = 1;
 
-    constructor(private integer: number, private squareRoot: SquareRootNumber) {
+
+    constructor(private integer: number, private isRootPositive: boolean, private squareRoot: SquareRootNumber) {
+        this.setSigns();
         this.simplifySqrt();
         this.setCommonFactor();
         this.divideByCommonFactor();
+        this.setCorrectVariableSigns();
     }
 
+    private setSigns(): void {
+        if (this.integer >= 0) this.isIntegerPositive = true;
+        else this.isIntegerPositive = false;
+        this.integer = Math.abs(this.integer);
+
+        if (this.isIntegerPositive && this.isRootPositive) {
+            this.signArray[0] = "";
+            this.signArray[1] = "+";
+            this.signArray[2] = "";
+            this.signArray[3] = "";
+            this.signArray[4] = "+";
+        }
+
+        if (this.isIntegerPositive && !this.isRootPositive) {
+            this.signArray[0] = "";
+            this.signArray[1] = "-";
+            this.signArray[2] = "";
+            this.signArray[3] = "";
+            this.signArray[4] = "-";
+        }
+
+        if (!this.isIntegerPositive && this.isRootPositive) {
+            this.signArray[0] = "-";
+            this.signArray[1] = "+";
+            this.signArray[2] = "-";
+            this.signArray[3] = "";
+            this.signArray[4] = "-";
+        }
+
+        if (!this.isIntegerPositive && !this.isRootPositive) {
+            this.signArray[0] = "-";
+            this.signArray[1] = "-";
+            this.signArray[2] = "-";
+            this.signArray[3] = "";
+            this.signArray[4] = "+";
+        }
+    }
     private setCommonFactor(): void {
         let factorizedNum1 = new PrimeFactors(this.integer);
         let factorizedNum2 = new PrimeFactors(this.preRoot);
@@ -29,8 +76,22 @@ class IrrationalSum {
         if (this.squareRoot.getUnderRoot() !== null) this.underRoot = this.squareRoot.getUnderRoot()!;
     }
     private divideByCommonFactor(): void {
-        this.intDividedByCommonFactor = this.integer / this.commonFactor;
-        this.preRootDividedByCommonFactor = this.preRoot / this.commonFactor;
+        this.intDividedByCommonFactor = this.integer / Math.abs(this.commonFactor);
+        this.preRootDividedByCommonFactor = this.preRoot / Math.abs(this.commonFactor);
+    }
+    private setCorrectVariableSigns(): void {
+        this.results[0] = this.integer;
+        this.results[1] = this.preRoot;
+        this.results[2] = this.underRoot;
+        this.results[3] = this.commonFactor;
+        this.results[4] = this.intDividedByCommonFactor;
+        this.results[5] = this.preRootDividedByCommonFactor;
+        this.results[6] = this.underRoot;
+        if (this.signArray[0] === "-") this.results[0] *= (-1);
+        if (this.signArray[1] === "-") this.results[1] *= (-1);
+        if (this.signArray[2] === "-") this.results[3] *= (-1);
+        if (this.signArray[3] === "-") this.results[4] *= (-1);
+        if (this.signArray[4] === "-") this.results[5] *= (-1);
     }
 
     getCommonFactor(): number {
@@ -48,9 +109,29 @@ class IrrationalSum {
     getPreRootDividedByCommonFactor(): number {
         return this.preRootDividedByCommonFactor;
     }
-    //O KURWA MAĆ, DZIAŁA
     getProductForm(): string {
-        return `${this.integer}+${this.squareRoot.getStep4()}=${this.commonFactor}\\left(${this.intDividedByCommonFactor}+${this.preRootDividedByCommonFactor}\\sqrt{${this.underRoot}}\\right)`;
+        let productFormA = `${this.signArray[2]}${this.commonFactor}`;
+
+        let productFormRoot = `${this.preRootDividedByCommonFactor}\\sqrt{${this.underRoot}}`;
+        if (this.preRootDividedByCommonFactor === 1) productFormRoot = `\\sqrt{${this.underRoot}}`;
+
+        let productFormB = `\\left(${this.signArray[3]}${this.intDividedByCommonFactor}${this.signArray[4]}${productFormRoot}\\right)`;
+        if (this.commonFactor === 1 && this.isIntegerPositive) {
+            productFormA = "";
+            productFormB = `${this.signArray[3]}${this.intDividedByCommonFactor}${this.signArray[4]}${productFormRoot}`;
+        }
+        if (this.commonFactor === 1 && !this.isIntegerPositive) {
+            productFormA = "-";
+            productFormB = `\\left(${this.signArray[3]}${this.intDividedByCommonFactor}${this.signArray[4]}${productFormRoot}\\right)`;
+        }
+
+        return `${productFormA}${productFormB}`;
+    }
+    getProductFormCalculation(): string {
+        return joinUniqueWithEquals(`${this.signArray[0]}${this.integer}${this.signArray[1]}${this.squareRoot.getStep4()}`, this.getProductForm());
+    }
+    getResults(): number[] {
+        return this.results;
     }
 
 

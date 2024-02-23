@@ -7,7 +7,6 @@ import Formula from "../../../../components/articleItems/Formula";
 import QuadraticFormula from "../../../../types/objects/QuadraticFormula/QuadraticFormula";
 import { integerRegisterOptions } from "../../../../utilities/validation";
 import { quadraticEquations } from "../../../../types/equations";
-import IrrationalSum from "../../../../types/objects/Irrational/IrrationalSum";
 
 interface FormData {
     a: string;
@@ -175,20 +174,14 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         {quadraticFormula.getDelta() >= 0 &&
                             <>
                                 <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
-                            </>
-                        }
-                        {quadraticFormula.getDelta() > 0 &&
-                            <>
-                                {/* TO DO CALCULATE THIS ON CLASS QUADRATIC FORMULA */}
                                 <Formula formula={`${quadraticEquations.X1}=\\frac{${quadraticFormula.getB() > 0 ? '-' : ''}${Math.abs(quadraticFormula.getB())}-${quadraticFormula.getSqrtDeltaString()}}{${quadraticFormula.getA() * 2}}`} />
-                                <Formula formula={`${new IrrationalSum(Math.abs(quadraticFormula.getB()), quadraticFormula.getSqrtDelta()).getProductForm()}`} />
                                 <Formula formula={`${quadraticEquations.X2}=\\frac{${quadraticFormula.getB() > 0 ? '-' : ''}${Math.abs(quadraticFormula.getB())}+${quadraticFormula.getSqrtDeltaString()}}{${quadraticFormula.getA() * 2}}`} />
                             </>
                         }
                         {quadraticFormula.getDelta() === 0 &&
                             <>
                                 {/* TO DO CALCULATE THIS ON CLASS QUADRATIC FORMULA */}
-                                <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getPCalculations()}`} />
+                                <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
                             </>
                         }
                     </span>
@@ -198,6 +191,16 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
                         <Formula formula={`W=\\left(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()}\\right)`} />
                     </div>
+
+                    <ArticleBorder />
+                    <Formula formula={`${quadraticFormula.getX1().getProductFormCalculation()}`} />
+
+                    <ArticleBorder />
+                    <Formula formula={`${quadraticFormula.getX2().getProductFormCalculation()}`} />
+
+
+
+
                     <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
                         {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                     </button>

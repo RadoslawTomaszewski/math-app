@@ -1,5 +1,6 @@
 import { joinUniqueWithEquals } from "../../../utilities";
 import Fraction from "../Fraction/Fraction";
+import IrrationalSum from "../Irrational/IrrationalSum";
 import SquareRootNumber from "../Irrational/RootNumber/SquareRootNumber";
 
 class QuadraticFormula {
@@ -7,6 +8,10 @@ class QuadraticFormula {
     private sqrtDelta: SquareRootNumber = new SquareRootNumber(0);
     private p: Fraction = new Fraction(0, 1);
     private q: Fraction = new Fraction(0, 1);
+    private x0: Fraction = new Fraction(0, 1);
+    //TODO: zamien irrational sum na irrational sum divided by integer
+    private x1: IrrationalSum = new IrrationalSum(0, true, new SquareRootNumber(1));
+    private x2: IrrationalSum = new IrrationalSum(0, false, new SquareRootNumber(1));
     private standardForm: string = "";
     private canonicalForm: string = "";
     private factoredForm: string = "";
@@ -19,7 +24,8 @@ class QuadraticFormula {
             this.setQ();
             this.setStandardForm();
             this.setCanonicalForm();
-            this.setFactoredForm();
+            this.setRootAndFactoredForm();
+
         }
     }
     private setDelta = (): void => {
@@ -73,16 +79,21 @@ class QuadraticFormula {
 
         this.canonicalForm = 'f(x)=' + canonicalFormA + canonicalFormP + canonicalFormQ;
     }
-    private setFactoredForm = (): void => {
+    private setRootAndFactoredForm = (): void => {
         if (this.delta > 0) {
-            this.factoredForm = "f(x)=a(x-x_1)(x-x_2)"
+            //to do usun abs
+            this.x1 = new IrrationalSum(this.b * (-1), true, this.sqrtDelta);
+            this.x2 = new IrrationalSum(this.b * (-1), false, this.sqrtDelta);
+            this.factoredForm = "Do naprawienia";
             return;
         }
         if (this.delta === 0) {
+            this.x0 = this.p;
             this.factoredForm = this.canonicalForm;
             return;
         }
         this.factoredForm = "nie istnieje"
+
     }
     getA(): number {
         return this.a;
@@ -97,7 +108,8 @@ class QuadraticFormula {
         return this.delta;
     }
     getDeltaCalculations(): string {
-        const calcA = `${this.b < 0 ? `\\left(${this.b}\\right)^2` : `${this.b}^2`}-4\\cdot${this.a}\\cdot${this.c}`;
+        const calcA = `${this.b < 0 ? `\\left(${this.b}\\right)^2` : `${this.b}^2`}-4\\cdot\\left(${this.a}\\right)\\cdot\\left(${this.c}\\right)`;
+
         const calcB = `${this.getDelta()}`;
         return joinUniqueWithEquals(calcA, calcB);
     }
@@ -119,7 +131,8 @@ class QuadraticFormula {
         return this.p.getFractionString();
     }
     getPCalculations(): string {
-        return joinUniqueWithEquals(this.p.getStep1(), this.p.getFractionString(), this.p.getMixedFraction());
+        const substitution = `${this.b < 0 ? `\\frac{-\\left(${this.b}\\right)}{2\\cdot${this.a}}` : `\\frac{-${this.b}}{2\\cdot${this.a}}`}`;
+        return joinUniqueWithEquals(substitution, this.p.getStep1(), this.p.getFractionString(), this.p.getMixedFraction());
     }
     getQ(): Fraction {
         return this.q;
@@ -128,7 +141,23 @@ class QuadraticFormula {
         return this.q.getFractionString();
     }
     getQCalculations(): string {
-        return joinUniqueWithEquals(this.q.getStep1(), this.q.getFractionString(), this.q.getMixedFraction());
+        const substitution = `${this.delta < 0 ? `\\frac{-\\left(${this.delta}\\right)}{4\\cdot${this.a}}` : `\\frac{-${this.delta}}{4\\cdot${this.a}}`}`;
+        return joinUniqueWithEquals(substitution, this.q.getStep1(), this.q.getFractionString(), this.q.getMixedFraction());
+    }
+    getX0(): Fraction {
+        return this.x0;
+    }
+    getX0Calculations(): string {
+        return joinUniqueWithEquals(this.p.getStep1(), this.p.getFractionString(), this.p.getMixedFraction());
+    }
+    getX0Result() {
+        return this.p.getFractionString();
+    }
+    getX1(): IrrationalSum {
+        return this.x1;
+    }
+    getX2(): IrrationalSum {
+        return this.x2;
     }
     getStandardForm(): string {
         return this.standardForm;
