@@ -84,20 +84,34 @@ class QuadraticFormula {
             this.x1 = new IrrationalSumDividedByInt(new IrrationalSum(this.b * (-1), false, this.sqrtDelta), 2 * this.a)
             this.x2 = new IrrationalSumDividedByInt(new IrrationalSum(this.b * (-1), true, this.sqrtDelta), 2 * this.a)
 
-            let factoredFormA = `x-\\left(${this.x1.getResultString()}\\right)`;
-            let factoredFormB = `x-\\left(${this.x2.getResultString()}\\right)`;
+            let factoredFormB = `x-\\left(${this.x1.getResultString()}\\right)`;
+            let factoredFormC = `x-\\left(${this.x2.getResultString()}\\right)`;
 
             if (this.x1.getIsFraction()) {
-                if (this.b * this.a > 0) factoredFormA = `x+${(this.x1.getFractionResult().getAbsFractionString())}`;
-                else factoredFormA = `x-${(this.x1.getFractionResult().getAbsFractionString())}`;
+                if (((-1) * this.b - Math.sqrt(this.delta)) / this.a >= 0) factoredFormB = `x-${(this.x1.getFractionResult().getAbsFractionString())}`;
+                else factoredFormB = `x+${(this.x1.getFractionResult().getAbsFractionString())}`;
+                if (this.b === 0 && this.a > 0) factoredFormB = `x-${(this.x1.getFractionResult().getAbsFractionString())}`;
+                if (this.b === 0 && this.a < 0) factoredFormB = `x+${(this.x1.getFractionResult().getAbsFractionString())}`;
             }
 
             if (this.x2.getIsFraction()) {
-                if (this.b * this.a > 0) factoredFormB = `x+${(this.x2.getFractionResult().getAbsFractionString())}`;
-                else factoredFormB = `x-${(this.x2.getFractionResult().getAbsFractionString())}`;
+                if (((-1) * this.b + Math.sqrt(this.delta)) / this.a >= 0) factoredFormC = `x-${(this.x2.getFractionResult().getAbsFractionString())}`;
+                else factoredFormC = `x+${(this.x2.getFractionResult().getAbsFractionString())}`;
+                if (this.b === 0 && this.a > 0) factoredFormC = `x+${(this.x2.getFractionResult().getAbsFractionString())}`;
+                if (this.b === 0 && this.a < 0) factoredFormC = `x-${(this.x2.getFractionResult().getAbsFractionString())}`;
             }
 
-            this.factoredForm = `f(x)=${this.a}\\left(${factoredFormA}\\right)\\left(${factoredFormB}\\right)`;
+            if (!this.x1.getIsFirstInteger()) {
+                factoredFormB = `x${this.x1.getReducedForm()}`;
+                factoredFormC = `x+${this.x2.getReducedForm()}`;
+            }
+
+            let factoredFormA = `${this.a}`;
+            if (this.a === 1) factoredFormA = ``;
+            if (this.a === -1) factoredFormA = `-`;
+
+
+            this.factoredForm = `f(x)=${factoredFormA}\\left(${factoredFormB}\\right)\\left(${factoredFormC}\\right)`;
             return;
         }
         if (this.delta === 0) {

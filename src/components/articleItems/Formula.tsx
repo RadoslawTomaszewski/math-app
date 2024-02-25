@@ -15,7 +15,7 @@ const Formula: FC<IFormulaProps> = ({ formula, margin }) => {
     );
   else
     return (
-      <div className="flex justify-center m-3">
+      <div className="flex justify-center m-3 max-w-full">
         <MathComponent tex={formula} />
       </div>
     );

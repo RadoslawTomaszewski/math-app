@@ -12,6 +12,7 @@ class IrrationalSum {
     private intDividedByCommonFactor: number = 1;               //D
     private preRootDividedByCommonFactor: number = 1;           //E.1
     private isIntegerPositive: boolean = true;
+    private isIntegerEqualZero: boolean = false;
     private isIrrational: boolean = true;
 
     // (0: int, 1: root) = (2: commonFactor, 3: intDivided, 4:preRootDivided)
@@ -38,6 +39,7 @@ class IrrationalSum {
             this.results[0] = this.integer + this.squareRoot.getPreRoot()!;
             if (!this.isPreRootPositive) this.results[0] = this.integer - this.squareRoot.getPreRoot()!;
         }
+        if (this.integer === 0) this.isIntegerEqualZero = true;
     }
     private setSigns(): void {
         if (this.integer >= 0) this.isIntegerPositive = true;
@@ -81,6 +83,7 @@ class IrrationalSum {
         let factorizedNum2 = new PrimeFactors(this.preRoot);
         const numberCompares = new TwoNumberPrimeFactors(factorizedNum1, factorizedNum2);
         this.commonFactor = numberCompares.getGCD();
+        if (this.commonFactor === -1) this.commonFactor *= -1;
     }
     private simplifySqrt(): void {
         if (this.squareRoot.getPreRoot() !== null) this.preRoot = this.squareRoot.getPreRoot()!;
@@ -138,7 +141,18 @@ class IrrationalSum {
             productFormB = `\\left(${this.signArray[3]}${this.intDividedByCommonFactor}${this.signArray[4]}${productFormRoot}\\right)`;
         }
 
+        if (this.integer === 0) {
+            productFormB = `${productFormRoot}`;
+            return `${productFormA}${productFormB}`
+        }
         return `${productFormA}${productFormB}`;
+    }
+
+    getAbsProductFormForFirstIntegerEqualZero(): string {
+        if (this.integer === 0) {
+            return `${this.squareRoot.getStep4()}ss`;
+        }
+        return 'First Integer isn\'t equal zero';
     }
 
     getRoundBracketValuesFromProductForm(): string {
@@ -160,6 +174,13 @@ class IrrationalSum {
     }
     getResults(): number[] {
         return this.results;
+    }
+
+    getSquareRoot(): SquareRootNumber {
+        return this.squareRoot;
+    }
+    getIsPreRootIsPositive(): boolean {
+        return this.isPreRootPositive;
     }
 }
 export default IrrationalSum;

@@ -13,14 +13,10 @@ interface FormData {
     b: string;
     c: string;
 }
-declare global {
-    interface Window {
-        Desmos: any;
-    }
-}
+
 const QuadraticFunctionCalculatorContent: FC = () => {
     const [quadraticFormula, setQuadraticFormula] = useState<QuadraticFormula>(new QuadraticFormula(0, 0, 0));
-    const [showGraph, setShowGraph] = useState(false);
+    const [showGraph, setShowGraph] = useState(true);
 
     const {
         register,
@@ -82,10 +78,10 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 text="Kalkulator funkcji kwadratowej"
                 type="main-article"
             />
-            <form className="text-center">
+            <form className="text-center max-w-full">
                 <div className="flex justify-center">
-                    <label className="flex pt-4 flex-col items-center">
-                        Wprowadź współczynniki funkcji kwadratowej:
+                    <label className="flex pt-4 flex-col flex-wrap items-center">
+                        <span className="text-wrap">Wprowadź współczynniki funkcji kwadratowej:</span>
                         <div className="InputsWrapper flex flex-row items-end mt-2">
                             <input
                                 className={InputCoefficientStyle}
@@ -123,79 +119,78 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 </div>
                 {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
                 {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
-                    <div className="flex flex-row flex-wrap m-2 justify-center">
-                        <div className="m-2">
-                            <div>Postać ogólna:</div>
-                            <Formula margin="none" formula={quadraticFormula.getStandardForm()} />
+                    <div className="Wrapper max-w-[100vw] overflow-x-auto">
+                        <div className="m-2 h-36 w-[900px]">
                             <Formula formula={`a=${quadraticFormula.getA()}`} />
                             <Formula formula={`b=${quadraticFormula.getB()}`} />
                             <Formula formula={`c=${quadraticFormula.getC()}`} />
+                            <div>Postać ogólna:</div>
+                            <Formula margin="none" formula={quadraticFormula.getStandardForm()} />
+                            <ArticleBorder />
                         </div>
-                        <div className="m-2">
+                        <div className="m-2 h-52 w-[900px] overflow-x-auto">
+                            <span>
+                                <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
+                                <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
+                                {/* <Formula formula={`W=\\left(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()}\\right)`} /> */}
+                            </span>
                             <div>Postać kanoniczna:</div>
                             <Formula margin="none" formula={quadraticFormula.getCanonicalForm()} />
-                            <Formula formula={`a=${quadraticFormula.getA()}`} />
+                            {/* <Formula formula={`a=${quadraticFormula.getA()}`} />
                             <Formula formula={`p=${quadraticFormula.getPResult()}`} />
-                            <Formula formula={`q=${quadraticFormula.getQResult()}`} />
+                            <Formula formula={`q=${quadraticFormula.getQResult()}`} /> */}
+                        </div>
+                        <div className="m-2 h-100 w-[900px] overflow-x-auto">
+                            <ArticleBorder />
+                            <span>
+                                <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
+                                {quadraticFormula.getDelta() > 0 &&
+                                    <>
+                                        <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
+                                        <Formula formula={`${quadraticEquations.X1}=${quadraticFormula.getX1Calculations()}`} />
+                                        <Formula formula={`${quadraticEquations.X2}=${quadraticFormula.getX2Calculations()}`} />
+                                    </>
+                                }
+                                {quadraticFormula.getDelta() === 0 &&
+                                    <>
+                                        <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
+                                    </>
+                                }
+                            </span>
+                            <div>Postać iloczynowa:</div>
+                            {quadraticFormula.getDelta() < 0 &&
+                                <>
+                                    <span><b>{quadraticFormula.getFactoredForm()}</b></span>
+                                </>
+                            }
+                            {quadraticFormula.getDelta() === 0 &&
+                                <>
+                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                    {/* <Formula formula={`a=${quadraticFormula.getA()}`} />
+                                <Formula formula={`x_0=${quadraticFormula.getPResult()}`} /> */}
+                                </>
+                            }
+                            {quadraticFormula.getDelta() > 0 &&
+                                <>
+                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                    {/* <Formula formula={`a=${quadraticFormula.getA()}`} />
+                                <Formula formula={`x_1=${quadraticFormula.getX1().getResultString()}`} />
+                                <Formula formula={`x_2=${quadraticFormula.getX2().getResultString()}`} /> */}
+                                </>
+                            }
+                            <ArticleBorder />
+                            {showGraph && (
+                                <>
+                                    <div>
+                                        <div id="graph-container" />
+                                    </div>
+                                </>
+                            )}
+                            <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
+                                {showGraph ? 'odśwież wykres' : 'generuj wykres'}
+                            </button>
                         </div>
                     </div>
-                    <div className="m-2">
-                        <div>Postać iloczynowa:</div>
-                        {quadraticFormula.getDelta() < 0 &&
-                            <>
-                                <span><b>{quadraticFormula.getFactoredForm()}</b></span>
-                            </>
-                        }
-                        {quadraticFormula.getDelta() === 0 &&
-                            <>
-                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                                <Formula formula={`a=${quadraticFormula.getA()}`} />
-                                <Formula formula={`x_0=${quadraticFormula.getPResult()}`} />
-                            </>
-                        }
-                        {quadraticFormula.getDelta() > 0 &&
-                            <>
-                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                                <Formula formula={`a=${quadraticFormula.getA()}`} />
-                                <Formula formula={`x_1=${quadraticFormula.getX1().getResultString()}`} />
-                                <Formula formula={`x_2=${quadraticFormula.getX2().getResultString()}`} />
-                            </>
-                        }
-                    </div>
-                    <ArticleBorder />
-                    <span>
-                        <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
-                        {quadraticFormula.getDelta() > 0 &&
-                            <>
-                                <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
-                                <Formula formula={`${quadraticEquations.X1}=${quadraticFormula.getX1Calculations()}`} />
-                                <Formula formula={`${quadraticEquations.X2}=${quadraticFormula.getX2Calculations()}`} />
-                            </>
-                        }
-                        {quadraticFormula.getDelta() === 0 &&
-                            <>
-                                <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
-                            </>
-                        }
-                    </span>
-                    <ArticleBorder />
-                    <div>
-                        <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
-                        <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
-                        <Formula formula={`W=\\left(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()}\\right)`} />
-                    </div>
-                    <ArticleBorder />
-                    <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
-                        {showGraph ? 'odśwież wykres' : 'generuj wykres'}
-                    </button>
-                    {showGraph && (
-                        <>
-                            <div>
-                                Wykres:
-                                <div id="graph-container" />
-                            </div>
-                        </>
-                    )}
                 </>)}
             </form>
         </>
