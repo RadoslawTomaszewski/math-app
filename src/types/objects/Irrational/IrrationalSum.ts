@@ -28,6 +28,7 @@ class IrrationalSum {
             this.simplifySqrt();
             this.setCommonFactor();
             this.divideByCommonFactor();
+            this.setResults();
             this.setCorrectVariableSigns();
         }
     }
@@ -89,7 +90,7 @@ class IrrationalSum {
         this.intDividedByCommonFactor = this.integer / Math.abs(this.commonFactor);
         this.preRootDividedByCommonFactor = this.preRoot / Math.abs(this.commonFactor);
     }
-    private setCorrectVariableSigns(): void {
+    private setResults(): void {
         this.results[0] = this.integer;
         this.results[1] = this.preRoot;
         this.results[2] = this.underRoot;
@@ -97,6 +98,8 @@ class IrrationalSum {
         this.results[4] = this.intDividedByCommonFactor;
         this.results[5] = this.preRootDividedByCommonFactor;
         this.results[6] = this.underRoot;
+    }
+    private setCorrectVariableSigns(): void {
         if (this.signArray[0] === "-") this.results[0] *= (-1);
         if (this.signArray[1] === "-") this.results[1] *= (-1);
         if (this.signArray[2] === "-") this.results[3] *= (-1);
@@ -137,6 +140,13 @@ class IrrationalSum {
 
         return `${productFormA}${productFormB}`;
     }
+
+    getRoundBracketValuesFromProductForm(): string {
+        let productFormRoot = `${this.preRootDividedByCommonFactor}\\sqrt{${this.underRoot}}`;
+        if (this.preRootDividedByCommonFactor === 1) productFormRoot = `\\sqrt{${this.underRoot}}`;
+        return `${this.signArray[3]}${this.intDividedByCommonFactor}${this.signArray[4]}${productFormRoot}`;
+    }
+
     getProductFormCalculation(): string {
         let sign = "+";
         if (!this.isPreRootPositive) sign = "-";

@@ -34,10 +34,6 @@ const QuadraticFunctionCalculatorContent: FC = () => {
     const watchC = watch("c");
 
     useEffect(() => {
-
-    }, [showGraph, watchA, watchB, watchC]);
-
-    useEffect(() => {
         if (watchA && watchB && watchC && !errors.a && !errors.b && !errors.c) {
             setQuadraticFormula(new QuadraticFormula(Number(watchA), Number(watchB), Number(watchC)));
         }
@@ -142,31 +138,29 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             <Formula formula={`p=${quadraticFormula.getPResult()}`} />
                             <Formula formula={`q=${quadraticFormula.getQResult()}`} />
                         </div>
-                        <div className="m-2">
-                            <div>Postać iloczynowa:</div>
-                            {quadraticFormula.getDelta() < 0 &&
-                                <>
-                                    <span><b>{quadraticFormula.getFactoredForm()}</b></span>
-                                </>
-                            }
-                            {quadraticFormula.getDelta() === 0 &&
-                                <>
-                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                                    <Formula formula={`a=${quadraticFormula.getA()}`} />
-                                    <Formula formula={`x_0=${quadraticFormula.getPResult()}`} />
-                                </>
-                            }
-                            {quadraticFormula.getDelta() > 0 &&
-                                <>
-                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                                    <Formula formula={`a=${quadraticFormula.getA()}`} />
-                                    <Formula formula={`x_1=`} />
-                                    <Formula formula={`x_2=`} />
-                                </>
-                            }
-
-
-                        </div>
+                    </div>
+                    <div className="m-2">
+                        <div>Postać iloczynowa:</div>
+                        {quadraticFormula.getDelta() < 0 &&
+                            <>
+                                <span><b>{quadraticFormula.getFactoredForm()}</b></span>
+                            </>
+                        }
+                        {quadraticFormula.getDelta() === 0 &&
+                            <>
+                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                <Formula formula={`a=${quadraticFormula.getA()}`} />
+                                <Formula formula={`x_0=${quadraticFormula.getPResult()}`} />
+                            </>
+                        }
+                        {quadraticFormula.getDelta() > 0 &&
+                            <>
+                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                <Formula formula={`a=${quadraticFormula.getA()}`} />
+                                <Formula formula={`x_1=${quadraticFormula.getX1().getResultString()}`} />
+                                <Formula formula={`x_2=${quadraticFormula.getX2().getResultString()}`} />
+                            </>
+                        }
                     </div>
                     <ArticleBorder />
                     <span>
@@ -180,7 +174,6 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         }
                         {quadraticFormula.getDelta() === 0 &&
                             <>
-                                {/* TO DO CALCULATE THIS ON CLASS QUADRATIC FORMULA */}
                                 <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
                             </>
                         }
@@ -191,7 +184,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
                         <Formula formula={`W=\\left(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()}\\right)`} />
                     </div>
-
+                    <ArticleBorder />
                     <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
                         {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                     </button>

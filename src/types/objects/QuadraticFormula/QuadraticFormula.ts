@@ -1,6 +1,7 @@
 import { joinUniqueWithEquals } from "../../../utilities";
 import Fraction from "../Fraction/Fraction";
 import IrrationalSum from "../Irrational/IrrationalSum";
+import IrrationalSumDividedByInt from "../Irrational/IrrationalSumDividedByInt";
 import SquareRootNumber from "../Irrational/RootNumber/SquareRootNumber";
 
 class QuadraticFormula {
@@ -10,8 +11,8 @@ class QuadraticFormula {
     private q: Fraction = new Fraction(0, 1);
     private x0: Fraction = new Fraction(0, 1);
     //TODO: zamien irrational sum na irrational sum divided by integer
-    private x1: IrrationalSum = new IrrationalSum(0, true, new SquareRootNumber(1));
-    private x2: IrrationalSum = new IrrationalSum(0, false, new SquareRootNumber(1));
+    private x1: IrrationalSumDividedByInt = new IrrationalSumDividedByInt(new IrrationalSum(0, false, new SquareRootNumber(1)), 1);
+    private x2: IrrationalSumDividedByInt = new IrrationalSumDividedByInt(new IrrationalSum(0, true, new SquareRootNumber(1)), 1);
     private standardForm: string = "";
     private canonicalForm: string = "";
     private factoredForm: string = "";
@@ -25,7 +26,6 @@ class QuadraticFormula {
             this.setStandardForm();
             this.setCanonicalForm();
             this.setRootAndFactoredForm();
-
         }
     }
     private setDelta = (): void => {
@@ -81,9 +81,23 @@ class QuadraticFormula {
     }
     private setRootAndFactoredForm = (): void => {
         if (this.delta > 0) {
-            this.x1 = new IrrationalSum(this.b * (-1), false, this.sqrtDelta);
-            this.x2 = new IrrationalSum(this.b * (-1), true, this.sqrtDelta);
-            this.factoredForm = "Do naprawienia";
+            this.x1 = new IrrationalSumDividedByInt(new IrrationalSum(this.b * (-1), false, this.sqrtDelta), 2 * this.a)
+            this.x2 = new IrrationalSumDividedByInt(new IrrationalSum(this.b * (-1), true, this.sqrtDelta), 2 * this.a)
+
+            let factoredFormA = `x-\\left(${this.x1.getResultString()}\\right)`;
+            let factoredFormB = `x-\\left(${this.x2.getResultString()}\\right)`;
+
+            if (this.x1.getIsFraction()) {
+                if (this.b * this.a > 0) factoredFormA = `x+${(this.x1.getFractionResult().getAbsFractionString())}`;
+                else factoredFormA = `x-${(this.x1.getFractionResult().getAbsFractionString())}`;
+            }
+
+            if (this.x2.getIsFraction()) {
+                if (this.b * this.a > 0) factoredFormB = `x+${(this.x2.getFractionResult().getAbsFractionString())}`;
+                else factoredFormB = `x-${(this.x2.getFractionResult().getAbsFractionString())}`;
+            }
+
+            this.factoredForm = `f(x)=${this.a}\\left(${factoredFormA}\\right)\\left(${factoredFormB}\\right)`;
             return;
         }
         if (this.delta === 0) {
@@ -126,54 +140,79 @@ class QuadraticFormula {
         return this.p;
     }
     getPResult(): string {
-        return this.p.getFractionString();
+        return this.p.getMixedFraction();
     }
     getPCalculations(): string {
-        const substitution = `${this.b < 0 ? `\\frac{-\\left(${this.b}\\right)}{2\\cdot${this.a}}` : `\\frac{-${this.b}}{2\\cdot${this.a}}`}`;
+        let substA = `\\frac{-${this.b}}`;
+        if (this.b < 0) {
+            substA = `\\frac{-\\left(${this.b}\\right)}`;
+        }
+        let substB = `{2\\cdot${this.a}}`;
+        if (this.a < 0) {
+            substB = `{2\\cdot\\left(${this.a}\\right)}`;
+        }
+        const substitution = substA + substB;
         return joinUniqueWithEquals(substitution, this.p.getStep1(), this.p.getFractionString(), this.p.getMixedFraction());
     }
     getQ(): Fraction {
         return this.q;
     }
     getQResult(): string {
-        return this.q.getFractionString();
+        return this.q.getMixedFraction();
     }
     getQCalculations(): string {
-        const substitution = `${this.delta < 0 ? `\\frac{-\\left(${this.delta}\\right)}{4\\cdot${this.a}}` : `\\frac{-${this.delta}}{4\\cdot${this.a}}`}`;
+        let substA = `\\frac{${this.delta}}`;
+        if (this.delta < 0) {
+            substA = `\\frac{-\\left(${this.delta}\\right)}`;
+        }
+        let substB = `{4\\cdot${this.a}}`;
+        if (this.a < 0) {
+            substB = `{4\\cdot\\left(${this.a}\\right)}`;
+        }
+        const substitution = substA + substB;
         return joinUniqueWithEquals(substitution, this.q.getStep1(), this.q.getFractionString(), this.q.getMixedFraction());
     }
     getX0(): Fraction {
         return this.x0;
     }
     getX0Calculations(): string {
-        //TODO a do poprawy
-        const substitution = `${this.b < 0 ? `\\frac{-\\left(${this.b}\\right)}{2\\cdot${this.a}}` : `\\frac{-${this.b}}{2\\cdot${this.a}}`}`;
+        let substA = `\\frac{-${this.b}}`;
+        if (this.b < 0) {
+            substA = `\\frac{-\\left(${this.b}\\right)}`;
+        }
+        let substB = `{2\\cdot${this.a}}`;
+        if (this.a < 0) {
+            substB = `{2\\cdot\\left(${this.a}\\right)}`;
+        }
+        const substitution = substA + substB;
         return joinUniqueWithEquals(substitution, this.p.getStep1(), this.p.getFractionString(), this.p.getMixedFraction());
     }
     getX0Result() {
         return this.p.getFractionString();
     }
-    getX1(): IrrationalSum {
+    getX1(): IrrationalSumDividedByInt {
         return this.x1;
     }
     getX1Calculations(): string {
-        const substB = `${this.b < 0 ? `-(${this.b})` : `-${this.b}`}`;
-        const substDelta = `-${this.getSqrtDeltaString()}`;
+        const substB = `${this.b < 0 ? `-(${this.b})` : `-${this.b}`} `;
+        const substDelta = `- ${this.getSqrtDeltaString()} `;
         const substA = `${this.a < 0 ? `2\\cdot\\left(${this.a}\\right)` : `2\\cdot${this.a}`}`;
         const substitution = `\\frac{${substB}${substDelta}}{${substA}}`;
-        const calculations = `\\frac{${this.x1.getProductForm()}}{${2 * this.a}}`
-        return joinUniqueWithEquals(substitution, calculations);
+        const calculations = `\\frac{${this.x1.getNominatorBeforeCalc().getProductForm()}}{${2 * this.a}} `
+        const result = `${this.x1.getResultString()} `
+        return joinUniqueWithEquals(substitution, calculations, result);
     }
-    getX2(): IrrationalSum {
+    getX2(): IrrationalSumDividedByInt {
         return this.x2;
     }
     getX2Calculations(): string {
-        const substB = `${this.b < 0 ? `-(${this.b})` : `-${this.b}`}`;
-        const substDelta = `+${this.getSqrtDeltaString()}`;
+        const substB = `${this.b < 0 ? `-(${this.b})` : `-${this.b}`} `;
+        const substDelta = `+ ${this.getSqrtDeltaString()} `;
         const substA = `${this.a < 0 ? `2\\cdot\\left(${this.a}\\right)` : `2\\cdot${this.a}`}`;
         const substitution = `\\frac{${substB}${substDelta}}{${substA}}`;
-        const calculations = `\\frac{${this.x2.getProductForm()}}{${2 * this.a}}`
-        return joinUniqueWithEquals(substitution, calculations);
+        const calculations = `\\frac{${this.x2.getNominatorBeforeCalc().getProductForm()}}{${2 * this.a}}`
+        const result = `${this.x2.getResultString()} `
+        return joinUniqueWithEquals(substitution, calculations, result);
     }
     getStandardForm(): string {
         return this.standardForm;
