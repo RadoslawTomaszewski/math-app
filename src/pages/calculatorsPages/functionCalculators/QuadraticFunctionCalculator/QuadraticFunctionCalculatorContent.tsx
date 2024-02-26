@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
@@ -7,6 +7,7 @@ import Formula from "../../../../components/articleItems/Formula";
 import QuadraticFormula from "../../../../types/objects/QuadraticFormula/QuadraticFormula";
 import { integerRegisterOptions } from "../../../../utilities/validation";
 import { quadraticEquations } from "../../../../types/equations";
+import Loader from "../../../../components/Loader/Loader";
 
 interface FormData {
     a: string;
@@ -16,7 +17,8 @@ interface FormData {
 
 const QuadraticFunctionCalculatorContent: FC = () => {
     const [quadraticFormula, setQuadraticFormula] = useState<QuadraticFormula>(new QuadraticFormula(0, 0, 0));
-    const [showGraph, setShowGraph] = useState(true);
+    const [showGraph, setShowGraph] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const {
         register,
@@ -32,6 +34,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
     useEffect(() => {
         if (watchA && watchB && watchC && !errors.a && !errors.b && !errors.c) {
             setQuadraticFormula(new QuadraticFormula(Number(watchA), Number(watchB), Number(watchC)));
+            setShowGraph(false);
         }
     }, [watchA, watchB, watchC, errors.a, errors.b, errors.c]);
 
@@ -44,6 +47,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
     const handleGenerateGraph = () => {
         setShowGraph(true);
+        setLoading(true);
         const graphContainer = document.getElementById('graph-container');
         if (graphContainer) {
             while (graphContainer.firstChild) {
@@ -58,7 +62,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
             script.onload = () => {
                 const elt = document.createElement('div');
-                elt.style.width = '100%';
+                elt.style.maxWidth = '100%';
                 elt.style.height = '400px';
                 document.getElementById('graph-container')?.appendChild(elt);
 
@@ -68,6 +72,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 const equation = `y=${watchA}x^2${Number(watchB) >= 0 ? '+' : ''}${watchB}x${Number(watchC) >= 0 ? '+' : ''}${watchC}`;
 
                 calculator.setExpression({ id: 'graph1', latex: equation });
+                setLoading(false);
             };
         }
     };
@@ -78,7 +83,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 text="Kalkulator funkcji kwadratowej"
                 type="main-article"
             />
-            <form className="text-center max-w-full">
+            <form className="text-center w-full">
                 <div className="flex justify-center">
                     <label className="flex pt-4 flex-col flex-wrap items-center">
                         <span className="text-wrap">Wprowadź współczynniki funkcji kwadratowej:</span>
@@ -119,29 +124,27 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 </div>
                 {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
                 {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
-                    <div className="Wrapper max-w-[100vw] overflow-x-auto">
-                        <div className="m-2 h-36 w-[900px]">
+                    <div className="Wrapper w-[100%] overflow-x-auto">
+                        <div className="">
                             <Formula formula={`a=${quadraticFormula.getA()}`} />
                             <Formula formula={`b=${quadraticFormula.getB()}`} />
                             <Formula formula={`c=${quadraticFormula.getC()}`} />
                             <div>Postać ogólna:</div>
                             <Formula margin="none" formula={quadraticFormula.getStandardForm()} />
-                            <ArticleBorder />
+
                         </div>
-                        <div className="m-2 h-52 w-[900px] overflow-x-auto">
+                        <ArticleBorder />
+                        <div className="overflow-x-auto">
                             <span>
                                 <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
                                 <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
-                                {/* <Formula formula={`W=\\left(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()}\\right)`} /> */}
                             </span>
                             <div>Postać kanoniczna:</div>
                             <Formula margin="none" formula={quadraticFormula.getCanonicalForm()} />
-                            {/* <Formula formula={`a=${quadraticFormula.getA()}`} />
-                            <Formula formula={`p=${quadraticFormula.getPResult()}`} />
-                            <Formula formula={`q=${quadraticFormula.getQResult()}`} /> */}
+
                         </div>
-                        <div className="m-2 h-100 w-[900px] overflow-x-auto">
-                            <ArticleBorder />
+                        <ArticleBorder />
+                        <div className="overflow-x-auto w-full">
                             <span>
                                 <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
                                 {quadraticFormula.getDelta() > 0 &&
@@ -152,44 +155,40 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                     </>
                                 }
                                 {quadraticFormula.getDelta() === 0 &&
-                                    <>
-                                        <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
-                                    </>
+                                    <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
                                 }
                             </span>
                             <div>Postać iloczynowa:</div>
                             {quadraticFormula.getDelta() < 0 &&
-                                <>
-                                    <span><b>{quadraticFormula.getFactoredForm()}</b></span>
-                                </>
+                                <span><b>{quadraticFormula.getFactoredForm()}</b></span>
                             }
                             {quadraticFormula.getDelta() === 0 &&
-                                <>
-                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                                    {/* <Formula formula={`a=${quadraticFormula.getA()}`} />
-                                <Formula formula={`x_0=${quadraticFormula.getPResult()}`} /> */}
-                                </>
+                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
                             }
                             {quadraticFormula.getDelta() > 0 &&
-                                <>
-                                    <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                                    {/* <Formula formula={`a=${quadraticFormula.getA()}`} />
-                                <Formula formula={`x_1=${quadraticFormula.getX1().getResultString()}`} />
-                                <Formula formula={`x_2=${quadraticFormula.getX2().getResultString()}`} /> */}
-                                </>
+                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
                             }
-                            <ArticleBorder />
-                            {showGraph && (
-                                <>
-                                    <div>
-                                        <div id="graph-container" />
-                                    </div>
-                                </>
-                            )}
-                            <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleGenerateGraph}>
-                                {showGraph ? 'odśwież wykres' : 'generuj wykres'}
-                            </button>
+
                         </div>
+                        <ArticleBorder />
+                        {showGraph && (
+                            <>
+                                {loading && <Loader />}
+                                <div id="graph-container" />
+                            </>
+                        )}
+                        <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
+                            {showGraph ? 'odśwież wykres' : 'generuj wykres'}
+                        </button>
+
+                        <br />
+                        <span><b>problem 01:</b> Niektóre przeglądarki wymagają dwukrotnego odświeżenia</span>
+                        <br />
+                        <span><b>problem 02:</b> Ucięte obszary z obliczeniami na urządzeniach mobilnych</span>
+                        <br />
+                        <br />
+                        <span>Znalazłeś błąd? Daj mi o tym znać!
+                            <br /> e-mail: rtomaszewski.ck@gmail.com</span>
                     </div>
                 </>)}
             </form>
