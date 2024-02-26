@@ -10,7 +10,7 @@ export const CalculatorsLayout = () => {
           <Sidebar sidebarLinks={sidebarLinksCalculators} />
         </div>
         <div className="w-full">
-          <div className="min-h-[calc(100vh-114px)] min-w-full">
+          <div className="min-h-[calc(100vh-114px)] md:max-w-[calc(100vw-260px)]">
             <Outlet />
           </div>
         </div>

@@ -83,8 +83,8 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 text="Kalkulator funkcji kwadratowej"
                 type="main-article"
             />
-            <form className="text-center w-full">
-                <div className="flex justify-center">
+            <form className="flex flex-col justify-center items-center max-w-full">
+                <div className="flex justify-center w-full">
                     <label className="flex pt-4 flex-col flex-wrap items-center">
                         <span className="text-wrap">Wprowadź współczynniki funkcji kwadratowej:</span>
                         <div className="InputsWrapper flex flex-row items-end mt-2">
@@ -111,7 +111,9 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         </div>
                     </label>
                 </div>
-                <ArticleBorder />
+                <div className="w-full">
+                    <ArticleBorder />
+                </div>
                 <div>
                     {Object.entries(errors).map(([key, error]) => (
                         error && (
@@ -124,28 +126,40 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 </div>
                 {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
                 {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
-                    <div className="Wrapper w-[100%] overflow-x-auto">
-                        <div className="">
+                    <div className="flex flex-col w-full items-start overflow-x-auto">
+                        <div className="flex flex-col items-start w-[800px]">
                             <Formula formula={`a=${quadraticFormula.getA()}`} />
                             <Formula formula={`b=${quadraticFormula.getB()}`} />
                             <Formula formula={`c=${quadraticFormula.getC()}`} />
-                            <div>Postać ogólna:</div>
-                            <Formula margin="none" formula={quadraticFormula.getStandardForm()} />
-
                         </div>
-                        <ArticleBorder />
-                        <div className="overflow-x-auto">
-                            <span>
-                                <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
-                                <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
-                            </span>
-                            <div>Postać kanoniczna:</div>
-                            <Formula margin="none" formula={quadraticFormula.getCanonicalForm()} />
+                    </div>
+                    <div><b>Postać ogólna:</b></div>
+                    <div className="">
+                        <Formula margin="none" formula={quadraticFormula.getStandardForm()} />
 
-                        </div>
+                    </div>
+                    <div className="w-full">
                         <ArticleBorder />
-                        <div className="overflow-x-auto w-full">
-                            <span>
+                    </div>
+                    <div className="flex flex-col w-full items-start overflow-x-auto">
+                        <div className="flex flex-col items-start w-[800px]">
+                            <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
+                            <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
+                            <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
+                        </div>
+                    </div>
+                    <div><b>Postać kanoniczna:</b></div>
+                    <div className="flex flex-col w-full justify-center text-center overflow-x-auto">
+                        <div className="w-[800px] overflow-auto">
+                            <Formula formula={quadraticFormula.getCanonicalForm()} />
+                        </div>
+                    </div>
+                    <div className="w-full">
+                        <ArticleBorder />
+                    </div>
+                    <div className="flex flex-col w-full items-start overflow-x-auto">
+                        <div className="flex flex-col items-start w-[800px] overflow-x-auto">
+                            <>
                                 <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
                                 {quadraticFormula.getDelta() > 0 &&
                                     <>
@@ -157,19 +171,30 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 {quadraticFormula.getDelta() === 0 &&
                                     <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
                                 }
-                            </span>
-                            <div>Postać iloczynowa:</div>
-                            {quadraticFormula.getDelta() < 0 &&
-                                <span><b>{quadraticFormula.getFactoredForm()}</b></span>
-                            }
-                            {quadraticFormula.getDelta() === 0 &&
-                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                            }
-                            {quadraticFormula.getDelta() > 0 &&
-                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                            }
-
+                            </>
                         </div>
+                    </div>
+                    <div><b>Postać iloczynowa:</b></div>
+                    <div className="flex flex-col w-full justify-center text-center overflow-x-auto">
+                        {quadraticFormula.getDelta() < 0 &&
+                            <div className="overflow-y-hidden">
+                                <span>{quadraticFormula.getFactoredForm()}</span>
+                            </div>
+                        }
+
+                        {quadraticFormula.getDelta() === 0 &&
+                            <div className="w-[800px] overflow-x-auto">
+                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                            </div>
+                        }
+                        {quadraticFormula.getDelta() > 0 &&
+                            <div className="w-[800px] overflow-x-auto">
+                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                            </div>
+                        }
+                    </div>
+
+                    <div className="w-full">
                         <ArticleBorder />
                         {showGraph && (
                             <>
@@ -177,21 +202,19 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <div id="graph-container" />
                             </>
                         )}
-                        <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
-                            {showGraph ? 'odśwież wykres' : 'generuj wykres'}
-                        </button>
-
-                        <br />
+                    </div>
+                    <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
+                        {showGraph ? 'odśwież wykres' : 'generuj wykres'}
+                    </button>
+                    <div className="flex flex-col">
                         <span><b>problem 01:</b> Niektóre przeglądarki wymagają dwukrotnego odświeżenia</span>
-                        <br />
                         <span><b>problem 02:</b> Ucięte obszary z obliczeniami na urządzeniach mobilnych</span>
-                        <br />
                         <br />
                         <span>Znalazłeś błąd? Daj mi o tym znać!
                             <br /> e-mail: rtomaszewski.ck@gmail.com</span>
                     </div>
                 </>)}
-            </form>
+            </form >
         </>
     );
 };
