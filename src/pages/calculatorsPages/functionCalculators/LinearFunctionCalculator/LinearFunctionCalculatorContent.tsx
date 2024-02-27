@@ -197,6 +197,7 @@ const LinearFunctionCalculatorContent: FC = () => {
                         <div className="flex flex-col">
                             <span><b>problem 01:</b> Błędny sposób wyświetlenia postaci prostej, gdy a=0</span>
                             <span><b>problem 02:</b> Brak znaku przybliżenia dla kąta alfa</span>
+                            <span><b>problem 03:</b> Nieoptylna forma postaci odcinkowej, gdy b {'<'} 0</span>
                             <br />
                             <span>Znalazłeś błąd? Daj mi o tym znać!
                                 <br /> e-mail: rtomaszewski.ck@gmail.com</span>

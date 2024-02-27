@@ -1,6 +1,6 @@
 import { FC } from "react";
 import "../styles/navbar.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 //LAYOUTS
 import { Layout } from "../Layout";
 import { KnowledgeBaseLayout } from "../Layout/knowledgeBaseLayout";
@@ -53,7 +53,7 @@ import LinearFunctionCalculatorPage from "../pages/calculatorsPages/functionCalc
 
 export const Router: FC = () => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
@@ -149,6 +149,6 @@ export const Router: FC = () => {
                     </Route>
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
