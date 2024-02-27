@@ -1,3 +1,12 @@
+//Linear Formula
+export enum linearEquations {
+    X0 = "x_0=\\frac{-b}{a}",
+    SLOPE = "a=\\tan{\\alpha}",
+
+    SLOPE_FORMULA = "f(x)=ax+b",
+}
+
+
 //Quadratic Formula
 export enum quadraticEquations {
     DELTA = "\\Delta=b^2-4ac",

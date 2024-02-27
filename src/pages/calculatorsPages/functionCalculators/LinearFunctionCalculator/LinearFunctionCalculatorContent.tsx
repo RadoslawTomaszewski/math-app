@@ -5,6 +5,8 @@ import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/style
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
 import Loader from "../../../../components/Loader/Loader";
+import LinearFormula from "../../../../types/objects/LinearFormula/LinearFormula";
+import { linearEquations } from "../../../../types/equations";
 
 interface FormData {
     a: string;
@@ -12,7 +14,7 @@ interface FormData {
 }
 
 const LinearFunctionCalculatorContent: FC = () => {
-    const [linearFunction, setLinearFunction] = useState<string>('');
+    const [linearFunction, setLinearFunction] = useState<LinearFormula>(new LinearFormula(1, 1));
     const [showGraph, setShowGraph] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -28,10 +30,7 @@ const LinearFunctionCalculatorContent: FC = () => {
 
     useEffect(() => {
         if (watchA && watchB && !errors.a && !errors.b) {
-            const a = Number(watchA);
-            const b = Number(watchB);
-            const functionExpression = `f(x) = ${a !== 1 ? a : ''}x ${b > 0 ? '+' : ''} ${b}`;
-            setLinearFunction(functionExpression);
+            setLinearFunction(new LinearFormula(Number(watchA), Number(watchB)));
             setShowGraph(false);
         }
     }, [watchA, watchB, errors.a, errors.b]);
@@ -118,17 +117,72 @@ const LinearFunctionCalculatorContent: FC = () => {
                         )
                     ))}
                 </div>
-                {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
                 {(!errors.a && !errors.b && watchA && watchB) && (
                     <>
+
                         <div className="flex flex-col w-full items-start">
                             <div className="flex items-start">
-                                <Formula formula={linearFunction} />
+                                <Formula formula={`a=${watchA}`} />
+                                <Formula formula={`b=${watchB}`} />
                             </div>
+                        </div>
+                        <div><b>Postać kierunkowa:</b></div>
+                        <div className="flex items-start">
+                            <Formula formula={linearFunction.getStandardForm()} />
+                        </div>
+                        <div><b>Miejsce zerowe:</b></div>
+                        <div className="flex items-start">
+                            {linearFunction.getA() === 0 &&
+                                <>
+                                    {linearFunction.getB() === 0 && <span>Nieskończenie wiele miejsc zerowych</span>}
+                                    {linearFunction.getB() !== 0 && <span>Brak miejsca zerowego</span>}
+                                </>
+                            }
+                            {linearFunction.getA() !== 0 &&
+                                <>
+                                    <div className="flex items-start">
+                                        <Formula formula={`${linearEquations.X0}=${linearFunction.getX0().getFractionString()}`} />
+                                    </div>
+                                </>
+                            }
+
+                            {/* <div className="flex items-start">
+                                {linearFunction.getA() > 0 && <span>Funkcja rosnąca</span>}
+                                {linearFunction.getA() === 0 && <span>Funkcja stała</span>}
+                                {linearFunction.getA() < 0 && <span>Funkcja malejąca</span>}
+                            </div> */}
+
+                        </div>
+                        <div><b>Kąt nachylenia prostej do osi OX:</b></div>
+                        <div className="flex items-start">
+                            <Formula formula={`${linearEquations.SLOPE}${linearFunction.getSlopeAlphaCalculation()}`} />
+                        </div>
+
+                        <div className="w-full">
+                            <ArticleBorder />
+                        </div>
+
+                        <div><b>Równanie prostej w postaci kierunkowej:</b></div>
+                        <div className="flex items-start">
+                            <Formula formula={linearFunction.getSlopeForm()} />
+                        </div>
+                        <div><b>Równanie prostej w postaci ogólnej:</b></div>
+                        <div className="flex items-start">
+                            <Formula formula={linearFunction.getGeneralForm()} />
+                        </div>
+                        <div><b>Równanie prostej w postaci odcinkowej:</b></div>
+                        <div className="flex items-start">
+                            <Formula formula={linearFunction.getSegmentForm()} />
                         </div>
                         <div className="w-full">
                             <ArticleBorder />
                         </div>
+
+
+
+
+
+
                         <div className="w-full">
                             {showGraph && (
                                 <>
@@ -141,6 +195,9 @@ const LinearFunctionCalculatorContent: FC = () => {
                             {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                         </button>
                         <div className="flex flex-col">
+                            <span><b>problem 01:</b> Błędny sposób wyświetlenia postaci prostej, gdy a=0</span>
+                            <span><b>problem 02:</b> Brak znaku przybliżenia dla kąta alfa</span>
+                            <br />
                             <span>Znalazłeś błąd? Daj mi o tym znać!
                                 <br /> e-mail: rtomaszewski.ck@gmail.com</span>
                         </div>
