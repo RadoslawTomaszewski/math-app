@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/math-app/static/css/main.a5723e70.css",
-    "main.js": "/math-app/static/js/main.6cadb064.js",
+    "main.js": "/math-app/static/js/main.0355e48f.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/pi.gif": "/math-app/static/media/pi.ec795e57a3c34340e037.gif",
     "static/media/liniowa-rosnaca.png": "/math-app/static/media/liniowa-rosnaca.8f0e780db42564fc3bbe.png",
@@ -29,10 +29,10 @@
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.a5723e70.css.map": "/math-app/static/css/main.a5723e70.css.map",
-    "main.6cadb064.js.map": "/math-app/static/js/main.6cadb064.js.map"
+    "main.0355e48f.js.map": "/math-app/static/js/main.0355e48f.js.map"
   },
   "entrypoints": [
     "static/css/main.a5723e70.css",
-    "static/js/main.6cadb064.js"
+    "static/js/main.0355e48f.js"
   ]
 }
