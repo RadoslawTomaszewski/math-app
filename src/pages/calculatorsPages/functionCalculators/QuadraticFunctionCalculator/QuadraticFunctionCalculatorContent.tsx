@@ -45,8 +45,20 @@ const QuadraticFunctionCalculatorContent: FC = () => {
             setValue(inputName, inputValue, { shouldValidate: true });
     };
 
-    const handleGenerateGraph = () => {
+    const loadDesmosScript = () => {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6';
+            script.async = true;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+    };
+
+    const handleGenerateGraph = async () => {
         setShowGraph(true);
+        console.log(showGraph);
         setLoading(true);
         const graphContainer = document.getElementById('graph-container');
         if (graphContainer) {
@@ -54,27 +66,19 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 graphContainer.removeChild(graphContainer.firstChild);
             }
         }
-        if (showGraph) {
-            const script = document.createElement('script');
-            script.src = 'https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6';
-            script.async = true;
-            document.body.appendChild(script);
+        await loadDesmosScript();
+        const elt = document.createElement('div');
+        elt.style.maxWidth = '100%';
+        elt.style.width = '100%';
+        elt.style.height = '400px';
+        document.getElementById('graph-container')?.appendChild(elt);
 
-            script.onload = () => {
-                const elt = document.createElement('div');
-                elt.style.maxWidth = '100%';
-                elt.style.height = '400px';
-                document.getElementById('graph-container')?.appendChild(elt);
+        const Desmos = window.Desmos;
+        const calculator = Desmos.GraphingCalculator(elt);
 
-                const Desmos = window.Desmos;
-                const calculator = Desmos.GraphingCalculator(elt);
-
-                const equation = `y=${watchA}x^2${Number(watchB) >= 0 ? '+' : ''}${watchB}x${Number(watchC) >= 0 ? '+' : ''}${watchC}`;
-
-                calculator.setExpression({ id: 'graph1', latex: equation });
-                setLoading(false);
-            };
-        }
+        const equation1 = `y=${watchA}x^2${Number(watchB) >= 0 ? '+' : ''}${watchB}x${Number(watchC) >= 0 ? '+' : ''}${watchC}`;
+        calculator.setExpression({ id: 'graph1', latex: equation1 });
+        setLoading(false);
     };
 
     return (
@@ -88,6 +92,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                     <label className="flex pt-4 flex-col flex-wrap items-center">
                         <span className="text-wrap">Wprowadź współczynniki funkcji kwadratowej:</span>
                         <div className="InputsWrapper flex flex-row items-end mt-2">
+                            <div className="mx-1"><b>f(x)=</b></div>
                             <input
                                 className={InputCoefficientStyle}
                                 type="number"
@@ -126,8 +131,8 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 </div>
                 {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
                 {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
-                    <div className="flex flex-col w-full items-start overflow-x-auto">
-                        <div className="flex flex-col items-start w-[800px]">
+                    <div className="flex flex-col w-full items-start">
+                        <div className="flex items-start">
                             <Formula formula={`a=${quadraticFormula.getA()}`} />
                             <Formula formula={`b=${quadraticFormula.getB()}`} />
                             <Formula formula={`c=${quadraticFormula.getC()}`} />
@@ -142,15 +147,15 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <ArticleBorder />
                     </div>
                     <div className="flex flex-col w-full items-start overflow-x-auto">
-                        <div className="flex flex-col items-start w-[800px]">
+                        <div className="flex flex-col items-start w-[700px]">
                             <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
                             <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
                             <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
                         </div>
                     </div>
                     <div><b>Postać kanoniczna:</b></div>
-                    <div className="flex flex-col w-full justify-center text-center overflow-x-auto">
-                        <div className="w-[800px] overflow-auto">
+                    <div className="flex flex-col w-full text-center overflow-x-auto">
+                        <div className="w-[700px] overflow-auto">
                             <Formula formula={quadraticFormula.getCanonicalForm()} />
                         </div>
                     </div>
@@ -158,7 +163,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <ArticleBorder />
                     </div>
                     <div className="flex flex-col w-full items-start overflow-x-auto">
-                        <div className="flex flex-col items-start w-[800px] overflow-x-auto">
+                        <div className="flex flex-col items-start w-[700px] overflow-x-auto">
                             <>
                                 <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
                                 {quadraticFormula.getDelta() > 0 &&
@@ -183,12 +188,12 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         }
 
                         {quadraticFormula.getDelta() === 0 &&
-                            <div className="w-[800px] overflow-x-auto">
+                            <div className="w-[700px] overflow-x-auto">
                                 <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
                             </div>
                         }
                         {quadraticFormula.getDelta() > 0 &&
-                            <div className="w-[800px] overflow-x-auto">
+                            <div className="w-[700px] overflow-x-auto">
                                 <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
                             </div>
                         }
@@ -207,8 +212,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                     </button>
                     <div className="flex flex-col">
-                        <span><b>problem 01:</b> Niektóre przeglądarki wymagają dwukrotnego odświeżenia</span>
-                        <span><b>problem 02:</b> Ucięte obszary z obliczeniami na urządzeniach mobilnych</span>
+                        <span><b>problem 01:</b> Wyswietlanie na urządzeniach mobilnych wymaga usprawnień</span>
                         <br />
                         <span>Znalazłeś błąd? Daj mi o tym znać!
                             <br /> e-mail: rtomaszewski.ck@gmail.com</span>

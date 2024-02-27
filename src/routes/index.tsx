@@ -47,6 +47,7 @@ import GCDandLCMCalculatorPage from "../pages/calculatorsPages/arithmeticCalcula
 import QuadraticFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/QuadraticFunctionCalculator/QuadraticFunctionCalculatorPage";
 import HomographicFunctionPage from "../pages/knowledgeBasePages/functionsPages/homographicFunction/HomographicFunctionPage";
 import FractionReducerPage from "../pages/calculatorsPages/arithmeticCalculators/FractionReducer/FractionReducerPage";
+import LinearFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/LinearFunctionCalculator/LinearFunctionCalculatorPage";
 
 
 
@@ -91,7 +92,7 @@ export const Router: FC = () => {
                         <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
-                    <Route path="forum" element={<ForumPage />} />
+                    <Route path="memy" element={<ForumPage />} />
                     <Route path="pogotowie" element={<HelplinePage />} />
                     <Route path="kalkulatory" element={<CalculatorsLayout />}>
                         <Route index element={<CalculatorsPage />} />
@@ -142,6 +143,7 @@ export const Router: FC = () => {
                             element={<GCDandLCMCalculatorPage />}
                         />
                         <Route path="funkcji-kwadratowej" element={<QuadraticFunctionCalculatorPage />} />
+                        <Route path="funkcji-liniowej" element={<LinearFunctionCalculatorPage />} />
                         <Route path="gra-w-zycie" element={<GameOfLife />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>

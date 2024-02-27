@@ -26,24 +26,24 @@ const Navbar = () => {
           <Hamburger className="h-[50px] w-[50px]" />
         </div>
         <div className={`nav-elements  ${showNavbar && "active"}`}>
-          <ul className="d-flex justify-between list-none">
-            <li className="mx-4">
-              <NavLink to="/baza-wiedzy">
+          <ul className="justify-between list-none z-20">
+            <li className="mx-4 z-20">
+              <NavLink to="/baza-wiedzy" onClick={handleShowNavbar}>
                 <b>Baza Wiedzy</b>
               </NavLink>
             </li>
-            <li className="mx-4">
-              <NavLink to="/forum">
-                <b>Forum</b>
+            <li className="mx-4 z-20">
+              <NavLink to="/memy" onClick={handleShowNavbar}>
+                <b>Obrazki</b>
               </NavLink>
             </li>
-            <li className="mx-4">
-              <NavLink to="/kalkulatory">
+            <li className="mx-4 z-20">
+              <NavLink to="/kalkulatory" onClick={handleShowNavbar}>
                 <b>Kalkulatory</b>
               </NavLink>
             </li>
-            <li className="mx-4">
-              <NavLink to="/pogotowie">
+            <li className="mx-4 z-20">
+              <NavLink to="/pogotowie" onClick={handleShowNavbar}>
                 <b>Pogotowie Matematyczne</b>
               </NavLink>
             </li>
