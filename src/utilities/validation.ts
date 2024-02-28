@@ -1,4 +1,4 @@
-import { RegisterFormOptions } from "../types/types";
+import { RegisterFormOptions } from ".";
 
 interface IIntegerFormData {
   squareRootNumber: string;

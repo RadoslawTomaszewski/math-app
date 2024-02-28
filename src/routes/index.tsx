@@ -1,6 +1,6 @@
 import { FC } from "react";
 import "../styles/navbar.css";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 //LAYOUTS
 import { Layout } from "../Layout";
 import { KnowledgeBaseLayout } from "../Layout/knowledgeBaseLayout";
@@ -48,12 +48,13 @@ import QuadraticFunctionCalculatorPage from "../pages/calculatorsPages/functionC
 import HomographicFunctionPage from "../pages/knowledgeBasePages/functionsPages/homographicFunction/HomographicFunctionPage";
 import FractionReducerPage from "../pages/calculatorsPages/arithmeticCalculators/FractionReducer/FractionReducerPage";
 import LinearFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/LinearFunctionCalculator/LinearFunctionCalculatorPage";
+import AveragesPage from "../pages/knowledgeBasePages/statisticPages/Averages/AveragesPage";
 
 
 
 export const Router: FC = () => {
     return (
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
@@ -90,6 +91,7 @@ export const Router: FC = () => {
                         <Route path="pierwiastkowanie" element={<RootPage />} />
                         <Route path="logarytmy" element={<LogarithmPage />} />
                         <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
+                        <Route path="srednie-liczbowe" element={<AveragesPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="memy" element={<ForumPage />} />
@@ -149,6 +151,6 @@ export const Router: FC = () => {
                     </Route>
                 </Route>
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     )
 }

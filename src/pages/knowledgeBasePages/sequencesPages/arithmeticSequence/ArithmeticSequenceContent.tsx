@@ -4,17 +4,11 @@ import LegendParagraph from "../../../../components/articleItems/LegendParagraph
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Proof from "../../../../components/articleItems/Proof";
+import { arithmeticThreeConsecutiveTermsProof } from "../../../../types/proofs";
+import { arithmeticSequencesEquations } from "../../../../types/equations";
 
 const ArithmeticSequenceContent: FC = () => {
-  const threeWords = [
-    `P=\\frac{a_{n-1}+a_{n+1}}{2}`,
-    `\\frac{a_1+\\left(\\left(n-1\\right)-1\\right)r+a_1+\\left(\\left(n+1\\right)-1\\right)r}{2}`,
-    `\\frac{2a_1+\\left(n-2\\right)r+nr}{2}`,
-    `\\frac{2a_1+\\left(n-2+n\\right)r}{2}`,
-    `\\frac{2a_1+2\\left(n-1\\right)r}{2}`,
-    `a_1+\\left(n-1\\right)r`,
-    `a_n = L`,
-  ];
+
 
   return (
     <>
@@ -25,7 +19,7 @@ const ArithmeticSequenceContent: FC = () => {
       </p>
       <br />
       <p>Wzór na n-ty wyraz ciągu arytmetycznego:</p>
-      <Formula formula={`a_n=a_1+\\left(n-1\\right)r`} />
+      <Formula formula={arithmeticSequencesEquations.nthTermOfArithmeticSequence} />
       <p>Założenie:</p>
       <Formula formula={`n \\in \\mathbb{N_+}`} />
       <LegendParagraph
@@ -37,9 +31,9 @@ const ArithmeticSequenceContent: FC = () => {
       <br />
       <p>
         Wyznaczenie wzoru na n-ty wyraz ciągu nie wymaga znajomości wartości
-        wyrazu pierwszego:
+        wyrazu pierwszego. Można wykorzystać dowolny wyraz, którego jest znana wartość i kolejność.
       </p>
-      <Formula formula={`a_n=a_k+\\left(n-k\\right)r`} />
+      <Formula formula={arithmeticSequencesEquations.nthTermOfArithmeticSequence2} />
       <p>Założenie:</p>
       <Formula formula={`n,k \\in \\mathbb{N_+}`} />
       <Formula formula={`k\\leq n`} />
@@ -50,11 +44,11 @@ const ArithmeticSequenceContent: FC = () => {
       />
       <ArticleBorder />
       <p>Trzy kolejne wyrazy ciągu arytmetycznego spełniają zawsze równość:</p>
-      <Formula formula={`a_n=\\frac{a_{n-1}+a_{n+1}}{2}`} />
+      <Formula formula={arithmeticSequencesEquations.threeConsecutiveTermsArithmeticSequence} />
       <p>Założenie:</p>
       <Formula formula={`n \\in \\mathbb{N_+}`} />
       <Formula formula={`n\\geq 2`} />
-      <Proof steps={threeWords} text="Dowód" />
+      <Proof steps={arithmeticThreeConsecutiveTermsProof} text="Dowód" />
     </>
   );
 };

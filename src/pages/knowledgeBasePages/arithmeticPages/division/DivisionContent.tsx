@@ -50,14 +50,6 @@ const DivisionContent: FC = () => {
       <p><b>Dzielenie liczb wymiernych</b></p>
       <Formula formula="\frac{a}{b}:\frac{c}{d}=\frac{a}{b}\cdot\frac{d}{c}=\frac{ad}{bc}"></Formula>
       <br />
-      <ArticleBorder />
-      <p>Dzielenie liczb o różnych znakach i ich iloraz:</p>
-      <div className="flex flex-col justify-center text-center items-center font-bold gap-2">
-        <p>dodatnia : dodatnia = dodatnia</p>
-        <p>dodatnia : ujemna = ujemna</p>
-        <p>ujemna : dodatnia = ujemna</p>
-        <p>ujemna : ujemna = dodatnia</p>
-      </div>
     </>
   );
 };

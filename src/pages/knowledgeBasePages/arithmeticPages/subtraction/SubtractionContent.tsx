@@ -47,21 +47,6 @@ const SubtractionContent: FC = () => {
       <p><b>Odejmowanie liczb wymiernych</b></p>
       <Formula formula="\frac{a}{b}-\frac{c}{d}=\frac{ad}{bd}-\frac{bc}{bd}=\frac{ad-bc}{bd}"></Formula>
       <br />
-      <ArticleBorder />
-      <p>Odejmowanie liczb należących do poszczególnych zbiorów:</p>
-      <div className="flex flex-col justify-center text-center items-center font-bold gap-2">
-        <p>parzysta-parzysta=parzysta</p>
-        <p>nieparzysta-nieparzysta=parzysta</p>
-        <p>parzysta-nieparzysta=nieparzysta</p>
-        <p>naturalna-naturalna=całkowita</p>
-        <p>całkowita-całkowita=całkowita</p>
-        <p>całkowita-niecałkowita=niecałkowita</p>
-        <p>wymierna-wymierna=wymierna</p>
-        <p>wymierna-niewymierna=niewymierna</p>
-        <p>ujemna-dodatnia=ujemna</p>
-        <p>rzeczywista-rzeczywista=rzeczywista</p>
-        <p>zespolona-zespolona=zespolona</p>
-      </div>
     </>
   );
 };

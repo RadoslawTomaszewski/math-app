@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
-import { sidebarLinksKnowledgeBase } from "../../components/Sidebar/sidebarData";
+import { sidebarLinksKnowledgeBase } from "../../routes/navigationData";
 
 export const KnowledgeBaseLayout = () => {
   return (
@@ -11,7 +11,7 @@ export const KnowledgeBaseLayout = () => {
           <Sidebar sidebarLinks={sidebarLinksKnowledgeBase} />
         </div>
         <div className="w-full flex justify-center">
-          <div className="min-h-[calc(100vh-114px)] max-w-[1500px] w-full">
+          <div className="min-h-[calc(100vh-114px)] w-full md:max-w-[calc(100vw-260px)]">
             <Outlet />
           </div>
         </div>

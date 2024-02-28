@@ -42,22 +42,6 @@ const AdditionContent: FC = () => {
       <Formula formula="\sum_{i=1}^{n} a_i=a_1+a_2+...+a_n"></Formula>
       <Proof steps={["\\sum_{i=1}^{4} i^2=1^2+2^2+3^2+4^2=30"]} text={"Przykład"} />
       <ArticleBorder />
-      <p>Dodawanie składników należących do poszczególnych zbiorów:</p>
-      <div className="flex flex-col justify-center text-center items-center font-bold gap-2">
-        <p>parzysta+parzysta=parzysta</p>
-        <p>nieparzysta+nieparzysta=parzysta</p>
-        <p>parzysta+nieparzysta=nieparzysta</p>
-        <p>naturalna+naturalna=naturalna</p>
-        <p>całkowita+całkowita=całkowita</p>
-        <p>całkowita+niecałkowita=niecałkowita</p>
-        <p>wymierna+wymierna=wymierna</p>
-        <p>wymierna+niewymierna=niewymierna</p>
-        <p>dodatnia+dodatnia=dodatnia</p>
-        <p>ujemna+ujemna=ujemna</p>
-        <p>rzeczywista+rzeczywista=rzeczywista</p>
-        <p>zespolona+zespolona=zespolona</p>
-      </div>
-      <ArticleBorder />
       <Title text={"Aksjomaty dodawania Pean'a"} type={"submain-article"} />
       <p>
         <b>Aksjomat 1.</b> Dla dowolnej liczby naturalnej n suma n i 0 ma być równa n

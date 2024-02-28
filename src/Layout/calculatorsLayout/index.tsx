@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { sidebarLinksCalculators } from "../../components/Sidebar/sidebarData";
+import { sidebarLinksCalculators } from "../../routes/navigationData";
 
 export const CalculatorsLayout = () => {
   return (

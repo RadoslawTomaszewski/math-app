@@ -4,19 +4,11 @@ import LegendParagraph from "../../../../components/articleItems/LegendParagraph
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Proof from "../../../../components/articleItems/Proof";
+import { geometricThreeConsecutiveTermsProof } from "../../../../types/proofs";
+import { GeometricSequencesEquations } from "../../../../types/equations";
 
 const ArithmeticSequenceContent: FC = () => {
-  const threeWords = [
-    `P=\\sqrt{a_{n-1}\\cdot a_{n+1}}`,
-    `\\sqrt{a_1\\cdot q^{\\left(n-1\\right)-1}\\cdot a_1\\cdot q^{\\left(n+1\\right)-1}}`,
-    `\\sqrt{a_1\\cdot q^{\\left(n-2\\right)}\\cdot a_1\\cdot q^n}`,
-    `\\sqrt{a_1^2\\cdot q^{\\left(n-2+n\\right)}}`,
-    `\\sqrt{a_1^2\\cdot q^{2\\left(n-1\\right)}}`,
-    `\\sqrt{a_1^2\\cdot q^{\\left(n-1\\right)^2}}`,
-    `\\sqrt{a_1^2}\\cdot\\sqrt{q^{\\left(n-1\\right)^2}}`,
-    `a_1\\cdot q^{n-1}`,
-    `a_n = L`,
-  ];
+
 
   return (
     <>
@@ -27,7 +19,7 @@ const ArithmeticSequenceContent: FC = () => {
       </p>
       <br />
       <p>Wzór na n-ty wyraz ciągu geometrycznego:</p>
-      <Formula formula={`a_n=a_1\\cdot q^{n-1}`} />
+      <Formula formula={GeometricSequencesEquations.nthTermOfGeometricSequence} />
       <p>Założenie:</p>
       <Formula formula={`n \\in \\mathbb{N_+}`} />
       <LegendParagraph
@@ -41,7 +33,7 @@ const ArithmeticSequenceContent: FC = () => {
         Wyznaczenie wzoru na n-ty wyraz ciągu nie wymaga znajomości wartości
         wyrazu pierwszego:
       </p>
-      <Formula formula={`a_n=a_k\\cdot q^{n-k}`} />
+      <Formula formula={GeometricSequencesEquations.nthTermOfGeometricSequence2} />
       <p>Założenie:</p>
       <Formula formula={`n,k \\in \\mathbb{N_+}`} />
       <Formula formula={`k\\leq n`} />
@@ -52,11 +44,11 @@ const ArithmeticSequenceContent: FC = () => {
       />
       <ArticleBorder />
       <p>Trzy kolejne wyrazy ciągu geometrycznego spełniają zawsze równość:</p>
-      <Formula formula={`a_n=\\sqrt{a_{n-1}\\cdot a_{n+1}}`} />
+      <Formula formula={GeometricSequencesEquations.threeConsecutiveTermsGeometricSequence} />
       <p>Założenie:</p>
       <Formula formula={`n \\in \\mathbb{N_+}`} />
       <Formula formula={`n\\geq 2`} />
-      <Proof steps={threeWords} text="Dowód" />
+      <Proof steps={geometricThreeConsecutiveTermsProof} text="Dowód" />
     </>
   );
 };

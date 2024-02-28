@@ -9,7 +9,7 @@ export interface ISidebarProps {
 const Sidebar: FC<ISidebarProps> = ({ sidebarLinks }) => {
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col max-w-[250px]">
         {sidebarLinks.map((item) => (
           <SidebarCategoryItem
             key={item.category.text}

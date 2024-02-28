@@ -7,7 +7,7 @@ export const Layout = () => {
     <div>
       <div className="relative">
         <Navbar />
-        <div className="min-h-[calc(100vh-114px)] max-w-[100vw]  bg-bgColor">
+        <div className="min-h-[calc(100vh-114px)] max-w-[full]  bg-bgColor">
           <Outlet />
         </div>
       </div>

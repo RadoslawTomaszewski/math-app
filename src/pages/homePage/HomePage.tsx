@@ -36,11 +36,11 @@ export default function HomePage() {
               <p>Aktualizacja artykułu definiującego <NavLink to="baza-wiedzy/logarytmy"><b>funkcję kwadratową</b></NavLink></p>
               <p><NavLink to="kalkulatory/skracanie-ulamkow"><b>Kalkulator skracania ułamków</b></NavLink></p>
               <p>Kalkulator <NavLink to="kalkulatory/czynnik-przed-pierwiastek-kwadratowy"><b>wyłączania czynnika przed pierwiastek sześcienny</b> teraz działa również dla wartości ujemnych</NavLink></p>
-              <p><NavLink to="kalkulatory/funkcji-kwadratowej"><b>Kalkulator funkcji kwadratowej</b> - ostatnia aktualizacja: 27/02/2024</NavLink></p>
-              <p><NavLink to="kalkulatory/funkcji-liniowej"><b>Kalkulator funkcji liniowej</b> - WORK IN PROGRESS...</NavLink></p>
+              <p><NavLink to="kalkulatory/funkcji-kwadratowej"><b>Kalkulator funkcji kwadratowej</b> - ostatnia aktualizacja: 28/02/2024</NavLink></p>
+              <p><NavLink to="kalkulatory/funkcji-liniowej"><b>Kalkulator funkcji liniowej</b> - ostatnia aktualizacja: 28/02/2024</NavLink></p>
               <br />
               <br />
-              <p className="italic">aktualizacja: 27/02/2024</p>
+              <p className="italic">aktualizacja: 28/02/2024</p>
 
             </div>
             <img
