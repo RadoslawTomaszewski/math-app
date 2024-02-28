@@ -49,6 +49,7 @@ import HomographicFunctionPage from "../pages/knowledgeBasePages/functionsPages/
 import FractionReducerPage from "../pages/calculatorsPages/arithmeticCalculators/FractionReducer/FractionReducerPage";
 import LinearFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/LinearFunctionCalculator/LinearFunctionCalculatorPage";
 import AveragesPage from "../pages/knowledgeBasePages/statisticPages/Averages/AveragesPage";
+import QuadranglesPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/QuadranglesPage";
 
 
 
@@ -92,6 +93,7 @@ export const Router: FC = () => {
                         <Route path="logarytmy" element={<LogarithmPage />} />
                         <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
                         <Route path="srednie-liczbowe" element={<AveragesPage />} />
+                        <Route path="czworokaty" element={<QuadranglesPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="memy" element={<ForumPage />} />

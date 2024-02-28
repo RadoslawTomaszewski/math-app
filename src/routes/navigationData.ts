@@ -73,15 +73,15 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             // { to: "granica-ciagu", text: "Granica ciągu" },
         ],
     },
-    // {
-    //   category: { to: "planimetria", text: "Planimetria" },
-    //   links: [
-    //     { to: "trójkaty", text: "Trójkąty" },
-    //     { to: "czworokaty", text: "Czworokąty" },
-    //     { to: "wielokąty", text: "Wielokąty" },
-    //     { to: "pola i obwody", text: "Pola i obwody" },
-    //   ],
-    // },
+    {
+        category: { to: "planimetria", text: "Planimetria" },
+        links: [
+            // { to: "trójkaty", text: "Trójkąty" },
+            { to: "czworokaty", text: "Czworokąty" },
+            // { to: "wielokąty", text: "Wielokąty" },
+            // { to: "pola i obwody", text: "Pola i obwody" },
+        ],
+    },
     // {
     //   category: { to: "stereometria", text: "Stereometria" },
     //   links: [
