@@ -10,6 +10,15 @@ export enum GeometricSequencesEquations {
     nthTermOfGeometricSequence = `a_n=a_1\\cdot q^{n-1}`,
     nthTermOfGeometricSequence2 = `a_n=a_k\\cdot q^{n-k}`,
     threeConsecutiveTermsGeometricSequence = `a_n=\\sqrt{a_{n-1}\\cdot a_{n+1}}`,
+    perimeterQuadrangle = `L=a+b+c+d`,
+    areaQuadrangle = `P_1=\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot  \\sin\\alpha`,
+    areaTrapeze = `P_2=\\frac{1}{2} \\cdot \\left( a + b \\right)+h`,
+    areaTrapezeLong = `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+d)(|a-b|+c-d)(|a-b|-c+d)(-|a-b|+c+d)}`,
+    trapezeHalf = `m=\\frac{a+b}{2}`,
+    areaTrapezeRectangular = `P_2=\\frac{1}{2}\\cdot \\left( a+b \\right) \\cdot c`,
+    perimeterIsoscelesTrapezoid = `L=a+b+2c`,
+    areaIsoscelesTrapezoid = `P_1=\\frac{1}{2} \\cdot d_0^2 \\cdot \\sin\\alpha`,
+    areaIsoscelesTrapezoidLong = `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-|a-b|^2}`,
 }
 
 //Linear Formula
@@ -55,4 +64,5 @@ export enum statisticEquations {
     SQUARE_MEAN = `\\bar{k}=\\sqrt{\\frac{\\left(x_1\\right)^2+\\left(x_2\\right)^2+\\cdots+\\left(x_n\\right)^2}{n}}=\\sqrt{\\frac{1}{n}\\sum_{i=1}^{n}x_i^2}`,
     RANGE_MIDDLE = `\\bar{M}=\\frac{\\min(x_1, x_2, ..., x_n) + \\max(x_1, x_2, ..., x_n)}{2}`,
     CAUCHY_INEQUALITY = `\\bar{k} \\geq \\bar{a} \\geq \\bar{g} \\geq \\bar{h}`,
+    CAUCHY_INEQUALITY_FULL = `\\sum_{i=1}^{n}x_i^2} \\geq \\bar{a}=\\frac{x_1+x_2+\\cdots+x_n}{n}=\\frac{1}{n}\\sum_{i=1}^{n}x_i \\geq `
 }
