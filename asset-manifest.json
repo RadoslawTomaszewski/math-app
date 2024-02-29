@@ -1,17 +1,22 @@
 {
   "files": {
     "main.css": "/math-app/static/css/main.3a917eae.css",
-    "main.js": "/math-app/static/js/main.3f65be73.js",
+    "main.js": "/math-app/static/js/main.77161fbb.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/pi.gif": "/math-app/static/media/pi.ec795e57a3c34340e037.gif",
     "static/media/liniowa-rosnaca.png": "/math-app/static/media/liniowa-rosnaca.8f0e780db42564fc3bbe.png",
     "static/media/liniowa-malejaca.png": "/math-app/static/media/liniowa-malejaca.4da2dafc01e009e5f6d1.png",
     "static/media/okrag_wpisany_w_czworokat.png": "/math-app/static/media/okrag_wpisany_w_czworokat.3046de0dbdb1984b4448.png",
     "static/media/okrag_opisany_na_czworokacie.png": "/math-app/static/media/okrag_opisany_na_czworokacie.f4636ea187bcea79046f.png",
+    "static/media/trapeze_regular.png": "/math-app/static/media/trapeze_regular.98f91be21e0044136bdf.png",
     "static/media/kwadratowa-ujemna.png": "/math-app/static/media/kwadratowa-ujemna.134be70a0a5e24f870a7.png",
     "static/media/kwadratowa-dodatnia.png": "/math-app/static/media/kwadratowa-dodatnia.333cd099aac6a584b71d.png",
     "static/media/liniowa-stała.png": "/math-app/static/media/liniowa-stała.8e6e354b3f126e3cc2a2.png",
+    "static/media/trapezoid.png": "/math-app/static/media/trapezoid.530e4b036b1b59dda59d.png",
+    "static/media/trapeze.png": "/math-app/static/media/trapeze.c3a3ce0bc4e497b52f8f.png",
     "static/media/pseudokwadratowa.png": "/math-app/static/media/pseudokwadratowa.9e86a1aeb3d49cc5dc99.png",
+    "static/media/rectangular_trapezoid.png": "/math-app/static/media/rectangular_trapezoid.666930b0ce394f1ee462.png",
+    "static/media/tapeze_half.png": "/math-app/static/media/tapeze_half.b10cabe441e69cbc17b0.png",
     "static/media/kwadratowa-wyraz-wolny.png": "/math-app/static/media/kwadratowa-wyraz-wolny.8f2d8c9c8e2abb65fde2.png",
     "static/media/kwadratowa-os-symetrii.png": "/math-app/static/media/kwadratowa-os-symetrii.1f460d993d5bf7cbbfe2.png",
     "static/media/wierzcholek.png": "/math-app/static/media/wierzcholek.9354ec98277e30a0213d.png",
@@ -32,10 +37,10 @@
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.3a917eae.css.map": "/math-app/static/css/main.3a917eae.css.map",
-    "main.3f65be73.js.map": "/math-app/static/js/main.3f65be73.js.map"
+    "main.77161fbb.js.map": "/math-app/static/js/main.77161fbb.js.map"
   },
   "entrypoints": [
     "static/css/main.3a917eae.css",
-    "static/js/main.3f65be73.js"
+    "static/js/main.77161fbb.js"
   ]
 }
