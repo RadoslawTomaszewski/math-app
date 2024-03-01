@@ -1,3 +1,5 @@
+import { GeometricSequencesEquations } from "./equations";
+
 //Arithetic Sequence
 export const arithmeticThreeConsecutiveTermsProof = [
     `\\frac{a_{n-1}+a_{n+1}}{2}`,
@@ -19,4 +21,12 @@ export const geometricThreeConsecutiveTermsProof = [
     `\\sqrt{a_1^2}\\cdot\\sqrt{q^{\\left(n-1\\right)^2}}`,
     `a_1\\cdot q^{n-1}`,
     `a_n = L`,
+];
+
+export const isoscelesTrapezoidProof = [
+    GeometricSequencesEquations.areaTrapezeLong,
+    `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+c)(|a-b|+c-c)(|a-b|-c+c)(-|a-b|+c+c)}`,
+    `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{|a-b|^2(|a-b|+2c)(-|a-b|+2c)}`,
+    `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{|a-b|^2(2c+|a-b|)(2c-|a-b|)}`,
+    `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
 ];

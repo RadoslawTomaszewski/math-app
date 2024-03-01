@@ -18,7 +18,7 @@ export enum GeometricSequencesEquations {
     areaTrapezeRectangular = `P_2=\\frac{1}{2}\\cdot \\left( a+b \\right) \\cdot c`,
     perimeterIsoscelesTrapezoid = `L=a+b+2c`,
     areaIsoscelesTrapezoid = `P_1=\\frac{1}{2} \\cdot d_0^2 \\cdot \\sin\\alpha`,
-    areaIsoscelesTrapezoidLong = `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-|a-b|^2}`,
+    areaIsoscelesTrapezoidLong = `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
 }
 
 //Linear Formula

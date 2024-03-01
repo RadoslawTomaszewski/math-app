@@ -15,7 +15,7 @@ const GraphImage: FC<IGraphImageProps> = ({ size, src, alt }) => {
   else if (size === "small") {
     sizeOption = (
       <img
-        className="max-w-full md:max-w-[33vw] align-middle"
+        className="max-w-full md:max-h-[400px] md:max-w-[400px] align-middle"
         src={src}
         alt={alt}
       />
@@ -23,7 +23,7 @@ const GraphImage: FC<IGraphImageProps> = ({ size, src, alt }) => {
   } else if (size === "smaller") {
     sizeOption = (
       <img
-        className="max-w-full max-h-[400px] md:max-w-[800px] align-middle"
+        className="max-w-[95%] md:max-h-[300px] md:max-w-[300px] align-middle"
         src={src}
         alt={alt}
       />
@@ -31,14 +31,14 @@ const GraphImage: FC<IGraphImageProps> = ({ size, src, alt }) => {
   } else if (size === "smallest") {
     sizeOption = (
       <img
-        className="max-w-full max-h-[200px] md:max-w-[400px] align-middle"
+        className="max-w-[90%] max-h-[200px] md:max-h-[200px] md:max-w-[200px] align-middle"
         src={src}
         alt={alt}
       />
     );
   } else if (size === "full") {
     sizeOption = (
-      <img className="max-w-[90%] align-middle" src={src} alt={alt} />
+      <img className="max-w-full align-middle" src={src} alt={alt} />
     );
   }
 

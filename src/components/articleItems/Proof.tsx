@@ -16,8 +16,8 @@ const Proof: FC<IProofProps> = ({ steps, text }) => {
   };
 
   return (
-    <div>
-      <button onClick={toggleExpansion} className="flex">
+    <>
+      <button onClick={toggleExpansion} className="flex overflow-y-hidden">
         {expanded ? (
           <>
             {text} <CollapseIcon className="w-[16px] h-[16px] mt-1" />
@@ -28,16 +28,22 @@ const Proof: FC<IProofProps> = ({ steps, text }) => {
           </>
         )}
       </button>
-      {expanded && (
-        <ul>
-          {steps.map((step, index) => (
-            <li key={index} className="flex justify-center my-4">
-              <MathComponent tex={step} />
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+      <div>
+
+        {expanded && (
+          <ul>
+            <div className="overflow-x-auto ">
+              {steps.map((step, index) => (
+                <li key={index} className="flex justify-center my-4 min-w-[1000px]">
+                  <MathComponent tex={step} />
+                </li>
+              ))}
+            </div>
+          </ul>
+        )}
+      </div>
+    </>
+
   );
 };
 
