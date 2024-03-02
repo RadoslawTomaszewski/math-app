@@ -1,0 +1,49 @@
+import { FC } from "react";
+import Title from "../../../../../components/articleItems/Title";
+import GraphImage from "../../../../../components/articleItems/GraphImage";
+import Formula from "../../../../../components/articleItems/Formula";
+import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
+import { StereometryEquations } from "../../../../../types/equations";
+import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
+import Paralellogram from "../../../../../assets/images/quadrangles/Parallelogram.png";
+import Proof from "../../../../../components/articleItems/Proof";
+import ParallelogramAngles from "../../../../../assets/images/quadrangles/Parallelogram_angles.png"
+import { TrapeziumAreaParallelogramProof } from "../../../../../types/proofs";
+
+
+const ParallelogramContent: FC = () => (
+    <>
+        <Title text={"Równoległobok"} type="main-article" />
+        <p><b>Równoległobok</b> to czworokąt mający dwie pary boków równoległych i równej długości </p>
+        <GraphImage size={"small"} src={Paralellogram} alt={"Równoległobok"} />
+        <p>Obwód:</p>
+        <Formula formula={StereometryEquations.ParallelogramPerimeter} />
+        <LegendParagraph type={"top"} notation={"a,b"} explanation={"boki równoległoboku"} />
+        <br />
+        <p>Pole równoległoboku można policzyć wzorem na pole trapezoidu:</p>
+        <Formula formula={StereometryEquations.TrapezoidArea} />
+        <LegendParagraph type={"top"} notation={"d_1,d_2"} explanation={"przekątne równoległoboku"} />
+        <LegendParagraph type={"short"} notation={"\\alpha"} explanation={"kąt między przekątnymi"} /><br />
+        <p>Równoległobok jest trapezem, więc w przypadku, gdy wybrane dwa równoległe boki uznamy za podstawy otrzymamy zredukowaną postać wzoru:</p>
+        <Formula formula={StereometryEquations.TrapeziumArea_Parallelogram} />
+        <LegendParagraph type={"top"} notation={"h"} explanation={"wysokość równoległoboku opuszczona na bok a"} /><br />
+        <Proof steps={TrapeziumAreaParallelogramProof} text={"Dowód"} />
+        <p>Pole powierzchni równoległoboku wyraża się również wzorem</p>
+        <Formula formula={StereometryEquations.ParallelogramArea} />
+        <LegendParagraph type={"top"} notation={"\\beta"} explanation={"kąt między bokami równoległoboku"} />
+
+        <ArticleBorder />
+        <Title text={"Twierdzenie o kątach w równoległoboku"} type={"submain-article"} />
+        <p>Suma dwóch kątów opartych na tym samym boku (ramieniu) równoległoboku, jak w każdym trapezie wynosi 180° </p>
+        <p>Natomiast przeciwległe kąty równoległoboku są sobie równe.</p>
+        <GraphImage size={"small"} src={ParallelogramAngles} alt={"Równoległobok"} />
+        <p>To twierdzenie można udowodnić za pomocą <b>Twierdzenia o trzech prostych</b></p>
+        <ArticleBorder />
+        <p> Wyróżnia się szczególne przypadki równoległoboków: <b>Prostokąt</b> i <b>Romb</b></p>
+
+
+
+    </>
+);
+
+export default ParallelogramContent;

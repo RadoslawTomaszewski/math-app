@@ -1,4 +1,4 @@
-import { GeometricSequencesEquations } from "./equations";
+import { StereometryEquations } from "./equations";
 
 //Arithetic Sequence
 export const arithmeticThreeConsecutiveTermsProof = [
@@ -24,9 +24,20 @@ export const geometricThreeConsecutiveTermsProof = [
 ];
 
 export const isoscelesTrapezoidProof = [
-    GeometricSequencesEquations.areaTrapezeLong,
+    StereometryEquations.TrapeziumArea2,
     `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+c)(|a-b|+c-c)(|a-b|-c+c)(-|a-b|+c+c)}`,
     `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{|a-b|^2(|a-b|+2c)(-|a-b|+2c)}`,
     `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{|a-b|^2(2c+|a-b|)(2c-|a-b|)}`,
     `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
 ];
+
+export const isoscelesTrapezoidLongerSegmentProof = [
+    `\\frac{a-b}{2}+b`, `\\frac{a-b}{2}+\\frac{2b}{2}`, `\\frac{a+b}{2}`,
+]
+
+export const TrapeziumAreaParallelogramProof = [
+    StereometryEquations.TrapeziumArea,
+    `\\frac{1}{2} \\cdot \\left(a+a\\right) \\cdot h`,
+    `\\frac{1}{2} \\cdot 2a \\cdot h`,
+    `a \\cdot h`,
+]

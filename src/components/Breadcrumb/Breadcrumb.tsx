@@ -24,7 +24,7 @@ const Breadcrumb: FC<IBreadcrumb> = ({
   return (
     <div>
       <NavLink to={grandparent.link}>{grandparent.name}</NavLink> →
-      <NavLink to={parent.link}>{parent.name}</NavLink> → {childName}
+      {childName === "" ? <><NavLink to={parent.link}>{parent.name}</NavLink></> : <><NavLink to={parent.link}>{parent.name}</NavLink> → {childName}</>}
     </div>
   );
 };

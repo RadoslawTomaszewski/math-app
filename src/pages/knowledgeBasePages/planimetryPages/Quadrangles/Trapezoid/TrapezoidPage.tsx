@@ -1,15 +1,15 @@
 import { FC } from "react";
-import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
-import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
-import QuadranglesContent from "./QuadranglesContent";
+import Breadcrumb from "../../../../../components/Breadcrumb/Breadcrumb";
+import { ArticleWrapper } from "../../../../../components/ArticleWrapper/ArticleWrapper";
+import TrapezoidContent from "./TrapezoidContent";
 
-const QuadranglesPage: FC = () => {
+const TrapezoidPage: FC = () => {
     const grandparent = { link: "../", name: "Baza Wiedzy" };
     const parent = {
-        link: "../czworokąty",
+        link: "../czworokaty",
         name: "Czworokąty",
     };
-    const childName = "";
+    const childName = "Trapezoid";
 
     return (
         <div className="p-2 justify-center flex flex-col">
@@ -19,10 +19,10 @@ const QuadranglesPage: FC = () => {
                 childName={childName}
             />
             <ArticleWrapper>
-                <QuadranglesContent />
+                <TrapezoidContent />
             </ArticleWrapper>
         </div>
     );
 };
 
-export default QuadranglesPage;
+export default TrapezoidPage;

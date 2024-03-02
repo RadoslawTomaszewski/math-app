@@ -74,10 +74,20 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         ],
     },
     {
-        category: { to: "planimetria", text: "Planimetria" },
+        category: { to: "czworokaty", text: "Czworokąty" },
         links: [
+            { to: "trapezoid", text: "Trapezoid" },
+            { to: "trapez", text: "Trapez" },
+            { to: "trapez-prostokatny", text: "Trapez Prostokątny" },
+            { to: "trapez-rownoramienny", text: "Trapez Równoramienny" },
+            { to: "rownoleglobok", text: "Równoległobok" },
+            { to: "romb", text: "Romb" },
+            { to: "prostokat", text: "Prostokąt" },
+            { to: "kwadrat", text: "Kwadrat" },
+            { to: "deltoid", text: "Deltoid" },
+            { to: "czworokaty-wklesle", text: "Czworokąty Wklęsłe" },
+
             // { to: "trójkaty", text: "Trójkąty" },
-            { to: "czworokaty", text: "Czworokąty" },
             // { to: "wielokąty", text: "Wielokąty" },
             // { to: "pola i obwody", text: "Pola i obwody" },
         ],

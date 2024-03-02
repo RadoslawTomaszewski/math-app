@@ -50,6 +50,11 @@ import FractionReducerPage from "../pages/calculatorsPages/arithmeticCalculators
 import LinearFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/LinearFunctionCalculator/LinearFunctionCalculatorPage";
 import AveragesPage from "../pages/knowledgeBasePages/statisticPages/Averages/AveragesPage";
 import QuadranglesPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/QuadranglesPage";
+import TrapezoidPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Trapezoid/TrapezoidPage";
+import TrapeziumPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Trapezium/TrapeziumPage";
+import RectangularTrapeziumPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/RectangularTrapezium/RectangularTrapeziumPage";
+import IsoscelesTrapeziumPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/IsoscelesTrapezium/IsoscelesTrapeziumPage";
+import ParallelogramPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Parallelogram/ParallelogramPage";
 
 
 
@@ -94,6 +99,11 @@ export const Router: FC = () => {
                         <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
                         <Route path="srednie-liczbowe" element={<AveragesPage />} />
                         <Route path="czworokaty" element={<QuadranglesPage />} />
+                        <Route path="trapezoid" element={<TrapezoidPage />} />
+                        <Route path="trapez" element={<TrapeziumPage />} />
+                        <Route path="trapez-prostokatny" element={<RectangularTrapeziumPage />} />
+                        <Route path="trapez-rownoramienny" element={<IsoscelesTrapeziumPage />} />
+                        <Route path="rownoleglobok" element={<ParallelogramPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="memy" element={<ForumPage />} />

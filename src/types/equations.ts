@@ -10,15 +10,30 @@ export enum GeometricSequencesEquations {
     nthTermOfGeometricSequence = `a_n=a_1\\cdot q^{n-1}`,
     nthTermOfGeometricSequence2 = `a_n=a_k\\cdot q^{n-k}`,
     threeConsecutiveTermsGeometricSequence = `a_n=\\sqrt{a_{n-1}\\cdot a_{n+1}}`,
-    perimeterQuadrangle = `L=a+b+c+d`,
-    areaQuadrangle = `P_1=\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot  \\sin\\alpha`,
-    areaTrapeze = `P_2=\\frac{1}{2} \\cdot \\left( a + b \\right)+h`,
-    areaTrapezeLong = `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+d)(|a-b|+c-d)(|a-b|-c+d)(-|a-b|+c+d)}`,
-    trapezeHalf = `m=\\frac{a+b}{2}`,
-    areaTrapezeRectangular = `P_2=\\frac{1}{2}\\cdot \\left( a+b \\right) \\cdot c`,
-    perimeterIsoscelesTrapezoid = `L=a+b+2c`,
-    areaIsoscelesTrapezoid = `P_1=\\frac{1}{2} \\cdot d_0^2 \\cdot \\sin\\alpha`,
-    areaIsoscelesTrapezoidLong = `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
+}
+
+//Planimetry
+export enum StereometryEquations {
+    // Perimeters
+    TrapezoidPerimeter = `L=a+b+c+d`,
+    IsoscelesTrapezoidPerimeter = `L=a+b+2c`,
+    ParallelogramPerimeter = `L=2a+2b`,
+
+    // Areas
+    TrapezoidArea = `P_1=\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot  \\sin\\alpha`,
+    TrapezoidArea_Isosceles = `P_1=\\frac{1}{2} \\cdot d_0^2 \\cdot \\sin\\alpha`,
+    TrapeziumArea = `P_2=\\frac{1}{2} \\cdot \\left( a + b \\right) \\cdot h`,
+    TrapeziumArea_Rectangular = `P_2=\\frac{1}{2}\\cdot \\left( a+b \\right) \\cdot c`,
+    TrapeziumArea_Parallelogram = `P_2=a \\cdot h`,
+    TrapeziumArea2 = `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+d)(|a-b|+c-d)(|a-b|-c+d)(-|a-b|+c+d)}`,
+    TrapeziumArea2_Isosceles = `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
+    ParallelogramArea = `P_4=a \\cdot b \\cdot \\sin{\\beta}`,
+
+    // Segments
+    TrapeziumMidpointsConnector = `m=\\frac{a+b}{2}`,
+    IsoscelesTrapezium_ShorterSegment = `\\frac{a-b}{2}`,
+    IsoscelesTrapezium_LongerSegment = `\\frac{a+b}{2}`,
+
 }
 
 //Linear Formula
