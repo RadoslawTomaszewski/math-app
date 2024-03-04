@@ -1,15 +1,22 @@
 {
   "files": {
     "main.css": "/math-app/static/css/main.fe5101d9.css",
-    "main.js": "/math-app/static/js/main.c244cd82.js",
+    "main.js": "/math-app/static/js/main.399a3b5b.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
+    "static/media/trapezoid_in_circle_2.png": "/math-app/static/media/trapezoid_in_circle_2.01bb288c41456e780db3.png",
+    "static/media/trapezoid_on_circle_2.png": "/math-app/static/media/trapezoid_on_circle_2.6a76e8f958efaeb5e24b.png",
+    "static/media/deltoid_2.png": "/math-app/static/media/deltoid_2.3649b4f68f3345fc17e2.png",
+    "static/media/trapezoid_on_circle.png": "/math-app/static/media/trapezoid_on_circle.a0f6e33817733c560698.png",
+    "static/media/trapezoid_in_circle.png": "/math-app/static/media/trapezoid_in_circle.c4a859b226252d6cb78f.png",
     "static/media/trapezium_angles.png": "/math-app/static/media/trapezium_angles.134b786ee29775d4cfc2.png",
     "static/media/pi.gif": "/math-app/static/media/pi.ec795e57a3c34340e037.gif",
     "static/media/Parallelogram_angles.png": "/math-app/static/media/Parallelogram_angles.20d7f5a7622097a0aeca.png",
+    "static/media/deltoid.png": "/math-app/static/media/deltoid.c4d81710387c544a7de4.png",
     "static/media/liniowa-rosnaca.png": "/math-app/static/media/liniowa-rosnaca.8f0e780db42564fc3bbe.png",
     "static/media/liniowa-malejaca.png": "/math-app/static/media/liniowa-malejaca.4da2dafc01e009e5f6d1.png",
     "static/media/Parallelogram.png": "/math-app/static/media/Parallelogram.566b5b696c686d7641c7.png",
-    "static/media/trapeze_regular.png": "/math-app/static/media/trapeze_regular.98f91be21e0044136bdf.png",
+    "static/media/diamond.png": "/math-app/static/media/diamond.4978e5a0076f89ab4ba2.png",
+    "static/media/trapeze_regular.png": "/math-app/static/media/trapeze_regular.b0c21fdc1af87446e7df.png",
     "static/media/kwadratowa-ujemna.png": "/math-app/static/media/kwadratowa-ujemna.134be70a0a5e24f870a7.png",
     "static/media/kwadratowa-dodatnia.png": "/math-app/static/media/kwadratowa-dodatnia.333cd099aac6a584b71d.png",
     "static/media/trapeze_regular_shortx.png": "/math-app/static/media/trapeze_regular_shortx.6d79f4145bd672c173ea.png",
@@ -19,12 +26,14 @@
     "static/media/trapeze.png": "/math-app/static/media/trapeze.c3a3ce0bc4e497b52f8f.png",
     "static/media/pseudokwadratowa.png": "/math-app/static/media/pseudokwadratowa.9e86a1aeb3d49cc5dc99.png",
     "static/media/rectangular_trapezoid.png": "/math-app/static/media/rectangular_trapezoid.666930b0ce394f1ee462.png",
-    "static/media/tapeze_half.png": "/math-app/static/media/tapeze_half.6ce8376e3ca36d81e812.png",
+    "static/media/tapeze_half.png": "/math-app/static/media/tapeze_half.f4d7b6aa91e60a88c41e.png",
+    "static/media/Rectangle.png": "/math-app/static/media/Rectangle.7f5b74395a3230c07db9.png",
     "static/media/kwadratowa-wyraz-wolny.png": "/math-app/static/media/kwadratowa-wyraz-wolny.8f2d8c9c8e2abb65fde2.png",
     "static/media/kwadratowa-os-symetrii.png": "/math-app/static/media/kwadratowa-os-symetrii.1f460d993d5bf7cbbfe2.png",
     "static/media/wierzcholek.png": "/math-app/static/media/wierzcholek.9354ec98277e30a0213d.png",
     "static/media/rectangular_trapezium_x.png": "/math-app/static/media/rectangular_trapezium_x.67556a55854cdf83ccdd.png",
     "static/media/liniowa-wyraz-wolny.png": "/math-app/static/media/liniowa-wyraz-wolny.c7478516c6d9ac93addd.png",
+    "static/media/square.png": "/math-app/static/media/square.70038575c64e0bfb0d7d.png",
     "static/media/skroconeMnozenie3.png": "/math-app/static/media/skroconeMnozenie3.172ddbfd1e8ec1113e35.png",
     "static/media/skroconeMnozenie.png": "/math-app/static/media/skroconeMnozenie.4c74896fdd3320e43cd2.png",
     "static/media/meme.jpg": "/math-app/static/media/meme.e50c8433e382a2eb6c02.jpg",
@@ -40,10 +49,10 @@
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.fe5101d9.css.map": "/math-app/static/css/main.fe5101d9.css.map",
-    "main.c244cd82.js.map": "/math-app/static/js/main.c244cd82.js.map"
+    "main.399a3b5b.js.map": "/math-app/static/js/main.399a3b5b.js.map"
   },
   "entrypoints": [
     "static/css/main.fe5101d9.css",
-    "static/js/main.c244cd82.js"
+    "static/js/main.399a3b5b.js"
   ]
 }
