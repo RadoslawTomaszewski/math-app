@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/math-app/static/css/main.fe5101d9.css",
-    "main.js": "/math-app/static/js/main.399a3b5b.js",
+    "main.js": "/math-app/static/js/main.297ad989.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/trapezoid_in_circle_2.png": "/math-app/static/media/trapezoid_in_circle_2.01bb288c41456e780db3.png",
     "static/media/trapezoid_on_circle_2.png": "/math-app/static/media/trapezoid_on_circle_2.6a76e8f958efaeb5e24b.png",
+    "static/media/cyclingTrapezoid_Irregular.png": "/math-app/static/media/cyclingTrapezoid_Irregular.0ca78e0c6c57cb9f4f34.png",
     "static/media/deltoid_2.png": "/math-app/static/media/deltoid_2.3649b4f68f3345fc17e2.png",
     "static/media/trapezoid_on_circle.png": "/math-app/static/media/trapezoid_on_circle.a0f6e33817733c560698.png",
     "static/media/trapezoid_in_circle.png": "/math-app/static/media/trapezoid_in_circle.c4a859b226252d6cb78f.png",
@@ -15,7 +16,10 @@
     "static/media/liniowa-rosnaca.png": "/math-app/static/media/liniowa-rosnaca.8f0e780db42564fc3bbe.png",
     "static/media/liniowa-malejaca.png": "/math-app/static/media/liniowa-malejaca.4da2dafc01e009e5f6d1.png",
     "static/media/Parallelogram.png": "/math-app/static/media/Parallelogram.566b5b696c686d7641c7.png",
+    "static/media/cyclingTrapezoid_Trapezium.png": "/math-app/static/media/cyclingTrapezoid_Trapezium.60c3f0fe2d9b325cbc4b.png",
+    "static/media/cyclingTrapezoid_Rectangle.png": "/math-app/static/media/cyclingTrapezoid_Rectangle.ef7395642843f904be9e.png",
     "static/media/diamond.png": "/math-app/static/media/diamond.4978e5a0076f89ab4ba2.png",
+    "static/media/cyclingTrapezoid_Square.png": "/math-app/static/media/cyclingTrapezoid_Square.9d6c15724e741d38cedd.png",
     "static/media/trapeze_regular.png": "/math-app/static/media/trapeze_regular.b0c21fdc1af87446e7df.png",
     "static/media/kwadratowa-ujemna.png": "/math-app/static/media/kwadratowa-ujemna.134be70a0a5e24f870a7.png",
     "static/media/kwadratowa-dodatnia.png": "/math-app/static/media/kwadratowa-dodatnia.333cd099aac6a584b71d.png",
@@ -49,10 +53,10 @@
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.fe5101d9.css.map": "/math-app/static/css/main.fe5101d9.css.map",
-    "main.399a3b5b.js.map": "/math-app/static/js/main.399a3b5b.js.map"
+    "main.297ad989.js.map": "/math-app/static/js/main.297ad989.js.map"
   },
   "entrypoints": [
     "static/css/main.fe5101d9.css",
-    "static/js/main.399a3b5b.js"
+    "static/js/main.297ad989.js"
   ]
 }
