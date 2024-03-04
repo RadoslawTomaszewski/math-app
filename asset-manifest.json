@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/math-app/static/css/main.fe5101d9.css",
-    "main.js": "/math-app/static/js/main.297ad989.js",
+    "main.css": "/math-app/static/css/main.59d0b40c.css",
+    "main.js": "/math-app/static/js/main.f3927bc4.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/trapezoid_in_circle_2.png": "/math-app/static/media/trapezoid_in_circle_2.01bb288c41456e780db3.png",
     "static/media/trapezoid_on_circle_2.png": "/math-app/static/media/trapezoid_on_circle_2.6a76e8f958efaeb5e24b.png",
@@ -52,11 +52,11 @@
     "index.html": "/math-app/index.html",
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
-    "main.fe5101d9.css.map": "/math-app/static/css/main.fe5101d9.css.map",
-    "main.297ad989.js.map": "/math-app/static/js/main.297ad989.js.map"
+    "main.59d0b40c.css.map": "/math-app/static/css/main.59d0b40c.css.map",
+    "main.f3927bc4.js.map": "/math-app/static/js/main.f3927bc4.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe5101d9.css",
-    "static/js/main.297ad989.js"
+    "static/css/main.59d0b40c.css",
+    "static/js/main.f3927bc4.js"
   ]
 }
