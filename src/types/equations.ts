@@ -19,6 +19,7 @@ export enum GeometryEquations {
     IsoscelesTrapezoidPerimeter = `L=a+b+2c`,
     ParallelogramPerimeter = `L=2a+2b`,
     DiamondPerimeter = `L=4a`,
+    HalfPerimeter = `p=\\frac{a+b+c+d}{2}`,
 
     // Areas
     TrapezoidArea = `P_1=\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot  \\sin\\alpha`,
@@ -38,6 +39,11 @@ export enum GeometryEquations {
     ParallelogramArea_Diamond = 'P_4=a^2 \\cdot \\sin{\\beta}',
     RectangleArea = `P = a \\cdot b`,
     DeltoidArea = `P_5 = a \\cdot b \\cdot \\sin \\gamma`,
+    trapezoidInCircleArea = `P_6 = \\sqrt{\\left( p - a \\right)\\left( p - b \\right)\\left( p - c \\right)\\left( p - d \\right)}`,
+    trapezoidInCircleArea2 = `P_6 = \\frac{1}{4}\\sqrt{\\left( -a+b+c+d \\right)\\left( a-b+c+d \\right)\\left( a+b-c+d \\right)\\left( a+b+c-d \\right)}`,
+    trapezoidOnCircleArea = 'P_7 = p \\cdot r',
+    trapezoidOnCircleArea2 = 'P_7 = \\frac{1}{2} \\left( a + b + c + d \\right) \\cdot r',
+
 
     // Segments
     TrapeziumMidpointsConnector = `\\frac{a+b}{2}`,
@@ -51,6 +57,7 @@ export enum GeometryEquations {
     DeltoidDiagonal_long = 'd_2=\\sqrt{a^2+b^2 - 2ab \\cdot  \\cos \\gamma}',
     RectangleDiagonal = 'd=\\sqrt{a^2+b^2}',
     SquareDiagonal = 'd=\\sqrt{2}',
+
 
     // Conditions
     trapezoid_in_circle = `\\alpha + \\gamma = \\beta + \\delta = 180^{\\circ}`,

@@ -43,7 +43,11 @@ const DeltoidContent: FC = () => (
         <Proof steps={DeltoidAreaProof} text={"Dowód"} />
         <br />
         <p> <b>Długości przekątnych:</b></p>
-        <Formula formula={GeometryEquations.DeltoidDiagonal_short} />
+        <div className="overflow-x-auto">
+            <div className="flex justify-center my-4 min-w-[350px]">
+                <Formula formula={GeometryEquations.DeltoidDiagonal_short} />
+            </div>
+        </div>
         <Formula formula={GeometryEquations.DeltoidDiagonal_long} />
         <LegendParagraph type={"top"} notation={"\\alpha, \\beta, \\gamma"} explanation={"kąty oznaczone na rysunku"} /><br />
         <p>Długości przekątnych są możliwe do wyznaczenia za pomocą <b>Twierdzenie cosinusów</b></p>

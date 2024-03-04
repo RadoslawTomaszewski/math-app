@@ -7,7 +7,7 @@ const CirclesRelationsPage: FC = () => {
     const grandparent = { link: "../", name: "Baza Wiedzy" };
     const parent = {
         link: "../czworokaty",
-        name: "Czworokaty",
+        name: "Czworokąty",
     };
     const childName = "Relacja czworokąt, a okrąg";
 

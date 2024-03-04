@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { MathComponent } from "mathjax-react";
 
+//TODO: REFACTOR THIS CODE
+
 export interface ILegendParagraphProps {
   type: string;
   notation: string;
@@ -30,6 +32,18 @@ const LegendParagraph: FC<ILegendParagraphProps> = ({
       </>
     );
   }
+  else if (type === "long") {
+    marginTop = (
+      <>
+        <div>
+          <div className="flex min-w-[80px] justify-center mt-[0.24rem]">
+            <MathComponent tex={notation} />
+          </div>
+        </div>
+      </>
+    );
+  }
+
 
   return (
     <>

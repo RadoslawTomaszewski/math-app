@@ -52,18 +52,6 @@ const QuadranglesContent: FC = () => {
                 <ArticleBorder />
                 {/* RELACJE Z OKRĘGIEM */}
                 <CirclesRelationsContent />
-                <ArticleBorder />
-
-                <Title text={"Czworokąty wklęsłe"} type="main-article" />
-                <Title text={""} type="main-article" />
-
-                {/* <GraphImage size={"smallest"} src={InscribedCircle} alt={"Klasyfikacja czworokatow"} />
-                <p>czworokąt da się wpisać okrąg, gdy sumy długości przeciwległych boków są równe</p>
-                <GraphImage size={"smallest"} src={CircumscribedCircle} alt={"Klasyfikacja czworokatow"} />
-                <p>Na czworokącie da się opisać okrąg, gdy sumy miar przeciwległych kątów wewnętrznych wynoszą 180°</p>
-                <ArticleBorder />
-                <Title text="Podział czworokątów" type="submain-article" />
-                <GraphImage size={"small"} src={Quadrangles} alt={"Klasyfikacja czworokatow"} /> */}
             </div>
         </>
     );
