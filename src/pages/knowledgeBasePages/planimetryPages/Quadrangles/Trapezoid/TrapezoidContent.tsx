@@ -3,7 +3,7 @@ import Title from "../../../../../components/articleItems/Title";
 import GraphImage from "../../../../../components/articleItems/GraphImage";
 import Trapezoid from "../../../../../assets/images/quadrangles/trapezoid.png"
 import Formula from "../../../../../components/articleItems/Formula";
-import { StereometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../types/equations";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
 
 const TrapezoidContent: FC = () => {
@@ -23,9 +23,9 @@ const TrapezoidContent: FC = () => {
                 <p>W polskich podręcznikach do matematyki zazwyczaj stosowana jest definicja 1.</p>
                 <GraphImage size={"small"} src={Trapezoid} alt={"Trapezoid"} />
                 <p>Wzór na obwód:</p>
-                <Formula formula={StereometryEquations.TrapezoidPerimeter} />
+                <Formula formula={GeometryEquations.TrapezoidPerimeter} />
                 <p>Pole:</p>
-                <Formula formula={StereometryEquations.TrapezoidArea} />
+                <Formula formula={GeometryEquations.TrapezoidArea} />
                 <LegendParagraph type={"top"} notation={"d_1,d_2"} explanation={"przekątne czworokąta"} />
                 <LegendParagraph type={"short"} notation={"\\alpha"} explanation={"kąt między przekątnymi"} /><br />
                 <p>Wszystkie cechy czworokąta wypukłego są dziedziczone przez figury potomne. Szczególnymi przypadkami trapezoidów są <b>trapez</b> i <b>deltoid</b>.</p>

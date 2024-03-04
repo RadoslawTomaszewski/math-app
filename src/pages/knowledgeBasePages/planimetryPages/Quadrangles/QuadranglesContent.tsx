@@ -7,6 +7,11 @@ import TrapeziumContent from "./Trapezium/TrapeziumContent";
 import IsoscelesTrapeziumContent from "./IsoscelesTrapezium/IsoscelesTrapeziumContent";
 import RectangularTrapeziumContent from "./RectangularTrapezium/RectangularTrapeziumContent";
 import ParallelogramContent from "./Parallelogram/ParallelogramContent";
+import RectangleContent from "./Rectangle/RectangleContent";
+import SquareContent from "./Square/SquareContent";
+import DiamondContent from "./Diamond/DiamondContent";
+import DeltoidContent from "./Deltoid/DeltoidContent";
+import CirclesRelationsContent from "./CirclesRelations/CirclesRelationsContent";
 
 const QuadranglesContent: FC = () => {
 
@@ -33,10 +38,22 @@ const QuadranglesContent: FC = () => {
                 {/* RÓWNOLEGŁOBOK */}
                 <ParallelogramContent />
                 <ArticleBorder />
-                <Title text={"Prostokąt"} type="main-article" />
-                <Title text={"Romb"} type="main-article" />
-                <Title text={"Kwadrat"} type="main-article" />
-                <Title text={"Deltoid"} type="main-article" />
+                {/* PROSTOKĄT */}
+                <RectangleContent />
+                <ArticleBorder />
+                {/* ROMB */}
+                <DiamondContent />
+                <ArticleBorder />
+                {/* KWADRAT */}
+                <SquareContent />
+                <ArticleBorder />
+                {/* DELTOID */}
+                <DeltoidContent />
+                <ArticleBorder />
+                {/* RELACJE Z OKRĘGIEM */}
+                <CirclesRelationsContent />
+                <ArticleBorder />
+
                 <Title text={"Czworokąty wklęsłe"} type="main-article" />
                 <Title text={""} type="main-article" />
 

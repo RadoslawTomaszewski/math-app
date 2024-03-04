@@ -1,4 +1,4 @@
-import { StereometryEquations } from "./equations";
+import { GeometryEquations } from "./equations";
 
 //Arithetic Sequence
 export const arithmeticThreeConsecutiveTermsProof = [
@@ -24,7 +24,7 @@ export const geometricThreeConsecutiveTermsProof = [
 ];
 
 export const isoscelesTrapezoidProof = [
-    StereometryEquations.TrapeziumArea2,
+    GeometryEquations.TrapeziumArea2,
     `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+c)(|a-b|+c-c)(|a-b|-c+c)(-|a-b|+c+c)}`,
     `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{|a-b|^2(|a-b|+2c)(-|a-b|+2c)}`,
     `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{|a-b|^2(2c+|a-b|)(2c-|a-b|)}`,
@@ -36,8 +36,62 @@ export const isoscelesTrapezoidLongerSegmentProof = [
 ]
 
 export const TrapeziumAreaParallelogramProof = [
-    StereometryEquations.TrapeziumArea,
+    GeometryEquations.TrapeziumArea,
     `\\frac{1}{2} \\cdot \\left(a+a\\right) \\cdot h`,
     `\\frac{1}{2} \\cdot 2a \\cdot h`,
     `a \\cdot h`,
 ]
+
+export const TrapeziumAreaRectangleProof = [
+    GeometryEquations.RectangleArea,
+    `\\frac{1}{2} \\cdot \\left(a+a\\right) \\cdot b`,
+    `\\frac{1}{2} \\cdot 2a \\cdot b`,
+    `a \\cdot b`,
+]
+
+export const ParallelogramAreaRectangleProof = [
+    GeometryEquations.ParallelogramArea,
+    `a \\cdot b \\cdot \\sin 90 ^{\\circ}`,
+    `a \\cdot b \\cdot 1`,
+    `a \\cdot b`,
+]
+
+export const TrapeziumAreaSquareProof = [
+    GeometryEquations.TrapeziumArea,
+    `\\frac{1}{2} \\cdot \\left(a+a\\right) \\cdot a`,
+    `\\frac{1}{2} \\cdot 2a \\cdot a`,
+    `a^2`,
+]
+
+export const ParallelogramAreaSquareProof = [
+    GeometryEquations.ParallelogramArea,
+    `a \\cdot a \\cdot \\sin 90 ^{\\circ}`,
+    `a^2 \\cdot 1`,
+    `a^2`,
+]
+
+export const ParallelogramAreaDiamondProof = [
+    GeometryEquations.ParallelogramArea,
+    `a \\cdot a \\cdot \\sin \\beta`,
+    `a^2 \\sin \\beta`,
+]
+
+export const TrapezoidAreaSquareProof = [
+    GeometryEquations.TrapezoidArea,
+    `\\frac{1}{2} \\cdot d^2 \\cdot \\sin 90 ^{\\circ}`,
+    `\\frac{1}{2} \\cdot d^2 \\cdot 1`,
+    `\\frac{1}{2} \\cdot d^2`,
+]
+
+export const TrapezoidAreaDiamondProof = [
+    GeometryEquations.TrapezoidArea,
+    `\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot \\sin 90 ^{\\circ}`,
+    `\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot 1`,
+    `\\frac{1}{2} \\cdot d_1 \\cdot d_2`,
+]
+
+export const DeltoidAreaProof = [
+    `P_5=\\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\gamma + \\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\gamma `,
+    `a \\cdot b \\cdot \\sin \\gamma`,
+]
+

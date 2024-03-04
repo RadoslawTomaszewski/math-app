@@ -55,6 +55,11 @@ import TrapeziumPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangl
 import RectangularTrapeziumPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/RectangularTrapezium/RectangularTrapeziumPage";
 import IsoscelesTrapeziumPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/IsoscelesTrapezium/IsoscelesTrapeziumPage";
 import ParallelogramPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Parallelogram/ParallelogramPage";
+import RectanglePage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Rectangle/RectanglePage";
+import SquarePage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Square/SquarePage";
+import DiamondPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Diamond/DiamondPage";
+import DeltoidPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Deltoid/DeltoidPage";
+import CirclesRelationsPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/CirclesRelations/CirclesRelationsPage";
 
 
 
@@ -104,6 +109,13 @@ export const Router: FC = () => {
                         <Route path="trapez-prostokatny" element={<RectangularTrapeziumPage />} />
                         <Route path="trapez-rownoramienny" element={<IsoscelesTrapeziumPage />} />
                         <Route path="rownoleglobok" element={<ParallelogramPage />} />
+                        <Route path="prostokat" element={<RectanglePage />} />
+                        <Route path="romb" element={<DiamondPage />} />
+                        <Route path="deltoid" element={<DeltoidPage />} />
+                        <Route path="kwadrat" element={<SquarePage />} />
+                        <Route path="relacja-z-okregiem" element={<CirclesRelationsPage />} />
+
+
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="memy" element={<ForumPage />} />

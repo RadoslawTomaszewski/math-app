@@ -1,15 +1,15 @@
 import { FC } from "react";
 import Breadcrumb from "../../../../../components/Breadcrumb/Breadcrumb";
 import { ArticleWrapper } from "../../../../../components/ArticleWrapper/ArticleWrapper";
-import ParallelogramContent from "./ParallelogramContent";
+import DiamondContent from "./DiamondContent";
 
-const ParallelogramPage: FC = () => {
+const DiamondPage: FC = () => {
     const grandparent = { link: "../", name: "Baza Wiedzy" };
     const parent = {
         link: "../czworokaty",
         name: "Czworokaty",
     };
-    const childName = "Równoległobok";
+    const childName = "Romb";
 
     return (
         <div className="p-2 justify-center flex flex-col">
@@ -19,10 +19,10 @@ const ParallelogramPage: FC = () => {
                 childName={childName}
             />
             <ArticleWrapper>
-                <ParallelogramContent />
+                <DiamondContent />
             </ArticleWrapper>
         </div>
     );
 };
 
-export default ParallelogramPage;
+export default DiamondPage;

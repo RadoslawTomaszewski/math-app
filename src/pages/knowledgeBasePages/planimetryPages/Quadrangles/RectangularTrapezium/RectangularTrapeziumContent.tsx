@@ -6,7 +6,7 @@ import LegendParagraph from "../../../../../components/articleItems/LegendParagr
 import RectangularTrapezium from "../../../../../assets/images/quadrangles/rectangular_trapezoid.png"
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
 import RectangularTrapeziumX from "../../../../../assets/images/quadrangles/rectangular_trapezium_x.png";
-import { StereometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../types/equations";
 const RectangularTrapeziumContent: FC = () => {
 
     return (
@@ -16,18 +16,18 @@ const RectangularTrapeziumContent: FC = () => {
                 <p><b>Trapez prostokątny</b> to trapez, którego co najmniej jedno ramię jest równe odległości między podstawami.</p>
                 <GraphImage size={"small"} src={RectangularTrapezium} alt={"Trapez prostokatny"} />
                 <p>Obwód:</p>
-                <Formula formula={StereometryEquations.TrapezoidPerimeter} />
+                <Formula formula={GeometryEquations.TrapezoidPerimeter} />
                 <LegendParagraph type={"top"} notation={"a,b"} explanation={"podstawy trapezu"} />
                 <LegendParagraph type={"short"} notation={"c"} explanation={"ramię będące wysokością trapezu"} />
                 <LegendParagraph type={"top"} notation={"d"} explanation={"ramię trapezu"} /><br />
                 Trapez dziedziczy wzór na pole trapezoidu:
-                <Formula formula={StereometryEquations.TrapezoidArea} />
+                <Formula formula={GeometryEquations.TrapezoidArea} />
                 Bok c jest równy wysokości trapezu, więc można utworzyć wzór:
-                <Formula formula={StereometryEquations.TrapeziumArea_Rectangular} />
+                <Formula formula={GeometryEquations.TrapeziumArea_Rectangular} />
                 Wzór na pole trapezu ma swoje zastosowanie ale jest bardziej złożony obliczeniowo w porównaniu z poprzednim wzorem:
                 <div className="min-w-full overflow-x-auto">
                     <div className="min-w-[800px]">
-                        <Formula formula={StereometryEquations.TrapeziumArea2} />
+                        <Formula formula={GeometryEquations.TrapeziumArea2} />
                     </div>
                 </div>
                 <ArticleBorder />

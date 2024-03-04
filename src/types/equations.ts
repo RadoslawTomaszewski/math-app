@@ -13,27 +13,48 @@ export enum GeometricSequencesEquations {
 }
 
 //Planimetry
-export enum StereometryEquations {
+export enum GeometryEquations {
     // Perimeters
     TrapezoidPerimeter = `L=a+b+c+d`,
     IsoscelesTrapezoidPerimeter = `L=a+b+2c`,
     ParallelogramPerimeter = `L=2a+2b`,
+    DiamondPerimeter = `L=4a`,
 
     // Areas
     TrapezoidArea = `P_1=\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot  \\sin\\alpha`,
-    TrapezoidArea_Isosceles = `P_1=\\frac{1}{2} \\cdot d_0^2 \\cdot \\sin\\alpha`,
+    TrapezoidArea_Isosceles = `P_1=\\frac{1}{2} \\cdot d^2 \\cdot \\sin\\alpha`,
+    TrapezoidArea_Square = `P_1=\\frac{1}{2} \\cdot d^2`,
+    TrapezoidArea_Diamond = `P_1=\\frac{1}{2}\\cdot d_1 \\cdot d_2`,
     TrapeziumArea = `P_2=\\frac{1}{2} \\cdot \\left( a + b \\right) \\cdot h`,
     TrapeziumArea_Rectangular = `P_2=\\frac{1}{2}\\cdot \\left( a+b \\right) \\cdot c`,
     TrapeziumArea_Parallelogram = `P_2=a \\cdot h`,
+    TrapeziumArea_Rectangle = `P_2=a \\cdot b`,
+    TrapeziumArea_Square = `P_2=a^2`,
     TrapeziumArea2 = `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+d)(|a-b|+c-d)(|a-b|-c+d)(-|a-b|+c+d)}`,
     TrapeziumArea2_Isosceles = `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
     ParallelogramArea = `P_4=a \\cdot b \\cdot \\sin{\\beta}`,
+    ParallelogramArea_Rectangle = `P_4=a \\cdot b`,
+    ParallelogramArea_Square = 'P_4=a^2',
+    ParallelogramArea_Diamond = 'P_4=a^2 \\cdot \\sin{\\beta}',
+    RectangleArea = `P = a \\cdot b`,
+    DeltoidArea = `P_5 = a \\cdot b \\cdot \\sin \\gamma`,
 
     // Segments
-    TrapeziumMidpointsConnector = `m=\\frac{a+b}{2}`,
+    TrapeziumMidpointsConnector = `\\frac{a+b}{2}`,
     IsoscelesTrapezium_ShorterSegment = `\\frac{a-b}{2}`,
     IsoscelesTrapezium_LongerSegment = `\\frac{a+b}{2}`,
+    ParallelogramDiagonal_short = 'd_1=\\sqrt{a^2+b^2+2ab \\cos \\beta}',
+    ParallelogramDiagonal_long = 'd_2=\\sqrt{a^2+b^2-2ab \\cos \\beta}',
+    DiamondDiagonal_short = 'd_1=\\sqrt{2a^2\\left(1+\\cos \\alpha\\right)}',
+    DiamondDiagonal_long = 'd_2=\\sqrt{2a^2\\left(1-\\cos \\alpha\\right)}',
+    DeltoidDiagonal_short = 'd_1=\\sqrt{2a^2\\left(1-\\cos \\alpha\\right)}=\\sqrt{2b^2(1- \\cos \\beta)}',
+    DeltoidDiagonal_long = 'd_2=\\sqrt{a^2+b^2 - 2ab \\cdot  \\cos \\gamma}',
+    RectangleDiagonal = 'd=\\sqrt{a^2+b^2}',
+    SquareDiagonal = 'd=\\sqrt{2}',
 
+    // Conditions
+    trapezoid_in_circle = `\\alpha + \\gamma = \\beta + \\delta = 180^{\\circ}`,
+    trapezoid_on_circle = `a + c = b + d`,
 }
 
 //Linear Formula
