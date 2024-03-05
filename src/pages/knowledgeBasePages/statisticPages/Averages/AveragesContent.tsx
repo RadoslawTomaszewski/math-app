@@ -32,7 +32,7 @@ const AveragesContent: FC = () => {
       <LegendParagraph type={"top"} notation={"\\bar{a}"} explanation={"średnia arytmetyczna"} />
       <ArticleBorder />
       <Title text={"Średnia geometryczna"} type={"submain-article"} />
-      <p><b>Średnia geometryczna</b> to n-ty pierwiastek iloczynu n liczb.</p>
+      <p><b>Średnia geometryczna</b> to n-ty pierwiastek iloczynu liczby elementów w próbie.</p>
       <Formula formula={statisticEquations.GEOMETRIC_MEAN} />
       <LegendParagraph type={"top"} notation={"\\bar{g}"} explanation={"średnia geometryczna"} />
       <ArticleBorder />
@@ -42,29 +42,26 @@ const AveragesContent: FC = () => {
       <LegendParagraph type={"top"} notation={"\\bar{k}"} explanation={"średnia kwadratowa"} />
       <ArticleBorder />
       <Title text={"Średnia harmoniczna"} type={"submain-article"} />
+      <p><b>Średnia harmoniczna</b> to iloraz liczby elementów w próbie przez sumę odwrotności tych elementów</p>
       <Formula formula={statisticEquations.HARMONIC_MEAN} />
       <LegendParagraph type={"top"} notation={"\\bar{h}"} explanation={"średnia harmoniczna"} />
       <ArticleBorder />
       <Title text={"Nierówności Cauchy'ego"} type={"submain-article"} />
+      <p>Zgodnie z <b>nierównościami Cauchy'ego</b> prawdziwe są nierówności</p>
       <Formula formula={statisticEquations.CAUCHY_INEQUALITY} />
-      <ArticleBorder />
-      <Title text={"Średnia ważona arytmetyczna"} type={"submain-article"} />
-      <p>...</p>
-      <ArticleBorder />
-      <Title text={"Średnia ważona geometryczna"} type={"submain-article"} />
-      <p>...</p>
-      <ArticleBorder />
-      <Title text={"Średnia ważona kwadratowa"} type={"submain-article"} />
-      <p>...</p>
-      <ArticleBorder />
-      <Title text={"Średnia ważona harmoniczna"} type={"submain-article"} />
-      <p>...</p>
-      <ArticleBorder />
-      <Title text={"Średnie Potęgowe"} type={"submain-article"} />
-      <p>...</p>
+      <p>co można zapisać również jako</p>
+      <div className="overflow-x-auto">
+        <div className="flex justify-center my-4 min-w-[900px]">
+          <Formula formula={statisticEquations.CAUCHY_INEQUALITY_FULL} />
+        </div>
+      </div>
+
+      <p>przy czym warunek</p>
+      <Formula formula={statisticEquations.CAUCHY_INEQUALITY_CASE} />
+      <p>jest spełniony gdy wszystkie elementy próby są równe</p>
       <ArticleBorder />
       <Title text={"Dominanta"} type={"submain-article"} />
-      <p>...</p>
+      <p><b>Dominanta (moda)</b> wartość występująca w próbie najczęściej. Dominantą może być więcej niż jeden element.</p>
       <ArticleBorder />
       <Title text={"Środek rozstępu"} type={"submain-article"} />
       <p><b>Środek rozstępu</b> (<i>eng: mid-range</i>) - średnia arytmetyczna skrajnych wartości wyznaczających punkty krańcowe rozstępu</p>

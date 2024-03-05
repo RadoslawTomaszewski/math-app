@@ -13,11 +13,12 @@ import CyclingTrapezoid_Trapezium from "../../../../../assets/images/quadrangles
 import CyclingTrapezoid_Rectangle from "../../../../../assets/images/quadrangles/cyclingTrapezoid_Rectangle.png";
 import CyclingTrapezoid_Square from "../../../../../assets/images/quadrangles/cyclingTrapezoid_Square.png";
 import PtolemeusTheory from "../../../../../assets/images/quadrangles/Ptolemeus_theory.png";
-import Tangential1 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_Trapezium_2.png"
+import Tangential1 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_Trapezium_1.png"
 import Tangential2 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_TrapeziumRectangular.png";
 import Tangential3 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_TrapeziumRegular.png";
 import Tangential4 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_Rhombus.png";
 import Tangential5 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_Square.png";
+import Tangential6 from "../../../../../assets/images/quadrangles/tangentialTrapezoid.png";
 
 
 import { GeometryEquations } from "../../../../../types/equations";
@@ -104,19 +105,21 @@ const CirclesRelationsContent: FC = () => (
         <GraphImage size={"small"} src={TrapezoidOnCircle2} alt={"Czworokąt opisany na okręgu"} />
         <ArticleBorder />
         <Title text={"Czworokąt styczny"} type="submain-article" />
-        <p><b>Czworokąt styczny</b> do okręgu to taki czworokąt, którego suma dwóch przeciwległych boków jest równa sumie dwóch pozostałych, czyli takim, w który da się wpisać okrąg. </p>
-        <p>W czworokąt wklęsły z wyłączeniem deltoida wklęsłego nie da się wpisać okręgu</p>
+        <p><b>Czworokąt styczny</b> do okręgu to taki czworokąt, którego suma dwóch przeciwległych boków jest równa sumie dwóch pozostałych, czyli taki, w który da się wpisać okrąg styczny do jego boków </p>
+        <br /><p>W czworokąt wklęsły z wyłączeniem <b>deltoida wklęsłego</b> nie da się wpisać okręgu. Można wpisać okrąg w <b>trapezoidy</b></p>
+        <GraphImage size={"medium-short"} src={Tangential6} alt={"Trapez z wpisanym okręgiem 1"} />
+
         <br /><p>(miejsce na deltoid wklęsły z wpisanym okręgiem)</p><br />
         <p>Jest możliwe wpisanie okręgu w <b>trapez równoramienny</b>, <b>prostokątny</b> oraz <b>różnoramienny</b></p>
         <div className="flex flex-wrap items-center justify-around">
-            <GraphImage size={"smallest"} src={Tangential1} alt={"Trapez z wpisanym okręgiem 1"} />
-            <GraphImage size={"smallest"} src={Tangential2} alt={"Trapez z wpisanym okręgiem 2"} />
-            <GraphImage size={"smallest"} src={Tangential3} alt={"Trapez z wpisanym okręgiem 3"} />
+            <GraphImage size={"medium-short"} src={Tangential3} alt={"Trapez z wpisanym okręgiem 3"} />
+            <GraphImage size={"medium-short"} src={Tangential2} alt={"Trapez z wpisanym okręgiem 2"} />
+            <GraphImage size={"medium-short"} src={Tangential1} alt={"Trapez z wpisanym okręgiem 1"} />
         </div>
-        <p>Okrąg wpisany w czworokąty od równych długościach boków: <b>rombu</b> oraz jego szczególnego przypadku, <b>kwadratu</b>.</p>
+        <p>Okrąg wpisany w czworokąty o równych długościach boków: <b>rombu</b> oraz jego szczególnego przypadku, <b>kwadratu</b>.</p>
         <div className="flex flex-wrap items-center justify-around">
-            <GraphImage size={"smallest"} src={Tangential4} alt={"Romb z wpisanym okręgiem 4"} />
-            <GraphImage size={"smallest"} src={Tangential5} alt={"Kwadrat z wpisanym okręgiem 5"} />
+            <GraphImage size={"medium-short"} src={Tangential4} alt={"Romb z wpisanym okręgiem 4"} />
+            <GraphImage size={"medium-short"} src={Tangential5} alt={"Kwadrat z wpisanym okręgiem 5"} />
         </div>
         <ArticleBorder />
         <Title text={"Czworokąt dwucentryczny"} type="submain-article" />

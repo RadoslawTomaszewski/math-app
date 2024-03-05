@@ -109,5 +109,7 @@ export enum statisticEquations {
     SQUARE_MEAN = `\\bar{k}=\\sqrt{\\frac{\\left(x_1\\right)^2+\\left(x_2\\right)^2+\\cdots+\\left(x_n\\right)^2}{n}}=\\sqrt{\\frac{1}{n}\\sum_{i=1}^{n}x_i^2}`,
     RANGE_MIDDLE = `\\bar{M}=\\frac{\\min(x_1, x_2, ..., x_n) + \\max(x_1, x_2, ..., x_n)}{2}`,
     CAUCHY_INEQUALITY = `\\bar{k} \\geq \\bar{a} \\geq \\bar{g} \\geq \\bar{h}`,
-    CAUCHY_INEQUALITY_FULL = `\\sum_{i=1}^{n}x_i^2} \\geq \\bar{a}=\\frac{x_1+x_2+\\cdots+x_n}{n}=\\frac{1}{n}\\sum_{i=1}^{n}x_i \\geq `
+    CAUCHY_INEQUALITY_CASE = `\\bar{k} = \\bar{a} = \\bar{g} = \\bar{h}`,
+    CAUCHY_INEQUALITY_FULL = `\\sqrt{\\frac{\\left(x_1\\right)^2+\\left(x_2\\right)^2+\\cdots+\\left(x_n\\right)^2}{n}} \\geq \\frac{x_1+x_2+\\cdots+x_n}{n} \\geq  \\sqrt[n]{x_1 \\cdot x_2 \\cdots x_n} \\geq \\frac{n}{\\frac{1}{x_1}+\\frac{1}{x_2}+\\cdots+\\frac{1}{x_n}}`
+
 }
