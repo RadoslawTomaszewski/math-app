@@ -1,24 +1,30 @@
 {
   "files": {
-    "main.css": "/math-app/static/css/main.59d0b40c.css",
-    "main.js": "/math-app/static/js/main.36ac4311.js",
+    "main.css": "/math-app/static/css/main.d4dc6e1c.css",
+    "main.js": "/math-app/static/js/main.c7ca1ca2.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/trapezoid_in_circle_2.png": "/math-app/static/media/trapezoid_in_circle_2.01bb288c41456e780db3.png",
+    "static/media/Ptolemeus_theory.png": "/math-app/static/media/Ptolemeus_theory.d133949035c1b3ad8a09.png",
     "static/media/trapezoid_on_circle_2.png": "/math-app/static/media/trapezoid_on_circle_2.6a76e8f958efaeb5e24b.png",
+    "static/media/tangentialTrapezoid_Trapezium_1.png": "/math-app/static/media/tangentialTrapezoid_Trapezium_1.f03c11d6e26c8b8dc946.png",
     "static/media/cyclingTrapezoid_Irregular.png": "/math-app/static/media/cyclingTrapezoid_Irregular.0ca78e0c6c57cb9f4f34.png",
     "static/media/Quadrangles_02.png": "/math-app/static/media/Quadrangles_02.3e8788ad3810aa57ee5f.png",
     "static/media/deltoid_2.png": "/math-app/static/media/deltoid_2.3649b4f68f3345fc17e2.png",
     "static/media/trapezoid_on_circle.png": "/math-app/static/media/trapezoid_on_circle.a0f6e33817733c560698.png",
-    "static/media/trapezoid_in_circle.png": "/math-app/static/media/trapezoid_in_circle.c4a859b226252d6cb78f.png",
+    "static/media/trapezoid_in_circle.png": "/math-app/static/media/trapezoid_in_circle.ecd62e391627f0e28bf6.png",
+    "static/media/tangentialTrapezoid.png": "/math-app/static/media/tangentialTrapezoid.4fc4ed2b76d460ff40d4.png",
     "static/media/trapezium_angles.png": "/math-app/static/media/trapezium_angles.134b786ee29775d4cfc2.png",
     "static/media/Quadrangles_01.png": "/math-app/static/media/Quadrangles_01.757c24ac916de967a847.png",
     "static/media/pi.gif": "/math-app/static/media/pi.ec795e57a3c34340e037.gif",
     "static/media/Parallelogram_angles.png": "/math-app/static/media/Parallelogram_angles.20d7f5a7622097a0aeca.png",
     "static/media/deltoid.png": "/math-app/static/media/deltoid.c4d81710387c544a7de4.png",
+    "static/media/tangentialTrapezoid_TrapeziumRegular.png": "/math-app/static/media/tangentialTrapezoid_TrapeziumRegular.9e29fc41edef0608c382.png",
     "static/media/liniowa-rosnaca.png": "/math-app/static/media/liniowa-rosnaca.8f0e780db42564fc3bbe.png",
     "static/media/liniowa-malejaca.png": "/math-app/static/media/liniowa-malejaca.4da2dafc01e009e5f6d1.png",
     "static/media/Parallelogram.png": "/math-app/static/media/Parallelogram.566b5b696c686d7641c7.png",
     "static/media/cyclingTrapezoid_Trapezium.png": "/math-app/static/media/cyclingTrapezoid_Trapezium.60c3f0fe2d9b325cbc4b.png",
+    "static/media/tangentialTrapezoid_Rhombus.png": "/math-app/static/media/tangentialTrapezoid_Rhombus.0a0c4aa079c5709e8105.png",
+    "static/media/tangentialTrapezoid_TrapeziumRectangular.png": "/math-app/static/media/tangentialTrapezoid_TrapeziumRectangular.ef254d2567f90c45973d.png",
     "static/media/cyclingTrapezoid_Rectangle.png": "/math-app/static/media/cyclingTrapezoid_Rectangle.ef7395642843f904be9e.png",
     "static/media/diamond.png": "/math-app/static/media/diamond.4978e5a0076f89ab4ba2.png",
     "static/media/cyclingTrapezoid_Square.png": "/math-app/static/media/cyclingTrapezoid_Square.9d6c15724e741d38cedd.png",
@@ -38,6 +44,7 @@
     "static/media/kwadratowa-os-symetrii.png": "/math-app/static/media/kwadratowa-os-symetrii.1f460d993d5bf7cbbfe2.png",
     "static/media/wierzcholek.png": "/math-app/static/media/wierzcholek.9354ec98277e30a0213d.png",
     "static/media/rectangular_trapezium_x.png": "/math-app/static/media/rectangular_trapezium_x.67556a55854cdf83ccdd.png",
+    "static/media/tangentialTrapezoid_Square.png": "/math-app/static/media/tangentialTrapezoid_Square.5f40029b664f0157679a.png",
     "static/media/liniowa-wyraz-wolny.png": "/math-app/static/media/liniowa-wyraz-wolny.c7478516c6d9ac93addd.png",
     "static/media/square.png": "/math-app/static/media/square.70038575c64e0bfb0d7d.png",
     "static/media/skroconeMnozenie3.png": "/math-app/static/media/skroconeMnozenie3.172ddbfd1e8ec1113e35.png",
@@ -54,11 +61,11 @@
     "index.html": "/math-app/index.html",
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
-    "main.59d0b40c.css.map": "/math-app/static/css/main.59d0b40c.css.map",
-    "main.36ac4311.js.map": "/math-app/static/js/main.36ac4311.js.map"
+    "main.d4dc6e1c.css.map": "/math-app/static/css/main.d4dc6e1c.css.map",
+    "main.c7ca1ca2.js.map": "/math-app/static/js/main.c7ca1ca2.js.map"
   },
   "entrypoints": [
-    "static/css/main.59d0b40c.css",
-    "static/js/main.36ac4311.js"
+    "static/css/main.d4dc6e1c.css",
+    "static/js/main.c7ca1ca2.js"
   ]
 }
