@@ -7,6 +7,7 @@ import RectangularTrapezium from "../../../../../assets/images/quadrangles/recta
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
 import RectangularTrapeziumX from "../../../../../assets/images/quadrangles/rectangular_trapezium_x.png";
 import { GeometryEquations } from "../../../../../types/equations";
+import { NavLink } from "react-router-dom";
 const RectangularTrapeziumContent: FC = () => {
 
     return (
@@ -36,7 +37,7 @@ const RectangularTrapeziumContent: FC = () => {
                 <p><b>Odcinek różnicy podstaw</b>, który łączy koniec podstawy, od strony kąta ostrego, z bliższym spodkiem wysokości opuszczonej na tę podstawę jest równy </p>
                 <Formula formula="\\a-b" />
                 <ArticleBorder />
-                <p>Wyróżnia się szczególne przypadki trapezów prostokątnych: <b>prostokąt</b> i <b>kwadrat</b></p>
+                <p>Wyróżnia się szczególny przypadek trapeza prostokątnego: <NavLink to="../prostokat"><b>prostokąt</b></NavLink></p>
             </div>
         </>
     );

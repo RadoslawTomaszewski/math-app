@@ -8,6 +8,7 @@ import LegendParagraph from "../../../../../components/articleItems/LegendParagr
 import TrapezeHalf from "../../../../../assets/images/quadrangles/tapeze_half.png";
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
 import TrapeziumAngles from "../../../../../assets/images/quadrangles/trapezium_angles.png";
+import { NavLink } from "react-router-dom";
 
 const TrapeziumContent: FC = () => {
 
@@ -46,7 +47,7 @@ const TrapeziumContent: FC = () => {
                 <p><b>Odcinek łączący środki ramion</b> trapezu jest równoległy do jego postaw i jego długość wyraża się równaniem</p>
                 <Formula formula={GeometryEquations.TrapeziumMidpointsConnector} />
                 <ArticleBorder />
-                <p> Wyróżnia się szczególne przypadki trapezów: <b>trapez prostokątny</b> i <b>trapez równoramienny</b></p>
+                <p> Wyróżnia się szczególne przypadki trapezów: <NavLink to="../trapez-prostokatny"><b>trapez prostokątny</b></NavLink> i <NavLink to="../trapez-rownoramienny"><b>trapez równoramienny</b></NavLink></p>
 
 
             </div>

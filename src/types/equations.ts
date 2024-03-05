@@ -22,28 +22,29 @@ export enum GeometryEquations {
     HalfPerimeter = `p=\\frac{a+b+c+d}{2}`,
 
     // Areas
-    TrapezoidArea = `P_1=\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot  \\sin\\alpha`,
-    TrapezoidArea_Isosceles = `P_1=\\frac{1}{2} \\cdot d^2 \\cdot \\sin\\alpha`,
-    TrapezoidArea_Square = `P_1=\\frac{1}{2} \\cdot d^2`,
-    TrapezoidArea_Diamond = `P_1=\\frac{1}{2}\\cdot d_1 \\cdot d_2`,
-    TrapeziumArea = `P_2=\\frac{1}{2} \\cdot \\left( a + b \\right) \\cdot h`,
-    TrapeziumArea_Rectangular = `P_2=\\frac{1}{2}\\cdot \\left( a+b \\right) \\cdot c`,
-    TrapeziumArea_Parallelogram = `P_2=a \\cdot h`,
-    TrapeziumArea_Rectangle = `P_2=a \\cdot b`,
-    TrapeziumArea_Square = `P_2=a^2`,
-    TrapeziumArea2 = `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+d)(|a-b|+c-d)(|a-b|-c+d)(-|a-b|+c+d)}`,
-    TrapeziumArea2_Isosceles = `P_3=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
-    ParallelogramArea = `P_4=a \\cdot b \\cdot \\sin{\\beta}`,
-    ParallelogramArea_Rectangle = `P_4=a \\cdot b`,
-    ParallelogramArea_Square = 'P_4=a^2',
-    ParallelogramArea_Diamond = 'P_4=a^2 \\cdot \\sin{\\beta}',
+    QuadrangleArea = `P_1=\\sqrt{\\left( p - a \\right)\\left( p - b \\right)\\left( p - c \\right)\\left( p - d \\right)-abcd \\cdot \\cos^2 \\left(\\frac{\\alpha + \\gamma}{2}\\right)}`,
+    QuadrangleArea2 = `P_1=\\frac{1}{4}\\sqrt{\\left( -a+b+c+d \\right)\\left( a-b+c+d \\right)\\left( a+b-c+d \\right)\\left( a+b+c-d \\right)-abcd \\cdot \\cos^2 \\left(\\frac{\\alpha + \\gamma}{2}\\right)}`,
+    TrapezoidArea = `P_2=\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot  \\sin\\alpha`,
+    TrapezoidArea_Isosceles = `P_2=\\frac{1}{2} \\cdot d^2 \\cdot \\sin\\alpha`,
+    TrapezoidArea_Square = `P_2=\\frac{1}{2} \\cdot d^2`,
+    TrapezoidArea_Diamond = `P_2=\\frac{1}{2}\\cdot d_1 \\cdot d_2`,
+    TrapeziumArea = `P_3=\\frac{1}{2} \\cdot \\left( a + b \\right) \\cdot h`,
+    TrapeziumArea_Rectangular = `P_3=\\frac{1}{2}\\cdot \\left( a+b \\right) \\cdot c`,
+    TrapeziumArea_Parallelogram = `P_3=a \\cdot h`,
+    TrapeziumArea_Rectangle = `P_4=a \\cdot b`,
+    TrapeziumArea_Square = `P_4=a^2`,
+    TrapeziumArea2 = `P_4=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+d)(|a-b|+c-d)(|a-b|-c+d)(-|a-b|+c+d)}`,
+    TrapeziumArea2_Isosceles = `P_4=\\frac{1}{4} \\cdot \\left( a + b \\right) \\sqrt{4c^2-(a-b)^2}`,
+    ParallelogramArea = `P_5=a \\cdot b \\cdot \\sin{\\beta}`,
+    ParallelogramArea_Rectangle = `P_5=a \\cdot b`,
+    ParallelogramArea_Square = 'P_5=a^2',
+    ParallelogramArea_Diamond = 'P_5=a^2 \\cdot \\sin{\\beta}',
     RectangleArea = `P = a \\cdot b`,
-    DeltoidArea = `P_5 = a \\cdot b \\cdot \\sin \\gamma`,
-    trapezoidInCircleArea = `P_6 = \\sqrt{\\left( p - a \\right)\\left( p - b \\right)\\left( p - c \\right)\\left( p - d \\right)}`,
-    trapezoidInCircleArea2 = `P_6 = \\frac{1}{4}\\sqrt{\\left( -a+b+c+d \\right)\\left( a-b+c+d \\right)\\left( a+b-c+d \\right)\\left( a+b+c-d \\right)}`,
+    DeltoidArea = `P_6 = a \\cdot b \\cdot \\sin \\gamma`,
+    trapezoidInCircleArea = `P_1 = \\sqrt{\\left( p - a \\right)\\left( p - b \\right)\\left( p - c \\right)\\left( p - d \\right)}`,
+    trapezoidInCircleArea2 = `P_1 = \\frac{1}{4}\\sqrt{\\left( -a+b+c+d \\right)\\left( a-b+c+d \\right)\\left( a+b-c+d \\right)\\left( a+b+c-d \\right)}`,
     trapezoidOnCircleArea = 'P_7 = p \\cdot r',
     trapezoidOnCircleArea2 = 'P_7 = \\frac{1}{2} \\left( a + b + c + d \\right) \\cdot r',
-
 
     // Segments
     TrapeziumMidpointsConnector = `\\frac{a+b}{2}`,
@@ -58,10 +59,11 @@ export enum GeometryEquations {
     RectangleDiagonal = 'd=\\sqrt{a^2+b^2}',
     SquareDiagonal = 'd=\\sqrt{2}',
 
-
     // Conditions
     trapezoid_in_circle = `\\alpha + \\gamma = \\beta + \\delta = 180^{\\circ}`,
     trapezoid_on_circle = `a + c = b + d`,
+    quadrilateral_interior_angles_theorem = `\\alpha + \\beta + \\gamma + \\delta = 360^{\\circ} `,
+    ptolemeusTheory = `a \\cdot c + b \\cdot d = d_1 \\cdot d_2`
 }
 
 //Linear Formula

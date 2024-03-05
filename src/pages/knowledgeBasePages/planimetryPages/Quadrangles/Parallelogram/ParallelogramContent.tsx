@@ -9,6 +9,7 @@ import Paralellogram from "../../../../../assets/images/quadrangles/Parallelogra
 import Proof from "../../../../../components/articleItems/Proof";
 import ParallelogramAngles from "../../../../../assets/images/quadrangles/Parallelogram_angles.png"
 import { TrapeziumAreaParallelogramProof } from "../../../../../types/proofs";
+import { NavLink } from "react-router-dom";
 
 
 const ParallelogramContent: FC = () => (
@@ -28,7 +29,7 @@ const ParallelogramContent: FC = () => (
         <p>Równoległobok jest trapezem, więc w przypadku, gdy wybrane dwa równoległe boki uznamy za podstawy otrzymamy zredukowaną postać wzoru:</p>
         <Formula formula={GeometryEquations.TrapeziumArea_Parallelogram} />
         <LegendParagraph type={"top"} notation={"h"} explanation={"wysokość równoległoboku opuszczona na bok a"} /><br />
-        <Proof steps={TrapeziumAreaParallelogramProof} text={"Dowód"} />
+        <Proof steps={TrapeziumAreaParallelogramProof} text={"Dowód"} /><br />
         <p>Pole powierzchni równoległoboku wyraża się również wzorem</p>
         <Formula formula={GeometryEquations.ParallelogramArea} />
         <LegendParagraph type={"top"} notation={"\\beta"} explanation={"kąt między bokami równoległoboku"} />
@@ -40,13 +41,13 @@ const ParallelogramContent: FC = () => (
         <GraphImage size={"small"} src={ParallelogramAngles} alt={"Równoległobok"} />
         <p>To twierdzenie można udowodnić za pomocą <b>Twierdzenia o trzech prostych</b></p>
         <ArticleBorder />
-        <p> Wyróżnia się szczególne przypadki równoległoboków: <b>Prostokąt</b> i <b>Romb</b></p><br />
         <p> <b>Długości przekątnych:</b></p>
         <Formula formula={GeometryEquations.ParallelogramDiagonal_short} />
         <Formula formula={GeometryEquations.ParallelogramDiagonal_long} />
         <p>Długości przekątnych są możliwe do wyznaczenia za pomocą <b>Twierdzenie cosinusów</b></p>
-
-
+        <p>Punkt przecięcia przekątnych równoległoboku dzieli je na dwa równe odcinki</p>
+        <ArticleBorder />
+        <p> Wyróżnia się szczególne przypadki równoległoboków: <NavLink to="../prostokat"><b>Prostokąt</b></NavLink> i <NavLink to="../romb"><b>Romb</b></NavLink></p>
     </>
 );
 

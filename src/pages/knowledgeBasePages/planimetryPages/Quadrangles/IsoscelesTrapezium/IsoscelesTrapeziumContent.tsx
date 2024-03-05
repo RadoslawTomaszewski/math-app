@@ -10,6 +10,7 @@ import TrapezeRegularShortX from "../../../../../assets/images/quadrangles/trape
 import TrapezeRegularLongX from "../../../../../assets/images/quadrangles/trapeze_regular_longx.png";
 import Proof from "../../../../../components/articleItems/Proof";
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
+import { NavLink } from "react-router-dom";
 const IsoscelesTrapeziumContent: FC = () => {
 
     return (
@@ -43,7 +44,7 @@ const IsoscelesTrapeziumContent: FC = () => {
             <Formula formula={GeometryEquations.IsoscelesTrapezium_LongerSegment} />
             <Proof steps={isoscelesTrapezoidLongerSegmentProof} text={"Dowód"} />
             <ArticleBorder />
-            <p>Wyróżnia się szczególne przypadki trapezów równoramiennych: <b>równoległobok</b>, <b>romb</b>, <b>prostokąt</b> i <b>kwadrat</b></p>
+            <p>Wyróżnia się szczególne przypadki trapezów równoramiennych: <NavLink to="../rownoleglobok"><b>równoległobok</b></NavLink> i <NavLink to="../prostokat"><b>prostokąt</b></NavLink></p>
         </>
     );
 };

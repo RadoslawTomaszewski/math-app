@@ -85,7 +85,6 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             { to: "prostokat", text: "Prostokąt" },
             { to: "kwadrat", text: "Kwadrat" },
             { to: "deltoid", text: "Deltoid" },
-            { to: "czworokaty-wklesle", text: "Czworokąty Wklęsłe" },
             { to: "relacja-z-okregiem", text: "Relacja z okręgiem" },
 
             // { to: "trójkaty", text: "Trójkąty" },
