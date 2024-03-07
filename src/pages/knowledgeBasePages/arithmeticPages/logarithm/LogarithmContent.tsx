@@ -3,7 +3,6 @@ import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import Proof from "../../../../components/articleItems/Proof";
 import { NavLink } from "react-router-dom";
 
 const LogarithmContent: FC = () => {
@@ -14,11 +13,11 @@ const LogarithmContent: FC = () => {
         <b>Logarytm</b> to wynik działania odwrotnego do potęgowania definiowany jako wykładnik potęgi, do jakiej należy podnieść podstawę aby otrzymać liczbę logarytmowaną.
       </p>
       <br />
-      <p>Oznaczenia:</p>
-      <Formula formula={`\\log_ab=c`} />
       <p>Założenia:</p>
       <Formula formula={`a > 0 \\ \\land \\ a \\neq 1`} />
       <Formula formula={`b > 0`} />
+      <p>Oznaczenia:</p>
+      <Formula formula={`\\log_ab=c`} />
       <LegendParagraph
         type="short"
         notation="a"
@@ -31,6 +30,7 @@ const LogarithmContent: FC = () => {
       />
       <LegendParagraph type="short" notation="c" explanation="logarytm (wynik logarytmu)" />
       <br />
+
       <p>Definicja:</p>
       <Formula formula={`\\log_ab=x\\Leftrightarrow a^x=b`} />
       <br />

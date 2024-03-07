@@ -11,7 +11,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             // { to: "modulo", text: "Modulo" },
             { to: "potegowanie", text: "Potęgowanie" },
             { to: "pierwiastkowanie", text: "Pierwiastkowanie" },
-            { to: "logarytmy", text: "Logarytmy" },
+            { to: "logarytmowanie", text: "logarytmy" },
             // { to: "wartosc-bezwzgledna", text: "Wartość bezwzględna" },
             // { to: "silnia", text: "Silnia" },
             // { to: "symbol newtona", text: "Symbol Newtona" },

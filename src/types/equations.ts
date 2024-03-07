@@ -58,12 +58,15 @@ export enum GeometryEquations {
     DeltoidDiagonal_long = 'd_2=\\sqrt{a^2+b^2 - 2ab \\cdot  \\cos \\gamma}',
     RectangleDiagonal = 'd=\\sqrt{a^2+b^2}',
     SquareDiagonal = 'd=\\sqrt{2}',
+    circualDiagonal = `d_1=\\sqrt{\\frac{\\left(a \\cdot c + b \\cdot d \\right) \\left(a \\cdot b + c \\cdot d \\right)}{a \\cdot d + b \\cdot c}}`,
+    circualDiagonal2 = `d_2=\\sqrt{\\frac{\\left(a \\cdot c + b \\cdot d \\right) \\left(a \\cdot d + b \\cdot c \\right)}{a \\cdot b + c \\cdot d}}`,
 
     // Conditions
     trapezoid_in_circle = `\\alpha + \\gamma = \\beta + \\delta = 180^{\\circ}`,
     trapezoid_on_circle = `a + c = b + d`,
     quadrilateral_interior_angles_theorem = `\\alpha + \\beta + \\gamma + \\delta = 360^{\\circ} `,
-    ptolemeusTheory = `a \\cdot c + b \\cdot d = d_1 \\cdot d_2`
+    ptolemeusTheory = `a \\cdot c + b \\cdot d = d_1 \\cdot d_2`,
+
 }
 
 //Linear Formula

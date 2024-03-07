@@ -60,6 +60,8 @@ import SquarePage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/
 import DiamondPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Diamond/DiamondPage";
 import DeltoidPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Deltoid/DeltoidPage";
 import CirclesRelationsPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/CirclesRelations/CirclesRelationsPage";
+import ArithmeticPage from "../pages/knowledgeBasePages/arithmeticPages/ArithmeticPage";
+
 
 
 
@@ -94,13 +96,14 @@ export const Router: FC = () => {
                         />
                         <Route path="liczba-pi" element={<PiNumberPage />} />
                         <Route path="liczby-naturalne" element={<NaturalNumberPage />} />
+                        <Route path="arytmetyka" element={<ArithmeticPage />} />
                         <Route path="dodawanie" element={<AdditionPage />} />
                         <Route path="odejmowanie" element={<SubtractionPage />} />
                         <Route path="mnozenie" element={<MultiplicationPage />} />
                         <Route path="dzielenie" element={<DivisionPage />} />
                         <Route path="potegowanie" element={<ExponentiationPage />} />
                         <Route path="pierwiastkowanie" element={<RootPage />} />
-                        <Route path="logarytmy" element={<LogarithmPage />} />
+                        <Route path="logarytmowanie" element={<LogarithmPage />} />
                         <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
                         <Route path="srednie-liczbowe" element={<AveragesPage />} />
                         <Route path="czworokaty" element={<QuadranglesPage />} />

@@ -13,12 +13,15 @@ import CyclingTrapezoid_Trapezium from "../../../../../assets/images/quadrangles
 import CyclingTrapezoid_Rectangle from "../../../../../assets/images/quadrangles/cyclingTrapezoid_Rectangle.png";
 import CyclingTrapezoid_Square from "../../../../../assets/images/quadrangles/cyclingTrapezoid_Square.png";
 import PtolemeusTheory from "../../../../../assets/images/quadrangles/Ptolemeus_theory.png";
+import CyclingTrapezoid_diagonals from "../../../../../assets/images/quadrangles/cyclingTrapezoid_diagonals.png";
 import Tangential1 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_Trapezium_1.png"
 import Tangential2 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_TrapeziumRectangular.png";
 import Tangential3 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_TrapeziumRegular.png";
 import Tangential4 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_Rhombus.png";
 import Tangential5 from "../../../../../assets/images/quadrangles/tangentialTrapezoid_Square.png";
 import Tangential6 from "../../../../../assets/images/quadrangles/tangentialTrapezoid.png";
+import cycling_symetric_Trapezoid1 from "../../../../../assets/images/quadrangles/cycling_symetric_Trapezoid.png";
+import cycling_symetric_Trapezoid2 from "../../../../../assets/images/quadrangles/cycling_symetric_Trapezoid2.png";
 
 
 import { GeometryEquations } from "../../../../../types/equations";
@@ -55,12 +58,25 @@ const CirclesRelationsContent: FC = () => (
 
         <ArticleBorder />
         <Title text={"Twierdzenie Ptolemeusza"} type="submain-article" />
-        <p><b>Twierdzenie Ptolemeusza</b></p>
+        <GraphImage size={"small"} src={PtolemeusTheory} alt={"Twierdzenie o przekątnych czworokąta cyklicznego"} /><p><b>Twierdzenie Ptolemeusza</b></p>
         <p>W dowolnym czworokącie wpisanym w okrąg o kolejnych bokach a,b,c,d i przekątnych d<sub>1</sub>, d<sub>2</sub> suma iloczynów długości boków przeciwległych jest równa iloczynowi przekątnych.</p>
         <p><b>Twierdzenie odwrotne do Twierdzenia Ptolemeusza</b></p>
         <p>Jeśli w czworokącie iloczyn długości przekątnych równy jest sumie iloczynów długości przeciwległych boków, to czworokąt ten można wpisać w okrąg.</p>
-        <GraphImage size={"small"} src={PtolemeusTheory} alt={"Twierdzenie Ptolemeusza"} />
         <Formula formula={GeometryEquations.ptolemeusTheory} />
+        <ArticleBorder />
+        <Title text={"Twierdzenia o przekątnych czworokąta cyklicznego"} type="submain-article" />
+
+        <p><b>(1) Twierdzenie o długości przekątnej czworokąta cyklicznego</b></p>
+        <GraphImage size={"small"} src={CyclingTrapezoid_diagonals} alt={"Twierdzenie o przekątnych czworokąta cyklicznego"} />
+        <p>W dowolnym czworokącie wpisanym w okrąg długości przekątnych d<sub>1</sub> i d<sub>2</sub> można wyliczyć ze wzorów</p>
+        <Formula formula={GeometryEquations.circualDiagonal} />
+        <Formula formula={GeometryEquations.circualDiagonal2} />
+        <p><b>(2) Twierdzenie o równych miarach kątów między przekątnymi, a przeciwległymi bokami </b></p>
+        <p>Okrąg można opisać na czworokącie wtedy i tylko wtedy, gdy przekątne d<sub>1</sub> i d<sub>2</sub> tworzą odpowiednio z przeciwległymi bokami kąty wpisane oparte na tym samym łuku, tzn: </p>
+        <Formula formula={"\\alpha_1 = \\alpha_2"} />
+        <Formula formula={"\\beta_1 = \\beta_2"} />
+        <Formula formula={"\\gamma_1 = \\gamma_2"} />
+        <Formula formula={"\\delta_1 = \\delta_2"} />
         <ArticleBorder />
         <p>Środek okręgu opisanego na czworokacie jest punktem przecięcia się jego symetralnych</p>
         <GraphImage size={"smaller"} src={TrapezoidInCircle2} alt={"Czworokąt wpisany w okrąg"} />
@@ -124,7 +140,10 @@ const CirclesRelationsContent: FC = () => (
         <ArticleBorder />
         <Title text={"Czworokąt dwucentryczny"} type="submain-article" />
         <p><b>Czworokąt dwucentryczny</b> to taki czworokąt, który jest równocześnie styczny i cykliczny. </p>
-
+        <div className="flex flex-wrap items-center justify-around">
+            <GraphImage size={"smallest"} src={cycling_symetric_Trapezoid1} alt={"Trapezoid wpisany w okrąg"} />
+            <GraphImage size={"smallest"} src={cycling_symetric_Trapezoid2} alt={"Trapezoid wpisany w okrąg"} />
+        </div>
     </>
 );
 
