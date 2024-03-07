@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/math-app/static/css/main.d4dc6e1c.css",
-    "main.js": "/math-app/static/js/main.c7ca1ca2.js",
+    "main.js": "/math-app/static/js/main.051a7dea.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
+    "static/media/cyclingTrapezoid_diagonals.png": "/math-app/static/media/cyclingTrapezoid_diagonals.7f2f91021de02e5e112b.png",
+    "static/media/Ptolemeus_theory.png": "/math-app/static/media/Ptolemeus_theory.83492a618daef5aed130.png",
     "static/media/trapezoid_in_circle_2.png": "/math-app/static/media/trapezoid_in_circle_2.01bb288c41456e780db3.png",
-    "static/media/Ptolemeus_theory.png": "/math-app/static/media/Ptolemeus_theory.d133949035c1b3ad8a09.png",
     "static/media/trapezoid_on_circle_2.png": "/math-app/static/media/trapezoid_on_circle_2.6a76e8f958efaeb5e24b.png",
     "static/media/tangentialTrapezoid_Trapezium_1.png": "/math-app/static/media/tangentialTrapezoid_Trapezium_1.f03c11d6e26c8b8dc946.png",
     "static/media/cyclingTrapezoid_Irregular.png": "/math-app/static/media/cyclingTrapezoid_Irregular.0ca78e0c6c57cb9f4f34.png",
@@ -13,6 +14,7 @@
     "static/media/trapezoid_on_circle.png": "/math-app/static/media/trapezoid_on_circle.a0f6e33817733c560698.png",
     "static/media/trapezoid_in_circle.png": "/math-app/static/media/trapezoid_in_circle.ecd62e391627f0e28bf6.png",
     "static/media/tangentialTrapezoid.png": "/math-app/static/media/tangentialTrapezoid.4fc4ed2b76d460ff40d4.png",
+    "static/media/cycling_symetric_Trapezoid2.png": "/math-app/static/media/cycling_symetric_Trapezoid2.cfe36c583e5c7a8d94a8.png",
     "static/media/trapezium_angles.png": "/math-app/static/media/trapezium_angles.134b786ee29775d4cfc2.png",
     "static/media/Quadrangles_01.png": "/math-app/static/media/Quadrangles_01.757c24ac916de967a847.png",
     "static/media/pi.gif": "/math-app/static/media/pi.ec795e57a3c34340e037.gif",
@@ -30,6 +32,7 @@
     "static/media/cyclingTrapezoid_Square.png": "/math-app/static/media/cyclingTrapezoid_Square.9d6c15724e741d38cedd.png",
     "static/media/trapeze_regular.png": "/math-app/static/media/trapeze_regular.b0c21fdc1af87446e7df.png",
     "static/media/kwadratowa-ujemna.png": "/math-app/static/media/kwadratowa-ujemna.134be70a0a5e24f870a7.png",
+    "static/media/cycling_symetric_Trapezoid.png": "/math-app/static/media/cycling_symetric_Trapezoid.81eb28ddaf3bba8f4957.png",
     "static/media/kwadratowa-dodatnia.png": "/math-app/static/media/kwadratowa-dodatnia.333cd099aac6a584b71d.png",
     "static/media/trapeze_regular_shortx.png": "/math-app/static/media/trapeze_regular_shortx.6d79f4145bd672c173ea.png",
     "static/media/liniowa-stała.png": "/math-app/static/media/liniowa-stała.8e6e354b3f126e3cc2a2.png",
@@ -62,10 +65,10 @@
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.d4dc6e1c.css.map": "/math-app/static/css/main.d4dc6e1c.css.map",
-    "main.c7ca1ca2.js.map": "/math-app/static/js/main.c7ca1ca2.js.map"
+    "main.051a7dea.js.map": "/math-app/static/js/main.051a7dea.js.map"
   },
   "entrypoints": [
     "static/css/main.d4dc6e1c.css",
-    "static/js/main.c7ca1ca2.js"
+    "static/js/main.051a7dea.js"
   ]
 }
