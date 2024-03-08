@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/math-app/static/css/main.d4dc6e1c.css",
-    "main.js": "/math-app/static/js/main.051a7dea.js",
+    "main.js": "/math-app/static/js/main.1c3ed41d.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/cyclingTrapezoid_diagonals.png": "/math-app/static/media/cyclingTrapezoid_diagonals.7f2f91021de02e5e112b.png",
     "static/media/Ptolemeus_theory.png": "/math-app/static/media/Ptolemeus_theory.83492a618daef5aed130.png",
@@ -65,10 +65,10 @@
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.d4dc6e1c.css.map": "/math-app/static/css/main.d4dc6e1c.css.map",
-    "main.051a7dea.js.map": "/math-app/static/js/main.051a7dea.js.map"
+    "main.1c3ed41d.js.map": "/math-app/static/js/main.1c3ed41d.js.map"
   },
   "entrypoints": [
     "static/css/main.d4dc6e1c.css",
-    "static/js/main.051a7dea.js"
+    "static/js/main.1c3ed41d.js"
   ]
 }
