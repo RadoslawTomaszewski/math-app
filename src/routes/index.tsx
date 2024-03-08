@@ -8,7 +8,7 @@ import { CalculatorsLayout } from "../Layout/calculatorsLayout";
 //MAIN PAGES
 import Home from "../pages/homePage/HomePage";
 import HelplinePage from "../pages/helplinePage/HelplinePage";
-import ForumPage from "../pages/forumPages/ForumPage";
+import CKEPage from "../pages/CKEPages/CKEPage";
 
 //WORK IN PROGRESS
 // import WorkInProgress from "../components/WorkInProgress/WorkInProgress";
@@ -74,26 +74,11 @@ export const Router: FC = () => {
                     <Route path="baza-wiedzy" element={<KnowledgeBaseLayout />}>
                         <Route index element={<KnowledgeBasePage />} />
                         <Route path="funkcja-liniowa" element={<LinearFunctionPage />} />
-                        <Route
-                            path="funkcja-kwadratowa"
-                            element={<QuadraticFunctionPage />}
-                        />
-                        <Route
-                            path="funkcja-homograficzna"
-                            element={<HomographicFunctionPage />}
-                        />
-                        <Route
-                            path="ciag-arytmetyczny"
-                            element={<ArithmeticSequencePage />}
-                        />
-                        <Route
-                            path="ciag-geometryczny"
-                            element={<GeometricSequencePage />}
-                        />
-                        <Route
-                            path="wzory-skroconego-mnozenia"
-                            element={<ShortMultiplicationPage />}
-                        />
+                        <Route path="funkcja-kwadratowa" element={<QuadraticFunctionPage />} />
+                        <Route path="funkcja-homograficzna" element={<HomographicFunctionPage />} />
+                        <Route path="ciag-arytmetyczny" element={<ArithmeticSequencePage />} />
+                        <Route path="ciag-geometryczny" element={<GeometricSequencePage />} />
+                        <Route path="wzory-skroconego-mnozenia" element={<ShortMultiplicationPage />} />
                         <Route path="liczba-pi" element={<PiNumberPage />} />
                         <Route path="liczby-naturalne" element={<NaturalNumberPage />} />
                         <Route path="arytmetyka" element={<ArithmeticPage />} />
@@ -117,11 +102,9 @@ export const Router: FC = () => {
                         <Route path="deltoid" element={<DeltoidPage />} />
                         <Route path="kwadrat" element={<SquarePage />} />
                         <Route path="relacja-z-okregiem" element={<CirclesRelationsPage />} />
-
-
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
-                    <Route path="memy" element={<ForumPage />} />
+                    <Route path="cke" element={<CKEPage />} />
                     <Route path="pogotowie" element={<HelplinePage />} />
                     <Route path="kalkulatory" element={<CalculatorsLayout />}>
                         <Route index element={<CalculatorsPage />} />

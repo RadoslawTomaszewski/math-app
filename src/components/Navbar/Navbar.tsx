@@ -33,20 +33,20 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="mx-4 z-20">
-              <NavLink to="/memy" onClick={handleShowNavbar}>
-                <b>Obrazki</b>
-              </NavLink>
-            </li>
-            <li className="mx-4 z-20">
               <NavLink to="/kalkulatory" onClick={handleShowNavbar}>
                 <b>Kalkulatory</b>
               </NavLink>
             </li>
             <li className="mx-4 z-20">
+              <NavLink to="/cke" onClick={handleShowNavbar}>
+                <b>Materiały od CKE</b>
+              </NavLink>
+            </li>
+            {/* <li className="mx-4 z-20">
               <NavLink to="/pogotowie" onClick={handleShowNavbar}>
                 <b>Pogotowie Matematyczne</b>
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
