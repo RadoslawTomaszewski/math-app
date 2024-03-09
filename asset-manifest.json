@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/math-app/static/css/main.d4dc6e1c.css",
-    "main.js": "/math-app/static/js/main.1c3ed41d.js",
+    "main.js": "/math-app/static/js/main.d378deb7.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
+    "static/media/karta_wzorow_2023.png": "/math-app/static/media/karta_wzorow_2023.15fbc1c67414d470b39b.png",
     "static/media/cyclingTrapezoid_diagonals.png": "/math-app/static/media/cyclingTrapezoid_diagonals.7f2f91021de02e5e112b.png",
     "static/media/Ptolemeus_theory.png": "/math-app/static/media/Ptolemeus_theory.83492a618daef5aed130.png",
     "static/media/trapezoid_in_circle_2.png": "/math-app/static/media/trapezoid_in_circle_2.01bb288c41456e780db3.png",
     "static/media/trapezoid_on_circle_2.png": "/math-app/static/media/trapezoid_on_circle_2.6a76e8f958efaeb5e24b.png",
+    "static/media/karta_wzorow_2015.png": "/math-app/static/media/karta_wzorow_2015.2c89a20a56d36609de70.png",
     "static/media/tangentialTrapezoid_Trapezium_1.png": "/math-app/static/media/tangentialTrapezoid_Trapezium_1.f03c11d6e26c8b8dc946.png",
     "static/media/cyclingTrapezoid_Irregular.png": "/math-app/static/media/cyclingTrapezoid_Irregular.0ca78e0c6c57cb9f4f34.png",
     "static/media/Quadrangles_02.png": "/math-app/static/media/Quadrangles_02.3e8788ad3810aa57ee5f.png",
@@ -47,6 +49,7 @@
     "static/media/kwadratowa-os-symetrii.png": "/math-app/static/media/kwadratowa-os-symetrii.1f460d993d5bf7cbbfe2.png",
     "static/media/wierzcholek.png": "/math-app/static/media/wierzcholek.9354ec98277e30a0213d.png",
     "static/media/rectangular_trapezium_x.png": "/math-app/static/media/rectangular_trapezium_x.67556a55854cdf83ccdd.png",
+    "static/media/karta_wzorow_2005.png": "/math-app/static/media/karta_wzorow_2005.82bb7d3f8f83f14752fe.png",
     "static/media/tangentialTrapezoid_Square.png": "/math-app/static/media/tangentialTrapezoid_Square.5f40029b664f0157679a.png",
     "static/media/liniowa-wyraz-wolny.png": "/math-app/static/media/liniowa-wyraz-wolny.c7478516c6d9ac93addd.png",
     "static/media/square.png": "/math-app/static/media/square.70038575c64e0bfb0d7d.png",
@@ -65,10 +68,10 @@
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.d4dc6e1c.css.map": "/math-app/static/css/main.d4dc6e1c.css.map",
-    "main.1c3ed41d.js.map": "/math-app/static/js/main.1c3ed41d.js.map"
+    "main.d378deb7.js.map": "/math-app/static/js/main.d378deb7.js.map"
   },
   "entrypoints": [
     "static/css/main.d4dc6e1c.css",
-    "static/js/main.1c3ed41d.js"
+    "static/js/main.d378deb7.js"
   ]
 }
