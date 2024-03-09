@@ -34,7 +34,7 @@ export default function HomePage() {
               <ArticleBorder />
               <Title text="Co nowego?" type="submain-article" />
               <p><NavLink to="kalkulatory/skracanie-ulamkow"><b>Kalkulator skracania ułamków</b></NavLink></p>
-              <p><NavLink to="kalkulatory/funkcji-kwadratowej"><b>Kalkulator funkcji kwadratowej</b> - ostatnia aktualizacja: 03/03/2024</NavLink></p>
+              <p><NavLink to="kalkulatory/funkcji-kwadratowej"><b>Kalkulator funkcji kwadratowej</b> - ostatnia aktualizacja: 08/03/2024</NavLink></p>
               <p><NavLink to="kalkulatory/funkcji-liniowej"><b>Kalkulator funkcji liniowej</b> - ostatnia aktualizacja: 07/03/2024</NavLink></p>
               <p>Rozdział poświęconym <b><NavLink to="baza-wiedzy/czworokaty">czworokątom</NavLink></b></p>
               <p>Artykuł o <b><NavLink to="baza-wiedzy/pierwiastkowanie">pierwiastkach</NavLink></b></p>

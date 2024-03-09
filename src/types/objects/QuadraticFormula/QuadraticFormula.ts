@@ -51,6 +51,7 @@ class QuadraticFormula {
         this.standardForm = `f(x)=${standardFormA}${standardFormB}${standardFormC}`;
     }
     private setCanonicalForm = (): void => {
+        // TODO: Check is neceserry
         if (this.a === 0) {
             this.canonicalForm = `${this.q.getFractionString()}`;
             return;
@@ -68,8 +69,8 @@ class QuadraticFormula {
         let canonicalFormP = "";
         let canonicalFormQ = "";
 
-        if (this.a !== 1) canonicalFormA = `${this.a}`
-
+        if (Math.abs(this.a) !== 1) canonicalFormA = `${this.a}`;
+        if (this.a === -1) canonicalFormA = `-`;
         if (this.p.getNominator() === 0) {
             canonicalFormP = `x^2`;
         }

@@ -213,7 +213,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                     </button>
                     <div className="flex flex-col">
                         <span>Znane problemy:</span>
-                        <span><b>problem 01:</b> Nieoptymalne wyświetlanie postaci kanonicznej, gdy a=-1</span>
+                        <span><b>problem 01:</b> Nieoptymalne wyświetlanie postaci kanonicznej, gdy a=-1 - Naprawione, faza testów</span>
                         <span><b>problem 02:</b> W niektórych postaciach iloczynowych możliwa jest redukcja nawiasów</span>
                         <span><b>problem 03:</b> Gdy c=0 postać iloczynowa powinna wyświetlać x zamiast x-0</span>
                         <br />

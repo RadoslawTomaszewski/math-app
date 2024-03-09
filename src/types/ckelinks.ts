@@ -58,6 +58,7 @@ export enum CKElinks2005 {
     maj2006PR = "https://cke.gov.pl/images/stories/Matura2006/a2_mat.pdf",
     maj2005PP = "https://cke.gov.pl/images/stories/Matura2005/mat_podst_a1.pdf",
     maj2005PR = "https://cke.gov.pl/images/stories/Matura2005/mat_r_a2.pdf",
+    wzoryMatematyczne = "https://oke.waw.pl/new/download/files/File/matura/wzory_tablice/popr_tablice_mat.pdf",
 }
 
 export enum CKE8egz {

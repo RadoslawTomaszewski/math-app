@@ -15,6 +15,10 @@ const Title: FC<ITitleProps> = ({ text, type }) => {
     case "submain-article":
       classNames = "font-amatic text-2xl text-center font-bold pb-2";
       break;
+    case "main-article-smaller":
+      classNames =
+        "font-amatic text-3xl font-bold hover:font-borderColor bghover";
+      break;
     case "sidebar-category":
       classNames =
         "font-amatic text-3xl text-start font-bold hover:font-borderColor";
@@ -27,6 +31,7 @@ const Title: FC<ITitleProps> = ({ text, type }) => {
       classNames =
         "font-amatic text-2xl font-bold hover:font-borderColor bghover";
       break;
+
     default:
       classNames = "text-red-600 text-center font-bold border-red border-2";
       break;
