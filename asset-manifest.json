@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d4dc6e1c.css",
-    "main.js": "/static/js/main.fbdf4f4a.js",
+    "main.js": "/static/js/main.d929235a.js",
     "static/media/ja.jpg": "/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/karta_wzorow_2023.png": "/static/media/karta_wzorow_2023.15fbc1c67414d470b39b.png",
     "static/media/cyclingTrapezoid_diagonals.png": "/static/media/cyclingTrapezoid_diagonals.7f2f91021de02e5e112b.png",
@@ -68,10 +68,10 @@
     "static/media/collapse.svg": "/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
     "main.d4dc6e1c.css.map": "/static/css/main.d4dc6e1c.css.map",
-    "main.fbdf4f4a.js.map": "/static/js/main.fbdf4f4a.js.map"
+    "main.d929235a.js.map": "/static/js/main.d929235a.js.map"
   },
   "entrypoints": [
     "static/css/main.d4dc6e1c.css",
-    "static/js/main.fbdf4f4a.js"
+    "static/js/main.d929235a.js"
   ]
 }
