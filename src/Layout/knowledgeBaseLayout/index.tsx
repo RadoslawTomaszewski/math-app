@@ -11,7 +11,7 @@ export const KnowledgeBaseLayout = () => {
           <Sidebar sidebarLinks={sidebarLinksKnowledgeBase} />
         </div>
         <div className="w-full flex justify-center">
-          <div className="min-h-[calc(100vh-114px)] w-full md:max-w-[calc(100vw-260px)]">
+          <div className="min-h-[calc(100vh-114px)] w-full md:max-w-[calc(100vw-250px)]">
             <Outlet />
           </div>
         </div>

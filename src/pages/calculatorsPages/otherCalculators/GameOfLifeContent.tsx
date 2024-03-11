@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
-import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
+import React, { useState } from "react";
 import Title from "../../../components/articleItems/Title";
+import { BlueButtonStyle, RedButtonStyle } from "../../../utilities/styles";
+import ArticleBorder from "../../../components/articleItems/ArticleBorder";
 
 const numRows = 30;
 const numCols = 15;
@@ -14,18 +15,10 @@ const generateEmptyGrid = () => {
   return rows;
 };
 
-const GameOfLife = () => {
+const GameOfLifeContent = () => {
   const [grid, setGrid] = useState(() => generateEmptyGrid());
-  const [running, setRunning] = useState(false);
-  const runningRef = useRef(running);
-  runningRef.current = running;
-
-  useEffect(() => {
-    runningRef.current = running;
-  }, [running]);
 
   const runSimulation = () => {
-    if (!runningRef.current) return;
     const newGrid = generateEmptyGrid();
     for (let i = 0; i < numRows; i++) {
       for (let j = 0; j < numCols; j++) {
@@ -75,21 +68,17 @@ const GameOfLife = () => {
   };
 
   const handleStartClick = () => {
-    setRunning(!running);
-    if (!running) {
-      runningRef.current = true;
-      runSimulation();
-    }
+    runSimulation();
   };
 
   const handleClearClick = () => {
     setGrid(generateEmptyGrid());
-    setRunning(false);
   };
 
   return (
-    <ArticleWrapper>
+    <>
       <Title text="Gra w życie" type="main-article" />
+      <p>Kliknij w pole na planszy aby nadać ustawienie początkowe komórek. Następnie naciskaj przycisk "Następna epoka" i obserwuj fazy życia komórek.</p>
       <div className="m-2 flex flex-col justify-center items-center">
         <div
           style={{
@@ -112,17 +101,26 @@ const GameOfLife = () => {
             ))
           )}
         </div>
-        <div className="flex justify-center gap-2">
-          <button className="btn" onClick={handleStartClick}>
-            {running ? "Stop" : "Start"}
+        <div className="flex justify-center gap-3 p-3">
+          <button className={BlueButtonStyle} onClick={handleStartClick}>
+            Następna epoka
           </button>
-          <button className="btn" onClick={handleClearClick}>
-            Clear
+          <button className={RedButtonStyle} onClick={handleClearClick}>
+            Wyczyść planszę
           </button>
         </div>
       </div>
-    </ArticleWrapper>
-  );
+      <ArticleBorder />
+      <p><b>Gra w życie</b> to automat komórkowy wymyślonej przez matematyka Johna Conwaya w 1970 roku. Jest to symulacja, która odbywa się na dwuwymiarowej siatce, gdzie każda komórka może znajdować się w dwóch stanach: "żywa" lub "martwa". Na podstawie prostych zasad, dotyczących liczby sąsiadujących komórek, decyduje się, czy dana komórka będzie żywa, martwa, czy ulegnie zmianie w kolejnej iteracji symulacji. Mimo swojej prostoty, gra w życie może generować złożone i nieprzewidywalne wzorce, co czyni ją fascynującym obiektem badań w dziedzinie teorii chaosu i sztucznej inteligencji.</p>
+      <ArticleBorder />
+      <Title text={"Zasady tego wariantu gry w Życie"} type="submain-article" />
+      <span>(1) Każda komórka może znajdować się w dwóch stanach: "żywa" (oznaczona kolorem czarnym) lub "martwa" (oznaczona kolorem białym)</span><br /><br />
+      <span>(2) W każdej kolejnej epoce, dla każdej komórki obliczana jest liczba jej żywych sąsiadów. </span><br /><br />
+      <span>(3) Na podstawie liczby żywych sąsiadów, decydowane jest, czy dana komórka pozostaje żywa, staje się martwa, lub zostaje ożywiona:</span><br />
+      <span className="ml-4"> <b>pozostaje żywa w następnej epoce</b> jeśli ma 2 lub 3 żywych sąsiadów</span><br />
+      <span className="ml-4"> <b>staje się martwa</b> jeśli ma mniej niż 2 sąsiadów lub więcej niż 3 sąsiadów.</span><br />
+      <span className="ml-4"> <b>zostaje ożywiona</b> jeśli ma dokładnie 3 żywych sąsiadów</span><br />
+    </>);
 };
 
-export default GameOfLife;
+export default GameOfLifeContent;

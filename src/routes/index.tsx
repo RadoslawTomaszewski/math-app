@@ -10,8 +10,6 @@ import Home from "../pages/homePage/HomePage";
 import HelplinePage from "../pages/helplinePage/HelplinePage";
 import CKEPage from "../pages/CKEPages/CKEPage";
 
-//WORK IN PROGRESS
-// import WorkInProgress from "../components/WorkInProgress/WorkInProgress";
 //ROUTES
 import KnowledgeBasePage from "../pages/knowledgeBasePages/KnowledgeBasePage";
 import LinearFunctionPage from "../pages/knowledgeBasePages/functionsPages/linearFunction/LinearFunctionPage";
@@ -27,7 +25,7 @@ import SpeedConverterPage from "../pages/calculatorsPages/converters/SpeedConver
 import TimeConverterPage from "../pages/calculatorsPages/converters/TimeConverterPage";
 import VolumeConverterPage from "../pages/calculatorsPages/converters/VolumeConverterPage";
 import WeightConverterPage from "../pages/calculatorsPages/converters/WeightConverterPage";
-import GameOfLife from "../pages/calculatorsPages/otherCalculators/GameOfLife";
+import GameOfLifePage from "../pages/calculatorsPages/otherCalculators/GameOfLifePage";
 import ShortMultiplicationPage from "../pages/knowledgeBasePages/algebraicExpressionPages/shortMultiplicationFormulas/ShortMultiplicationFormulasPage";
 import PiNumberPage from "../pages/knowledgeBasePages/constantsPages/PiNumber/PiNumberPage";
 import QuadraticFunctionPage from "../pages/knowledgeBasePages/functionsPages/quadraticFunction/QuadraticFunctionPage";
@@ -61,6 +59,7 @@ import DiamondPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles
 import DeltoidPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/Deltoid/DeltoidPage";
 import CirclesRelationsPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/CirclesRelations/CirclesRelationsPage";
 import ArithmeticPage from "../pages/knowledgeBasePages/arithmeticPages/ArithmeticPage";
+import CoffeePage from "../pages/CoffeePage/CoffeePage";
 
 
 
@@ -70,7 +69,9 @@ export const Router: FC = () => {
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<Layout />}>
+
                     <Route index element={<Home />} />
+
                     <Route path="baza-wiedzy" element={<KnowledgeBaseLayout />}>
                         <Route index element={<KnowledgeBasePage />} />
                         <Route path="funkcja-liniowa" element={<LinearFunctionPage />} />
@@ -104,59 +105,31 @@ export const Router: FC = () => {
                         <Route path="relacja-z-okregiem" element={<CirclesRelationsPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
+
                     <Route path="cke" element={<CKEPage />} />
+
+                    <Route path="wsparcie" element={<CoffeePage />} />
+
                     <Route path="pogotowie" element={<HelplinePage />} />
+
                     <Route path="kalkulatory" element={<CalculatorsLayout />}>
                         <Route index element={<CalculatorsPage />} />
-                        <Route
-                            path="kalkulator-dlugosci"
-                            element={<LengthConverterPage />}
-                        />
-                        <Route
-                            path="kalkulator-powierzchni"
-                            element={<AreaConverterPage />}
-                        />
-                        <Route
-                            path="kalkulator-objetosci"
-                            element={<VolumeConverterPage />}
-                        />
+                        <Route path="kalkulator-dlugosci" element={<LengthConverterPage />} />
+                        <Route path="kalkulator-powierzchni" element={<AreaConverterPage />} />
+                        <Route path="kalkulator-objetosci" element={<VolumeConverterPage />} />
                         <Route path="kalkulator-masy" element={<WeightConverterPage />} />
                         <Route path="kalkulator-czasu" element={<TimeConverterPage />} />
-                        <Route
-                            path="kalkulator-predkosci"
-                            element={<SpeedConverterPage />}
-                        />
-                        <Route
-                            path="kalkulator-informacji"
-                            element={<InformationConverterPage />}
-                        />
-                        <Route
-                            path="czynnik-przed-pierwiastek-kwadratowy"
-                            element={<SquareRootCalculatorPage />}
-                        />
-                        <Route
-                            path="czynnik-przed-pierwiastek-szescienny"
-                            element={<CubeRootCalculatorPage />}
-                        />
-                        <Route
-                            path="pisemne-dodawanie"
-                            element={<SumCalculatorPage />}
-                        />
-                        <Route
-                            path="skracanie-ulamkow"
-                            element={<FractionReducerPage />}
-                        />
-                        <Route
-                            path="rozklad-na-czynniki-pierwsze"
-                            element={<PrimeFactorCalculatorPage />}
-                        />
-                        <Route
-                            path="nww-i-nwd"
-                            element={<GCDandLCMCalculatorPage />}
-                        />
+                        <Route path="kalkulator-predkosci" element={<SpeedConverterPage />} />
+                        <Route path="kalkulator-informacji" element={<InformationConverterPage />} />
+                        <Route path="czynnik-przed-pierwiastek-kwadratowy" element={<SquareRootCalculatorPage />} />
+                        <Route path="czynnik-przed-pierwiastek-szescienny" element={<CubeRootCalculatorPage />} />
+                        <Route path="pisemne-dodawanie" element={<SumCalculatorPage />} />
+                        <Route path="skracanie-ulamkow" element={<FractionReducerPage />} />
+                        <Route path="rozklad-na-czynniki-pierwsze" element={<PrimeFactorCalculatorPage />} />
+                        <Route path="nww-i-nwd" element={<GCDandLCMCalculatorPage />} />
                         <Route path="funkcji-kwadratowej" element={<QuadraticFunctionCalculatorPage />} />
                         <Route path="funkcji-liniowej" element={<LinearFunctionCalculatorPage />} />
-                        <Route path="gra-w-zycie" element={<GameOfLife />} />
+                        <Route path="gra-w-zycie" element={<GameOfLifePage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                 </Route>

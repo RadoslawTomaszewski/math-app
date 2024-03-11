@@ -10,6 +10,10 @@ export const InputCoefficientStyle = "text-center w-[60px] font-math bg-articleC
 
 export const InputNaturalNumbersStyle = "m-2 flex w-[150px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
 
-export const ArticleWrapperStyle = "p-3 border-2 border-navColor bg-articleColor rounded";
+export const ArticleWrapperStyle = "p-3 flex flex-col border-2 border-navColor bg-articleColor rounded max-w-full";
 
-export const CKELinkStyle = "flex justify-around m-2"
+export const CKELinkStyle = "flex justify-around m-2";
+
+export const BlueButtonStyle = "font-bold py-2 px-4 rounded bg-blue-500 text-white hover:bg-blue-700";
+
+export const RedButtonStyle = "font-bold py-2 px-4 rounded bg-red-500 text-white hover:bg-red-700";

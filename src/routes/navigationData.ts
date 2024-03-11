@@ -32,6 +32,21 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         ],
     },
     {
+        category: { to: "czworokaty", text: "Czworokąty" },
+        links: [
+            { to: "trapezoid", text: "Trapezoid" },
+            { to: "trapez", text: "Trapez" },
+            { to: "trapez-prostokatny", text: "Trapez Prostokątny" },
+            { to: "trapez-rownoramienny", text: "Trapez Równoramienny" },
+            { to: "rownoleglobok", text: "Równoległobok" },
+            { to: "romb", text: "Romb" },
+            { to: "prostokat", text: "Prostokąt" },
+            { to: "kwadrat", text: "Kwadrat" },
+            { to: "deltoid", text: "Deltoid" },
+            { to: "relacja-z-okregiem", text: "Relacja z okręgiem" },
+        ],
+    },
+    {
         category: { to: "wyrazenia-algebraiczne", text: "Wyrażenia Algebraiczne" },
         links: [
             // { to: "wielomiany", text: "Wielomiany" },
@@ -52,7 +67,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             // { to: "funkcja-wielomianowa", text: "Wielomianowa" },
             // { to: "funkcja-wykladnicza", text: "Wykładnicza" },
             // { to: "funkcja-logarytmiczna", text: "Logarytmiczna" },
-            // { to: "funkcja-homograficzna", text: "Homograficzna" },
+            { to: "funkcja-homograficzna", text: "Homograficzna" },
             // { to: "funkcje-wymierne", text: "Wymierne" },
             // { to: "funkcje-trygonometryczne", text: "Trygonometryczne" },
             // { to: "funkcje-cyklometryczne", text: "Cyklometryczne" },
@@ -74,22 +89,10 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         ],
     },
     {
-        category: { to: "czworokaty", text: "Czworokąty" },
+        category: { to: "analiza-matematyczna", text: "Analiza Matematyczna" },
         links: [
-            { to: "trapezoid", text: "Trapezoid" },
-            { to: "trapez", text: "Trapez" },
-            { to: "trapez-prostokatny", text: "Trapez Prostokątny" },
-            { to: "trapez-rownoramienny", text: "Trapez Równoramienny" },
-            { to: "rownoleglobok", text: "Równoległobok" },
-            { to: "romb", text: "Romb" },
-            { to: "prostokat", text: "Prostokąt" },
-            { to: "kwadrat", text: "Kwadrat" },
-            { to: "deltoid", text: "Deltoid" },
-            { to: "relacja-z-okregiem", text: "Relacja z okręgiem" },
-
-            // { to: "trójkaty", text: "Trójkąty" },
-            // { to: "wielokąty", text: "Wielokąty" },
-            // { to: "pola i obwody", text: "Pola i obwody" },
+            { to: "granica-funkcji", text: "Granica Funkcji" },
+            { to: "pochodna-funkcji", text: "Pochodna Funkcji" },
         ],
     },
     // {
@@ -128,6 +131,8 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             { to: "prawdopodobieństwo", text: "Prawdopodobieństwo" },
         ],
     },
+
+
     // {
     //   category: { to: "grafy", text: "Grafy" },
     //   links: [

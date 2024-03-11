@@ -7,7 +7,7 @@ import Proof from "../../../../components/articleItems/Proof";
 import MathExpression from "../../../../components/articleItems/MathExpression";
 import liniowaRosnaca from "../../../../assets/images/function-graphs/liniowa-rosnaca.png";
 import liniowaMalejaca from "../../../../assets/images/function-graphs/liniowa-malejaca.png";
-import liniowaStala from "../../../../assets/images/function-graphs/liniowa-stała.png";
+import liniowaStala from "../../../../assets/images/function-graphs/liniowa-stala.png";
 import wyrazWolny from "../../../../assets/images/function-graphs/liniowa-wyraz-wolny.png";
 import GraphImage from "../../../../components/articleItems/GraphImage";
 

@@ -123,19 +123,19 @@ const CirclesRelationsContent: FC = () => (
         <Title text={"Czworokąt styczny"} type="submain-article" />
         <p><b>Czworokąt styczny</b> do okręgu to taki czworokąt, którego suma dwóch przeciwległych boków jest równa sumie dwóch pozostałych, czyli taki, w który da się wpisać okrąg styczny do jego boków </p>
         <br /><p>W czworokąt wklęsły z wyłączeniem <b>deltoida wklęsłego</b> nie da się wpisać okręgu. Można wpisać okrąg w <b>trapezoidy</b></p>
-        <GraphImage size={"medium-short"} src={Tangential6} alt={"Trapez z wpisanym okręgiem 1"} />
+        <GraphImage size={"smallest2"} src={Tangential6} alt={"Trapez z wpisanym okręgiem 1"} />
 
         <br /><p>(miejsce na deltoid wklęsły z wpisanym okręgiem)</p><br />
         <p>Jest możliwe wpisanie okręgu w <b>trapez równoramienny</b>, <b>prostokątny</b> oraz <b>różnoramienny</b></p>
         <div className="flex flex-wrap items-center justify-around">
-            <GraphImage size={"medium-short"} src={Tangential3} alt={"Trapez z wpisanym okręgiem 3"} />
-            <GraphImage size={"medium-short"} src={Tangential2} alt={"Trapez z wpisanym okręgiem 2"} />
-            <GraphImage size={"medium-short"} src={Tangential1} alt={"Trapez z wpisanym okręgiem 1"} />
+            <GraphImage size={"smallest2"} src={Tangential3} alt={"Trapez z wpisanym okręgiem 3"} />
+            <GraphImage size={"smallest2"} src={Tangential2} alt={"Trapez z wpisanym okręgiem 2"} />
+            <GraphImage size={"smallest2"} src={Tangential1} alt={"Trapez z wpisanym okręgiem 1"} />
         </div>
         <p>Okrąg wpisany w czworokąty o równych długościach boków: <b>rombu</b> oraz jego szczególnego przypadku, <b>kwadratu</b>.</p>
         <div className="flex flex-wrap items-center justify-around">
-            <GraphImage size={"medium-short"} src={Tangential4} alt={"Romb z wpisanym okręgiem 4"} />
-            <GraphImage size={"medium-short"} src={Tangential5} alt={"Kwadrat z wpisanym okręgiem 5"} />
+            <GraphImage size={"smallest2"} src={Tangential4} alt={"Romb z wpisanym okręgiem 4"} />
+            <GraphImage size={"smallest2"} src={Tangential5} alt={"Kwadrat z wpisanym okręgiem 5"} />
         </div>
         <ArticleBorder />
         <Title text={"Czworokąt dwucentryczny"} type="submain-article" />

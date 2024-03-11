@@ -2,6 +2,7 @@ import Brand from "../../assets/images/majza.eu_logo.png";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { ReactComponent as Hamburger } from "../../assets/icons/hamburger.svg";
+import GraphImage from "../articleItems/GraphImage";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -13,15 +14,11 @@ const Navbar = () => {
   return (
     <nav className="navbar h-[60px] bg-navColor .relative">
       <div className="container max-w-[1100px] my-0 mx-auto flex justify-between items-center h-full flex-row">
-        <div className="flex items-center w-[20px] ">
-          <NavLink to="/">
-            <img
-              src={Brand}
-              alt="Logo Majza.eu"
-              className="h-[50px] min-w-min"
-            />
-          </NavLink>
-        </div>
+
+        <NavLink to="/">
+          <GraphImage size={"logo"} src={Brand} alt={"Logo majza.eu"} />
+        </NavLink>
+
         <div className="menu-icon" onClick={handleShowNavbar}>
           <Hamburger className="h-[50px] w-[50px]" />
         </div>
@@ -40,6 +37,11 @@ const Navbar = () => {
             <li className="mx-4 z-20">
               <NavLink to="/cke" onClick={handleShowNavbar}>
                 <b>Materiały od CKE</b>
+              </NavLink>
+            </li>
+            <li className="mx-4 z-20">
+              <NavLink to="/wsparcie" onClick={handleShowNavbar}>
+                <b>Wsparcie</b>
               </NavLink>
             </li>
             {/* <li className="mx-4 z-20">
