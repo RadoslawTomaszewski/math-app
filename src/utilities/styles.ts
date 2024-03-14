@@ -17,3 +17,5 @@ export const CKELinkStyle = "flex justify-around m-2";
 export const BlueButtonStyle = "font-bold py-2 px-4 rounded bg-blue-500 text-white hover:bg-blue-700";
 
 export const RedButtonStyle = "font-bold py-2 px-4 rounded bg-red-500 text-white hover:bg-red-700";
+
+export const GreenButtonStyle = "font-bold py-2 px-4 rounded bg-green-500 text-white hover:bg-green-700";

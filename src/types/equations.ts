@@ -52,7 +52,7 @@ export enum GeometryEquations {
     DeltoidDiagonal_short = 'd_1=\\sqrt{2a^2\\left(1-\\cos \\alpha\\right)}=\\sqrt{2b^2(1- \\cos \\beta)}',
     DeltoidDiagonal_long = 'd_2=\\sqrt{a^2+b^2 - 2ab \\cdot  \\cos \\gamma}',
     RectangleDiagonal = 'd=\\sqrt{a^2+b^2}',
-    SquareDiagonal = 'd=\\sqrt{2}',
+    SquareDiagonal = 'd=\\sqrt{2}\\cdot a',
     circualDiagonal = `d_1=\\sqrt{\\frac{\\left(a \\cdot c + b \\cdot d \\right) \\left(a \\cdot b + c \\cdot d \\right)}{a \\cdot d + b \\cdot c}}`,
     circualDiagonal2 = `d_2=\\sqrt{\\frac{\\left(a \\cdot c + b \\cdot d \\right) \\left(a \\cdot d + b \\cdot c \\right)}{a \\cdot b + c \\cdot d}}`,
 

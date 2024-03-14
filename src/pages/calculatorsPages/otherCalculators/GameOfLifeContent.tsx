@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Title from "../../../components/articleItems/Title";
-import { BlueButtonStyle, RedButtonStyle } from "../../../utilities/styles";
+import { BlueButtonStyle, GreenButtonStyle, RedButtonStyle } from "../../../utilities/styles";
 import ArticleBorder from "../../../components/articleItems/ArticleBorder";
+import { classNames } from "../../../utilities";
 
 const numRows = 30;
 const numCols = 15;
@@ -11,6 +12,13 @@ const generateEmptyGrid = () => {
   const rows = [];
   for (let i = 0; i < numRows; i++) {
     rows.push(Array.from(Array(numCols), () => 0));
+  }
+  return rows;
+};
+const generateRandomGrid = () => {
+  const rows = [];
+  for (let i = 0; i < numRows; i++) {
+    rows.push(Array.from(Array(numCols), () => (Math.random() > 0.8 ? 1 : 0)));
   }
   return rows;
 };
@@ -75,6 +83,10 @@ const GameOfLifeContent = () => {
     setGrid(generateEmptyGrid());
   };
 
+  const handleRandomClick = () => {
+    setGrid(generateRandomGrid());
+  };
+
   return (
     <>
       <Title text="Gra w życie" type="main-article" />
@@ -101,11 +113,14 @@ const GameOfLifeContent = () => {
             ))
           )}
         </div>
-        <div className="flex justify-center gap-3 p-3">
-          <button className={BlueButtonStyle} onClick={handleStartClick}>
+        <div className="flex flex-wrap justify-center gap-3 p-3">
+          <button className={classNames(BlueButtonStyle, "min-w-[170px]")} onClick={handleStartClick}>
             Następna epoka
           </button>
-          <button className={RedButtonStyle} onClick={handleClearClick}>
+          <button className={classNames(GreenButtonStyle, "min-w-[170px]")} onClick={handleRandomClick}>
+            Losowy układ
+          </button>
+          <button className={classNames(RedButtonStyle, "min-w-[170px]")} onClick={handleClearClick}>
             Wyczyść planszę
           </button>
         </div>
