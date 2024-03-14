@@ -97,7 +97,9 @@ export const squareOfTheDifference = [
     "a^2-ab-ab+b^2",
     "a^2-2ab+b^2",
 ];
-export const differenceOfSquares = ["(a - b)(a + b)", "a^2+ab-ab-b^2", "a^2-b^2"];
+export const differenceOfSquares = [
+    "(a - b)(a + b)", "a^2+ab-ab-b^2", "a^2-b^2"
+];
 export const cubeOfTheSum = [
     "(a + b)^3",
     "(a + b)(a^2 + 2ab + b^2)",
@@ -118,10 +120,45 @@ export const sumOfCubes = [
     "a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3",
     "a^3 + b^3",
 ];
-
 export const differenceOfCubes = [
     "(a - b)(a^2 + ab + b^2)",
     "a(a^2) + a(ab) + a(b^2) - b(a^2) - b(ab) - b(b^2)",
     "a^3 + a^2b + ab^2 - a^2b - ab^2 - b^3",
     "a^3 - b^3",
+];
+
+//Functions
+//Quadratic Function
+export const QuadraticFunction_zeroPlaceProof = [
+    `ax^2 + bx + c = 0`,
+    `x^2 + \\frac{b}{a}x + \\frac{c}{a} = 0`,
+    `x^2 + \\frac{b}{a}x = -\\frac{c}{a}`,
+    `x^2 + \\frac{b}{a}x + \\frac{b^2}{4a^2} = -\\frac{c}{a} + \\frac{b^2}{4a^2}`,
+    `\\left(x + \\frac{b}{2a}\\right)^2 = -\\frac{c}{a} + \\frac{b^2}{4a^2}`,
+    `\\left(x + \\frac{b}{2a}\\right)^2 = -\\frac{4ac}{4a^2} + \\frac{b^2}{4a^2}`,
+    `\\left({x} + \\frac{b}{2a}\\right)^2 = \\frac{b^2-4ac}{4a^2}`,
+    `\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{\\Delta}{4a^2}`,
+    `\\sqrt{\\left(x + \\frac{b}{2a}\\right)^2} = \\sqrt{\\frac{\\Delta}{4a^2}}`,
+    `\\left|x + \\frac{b}{2a}\\right| = \\frac{\\sqrt{\\Delta}}{2a}`,
+    `x + \\frac{b}{2a} = \\frac{\\sqrt{\\Delta}}{2a} \\lor x + \\frac{b}{2a} = -\\frac{\\sqrt{\\Delta}}{2a}`,
+    `x = -\\frac{b}{2a} + \\frac{\\sqrt{\\Delta}}{2a} \\lor x = -\\frac{b}{2a} - \\frac{\\sqrt{\\Delta}}{2a}`,
+    `x = \\frac{-b + \\sqrt{\\Delta}}{2a} \\lor x = \\frac{-b - \\sqrt{\\Delta}}{2a}`,
+    `x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}`,
+];
+export const QuadraticFunction_pProof = [
+    `p = \\frac{x_1+x_2}{2}`,
+    `p = \\frac{1}{2}\\left(\\frac{-b + \\sqrt{\\Delta}}{2a}+\\frac{-b - \\sqrt{\\Delta}}{2a}\\right)`,
+    `p = \\frac{1}{2}\\left(\\frac{-2b + \\sqrt{\\Delta}-\\sqrt{\\Delta}}{2a}\\right)`,
+    `p = \\frac{-b}{2a}`,
+];
+export const QuadraticFunction_qProof = [
+    `q = f(p)`,
+    `q = ap^2 + bp + c`,
+    `q = a\\left(\\frac{-b}{2a}\\right)^2 + b\\left(\\frac{-b}{2a}\\right) + c`,
+    `q = a\\left(\\frac{b^2}{4a^2}\\right) + b\\left(\\frac{-b}{2a}\\right) + c`,
+    `q = \\frac{b^2}{4a} + \\frac{-b^2}{2a}+ c`,
+    `q = \\frac{b^2}{4a} + \\frac{-2b^2}{4a}+ \\frac{4ac}{4a}`,
+    `q = \\frac{-b^2+4ac}{4a}`,
+    `q = \\frac{-\\left(b^2-4ac\\right)}{4a}`,
+    `q = \\frac{-\\Delta}{4a}`,
 ];

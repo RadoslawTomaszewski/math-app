@@ -72,13 +72,18 @@ export enum linearEquations {
 export enum quadraticEquations {
     DELTA = "\\Delta=b^2-4ac",
     P = "p=\\frac{-b}{2a}",
+    P_arithmetic = "p = \\frac{x_1+x_2}{2}",
     Q = "q=\\frac{-\\Delta}{4a}",
+    Q_function = "q=f(p)",
     X0 = "x_0=\\frac{-b}{2a}",
     X1 = "x_1=\\frac{-b-\\sqrt{\\Delta}}{2a}",
     X2 = "x_2=\\frac{-b+\\sqrt{\\Delta}}{2a}",
+    X12 = "x_0 = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}",
     W = "W\\left(p,q\\right)",
 
-    FACTORIAL_FORM = "f(x)=a\\left(x-x_1\\right)\\left(x-x_2\\right)",
+    FACTORIAL_FORM_2 = "f(x)=a\\left(x-x_1\\right)\\left(x-x_2\\right)",
+    FACTORIAL_FORM_1 = "f(x) = a\\left(x-x_0\\right)^2",
+    FACTORIAL_FORM_0 = "f(x)=a\\left(x-x_1\\right)\\left(x-x_2\\right)",
     STANDARD_FORM = "f(x)=ax^2+bx+c",
     CANONICAL_FORM = "f(x)=a\\left(x-p\\right)^2+q",
 }

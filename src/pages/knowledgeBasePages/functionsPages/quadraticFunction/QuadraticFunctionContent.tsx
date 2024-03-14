@@ -13,43 +13,11 @@ import wyrazWolny from "../../../../assets/images/function-graphs/kwadratowa-wyr
 import osSymetrii from "../../../../assets/images/function-graphs/kwadratowa-os-symetrii.png";
 import GraphImage from "../../../../components/articleItems/GraphImage";
 import { NavLink } from "react-router-dom";
+import { QuadraticFunction_pProof, QuadraticFunction_qProof, QuadraticFunction_zeroPlaceProof } from "../../../../types/proofs";
+import { quadraticEquations } from "../../../../types/equations";
 
 const QuadraticFunctionContent: FC = () => {
-  const zeroPlaceProof = [
-    `ax^2 + bx + c = 0`,
-    `x^2 + \\frac{b}{a}x + \\frac{c}{a} = 0`,
-    `x^2 + \\frac{b}{a}x = -\\frac{c}{a}`,
-    `x^2 + \\frac{b}{a}x + \\frac{b^2}{4a^2} = -\\frac{c}{a} + \\frac{b^2}{4a^2}`,
-    `\\left(x + \\frac{b}{2a}\\right)^2 = -\\frac{c}{a} + \\frac{b^2}{4a^2}`,
-    `\\left(x + \\frac{b}{2a}\\right)^2 = -\\frac{4ac}{4a^2} + \\frac{b^2}{4a^2}`,
-    `\\left({x} + \\frac{b}{2a}\\right)^2 = \\frac{b^2-4ac}{4a^2}`,
-    `\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{\\Delta}{4a^2}`,
-    `\\sqrt{\\left(x + \\frac{b}{2a}\\right)^2} = \\sqrt{\\frac{\\Delta}{4a^2}}`,
-    `\\left|x + \\frac{b}{2a}\\right| = \\frac{\\sqrt{\\Delta}}{2a}`,
-    `x + \\frac{b}{2a} = \\frac{\\sqrt{\\Delta}}{2a} \\lor x + \\frac{b}{2a} = -\\frac{\\sqrt{\\Delta}}{2a}`,
-    `x = -\\frac{b}{2a} + \\frac{\\sqrt{\\Delta}}{2a} \\lor x = -\\frac{b}{2a} - \\frac{\\sqrt{\\Delta}}{2a}`,
-    `x = \\frac{-b + \\sqrt{\\Delta}}{2a} \\lor x = \\frac{-b - \\sqrt{\\Delta}}{2a}`,
-    `x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}`,
-  ];
 
-  const pProof = [
-    `p = \\frac{x_1+x_2}{2}`,
-    `p = \\frac{1}{2}\\left(\\frac{-b + \\sqrt{\\Delta}}{2a}+\\frac{-b - \\sqrt{\\Delta}}{2a}\\right)`,
-    `p = \\frac{1}{2}\\left(\\frac{-2b + \\sqrt{\\Delta}-\\sqrt{\\Delta}}{2a}\\right)`,
-    `p = \\frac{-b}{2a}`,
-  ];
-
-  const qProof = [
-    `q = f(p)`,
-    `q = ap^2 + bp + c`,
-    `q = a\\left(\\frac{-b}{2a}\\right)^2 + b\\left(\\frac{-b}{2a}\\right) + c`,
-    `q = a\\left(\\frac{b^2}{4a^2}\\right) + b\\left(\\frac{-b}{2a}\\right) + c`,
-    `q = \\frac{b^2}{4a} + \\frac{-b^2}{2a}+ c`,
-    `q = \\frac{b^2}{4a} + \\frac{-2b^2}{4a}+ \\frac{4ac}{4a}`,
-    `q = \\frac{-b^2+4ac}{4a}`,
-    `q = \\frac{-\\left(b^2-4ac\\right)}{4a}`,
-    `q = \\frac{-\\Delta}{4a}`,
-  ];
 
   return (
     <>
@@ -61,7 +29,7 @@ const QuadraticFunctionContent: FC = () => {
       <p>
         Wzór funkcji kwadratowej w <b>postaci ogólnej</b>:
       </p>
-      <Formula formula={`f(x) = ax^2 + bx + c`} />
+      <Formula formula={quadraticEquations.STANDARD_FORM} styles="min-w-[161px]" />
       <p>Założenie:</p>
       <Formula formula={`a \\neq 0`} />
       <LegendParagraph
@@ -75,7 +43,7 @@ const QuadraticFunctionContent: FC = () => {
       <p>
         Wzór funkcji kwadratowej w <b>postaci kanonicznej</b>:
       </p>
-      <Formula formula={`f(x) = a(x-p)^2 + q`} />
+      <Formula formula={quadraticEquations.CANONICAL_FORM} styles="min-w-[167px]" />
       <p>Założenie:</p>
       <Formula formula={`a \\neq 0`} />
       <LegendParagraph
@@ -92,7 +60,7 @@ const QuadraticFunctionContent: FC = () => {
       <p>
         <b>Wyróżnik</b> funkcji kwadratowej (delta) to wartość wyrażona wzorem:
       </p>
-      <Formula formula={`\\Delta = b^2 - 4ac`} />
+      <Formula formula={quadraticEquations.DELTA} styles="min-w-[107px]" />
       <p>Jeżeli Δ &gt; 0, to funkcja ma dwa pierwiastki rzeczywiste.</p>
       <p>Jeżeli Δ = 0, to funkcja ma jeden pierwiastek rzeczywisty.</p>
       <p>Jeżeli Δ &lt; 0, to funkcja nie ma pierwiastków rzeczywistych.</p>
@@ -101,47 +69,45 @@ const QuadraticFunctionContent: FC = () => {
         <b>Miejsce zerowe</b> (pierwiastek) funkcji kwadratowej wyraża się
         wzorem:
       </p>
-      <Formula formula={`x_0 = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}`} />
+      <Formula formula={quadraticEquations.X12} styles="min-w-[128px]" />
       <p>Założenia:</p>
       <Formula formula={`a \\neq 0`} />
       <Formula formula={`\\Delta \\ge 0`} />
-      <Proof steps={zeroPlaceProof} text="Dowód" />
+      <Proof steps={QuadraticFunction_zeroPlaceProof} text="Dowód" styles="min-w-[300px]" />
       <br />
       <p className="flex">
         W przypadku gdy funkcja kwadratowa ma dwa pierwiastki rzeczywiste używa
         się oznaczeń:
       </p>
-      <Formula formula={`x_1 = \\frac{-b - \\sqrt{\\Delta}}{2a}`} />
-      <Formula formula={`x_2 = \\frac{-b + \\sqrt{\\Delta}}{2a}`} />
+      <Formula formula={quadraticEquations.X1} styles="min-w-[129px]" />
+      <Formula formula={quadraticEquations.X2} styles="min-w-[129px]" />
       <ArticleBorder />
       <p>
         Wzór funkcji kwadratowej w <b>postaci iloczynowej</b>
         &nbsp;nie zawsze istnieje. Należy rozpatrzyć trzy przypadki:
       </p>
-      <div className="my-2 grid md:grid-cols-3">
+      <div className="my-2 grid md:grid-cols-3 overflow-auto justify-center items-center">
         <div>
-          <Formula
-            formula={`f(x) = a\\left(x-x_1\\right)\\left(x-x_2\\right)`}
-          />
-          <div className="flex flex-wrap ml-2 my-2 justify-center">
-            gdy Δ &gt; 0
-          </div>
+          <Formula formula={quadraticEquations.FACTORIAL_FORM_2} styles="min-w-[210px]" />
+          <div className="flex flex-wrap ml-2 my-2 justify-center">gdy Δ &gt; 0</div>
         </div>
         <div>
-          <Formula formula={`f(x) = a\\left(x-x_0\\right)^2`} />
+          <Formula formula={quadraticEquations.FACTORIAL_FORM_1} styles="min-w-[145px]" />
           <div className="flex flex-wrap ml-2 my-2 justify-center">
             gdy Δ = 0
           </div>
         </div>
         <div>
-          <Formula formula={`nie~istnieje`} />
+          <div className="flex justify-center m-4">
+            <p><b>nie istnieje</b></p>
+          </div>
           <div className="flex flex-wrap ml-2 my-2 justify-center">
             gdy Δ &lt; 0
           </div>
         </div>
-        <p>Założenie:</p>
-        <Formula formula={`a \\neq 0`} />
       </div>
+      <p>Założenie:</p>
+      <Formula formula={`a \\neq 0`} />
       <ArticleBorder />
       <p>
         <b>Współczynnik kierunkowy</b> funkcji kwadratowej określa, w którą
@@ -199,20 +165,20 @@ const QuadraticFunctionContent: FC = () => {
         która jest równo odległa od symetralnych punktów o tej samej wartości
         (np miejsc zerowych):
       </p>
-      <Formula formula={`p = \\frac{x_1+x_2}{2}`} />
+      <Formula formula={quadraticEquations.P_arithmetic} />
       <p>Częściej używana postać tego wzoru to:</p>
-      <Formula formula={`p = \\frac{-b}{2a}`} />
-      <Proof steps={pProof} text="Dowód" />
+      <Formula formula={quadraticEquations.P} />
+      <Proof steps={QuadraticFunction_pProof} text="Dowód" styles="min-w-[274px]" />
       <br />
       <p>
         Współrzędna igrekowa wierzchołka jest równa wartości funkcji dla
         argumentu, który jest równo odległy od symetralnych punktów o tej samej
         wartości (np miejsc zerowych):
       </p>
-      <Formula formula={`q = f(p)`} />
+      <Formula formula={quadraticEquations.Q_function} />
       <p>Częściej używana postać tego wzoru to:</p>
-      <Formula formula={`q = \\frac{-\\Delta}{4a}`} />
-      <Proof steps={qProof} text="Dowód" />
+      <Formula formula={quadraticEquations.Q} />
+      <Proof steps={QuadraticFunction_qProof} text="Dowód" styles="min-w-[233px]" />
       <ArticleBorder />
       <p>
         <b>Oś symetrii</b> paraboli to równanie prostej równoległej do osi OY,
@@ -235,18 +201,6 @@ const QuadraticFunctionContent: FC = () => {
         alt="Punkt przecięcia z osią oy"
       />
       <Formula formula={`P_{oy} = (0,c)`} />
-      <ArticleBorder />
-      <b>Rysowanie wykresu funkcji kwadratowej:</b>
-      <p>
-        Aby narysować wykres funkcji kwadratowej najpierw należy wyznaczyć
-        współrzędne wierzchołka paraboli. Następnie trzeba wyznaczyć kilka
-        dowolnych punktów po lewo i prawo od wierzchołka paraboli. Wartości
-        wylicza się poprzez podstawienie wybranego argumentu do wzoru funkcji
-        kwadratowej w dowolnej postaci. Im więcej punktów zostanie wyznaczonych,
-        tym szkic paraboli będzie dokładniejszy. Zalecane jest wyznaczenie
-        punktów przecięcia wykresu funkcji z osią OY oraz OX (przez wyliczenie
-        miejsc zerowych).
-      </p>
     </>
   );
 };
