@@ -6,48 +6,11 @@ import Proof from "../../../../components/articleItems/Proof";
 import skroconeMnozenie from "../../../../assets/images/function-graphs/skroconeMnozenie.png";
 import skroconeMnozenie3 from "../../../../assets/images/function-graphs/skroconeMnozenie3.png";
 import GraphImage from "../../../../components/articleItems/GraphImage";
+import { cubeOfTheDifference, cubeOfTheSum, differenceOfCubes, differenceOfSquares, squareOfTheDifference, squareOfTheSum, sumOfCubes } from "../../../../types/proofs";
+import { shortmultiplicationFormulas } from "../../../../types/equations";
 
 const ShortMultiplicationContent: FC = () => {
-  const squareOfTheSum = [
-    "(a + b)^2",
-    "(a + b)(a + b)",
-    "a^2+ab+ab+b^2",
-    "a^2+2ab+b^2",
-  ];
-  const squareOfTheDifference = [
-    "(a - b)^2",
-    "(a - b)(a - b)",
-    "a^2-ab-ab+b^2",
-    "a^2-2ab+b^2",
-  ];
-  const differenceOfSquares = ["(a - b)(a + b)", "a^2+ab-ab-b^2", "a^2-b^2"];
-  const cubeOfTheSum = [
-    "(a + b)^3",
-    "(a + b)(a^2 + 2ab + b^2)",
-    "a(a^2) + a(2ab) + a(b^2) + b(a^2) + b(2ab) + b(b^2)",
-    "a^3 + 2a^2b + ab^2 + a^2b + 2ab^2 + b^3",
-    "a^3 + 3a^2b + 3ab^2 + b^3",
-  ];
-  const cubeOfTheDifference = [
-    "(a - b)^3",
-    "(a - b)(a^2 - 2ab + b^2)",
-    "a(a^2) + a(-2ab) + a(b^2) - b(a^2) - b(-2ab) + b(b^2)",
-    "a^3 - 2ab^2 + a^2b - a^2b + 2ab^2 + b^3",
-    "a^3 - 3a^2b + 3ab^2 - b^3",
-  ];
-  const sumOfCubes = [
-    "(a + b)(a^2 - ab + b^2)",
-    "a(a^2) + a(-ab) + a(b^2) + b(a^2) + b(-ab) + b(b^2)",
-    "a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3",
-    "a^3 + b^3",
-  ];
 
-  const differenceOfCubes = [
-    "(a - b)(a^2 + ab + b^2)",
-    "a(a^2) + a(ab) + a(b^2) - b(a^2) - b(ab) - b(b^2)",
-    "a^3 + a^2b + ab^2 - a^2b - ab^2 - b^3",
-    "a^3 - b^3",
-  ];
 
   return (
     <>
@@ -55,9 +18,8 @@ const ShortMultiplicationContent: FC = () => {
         <Title text={"Wzory skróconego mnożenia"} type={"main-article"} />
         <p>
           <b>Wzory skróconego mnożenia</b> to proste formuły matematyczne, które
-          pozwalają skrócić czas obliczeń.
+          mają na celu skrócić czas liczenia iloczynów sum algebraicznych przez celowe pomijanie tych działań, które w końcowym rezultacie i tak ulegają redukcji.
         </p>
-        <br />
         <ArticleBorder />
         <Title
           text={"Wzory skróconego mnożenia stopnia drugiego"}
@@ -66,20 +28,20 @@ const ShortMultiplicationContent: FC = () => {
         <p>
           <b>Kwadrat sumy:</b>
         </p>
-        <Formula formula="(a + b)^2 = a^2 + 2ab + b^2" />
-        <Proof steps={squareOfTheSum} text={"Dowód"} />
+        <Formula formula={shortmultiplicationFormulas.SQUARE_OF_THE_SUM} styles="min-w-[230px]" />
+        <Proof steps={squareOfTheSum} text={"Dowód"} styles="min-w-[170px]" />
         <br />
         <p>
           <b>Kwadrat różnicy:</b>
         </p>
-        <Formula formula="(a - b)^2 = a^2 - 2ab + b^2" />
-        <Proof steps={squareOfTheDifference} text={"Dowód"} />
+        <Formula formula={shortmultiplicationFormulas.SQUARE_OF_THE_DIFFERENCE} styles="min-w-[230px]" />
+        <Proof steps={squareOfTheDifference} text={"Dowód"} styles="min-w-[170px]" />
         <br />
         <p>
           <b>Różnica kwadratów</b>
         </p>
-        <Formula formula="a^2 - b^2 = (a - b)(a + b)" />
-        <Proof steps={differenceOfSquares} text={"Dowód"} />
+        <Formula formula={shortmultiplicationFormulas.DIFFERENCE_OF_SQUARES} styles="min-w-[230px]" />
+        <Proof steps={differenceOfSquares} text={"Dowód"} styles="min-w-[170px]" />
         <ArticleBorder />
         <p>
           Wzór skróconego mnożenia na kwadrat sumy można przedstawić graficznie:
@@ -89,7 +51,7 @@ const ShortMultiplicationContent: FC = () => {
           alt="Graficzne przedstawienie kwadratu sumy"
           size="smaller"
         />
-        <Formula formula="(a + b)^2 = a^2 + 2ab + b^2" />
+        <Formula formula={shortmultiplicationFormulas.SQUARE_OF_THE_SUM} styles="min-w-[230px]" />
         <ArticleBorder />
         <Title
           text={"Wzory skróconego mnożenia stopnia trzeciego"}
@@ -98,26 +60,26 @@ const ShortMultiplicationContent: FC = () => {
         <p>
           <b>Sześcian sumy:</b>
         </p>
-        <Formula formula="(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3" />
-        <Proof steps={cubeOfTheSum} text={"Dowód"} />
+        <Formula formula={shortmultiplicationFormulas.CUBE_OF_THE_SUM} styles="min-w-[280px]" />
+        <Proof steps={cubeOfTheSum} text={"Dowód"} styles="min-w-[390px]" />
         <br />
         <p>
           <b>Sześcian różnicy:</b>
         </p>
-        <Formula formula="(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3" />
-        <Proof steps={cubeOfTheDifference} text={"Dowód"} />
+        <Formula formula={shortmultiplicationFormulas.CUBE_OF_THE_DIFFERENCE} styles="min-w-[280px]" />
+        <Proof steps={cubeOfTheDifference} text={"Dowód"} styles="min-w-[420px]" />
         <br />
         <p>
           <b>Suma sześcianów:</b>
         </p>
-        <Formula formula="a^3 + b^3 = (a + b)(a^2 - ab + b^2)" />
-        <Proof steps={sumOfCubes} text={"Dowód"} />
+        <Formula formula={shortmultiplicationFormulas.SUM_OF_CUBES} styles="min-w-[280px]" />
+        <Proof steps={sumOfCubes} text={"Dowód"} styles="min-w-[420px]" />
         <br />
         <p>
           <b>Różnica sześcianów:</b>
         </p>
-        <Formula formula="a^3 - b^3 = (a - b)(a^2 + ab + b^2)" />
-        <Proof steps={differenceOfCubes} text={"Dowód"} />
+        <Formula formula={shortmultiplicationFormulas.DIFFERENCE_OF_CUBES} styles="min-w-[280px]" />
+        <Proof steps={differenceOfCubes} text={"Dowód"} styles="min-w-[390px]" />
         <ArticleBorder />
         <p>
           Wzór skróconego mnożenia na sześcian sumy można przedstawić graficznie:
@@ -127,7 +89,7 @@ const ShortMultiplicationContent: FC = () => {
           alt="Graficzne przedstawienie szescianu sumy"
           size="smaller"
         />
-        <Formula formula="(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3" />
+        <Formula formula={shortmultiplicationFormulas.CUBE_OF_THE_SUM} styles="min-w-[280px]" />
         <ArticleBorder />
         <Title
           text={"Wzory skróconego mnożenia dowolnego stopnia naturalnego"}
@@ -136,20 +98,11 @@ const ShortMultiplicationContent: FC = () => {
         <p>
           <b>n-ta potęga sumy:</b>
         </p>
-        <Formula formula="(a + b)^n = \sum_{k=0}^{n}{n \choose k} a^{n-k} b^k" />
-        <p>
-          <b>n-ta potęga różnicy:</b>
-        </p>
-        <Formula formula="(a - b)^n = \sum_{k=0}^{n}{(-1)^k {n \choose k}} a^{n-k} b^k" />
-        <p>
-          <b>Różnica n-tych potęg liczb:</b>
-        </p>
-        <div className="overflow-x-auto">
-          <div className="flex justify-center my-4 min-w-[480px]">
-            <Formula formula="a^n-b^n=\left(a-b\right)\left(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1}\right)" />
-          </div>
-        </div>
-
+        <Formula formula={shortmultiplicationFormulas.NTH_POWER_OF_THE_SUM} styles="min-w-[240px]" />
+        <b>n-ta potęga różnicy:</b>
+        <Formula formula={shortmultiplicationFormulas.NTH_POWER_OF_THE_DIFFERENCE} styles="min-w-[280px]" />
+        <b>Różnica n-tych potęg liczb:</b>
+        <Formula formula={shortmultiplicationFormulas.DIFFERENCE_OF_NTH_POWERS} styles="min-w-[480px]" />
       </div>
     </>
   );

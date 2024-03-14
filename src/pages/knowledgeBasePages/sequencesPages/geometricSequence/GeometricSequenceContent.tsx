@@ -33,7 +33,7 @@ const ArithmeticSequenceContent: FC = () => {
         Wyznaczenie wzoru na n-ty wyraz ciągu nie wymaga znajomości wartości
         wyrazu pierwszego:
       </p>
-      <Formula formula={GeometricSequencesEquations.nthTermOfGeometricSequence2} />
+      <Formula formula={GeometricSequencesEquations.nthTermOfGeometricSequence2} styles="min-w-[150px]" />
       <p>Założenie:</p>
       <Formula formula={`n,k \\in \\mathbb{N_+}`} />
       <Formula formula={`k\\leq n`} />
@@ -44,11 +44,11 @@ const ArithmeticSequenceContent: FC = () => {
       />
       <ArticleBorder />
       <p>Trzy kolejne wyrazy ciągu geometrycznego spełniają zawsze równość:</p>
-      <Formula formula={GeometricSequencesEquations.threeConsecutiveTermsGeometricSequence} />
+      <Formula formula={GeometricSequencesEquations.threeConsecutiveTermsGeometricSequence} styles="min-w-[150px]" />
       <p>Założenie:</p>
       <Formula formula={`n \\in \\mathbb{N_+}`} />
       <Formula formula={`n\\geq 2`} />
-      <Proof steps={geometricThreeConsecutiveTermsProof} text="Dowód" />
+      <Proof steps={geometricThreeConsecutiveTermsProof} text="Dowód" styles="min-w-[220px]" />
     </>
   );
 };

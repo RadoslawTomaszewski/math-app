@@ -1,5 +1,5 @@
 export enum arithmeticSequencesEquations {
-    nthTermOfArithmeticSequence = `a_n=a_1+\\left(n-1\\right)`,
+    nthTermOfArithmeticSequence = `a_n=a_1+\\left(n-1\\right)\\cdot r`,
     nthTermOfArithmeticSequence2 = `a_n=a_k+\\left(n-k\\right)`,
     threeConsecutiveTermsArithmeticSequence = `a_n=\\frac{a_{n-1}+a_{n+1}}{2}`,
 }
@@ -101,4 +101,18 @@ export enum statisticEquations {
     CAUCHY_INEQUALITY = `\\bar{k} \\geq \\bar{a} \\geq \\bar{g} \\geq \\bar{h}`,
     CAUCHY_INEQUALITY_CASE = `\\bar{k} = \\bar{a} = \\bar{g} = \\bar{h}`,
     CAUCHY_INEQUALITY_FULL = `\\sqrt{\\frac{\\left(x_1\\right)^2+\\left(x_2\\right)^2+\\cdots+\\left(x_n\\right)^2}{n}} \\geq \\frac{x_1+x_2+\\cdots+x_n}{n} \\geq  \\sqrt[n]{x_1 \\cdot x_2 \\cdots x_n} \\geq \\frac{n}{\\frac{1}{x_1}+\\frac{1}{x_2}+\\cdots+\\frac{1}{x_n}}`
+}
+
+//Algebraic Expressions
+export enum shortmultiplicationFormulas {
+    SQUARE_OF_THE_SUM = "(a + b)^2 = a^2 + 2ab + b^2",
+    SQUARE_OF_THE_DIFFERENCE = "(a - b)^2 = a^2 - 2ab + b^2",
+    DIFFERENCE_OF_SQUARES = "a^2 - b^2 = (a - b)(a + b)",
+    CUBE_OF_THE_SUM = "(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3",
+    CUBE_OF_THE_DIFFERENCE = "(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3",
+    SUM_OF_CUBES = "a^3 + b^3 = (a + b)(a^2 - ab + b^2)",
+    DIFFERENCE_OF_CUBES = "a^3 - b^3 = (a - b)(a^2 + ab + b^2)",
+    NTH_POWER_OF_THE_SUM = "(a + b)^n = \\sum_{k=0}^{n}{n \\choose k} a^{n-k} b^k",
+    NTH_POWER_OF_THE_DIFFERENCE = "(a - b)^n = \\sum_{k=0}^{n}{(-1)^k {n \\choose k}} a^{n-k} b^k",
+    DIFFERENCE_OF_NTH_POWERS = "a^n-b^n=\\left(a-b\\right)\\left(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1}\\right)"
 }

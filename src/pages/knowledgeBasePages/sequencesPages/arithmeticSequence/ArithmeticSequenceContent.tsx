@@ -19,7 +19,7 @@ const ArithmeticSequenceContent: FC = () => {
       </p>
       <br />
       <p>Wzór na n-ty wyraz ciągu arytmetycznego:</p>
-      <Formula formula={arithmeticSequencesEquations.nthTermOfArithmeticSequence} />
+      <Formula formula={arithmeticSequencesEquations.nthTermOfArithmeticSequence} styles="min-w-[200px]" />
       <p>Założenie:</p>
       <Formula formula={`n \\in \\mathbb{N_+}`} />
       <LegendParagraph
@@ -33,7 +33,7 @@ const ArithmeticSequenceContent: FC = () => {
         Wyznaczenie wzoru na n-ty wyraz ciągu nie wymaga znajomości wartości
         wyrazu pierwszego. Można wykorzystać dowolny wyraz, którego jest znana wartość i kolejność.
       </p>
-      <Formula formula={arithmeticSequencesEquations.nthTermOfArithmeticSequence2} />
+      <Formula formula={arithmeticSequencesEquations.nthTermOfArithmeticSequence2} styles="min-w-[200px]" />
       <p>Założenie:</p>
       <Formula formula={`n,k \\in \\mathbb{N_+}`} />
       <Formula formula={`k\\leq n`} />
@@ -44,11 +44,11 @@ const ArithmeticSequenceContent: FC = () => {
       />
       <ArticleBorder />
       <p>Trzy kolejne wyrazy ciągu arytmetycznego spełniają zawsze równość:</p>
-      <Formula formula={arithmeticSequencesEquations.threeConsecutiveTermsArithmeticSequence} />
+      <Formula formula={arithmeticSequencesEquations.threeConsecutiveTermsArithmeticSequence} styles="min-w-[200px]" />
       <p>Założenie:</p>
       <Formula formula={`n \\in \\mathbb{N_+}`} />
       <Formula formula={`n\\geq 2`} />
-      <Proof steps={arithmeticThreeConsecutiveTermsProof} text="Dowód" />
+      <Proof steps={arithmeticThreeConsecutiveTermsProof} text="Dowód" styles="min-w-[340px]" />
     </>
   );
 };
