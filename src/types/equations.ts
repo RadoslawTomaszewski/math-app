@@ -121,3 +121,9 @@ export enum shortmultiplicationFormulas {
     NTH_POWER_OF_THE_DIFFERENCE = "(a - b)^n = \\sum_{k=0}^{n}{(-1)^k {n \\choose k}} a^{n-k} b^k",
     DIFFERENCE_OF_NTH_POWERS = "a^n-b^n=\\left(a-b\\right)\\left(a^{n-1}+a^{n-2}b+...+ab^{n-2}+b^{n-1}\\right)"
 }
+
+
+//Mathematical Analytics
+export enum mathematicalAnalyticsFormulas {
+    derivedFunctionDefinition = "f'(x_0)=\\lim_{{h \\to 0}} \\frac{f(x + h) - f(x)}{h}"
+}

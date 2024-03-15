@@ -60,6 +60,7 @@ import DeltoidPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles
 import CirclesRelationsPage from "../pages/knowledgeBasePages/planimetryPages/Quadrangles/CirclesRelations/CirclesRelationsPage";
 import ArithmeticPage from "../pages/knowledgeBasePages/arithmeticPages/ArithmeticPage";
 import CoffeePage from "../pages/CoffeePage/CoffeePage";
+import DerivedFunctionPage from "../pages/knowledgeBasePages/mathAnalysisPages/derivedFunction/DerivedFunctionPage";
 
 
 
@@ -103,6 +104,7 @@ export const Router: FC = () => {
                         <Route path="deltoid" element={<DeltoidPage />} />
                         <Route path="kwadrat" element={<SquarePage />} />
                         <Route path="relacja-z-okregiem" element={<CirclesRelationsPage />} />
+                        <Route path="pochodna-funkcji" element={<DerivedFunctionPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
 

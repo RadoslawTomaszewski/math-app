@@ -13,7 +13,7 @@ export default function HomePage() {
       <div className="p-3 justify-center flex flex-col items-center">
         <ArticleWrapper>
           <div className="flex flex-col items-center bg-articleColor">
-            <GraphImage size={"smaller"} src={AutorPhoto} alt="Autor platformy" extraStyle=" p-[2px] bg-black rounded max-h-[300px]" />
+            <GraphImage size={"smaller"} src={AutorPhoto} alt="Autor platformy" styles=" p-[2px] bg-black rounded max-h-[300px]" />
             <Title text="Witam na platformie majza.eu!" type="main-article" />
             <div>
               <p>Jeżeli czytasz ten tekst, oznacza to, że jesteś jednym z pierwszych użytkowników platformy matematycznej majza.eu, której jestem twórcą.
@@ -35,13 +35,9 @@ export default function HomePage() {
               <p>Aktualizacja <NavLink to="kalkulatory/gra-w-zycie"><b>gry w życie</b></NavLink></p>
               <p></p>
               <br />
-              <p className="italic">aktualizacja: 11/03/2024</p>
+              <p className="italic">aktualizacja: 15/03/2024</p>
             </div>
-            <img
-              src={Brand}
-              alt="Logo majza.eu"
-              className="h-[50px] min-w-min mb-3 text-center"
-            />
+            <GraphImage size={"logo"} src={Brand} alt={"Logo majza.eu"} />
           </div>
 
         </ArticleWrapper>

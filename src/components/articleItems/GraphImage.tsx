@@ -1,16 +1,16 @@
 import { FC } from "react";
 
 export interface IGraphImageProps {
-  size: string;
+  size?: string;
   src: string;
   alt: string;
-  extraStyle?: string;
+  styles?: string;
 }
 
-const GraphImage: FC<IGraphImageProps> = ({ size, src, alt, extraStyle }) => {
-  let sizeOption = "";
+const GraphImage: FC<IGraphImageProps> = ({ size, src, alt, styles }) => {
+  let sizeOption = " ";
   let style = "";
-  if (extraStyle) style = " " + extraStyle;
+  if (styles) style = " " + styles;
 
 
   if (size === "big") sizeOption = "max-w-[1000px] align-middle";

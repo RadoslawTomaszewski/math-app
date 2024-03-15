@@ -17,7 +17,7 @@ const Title: FC<ITitleProps> = ({ text, type }) => {
       break;
     case "main-article-smaller":
       classNames =
-        "font-amatic text-3xl font-bold hover:font-borderColor bghover";
+        "font-amatic text-3xl font-bold text-center hover:font-borderColor bghover";
       break;
     case "sidebar-category":
       classNames =

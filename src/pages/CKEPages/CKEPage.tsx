@@ -31,9 +31,6 @@ export default function CKEPage() {
                   <p><b><NavLink to={CKElinks2023.maj2023PP}>Maj 2023 Poziom Podstawowy</NavLink></b></p>
                   <p><b><NavLink to={CKElinks2023.maj2023PR}>Maj 2023 Poziom Rozszerzony</NavLink></b></p>
                 </div>
-
-
-
                 <br />
               </div>
               <div className="FormulaWrapper">
