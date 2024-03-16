@@ -32,6 +32,13 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         ],
     },
     {
+        category: { to: "geometria", text: "Geometria" },
+        links: [
+            { to: "punkt", text: "Punkt" },
+            { to: "prosta", text: "Prosta" },
+        ],
+    },
+    {
         category: { to: "czworokaty", text: "Czworokąty" },
         links: [
             { to: "trapezoid", text: "Trapezoid" },

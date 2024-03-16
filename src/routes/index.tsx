@@ -61,6 +61,8 @@ import CirclesRelationsPage from "../pages/knowledgeBasePages/planimetryPages/Qu
 import ArithmeticPage from "../pages/knowledgeBasePages/arithmeticPages/ArithmeticPage";
 import CoffeePage from "../pages/CoffeePage/CoffeePage";
 import DerivedFunctionPage from "../pages/knowledgeBasePages/mathAnalysisPages/derivedFunction/DerivedFunctionPage";
+import LinePage from "../pages/knowledgeBasePages/geometryPages/LinePage/LinePage";
+import PointPage from "../pages/knowledgeBasePages/geometryPages/PointPage/PointPage";
 
 
 
@@ -93,6 +95,8 @@ export const Router: FC = () => {
                         <Route path="logarytmowanie" element={<LogarithmPage />} />
                         <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
                         <Route path="srednie-liczbowe" element={<AveragesPage />} />
+                        <Route path="prosta" element={<LinePage />} />
+                        <Route path="punkt" element={<PointPage />} />
                         <Route path="czworokaty" element={<QuadranglesPage />} />
                         <Route path="trapezoid" element={<TrapezoidPage />} />
                         <Route path="trapez" element={<TrapeziumPage />} />
