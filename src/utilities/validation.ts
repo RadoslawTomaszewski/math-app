@@ -112,7 +112,7 @@ export const integerRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
       message: "Minimalna wartość to -1000",
     },
     pattern: {
-      value: /^-?\d+$/,
+      value: /^-?[0-9]+$/,
       message: "Wprowadzona wartość musi być liczbą całkowitą",
     },
   },
@@ -126,7 +126,7 @@ export const integerRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
       message: "Minimalna wartość to -1000",
     },
     pattern: {
-      value: /^-?\d+$/,
+      value: /^-?[0-9]+$/,
       message: "Wprowadzona wartość musi być liczbą całkowitą",
     },
   },

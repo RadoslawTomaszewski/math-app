@@ -130,97 +130,84 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                     ))}
                 </div>
                 {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
-                {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (<>
-                    <div className="flex flex-col w-full items-start">
-                        <div className="flex items-start">
-                            <Formula formula={`a=${quadraticFormula.getA()}`} />
-                            <Formula formula={`b=${quadraticFormula.getB()}`} />
-                            <Formula formula={`c=${quadraticFormula.getC()}`} />
-                        </div>
-                    </div>
-                    <div><b>Postać ogólna:</b></div>
-                    <div className="">
-                        <Formula margin="none" formula={quadraticFormula.getStandardForm()} />
+                {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (
+                    <>
+                        <div className="flex items-start overflow-x-auto overflow-y-hidden w-full">
+                            <div className="min-w-[700px]">
+                                <div className="flex flex-row w-full items-start">
+                                    <Formula formula={`a=${quadraticFormula.getA()}`} />
+                                    <Formula formula={`b=${quadraticFormula.getB()}`} />
+                                    <Formula formula={`c=${quadraticFormula.getC()}`} />
+                                </div>
 
-                    </div>
-                    <div className="w-full">
-                        <ArticleBorder />
-                    </div>
-                    <div className="flex flex-col w-full items-start overflow-x-auto">
-                        <div className="flex flex-col items-start w-[700px]">
-                            <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
-                            <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
-                            <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
-                        </div>
-                    </div>
-                    <div><b>Postać kanoniczna:</b></div>
-                    <div className="flex flex-col w-full text-center overflow-x-auto">
-                        <div className="w-[700px] overflow-auto">
-                            <Formula formula={quadraticFormula.getCanonicalForm()} />
-                        </div>
-                    </div>
-                    <div className="w-full">
-                        <ArticleBorder />
-                    </div>
-                    <div className="flex flex-col w-full items-start overflow-x-auto">
-                        <div className="flex flex-col items-start w-[700px] overflow-x-auto">
-                            <>
-                                <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
-                                {quadraticFormula.getDelta() > 0 &&
-                                    <>
-                                        <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
-                                        <Formula formula={`${quadraticEquations.X1}=${quadraticFormula.getX1Calculations()}`} />
-                                        <Formula formula={`${quadraticEquations.X2}=${quadraticFormula.getX2Calculations()}`} />
-                                    </>
-                                }
-                                {quadraticFormula.getDelta() === 0 &&
-                                    <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
-                                }
-                            </>
-                        </div>
-                    </div>
-                    <div><b>Postać iloczynowa:</b></div>
-                    <div className="flex flex-col w-full justify-center text-center overflow-x-auto">
-                        {quadraticFormula.getDelta() < 0 &&
-                            <div className="overflow-y-hidden">
-                                <span>{quadraticFormula.getFactoredForm()}</span>
+                                <div className="flex flex-col w-full items-start md:items-center">
+                                    <div><b>Postać ogólna:</b></div>
+                                    <Formula formula={quadraticFormula.getStandardForm()} />
+                                </div>
+                                <div className="w-full">
+                                    <ArticleBorder />
+                                </div>
+                                <div className="flex flex-col w-full items-start overflow-x-auto">
+                                    <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
+                                    <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
+                                    <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
+                                </div>
+                                <div className="flex flex-col w-full items-start md:items-center">
+                                    <div><b>Postać kanoniczna:</b></div>
+                                    <Formula formula={quadraticFormula.getCanonicalForm()} />
+                                </div>
+                                <div className="w-full">
+                                    <ArticleBorder />
+                                </div>
+                                <div className="flex flex-col w-full items-start">
+                                    <div className="flex flex-col items-start">
+                                        <>
+                                            <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
+                                            {quadraticFormula.getDelta() > 0 &&
+                                                <>
+                                                    <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
+                                                    <Formula formula={`${quadraticEquations.X1}=${quadraticFormula.getX1Calculations()}`} />
+                                                    <Formula formula={`${quadraticEquations.X2}=${quadraticFormula.getX2Calculations()}`} />
+                                                </>
+                                            }
+                                            {quadraticFormula.getDelta() === 0 &&
+                                                <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
+                                            }
+                                        </>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col w-full items-start md:items-center">
+                                    <div><b>Postać iloczynowa:</b></div>
+                                    {quadraticFormula.getDelta() < 0 &&
+                                        <span>{quadraticFormula.getFactoredForm()}</span>
+                                    }
+                                    {quadraticFormula.getDelta() === 0 &&
+                                        <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                    }
+                                    {quadraticFormula.getDelta() > 0 &&
+                                        <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
+                                    }
+                                </div>
                             </div>
-                        }
-
-                        {quadraticFormula.getDelta() === 0 &&
-                            <div className="w-[700px] overflow-x-auto">
-                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                            </div>
-                        }
-                        {quadraticFormula.getDelta() > 0 &&
-                            <div className="w-[700px] overflow-x-auto">
-                                <Formula formula={`${quadraticFormula.getFactoredForm()}`} />
-                            </div>
-                        }
-                    </div>
-
-                    <div className="w-full">
-                        <ArticleBorder />
-                        {showGraph && (
-                            <>
-                                {loading && <Loader />}
-                                <div id="graph-container" />
-                            </>
-                        )}
-                    </div>
-                    <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
-                        {showGraph ? 'odśwież wykres' : 'generuj wykres'}
-                    </button>
-                    <div className="flex flex-col">
-                        <span>Znane problemy:</span>
-                        <span><b>problem 01:</b> Nieoptymalne wyświetlanie postaci kanonicznej, gdy a=-1 - Naprawione, faza testów</span>
-                        <span><b>problem 02:</b> W niektórych postaciach iloczynowych możliwa jest redukcja nawiasów</span>
-                        <span><b>problem 03:</b> Gdy c=0 postać iloczynowa powinna wyświetlać x zamiast x-0</span>
-                        <br />
-                        <span>Znalazłeś błąd? Daj mi o tym znać!
-                            <br /> e-mail: rtomaszewski.ck@gmail.com</span>
-                    </div>
-                </>)}
+                        </div>
+                        <div className="w-full">
+                            <ArticleBorder />
+                            {showGraph && (
+                                <>
+                                    {loading && <Loader />}
+                                    <div id="graph-container" />
+                                </>
+                            )}
+                        </div>
+                        <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
+                            {showGraph ? 'odśwież wykres' : 'generuj wykres'}
+                        </button>
+                        <div className="flex flex-col">
+                            <span>Znalazłeś błąd? Daj mi o tym znać!
+                                <br /> e-mail: rtomaszewski@majza.eu
+                            </span>
+                        </div>
+                    </>)}
             </form >
         </>
     );

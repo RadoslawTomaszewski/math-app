@@ -9,9 +9,30 @@ declare global {
   }
 }
 
+declare global {
+  interface Window {
+    MathJax: any;
+  }
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+window.MathJax = {
+  loader: { load: ["[tex]/cases"] },
+  tex: { packages: { "[+]": ["cases"] } },
+};
+
+window.MathJax = {
+  tex: {
+    autoload: {
+      cases: [[], ['numcases', 'subnumcases']]
+    }
+  }
+};
+
+
 root.render(
   <React.StrictMode>
     <App />

@@ -30,9 +30,9 @@ class IrrationalSumDividedByInt {
 
 
     constructor(private nominator: IrrationalSum, private denominator: number) {
-        this.setSign();
         this.checkIsFraction();
         this.checkIsFirstInteger();
+        this.setSign();
         if (this.isFraction) {
             this.setFractionResult();
         }
@@ -75,7 +75,10 @@ class IrrationalSumDividedByInt {
             this.isPositive = false;
             this.sign = "-";
         }
-        this.isPositive = true;
+        else {
+            this.isPositive = true;
+            this.sign = "";
+        }
     }
     private checkIsFraction() {
         if (!this.nominator.getIsIrrational()) {
@@ -123,11 +126,11 @@ class IrrationalSumDividedByInt {
             this.reducedForm = this.firstIntegerEqualZeroResult;
             return;
         }
-
         let resultNominatorA = `${Math.abs(this.commonFactorIrrSumDivByCommonFactor)}`;
         if (Math.abs(this.commonFactorIrrSumDivByCommonFactor) === 1) resultNominatorA = ``;
 
         let resultNominatorB = `\\left(${this.nominator.getRoundBracketValuesFromProductForm()}\\right)`;
+
 
         if (Math.abs(this.commonFactorIrrSumDivByCommonFactor) === 1) {
             resultNominatorA = ``;
@@ -135,7 +138,11 @@ class IrrationalSumDividedByInt {
         }
         const resultDenominator = `${Math.abs(this.denominatorDivByCommonFactor)}`;
         this.reducedForm = `${this.sign}\\frac{${resultNominatorA}${resultNominatorB}}{${resultDenominator}}`;
-        if (Math.abs(this.denominatorDivByCommonFactor) === 1) this.reducedForm = `${this.sign}${resultNominatorA}${resultNominatorB}`;
+        this.absReducedForm = `\\frac{${resultNominatorA}${resultNominatorB}}{${resultDenominator}}`;
+        if (Math.abs(this.denominatorDivByCommonFactor) === 1) {
+            this.reducedForm = `${this.sign}${resultNominatorA}${resultNominatorB}`;
+            this.absReducedForm = `${resultNominatorA}${resultNominatorB}`;
+        }
     }
     getCalculations(): string {
         const substNominator = this.nominator.getProductForm();
@@ -151,6 +158,9 @@ class IrrationalSumDividedByInt {
     getResultString(): string {
         if (this.isFraction) return this.fractionResult.getFractionString()
         return this.reducedForm;
+    }
+    getAbsResultString(): string {
+        return this.absReducedForm;
     }
     getResult(): number[] {
         return this.results;

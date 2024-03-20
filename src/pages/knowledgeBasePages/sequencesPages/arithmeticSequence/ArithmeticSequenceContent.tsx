@@ -17,7 +17,14 @@ const ArithmeticSequenceContent: FC = () => {
         <b>Ciąg arytmetyczny</b> to ciąg liczb, którego każdy kolejny wyraz
         różni się od poprzedniego o stałą wartość nazywaną <b>różnicą</b>.
       </p>
-      <br />
+      <ArticleBorder />
+      <p>Rekurencyjna definicja ciągu arytmetycznego:</p>
+      <Formula formula={`  f(n) =
+\\begin{cases}
+n/2,  & \\text{if $n$ is even} \\\
+3n+1, & \\text{if $n$ is odd}
+\\end{cases}`} styles="min-w-[200px]" />
+      <ArticleBorder />
       <p>Wzór na n-ty wyraz ciągu arytmetycznego:</p>
       <Formula formula={arithmeticSequencesEquations.nthTermOfArithmeticSequence} styles="min-w-[200px]" />
       <p>Założenie:</p>
