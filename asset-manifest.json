@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/math-app/static/css/main.cdca735d.css",
-    "main.js": "/math-app/static/js/main.29e47d79.js",
+    "main.css": "/math-app/static/css/main.606341ff.css",
+    "main.js": "/math-app/static/js/main.85e925d8.js",
     "static/media/ja.jpg": "/math-app/static/media/ja.78239a2b4e38c80ee355.jpg",
     "static/media/karta_wzorow_2023.png": "/math-app/static/media/karta_wzorow_2023.15fbc1c67414d470b39b.png",
     "static/media/cyclingTrapezoid_diagonals.png": "/math-app/static/media/cyclingTrapezoid_diagonals.7f2f91021de02e5e112b.png",
     "static/media/Ptolemeus_theory.png": "/math-app/static/media/Ptolemeus_theory.83492a618daef5aed130.png",
+    "static/media/tangent.png": "/math-app/static/media/tangent.886edbf6b474762037ee.png",
     "static/media/trapezoid_in_circle_2.png": "/math-app/static/media/trapezoid_in_circle_2.01bb288c41456e780db3.png",
     "static/media/trapezoid_on_circle_2.png": "/math-app/static/media/trapezoid_on_circle_2.6a76e8f958efaeb5e24b.png",
     "static/media/karta_wzorow_2015.png": "/math-app/static/media/karta_wzorow_2015.2c89a20a56d36609de70.png",
+    "static/media/bisection.png": "/math-app/static/media/bisection.4fb2e8de84c7be8153ee.png",
     "static/media/tangentialTrapezoid_Trapezium_1.png": "/math-app/static/media/tangentialTrapezoid_Trapezium_1.f03c11d6e26c8b8dc946.png",
     "static/media/cyclingTrapezoid_Irregular.png": "/math-app/static/media/cyclingTrapezoid_Irregular.0ca78e0c6c57cb9f4f34.png",
+    "static/media/derived_definition.png": "/math-app/static/media/derived_definition.03362aa0a088ba3f16f4.png",
     "static/media/Quadrangles_02.png": "/math-app/static/media/Quadrangles_02.3e8788ad3810aa57ee5f.png",
     "static/media/deltoid_2.png": "/math-app/static/media/deltoid_2.3649b4f68f3345fc17e2.png",
     "static/media/trapezoid_on_circle.png": "/math-app/static/media/trapezoid_on_circle.a0f6e33817733c560698.png",
@@ -23,8 +26,10 @@
     "static/media/Parallelogram_angles.png": "/math-app/static/media/Parallelogram_angles.20d7f5a7622097a0aeca.png",
     "static/media/deltoid.png": "/math-app/static/media/deltoid.c4d81710387c544a7de4.png",
     "static/media/tangentialTrapezoid_TrapeziumRegular.png": "/math-app/static/media/tangentialTrapezoid_TrapeziumRegular.9e29fc41edef0608c382.png",
+    "static/media/normal.png": "/math-app/static/media/normal.47b5c1f44de785ee64ad.png",
     "static/media/liniowa-rosnaca.png": "/math-app/static/media/liniowa-rosnaca.8f0e780db42564fc3bbe.png",
     "static/media/liniowa-malejaca.png": "/math-app/static/media/liniowa-malejaca.4da2dafc01e009e5f6d1.png",
+    "static/media/secant.png": "/math-app/static/media/secant.8371f96290f4a996d526.png",
     "static/media/Parallelogram.png": "/math-app/static/media/Parallelogram.566b5b696c686d7641c7.png",
     "static/media/cyclingTrapezoid_Trapezium.png": "/math-app/static/media/cyclingTrapezoid_Trapezium.60c3f0fe2d9b325cbc4b.png",
     "static/media/tangentialTrapezoid_Rhombus.png": "/math-app/static/media/tangentialTrapezoid_Rhombus.0a0c4aa079c5709e8105.png",
@@ -64,15 +69,16 @@
     "static/media/a_without_b.png": "/math-app/static/media/a_without_b.725a45fb4e87395cf226.png",
     "static/media/default.png": "/math-app/static/media/default.25cd94ffe7b021fa3074.png",
     "static/media/thank-you.svg": "/math-app/static/media/thank-you.59f794f34a0f8524b4e2df4124843dc0.svg",
+    "static/media/line.png": "/math-app/static/media/line.577c50728349b53088ca.png",
     "index.html": "/math-app/index.html",
     "static/media/hamburger.svg": "/math-app/static/media/hamburger.7576218048312e9d9b62930754a442fc.svg",
     "static/media/collapse.svg": "/math-app/static/media/collapse.97df82e42da318bcb078f235f40e3667.svg",
     "static/media/expand.svg": "/math-app/static/media/expand.2c5304edd483172cd4090c38ad75a99c.svg",
-    "main.cdca735d.css.map": "/math-app/static/css/main.cdca735d.css.map",
-    "main.29e47d79.js.map": "/math-app/static/js/main.29e47d79.js.map"
+    "main.606341ff.css.map": "/math-app/static/css/main.606341ff.css.map",
+    "main.85e925d8.js.map": "/math-app/static/js/main.85e925d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdca735d.css",
-    "static/js/main.29e47d79.js"
+    "static/css/main.606341ff.css",
+    "static/js/main.85e925d8.js"
   ]
 }
