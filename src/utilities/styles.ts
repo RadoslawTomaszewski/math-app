@@ -6,7 +6,7 @@ export const InputShortNumberStyle = "m-2 text-center w-[90px] font-math bg-arti
 
 export const InputNaturalNumberStyle = "m-2 text-center w-[150px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
 
-export const InputCoefficientStyle = "text-center w-[60px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
+export const InputCoefficientStyle = "text-center w-[60px] font-math bg-articleColor border-2 mx-1 border-black rounded appearance-none focus:outline-none";
 
 export const InputNaturalNumbersStyle = "m-2 flex w-[150px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
 

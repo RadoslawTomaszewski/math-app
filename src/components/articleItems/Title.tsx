@@ -17,7 +17,7 @@ const Title: FC<ITitleProps> = ({ text, type }) => {
       break;
     case "main-article-smaller":
       classNames =
-        "font-amatic text-3xl font-bold text-center hover:font-borderColor bghover";
+        "font-amatic text-3xl font-bold text-center hover:font-borderColor title-with-underline-animation";
       break;
     case "sidebar-category":
       classNames =
@@ -25,11 +25,11 @@ const Title: FC<ITitleProps> = ({ text, type }) => {
       break;
     case "sidebar-link":
       classNames =
-        "font-amatic text-2xl mx-2 font-bold hover:font-borderColor bghover";
+        "font-amatic text-2xl mx-2 font-bold hover:font-borderColor title-with-underline-animation";
       break;
     case "mainpage-link":
       classNames =
-        "font-amatic text-2xl font-bold hover:font-borderColor bghover";
+        "font-amatic text-2xl font-bold hover:font-borderColor title-with-underline-animation";
       break;
 
     default:

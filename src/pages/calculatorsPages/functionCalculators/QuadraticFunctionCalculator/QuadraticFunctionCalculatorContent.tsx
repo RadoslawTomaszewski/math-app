@@ -8,6 +8,7 @@ import QuadraticFormula from "../../../../types/objects/QuadraticFormula/Quadrat
 import { integerRegisterOptions } from "../../../../utilities/validation";
 import { quadraticEquations } from "../../../../types/equations";
 import Loader from "../../../../components/Loader/Loader";
+import { NavLink } from "react-router-dom";
 
 interface FormData {
     a: string;
@@ -91,28 +92,36 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                 <div className="flex justify-center w-full">
                     <label className="flex pt-4 flex-col flex-wrap items-center">
                         <span className="text-wrap">Wprowadź współczynniki funkcji kwadratowej:</span>
-                        <div className="InputsWrapper flex flex-row items-end mt-2">
-                            <div className="mx-1"><b>f(x)=</b></div>
-                            <input
-                                className={InputCoefficientStyle}
-                                type="number"
-                                {...register("a", integerRegisterOptions.coefficientNotZero)}
-                                onChange={handleInputChange}
-                            />
-                            <div className="mx-1"><b>x<sup>2</sup> +</b></div>
-                            <input
-                                className={InputCoefficientStyle}
-                                type="number"
-                                {...register("b", integerRegisterOptions.coefficient)}
-                                onChange={handleInputChange}
-                            />
-                            <div className="mx-1"><b>x +</b></div>
-                            <input
-                                className={InputCoefficientStyle}
-                                type="number"
-                                {...register("c", integerRegisterOptions.coefficient)}
-                                onChange={handleInputChange}
-                            />
+                        <div className="InputsWrapper flex flex-row flex-wrap items-end mt-2">
+                            <div>
+                                <span><b>f(x)&nbsp;=</b></span>
+                                <input
+                                    className={InputCoefficientStyle}
+                                    type="number"
+                                    {...register("a", integerRegisterOptions.coefficientNotZero)}
+                                    onChange={handleInputChange}
+                                />
+                                <span><b>x<sup>2</sup></b>&nbsp;</span>
+                            </div>
+                            <div>
+                                <span><b>+</b></span>
+                                <input
+                                    className={InputCoefficientStyle}
+                                    type="number"
+                                    {...register("b", integerRegisterOptions.coefficient)}
+                                    onChange={handleInputChange}
+                                />
+                                <span><b>x&nbsp;</b></span>
+                            </div>
+                            <div>
+                                <span><b>+</b></span>
+                                <input
+                                    className={InputCoefficientStyle}
+                                    type="number"
+                                    {...register("c", integerRegisterOptions.coefficient)}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
                         </div>
                     </label>
                 </div>
@@ -203,9 +212,8 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                         </button>
                         <div className="flex flex-col">
-                            <span>Znalazłeś błąd? Daj mi o tym znać!
-                                <br /> e-mail: rtomaszewski@majza.eu
-                            </span>
+                            <span>Nie wiesz co tu się dzieje?</span>
+                            <span> Przeczytaj artykuł o <NavLink to="../../baza-wiedzy/funkcja-kwadratowa"><b>funkcji kwadratowej</b></NavLink></span>
                         </div>
                     </>)}
             </form >

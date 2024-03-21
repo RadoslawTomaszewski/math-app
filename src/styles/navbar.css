@@ -32,7 +32,7 @@
   height: 2px;
   background-color: #071952;
 }
-.bghover {
+.title-with-underline-animation {
   background-image: linear-gradient(to right, #095fad, #095fad 50%, #000 50%);
   background-size: 200% 100%;
   background-position: 100%;
@@ -43,13 +43,13 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.4s ease-in-out;
-  z-index: 100;
+  z-index: 10;
 }
-.bghover:hover {
+.title-with-underline-animation:hover {
   background-position: 0;
-  z-index: 100;
+  z-index: 10;
 }
-.bghover:before {
+.title-with-underline-animation:before {
   content: "";
   background: #095fad;
   display: block;
@@ -59,11 +59,11 @@
   width: 0;
   height: 3px;
   transition: all 0.4s ease-in-out;
-  z-index: 100;
+  z-index: 10;
 }
-.bghover:hover::before {
+.title-with-underline-animation:hover::before {
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 
 @media (max-width: 889px) {

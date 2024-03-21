@@ -70,7 +70,7 @@ const PiNumberContent: FC = () => {
         </p>
         <Formula formula={mathConstants.PI_APPROXIMATION_1} />
         <Formula formula="\pi\approx\frac{333}{106}" />
-        <p>Każdą liczbę, również pi można przedstawić za pomocą nieskończonej serii zagnieżdżonych ułamków - ułamkami ciągłymi</p>
+        <p>Każdą liczbę, również π można przedstawić za pomocą nieskończonej serii zagnieżdżonych ułamków, czyli tzw. <b>ułamków ciągłych.</b></p>
         <Formula formula="\pi\approx 3+\frac{1}{7+\frac{1}{15+\frac{1}{1+\frac{1}{292+\frac{1}{⋱}}}}}" />
       </div>
     </>
