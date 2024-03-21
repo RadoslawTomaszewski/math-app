@@ -49,10 +49,10 @@ export default function HomePage() {
               <p>Rozdział poświęconym <b><NavLink to="baza-wiedzy/czworokaty">czworokątom</NavLink></b></p>
               <p>Aktualizacja <NavLink to="kalkulatory/gra-w-zycie"><b>gry w życie</b></NavLink></p>
               <p>Naprawiony błąd walidacji przy wpisywanej kropce w <NavLink to="kalkulatory/funkcji-kwadratowej"><b>kalkulatorze funkcji kwadratowej</b></NavLink></p>
-              <p>Nowe oznaczenia: <b>CKE PP 2025 / CKE PR 2025 / Extra</b></p>
+              <p>Wprowadzono oznaczenia: <b>CKE PP 2025 / CKE PR 2025 / Extra</b></p>
               <p>Naprawione błędy optymalizacyjne</p>
               <br />
-              <p className="italic">aktualizacja: 20/03/2024</p>
+              <p className="italic">aktualizacja: 21/03/2024</p>
 
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="submain-article" />
