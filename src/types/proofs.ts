@@ -207,7 +207,6 @@ export const derivedOfPowerFunctionNegativeIntegralToMinus2 = [
     "\\lim_{{h \\to 0}} \\frac{- n\\cdot x^{n-1} - {n \\choose 2}\\cdot x^{n-2}\\cdot h - \\cdots+n\\cdot x\\cdot h^{n-2} - h^{n-1}}{(x+h)^n\\cdot x^n}",
     "\\frac{- n\\cdot x^{n-1}}{x^n\\cdot x^n}",
     "\\frac{- n\\cdot x^{n-1}}{x^{2n}}",
-    "\\frac{- n\\cdot x^{n-1}}{x^{2n}}",
     "- n\\cdot x^{n-1-2n}",
     "- n\\cdot x^{-n-1}",
 ];
@@ -229,7 +228,7 @@ export const derivedOfPowerFunctionNegativeIntegralMinus1 = [
 export const derivedOfPowerFunctionNegativeRational = [
     "\\left(x^{\\frac{m}{n}}\\right)'",
     "...",
-    "\\frac{a}{b} \\cdot x^{\\frac{a}{b}-1}",
+    "\\frac{m}{n} \\cdot x^{\\frac{a}{b}-1}",
 ];
 
 export const proofOfTheSumRuleForDerivatives = [
@@ -258,13 +257,12 @@ export const proofOfTheProductRuleForDerivatives = [
     "\\lim_{{h \\to 0}} \\frac{f(x + h) \\cdot g(x + h) - f(x) \\cdot g(x)}{h}",
     "\\lim_{{h \\to 0}} \\frac{f(x + h) \\cdot g(x + h) - f(x) \\cdot g(x) + f(x) \\cdot g(x + h) - f(x) \\cdot g(x + h)}{h}",
     "\\lim_{{h \\to 0}} \\frac{f(x + h) \\cdot g(x + h) - f(x) \\cdot g(x + h) + f(x) \\cdot g(x + h) - f(x) \\cdot g(x)}{h} ",
-    "",
     "\\lim_{{h \\to 0}} \\frac{g(x + h) \\cdot \\left( f\\left(x + h\\right) - f\\left(x\\right)\\right) + f(x) \\cdot \\left(g(x + h) - g(x)\\right)}{h} ",
     "\\lim_{{h \\to 0}} \\left(\\frac{g(x + h) \\cdot \\left( f\\left(x + h\\right) - f\\left(x\\right)\\right)}{h} + \\frac{f(x) \\cdot \\left(g(x + h) - g(x)\\right)}{h}\\right)",
-    "\\lim_{{h \\to 0}} \\frac{g(x + h) \\cdot \\left( f\\left(x + h\\right) - f\\left(x\\right)\\right)}{h} + \\lim_{{h \\to 0}} \\frac{f(x) \\cdot \\left(g(x + h) - g(x)\\right)}{h}",
-    "\\lim_{{h \\to 0}} \\left(\\frac{g(x + h)}{h} \\cdot \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}\\right) + \\lim_{{h \\to 0}} \\left(\\frac{f(x)}{h} \\cdot \\frac{g(x + h) - g(x)}{h}\\right)",
-    "\\lim_{{h \\to 0}} \\left(\\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}\\cdot \\frac{g(x + h)}{h} \\right) + \\lim_{{h \\to 0}} \\left(\\frac{f(x)}{h} \\cdot \\frac{g(x + h) - g(x)}{h}\\right)",
-    "\\lim_{{h \\to 0}} \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}\\cdot \\lim_{{h \\to 0}} \\frac{g(x + h)}{h} + \\lim_{{h \\to 0}} \\frac{f(x)}{h} \\cdot \\lim_{{h \\to 0}} \\frac{g(x + h) - g(x)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{g(x + h) \\cdot \\left( f\\left(x + h\\right) - f\\left(x\\right)\\right)}{h} + \\lim_{{h \\to 0}} \\frac{f(x) \\cdot \\left(g\\left(x + h\\right) - g\\left(x\\right)\\right)}{h}",
+    "\\lim_{{h \\to 0}} \\left(g\\left(x + h\\right) \\cdot \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}\\right) + \\lim_{{h \\to 0}} \\left(f(x) \\cdot \\frac{g(x + h) - g(x)}{h}\\right)",
+    "\\lim_{{h \\to 0}} g\\left(x + h\\right) \\cdot \\lim_{{h \\to 0}} \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h} + \\lim_{{h \\to 0}} f(x) \\cdot \\lim_{{h \\to 0}} \\frac{g(x + h) - g(x)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}  \\cdot  \\lim_{{h \\to 0}} g\\left(x + h\\right) + \\lim_{{h \\to 0}} f(x) \\cdot \\lim_{{h \\to 0}} \\frac{g(x + h) - g(x)}{h}",
     "f'(x) \\cdot g(x) + f(x) \\cdot g'(x)",
 ];
 

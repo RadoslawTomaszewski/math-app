@@ -38,12 +38,14 @@ const DerivedFunctionContent: FC = () => {
                 <Explanation text={"Wyjaśnienie"}>
                     <p className="flex flex-wrap wrap">W kontekście tej definicji należy traktować pochodną funkcji jako wskaźnik tempa przyrostu wartości funkcji w danym punkcie.</p>
                     <p className="mt-2">Aby móc lepiej wyobrazić sobie to pojęcie można posłużyć się wizualizacją tego wskaźnika za pomocą <NavLink to="../prosta"><b>stycznej</b></NavLink> do wykresu funkcji w punkcie,
-                        którą da się wyrazić równaniem <NavLink to="../funkcja-liniowa"><b>prostej w postaci kierunkowej.</b></NavLink></p>
+                        którą da się wyrazić <NavLink to="../funkcja-liniowa"><b>równaniem prostej w postaci kierunkowej.</b></NavLink></p>
                     <br />
                     <p>
                         <b>Styczna</b> jest granicznym momentem <b>siecznej</b> przechodzącej przez dwa punkty, których odległość między nimi dąży do zera. Współrzędne tych punktów można oznaczyć kolejno jako:</p>
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_pointA} />
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_pointB} />
+                    <div className="w-full flex justify-center  flex-wrap">
+                        <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_pointA} styles="min-w-[125px]" />
+                        <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_pointB} styles="min-w-[200px]" />
+                    </div>
                     <p>gdzie <b>h</b> to przyrost argumentu, który zgodnie z powyższymi ustaleniami dąży do zera, co w konsekwencji sprowadza oba punkty do jednego punktu o tych samych współrzędnych.</p>
                     <br />
                     <p>Oba punkty jednak są niezbędne w celu wyznaczenia stopnia <b>nachylenia prostej</b> do osi rzędnych. Im większy stopień nachylenia (potocznie można stwierdzić, że prosta jest bardziej stroma) tym szybszy jest wzrost (lub spadek) wartości funkcji.</p>
@@ -53,15 +55,15 @@ const DerivedFunctionContent: FC = () => {
                     <LegendParagraph type={"short"} notation={"\\alpha"} explanation={"kąt nachylenia prostej do osi rzędnych (OX)"} /><br />
                     <p>Tangens kąta <b>α</b> można wyznaczyć tworząc odpowiedni stosunek przyprostokątnych trójkąta prostokątnego opartego na tych punktach. Długości tych przyprostokątnych są tzw. <b>różniczkami</b>, czyli nieskończenie małymi zmianami danej zmiennej: </p>
                     <Formula formula={mathematicalAnalyticsFormulas.DeltaX} />
-                    <Formula formula={mathematicalAnalyticsFormulas.DeltaY} />
+                    <Formula formula={mathematicalAnalyticsFormulas.DeltaY} styles="min-w-[200px]" />
                     <LegendParagraph type={"top"} notation={"\\Delta x"} explanation={"różniczka zmiennej x"} />
                     <LegendParagraph type={"top"} notation={"\\Delta y"} explanation={"różniczka zmiennej y"} /><br />
                     <p>Zatem tangens kąta <b>α</b> określa równanie, w którym prawa strona równania to tzw. <b>iloraz różnicowy</b>:</p>
                     <Formula formula={mathematicalAnalyticsFormulas.differentaliQuotient} />
                     <p>co prowadzi do postaci:</p>
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_tangens} />
+                    <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_tangens} styles="min-w-[228px]" />
                     <p>Uwzględniając założenie, że <b>h</b> dąży do zera otrzymujemy ostatecznie:</p>
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinitionLong} />
+                    <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinitionLong} styles="min-w-[350px]" />
                 </Explanation>
             </CoreCurriculum>
             <ArticleBorder />
@@ -102,31 +104,31 @@ const DerivedFunctionContent: FC = () => {
                 {/* <Formula formula={`\\left(\\frac{1}{f\\left(x\\right)}\\right)' = -\\frac{f'\\left(x\\right)}{\\left(f\\left(x\\right)\\right)^2}`} /> */}
                 <p>Zakładając, że <b>f(x)</b> oraz <b>g(x)</b> to funkcje różniczkowalne prawdziwe są równania:</p>
                 <p><b>(1) Pochodna sumy funkcji</b></p>
-                <Formula formula={mathematicalAnalyticsFormulas.sumRuleForDerivatives} />
+                <Formula formula={mathematicalAnalyticsFormulas.sumRuleForDerivatives} styles="min-w-[257px]" />
                 <Proof steps={proofOfTheSumRuleForDerivatives} text={"Dowód"} styles="min-w-[400px]" />
                 <p><b>(2) Pochodna różnicy funkcji</b></p>
-                <Formula formula={`\\left(f\\left(x\\right) - g\\left(x\\right)\\right)' = f'\\left(x\\right) - g'\\left(x\\right)`} />
+                <Formula formula={`\\left(f\\left(x\\right) - g\\left(x\\right)\\right)' = f'\\left(x\\right) - g'\\left(x\\right)`} styles="min-w-[257px]" />
                 <Proof steps={proofOfTheDifferenceRuleForDerivatives} text={"Dowód"} styles="min-w-[400px]" />
                 <p><b>(3) Pochodna iloczynu funkcji</b></p>
-                <Formula formula={mathematicalAnalyticsFormulas.productRuleForDerivatives} />
+                <Formula formula={mathematicalAnalyticsFormulas.productRuleForDerivatives} styles="min-w-[350px]" />
                 <Proof steps={proofOfTheProductRuleForDerivatives} text={"Dowód"} styles="min-w-[580px]" />
                 <p><b>(4) Pochodna ilorazu funkcji</b></p>
-                <Formula formula={`\\left(\\frac{f\\left(x\\right)}{g\\left(x\\right)}\\right)' = \\frac{f'\\left(x\\right)\\cdot g\\left(x\\right) - f\\left(x\\right)\\cdot g'\\left(x\\right)}{\\left(g\\left(x\\right)\\right)^2}`} />
+                <Formula formula={`\\left(\\frac{f\\left(x\\right)}{g\\left(x\\right)}\\right)' = \\frac{f'\\left(x\\right)\\cdot g\\left(x\\right) - f\\left(x\\right)\\cdot g'\\left(x\\right)}{\\left(g\\left(x\\right)\\right)^2}`} styles="min-w-[328px]" />
                 <Proof steps={[]} text={"Dowód"} />
                 <p><b>(5) Pochodna funkcji złożonej (reguła łańcucha)</b></p>
-                <Formula formula={`\\left(f\\left(g\\left(x\\right)\\right)\\right)' = f'\\left(g\\left(x\\right)\\right)\\cdot g'\\left(x\\right)`} />
+                <Formula formula={`\\left(f\\left(g\\left(x\\right)\\right)\\right)' = f'\\left(g\\left(x\\right)\\right)\\cdot g'\\left(x\\right)`} styles="min-w-[240px]" />
                 <Proof steps={[]} text={"Dowód"} />
             </CoreCurriculum>
             <ArticleBorder />
             <Title text={"Równanie stycznej do funkcji w punkcie"} type={"main-article"} />
             <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
                 <p>Na początku tego artykułu został zdefiniowany sposób wyznaczania współczynnika kierunkowego równania stycznej (funkcji liniowej) do wykresu funkcji w wybranym punkcie. Wyznaczenie <b>wyrazu wolnego</b>, w przypadku podanych współczynnika kierunkowego oraz punktu należącego do tej prostej, jest już stosunkowo proste:</p>
-                <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction_b} />
+                <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction_b} styles="min-w-[185px]" />
                 <Proof steps={proofOfEquationOfTheTangentToFunction_b} text={"Dowód"} styles="min-w-[185px]" />
                 <p>Po wyznaczeniu współczynnika kierunkowego oraz wyrazu wolnego pozostaje zapisać <b>równanie stycznej do wykresu funkcji w punkcie <b>x<sub>0</sub>:</b></b></p>
-                <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction_2} />
+                <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction_2} styles="min-w-[260px]" />
                 <p>Powyższe równanie można uprościć wyłączając wartość pochodnej dla argumentu <b>x<sub>0</sub></b> przed nawias. Ta forma równania jest w karcie wzorów maturalnych CKE:</p>
-                <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction} />
+                <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction} styles="min-w-[220px]" />
                 <p>Poniższa animacja przedstawia wykres funkcji oraz styczne do tego wykresu w kolejnych punktach.</p>
                 <div className="w-full flex justify-center">
                     <iframe className={iFrameStyle} title={"graph01"} src={"https://www.desmos.com/calculator/m2rfs8wqmw?embed"} width={"500"} height={"500"}></iframe>
