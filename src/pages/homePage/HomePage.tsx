@@ -46,13 +46,9 @@ export default function HomePage() {
               <ArticleBorder />
               <Title text="Co nowego?" type="submain-article" />
               <p>Platforma już jest dostępna pod adresem: <NavLink to="https://www.majza.eu"><b>majza.eu</b></NavLink></p>
-              <p>Rozdział poświęconym <b><NavLink to="baza-wiedzy/czworokaty">czworokątom</NavLink></b></p>
-              <p>Aktualizacja <NavLink to="kalkulatory/gra-w-zycie"><b>gry w życie</b></NavLink></p>
-              <p>Naprawiony błąd walidacji przy wpisywanej kropce w <NavLink to="kalkulatory/funkcji-kwadratowej"><b>kalkulatorze funkcji kwadratowej</b></NavLink></p>
-              <p>Wprowadzono oznaczenia: <b>CKE PP 2025 / CKE PR 2025 / Extra</b></p>
-              <p>Naprawione błędy optymalizacyjne</p>
+              <p>Artykuł o <NavLink to="baza-wiedzy/pochodna-funkcji"><b>pochodnej funkcji</b></NavLink></p>
               <br />
-              <p className="italic">aktualizacja: 21/03/2024</p>
+              <p className="italic">aktualizacja: 23/03/2024</p>
 
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="submain-article" />

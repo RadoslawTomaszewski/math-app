@@ -5,7 +5,6 @@ import Secant from "../../../../assets/images/knowledge_base/geometry/secant.png
 import Line from "../../../../assets/images/knowledge_base/geometry/line.png";
 import Normal from "../../../../assets/images/knowledge_base/geometry/normal.png";
 import Bisection from "../../../../assets/images/knowledge_base/geometry/bisection.png";
-import BisectionGif from "../../../../assets/images/knowledge_base/geometry/Perpendicular_bisector.gif";
 import GraphImage from "../../../../components/articleItems/GraphImage";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 
@@ -23,7 +22,7 @@ const LineContent: FC = () => {
       <p><b>Sieczna</b> - prosta, która przechodzi przez co najmniej dwa punkty leżące na danej krzywej. Odcinek ograniczony tymi punktami nazywa się <b>cięciwą</b>.</p>
       <ArticleBorder />
       <Title text={"Styczna"} type={"submain-article"} />
-      <p><b>Styczna</b> - prosta, która jest granicznym położeniem <b>siecznych</b> przechodzących przez dwa punkty A i A<sub>i</sub>, przy czym odległość między tymi punktami dąży do zera.</p>
+      <p><b>Styczna</b> - prosta, która jest granicznym położeniem <b>siecznych</b> przechodzących przez dwa punkty A i A'<sub>i</sub>, przy czym odległość między tymi punktami dąży do zera.</p>
       <GraphImage size="small" src={Tangent} alt={"Linia prosta"} />
       <ArticleBorder />
       <Title text={"Normalna"} type={"submain-article"} />

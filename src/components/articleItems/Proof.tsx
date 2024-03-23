@@ -37,12 +37,14 @@ const Proof: FC<IProofProps> = ({ steps, text, styles }) => {
       <div>
         {expanded && (
           <ul>
-            <div className="overflow-x-auto ">
-              {steps.map((step, index) => (
-                <li key={index} className={styles ? classNames("flex justify-center my-4 min-w-[1000px]", styles) : "flex justify-center my-4 min-w-[1000px]"}>
-                  <MathComponent tex={step} />
-                </li>
-              ))}
+            <div className="border-2 border-[#000000] bg-[#ffffff] my-2 rounded">
+              <div className="overflow-x-auto ">
+                {steps.map((step, index) => (
+                  <li key={index} className={styles ? classNames("flex justify-center my-4 min-w-[1000px]", styles) : "flex justify-center my-4 min-w-[1000px]"}>
+                    <MathComponent tex={step} />
+                  </li>
+                ))}
+              </div>
             </div>
           </ul>
         )}

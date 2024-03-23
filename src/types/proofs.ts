@@ -162,3 +162,117 @@ export const QuadraticFunction_qProof = [
     `q = \\frac{-\\left(b^2-4ac\\right)}{4a}`,
     `q = \\frac{-\\Delta}{4a}`,
 ];
+
+//Derived Function
+export const derivedOfPowerFunctionNaturalFrom2 = [
+    "\\left(x^n\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{(x +h)^{n} - x ^n}{h}",
+    "\\lim_{{h \\to 0}} \\frac{{n \\choose 0}\\cdot x ^n+{n \\choose 1}\\cdot x ^{n-1}\\cdot h + {n \\choose 2}\\cdot x ^{n-2}\\cdot h^2 + \\cdots +{n \\choose n-1}\\cdot x \\cdot h^{n-1}+{n \\choose n}\\cdot h^{n}-x ^n}{h}",
+    "\\lim_{{h \\to 0}} \\frac{x ^n+n\\cdot x ^{n-1}\\cdot h + {n \\choose 2}\\cdot x ^{n-2}\\cdot h^2 + \\cdots +n\\cdot x \\cdot h^{n-1}+ h^{n}-x ^n}{h}",
+    "\\lim_{{h \\to 0}} \\frac{n\\cdot x ^{n-1}\\cdot h + {n \\choose 2}\\cdot x ^{n-2}\\cdot h^2 + \\cdots +n\\cdot x \\cdot h^{n-1}+ h^{n}}{h}",
+    "\\lim_{{h \\to 0}} \\frac{h\\left( n\\cdot x ^{n-1} + {n \\choose 2}\\cdot x ^{n-2}\\cdot h + \\cdots +n\\cdot x \\cdot h^{n-2}+ h^{n-1}\\right)}{h}",
+    "\\lim_{{h \\to 0}} \\left(n\\cdot x ^{n-1} + {n \\choose 2}\\cdot x ^{n-2}\\cdot h + \\cdots +n\\cdot x \\cdot h^{n-2}+ h^{n-1}\\right)",
+    "n\\cdot x ^{n-1}",
+];
+export const derivedOfPowerFunctionNaturalEqual1 = [
+    "\\left(x^1\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{f(x + h) - f(x)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{(x + h) - x}{h}",
+    "\\lim_{{h \\to 0}} \\frac{h}{h}",
+    "\\lim_{{h \\to 0}} 1",
+    "1",
+    "1 \\cdot 1",
+    "1 \\cdot x^{0}",
+    "1 \\cdot x^{1-1}",
+];
+export const derivedOfPowerFunctionNaturalEqual0 = [
+    "\\left(x^0\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{(x+ h)^0 - x^0}{h}",
+    "\\lim_{{h \\to 0}} \\frac{1-1}{h}",
+    "\\lim_{{h \\to 0}} \\frac{0}{h}",
+    "0",
+    "0\\cdot x^{0-1}",
+];
+export const derivedOfPowerFunctionNegativeIntegralToMinus2 = [
+    "\\left(x^{-n}\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{(x+h)^{-n} - x^{-n}}{h}",
+    "\\lim_{{h \\to 0}} \\frac{\\frac{1}{(x+h)^{n}} - \\frac{1}{x^{n}}}{h}",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\left(\\frac{1}{(x+h)^n} - \\frac{1}{x^n}\\right)\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\left(\\frac{x^n}{(x+h)^n\\cdot x^n} - \\frac{(x+h)^n}{(x+h)^n\\cdot x^n}\\right)\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{x^n-(x+h)^n}{(x+h)^n\\cdot x^n}\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{x^n- \\left({n \\choose 0}\\cdot x^n+{n \\choose 1}\\cdot x^{n-1}\\cdot h+{n \\choose 2}\\cdot x^{n-2}\\cdot h^2+\\cdots+{n \\choose n-1}\\cdot x\\cdot h^{n-1}+{n \\choose n}\\cdot h^{n} \\right)}{(x+h)^n\\cdot x^n}\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{x^n- \\left(x^n+n\\cdot x^{n-1}\\cdot h+{n \\choose 2}\\cdot x^{n-2}\\cdot h^2+\\cdots+n\\cdot x\\cdot h^{n-1}+h^{n} \\right)}{(x+h)^n\\cdot x^n}\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{x^n- x^n - n\\cdot x^{n-1}\\cdot h - {n \\choose 2}\\cdot x^{n-2}\\cdot h^2 - \\cdots+n\\cdot x\\cdot h^{n-1} - h^{n}}{(x+h)^n\\cdot x^n}\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{h\\left(- n\\cdot x^{n-1} - {n \\choose 2}\\cdot x^{n-2}\\cdot h - \\cdots+n\\cdot x\\cdot h^{n-2} - h^{n-1}\\right)}{(x+h)^n\\cdot x^n}\\right)",
+    "\\lim_{{h \\to 0}} \\frac{- n\\cdot x^{n-1} - {n \\choose 2}\\cdot x^{n-2}\\cdot h - \\cdots+n\\cdot x\\cdot h^{n-2} - h^{n-1}}{(x+h)^n\\cdot x^n}",
+    "\\frac{- n\\cdot x^{n-1}}{x^n\\cdot x^n}",
+    "\\frac{- n\\cdot x^{n-1}}{x^{2n}}",
+    "\\frac{- n\\cdot x^{n-1}}{x^{2n}}",
+    "- n\\cdot x^{n-1-2n}",
+    "- n\\cdot x^{-n-1}",
+];
+export const derivedOfPowerFunctionNegativeIntegralMinus1 = [
+    "\\left(x^{-1}\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{(x+h)^{-1} - x^{-1}}{h}",
+    "\\lim_{{h \\to 0}} \\frac{\\frac{1}{x+h} - \\frac{1}{x}}{h}",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\left(\\frac{1}{x+h} - \\frac{1}{x}\\right)\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\left(\\frac{x}{(x+h)\\cdot x} - \\frac{x+h}{(x+h)\\cdot x}\\right)\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{x-(x+h)}{(x+h)\\cdot x}\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{x-x-h}{(x+h)\\cdot x}\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\frac{-h}{(x+h)\\cdot x}\\right)",
+    "\\lim_{{h \\to 0}} \\frac{-1}{(x+h)\\cdot x}",
+    "\\frac{-1}{x\\cdot x}",
+    "-\\frac{1}{x^2}",
+    "-x^{-2}",
+    "- 1\\cdot x^{-1-1}",
+];
+export const derivedOfPowerFunctionNegativeRational = [
+    "\\left(x^{\\frac{m}{n}}\\right)'",
+    "...",
+    "\\frac{a}{b} \\cdot x^{\\frac{a}{b}-1}",
+];
+
+export const proofOfTheSumRuleForDerivatives = [
+    "\\left(f\\left(x\\right) + g\\left(x\\right)\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{\\left(f(x_0 + h) + g(x_0 + h)\\right) - \\left(f(x_0) + g(x_0)\\right)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) + g(x_0 + h) - f(x_0) - g(x_0)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - f(x_0) + g(x_0 + h) - g(x_0)}{h}",
+    "\\lim_{{h \\to 0}} \\left(\\frac{f(x_0 + h) - f(x_0)}{h} + \\frac{g(x_0 + h) - g(x_0)}{h}\\right)",
+    "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - g(x_0)}{h} + \\lim_{{h \\to 0}} \\frac{g(x_0 + h) - g(x_0)}{h}",
+    "f'\\left(x\\right) + g'\\left(x\\right)",
+];
+
+export const proofOfTheDifferenceRuleForDerivatives = [
+    "\\left(f\\left(x\\right) - g\\left(x\\right)\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{\\left(f(x_0 + h) - g(x_0 + h)\\right) - \\left(f(x_0) - g(x_0)\\right)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - g(x_0 + h) - f(x_0) + g(x_0)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - f(x_0) - g(x_0 + h) + g(x_0)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - f(x_0) - \\left(g(x_0 + h) - g(x_0)\\right)}{h}",
+    "\\lim_{{h \\to 0}} \\left(\\frac{f(x_0 + h) - f(x_0)}{h} - \\frac{g(x_0 + h) - g(x_0)}{h}\\right)",
+    "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - g(x_0)}{h} - \\lim_{{h \\to 0}} \\frac{g(x_0 + h) - g(x_0)}{h}",
+    "f'\\left(x\\right) - g'\\left(x\\right)",
+]
+
+export const proofOfTheProductRuleForDerivatives = [
+    "\\left(f\\left(x\\right) \\cdot g\\left(x\\right)\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{f(x + h) \\cdot g(x + h) - f(x) \\cdot g(x)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x + h) \\cdot g(x + h) - f(x) \\cdot g(x) + f(x) \\cdot g(x + h) - f(x) \\cdot g(x + h)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x + h) \\cdot g(x + h) - f(x) \\cdot g(x + h) + f(x) \\cdot g(x + h) - f(x) \\cdot g(x)}{h} ",
+    "",
+    "\\lim_{{h \\to 0}} \\frac{g(x + h) \\cdot \\left( f\\left(x + h\\right) - f\\left(x\\right)\\right) + f(x) \\cdot \\left(g(x + h) - g(x)\\right)}{h} ",
+    "\\lim_{{h \\to 0}} \\left(\\frac{g(x + h) \\cdot \\left( f\\left(x + h\\right) - f\\left(x\\right)\\right)}{h} + \\frac{f(x) \\cdot \\left(g(x + h) - g(x)\\right)}{h}\\right)",
+    "\\lim_{{h \\to 0}} \\frac{g(x + h) \\cdot \\left( f\\left(x + h\\right) - f\\left(x\\right)\\right)}{h} + \\lim_{{h \\to 0}} \\frac{f(x) \\cdot \\left(g(x + h) - g(x)\\right)}{h}",
+    "\\lim_{{h \\to 0}} \\left(\\frac{g(x + h)}{h} \\cdot \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}\\right) + \\lim_{{h \\to 0}} \\left(\\frac{f(x)}{h} \\cdot \\frac{g(x + h) - g(x)}{h}\\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}\\cdot \\frac{g(x + h)}{h} \\right) + \\lim_{{h \\to 0}} \\left(\\frac{f(x)}{h} \\cdot \\frac{g(x + h) - g(x)}{h}\\right)",
+    "\\lim_{{h \\to 0}} \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}\\cdot \\lim_{{h \\to 0}} \\frac{g(x + h)}{h} + \\lim_{{h \\to 0}} \\frac{f(x)}{h} \\cdot \\lim_{{h \\to 0}} \\frac{g(x + h) - g(x)}{h}",
+    "f'(x) \\cdot g(x) + f(x) \\cdot g'(x)",
+];
+
+export const proofOfEquationOfTheTangentToFunction_b = [
+    "f(x)=a\\cdot x+b",
+    "f(x_0)=a\\cdot x_0 +b",
+    "f(x_0)=f'(x_0) \\cdot x_0 +b",
+    "b=f(x_0)-f'(x_0) \\cdot x_0",
+]
+
+

@@ -66,8 +66,8 @@ export enum GeometryEquations {
 export enum linearEquations {
     X0 = "x_0=\\frac{-b}{a}",
     SLOPE = "a=\\tan{\\alpha}",
-
     SLOPE_FORMULA = "f(x)=ax+b",
+
 }
 export enum quadraticEquations {
     DELTA = "\\Delta=b^2-4ac",
@@ -125,5 +125,25 @@ export enum shortmultiplicationFormulas {
 
 //Mathematical Analytics
 export enum mathematicalAnalyticsFormulas {
-    derivedFunctionDefinition = "f'(x_0)=\\lim_{{h \\to 0}} \\frac{f(x + h) - f(x)}{h}"
+    derivedFunctionDefinition = "f'(x_0)=\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - f(x_0)}{h}",
+    derivedFunctionDefinition_tangens = "\\tan{\\alpha}=\\frac{f\\left(x_0+h\\right)-f\\left(x_0\\right)}{h}",
+    derivedFunctionDefinitionLong = "f'\\left(x_0\\right)=a=\\tan{\\alpha}=\\lim_{{h \\to 0}} \\frac{f(x + h) - f(x)}{h}",
+    derivedFunctionDefinition_2 = "f'(x_0)=\\lim_{{x \\to x_0}} \\frac{f(x) - f(x_0)}{x-x_0}",
+    derivedFunctionDefinition_pointA = "A=\\left(x_0,f(x_0)\\right)",
+    derivedFunctionDefinition_pointB = "B=\\left(x_0+h, f\\left(x_0+h\\right)\\right)",
+    DeltaX = "\\Delta x = h",
+    DeltaY = "\\Delta y = f\\left(x_0+h\\right)-f\\left(x_0\\right) ",
+    differentaliQuotient = "\\tan{\\alpha}=\\frac{\\Delta y}{\\Delta x}",
+    derivedOfPowerFunctionReal = "\\left(x^a\\right)'=a\\cdot x^{a-1}",
+    derivedOfPowerFunctionNatural = "\\left(x^n\\right)'=n\\cdot x^{n-1}",
+    derivedOfPowerFunctionNegativeIntegral = "\\left(x^{-n}\\right)'={-n}\\cdot x^{-n-1}",
+    derivedOfPowerFunctionNegativeRational = "\\left(x^{\\frac{m}{n}}\\right)'={\\frac{m}{n}}\\cdot x^{\\frac{m}{n}-1}",
+    sumRuleForDerivatives = "\\left(f\\left(x\\right) + g\\left(x\\right)\\right)' = f'\\left(x\\right) + g'\\left(x\\right)",
+    productRuleForDerivatives = "\\left(f\\left(x\\right)\\cdot g\\left(x\\right)\\right)' = f'\\left(x\\right)\\cdot g\\left(x\\right) + f\\left(x\\right)\\cdot g'\\left(x\\right)",
+    equationOfTheTangentToFunction = "y = f'(x_0)(x - x_0) + f(x_0)",
+    equationOfTheTangentToFunction_2 = "y = f'(x_0)+f(x_0)-f'(x_0) \\cdot x_0",
+    equationOfTheTangentToFunction_b = "b=f(x_0)-f'(x_0) \\cdot x_0",
+    equationOfTheTangentToFunction_a = "a=f'(x_0)",
+
+
 }

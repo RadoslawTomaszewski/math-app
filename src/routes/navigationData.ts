@@ -32,13 +32,6 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         ],
     },
     {
-        category: { to: "geometria", text: "Geometria" },
-        links: [
-            { to: "punkt", text: "Punkt" },
-            { to: "prosta", text: "Prosta" },
-        ],
-    },
-    {
         category: { to: "czworokaty", text: "Czworokąty" },
         links: [
             { to: "trapezoid", text: "Trapezoid" },
@@ -54,17 +47,12 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         ],
     },
     {
-        category: { to: "wyrazenia-algebraiczne", text: "Wyrażenia Algebraiczne" },
+        category: { to: "geometria", text: "Geometria" },
         links: [
-            // { to: "wielomiany", text: "Wielomiany" },
-            { to: "wzory-skroconego-mnozenia", text: "Wzory Skr. Mnożenia" },
-            // { to: "rownania", text: "Równania" },
-            // { to: "nierownosci", text: "Nierówności" },
-            // { to: "uklady-rownan", text: "Układy równań" },
-            // { to: "macierze", text: "Macierze" },
+            { to: "punkt", text: "Punkt" },
+            { to: "prosta", text: "Prosta" },
         ],
     },
-
     {
         category: { to: "funkcje", text: "Funkcje" },
         links: [
@@ -81,6 +69,17 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             // { to: "granica-funkcji", text: "Granica funkcji" },
             // { to: "rozniczkowanie", text: "Różniczkowanie" },
             // { to: "całkowanie", text: "Całkowanie" },
+        ],
+    },
+    {
+        category: { to: "wyrazenia-algebraiczne", text: "Wyrażenia Algebraiczne" },
+        links: [
+            // { to: "wielomiany", text: "Wielomiany" },
+            { to: "wzory-skroconego-mnozenia", text: "Wzory Skr. Mnożenia" },
+            // { to: "rownania", text: "Równania" },
+            // { to: "nierownosci", text: "Nierówności" },
+            // { to: "uklady-rownan", text: "Układy równań" },
+            // { to: "macierze", text: "Macierze" },
         ],
     },
     {
@@ -129,15 +128,15 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             //     { to: "rozklad-hipergeometryczny", text: "Rozkład hipergeometryczny" },
         ],
     },
-    {
-        category: { to: "matematyka-dyskretna", text: "Matematyka Dyskretna" },
-        links: [
-            { to: "kombinacja", text: "Kombinacja" },
-            { to: "permutacja", text: "Permutacja" },
-            { to: "wariacja", text: "Wariacja" },
-            { to: "prawdopodobieństwo", text: "Prawdopodobieństwo" },
-        ],
-    },
+    // {
+    //     category: { to: "matematyka-dyskretna", text: "Matematyka Dyskretna" },
+    //     links: [
+    //         { to: "kombinacja", text: "Kombinacja" },
+    //         { to: "permutacja", text: "Permutacja" },
+    //         { to: "wariacja", text: "Wariacja" },
+    //         { to: "prawdopodobieństwo", text: "Prawdopodobieństwo" },
+    //     ],
+    // },
 
 
     // {
