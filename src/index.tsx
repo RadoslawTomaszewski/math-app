@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import ReactGA from "react-ga4";
 
 declare global {
   interface Window {
@@ -9,28 +10,11 @@ declare global {
   }
 }
 
-declare global {
-  interface Window {
-    MathJax: any;
-  }
-}
+ReactGA.initialize("G-L70M44B3N5")
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-
-window.MathJax = {
-  loader: { load: ["[tex]/cases"] },
-  tex: { packages: { "[+]": ["cases"] } },
-};
-
-window.MathJax = {
-  tex: {
-    autoload: {
-      cases: [[], ['numcases', 'subnumcases']]
-    }
-  }
-};
 
 
 root.render(

@@ -18,7 +18,7 @@ export default function HomePage() {
             <Title text="Witam na platformie majza.eu!" type="main-article" />
             <div>
               <p>Jeżeli czytasz ten tekst, oznacza to, że jesteś jednym z pierwszych użytkowników platformy matematycznej majza.eu, której jestem twórcą.
-                Z racji tego, że projekt jest jeszcze w surowej fazie produkcyjnej znajdziesz tutaj na razie kilka artykułów w bazie wiedzy oraz kalkulatory matematyczne.
+                Z racji tego, że projekt jest jeszcze we wczesnej fazie produkcyjnej znajdziesz tutaj na razie kilka artykułów w bazie wiedzy oraz kalkulatory matematyczne.
                 Z każdym kolejnym tygodniem zawartość serwisu będzie się rozrastać.
               </p>
               <ArticleBorder />
@@ -48,7 +48,7 @@ export default function HomePage() {
               <p>Platforma już jest dostępna pod adresem: <NavLink to="https://www.majza.eu"><b>majza.eu</b></NavLink></p>
               <p>Artykuł o <NavLink to="baza-wiedzy/pochodna-funkcji"><b>pochodnej funkcji</b></NavLink></p>
               <br />
-              <p className="italic">aktualizacja: 23/03/2024</p>
+              <p className="italic">aktualizacja: 26/03/2024</p>
 
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="submain-article" />
