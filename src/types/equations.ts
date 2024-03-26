@@ -137,7 +137,7 @@ export enum mathematicalAnalyticsFormulas {
     derivedOfPowerFunctionReal = "\\left(x^a\\right)'=a\\cdot x^{a-1}",
     derivedOfPowerFunctionNatural = "\\left(x^n\\right)'=n\\cdot x^{n-1}",
     derivedOfPowerFunctionNegativeIntegral = "\\left(x^{-n}\\right)'={-n}\\cdot x^{-n-1}",
-    derivedOfPowerFunctionNegativeRational = "\\left(x^{\\frac{m}{n}}\\right)'={\\frac{m}{n}}\\cdot x^{\\frac{m}{n}-1}",
+    derivedOfPowerFunctionRational = "\\left(x^{\\frac{m}{n}}\\right)'={\\frac{m}{n}}\\cdot x^{\\frac{m}{n}-1}",
     sumRuleForDerivatives = "\\left(f\\left(x\\right) + g\\left(x\\right)\\right)' = f'\\left(x\\right) + g'\\left(x\\right)",
     productRuleForDerivatives = "\\left(f\\left(x\\right)\\cdot g\\left(x\\right)\\right)' = f'\\left(x\\right)\\cdot g\\left(x\\right) + f\\left(x\\right)\\cdot g'\\left(x\\right)",
     equationOfTheTangentToFunction = "y = f'(x_0)(x - x_0) + f(x_0)",

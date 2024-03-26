@@ -31,58 +31,58 @@ export const isoscelesTrapezoidProof = [
 ];
 export const isoscelesTrapezoidLongerSegmentProof = [
     `\\frac{a-b}{2}+b`, `\\frac{a-b}{2}+\\frac{2b}{2}`, `\\frac{a+b}{2}`,
-]
+];
 export const TrapeziumAreaParallelogramProof = [
     GeometryEquations.TrapeziumArea,
     `\\frac{1}{2} \\cdot \\left(a+a\\right) \\cdot h`,
     `\\frac{1}{2} \\cdot 2a \\cdot h`,
     `a \\cdot h`,
-]
+];
 export const TrapeziumAreaRectangleProof = [
     GeometryEquations.RectangleArea,
     `\\frac{1}{2} \\cdot \\left(a+a\\right) \\cdot b`,
     `\\frac{1}{2} \\cdot 2a \\cdot b`,
     `a \\cdot b`,
-]
+];
 export const ParallelogramAreaRectangleProof = [
     GeometryEquations.ParallelogramArea,
     `a \\cdot b \\cdot \\sin 90 ^{\\circ}`,
     `a \\cdot b \\cdot 1`,
     `a \\cdot b`,
-]
+];
 export const TrapeziumAreaSquareProof = [
     GeometryEquations.TrapeziumArea,
     `\\frac{1}{2} \\cdot \\left(a+a\\right) \\cdot a`,
     `\\frac{1}{2} \\cdot 2a \\cdot a`,
     `a^2`,
-]
+];
 export const ParallelogramAreaSquareProof = [
     GeometryEquations.ParallelogramArea,
     `a \\cdot a \\cdot \\sin 90 ^{\\circ}`,
     `a^2 \\cdot 1`,
     `a^2`,
-]
+];
 export const ParallelogramAreaDiamondProof = [
     GeometryEquations.ParallelogramArea,
     `a \\cdot a \\cdot \\sin \\beta`,
     `a^2 \\sin \\beta`,
-]
+];
 export const TrapezoidAreaSquareProof = [
     GeometryEquations.TrapezoidArea,
     `\\frac{1}{2} \\cdot d^2 \\cdot \\sin 90 ^{\\circ}`,
     `\\frac{1}{2} \\cdot d^2 \\cdot 1`,
     `\\frac{1}{2} \\cdot d^2`,
-]
+];
 export const TrapezoidAreaDiamondProof = [
     GeometryEquations.TrapezoidArea,
     `\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot \\sin 90 ^{\\circ}`,
     `\\frac{1}{2} \\cdot d_1 \\cdot d_2 \\cdot 1`,
     `\\frac{1}{2} \\cdot d_1 \\cdot d_2`,
-]
+];
 export const DeltoidAreaProof = [
     `P_5=\\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\gamma + \\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\gamma `,
     `a \\cdot b \\cdot \\sin \\gamma`,
-]
+];
 
 //Algebraic Expressions
 export const squareOfTheSum = [
@@ -225,12 +225,26 @@ export const derivedOfPowerFunctionNegativeIntegralMinus1 = [
     "-x^{-2}",
     "- 1\\cdot x^{-1-1}",
 ];
-export const derivedOfPowerFunctionNegativeRational = [
+export const derivedOfPowerFunctionRational = [
     "\\left(x^{\\frac{m}{n}}\\right)'",
-    "...",
-    "\\frac{m}{n} \\cdot x^{\\frac{a}{b}-1}",
+    "\\lim_{{h \\to 0}} \\frac{(x +h)^{\\frac{m}{n}} - x^{\\frac{m}{n}}}{h}",
+    "\\lim_{{h \\to 0}} \\frac{ - x^{\\frac{m}{n}} + (x +h)^{\\frac{m}{n}}}{h}",
+    "\\lim_{{h \\to 0}} \\frac{- x^{\\frac{m}{n}} + {\\frac{m}{n} \\choose 0}\\cdot x ^{\\frac{m}{n}}+{\\frac{m}{n} \\choose 1}\\cdot x ^{\\frac{m}{n}-1}\\cdot h + {\\frac{m}{n} \\choose 2}\\cdot x ^{\\frac{m}{n}-2}\\cdot h^2 + {\\frac{m}{n} \\choose 3}\\cdot x ^{\\frac{m}{n}-3}\\cdot h^3 + \\cdots}{h}",
+    "\\lim_{{h \\to 0}} \\frac{- x^{\\frac{m}{n}} + x ^{\\frac{m}{n}}+\\frac{m}{n}\\cdot x ^{\\frac{m}{n}-1}\\cdot h + \\frac{\\frac{m}{n}\\left(\\frac{m}{n}-1\\right)}{2!}\\cdot x ^{\\frac{m}{n}-2}\\cdot h^2 + \\frac{\\frac{m}{n}\\left(\\frac{m}{n}-1\\right)\\left(\\frac{m}{n}-2\\right)}{3!}\\cdot x ^{\\frac{m}{n}-3}\\cdot h^3 + \\cdots}{h}",
+    "\\lim_{{h \\to 0}} \\frac{h \\cdot \\left(\\frac{m}{n}\\cdot x ^{\\frac{m}{n}-1} + \\frac{\\frac{m}{n}\\left(\\frac{m}{n}-1\\right)}{2!}\\cdot x ^{\\frac{m}{n}-2}\\cdot h + \\frac{\\frac{m}{n}\\left(\\frac{m}{n}-1\\right)\\left(\\frac{m}{n}-2\\right)}{3!}\\cdot x ^{\\frac{m}{n}-3}\\cdot h^2 + \\cdots \\right)}{h}",
+    "\\lim_{{h \\to 0}} \\left(\\frac{m}{n}\\cdot x ^{\\frac{m}{n}-1} + \\frac{\\frac{m}{n}\\left(\\frac{m}{n}-1\\right)}{2!}\\cdot x ^{\\frac{m}{n}-2}\\cdot h + \\frac{\\frac{m}{n}\\left(\\frac{m}{n}-1\\right)\\left(\\frac{m}{n}-2\\right)}{3!}\\cdot x ^{\\frac{m}{n}-3}\\cdot h^2 + \\cdots\\right)",
+    "\\frac{m}{n} \\cdot x^{\\frac{m}{n}-1}",
 ];
-
+export const derivedOfPowerFunctionReal = [
+    "\\left(x^a\\right)'",
+    "\\left(e^{\\ln{x^a}}\\right)'",
+    "\\left(e^{a \\cdot \\ln{x}}\\right)'",
+    "e^{a \\cdot \\ln{x}} \\cdot \\left(a \\cdot \\ln{x}\\right)'",
+    "e^{\\ln{x^a}} \\cdot a \\cdot \\left(\\ln{x}\\right)'",
+    "x^a \\cdot a \\cdot \\frac{1}{x}",
+    "a \\cdot \\frac{x^a}{x}",
+    "a \\cdot x^{a-1}",
+];
 export const proofOfTheSumRuleForDerivatives = [
     "\\left(f\\left(x\\right) + g\\left(x\\right)\\right)'",
     "\\lim_{{h \\to 0}} \\frac{\\left(f(x_0 + h) + g(x_0 + h)\\right) - \\left(f(x_0) + g(x_0)\\right)}{h}",
@@ -240,7 +254,6 @@ export const proofOfTheSumRuleForDerivatives = [
     "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - g(x_0)}{h} + \\lim_{{h \\to 0}} \\frac{g(x_0 + h) - g(x_0)}{h}",
     "f'\\left(x\\right) + g'\\left(x\\right)",
 ];
-
 export const proofOfTheDifferenceRuleForDerivatives = [
     "\\left(f\\left(x\\right) - g\\left(x\\right)\\right)'",
     "\\lim_{{h \\to 0}} \\frac{\\left(f(x_0 + h) - g(x_0 + h)\\right) - \\left(f(x_0) - g(x_0)\\right)}{h}",
@@ -250,8 +263,7 @@ export const proofOfTheDifferenceRuleForDerivatives = [
     "\\lim_{{h \\to 0}} \\left(\\frac{f(x_0 + h) - f(x_0)}{h} - \\frac{g(x_0 + h) - g(x_0)}{h}\\right)",
     "\\lim_{{h \\to 0}} \\frac{f(x_0 + h) - g(x_0)}{h} - \\lim_{{h \\to 0}} \\frac{g(x_0 + h) - g(x_0)}{h}",
     "f'\\left(x\\right) - g'\\left(x\\right)",
-]
-
+];
 export const proofOfTheProductRuleForDerivatives = [
     "\\left(f\\left(x\\right) \\cdot g\\left(x\\right)\\right)'",
     "\\lim_{{h \\to 0}} \\frac{f(x + h) \\cdot g(x + h) - f(x) \\cdot g(x)}{h}",
@@ -265,12 +277,29 @@ export const proofOfTheProductRuleForDerivatives = [
     "\\lim_{{h \\to 0}} \\frac{f\\left(x + h\\right) - f\\left(x\\right)}{h}  \\cdot  \\lim_{{h \\to 0}} g\\left(x + h\\right) + \\lim_{{h \\to 0}} f(x) \\cdot \\lim_{{h \\to 0}} \\frac{g(x + h) - g(x)}{h}",
     "f'(x) \\cdot g(x) + f(x) \\cdot g'(x)",
 ];
-
+export const proofOfTheQuotientRuleForDerivatives = [
+    "\\left(\\frac{f\\left(x\\right)}{g\\left(x\\right)}\\right)'",
+    "\\lim_{{h \\to 0}} \\frac{\\frac{f(x + h)}{g(x + h)} - \\frac{f(x)}{g(x)}}{h}",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\left( \\frac{f(x + h)}{g(x + h)} - \\frac{f(x)}{g(x)} \\right) \\right)",
+    "\\lim_{{h \\to 0}} \\left(\\frac{1}{h} \\cdot \\left(\\frac{f(x + h)\\cdot g(x)}{g(x + h)\\cdot g(x)} - \\frac{f(x)\\cdot g(x+h)}{g(x+h)\\cdot g(x)}\\right)\\right)",
+    "\\lim_{{h \\to 0}} \\left( \\frac{1}{h} \\cdot \\frac{f(x + h)\\cdot g(x) - f(x)\\cdot g(x+h)}{g(x + h) \\cdot g(x)} \\right)",
+    "\\lim_{{h \\to 0}} \\left( \\frac{1}{h} \\cdot \\frac{f(x + h)\\cdot g(x) - f(x)\\cdot g(x+h) + g(h+x)\\cdot f(x+h)-g(h+x) \\cdot f(x+h)}{g(x + h) \\cdot g(x)} \\right)",
+    "\\lim_{{h \\to 0}} \\left( \\frac{1}{h} \\cdot \\frac{f(x + h)\\cdot g(x) -g(h+x) \\cdot f(x+h) + g(h+x)\\cdot f(x+h) - f(x)\\cdot g(x+h)}{g(x + h) \\cdot g(x)} \\right)",
+    "\\lim_{{h \\to 0}} \\left( \\frac{1}{h} \\cdot \\frac{-f(x + h) \\left( -g(x) + g(h+x) \\right) + g(h+x) \\cdot \\left(f(x+h) - f(x)\\right)}{g(x + h) \\cdot g(x)} \\right)",
+    "\\lim_{{h \\to 0}} \\left( \\frac{1}{h} \\cdot \\left( \\frac{-f(x + h) \\left(g(h+x)-g(x) \\right)}{g(x + h) \\cdot g(x)} + \\frac{g(h+x) \\cdot \\left(f(x+h) - f(x)\\right)}{g(x + h) \\cdot g(x)}\\right) \\right)",
+    "\\lim_{{h \\to 0}} \\left( \\frac{1}{h} \\cdot \\left( \\frac{-f(x + h)}{g(x + h) \\cdot g(x)} \\cdot \\left(g(h+x) -g(x) \\right) + \\frac{g(h+x)}{g(x + h) \\cdot g(x)} \\cdot \\left(f(x+h) - f(x)\\right)\\right) \\right)",
+    "\\lim_{{h \\to 0}} \\left( \\frac{-f(x + h)}{g(x + h) \\cdot g(x)} \\cdot \\frac{g(h+x)-g(x)}{h} + \\frac{g(h+x)}{g(x + h) \\cdot g(x)} \\cdot \\frac{f(x+h) - f(x)}{h}\\right)",
+    "\\lim_{{h \\to 0}} \\frac{-f(x + h)}{g(x + h) \\cdot g(x)} \\cdot \\lim_{{h \\to 0}} \\frac{g(h+x)-g(x)}{h} + \\lim_{{h \\to 0}} \\frac{g(h+x)}{g(x + h) \\cdot g(x)} \\cdot \\lim_{{h \\to 0}} \\frac{f(x+h) - f(x)}{h}",
+    "\\lim_{{h \\to 0}} \\frac{f(x+h) - f(x)}{h} \\cdot \\lim_{{h \\to 0}} \\frac{g(h+x)}{g(x + h) \\cdot g(x)} + \\lim_{{h \\to 0}} \\frac{-f(x + h)}{g(x + h) \\cdot g(x)} \\cdot \\lim_{{h \\to 0}} \\frac{g(h+x)-g(x)}{h}",
+    "f'(x) \\cdot \\frac{g(x)}{\\left(g(x)\\right)^2} + \\frac{-f(x)}{\\left(g(x)\\right)^2} \\cdot g'(x)",
+    "\\frac{f'(x)\\cdot g(x)}{\\left(g(x)\\right)^2} + \\frac{-f(x)\\cdot g'(x)}{\\left(g(x)\\right)^2}",
+    "\\frac{f'(x) \\cdot g(x) - f(x) \\cdot g'(x)}{\\left(g'(x)\\right)^2}",
+];
 export const proofOfEquationOfTheTangentToFunction_b = [
     "f(x)=a\\cdot x+b",
     "f(x_0)=a\\cdot x_0 +b",
     "f(x_0)=f'(x_0) \\cdot x_0 +b",
     "b=f(x_0)-f'(x_0) \\cdot x_0",
-]
+];
 
 
