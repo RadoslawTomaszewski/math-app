@@ -14,9 +14,8 @@ const AdditionContent: FC = () => {
     <>
       <Title text={"Dodawanie"} type={"main-article"} />
       <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
-        <b>Dodawanie</b> to jedno z czterech podstawowych działań arytmetycznych (obok odejmowania, mnożenia i dzielenia).
+        <b>Dodawanie</b> - jedno z czterech podstawowych działań arytmetycznych (obok odejmowania, mnożenia i dzielenia).
         <br />
-        <p>Oznaczenia:</p>
         <Formula formula={`a+b=c`} />
         <LegendParagraph
           type="top"
@@ -46,14 +45,14 @@ const AdditionContent: FC = () => {
         <Proof steps={["\\sum_{i=1}^{4} i^2=1^2+2^2+3^2+4^2=30"]} text={"Przykład"} styles="min-w-[250px]" />
       </CoreCurriculum>
       <ArticleBorder />
+      <Title text={"Aksjomaty dodawania Pean'a"} type={"main-article"} />
       <CoreCurriculum type={CoreCurriculumTypes.extra}>
-        <Title text={"Aksjomaty dodawania Pean'a"} type={"submain-article"} />
         <p>
-          <b>Aksjomat 1.</b> Dla dowolnej liczby naturalnej n suma n i 0 ma być równa n
+          <b>Aksjomat 1.</b> Dla dowolnej liczby naturalnej <b>n</b> suma <b>n</b> i <b>0</b> jest równa <b>n</b>.
         </p>
         <Formula formula="\forall_{n \in \mathbb{N}} \quad n+0=n" styles="min-w-[135px]" />
         <p>
-          <b>Aksjomat 2.</b> Dla dowolnych liczb naturalnych n i m suma n i następnika m ma być równa następnikowi sumy n i m
+          <b>Aksjomat 2.</b> Dla dowolnych liczb naturalnych <b>n</b> i <b>m</b> suma <b>n</b> i następnika <b>m</b> ma być równa następnikowi sumy <b>n</b> i <b>m</b>
         </p>
         <Formula formula="\forall_{n,m \in \mathbb{N}} \quad n+S(m)=S(n+m)" styles="min-w-[250px]" />
         <p>Przykład:</p>

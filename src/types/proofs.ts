@@ -1,5 +1,60 @@
 import { GeometryEquations } from "./equations";
 
+
+//Arithmetic
+export const exp1Proof = ['a ^ x \\cdot a ^ y',
+    '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{y \\text{ razy}}',
+    '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x+y \\text{ razy}}',
+    'a^{x+y}'];
+export const exp2Proof = ['\\frac{a ^ x}{ a ^ y}',
+    '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}\\cdot\\frac{1}{\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{y \\text{ razy}}}',
+    '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x-y \\text{ razy}}',
+    'a^{x-y}'];
+export const exp3Proof = ['a^x \\cdot b^x',
+    '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{b \\cdot b \\cdot \\ldots \\cdot b}_{x \\text{ razy}}',
+    '\\underbrace{ab \\cdot ab \\cdot \\ldots \\cdot ab}_{x \\text{ razy}}',
+    '(a \\cdot b)^x'];
+export const exp4Proof = ['\\frac{a^x}{b^x}',
+    '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x \\text{ razy}} \\cdot \\frac{1}{\\underbrace{b \\cdot b \\cdot \\ldots \\cdot b}_{x \\text{ razy}}}',
+    '\\underbrace{\\frac{a}{b} \\cdot \\frac{a}{b} \\cdot \\ldots \\cdot \\frac{a}{b}}_{x \\text{ razy}}',
+    '\\left(\\frac{a}{b}\\right)^x'];
+export const exp5Proof = ['\\left(a^x\\right)^y',
+    '\\left(\\underbrace{ a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}\\right)^y',
+    '\\underbrace{\\underbrace{ a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}} \\cdot \\ldots \\cdot \\underbrace{a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}}_{y \\text{ razy}}',
+    'a^{x \\cdot y}']
+export const logarithmProductProof = [
+    "zał: p=\\log_{a}x \\Leftrightarrow a^p=x \\wedge q=\\log_{a}y\\Leftrightarrow a^q=y",
+    "\\Downarrow",
+    "\\log_{a}\\left(x\\cdot y\\right)",
+    "\\log_{a}\\left(a^p\\cdot a^q\\right)",
+    "\\log_{a}\\left(a^{p+q}\\right)",
+    "\\left(p+q\\right)\\cdot \\log_{a}a",
+    "p+q",
+    "\\log_{a}x + \\log_{a}y",
+]
+export const logarithmDivideProof = [
+    "zał: p=\\log_{a}x \\Leftrightarrow a^p=x \\wedge q=\\log_{a}y\\Leftrightarrow a^q=y",
+    "\\Downarrow",
+    "\\log_{a}\\left(\\frac{x}{y}\\right)",
+    "\\log_{a}\\left(\\frac{a^p}{a^q}\\right)",
+    "\\log_{a}\\left(a^{p-q}\\right)",
+    "\\left(p-q\\right)\\cdot \\log_{a}a",
+    "p-q",
+    "\\log_{a}x - \\log_{a}y",
+]
+export const logarithmicBaseExpressedAsPowerProof = [
+    "\\log_{a}x^k",
+    "log_{a}\\left(\\underbrace{x \\cdot x \\cdot \\ldots \\cdot x \\cdot x}_{k \\text{ razy}}\\right)",
+    "\\underbrace{\\log_{a}x + \\log_{a}x + \\cdots + \\log_{a}x}_{k \\text{ razy}}",
+    "k\\cdot \\log_{a}x"
+]
+export const logarithmicBaseExpressedAsPower_1Proof = [
+    "\\log_{a}a^k",
+    "k \\cdot \\log_{a}a",
+    "k \\cdot 1",
+    "k",
+]
+
 //Arithetic Sequence
 export const arithmeticThreeConsecutiveTermsProof = [
     `\\frac{a_{n-1}+a_{n+1}}{2}`,
@@ -12,16 +67,40 @@ export const arithmeticThreeConsecutiveTermsProof = [
 ];
 //Geometric Sequence
 export const geometricThreeConsecutiveTermsProof = [
-    `P=\\sqrt{a_{n-1}\\cdot a_{n+1}}`,
+    `\\sqrt{a_{n-1}\\cdot a_{n+1}}`,
     `\\sqrt{a_1\\cdot q^{\\left(n-1\\right)-1}\\cdot a_1\\cdot q^{\\left(n+1\\right)-1}}`,
     `\\sqrt{a_1\\cdot q^{\\left(n-2\\right)}\\cdot a_1\\cdot q^n}`,
     `\\sqrt{a_1^2\\cdot q^{\\left(n-2+n\\right)}}`,
     `\\sqrt{a_1^2\\cdot q^{2\\left(n-1\\right)}}`,
-    `\\sqrt{a_1^2\\cdot q^{\\left(n-1\\right)^2}}`,
-    `\\sqrt{a_1^2}\\cdot\\sqrt{q^{\\left(n-1\\right)^2}}`,
-    `a_1\\cdot q^{n-1}`,
-    `a_n = L`,
+    `\\sqrt{a_1^2\\cdot \\left(q^{n-1}\\right)^{2}}`,
+    `\\sqrt{a_1^2}\\cdot\\sqrt{\\left(q^{n-1}\\right)^{2}}`,
+    `|a_1|\\cdot |q^{n-1}|`,
+    `|a_1\\cdot q^{n-1}|`,
+    `|a_n|`,
 ];
+export const geometricSequenceRatioProof = [
+    "\\frac{a_{n+1}}{a_n}",
+    "\\frac{a_1 \\cdot q^{n}}{a_1 \\cdot q^{n-1}}",
+    "\\frac{q^{n}}{q^{n-1}}",
+    "\\frac{q^{n}}{q^{n} \\cdot \\frac{1}{q}}",
+    "q",
+];
+export const geometricSequenceRatio_sumProof = [
+    "\\frac{S_n-a_1}{S_n-a_n}",
+    "\\frac{a_1\\cdot\\frac{1-q^n}{1-q}-a_1}{a_1\\cdot\\frac{1-q^n}{1-q}-a_1\\cdot q^{n-1}}",
+    "\\frac{a_1\\cdot\\left(\\frac{1-q^n}{1-q}-1\\right)}{a_1\\left(\\frac{1-q^n}{1-q}- q^{n-1}\\right)}",
+    "\\frac{\\frac{1-q^n}{1-q}-1}{\\frac{1-q^n}{1-q}- q^{n-1}}",
+    "\\frac{\\frac{1-q^n}{1-q}-\\frac{1-q}{1-q}}{\\frac{1-q^n}{1-q}-\\frac{q^{n-1} \\cdot \\left(1-q\\right)}{1-q}}",
+    "\\frac{\\frac{1-q^n-1+q}{1-q}}{\\frac{1-q^n-q^{n-1} \\cdot \\left(1-q\\right)}{1-q}}",
+    "\\frac{\\frac{-q^n+q}{1-q}}{\\frac{1-q^n-q^{n-1} + q^n}{1-q}}",
+    "\\frac{\\frac{-q^n+q}{1-q}}{\\frac{1-q^{n-1}}{1-q}}",
+    "\\frac{-q^n+q}{1-q}\\cdot\\frac{1-q}{1-q^{n-1}}",
+    "\\frac{q-q^n}{1-q^{n-1}}",
+    "\\frac{q\\cdot(1-q^{n-1})}{1-q^{n-1}}",
+    "q",
+]
+
+//Geometry
 export const isoscelesTrapezoidProof = [
     GeometryEquations.TrapeziumArea2,
     `P_3=\\frac{1}{4} \\cdot \\frac{\\left( a + b \\right)}{|a-b|} \\sqrt{(|a-b|+c+c)(|a-b|+c-c)(|a-b|-c+c)(-|a-b|+c+c)}`,

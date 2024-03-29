@@ -13,11 +13,10 @@ const RootContent: FC = () => {
       <Title text={"Pierwiastkowanie"} type={"main-article"} />
       <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
         <p><b>Pierwiastek arytmetyczny</b> to wynik działania odwrotnego do potęgowania definiowany jako podstawa potęgi n-tej, której rezultat jest równy liczbie pierwiastkowanej.</p>
-        <p>Oznaczenia:</p>
         <Formula formula={`\\sqrt[n]{a}`} />
         <p>Założenia:</p>
         <Formula formula={`n \\in \\mathbb{N} - \\{0,1\\}`} />
-        <div className="flex justify-around">
+        <div className="grid md:grid-cols-2 text-center">
           <div>
             <span>gdy n jest parzyste:</span>
             <Formula formula={`a \\geq 0`} />
@@ -53,12 +52,12 @@ const RootContent: FC = () => {
         <Formula formula={`\\sqrt[3]{x}`} />
       </CoreCurriculum >
       <ArticleBorder />
+      <Title text={"Podstawowe wzory działań na pierwiastkach"} type="main-article" />
       <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
-        <Title text={"Podstawowe wzory działań na pierwiastkach"} type="submain-article" />
         <p><b>(1) Iloczyn pierwiastków</b></p>
-        <Formula formula={`\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{a \\cdot b}`} />
+        <Formula formula={`\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{a \\cdot b}`} styles="min-w-[140px]" />
         <p><b>(2) Iloraz pierwiastków</b></p>
-        <Formula formula={`\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}`} />
+        <Formula formula={`\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}`} styles="min-w-[100px]" />
         założenie:
         <Formula formula={`b\\neq0`} />
         <p><b>(3) Zamiana pierwiastka na potęgę</b></p>

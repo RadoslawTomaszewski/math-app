@@ -79,8 +79,8 @@ const DerivedFunctionContent: FC = () => {
                 <p>Powyższe równanie można uprościć wyłączając wartość pochodnej dla argumentu <b>x<sub>0</sub></b> przed nawias. Ta forma równania jest w karcie wzorów maturalnych CKE:</p>
                 <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction} styles="min-w-[220px]" />
                 <p>Poniższa animacja przedstawia wykres funkcji oraz styczne do tego wykresu w kolejnych punktach.</p>
-                <div className="w-full flex justify-center">
-                    <iframe className={iFrameStyle} title={"graph01"} src={"https://www.desmos.com/calculator/m2rfs8wqmw?embed"} width={"500"} height={"500"}></iframe>
+                <div className="w-full flex justify-center max-w-full">
+                    <iframe className={iFrameStyle} title={"Styczna do wykresu funkcji"} src={"https://www.desmos.com/calculator/m2rfs8wqmw?embed"} width={"500"} height={"500"}></iframe>
                 </div>
             </CoreCurriculum>
             <ArticleBorder />
@@ -93,22 +93,21 @@ const DerivedFunctionContent: FC = () => {
             </CoreCurriculum>
             <CoreCurriculum type={CoreCurriculumTypes.extra}>
                 <Explanation text={"Dowody"}>
-
                     <p><b>(1) Pochodna funkcji potęgowej o wykładniku naturalnym</b> - w przypadku funkcji jednomianowej jej pochodna odpowiada iloczynowi wykładnika jednomianu i jednomianu stopnia o jeden mniejszego. W przypadku wykładników większych od jednego w dowodzie można skorzystać z <b>dwumianu Netwona</b>.</p>
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionNatural} />
+                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionNatural} styles="min-w-[380px]" />
                     <p>założenie:</p>
                     <Formula formula={"n \\in \\mathbb{N}"} />
                     <Proof steps={derivedOfPowerFunctionNaturalFrom2} text={"Dowód dla n>1"} styles="min-w-[666px]" />
                     <Proof steps={derivedOfPowerFunctionNaturalEqual1} text={"Dowód dla n=1"} styles="min-w-[165px]" />
                     <Proof steps={derivedOfPowerFunctionNaturalEqual0} text={"Dowód dla n=0"} styles="min-w-[146px]" />
                     <p><b>(2) Pochodna funkcji potęgowej o wykładniku całkowitym ujemnym</b> - wzór na pochodną funkcji potęgowej o wykładniku rzeczywistym ma zastosowanie również w przypadku wykładników całkowitych ujemnych. Tak jak w poprzednim przypadku można w dowodzie zastosować dwumian Newtona.</p>
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionNegativeIntegral} />
+                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionNegativeIntegral} styles="min-w-[126px]" />
                     <p>założenie:</p>
                     <Formula formula={"n \\in \\mathbb{N}"} />
                     <Proof steps={derivedOfPowerFunctionNegativeIntegralToMinus2} text={"Dowód dla n>1"} styles="min-w-[740px]" />
                     <Proof steps={derivedOfPowerFunctionNegativeIntegralMinus1} text={"Dowód dla n=1"} styles="min-w-[321px]" />
                     <p><b>(3) Pochodna funkcji potęgowej o wykładniku wymiernym</b> - w przypadku liczenia pochodnej dla funkcji potęgowej o wykładniku wymiernym ogólny dowód jest znacznie bardziej skomplikowany. Używa się do niego <b>uogólnionego na wykładniki rzeczywiste lub zespolone dwumianu Newtona</b>, który to bazuje na uogólnionej definicji <b>symbolu Newtona</b>  z wykorzystaniem <b>funkcji Gamma Eulera</b>, która to jest <b>uogólnieniem silni na zbiór liczb rzeczywistych i zespolonych</b></p>
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionRational} />
+                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionRational} styles="min-w-[154px]" />
                     <p>założenie:</p>
                     <Formula formula={"m,n \\in \\mathbb{Z} \\land n\\neq 0"} />
                     <Proof steps={derivedOfPowerFunctionRational} text={"Dowód"} styles="min-w-[698px]" />
@@ -158,8 +157,7 @@ const DerivedFunctionContent: FC = () => {
                 <Formula formula={`\\left(\\frac{f\\left(x\\right)}{g\\left(x\\right)}\\right)' = \\frac{f'\\left(x\\right)\\cdot g\\left(x\\right) - f\\left(x\\right)\\cdot g'\\left(x\\right)}{\\left(g\\left(x\\right)\\right)^2}`} styles="min-w-[328px]" />
                 <Proof steps={proofOfTheQuotientRuleForDerivatives} text={"Dowód"} styles="min-w-[705px]" />
                 <p><b>(5) Pochodna funkcji złożonej (reguła łańcucha)</b></p>
-                <Formula formula={`\\left(\\left(f\\circ g\\right)(x)\\right)'=\\left(f\\left(g\\left(x\\right)\\right)\\right)' = f'\\left(g\\left(x\\right)\\right)\\cdot g'\\left(x\\right)`} styles="min-w-[240px]" />
-                <Proof steps={[]} text={"Dowód"} />
+                <Formula formula={`\\left(\\left(f\\circ g\\right)(x)\\right)'=\\left(f\\left(g\\left(x\\right)\\right)\\right)' = f'\\left(g\\left(x\\right)\\right)\\cdot g'\\left(x\\right)`} styles="min-w-[380px]" />
             </CoreCurriculum>
 
             {/* <ArticleBorder /> */}

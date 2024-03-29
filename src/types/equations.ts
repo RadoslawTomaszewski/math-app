@@ -1,3 +1,15 @@
+export enum arithmeticEquations {
+    logarithmProduct = "\\log_{a}(x \\cdot y)=\\log_{a}x+\\log_{a}y",
+    logarithmDivide = "\\log_{a}(\\frac{x}{y})=\\log_{a}x-\\log_{a}y",
+    logarithmicBaseExpressedAsPower = "\\log_{a}x^k=k \\cdot \\log_{a}x",
+    logarithmicBaseExpressedAsPower_1 = "\\log_{a}a^k=k",
+
+}
+
+
+
+
+
 export enum arithmeticSequencesEquations {
     nthTermOfArithmeticSequence = `a_n=a_1+\\left(n-1\\right)\\cdot r`,
     nthTermOfArithmeticSequence2 = `a_n=a_k+\\left(n-k\\right)`,
@@ -6,7 +18,11 @@ export enum arithmeticSequencesEquations {
 export enum GeometricSequencesEquations {
     nthTermOfGeometricSequence = `a_n=a_1\\cdot q^{n-1}`,
     nthTermOfGeometricSequence2 = `a_n=a_k\\cdot q^{n-k}`,
-    threeConsecutiveTermsGeometricSequence = `a_n=\\sqrt{a_{n-1}\\cdot a_{n+1}}`,
+    threeConsecutiveTermsGeometricSequence = `|a_n|=\\sqrt{a_{n-1}\\cdot a_{n+1}}`,
+    geometricSequenceRatio = "q=\\frac{a_{n+1}}{a_n}",
+    sum = "S_n=a_1\\cdot\\frac{1-q^n}{1-q}",
+    sum_when_q_1 = "S_n = n \\cdot a_1",
+    geometricSequenceRatio_sum = "q=\\frac{S_n-a_1}{S_n-a_n}",
 }
 export enum GeometryEquations {
     // Perimeters
