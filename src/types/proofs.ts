@@ -23,36 +23,63 @@ export const exp5Proof = ['\\left(a^x\\right)^y',
     '\\underbrace{\\underbrace{ a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}} \\cdot \\ldots \\cdot \\underbrace{a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}}_{y \\text{ razy}}',
     'a^{x \\cdot y}']
 export const logarithmProductProof = [
-    "zał: p=\\log_{a}x \\Leftrightarrow a^p=x \\wedge q=\\log_{a}y\\Leftrightarrow a^q=y",
+    "zał: \\left(x=\\log_{a}b \\Leftrightarrow a^x=b\\right) \\wedge \\left(y=\\log_{a}c\\Leftrightarrow a^y=c\\right)",
     "\\Downarrow",
-    "\\log_{a}\\left(x\\cdot y\\right)",
-    "\\log_{a}\\left(a^p\\cdot a^q\\right)",
-    "\\log_{a}\\left(a^{p+q}\\right)",
-    "\\left(p+q\\right)\\cdot \\log_{a}a",
-    "p+q",
-    "\\log_{a}x + \\log_{a}y",
+    "\\log_{a}\\left(b\\cdot c\\right)",
+    "\\log_{a}\\left(a^x\\cdot a^y\\right)",
+    "\\log_{a}a^{x+y}",
+    "x+y",
+    "\\log_{a}b + \\log_{a}c",
 ]
 export const logarithmDivideProof = [
-    "zał: p=\\log_{a}x \\Leftrightarrow a^p=x \\wedge q=\\log_{a}y\\Leftrightarrow a^q=y",
+    "zał: \\left(x=\\log_{a}b \\Leftrightarrow a^x=b\\right) \\wedge \\left(y=\\log_{a}c\\Leftrightarrow a^y=c\\right)",
     "\\Downarrow",
-    "\\log_{a}\\left(\\frac{x}{y}\\right)",
-    "\\log_{a}\\left(\\frac{a^p}{a^q}\\right)",
-    "\\log_{a}\\left(a^{p-q}\\right)",
-    "\\left(p-q\\right)\\cdot \\log_{a}a",
-    "p-q",
-    "\\log_{a}x - \\log_{a}y",
+    "\\log_{a}\\left(\\frac{b}{c}\\right)",
+    "\\log_{a}\\left(\\frac{a^x}{a^y}\\right)",
+    "\\log_{a}a^{x-y}",
+    "x-y",
+    "\\log_{a}b - \\log_{a}c",
 ]
 export const logarithmicBaseExpressedAsPowerProof = [
-    "\\log_{a}x^k",
-    "log_{a}\\left(\\underbrace{x \\cdot x \\cdot \\ldots \\cdot x \\cdot x}_{k \\text{ razy}}\\right)",
-    "\\underbrace{\\log_{a}x + \\log_{a}x + \\cdots + \\log_{a}x}_{k \\text{ razy}}",
-    "k\\cdot \\log_{a}x"
+    "\\log_{a}b^k",
+    "log_{a}\\left(\\underbrace{b \\cdot b \\cdot \\ldots \\cdot b \\cdot b}_{k \\text{ razy}}\\right)",
+    "\\underbrace{\\log_{a}b + \\log_{a}b + \\cdots + \\log_{a}b}_{k \\text{ razy}}",
+    "k\\cdot \\log_{a}b"
 ]
-export const logarithmicBaseExpressedAsPower_1Proof = [
+export const logarithmicBaseExpressedAsPower_1Proof1 = [
+    "\\log_{a}{a^k}=x",
+    "a^x=a^k",
+    "x=k",
+]
+export const logarithmicBaseExpressedAsPower_1Proof2 = [
     "\\log_{a}a^k",
     "k \\cdot \\log_{a}a",
     "k \\cdot 1",
     "k",
+]
+export const logarithmicBaseExpressedAsRootProof = [
+    "\\log_{a}{\\sqrt[n]{b^m}}",
+    "\\log_{a}{b^{\\frac{m}{n}}}",
+    "\\frac{m}{n} \\cdot \\log_{a}{b}",
+]
+export const changeOfBaseForLogarithmProof = [
+    "\\log_{a}b=x",
+    "a^x=b",
+    "\\log_{c}{a^x}=\\log_{c}{b}",
+    "x\\cdot \\log_{c}{a}=\\log_{c}{b}",
+    "x = \\frac{\\log_{c}b}{\\log_{c}a}",
+]
+export const switchOfBaseForLogarithmProof1 = [
+    "\\log_{a}b=x",
+    "a^x=b",
+    "\\log_{b}{a^x}=\\log_{b}{b}",
+    "x\\cdot \\log_{b}{a}=1",
+    "x = \\frac{1}{\\log_{b}a}",
+]
+export const switchOfBaseForLogarithmProof2 = [
+    "\\log_{a}b",
+    "\\frac{\\log_{b}b}{\\log_{b}a}",
+    "\\frac{1}{\\log_{b}a}",
 ]
 
 //Arithetic Sequence

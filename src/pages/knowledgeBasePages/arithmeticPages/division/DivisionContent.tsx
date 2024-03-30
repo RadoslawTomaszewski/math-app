@@ -38,9 +38,13 @@ const DivisionContent: FC = () => {
         <p>Zgodnie z powyższą definicją dzielenie przez zero nie jest możliwe, ponieważ zero nie posiada wartości odwrotnej</p>
         <br />
         <p>Dzielenie <b>nie jest przemienne.</b> Zamiana argumentów stronami da w rezultacie liczbę odwrotną</p>
-        <Formula formula="a:b=\frac{1}{b:a}"></Formula>
+        <Formula formula="a:b=\frac{1}{b:a}" />
+        <Formula formula="\frac{a}{b}\neq\frac{b}{a}" />
         <p>Dzielenie <b>nie jest łączne</b> i wykonuje się je od lewej do prawej</p>
-        <Formula formula="a:b:c=(a:b):c" styles="min-w-[160px]" />
+        <div className="m-2">
+          <Formula formula="a:b:c=(a:b):c" styles="min-w-[160px] m-4" margin="none" />
+          <Formula formula="a:b:c\neq a:(b:c)" styles="min-w-[160px] m-4" margin="none" />
+        </div>
         <p><b>Element neutralny dzielenia</b> występuje jednostronnie</p>
         <Formula formula="a:1=a"></Formula>
         <p>Natomiast</p>

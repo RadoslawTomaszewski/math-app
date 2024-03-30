@@ -7,7 +7,7 @@ const LogarithmPage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };
   const parent = {
     link: "../arytmetyka",
-    name: "logarytmy",
+    name: "Arytmetyka",
   };
   const childName = "Logarytmy";
 

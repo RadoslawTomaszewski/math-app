@@ -70,7 +70,8 @@ const ExponentiationContent: FC = () => (
       <Formula formula="a^{\frac{m}{n}}=\sqrt[n]{a^m}" styles="min-w-[115px]" />
       <p>założenie:</p>
       <Formula formula={"a > 0"} />
-      <Formula formula={"m,n\\in \\mathbb{Z}"} />
+      <Formula formula={"m\\in \\mathbb{Z}"} />
+      <Formula formula={"n\\in \\mathbb{Z}-\\{0\\}"} />
     </CoreCurriculum>
     <ArticleBorder />
     <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>

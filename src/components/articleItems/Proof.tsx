@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import { MathComponent } from "mathjax-react";
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg";
 import { ReactComponent as CollapseIcon } from "../../assets/icons/collapse.svg";
@@ -8,9 +8,10 @@ export interface IProofProps {
   steps: string[];
   text: string;
   styles?: string;
+  children?: ReactNode;
 }
 
-const Proof: FC<IProofProps> = ({ steps, text, styles }) => {
+const Proof: FC<IProofProps> = ({ steps, text, styles, children }) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpansion = () => {
@@ -37,6 +38,7 @@ const Proof: FC<IProofProps> = ({ steps, text, styles }) => {
       <div>
         {expanded && (
           <ul>
+            {children && <>{children}</>}
             <div className="border-2 border-[#000000] bg-[#ffffff] my-2 rounded">
               <div className="overflow-x-auto ">
                 {steps.map((step, index) => (

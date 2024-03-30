@@ -72,9 +72,7 @@ export const Router: FC = () => {
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<Layout />}>
-
                     <Route index element={<Home />} />
-
                     <Route path="baza-wiedzy" element={<KnowledgeBaseLayout />}>
                         <Route index element={<KnowledgeBasePage />} />
                         <Route path="funkcja-liniowa" element={<LinearFunctionPage />} />
@@ -111,13 +109,9 @@ export const Router: FC = () => {
                         <Route path="pochodna-funkcji" element={<DerivedFunctionPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
-
                     <Route path="cke" element={<CKEPage />} />
-
                     <Route path="wsparcie" element={<CoffeePage />} />
-
                     <Route path="pogotowie" element={<HelplinePage />} />
-
                     <Route path="kalkulatory" element={<CalculatorsLayout />}>
                         <Route index element={<CalculatorsPage />} />
                         <Route path="kalkulator-dlugosci" element={<LengthConverterPage />} />
@@ -138,6 +132,7 @@ export const Router: FC = () => {
                         <Route path="gra-w-zycie" element={<GameOfLifePage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
+                    <Route path="*" element={<WorkInProgress />} />
                 </Route>
             </Routes>
         </BrowserRouter>

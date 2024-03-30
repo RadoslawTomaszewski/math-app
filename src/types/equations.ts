@@ -1,9 +1,10 @@
 export enum arithmeticEquations {
-    logarithmProduct = "\\log_{a}(x \\cdot y)=\\log_{a}x+\\log_{a}y",
-    logarithmDivide = "\\log_{a}(\\frac{x}{y})=\\log_{a}x-\\log_{a}y",
-    logarithmicBaseExpressedAsPower = "\\log_{a}x^k=k \\cdot \\log_{a}x",
+    logarithmProduct = "\\log_{a}(b \\cdot c)=\\log_{a}b+\\log_{a}c",
+    logarithmDivide = "\\log_{a}(\\frac{b}{c})=\\log_{a}x-\\log_{a}c",
+    logarithmicBaseExpressedAsPower = "\\log_{a}b^k=k \\cdot \\log_{a}b",
     logarithmicBaseExpressedAsPower_1 = "\\log_{a}a^k=k",
-
+    logarithmicBaseExpressedAsRoot = "\\log_{a}{\\sqrt[n]{b^m}}=\\frac{m}{n}\\cdot \\log_{a}{b}",
+    changeOfBaseForLogarithm = "\\log_{a}b = \\frac{\\log_{c}b}{\\log_{c}a}",
 }
 
 

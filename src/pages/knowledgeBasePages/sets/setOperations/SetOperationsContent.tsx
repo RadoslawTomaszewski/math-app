@@ -17,19 +17,19 @@ const SetOperationsContent: FC = () => {
     <>
       <Title text={"Operacje na zbiorach"} type={"main-article"} />
       <p>
-        Są cztery podstawowe operacje na zbiorach:
+        Operacje, których można dokonać na zbiorach to:
       </p>
       <p>
-        - suma
+        <b>(1)</b> suma
       </p>
       <p>
-        - iloczyn/część wspólna/przecięcie
+        <b>(2)</b> iloczyn/część wspólna/przecięcie
       </p>
       <p>
-        - różnica
+        <b>(3)</b> różnica
       </p>
       <p>
-        - dopełnienie
+        <b>(4)</b> dopełnienie
       </p>
       <ArticleBorder />
       <Title text={"Przykłady zbiorów"} type={"submain-article"} />
@@ -43,7 +43,7 @@ const SetOperationsContent: FC = () => {
         </div>
       </div>
       <GraphImage size={"smallest"} src={DefaultAandB} alt={"Przykład pary zbiorów A i B w przestrzeni U"} />
-      <p>Powyższe zbiory A, B w przestrzeni U posłóżą jako proste przykłady zastosowania operacji na zbiorach</p>
+      <p>Powyższe zbiory A, B w przestrzeni U posłużą jako proste przykłady zastosowania operacji na zbiorach</p>
       <ArticleBorder />
       <Title text={"Suma zbiorów"} type={"submain-article"} />
       <p>

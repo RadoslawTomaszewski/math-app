@@ -9,16 +9,17 @@ export interface IFormulaProps {
 }
 
 const Formula: FC<IFormulaProps> = ({ formula, margin, styles }) => {
-  if (margin === "none")
-    return (
-      <div className="flex justify-center">
-        <MathComponent tex={formula} />
-      </div>
-    );
+
   if (styles) {
+    if (margin === "none")
+      return (
+        <div className={classNames("flex justify-center", styles)}>
+          <MathComponent tex={formula} />
+        </div>
+      );
     return (
       <div className="overflow-x-auto">
-        <div className={classNames("flex justify-center my-4", styles)}>
+        <div className={classNames("flex justify-center my-3", styles)}>
           <div className="flex justify-center m-3">
             <MathComponent tex={formula} />
           </div>
