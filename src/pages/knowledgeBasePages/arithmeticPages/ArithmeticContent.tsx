@@ -8,6 +8,7 @@ import DivisionContent from "./division/DivisionContent";
 import ExponentiationContent from "./exponentiation/ExponentiationContent";
 import RootContent from "./root/RootContent";
 import LogarithmContent from "./logarithm/LogarithmContent";
+import TetrationContent from "./tetration/TetrationContent";
 
 
 const ArithmeticContent: FC = () => {
@@ -39,6 +40,9 @@ const ArithmeticContent: FC = () => {
                 <ArticleBorder />
                 {/* LOGARYTMOWANIE */}
                 <LogarithmContent />
+                <ArticleBorder />
+                {/* TETRACJA */}
+                <TetrationContent />
             </div>
         </>
     );

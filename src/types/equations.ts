@@ -7,10 +7,6 @@ export enum arithmeticEquations {
     changeOfBaseForLogarithm = "\\log_{a}b = \\frac{\\log_{c}b}{\\log_{c}a}",
 }
 
-
-
-
-
 export enum arithmeticSequencesEquations {
     nthTermOfArithmeticSequence = `a_n=a_1+\\left(n-1\\right)\\cdot r`,
     nthTermOfArithmeticSequence2 = `a_n=a_k+\\left(n-k\\right)`,

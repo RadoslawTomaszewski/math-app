@@ -47,8 +47,12 @@ export default function HomePage() {
               <Title text="Co nowego?" type="submain-article" />
               <p>Platforma już jest dostępna pod adresem: <NavLink to="https://www.majza.eu"><b>majza.eu</b></NavLink></p>
               <p>Artykuł o <NavLink to="baza-wiedzy/pochodna-funkcji"><b>pochodnej funkcji</b></NavLink></p>
+              <p>Aktualizacja całego rozdziału <NavLink to="baza-wiedzy/arytmetyka"><b>z operacjami arytmetycznymi</b></NavLink></p>
+              <p>Artykuł o <NavLink to="baza-wiedzy/tetracja"><b>tetracji</b></NavLink></p>
+              <p>Aktualizacja artykułu o <NavLink to="baza-wiedzy/ciag-geometryczny"><b>ciągu geometrycznym</b></NavLink></p>
               <br />
-              <p className="italic">aktualizacja: 26/03/2024</p>
+              <p>Wesołych świąt :)</p>
+              <p className="italic">aktualizacja: 30/03/2024</p>
 
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="submain-article" />

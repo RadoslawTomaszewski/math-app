@@ -15,8 +15,6 @@ const ExponentiationContent: FC = () => (
       <p>
         <b>Potęgowanie</b> - działanie arytmetyczne mające wiele definicji w zależności od kontekstu użycia.
       </p>
-      <br />
-      <p>Oznaczenia:</p>
       <Formula formula={`a^b=c`} />
       <LegendParagraph
         type="short"

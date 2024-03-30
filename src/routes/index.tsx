@@ -63,6 +63,7 @@ import CoffeePage from "../pages/CoffeePage/CoffeePage";
 import DerivedFunctionPage from "../pages/knowledgeBasePages/mathAnalysisPages/derivedFunction/DerivedFunctionPage";
 import LinePage from "../pages/knowledgeBasePages/geometryPages/LinePage/LinePage";
 import PointPage from "../pages/knowledgeBasePages/geometryPages/PointPage/PointPage";
+import TetrationPage from "../pages/knowledgeBasePages/arithmeticPages/tetration/TetrationPage";
 
 
 
@@ -91,6 +92,7 @@ export const Router: FC = () => {
                         <Route path="potegowanie" element={<ExponentiationPage />} />
                         <Route path="pierwiastkowanie" element={<RootPage />} />
                         <Route path="logarytmowanie" element={<LogarithmPage />} />
+                        <Route path="tetracja" element={<TetrationPage />} />
                         <Route path="dzialania-na-zbiorach" element={<SetOperationsPage />} />
                         <Route path="srednie-liczbowe" element={<AveragesPage />} />
                         <Route path="prosta" element={<LinePage />} />

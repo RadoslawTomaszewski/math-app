@@ -2,26 +2,36 @@ import { GeometryEquations } from "./equations";
 
 
 //Arithmetic
-export const exp1Proof = ['a ^ x \\cdot a ^ y',
+export const exp1Proof = [
+    'a ^ x \\cdot a ^ y',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{y \\text{ razy}}',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x+y \\text{ razy}}',
-    'a^{x+y}'];
-export const exp2Proof = ['\\frac{a ^ x}{ a ^ y}',
+    'a^{x+y}'
+];
+export const exp2Proof = [
+    '\\frac{a ^ x}{ a ^ y}',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}\\cdot\\frac{1}{\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{y \\text{ razy}}}',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x-y \\text{ razy}}',
-    'a^{x-y}'];
-export const exp3Proof = ['a^x \\cdot b^x',
+    'a^{x-y}'
+];
+export const exp3Proof = [
+    'a^x \\cdot b^x',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{b \\cdot b \\cdot \\ldots \\cdot b}_{x \\text{ razy}}',
     '\\underbrace{ab \\cdot ab \\cdot \\ldots \\cdot ab}_{x \\text{ razy}}',
-    '(a \\cdot b)^x'];
-export const exp4Proof = ['\\frac{a^x}{b^x}',
+    '(a \\cdot b)^x'
+];
+export const exp4Proof = [
+    '\\frac{a^x}{b^x}',
     '\\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{x \\text{ razy}} \\cdot \\frac{1}{\\underbrace{b \\cdot b \\cdot \\ldots \\cdot b}_{x \\text{ razy}}}',
     '\\underbrace{\\frac{a}{b} \\cdot \\frac{a}{b} \\cdot \\ldots \\cdot \\frac{a}{b}}_{x \\text{ razy}}',
-    '\\left(\\frac{a}{b}\\right)^x'];
-export const exp5Proof = ['\\left(a^x\\right)^y',
+    '\\left(\\frac{a}{b}\\right)^x'
+];
+export const exp5Proof = [
+    '\\left(a^x\\right)^y',
     '\\left(\\underbrace{ a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}\\right)^y',
     '\\underbrace{\\underbrace{ a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}} \\cdot \\underbrace{a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}} \\cdot \\ldots \\cdot \\underbrace{a \\cdot \\ldots \\cdot a \\cdot a}_{x \\text{ razy}}}_{y \\text{ razy}}',
-    'a^{x \\cdot y}']
+    'a^{x \\cdot y}'
+]
 export const logarithmProductProof = [
     "zał: \\left(x=\\log_{a}b \\Leftrightarrow a^x=b\\right) \\wedge \\left(y=\\log_{a}c\\Leftrightarrow a^y=c\\right)",
     "\\Downarrow",
