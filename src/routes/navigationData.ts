@@ -1,5 +1,7 @@
 import { SidebarCategory } from "../components/Sidebar/SidebarCategoryItem";
 
+const gray = "text-gray-400";
+
 export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
     {
         category: { to: "arytmetyka", text: "Arytmetyka" },
@@ -8,28 +10,52 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             { to: "odejmowanie", text: "Odejmowanie" },
             { to: "mnozenie", text: "Mnożenie" },
             { to: "dzielenie", text: "Dzielenie" },
-            // { to: "modulo", text: "Modulo" },
             { to: "potegowanie", text: "Potęgowanie" },
             { to: "pierwiastkowanie", text: "Pierwiastkowanie" },
             { to: "logarytmowanie", text: "logarytmy" },
             { to: "tetracja", text: "tetracja" },
-            // { to: "wartosc-bezwzgledna", text: "Wartość bezwzględna" },
-            // { to: "silnia", text: "Silnia" },
-            // { to: "symbol newtona", text: "Symbol Newtona" },
-            // { to: "operatory-logiczne", text: "Operatory logiczne" },
+        ],
+    },
+    {
+        category: { to: "Symbole matematyczne", text: "Symbole matematyczne" },
+        links: [
+            { to: "wartosc-bezwzgledna", text: "Wartość bezwzględna", color: gray },
+            { to: "silnia", text: "Silnia", color: gray },
+            { to: "symbol-newtona", text: "Symbol Newtona", color: gray },
         ],
     },
     {
         category: { to: "zbiory", text: "Zbiory" },
         links: [
             { to: "dzialania-na-zbiorach", text: "Działania na zbiorach" },
-            // { to: "przedziały", text: "Przedziały" },
+            { to: "przedziały", text: "Przedziały", color: gray },
             { to: "liczby-naturalne", text: "Liczby naturalne" },
-            // { to: "liczby-całkowite", text: "Liczby całkowite" },
-            // { to: "liczby-wymierne", text: "Liczby wymierne" },
-            // { to: "liczby-niewymierne", text: "Liczby niewymierne" },
-            // { to: "liczby-rzeczywiste", text: "Liczby rzeczywiste" },
-            // { to: "liczby-zespolone", text: "Liczby zespolone" },
+            { to: "liczby-całkowite", text: "Liczby całkowite", color: gray },
+            { to: "liczby-wymierne", text: "Liczby wymierne", color: gray },
+            { to: "liczby-niewymierne", text: "Liczby niewymierne", color: gray },
+            { to: "liczby-rzeczywiste", text: "Liczby rzeczywiste", color: gray },
+            { to: "liczby-zespolone", text: "Liczby zespolone", color: gray },
+        ],
+    },
+    {
+        category: { to: "geometria", text: "Geometria" },
+        links: [
+            { to: "punkt", text: "Punkt", color: gray },
+            { to: "prosta", text: "Prosta" },
+            { to: "odcinek", text: "odcinek", color: gray },
+        ],
+    },
+    {
+        category: { to: "trojkaty", text: "Trójkąty" },
+        links: [
+            { to: "trojkat-roznoboczny", text: "Trójkąt różnoboczny", color: gray },
+            { to: "trojkat-rownoramienny", text: "Trójkąt równoramienny", color: gray },
+            { to: "trojkat-rownoboczny", text: "Trójkąt równoboczny", color: gray },
+            { to: "trojkat-prostokatny", text: "Trójkąt prostokątny", color: gray },
+            { to: "trapez-rozwartokatny", text: "Trójkąt rozwartokątny", color: gray },
+            { to: "trojkat-ostrokatny", text: "Trójkąt ostrokątny", color: gray },
+            { to: "relacja-z-okregiem", text: "Relacja z okręgiem", color: gray },
+            { to: "twierdzenia", text: "Twierdzenia", color: gray },
         ],
     },
     {
@@ -48,39 +74,36 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         ],
     },
     {
-        category: { to: "geometria", text: "Geometria" },
+        category: { to: "kola-i-okregi", text: "Koła i Okręgi" },
         links: [
-            { to: "punkt", text: "Punkt" },
-            { to: "prosta", text: "Prosta" },
+            { to: "polozenie-dwoch-okregow", text: "Położenie dwóch okręgów", color: gray },
+            { to: "polozenie-prostej-i-okregu", text: "Położenie prostej i okręgu", color: gray },
+            { to: "katy-w-okregu", text: "Kąty w okręgu", color: gray },
+            { to: "koło", text: "Koło", color: gray },
         ],
     },
     {
         category: { to: "funkcje", text: "Funkcje" },
         links: [
-            { to: "funkcja-liniowa", text: "Liniowa" },
-            { to: "funkcja-kwadratowa", text: "Kwadratowa" },
-            // { to: "funkcja-sześcienna", text: "Sześcienna" },
-            // { to: "funkcja-wielomianowa", text: "Wielomianowa" },
-            // { to: "funkcja-wykladnicza", text: "Wykładnicza" },
-            // { to: "funkcja-logarytmiczna", text: "Logarytmiczna" },
-            { to: "funkcja-homograficzna", text: "Homograficzna" },
-            // { to: "funkcje-wymierne", text: "Wymierne" },
-            // { to: "funkcje-trygonometryczne", text: "Trygonometryczne" },
-            // { to: "funkcje-cyklometryczne", text: "Cyklometryczne" },
-            // { to: "granica-funkcji", text: "Granica funkcji" },
-            // { to: "rozniczkowanie", text: "Różniczkowanie" },
-            // { to: "całkowanie", text: "Całkowanie" },
+            { to: "funkcja-liniowa", text: "Funkcja Liniowa" },
+            { to: "funkcja-kwadratowa", text: "Funkcja Kwadratowa" },
+            { to: "funkcja-sześcienna", text: "Funkcja Sześcienna", color: gray },
+            { to: "funkcja-wielomianowe", text: "Funkcja Wielomianowa", color: gray },
+            { to: "funkcja-homograficzna", text: "Funkcja Homograficzna" },
+            { to: "funkcja-wykladnicza", text: "Funkcja Wykładnicza", color: gray },
+            { to: "funkcja-logarytmiczna", text: "Funkcja Logarytmiczna", color: gray },
+            { to: "funkcje-wymierne", text: "Funkcje Wymierne", color: gray },
+            { to: "funkcje-trygonometryczne", text: "Funkcje Trygonometryczne", color: gray },
+            { to: "funkcje-cyklometryczne", text: "Funkcje Cyklometryczne", color: gray },
         ],
     },
     {
         category: { to: "wyrazenia-algebraiczne", text: "Wyrażenia Algebraiczne" },
         links: [
-            // { to: "wielomiany", text: "Wielomiany" },
-            { to: "wzory-skroconego-mnozenia", text: "Wzory Skr. Mnożenia" },
-            // { to: "rownania", text: "Równania" },
-            // { to: "nierownosci", text: "Nierówności" },
-            // { to: "uklady-rownan", text: "Układy równań" },
-            // { to: "macierze", text: "Macierze" },
+            { to: "wzory-skroconego-mnozenia", text: "Wzory skróconego mnożenia" },
+            { to: "wielomiany", text: "Wielomiany", color: gray },
+            { to: "rownania", text: "Równania", color: gray },
+            { to: "nierownosci", text: "Nierówności", color: gray },
         ],
     },
     {
@@ -88,18 +111,20 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         links: [
             { to: "ciag-arytmetyczny", text: "Ciąg arytmetyczny" },
             { to: "ciag-geometryczny", text: "Ciąg geometryczny" },
-            // { to: "ciag-rekurencyjny", text: "Ciąg rekurencyjny" },
-            // { to: "ciag-fibonachiego", text: "Ciąg Fibonacchiego" },
-            // { to: "ciag-eulera", text: "Ciąg Eulera" },
-            // { to: "ciag-Padovana", text: "Ciąg Padovana" },
-            // { to: "granica-ciagu", text: "Granica ciągu" },
+            { to: "ciag-harmoniczny", text: "Ciąg harmoniczny", color: gray },
+            { to: "ciag-fibonachiego", text: "Ciąg Fibonacchiego", color: gray },
+            { to: "ciag-eulera", text: "Ciąg Eulera", color: gray },
+            { to: "ciag-Padovana", text: "Ciąg Padovana", color: gray },
+            { to: "granica-ciagu", text: "Granica ciągu", color: gray },
         ],
     },
     {
         category: { to: "analiza-matematyczna", text: "Analiza Matematyczna" },
         links: [
-            { to: "granica-funkcji", text: "Granica Funkcji" },
+            { to: "granica-funkcji", text: "Granica Funkcji", color: gray },
+            { to: "asymptoty", text: "Asymptoty", color: gray },
             { to: "pochodna-funkcji", text: "Pochodna Funkcji" },
+            { to: "calki", text: "Całki", color: gray },
         ],
     },
     // {
@@ -129,15 +154,15 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             //     { to: "rozklad-hipergeometryczny", text: "Rozkład hipergeometryczny" },
         ],
     },
-    // {
-    //     category: { to: "matematyka-dyskretna", text: "Matematyka Dyskretna" },
-    //     links: [
-    //         { to: "kombinacja", text: "Kombinacja" },
-    //         { to: "permutacja", text: "Permutacja" },
-    //         { to: "wariacja", text: "Wariacja" },
-    //         { to: "prawdopodobieństwo", text: "Prawdopodobieństwo" },
-    //     ],
-    // },
+    {
+        category: { to: "matematyka-dyskretna", text: "Matematyka Dyskretna" },
+        links: [
+            { to: "kombinacja", text: "Kombinacja", color: gray },
+            { to: "permutacja", text: "Permutacja", color: gray },
+            { to: "wariacja", text: "Wariacja", color: gray },
+            { to: "prawdopodobieństwo", text: "Prawdopodobieństwo", color: gray },
+        ],
+    },
 
 
     // {
@@ -150,20 +175,6 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
     //   ],
     // },
     // {
-    //   category: { to: "twierdzenia", text: "Twierdzenia" },
-    //   links: [
-    //     { to: "twierdzenie-pitagoras", text: "Pitagorasa" },
-    //     { to: "twierdzenie-talesa", text: "Talesa" },
-    //     { to: "twierdzenie-sinusow", text: "Sinusów" },
-    //     { to: "twierdzenie-cosinusow", text: "Cosinusów" },
-    //     { to: "twierdzenie-bezouta", text: "Bézouta" },
-    //     { to: "twierdzenie-ptomeleusza", text: "Ptolemeusza" },
-
-    //     { to: "twierdzenie-o-stycznych", text: "stycznych" },
-    //     { to: "twierdzenie-o-siecznych", text: "siecznych" },
-    //     { to: "twierdzenie-o-siecznej-i-stycznej", text: "siecznej i stycznej" },
-    //   ],
-    // },
     {
         category: { to: "stale-matematyczne", text: "Stałe matematyczne" },
         links: [

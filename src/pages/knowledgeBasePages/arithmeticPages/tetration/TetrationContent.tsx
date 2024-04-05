@@ -11,7 +11,7 @@ const TetrationContent: FC = () => (
     <Title text={"Tetracja"} type={"main-article"} />
     <CoreCurriculum type={CoreCurriculumTypes.extra}>
       <p><b>Tetracja</b> - (superpotęgowanie) operacja matematyczna polegająca na podnoszeniu liczby do potęgi z użyciem iteracji.</p>
-      <Formula formula={"^n a"} />
+      <Formula formula={"^n a = c"} />
       <LegendParagraph
         type="short"
         notation="a"
@@ -79,9 +79,14 @@ const TetrationContent: FC = () => (
       <Formula formula={"q \\in \\mathbb{Q_+-Z}"} />
       <p><b>poniższe wyrażenie jest wymierne?</b></p>
       <Formula formula={"^n q"} />
-      <p><b>(3)Czy poniższe wyrażenia są wymiene, czy niewymierne?</b></p>
+      <p><b>(3)Czy poniższe wyrażenia są wymierne, czy niewymierne?</b></p>
       <Formula formula={"^e \\pi"} />
       <Formula formula={"^\\pi e"} />
+      <Formula
+        formula={`| x | = \\begin{cases}
+        x & \\text{jeśli } x \\geq 0 \\
+        -x & \\text{jeśli } x < 0
+      \\end{cases}`} />
     </CoreCurriculum>
   </>
 );

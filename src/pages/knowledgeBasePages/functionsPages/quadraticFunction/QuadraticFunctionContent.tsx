@@ -161,9 +161,8 @@ const QuadraticFunctionContent: FC = () => {
       <p>Współrzędne wierzchołka są oznaczane następująco:</p>
       <Formula formula={`W = \\left(p , q \\right)`} />
       <p>
-        Współrzędna iksowa wierzchołka jest równa takiej wartości argumentu,
-        która jest równo odległa od symetralnych punktów o tej samej wartości
-        (np miejsc zerowych):
+        Rzędna wierzchołka jest równa średniej arytmetycznej rzędnych dwóch punktów symetrycznych względem osi symetrii tej paraboli
+        (mogą, ale nie muszą to być miejsca zerowe):
       </p>
       <Formula formula={quadraticEquations.P_arithmetic} />
       <p>Częściej używana postać tego wzoru to:</p>
@@ -171,7 +170,7 @@ const QuadraticFunctionContent: FC = () => {
       <Proof steps={QuadraticFunction_pProof} text="Dowód" styles="min-w-[274px]" />
       <br />
       <p>
-        Współrzędna igrekowa wierzchołka jest równa wartości funkcji dla
+        Odcięta wierzchołka jest równa wartości funkcji dla
         argumentu, który jest równo odległy od symetralnych punktów o tej samej
         wartości (np miejsc zerowych):
       </p>

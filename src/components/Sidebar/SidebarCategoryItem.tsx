@@ -1,12 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Title from "../articleItems/Title";
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg";
 import { ReactComponent as CollapseIcon } from "../../assets/icons/collapse.svg";
 
 interface SidebarLink {
   to: string;
   text: string;
+  color?: string;
 }
 
 export interface SidebarCategory {
@@ -14,16 +15,19 @@ export interface SidebarCategory {
   links: SidebarLink[];
 }
 
-interface SidebarCategoryItemProps {
-  category: SidebarLink;
-  links: SidebarLink[];
-}
-
-export const SidebarCategoryItem: FC<SidebarCategoryItemProps> = ({
+export const SidebarCategoryItem: FC<SidebarCategory> = ({
   category,
   links,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const isCurrentCategory = links.some((link) =>
+      location.pathname.includes(link.to)
+    );
+    setIsExpanded(isCurrentCategory);
+  }, [location.pathname, links]);
 
   const handleToggleExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -48,7 +52,12 @@ export const SidebarCategoryItem: FC<SidebarCategoryItemProps> = ({
         <div className="flex flex-col">
           {links.map((navlink) => (
             <NavLink key={navlink.to} to={navlink.to}>
-              <Title text={navlink.text} type={"sidebar-link"} />
+              {navlink.color && (
+                <Title text={navlink.text} type={"sidebar-link"} color={navlink.color} />
+              )}
+              {!navlink.color && (
+                <Title text={navlink.text} type={"sidebar-link"} />
+              )}
             </NavLink>
           ))}
         </div>

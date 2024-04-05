@@ -26,7 +26,7 @@ export default function KnowledgeBasePage() {
             {item.links.map((link) => (
               <NavLink key={link.to} to={link.to}>
                 <div className="px-3">
-                  <Title text={link.text} type={"mainpage-link"} />
+                  <Title text={link.text} type={"mainpage-link"} color={link.color} />
                 </div>
               </NavLink>
             ))}
