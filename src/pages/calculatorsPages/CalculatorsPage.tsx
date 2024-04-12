@@ -6,8 +6,7 @@ import Masonry from "react-masonry-css";
 
 export default function CalculatorsPage() {
   const breakpointColumnsObj = {
-    default: 4,
-    2000: 3,
+    default: 3,
     1740: 2,
     1260: 1,
   };
@@ -27,7 +26,7 @@ export default function CalculatorsPage() {
             {item.links.map((link) => (
               <NavLink key={link.to} to={link.to}>
                 <div className="px-3">
-                  <Title text={link.text} type={"mainpage-link"} />
+                  <Title text={link.text} type={"mainpage-link"} color={link.color} />
                 </div>
               </NavLink>
             ))}

@@ -7,7 +7,7 @@ export const KnowledgeBaseLayout = () => {
   return (
     <div>
       <div className="relative flex flex-row min-w-full">
-        <div className="min-w-[240px] p-2 hidden lg:block bg-sideColor">
+        <div className="min-w-[240px] hidden lg:block bg-sideColor">
           <Sidebar sidebarLinks={sidebarLinksKnowledgeBase} />
         </div>
         <div className="w-full flex justify-center">

@@ -14,7 +14,7 @@ export const ArticleWrapper: FC<IArticleWrapperProps> = ({ children, className }
         className || ""
       )}
     >
-      <div className="min-w-full max-w-full xl:min-w-[1200px] xl:max-w-[1200px]">
+      <div className="w-[1200px] max-w-full xxl:max-w-[1200px]">
         {children}
       </div>
     </div>

@@ -26,8 +26,8 @@ const Title: FC<ITitleProps> = ({ text, type, color }) => {
         "font-amatic text-3xl text-start font-bold hover:font-borderColor";
       break;
     case "sidebar-link":
-      if (color) styles = classNames("font-amatic mx-2 text-2xl font-bold hover:font-borderColor py-[5px]", color);
-      else styles = "font-amatic text-2xl mx-2 font-bold hover:font-borderColor title-with-underline-animation";
+      if (color) styles = classNames("font-amatic ml-3 px-2 text-2xl font-bold hover:font-borderColor", color);
+      else styles = "font-amatic text-2xl ml-3 px-2 font-bold hover:font-borderColor  hover:bg-[#9790f5fc]";
       break;
     case "mainpage-link":
       if (color) styles = classNames("font-amatic text-2xl font-bold hover:font-borderColor py-[5px]", color);

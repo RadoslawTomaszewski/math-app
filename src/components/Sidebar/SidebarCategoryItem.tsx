@@ -3,6 +3,7 @@ import Title from "../articleItems/Title";
 import { FC, useState, useEffect } from "react";
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg";
 import { ReactComponent as CollapseIcon } from "../../assets/icons/collapse.svg";
+import { classNames } from "../../utilities";
 
 interface SidebarLink {
   to: string;
@@ -34,16 +35,16 @@ export const SidebarCategoryItem: FC<SidebarCategory> = ({
   };
 
   return (
-    <div>
-      <div className="flex justify-between items-center">
+    <div className="">
+      <div className="flex justify-between items-center hover:bg-[#9790f5fc] px-2">
         <NavLink to={category.to}>
           <Title text={category.text} type={"sidebar-category"} />
         </NavLink>
         <div onClick={handleToggleExpanded} style={{ cursor: "pointer" }}>
           {isExpanded ? (
-            <CollapseIcon className="w-[16px] h-[16px]" />
+            <CollapseIcon className="w-[20px] h-[20px]" />
           ) : (
-            <ExpandIcon className="w-[16px] h-[16px]" />
+            <ExpandIcon className="w-[20px] h-[20px]" />
           )}
         </div>
       </div>
@@ -53,7 +54,7 @@ export const SidebarCategoryItem: FC<SidebarCategory> = ({
           {links.map((navlink) => (
             <NavLink key={navlink.to} to={navlink.to}>
               {navlink.color && (
-                <Title text={navlink.text} type={"sidebar-link"} color={navlink.color} />
+                <Title text={navlink.text} type={"sidebar-link"} color={classNames(navlink.color, "hover:bg-[gray]")} />
               )}
               {!navlink.color && (
                 <Title text={navlink.text} type={"sidebar-link"} />

@@ -179,21 +179,14 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         category: { to: "stale-matematyczne", text: "Stałe matematyczne" },
         links: [
             { to: "liczba-pi", text: "Liczba Pi" },
-            // { to: "liczba-e", text: "Liczba Eulera" },
+            { to: "liczba-e", text: "Liczba Eulera" },
+            { to: "liczba-fi", text: "Liczba Fibonacciego" },
             // { to: "zloty-podzial", text: "Złoty podział" },
             // { to: "srebrny-podzial", text: "Srebrny podział" },
-            // { to: "liczba-plastikowa", text: "Liczba plastikowa" },
+            { to: "liczba-plastikowa", text: "Liczba plastikowa" },
         ],
     },
-    // {
-    //   category: { to: "systemy-liczbowe", text: "Systemy liczbowe" },
-    //   links: [
-    //     { to: "system-dziesietny", text: "rzymski" },
-    //     { to: "system-dziesietny", text: "dziesiętny" },
-    //     { to: "system-oktalny", text: "oktalny" },
-    //     { to: "system-heksadecymalny", text: "heksadecymalny" },
-    //   ],
-    // },
+
 ];
 
 
@@ -208,6 +201,7 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
             { to: "kalkulator-czasu", text: "Czasu" },
             { to: "kalkulator-predkosci", text: "Prędkości" },
             { to: "kalkulator-informacji", text: "Informacji" },
+            { to: "kalkulator-temperatury", text: "Temperatury", color: gray },
         ],
     },
     {
@@ -217,8 +211,8 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
             { to: "czynnik-przed-pierwiastek-szescienny", text: "Pierwiastek Sześcienny" },
             { to: "rozklad-na-czynniki-pierwsze", text: "Rozkład na czynniki pierwsze" },
             { to: "nww-i-nwd", text: "NWW i NWD" },
-            // { to: "pisemne-dodawanie", text: "Dodawanie pisemne" },
-            { to: "skracanie-ulamkow", text: "Skracanie ułamków" }
+            { to: "skracanie-ulamkow", text: "Skracanie ułamków" },
+            { to: "generator-liczb-pierwszych", text: "Liczby pierwsze", color: gray },
         ],
     },
     {
@@ -226,6 +220,28 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
         links: [
             { to: "funkcji-liniowej", text: "Funkcja Liniowa" },
             { to: "funkcji-kwadratowej", text: "Funkcja Kwadratowa" },
+            { to: "funkcji-wykładniczej", text: "Funkcja Wykładnicza", color: gray },
+            { to: "funkcji-logarytmicznej", text: "Funkcja Logarytmiczna", color: gray },
+            { to: "funkcji-homograficznej", text: "Funkcja Homograficzna", color: gray },
+            { to: "funkcji-wielomianowej", text: "Funkcja Wielomianowa", color: gray },
+        ],
+    },
+    {
+        category: { to: "Ciągi", text: "Ciągi" },
+        links: [
+            { to: "ciagu-arytmetycznego", text: "Ciąg arytmetyczny", color: gray },
+            { to: "ciagu-geometrycznego", text: "Ciąg geometryczny", color: gray },
+            { to: "ciągu fibonacciego", text: "Ciąg Fibonacciego", color: gray },
+        ],
+    },
+    {
+        category: { to: "systemy-liczbowe", text: "Systemy liczbowe" },
+        links: [
+            { to: "system-rzymski", text: "rzymski" },
+            { to: "system-binarny", text: "binarny" },
+            { to: "system-dziesietny", text: "dziesiętny" },
+            { to: "system-oktalny", text: "oktalny" },
+            { to: "system-heksadecymalny", text: "heksadecymalny" },
         ],
     },
     {
