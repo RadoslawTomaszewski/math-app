@@ -6,7 +6,7 @@ import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/style
 import SquareRootNumber from "../../../../types/objects/Irrational/RootNumber/SquareRootNumber";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
-import { integerRegisterOptions } from "../../../../utilities/validation";
+import { numberRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
     rootNumber: string;
@@ -49,7 +49,7 @@ const SquareRootCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("rootNumber", integerRegisterOptions.squareRootNumber)}
+                        {...register("rootNumber", numberRegisterOptions.squareRootNumber)}
                         onChange={handleInputChange}
                     />
                 </label>

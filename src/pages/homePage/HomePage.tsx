@@ -23,10 +23,9 @@ export default function HomePage() {
               </p>
               <ArticleBorder />
               <Title text="Kim jestem?" type="submain-article" />
-              <p>Jestem studentem Informatyki (Wydział Zastosowań Matematyki i Informatyki) na SGGW i od 4 lat udzielam korepetycji z matematyki. Moją wizytówkę znajdziesz <NavLink to="https://radoslawtomaszewski.github.io/portfolio-react-js/"><b>tutaj</b></NavLink></p>
+              <p>Jestem studentem Informatyki (Wydział Zastosowań Matematyki i Informatyki) na SGGW i od 4 lat udzielam korepetycji z matematyki. Moją wizytówkę znajdziesz <NavLink to="www.google.pl"><b>tutaj</b></NavLink></p>
               <ArticleBorder />
               <Title text="A komu to potrzebne? A dlaczego?" type="submain-article" />
-              <p>Niniejszy serwis jest tematem pracy inżynierskiej, której będę bronił w 2024 roku.</p>
               <p>Matematyka jest fundamentem wielu dziedzin nauki i życia codziennego. Serwis tworzę z myślą wsparcia procesu nauki matematyki na każdym etapie edukacyjnym. </p>
               <p>Dla mnie projekt majza.eu jest okazją do rozwijania umiejętności programowania. Z pewnością będzie rozwijany w wolnych chwilach jako projekt hobbystyczny</p>
               <ArticleBorder />
@@ -45,15 +44,11 @@ export default function HomePage() {
               <b>UWAGA</b><p>powyższe oznaczenia mają jedynie charakter orientacyjny,sporadycznie definicje mogą wykraczać poza określony zakres.</p>
               <ArticleBorder />
               <Title text="Co nowego?" type="submain-article" />
-              <p>Platforma już jest dostępna pod adresem: <NavLink to="https://www.majza.eu"><b>majza.eu</b></NavLink></p>
               <p>Artykuł o <NavLink to="baza-wiedzy/pochodna-funkcji"><b>pochodnej funkcji</b></NavLink></p>
               <p>Aktualizacja całego rozdziału <NavLink to="baza-wiedzy/arytmetyka"><b>z operacjami arytmetycznymi</b></NavLink></p>
               <p>Artykuł o <NavLink to="baza-wiedzy/tetracja"><b>tetracji</b></NavLink></p>
-              <p>Aktualizacja artykułu o <NavLink to="baza-wiedzy/ciag-geometryczny"><b>ciągu geometrycznym</b></NavLink></p>
               <br />
-              <p>Wesołych świąt :)</p>
-              <p className="italic">aktualizacja: 30/03/2024</p>
-
+              <p className="italic">aktualizacja: 12/04/2024</p>
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="submain-article" />
               <p>Jestem autorem każdego artykułu jaki znajdziesz na <b>majza.eu</b>. Jest bardzo prawdopodobne, że znajdziesz błąd, którego nie byłem w stanie wyłapać. Może to być błąd gramatyczny lub, co gorsze, merytoryczny.</p>

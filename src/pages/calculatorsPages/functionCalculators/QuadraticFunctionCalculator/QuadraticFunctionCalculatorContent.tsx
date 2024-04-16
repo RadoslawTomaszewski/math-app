@@ -5,7 +5,7 @@ import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/style
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
 import QuadraticFormula from "../../../../types/objects/QuadraticFormula/QuadraticFormula";
-import { integerRegisterOptions } from "../../../../utilities/validation";
+import { numberRegisterOptions } from "../../../../utilities/validation";
 import { quadraticEquations } from "../../../../types/equations";
 import Loader from "../../../../components/Loader/Loader";
 import { NavLink } from "react-router-dom";
@@ -98,7 +98,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <input
                                     className={InputCoefficientStyle}
                                     type="number"
-                                    {...register("a", integerRegisterOptions.coefficientNotZero)}
+                                    {...register("a", numberRegisterOptions.coefficientNotZero)}
                                     onChange={handleInputChange}
                                 />
                                 <span><b>x<sup>2</sup></b>&nbsp;</span>
@@ -108,7 +108,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <input
                                     className={InputCoefficientStyle}
                                     type="number"
-                                    {...register("b", integerRegisterOptions.coefficient)}
+                                    {...register("b", numberRegisterOptions.coefficient)}
                                     onChange={handleInputChange}
                                 />
                                 <span><b>x&nbsp;</b></span>
@@ -118,7 +118,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <input
                                     className={InputCoefficientStyle}
                                     type="number"
-                                    {...register("c", integerRegisterOptions.coefficient)}
+                                    {...register("c", numberRegisterOptions.coefficient)}
                                     onChange={handleInputChange}
                                 />
                             </div>

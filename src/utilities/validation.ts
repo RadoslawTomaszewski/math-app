@@ -8,10 +8,11 @@ interface IIntegerFormData {
   numberGCDandLCM: number;
   primeFactorNumber: string;
   coefficientNotZero: string;
+  exponentialCoefficient: string;
   coefficient: string;
 }
 
-export const integerRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
+export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
   squareRootNumber: {
     max: {
       value: 10000000,
@@ -114,6 +115,20 @@ export const integerRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
     pattern: {
       value: /^-?[0-9]+$/,
       message: "Wprowadzona wartość musi być liczbą całkowitą",
+    },
+  },
+  exponentialCoefficient: {
+    max: {
+      value: 100000,
+      message: "Maksymalna wartość to 100000",
+    },
+    min: {
+      value: -100000,
+      message: "Minimalna wartość to -100000",
+    },
+    pattern: {
+      value: /^-?\d+(\.\d+)?$/,
+      message: "Wprowadzona wartość musi być liczbą",
     },
   },
   coefficient: {

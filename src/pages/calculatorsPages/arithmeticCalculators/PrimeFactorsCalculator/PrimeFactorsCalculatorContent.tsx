@@ -4,7 +4,7 @@ import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/styles";
 import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
-import { integerRegisterOptions } from "../../../../utilities/validation";
+import { numberRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
     naturalNumber: string;
@@ -47,7 +47,7 @@ const PrimeFactorCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("naturalNumber", integerRegisterOptions.primeFactorNumber)}
+                        {...register("naturalNumber", numberRegisterOptions.primeFactorNumber)}
                         onChange={handleInputChange}
                     />
                 </label>

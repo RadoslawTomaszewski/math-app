@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
-import { integerRegisterOptions } from "../../../../utilities/validation";
+import { numberRegisterOptions } from "../../../../utilities/validation";
 import Fraction from "../../../../types/objects/Fraction/Fraction";
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
@@ -52,7 +52,7 @@ const FractionReducerContent: FC = () => {
                     <input
                         className={InputShortNumberStyle}
                         type="number"
-                        {...register("nominator", integerRegisterOptions.nominator)}
+                        {...register("nominator", numberRegisterOptions.nominator)}
                         onChange={handleInputChange}
                     />
                     {errors.nominator && (
@@ -62,7 +62,7 @@ const FractionReducerContent: FC = () => {
                     <input
                         className={InputShortNumberStyle}
                         type="number"
-                        {...register("denominator", integerRegisterOptions.denominator)}
+                        {...register("denominator", numberRegisterOptions.denominator)}
                         onChange={handleInputChange}
                     />
                     {errors.denominator && (

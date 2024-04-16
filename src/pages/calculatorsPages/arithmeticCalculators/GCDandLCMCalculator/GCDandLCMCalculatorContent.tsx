@@ -6,7 +6,7 @@ import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/sty
 import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import TwoNumberPrimeFactors from "../../../../types/objects/PrimeFactors/TwoNumberPrimeFactors";
-import { integerRegisterOptions } from "../../../../utilities/validation";
+import { numberRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
     naturalNumber1: string;
@@ -69,7 +69,7 @@ const GCDandLCMCalculatorContent: FC = () => {
                                 placeholder="0"
                                 type="number"
                                 min="0"
-                                {...register("naturalNumber1", integerRegisterOptions.numberGCDandLCM)}
+                                {...register("naturalNumber1", numberRegisterOptions.numberGCDandLCM)}
                                 onChange={handleInputChange}
                             />
                             <input
@@ -77,7 +77,7 @@ const GCDandLCMCalculatorContent: FC = () => {
                                 placeholder="0"
                                 type="number"
                                 min="0"
-                                {...register("naturalNumber2", integerRegisterOptions.numberGCDandLCM)}
+                                {...register("naturalNumber2", numberRegisterOptions.numberGCDandLCM)}
                                 onChange={handleInputChange}
                             />
                         </div>

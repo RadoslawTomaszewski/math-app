@@ -4,7 +4,7 @@ import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
 import CubeRootNumber from "../../../../types/objects/Irrational/RootNumber/CubeRootNumber";
-import { integerRegisterOptions } from "../../../../utilities/validation";
+import { numberRegisterOptions } from "../../../../utilities/validation";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
 
@@ -48,7 +48,7 @@ const CubeRootCalculatorContent: FC = () => {
                         className={InputShortNumberStyle}
                         placeholder="0"
                         type="number"
-                        {...register("rootNumber", integerRegisterOptions.cubeRootNumber)}
+                        {...register("rootNumber", numberRegisterOptions.cubeRootNumber)}
                         onChange={handleInputChange}
                     />
                 </label>
