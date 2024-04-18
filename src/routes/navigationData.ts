@@ -220,7 +220,7 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
         links: [
             { to: "funkcji-liniowej", text: "Funkcja Liniowa" },
             { to: "funkcji-kwadratowej", text: "Funkcja Kwadratowa" },
-            { to: "funkcji-wykladniczej", text: "Funkcja Wykładnicza", color: gray },
+            { to: "funkcji-wykladniczej", text: "Funkcja Wykładnicza" },
             { to: "funkcji-logarytmicznej", text: "Funkcja Logarytmiczna", color: gray },
             { to: "funkcji-homograficznej", text: "Funkcja Homograficzna", color: gray },
             { to: "funkcji-wielomianowej", text: "Funkcja Wielomianowa", color: gray },
@@ -237,11 +237,11 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
     {
         category: { to: "systemy-liczbowe", text: "Systemy liczbowe" },
         links: [
-            { to: "system-rzymski", text: "rzymski" },
-            { to: "system-binarny", text: "binarny" },
-            { to: "system-dziesietny", text: "dziesiętny" },
-            { to: "system-oktalny", text: "oktalny" },
-            { to: "system-heksadecymalny", text: "heksadecymalny" },
+            { to: "system-rzymski", text: "rzymski", color: gray },
+            { to: "system-binarny", text: "binarny", color: gray },
+            { to: "system-dziesietny", text: "dziesiętny", color: gray },
+            { to: "system-oktalny", text: "oktalny", color: gray },
+            { to: "system-heksadecymalny", text: "heksadecymalny", color: gray },
         ],
     },
     {

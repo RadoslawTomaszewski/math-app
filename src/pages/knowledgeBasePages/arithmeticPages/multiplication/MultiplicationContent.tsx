@@ -66,10 +66,10 @@ const MultiplicationContent: FC = () => {
         <p>
           <b>Aksjomat 2.</b> Dla dowolnych liczb naturalnych <b>n</b> i <b>m</b> iloczyn <b>n</b> i następnika <b>m</b> jest równy sumie iloczynu <b>n</b> i <b>m</b> oraz <b>n.</b>
         </p>
-        <Formula formula="\forall_{n,m \in \mathbb{N}} \quad n \cdot S(m)=n \cdot m + n" styles="min-w-[235px]" />
+        <Formula formula="\forall_{n,m \in \mathbb{N}} \quad n \cdot S(m)=n \cdot m + n" styles="min-w-[240px]" />
         <p>Przykład:</p>
         <Formula formula="2 \cdot 2=4" />
-        <Proof steps={multiplicationProof} text={"Dowód"} />
+        <Proof steps={multiplicationProof} text={"Dowód"} styles="min-w-[110px]" />
       </CoreCurriculum>
     </>
   );

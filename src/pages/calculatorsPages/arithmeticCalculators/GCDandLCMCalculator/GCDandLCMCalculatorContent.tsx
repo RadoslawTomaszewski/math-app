@@ -59,7 +59,7 @@ const GCDandLCMCalculatorContent: FC = () => {
                 text="Największy wspólny dzielnik (NWD) i Najmniejsza wspólna wielokrotność (NWW)"
                 type="main-article"
             />
-            <form className="text-center">
+            <form className="text-center w-full">
                 <div className="flex justify-center">
                     <label className="flex pt-4 flex-col items-center">
                         Wprowadź dwie liczby naturalne:
@@ -80,6 +80,7 @@ const GCDandLCMCalculatorContent: FC = () => {
                                 {...register("naturalNumber2", numberRegisterOptions.numberGCDandLCM)}
                                 onChange={handleInputChange}
                             />
+                            <ArticleBorder />
                         </div>
                         {errors.naturalNumber1 && (
                             <span className={ErrorMessage}>{errors.naturalNumber1.message}</span>
@@ -122,24 +123,23 @@ const GCDandLCMCalculatorContent: FC = () => {
                         </div>
                     )}
                 </div>
+
+
                 {!errors.naturalNumber1 && !errors.naturalNumber2 && (
-                    <div>
-                        <ArticleBorder />
+                    <>
                         <Title
                             text="Największy wspólny dzielnik:"
                             type="submain-article"
                         />
-                        <Formula formula={"NWD(" + factorizedNumber1.getValue() + "," + factorizedNumber2.getValue() + ") = "} />
-                        <Formula formula={twoFactorizedNumbers.getGCDString()} />
-                        <ArticleBorder />
+                        <Formula formula={"\\text{NWD}\\left(" + factorizedNumber1.getValue() + "," + factorizedNumber2.getValue() + "\\right) = " + twoFactorizedNumbers.getGCDString()} styles="min-w-[500px]" />
                         <Title
                             text="Najmniejsza wspólna wielokrotność:"
                             type="submain-article"
                         />
-                        <Formula formula={"NWW(" + factorizedNumber1.getValue() + "," + factorizedNumber2.getValue() + ") = "} />
-                        <Formula formula={twoFactorizedNumbers.getLCMString()} />
-                    </div>
+                        <Formula formula={"\\text{NWW}\\left(" + factorizedNumber1.getValue() + "," + factorizedNumber2.getValue() + "\\right) = " + twoFactorizedNumbers.getLCMString()} styles="min-w-[500px]" />
+                    </>
                 )}
+
             </form>
         </>
     );

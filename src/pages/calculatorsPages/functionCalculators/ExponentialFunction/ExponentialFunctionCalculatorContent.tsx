@@ -75,18 +75,19 @@ const ExponentialFunctionCalculatorContent: FC = () => {
     return (
         <>
             <Title
-                text="Kalkulator funkcji liniowej"
+                text="Kalkulator funkcji wykładniczej"
                 type="main-article"
             />
             <form className="flex flex-col justify-center items-center w-full">
                 <div className="flex justify-center w-full">
                     <label className="flex pt-4 flex-col flex-wrap items-center">
-                        <span className="text-wrap">Wprowadź podstawę funkcji wykładniczej:</span>
+                        <span className="text-wrap">Wprowadź podstawę <b>a</b> funkcji wykładniczej:</span>
                         <div className="InputsWrapper flex flex-row items-end mt-2">
                             <div className="mx-1"><b>f(x)=</b></div>
                             <input
                                 className={InputCoefficientStyle}
                                 type="number"
+                                step="0.01"
                                 {...register("a", numberRegisterOptions.exponentialCoefficient)}
                                 onChange={handleInputChange}
                             />
@@ -109,10 +110,31 @@ const ExponentialFunctionCalculatorContent: FC = () => {
                 </div>
                 {(!errors.a && watchA) && (
                     <>
-                        <div className="w-full">
-                            <p></p>
-                            <Formula formula={exponentialFunction.getFormula()} />
-                        </div>
+                        {exponentialFunction.getA() > 1 && (
+                            <>
+                                <Formula formula={exponentialFunction.getFormula()} />
+                                <br />
+                                <p><b>Dziedzina:</b></p>
+                                <Formula formula={"D_f: x\\in \\mathbb{R}"} />
+                                <br />
+                                <p><b>Zbiór wartości funkcji:</b></p>
+                                <Formula formula={"ZW_f: y\\in \\left(0;\\infty\\right)"} />
+                                <br />
+                                <p><b>Monotoniczność:</b></p>
+                                <Formula formula={"a \\in \\left(1; \\infty \\right)"} />
+                                <p>Funkcja rosnąca</p>
+                                <br />
+                                <p><b>Pozostałe cechy:</b></p>
+                                <p>funkcja różnowartościowa</p>
+                            </>)}
+                        {exponentialFunction.getA() === 1 && (
+                            <>
+                                <p className="text-[red]">To nie jest funkcja wykładnicza!</p>
+                                <Formula formula={exponentialFunction.getFormula()} />
+                                <p className={"text-red"}>Ta funkcja sprowadza się do funkcji liniowej stałej:</p>
+                                <Formula formula={"f(x)=1"} />
+                                <p></p>
+                            </>)}
 
                         <div className="w-full">
                             {showGraph && (

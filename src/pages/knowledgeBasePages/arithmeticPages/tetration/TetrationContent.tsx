@@ -24,7 +24,7 @@ const TetrationContent: FC = () => (
     </CoreCurriculum>
     <ArticleBorder />
     <CoreCurriculum type={CoreCurriculumTypes.extra}>
-      <p>Określenie <b>tetracja</b> to połączenie słów: <i>tetra</i> oznaczające z łaciny liczbę <b>4</b> oraz <i>iteracji</i> (czyli powtarzania pewnego schematu).</p>
+      <p>Określenie <b>tetracja</b> to połączenie słów: <i>tetra</i> oznaczające z łaciny liczbę <b>4</b> oraz <i>iteracja</i> (czyli powtarzanie pewnego schematu).</p>
       <p>W tej definicji jako założenie przyjęto trzy poprzednie tzw. <b>hiperoperatory</b>:</p>
       <p><b>(1) Dodawanie:</b></p>
       <Formula formula={"a+n=a+\\underbrace{1 + 1 + \\ldots + 1}_{n \\text{ razy}}"} styles="min-w-[225px]" />
@@ -58,13 +58,13 @@ const TetrationContent: FC = () => (
       <Formula formula={"\\sqrt[n]{x}_s"} />
       <p>Formalna definicja:</p>
       <Formula formula={`\\sqrt[n]{a}_s=x\\Leftrightarrow ^n x=a`} />
-      <p className="text-red-500 text-xs">UWAGA! Sam wyprowadziłem tę zależność, wymaga potwierdzenia!</p>
+      <p className="text-red-500 text-xs">UWAGA! Wymaga potwierdzenia!</p>
       <br />
       <p>(2) <b>superlogarytm</b> - działanie odwrotne do tetracji, w której szukana jest wysokość tetracji. Zagadnienie wciąż jest przedmiotem badań i nie ma jeszcze zdefiniowanej jego rygorystycznej definicji. Dla superlogarytmu o podstawie <b>a</b> i superliczbie logarytmowanej b używa się oznaczenia:</p>
       <Formula formula={"\\text{slog}_{a}{b}"} />
       <p>Formalna definicja:</p>
       <Formula formula={`\\text{slog}_{a}{b}=x\\Leftrightarrow ^x a=b`} />
-      <p className="text-red-500 text-xs">UWAGA! Sam wyprowadziłem tę zależność, wymaga potwierdzenia!</p>
+      <p className="text-red-500 text-xs">UWAGA! Wymaga potwierdzenia!</p>
     </CoreCurriculum>
     <ArticleBorder />
     <Title text={"Pytania bez odpowiedzi"} type={"main-article"} />

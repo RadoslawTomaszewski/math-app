@@ -6,7 +6,7 @@ import ExponentialFunctionCalculatorContent from "./ExponentialFunctionCalculato
 const ExponentialFunctionCalculatorPage: FC = () => {
     const grandparent = { link: "../", name: "Kalkulatory" };
     const parent = { link: "../funkcje", name: "Funkcje" };
-    const childName = "Kalkulator Funkcji Wykładniczej";
+    const childName = "Kalkulator funkcji wykładniczej";
 
     return (
         <div className="p-2 justify-center flex flex-col">

@@ -60,7 +60,7 @@ const LogarithmContent: FC = () => {
         <Proof steps={["\\log_{a}1=0\\Leftrightarrow a^0=1"]} text={"Dowód"} styles="min-w-[165px]" />
         <p><b>(2) logarytm o podstawie logarytmu równej liczbie logarytmowanej</b> </p>
         <Formula formula={`\\log_{a}a=1`} />
-        <Proof steps={["\\log_{a}1=0\\Leftrightarrow a^1=a"]} text={"Dowód"} styles="min-w-[165px]" />
+        <Proof steps={["\\log_{a}a=1\\Leftrightarrow a^1=a"]} text={"Dowód"} styles="min-w-[165px]" />
         <p><b>(3) logarytm jako wykładnik potęgi o podstawie równej podstawie tego logarytmu</b></p>
         <Formula formula={`a^{\\log_{a}b}=b`} />
         <Proof steps={["a^{\\log_{a}b}=x", "\\log_{a}{x}=\\log_{a}{b}", "x=b"]} text={"Dowód"} styles="min-w-[120px]">

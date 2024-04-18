@@ -52,7 +52,7 @@ export const logarithmDivideProof = [
 ]
 export const logarithmicBaseExpressedAsPowerProof = [
     "\\log_{a}b^k",
-    "log_{a}\\left(\\underbrace{b \\cdot b \\cdot \\ldots \\cdot b \\cdot b}_{k \\text{ razy}}\\right)",
+    "\\log_{a}\\left(\\underbrace{b \\cdot b \\cdot \\ldots \\cdot b \\cdot b}_{k \\text{ razy}}\\right)",
     "\\underbrace{\\log_{a}b + \\log_{a}b + \\cdots + \\log_{a}b}_{k \\text{ razy}}",
     "k\\cdot \\log_{a}b"
 ]

@@ -74,8 +74,8 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
   },
   numberGCDandLCM: {
     max: {
-      value: 1_000_000_000,
-      message: "Maksymalna wartość to 1000000000 (miliardsssss)",
+      value: 1_000_000,
+      message: "Maksymalna wartość to 1000000 (milion)",
     },
     min: {
       value: 1,
@@ -123,8 +123,8 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
       message: "Maksymalna wartość to 100000",
     },
     min: {
-      value: -100000,
-      message: "Minimalna wartość to -100000",
+      value: 0,
+      message: "Minimalna wartość to 0",
     },
     pattern: {
       value: /^-?\d+(\.\d+)?$/,
