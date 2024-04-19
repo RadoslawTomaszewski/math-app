@@ -127,7 +127,7 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
       message: "Minimalna wartość to 0",
     },
     pattern: {
-      value: /^-?\d+(\.\d+)?$/,
+      value: /^-?\d+(\.\d+)?(e)?$/,
       message: "Wprowadzona wartość musi być liczbą",
     },
   },

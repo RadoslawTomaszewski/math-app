@@ -23,7 +23,7 @@ export default function HomePage() {
               </p>
               <ArticleBorder />
               <Title text="Kim jestem?" type="submain-article" />
-              <p>Jestem studentem Informatyki (Wydział Zastosowań Matematyki i Informatyki) na SGGW i od 4 lat udzielam korepetycji z matematyki. Moją wizytówkę znajdziesz <NavLink to="www.google.pl"><b>tutaj</b></NavLink></p>
+              <p>Jestem studentem Informatyki (Wydział Zastosowań Matematyki i Informatyki) na SGGW i od 4 lat udzielam korepetycji z matematyki</p>
               <ArticleBorder />
               <Title text="A komu to potrzebne? A dlaczego?" type="submain-article" />
               <p>Matematyka jest fundamentem wielu dziedzin nauki i życia codziennego. Serwis tworzę z myślą wsparcia procesu nauki matematyki na każdym etapie edukacyjnym. </p>

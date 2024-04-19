@@ -16,13 +16,9 @@ class Fraction {
     private step3: string = "";
     //AbstStep 3 modul ulamka w skroconej formie
     private absStep3: string = "";
-    private denominator: number = 1;
 
-    constructor(private nominator: number, denominator?: number) {
-        if (denominator === undefined) {
-            this.calculateFraction();
-        }
-        else if (denominator !== 0) {
+    constructor(private nominator: number, private denominator: number) {
+        if (denominator !== 0) {
             this.setFraction(nominator, denominator);
             this.calculate();
             this.checkIsFractionPositive();
@@ -35,28 +31,6 @@ class Fraction {
             this.setAbsStep3();
         }
     }
-
-    private calculateFraction(): void {
-        let fractionValue = this.nominator;
-        let denominator = 1;
-
-        while (!Number.isInteger(fractionValue)) {
-            fractionValue *= 10;
-            denominator *= 10;
-        }
-
-        this.setFraction(fractionValue, denominator);
-        this.calculate();
-        this.checkIsFractionPositive();
-        this.reduceMinuses();
-        this.setGCD();
-        this.setStep1();
-        this.setStep2();
-        this.reduceFraction();
-        this.setStep3();
-        this.setAbsStep3();
-    }
-
     private setFraction(nominator: number, denominator: number): void {
         this.nominator = nominator;
         this.denominator = denominator;

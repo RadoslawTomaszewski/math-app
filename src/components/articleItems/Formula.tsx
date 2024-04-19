@@ -25,15 +25,20 @@ const Formula: FC<IFormulaProps> = ({ formula, margin, styles }) => {
           </div>
         </div>
       </div>
-
     )
   }
   else
-    return (
-      <div className="flex justify-center m-3 max-w-full">
-        <MathComponent tex={formula} />
-      </div>
-    );
+    if (margin === "none")
+      return (
+        <div className={classNames("flex justify-center")}>
+          <MathComponent tex={formula} />
+        </div>
+      );
+  return (
+    <div className="flex justify-center m-3 max-w-full">
+      <MathComponent tex={formula} />
+    </div>
+  );
 };
 
 export default Formula;
