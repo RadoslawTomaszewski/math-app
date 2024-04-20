@@ -15,6 +15,11 @@ class QuadraticFormula {
     private standardForm: string = "";
     private canonicalForm: string = "";
     private factoredForm: string = "";
+    private vietasSum: Fraction = new Fraction(0, 1);
+    private vietasProduct: Fraction = new Fraction(0, 1);
+    // TODO: REFACTOR FOR x1 and x2 results
+    private x1Result: string = '0';
+    private x2Result: string = '0';
 
 
     constructor(private a: number, private b: number, private c: number) {
@@ -25,6 +30,7 @@ class QuadraticFormula {
             this.setStandardForm();
             this.setCanonicalForm();
             this.setRootAndFactoredForm();
+            this.setVietasFormulas();
         }
     }
     private setDelta = (): void => {
@@ -84,7 +90,6 @@ class QuadraticFormula {
             if (this.x1.getIsPositive()) factoredFormB = `\\left(x-${this.x1.getAbsResultString()}\\right)`;
             if (!this.x1.getIsPositive()) factoredFormB = `\\left(x+${this.x1.getAbsResultString()}\\right)`;
 
-
             if (this.x2.getIsPositive()) factoredFormC = `\\left(x-${this.x2.getAbsResultString()}\\right)`;
             else factoredFormC = `\\left(x+${this.x2.getAbsResultString()}\\right)`;
 
@@ -133,6 +138,12 @@ class QuadraticFormula {
         }
         this.factoredForm = "nie istnieje"
 
+    }
+    private setVietasFormulas = (): void => {
+        if (this.delta > 0) {
+            this.vietasSum = new Fraction(this.b * (-1), this.a);
+            this.vietasProduct = new Fraction(this.c, this.a);
+        }
     }
     getA(): number {
         return this.a;
@@ -248,6 +259,29 @@ class QuadraticFormula {
     }
     getFactoredForm(): string {
         return this.factoredForm;
+    }
+    getVietasProductCalculations(): string {
+        return joinUniqueWithEquals("x_1 \\cdot x_2", "\\frac{c}{a}", `\\frac{${this.c}}{${this.a}}`, this.vietasProduct.getFractionString());
+    }
+    getVietasProduct(): string {
+        return this.vietasProduct.getFractionString();
+    }
+    getVietasSumCalculations(): string {
+        let substA = `\\frac{-${this.b}}`;
+        if (this.b < 0) {
+            substA = `\\frac{-\\left(${this.b}\\right)}`;
+        }
+        const substitution = substA + `{${this.a}}`;
+        return joinUniqueWithEquals("x_1 + x_2", "\\frac{-b}{a}", substitution, this.vietasSum.getFractionString());
+    }
+    getVietasSum(): string {
+        return this.vietasSum.getFractionString();
+    }
+    getX1Result(): string {
+        return this.x1Result;
+    }
+    getX2Result(): string {
+        return this.x2Result;
     }
 }
 export default QuadraticFormula;

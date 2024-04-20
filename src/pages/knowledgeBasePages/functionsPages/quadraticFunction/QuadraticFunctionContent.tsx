@@ -15,6 +15,7 @@ import GraphImage from "../../../../components/articleItems/GraphImage";
 import { NavLink } from "react-router-dom";
 import { QuadraticFunction_pProof, QuadraticFunction_qProof, QuadraticFunction_zeroPlaceProof } from "../../../../types/proofs";
 import { quadraticEquations } from "../../../../types/equations";
+import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 
 const QuadraticFunctionContent: FC = () => {
 
@@ -22,65 +23,69 @@ const QuadraticFunctionContent: FC = () => {
   return (
     <>
       <Title text={"Funkcja kwadratowa"} type={"main-article"} />
-      <p>
-        <b>Funkcja kwadratowa</b> to funkcja, której wykres jest parabolą.
-      </p>
-      <br />
-      <p>
-        Wzór funkcji kwadratowej w <b>postaci ogólnej</b>:
-      </p>
-      <Formula formula={quadraticEquations.STANDARD_FORM} styles="min-w-[161px]" />
-      <p>Założenie:</p>
-      <Formula formula={`a \\neq 0`} />
-      <LegendParagraph
-        type="short"
-        notation="a"
-        explanation="współczynnik kierunkowy"
-      />
-      <LegendParagraph type="top" notation="b" explanation="wyraz środkowy" />
-      <LegendParagraph type="short" notation="c" explanation="wyraz wolny" />
+      <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
+        <p>
+          Wzór funkcji kwadratowej w <b>postaci ogólnej</b>:
+        </p>
+        <Formula formula={quadraticEquations.STANDARD_FORM} styles="min-w-[161px]" />
+        <p>Założenie:</p>
+        <Formula formula={`a \\neq 0`} />
+        <LegendParagraph
+          type="short"
+          notation="a"
+          explanation="współczynnik kierunkowy"
+        />
+        <LegendParagraph type="top" notation="b" explanation="wyraz środkowy" />
+        <LegendParagraph type="short" notation="c" explanation="wyraz wolny" />
+      </CoreCurriculum>
       <ArticleBorder />
-      <p>
-        Wzór funkcji kwadratowej w <b>postaci kanonicznej</b>:
-      </p>
-      <Formula formula={quadraticEquations.CANONICAL_FORM} styles="min-w-[167px]" />
-      <p>Założenie:</p>
-      <Formula formula={`a \\neq 0`} />
-      <LegendParagraph
-        type="short"
-        notation="p"
-        explanation="rzędna wierzchołka paraboli"
-      />
-      <LegendParagraph
-        type="short"
-        notation="q"
-        explanation="odcięta wierzchołka paraboli"
-      />
+      <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
+        <p>
+          Wzór funkcji kwadratowej w <b>postaci kanonicznej</b>:
+        </p>
+        <Formula formula={quadraticEquations.CANONICAL_FORM} styles="min-w-[167px]" />
+        <p>Założenie:</p>
+        <Formula formula={`a \\neq 0`} />
+        <LegendParagraph
+          type="short"
+          notation="p"
+          explanation="rzędna wierzchołka paraboli"
+        />
+        <LegendParagraph
+          type="short"
+          notation="q"
+          explanation="odcięta wierzchołka paraboli"
+        />
+      </CoreCurriculum>
       <ArticleBorder />
-      <p>
-        <b>Wyróżnik</b> funkcji kwadratowej (delta) to wartość wyrażona wzorem:
-      </p>
-      <Formula formula={quadraticEquations.DELTA} styles="min-w-[107px]" />
-      <p>Jeżeli Δ &gt; 0, to funkcja ma dwa pierwiastki rzeczywiste.</p>
-      <p>Jeżeli Δ = 0, to funkcja ma jeden pierwiastek rzeczywisty.</p>
-      <p>Jeżeli Δ &lt; 0, to funkcja nie ma pierwiastków rzeczywistych.</p>
+      <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
+        <p>
+          <b>Wyróżnik</b> funkcji kwadratowej (delta) to wartość wyrażona wzorem:
+        </p>
+        <Formula formula={quadraticEquations.DELTA} styles="min-w-[107px]" />
+        <p>Jeżeli <b>Δ &gt; 0</b>, to funkcja ma <b>dwa pierwiastki</b> rzeczywiste (miejsca zerowe).</p>
+        <p>Jeżeli <b>Δ = 0</b>, to funkcja ma <b>jeden pierwiastek</b> rzeczywisty (miejsce zerowe).</p>
+        <p>Jeżeli <b>Δ &lt; 0</b>, to funkcja <b>nie ma pierwiastków</b> rzeczywistych (miejsc zerowych).</p>
+      </CoreCurriculum>
       <ArticleBorder />
-      <p>
-        <b>Miejsce zerowe</b> (pierwiastek) funkcji kwadratowej wyraża się
-        wzorem:
-      </p>
-      <Formula formula={quadraticEquations.X12} styles="min-w-[128px]" />
-      <p>Założenia:</p>
-      <Formula formula={`a \\neq 0`} />
-      <Formula formula={`\\Delta \\ge 0`} />
-      <Proof steps={QuadraticFunction_zeroPlaceProof} text="Dowód" styles="min-w-[300px]" />
-      <br />
-      <p className="flex">
-        W przypadku gdy funkcja kwadratowa ma dwa pierwiastki rzeczywiste używa
-        się oznaczeń:
-      </p>
-      <Formula formula={quadraticEquations.X1} styles="min-w-[129px]" />
-      <Formula formula={quadraticEquations.X2} styles="min-w-[129px]" />
+      <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
+        <p>
+          <b>Miejsce zerowe</b> (pierwiastek) funkcji kwadratowej wyraża się
+          wzorem:
+        </p>
+        <Formula formula={quadraticEquations.X12} styles="min-w-[128px]" />
+        <p>Założenia:</p>
+        <Formula formula={`a \\neq 0`} />
+        <Formula formula={`\\Delta \\ge 0`} />
+        <Proof steps={QuadraticFunction_zeroPlaceProof} text="Dowód" styles="min-w-[300px]" />
+        <br />
+        <p className="flex">
+          W przypadku gdy funkcja kwadratowa ma dwa pierwiastki rzeczywiste używa
+          się oznaczeń:
+        </p>
+        <Formula formula={quadraticEquations.X1} styles="min-w-[129px]" />
+        <Formula formula={quadraticEquations.X2} styles="min-w-[129px]" />
+      </CoreCurriculum>
       <ArticleBorder />
       <p>
         Wzór funkcji kwadratowej w <b>postaci iloczynowej</b>

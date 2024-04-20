@@ -65,6 +65,7 @@ import LinePage from "../pages/knowledgeBasePages/geometryPages/LinePage/LinePag
 import PointPage from "../pages/knowledgeBasePages/geometryPages/PointPage/PointPage";
 import TetrationPage from "../pages/knowledgeBasePages/arithmeticPages/tetration/TetrationPage";
 import ExponentialFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/ExponentialFunction/ExponentialFunctionCalculatorPage";
+import LogarithmicFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/LogarithmicFunction/LogarithmicFunctionCalculatorPage";
 
 
 
@@ -133,6 +134,7 @@ export const Router: FC = () => {
                         <Route path="funkcji-kwadratowej" element={<QuadraticFunctionCalculatorPage />} />
                         <Route path="funkcji-liniowej" element={<LinearFunctionCalculatorPage />} />
                         <Route path="funkcji-wykladniczej" element={<ExponentialFunctionCalculatorPage />} />
+                        <Route path="funkcji-logarytmicznej" element={<LogarithmicFunctionCalculatorPage />} />
                         <Route path="gra-w-zycie" element={<GameOfLifePage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>

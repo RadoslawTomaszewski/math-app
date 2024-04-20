@@ -179,11 +179,11 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         category: { to: "stale-matematyczne", text: "Stałe matematyczne" },
         links: [
             { to: "liczba-pi", text: "Liczba Pi" },
-            { to: "liczba-e", text: "Liczba Eulera" },
-            { to: "liczba-fi", text: "Liczba Fibonacciego" },
+            { to: "liczba-e", text: "Liczba Eulera", color: gray },
+            { to: "liczba-fi", text: "Liczba Fibonacciego", color: gray },
             // { to: "zloty-podzial", text: "Złoty podział" },
             // { to: "srebrny-podzial", text: "Srebrny podział" },
-            { to: "liczba-plastikowa", text: "Liczba plastikowa" },
+            { to: "liczba-plastikowa", text: "Liczba plastikowa", color: gray },
         ],
     },
 
@@ -221,7 +221,7 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
             { to: "funkcji-liniowej", text: "Funkcja Liniowa" },
             { to: "funkcji-kwadratowej", text: "Funkcja Kwadratowa" },
             { to: "funkcji-wykladniczej", text: "Funkcja Wykładnicza" },
-            { to: "funkcji-logarytmicznej", text: "Funkcja Logarytmiczna", color: gray },
+            { to: "funkcji-logarytmicznej", text: "Funkcja Logarytmiczna" },
             { to: "funkcji-homograficznej", text: "Funkcja Homograficzna", color: gray },
             { to: "funkcji-wielomianowej", text: "Funkcja Wielomianowa", color: gray },
         ],

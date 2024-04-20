@@ -9,6 +9,7 @@ interface IIntegerFormData {
   primeFactorNumber: string;
   coefficientNotZero: string;
   exponentialCoefficient: string;
+  logarithmicCoefficient: string;
   coefficient: string;
 }
 
@@ -118,6 +119,20 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
     },
   },
   exponentialCoefficient: {
+    max: {
+      value: 100000,
+      message: "Maksymalna wartość to 100000",
+    },
+    min: {
+      value: 0,
+      message: "Minimalna wartość to 0",
+    },
+    pattern: {
+      value: /^-?\d+(\.\d+)?(e)?$/,
+      message: "Wprowadzona wartość musi być liczbą",
+    },
+  },
+  logarithmicCoefficient: {
     max: {
       value: 100000,
       message: "Maksymalna wartość to 100000",

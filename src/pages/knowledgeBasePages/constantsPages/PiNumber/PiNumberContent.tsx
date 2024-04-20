@@ -4,7 +4,6 @@ import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import GraphImage from "../../../../components/articleItems/GraphImage";
 import PiGif from "../../../../assets/images/function-graphs/pi.gif";
-import { useState } from "react";
 import { mathConstants } from "../../../../types/equations";
 import { NavLink } from "react-router-dom";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
@@ -80,6 +79,10 @@ const PiNumberContent: FC = () => {
             <Formula formula="\pi= 3+\frac{1}{7+\frac{1}{15+\frac{1}{1+\frac{1}{292+\frac{1}{⋱}}}}}=[3;7,15, 1, 292, 1 , 1, 1, 2, 1, 3, 1, 14, 2, 1, 1, 2, 2, 2, 2, 1, ...]" styles="min-w-[670px]" />
           </div>
         </CoreCurriculum>
+        <ArticleBorder />
+        <Title text="Ciekawy fakt" type="main-article" />
+        <NavLink to="https://pl.wikipedia.org/wiki/TeX"><Formula formula="\text{T} _{\text{E}} \text{X}" /></NavLink>
+        <p>Formuły matematyczne na platformie <b>majza.eu</b> są pisane z wykorzystaniem systemu składu drukarskiego <b>TeX</b>, którego twórcą jest <b><NavLink to="https://pl.wikipedia.org/wiki/Donald_Knuth">Donald E. Knuth</NavLink></b>. Od wersji 3 tego systemu każda kolejna podwersja jest oznaczana kolejnym przybliżeniem dziesiętnym liczby <b>π</b>, np. wersja ze stycznia 2021 to 3.141592653. W swoim testamencie Knuth wyraził wolę aby z chwilą jego śmierci numer wersji określić jako <b>π</b>. Ma to być metafora wprowadzania poprawek przybliżających system do doskonałości.</p>
       </div >
     </>
   );
