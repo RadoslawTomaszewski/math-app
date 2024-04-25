@@ -86,6 +86,7 @@ export enum quadraticEquations {
     DELTA = "\\Delta=b^2-4ac",
     P = "p=\\frac{-b}{2a}",
     P_arithmetic = "p = \\frac{x_1+x_2}{2}",
+    P_arithmetic_universal = "p = \\frac{x_A+x_B}{2}",
     Q = "q=\\frac{-\\Delta}{4a}",
     Q_function = "q=f(p)",
     X0 = "x_0=\\frac{-b}{2a}",

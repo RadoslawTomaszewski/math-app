@@ -22,6 +22,7 @@ class LinearFormula {
     private setStandardForm = (): void => {
         if (this.a === 0 && this.b === 0) {
             this.standardForm = 'f(x)=0';
+            this.slopeForm = 'y=0';
             return;
         }
         let standardFormA = `${this.a}x`;
@@ -55,36 +56,38 @@ class LinearFormula {
     private setGeneralForm = (): void => {
 
         if (this.a === 0 && this.b === 0) {
-            this.standardForm = 'f(x)=0';
+            this.generalForm = 'y=0';
             return;
         }
-        let standardFormA = `${this.a}x`;
-        if (this.a === 0) standardFormA = '';
-        if (this.a === 1) standardFormA = 'x';
-        if (this.a === -1) standardFormA = '-x';
+        let generalFormA = `${this.a}x`;
+        if (this.a === 0) generalFormA = '';
+        if (this.a === 1) generalFormA = 'x';
+        if (this.a === -1) generalFormA = '-x';
 
-        let standardFormB = `+${this.b}`;
+        let generalFormB = `+${this.b}`;
         if (this.a === 0) {
-            standardFormB = `${this.b}`;
+            generalFormB = `+${this.b}`;
         }
-        if (this.b < 0) standardFormB = `${this.b}`;
-        if (this.b === 0) standardFormB = ``;
+        if (this.b < 0) generalFormB = `${this.b}`;
+        if (this.b === 0) generalFormB = ``;
 
-        this.generalForm = `${standardFormA}-y${standardFormB}=0`;
+        this.generalForm = `${generalFormA}-y${generalFormB}=0`;
     }
 
     private setSegmentForm = (): void => {
         if (this.b === 0 || this.a === 0) {
-            this.segmentForm = 'nie istnieje';
+            this.segmentForm = '\\text{nie istnieje}';
             return;
         }
         let segmentFormA = `\\frac{x}{${this.x0.getAbsFractionString()}}`;
         const minusSign = '-';
-        if (Math.abs(this.x0.getFraction()[1]) === 1) segmentFormA = `x`;
+        if (Math.abs(this.x0.getValue()) === 1) segmentFormA = `x`;
         if (!this.x0.getIsFractionPositive()) segmentFormA = minusSign + segmentFormA;
 
         let segmentFormB = `+\\frac{y}{${this.b}}=1`;
-        if (this.b < 0) segmentFormB = `-\\frac{y}{${this.b}}=1`;
+        if (this.b < 0) segmentFormB = `-\\frac{y}{${Math.abs(this.b)}}=1`;
+        if (this.b === 1) segmentFormB = `+y=1`;
+        if (this.b === -1) segmentFormB = `-y=1`;
         this.segmentForm = segmentFormA + segmentFormB;
     }
 

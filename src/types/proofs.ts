@@ -278,6 +278,25 @@ export const QuadraticFunction_qProof = [
     `q = \\frac{-\\left(b^2-4ac\\right)}{4a}`,
     `q = \\frac{-\\Delta}{4a}`,
 ];
+export const QuadraticFunction_VieteSumProof = [
+    `x_1 + x_2`,
+    `\\frac{-b - \\sqrt{\\Delta}}{2a} + \\frac{-b + \\sqrt{\\Delta}}{2a}`,
+    `\\frac{-b - \\sqrt{\\Delta} -b + \\sqrt{\\Delta}}{2a}`,
+    `\\frac{-2b}}{2a}`,
+    `\\frac{-b}{a}`,
+];
+
+export const QuadraticFunction_VieteProductProof = [
+    `x_1 \\cdot x_2`,
+    `\\frac{-b - \\sqrt{\\Delta}}{2a} \\cdot \\frac{-b + \\sqrt{\\Delta}}{2a}`,
+    `\\frac{-\\left(\\sqrt{\\Delta}+b\\right)\\left(\\sqrt{\\Delta}-b\\right)}{4a^2}`,
+    `\\frac{-\\left(\\left(\\sqrt{\\Delta}\\right)^2-b^2\\right)}{4a^2}`,
+    `\\frac{-\\left(\\Delta-b^2\\right)}{4a^2}`,
+    `\\frac{b^2-\\Delta}{4a^2}`,
+    `\\frac{b^2-\\left(b^2-4ac\\right)}{4a^2}`,
+    `\\frac{4ac}{4a^2}`,
+    `\\frac{c}{a}`,
+];
 
 //Derived Function
 export const derivedOfPowerFunctionNaturalFrom2 = [

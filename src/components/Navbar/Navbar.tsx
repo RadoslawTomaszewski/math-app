@@ -48,6 +48,11 @@ const Navbar: FC = () => {
                 <b>Kalkulatory</b>
               </NavLink>
             </li>
+            {/* <li className="mx-4 z-20 whitespace-nowrap">
+              <NavLink to="/forum" onClick={handleShowNavbar}>
+                <b>Forum</b>
+              </NavLink>
+            </li> */}
             <li className="mx-4 z-20 whitespace-nowrap">
               <NavLink to="/cke" onClick={handleShowNavbar}>
                 <b>Materiały od CKE</b>
@@ -56,6 +61,11 @@ const Navbar: FC = () => {
             <li className="mx-4 z-20 whitespace-nowrap">
               <NavLink to="/wsparcie" onClick={handleShowNavbar}>
                 <b>Wsparcie</b>
+              </NavLink>
+            </li>
+            <li className="mx-4 z-20 whitespace-nowrap">
+              <NavLink to="/login" onClick={handleShowNavbar}>
+                <div className="text-white">Zaloguj się</div>
               </NavLink>
             </li>
           </ul>

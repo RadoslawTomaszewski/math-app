@@ -1,8 +1,19 @@
 import { FC } from "react";
+import { classNames } from "../../utilities";
 
-const ArticleBorder: FC = () => {
+
+export interface IArticleBorderProps {
+  styles?: string;
+}
+
+const ArticleBorder: FC<IArticleBorderProps> = ({ styles }) => {
+  let styleWrapper = "flex justify-center m-3";
+  if (styles) styleWrapper = classNames(styleWrapper, styles);
+
+
+
   return (
-    <div className="flex justify-center m-3">
+    <div className={styleWrapper}>
       <div className="flex border-b-2 border-solid border-navColor w-full"></div>
     </div>
   );

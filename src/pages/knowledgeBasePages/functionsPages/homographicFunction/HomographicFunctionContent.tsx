@@ -3,25 +3,24 @@ import Title from "../../../../components/articleItems/Title";
 import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 
 const HomographicFunctionContent: FC = () => {
 
   return (
     <>
       <Title text={"Funkcja homograficzna"} type={"main-article"} />
-      <p>
-        <b>Funkcja homograficzna</b> to rodzaj funkcji wymiernej, której wykres jest hiperbolą.
-      </p>
-      <br />
-      <p>Ogólny wzór funkcji homograficznej:</p>
-      <Formula formula={`f(x)=\\frac{ax+b}{cx+d}`} />
-      <p>Założenie:</p>
-      <Formula formula='ad-bc \\\neq 0' />
-      <LegendParagraph
-        type="top"
-        notation="a, b, c, d"
-        explanation="współczynniki funkcji homograficznej"
-      />
+      <CoreCurriculum type={CoreCurriculumTypes.CKEPP} >
+        <p>Wzór funkcji homograficznej w <b>postaci ogólnej</b>:</p>
+        <Formula formula={`f(x)=\\frac{ax+b}{cx+d}`} />
+        <p>Założenie:</p>
+        <Formula formula='ad-bc \\\neq 0' />
+        <LegendParagraph
+          type="top"
+          notation="a, b, c, d"
+          explanation="współczynniki funkcji homograficznej"
+        />
+      </CoreCurriculum>
       <ArticleBorder />
       <p>
         <b>Asymptoty</b> to linie, do których wykres funkcji dąży, ale nigdy ich nie przecina.</p>
@@ -35,7 +34,7 @@ const HomographicFunctionContent: FC = () => {
       <Formula formula='y \in \mathbb{R} - \left\{ \frac{a}{c} \right\}' />
       <ArticleBorder />
       <p>
-        <b>Wyznacznik funkcji homograficznej:</b>
+        <b>Wyróżnik funkcji homograficznej:</b>
       </p>
       <Formula formula={`∆=ad-bc`} />
     </>

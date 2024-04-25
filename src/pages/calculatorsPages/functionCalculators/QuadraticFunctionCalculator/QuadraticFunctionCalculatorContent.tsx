@@ -205,48 +205,46 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 </div>
                                 <ArticleBorder />
                                 <div className="flex flex-wrap justify-center flex-row text-center gap-2">
-                                    <div className="min-w-full lg:min-w-[210px]">
+                                    <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
                                         <p><b>Dziedzina:</b></p>
                                         <Formula formula={"D_f: x\\in \\mathbb{R}"} />
                                     </div>
-                                    <div className="min-w-full lg:min-w-[210px]"><p><b>Zbiór wartości funkcji:</b></p>
+                                    <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]"><p><b>Zbiór wartości funkcji:</b></p>
                                         {quadraticFormula.getA() > 0 && (<Formula formula={`ZW_f: y\\in \\left[${quadraticFormula.getQResult()};\\infty\\right)`} />)}
                                         {quadraticFormula.getA() < 0 && (<Formula formula={`ZW_f: y\\in \\left(-\\infty ; ${quadraticFormula.getQResult()} \\right]`} />)}
                                     </div>
-
-
-                                    <div className="min-w-full lg:min-w-[210px]">
+                                    <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
                                         <div><b>Monotoniczność funkcji:</b></div>
                                         {quadraticFormula.getA() > 0 && (
                                             <>
                                                 <p>Funkcja maleje w przedziale:</p>
-                                                <Formula formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} margin="none" />
+                                                <Formula formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} />
 
                                                 <p>Funkcja rośnie w przedziale:</p>
-                                                <Formula formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} margin="none" />
+                                                <Formula formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} />
                                             </>
                                         )}
                                         {quadraticFormula.getA() < 0 && (
                                             <>
                                                 <p>Funkcja rośnie w przedziale:</p>
-                                                <Formula formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} margin="none" />
+                                                <Formula formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} />
 
                                                 <p>Funkcja maleje w przedziale:</p>
-                                                <Formula formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} margin="none" />
+                                                <Formula formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} />
                                             </>
                                         )}
                                     </div>
 
-                                    <div className="min-w-full lg:min-w-[210px]">
+                                    <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
                                         <p><b>Miejsca zerowe:</b></p>
-                                        {quadraticFormula.getDelta() > 0 && (<Formula formula={`x \\in \\{ x_1, x_2 \\}`} margin="none" />)}
-                                        {quadraticFormula.getDelta() === 0 && (<Formula formula={`x \\in \\{ x_0 \\}`} margin="none" />)}
+                                        {quadraticFormula.getDelta() > 0 && (<Formula formula={`x \\in \\{ x_1, x_2 \\}`} />)}
+                                        {quadraticFormula.getDelta() === 0 && (<Formula formula={`x \\in \\{ x_0 \\}`} />)}
                                         {quadraticFormula.getDelta() < 0 && (<p>brak</p>)}
                                     </div>
 
-                                    <div className="min-w-full lg:min-w-[210px]">
+                                    <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
                                         <p><b>oś symetrii:</b></p>
-                                        <Formula formula={`x=${quadraticFormula.getPResult()}`} margin="none" />
+                                        <Formula formula={`x=${quadraticFormula.getPResult()}`} />
                                     </div>
 
 
@@ -273,6 +271,9 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                             {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                         </button>
                         <div className="flex flex-col">
+                            <span><b>Znane błędy:</b></span>
+                            <p>(01) nieprawidłowa postać iloczynowa, gdy b=0</p>
+                            <br />
                             <span>Nie wiesz co tu się dzieje?</span>
                             <span> Przeczytaj artykuł o <NavLink to="../../baza-wiedzy/funkcja-kwadratowa"><b>funkcji kwadratowej</b></NavLink></span>
                         </div>

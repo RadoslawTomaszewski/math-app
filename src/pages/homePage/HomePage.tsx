@@ -22,15 +22,18 @@ export default function HomePage() {
                 Z każdym kolejnym tygodniem zawartość serwisu będzie się rozrastać.
               </p>
               <ArticleBorder />
-              <Title text="Kim jestem?" type="submain-article" />
+              <Title text="Kim jestem?" type="main-article" />
               <p>Jestem studentem Informatyki (Wydział Zastosowań Matematyki i Informatyki) na SGGW i od 4 lat udzielam korepetycji z matematyki</p>
               <ArticleBorder />
-              <Title text="A komu to potrzebne? A dlaczego?" type="submain-article" />
-              <p>Matematyka jest fundamentem wielu dziedzin nauki i życia codziennego. Serwis tworzę z myślą wsparcia procesu nauki matematyki na każdym etapie edukacyjnym. </p>
-              <p>Dla mnie projekt majza.eu jest okazją do rozwijania umiejętności programowania. Z pewnością będzie rozwijany w wolnych chwilach jako projekt hobbystyczny</p>
+              <Title text="A komu to potrzebne? A dlaczego?" type="main-article" />
+              <p>Matematyka jest fundamentem wielu dziedzin nauki i życia codziennego. Serwis tworzę z myślą wsparcia procesu nauki matematyki na każdym etapie edukacyjnym i w myśl zasady, że wszystko należy upraszczać jak tylko można, ale nie bardziej.</p>
+              <br />
+              <p>Artykuły zawarte w <NavLink to="baza-wiedzy" className="hover:underline"><b>bazie wiedzy</b></NavLink> można traktować jak notatki matematyczne. Szersze wytłumaczenie zadadnień w nich opisywanych oraz więcej przykładów znajdziesz w innych źródłach. Tutaj zamieściłem same konkrety: wzory, zależności, twierdzenia i ich dowody.</p>
+              <br />
+              <p>Część informacji zawartych w artykułach można utrwalić oraz zweryfikować samemu dzięki dynamicznym <NavLink to="kalkulatory" className="hover:underline"><b>kalkulatorom</b></NavLink></p>
+              <p>Dla mnie projekt majza.eu jest okazją do rozwijania umiejętności programowania. Z pewnością będzie rozwijany w wolnych chwilach jako projekt hobbystyczny.</p>
               <ArticleBorder />
-              <Title text="Oznaczenia" type="submain-article" />
-              Na tej platformie znajdziesz następujące oznaczenia:
+              <Title text="Oznaczenia" type="main-article" />
               <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
                 Materiał obejmujący zagadnienia zgodne z podstawą programową CKE od matury w <b>formule 2025 na poziomie podstawowym.</b> W zdecydowanej większości przypadków są to również zagadnienia związane z podstawą programową w formule 2023.
               </CoreCurriculum>
@@ -41,14 +44,17 @@ export default function HomePage() {
               <CoreCurriculum type={CoreCurriculumTypes.extra}>
                 Zagadnienia, których prawdopodobnie nie znajdziesz w podręcznikach zgodnych z podstawą programową CKE oraz <b> elementy matematyki wyższej</b>, które mogą się przydać studentom kierunków inżynierskich.
               </CoreCurriculum><br />
-              <b>UWAGA</b><p>powyższe oznaczenia mają jedynie charakter orientacyjny,sporadycznie definicje mogą wykraczać poza określony zakres.</p>
+              <b>UWAGA</b><p>powyższe oznaczenia mają jedynie charakter orientacyjny, niektóre definicje mogą wykraczać poza oznaczony zakres.</p>
               <ArticleBorder />
               <Title text="Co nowego?" type="submain-article" />
-              <p>Artykuł o <NavLink to="baza-wiedzy/pochodna-funkcji"><b>pochodnej funkcji</b></NavLink></p>
-              <p>Aktualizacja całego rozdziału <NavLink to="baza-wiedzy/arytmetyka"><b>z operacjami arytmetycznymi</b></NavLink></p>
-              <p>Artykuł o <NavLink to="baza-wiedzy/tetracja"><b>tetracji</b></NavLink></p>
+              <p>Aktualizacja całego rozdziału <NavLink to="baza-wiedzy/arytmetyka" className="hover:underline"><b>z operacjami arytmetycznymi</b></NavLink></p>
+              <p>Aktualizacja <NavLink to="kalkulatory/funkcji-kwadratowej" className="hover:underline"><b>kalkulatora funkcji kwadratowej</b></NavLink></p>
+              <p>Aktualizacja <NavLink to="baza-wiedzy/funkcja-kwadratowa" className="hover:underline"><b>artykułu o funkcji kwadratowej</b></NavLink></p>
+              <NavLink to="kalkulatory/funkcji-wykladniczej" className="hover:underline"><b>Kalkulator funkcji wykładniczej</b></NavLink>
               <br />
-              <p className="italic">aktualizacja: 12/04/2024</p>
+              <NavLink to="kalkulatory/funkcji-logarytmicznej" className="hover:underline"><b>Kalkulator funkcji logarytmicznej</b></NavLink>
+              <br />
+              <p className="italic">aktualizacja: 21/04/2024</p>
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="submain-article" />
               <p>Jestem autorem każdego artykułu jaki znajdziesz na <b>majza.eu</b>. Jest bardzo prawdopodobne, że znajdziesz błąd, którego nie byłem w stanie wyłapać. Może to być błąd gramatyczny lub, co gorsze, merytoryczny.</p>
