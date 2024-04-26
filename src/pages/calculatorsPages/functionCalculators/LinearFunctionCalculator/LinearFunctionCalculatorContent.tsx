@@ -20,17 +20,17 @@ const LinearFunctionCalculatorContent: FC = () => {
                 <div className="flex justify-center w-full">
                     <label className="flex pt-4 flex-col flex-wrap items-center">
                         <span className="text-wrap">Wybierz tryb wprowadzania danych:</span>
-                        <div className="flex mt-2">
+                        <div className="flex flex-wrap justify-center gap-2 mt-2">
                             <button
                                 type="button"
-                                className={`mx-2 py-1 px-3 focus:outline-none ${mode === 'coefficients' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+                                className={`mx-2 py-1 min-w-[136px] px-3 focus:outline-none ${mode === 'coefficients' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
                                 onClick={() => handleModeChange('coefficients')}
                             >
                                 Współczynniki
                             </button>
                             <button
                                 type="button"
-                                className={`mx-2 py-1 px-3 focus:outline-none ${mode === 'points' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+                                className={`mx-2 py-1 min-w-[136px] px-3 focus:outline-none ${mode === 'points' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
                                 onClick={() => handleModeChange('points')}
                             >
                                 Punkty

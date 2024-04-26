@@ -76,10 +76,17 @@ const LinearFunctionPointsCalculator: FC = () => {
 
         const Desmos = window.Desmos;
         const calculator = Desmos.GraphingCalculator(elt);
-
-        // const equation1 = `y=${Awatch}x${Number(watchB) >= 0 ? '+' : ''}${watchB}`;
         const equation1 = linearFunction.getEquation();
+        const equation2 = linearFunction.getGeneralForm();
+        const equation3 = linearFunction.getSegmentForm();
+        const A = { id: 'A', latex: `A=(${watchX1},${watchY1})` };
+        const B = { id: 'B', latex: `B=(${watchX2},${watchY2})` };
+
         calculator.setExpression({ id: 'graph1', latex: equation1 });
+        calculator.setExpression({ id: 'graph3', latex: equation2 });
+        calculator.setExpression({ id: 'graph4', latex: equation3 });
+        calculator.setExpression(A);
+        calculator.setExpression(B);
         setLoading(false);
     };
 

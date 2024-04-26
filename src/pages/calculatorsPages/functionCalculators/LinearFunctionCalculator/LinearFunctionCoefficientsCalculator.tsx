@@ -74,9 +74,13 @@ const LinearFunctionCoefficientsCalculator: FC = () => {
 
         const Desmos = window.Desmos;
         const calculator = Desmos.GraphingCalculator(elt);
+        const equation1 = linearFunction.getSlopeForm();
+        const equation2 = linearFunction.getGeneralForm();
+        const equation3 = linearFunction.getSegmentForm();
 
-        const equation1 = `y=${watchA}x${Number(watchB) >= 0 ? '+' : ''}${watchB}`;
         calculator.setExpression({ id: 'graph1', latex: equation1 });
+        calculator.setExpression({ id: 'graph2', latex: equation2 });
+        calculator.setExpression({ id: 'graph3', latex: equation3 });
         setLoading(false);
     };
 

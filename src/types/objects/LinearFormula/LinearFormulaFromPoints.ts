@@ -49,7 +49,7 @@ class LinearFormulaFromPoints {
 
         if (this.x1 !== this.x2) {
             this.a = new Fraction((this.y2 - this.y1), (this.x2 - this.x1));
-            this.b = new Fraction((this.y1 * this.x2 - this.y2 - this.x1), (this.x2 - this.x1));
+            this.b = new Fraction((this.y1 * this.x2 - this.y2 * this.x1), (this.x2 - this.x1));
 
             let equationA = `${this.a.getFractionString()}x`;
             if (this.a.getValue() === 1) equationA = `x`;
@@ -71,7 +71,7 @@ class LinearFormulaFromPoints {
     }
     private setX0 = (): void => {
         if (this.x1 !== this.x2) {
-            this.x0 = new Fraction(((this.y1 * this.x2 - this.y2 - this.x1) * (-1)), (this.x2 - this.x1)).dividedByOtherFraction(this.a);
+            this.x0 = new Fraction(((this.y1 * this.x2 - this.y2 * this.x1) * (-1)), (this.x2 - this.x1)).dividedByOtherFraction(this.a);
         }
     }
     private calculateAlpha = (): void => {
@@ -119,7 +119,7 @@ class LinearFormulaFromPoints {
         if (!this.x0.getIsFractionPositive()) segmentFormA = minusSign + segmentFormA;
 
         let segmentFormB = `+\\frac{y}{${this.b.getFractionString()}}=1`;
-        if (this.b.getValue() < 0) segmentFormB = `-\\frac{y}{${this.b.getAbsFractionString()})}}=1`;
+        if (this.b.getValue() < 0) segmentFormB = `-\\frac{y}{${this.b.getAbsFractionString()}}=1`;
         if (this.b.getValue() === 1) segmentFormB = `+y=1`;
         if (this.b.getValue() === -1) segmentFormB = `-y=1`;
         this.segmentForm = segmentFormA + segmentFormB;
@@ -157,13 +157,16 @@ class LinearFormulaFromPoints {
         return slopeAlphaFormulaA + slopeAlphaFormulaB;
     }
     getSlopeForm(): string {
-        if (this.x1 === this.x2) return "\\text{nie istnieje}";
+        if (this.x1 === this.x2) return "";
         return this.slopeForm;
     }
     getGeneralForm(): string {
         return this.generalForm;
     }
     getSegmentForm(): string {
+        if (this.x1 === this.x2) return '';
+        if (this.y1 === this.y2) return '';
+        if (this.b.getValue() === 0) return '';
         return this.segmentForm;
     }
 

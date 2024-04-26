@@ -76,7 +76,7 @@ class LinearFormula {
 
     private setSegmentForm = (): void => {
         if (this.b === 0 || this.a === 0) {
-            this.segmentForm = '\\text{nie istnieje}';
+            this.segmentForm = '';
             return;
         }
         let segmentFormA = `\\frac{x}{${this.x0.getAbsFractionString()}}`;
