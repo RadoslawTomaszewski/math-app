@@ -8,8 +8,8 @@ class Fraction {
     private value: number = 0;
     //Dokladnosc do 14 miejsc po przecinku
     private isValueApproximate: boolean = false;
-    //Step 1 ulamek w pierwotnej formie z wylaczonym minusem
-    private step1: string = "";
+    //Step 1
+    private originalFractionNegative: string = "";
     //Step 2 ulamek w pierwotnej formie z zapisem dzielenia przez NWD
     private step2: string = "";
     //Step 3 ulamek w skroconej formie z wylaczonym minusem
@@ -24,7 +24,7 @@ class Fraction {
             this.checkIsFractionPositive();
             this.reduceMinuses();
             this.setGCD();
-            this.setStep1();
+            this.setoriginalFractionNegative();
             this.setStep2();
             this.reduceFraction();
             this.setStep3();
@@ -59,21 +59,21 @@ class Fraction {
             this.fraction[1] = this.fraction[1] / this.GCD;
         }
     }
-    private setStep1(): void {
+    private setoriginalFractionNegative(): void {
         let minus = "";
         if (!this.isFractionPositive) minus = '-';
 
         if (this.fraction[0] === 0) {
-            this.step1 = '0';
+            this.originalFractionNegative = '0';
             return;
         }
 
         if (this.fraction[1] === 1) {
-            this.step1 = `${minus}${this.fraction[0]}`;
+            this.originalFractionNegative = `${minus}${this.fraction[0]}`;
             return
         }
 
-        this.step1 = `${minus}\\frac{${this.fraction[0]}}{${this.fraction[1]}}`;
+        this.originalFractionNegative = `${minus}\\frac{${this.fraction[0]}}{${this.fraction[1]}}`;
     }
     private setStep2(): void {
         let minus = "";
@@ -118,6 +118,29 @@ class Fraction {
         }
         this.absStep3 = `\\frac{${this.fraction[0]}}{${this.fraction[1]}}`;
     }
+    multiplyByInt(num: number): Fraction {
+        const newNominator = this.nominator * num;
+        const result = new Fraction(newNominator, this.denominator);
+        return result;
+    }
+
+    multiplyByOtherFraction(otherFraction: Fraction): Fraction {
+        const newNominator = this.nominator * otherFraction.nominator;
+        const newDenominator = this.denominator * otherFraction.denominator;
+
+        const result = new Fraction(newNominator, newDenominator);
+
+        return result;
+    }
+
+    dividedByOtherFraction(otherFraction: Fraction): Fraction {
+        const newNominator = this.nominator * otherFraction.denominator;
+        const newDenominator = this.denominator * otherFraction.nominator;
+
+        const result = new Fraction(newNominator, newDenominator);
+
+        return result;
+    }
 
     getNominator(): number {
         return this.nominator;
@@ -143,8 +166,8 @@ class Fraction {
     getStep0(): string {
         return `\\frac{${this.nominator}}{${this.denominator}}`
     }
-    getStep1(): string {
-        return this.step1;
+    getoriginalFractionNegative(): string {
+        return this.originalFractionNegative;
     }
     getStep2(): string {
         return this.step2;

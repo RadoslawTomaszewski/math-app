@@ -1,29 +1,30 @@
+import { joinUniqueWithEquals } from "../../../utilities";
+import { linearEquations } from "../../equations";
 import Fraction from "../Fraction/Fraction";
-// import LinearFormula from "./LinearFormula";
+
 
 class LinearFormulaFromPoints {
     private substitutionEquation: string = "";
     private equation: string = "";
     private isParellToOy = false;
-    private isCoefficiantsInt = false;
-    private a: number = 0;
-    private b: number = 0;
-    // private linearFormula: LinearFormula = new LinearFormula(0, 0);
+    private a: Fraction = new Fraction(1, 1);
+    private b: Fraction = new Fraction(1, 1);
+    private x0: Fraction = new Fraction(1, 1);
+    private alphaRad: number = 0;
+    private alphaDeg: number = 0;
 
+    private slopeForm: string = '';
+    private generalForm: string = '';
+    private segmentForm: string = '';
 
     constructor(private x1: number, private x2: number, private y1: number, private y2: number) {
         this.setSubstitutionEquation();
         this.setEquation();
+        this.setX0();
+        this.calculateAlpha();
+        this.setGeneralForm();
+        this.setSegmentForm();
 
-
-
-        this.checkIsParellToOy();
-        this.checkIsCoefficiantsInt();
-
-        if (!this.isParellToOy && this.isCoefficiantsInt) {
-            this.calculateFromPointsIntCoefficiants();
-            // this.setLinearFormulaIntCoefficiants();
-        }
     }
 
     private setSubstitutionEquation = (): void => {
@@ -40,70 +41,132 @@ class LinearFormulaFromPoints {
         if (this.x1 === this.x2) this.substitutionEquation = "\\text{nie funkcja}"
     }
     private setEquation = (): void => {
-        if (this.x1 === this.x2) this.equation = `x=${this.x1}`;
-        if (this.x1 !== this.x2) {
-            const a = new Fraction((this.y2 - this.y1), (this.x2 - this.x1));
-            const b = new Fraction((this.y1 * this.x2 - this.y2 - this.x1), (this.x2 - this.x1));
-            this.equation = `f(x)=${a.getFractionString()}x + ${b.getFractionString()}`;
-        }
-        if (this.y1 === this.y2) this.equation = `f(x)=${this.y2}`;
-    }
-
-
-
-
-
-
-    private checkIsParellToOy = (): void => {
         if (this.x1 === this.x2) {
+            this.equation = `x=${this.x1}`;
+            this.slopeForm = `x=${this.x1}`;
             this.isParellToOy = true;
         }
-    }
-    private checkIsCoefficiantsInt() {
-        const deltay2y1 = this.y2 - this.y1;
-        const deltax2x1 = this.y2 - this.y1;
-        const aCoefficiant = new Fraction(deltay2y1, deltax2x1);
-        const diffy1x2andy2x1 = this.y1 * this.x2 - this.y2 * this.x1;
-        const bCoefficiant = new Fraction(diffy1x2andy2x1, deltax2x1);
-        if (aCoefficiant.getDenominator() === 1 && bCoefficiant.getDenominator() === 1) this.isCoefficiantsInt = true;
-    }
 
-    private calculateFromPointsIntCoefficiants = (): void => {
-        this.a = (this.y2 - this.y1) / (this.x2 - this.x1);
-        this.b = this.y1 - this.a * this.x1;
+        if (this.x1 !== this.x2) {
+            this.a = new Fraction((this.y2 - this.y1), (this.x2 - this.x1));
+            this.b = new Fraction((this.y1 * this.x2 - this.y2 - this.x1), (this.x2 - this.x1));
+
+            let equationA = `${this.a.getFractionString()}x`;
+            if (this.a.getValue() === 1) equationA = `x`;
+            if (this.a.getValue() === -1) equationA = `-x`;
+
+            let equationB = `+ ${this.b.getFractionString()}`;
+            if (!this.b.getIsFractionPositive()) equationB = `${this.b.getFractionString()}`;
+            if (this.y1 * this.x2 - this.y2 * this.x1 === 0) equationB = "";
+
+            this.equation = `f(x)=${equationA} ${equationB}`;
+            this.slopeForm = `y=${equationA} ${equationB}`;
+        }
+        if (this.y1 === this.y2) {
+            this.equation = `f(x)=${this.y2}`;
+            this.slopeForm = `y=${this.y2}`;
+            this.a = new Fraction(0, 1);
+            this.b = new Fraction(this.y1, 1);
+        }
     }
+    private setX0 = (): void => {
+        if (this.x1 !== this.x2) {
+            this.x0 = new Fraction(((this.y1 * this.x2 - this.y2 - this.x1) * (-1)), (this.x2 - this.x1)).dividedByOtherFraction(this.a);
+        }
+    }
+    private calculateAlpha = (): void => {
+        const tanAlpha = this.a.getValue();
+        this.alphaRad = Math.atan(tanAlpha);
+        this.alphaDeg = this.alphaRad * (180 / Math.PI);
+        if (this.alphaDeg < 0) this.alphaDeg += 360;
+    }
+    private setGeneralForm = (): void => {
+        if (this.a.getNominator() === 0 && this.b.getNominator() === 0) {
+            this.generalForm = 'y=0';
+            return;
+        }
 
-    // private setLinearFormulaIntCoefficiants = (): void => {
-    //     this.linearFormula = new LinearFormula(this.a, this.b);
-    // }
+        let greaterDenominator = Math.abs(this.a.getDenominator());
+        if (Math.abs(this.b.getDenominator()) > greaterDenominator) greaterDenominator = Math.abs(this.b.getDenominator());
 
-    getA(): number {
+
+        let generalFormA = `${this.a.multiplyByInt(greaterDenominator).getFractionString()}x`;
+        if (this.a.getNominator() === 0) generalFormA = '';
+        if (Math.abs(this.a.getNominator()) === 1 && this.a.getIsFractionPositive()) generalFormA = 'x';
+        if (Math.abs(this.a.getNominator()) === 1 && !this.a.getIsFractionPositive()) generalFormA = '-x';
+
+        let B = -1 * greaterDenominator;
+        let generalFormB = `+${B}y`;
+        if (B < 0) generalFormB = `${B}y`;
+        if (B === 0) generalFormB = '';
+        if (B === -1) generalFormB = '-y';
+        if (B === 1) generalFormB = '+y';
+
+        let generalFormC = `+ ${this.b.multiplyByInt(greaterDenominator).getFractionString()}`;
+        if (this.b.getValue() < 0) generalFormC = `${this.b.multiplyByInt(greaterDenominator).getFractionString()}`;
+        if (this.b.getNominator() === 0) generalFormC = ``;
+
+        this.generalForm = `${generalFormA}${generalFormB}${generalFormC}=0`;
+    }
+    private setSegmentForm = (): void => {
+        if (this.b.getNominator() === 0 || this.a.getNominator() === 0) {
+            this.segmentForm = '\\text{nie istnieje}';
+            return;
+        }
+        let segmentFormA = `\\frac{x}{${this.x0.getAbsFractionString()}}`;
+        const minusSign = '-';
+        if (Math.abs(this.x0.getValue()) === 1) segmentFormA = `x`;
+        if (!this.x0.getIsFractionPositive()) segmentFormA = minusSign + segmentFormA;
+
+        let segmentFormB = `+\\frac{y}{${this.b.getFractionString()}}=1`;
+        if (this.b.getValue() < 0) segmentFormB = `-\\frac{y}{${this.b.getAbsFractionString()})}}=1`;
+        if (this.b.getValue() === 1) segmentFormB = `+y=1`;
+        if (this.b.getValue() === -1) segmentFormB = `-y=1`;
+        this.segmentForm = segmentFormA + segmentFormB;
+    }
+    getX0Calculations = (): string => {
+        if (this.x1 !== this.x2) {
+            if (this.a.getNominator() === 0 && this.b.getNominator() === 0) return '\\infty';
+            if (this.a.getNominator() === 0 && this.b.getNominator() !== 0) return '\\text{brak}';
+            const minusB = this.b.multiplyByInt(-1);
+            return joinUniqueWithEquals("x_0", "\\frac{-b}{a}", `\\frac{${minusB.getFractionString()}}{${this.a.getFractionString()}}`, this.x0.getFractionString());
+        }
+        return '';
+    }
+    getA(): Fraction {
         return this.a;
     }
-
-    getB(): number {
+    getB(): Fraction {
         return this.b;
     }
-
     getSubstitutionEquation(): string {
         return this.substitutionEquation;
     }
     getEquation(): string {
-        console.log(this.equation);
         return this.equation;
     }
-
-    // getLinearFormula(): LinearFormula {
-    //     return this.linearFormula;
-    // }
-
     getIsParellToOy(): boolean {
         return this.isParellToOy;
     }
+    getSlopeAlphaCalculation(): string {
+        let slopeAlphaFormulaA = '';
+        if (this.alphaDeg % 1 === 0) slopeAlphaFormulaA = `${linearEquations.SLOPE}\\Leftrightarrow\\alpha=`;
+        else slopeAlphaFormulaA = `${linearEquations.SLOPE}\\Leftrightarrow\\alpha \\approx`;
 
-    getIsCoefficiantsInt(): boolean {
-        return this.isCoefficiantsInt;
+        let slopeAlphaFormulaB = `${Math.floor(this.alphaDeg * 100) / 100}^{\\circ}`;
+        return slopeAlphaFormulaA + slopeAlphaFormulaB;
     }
+    getSlopeForm(): string {
+        if (this.x1 === this.x2) return "\\text{nie istnieje}";
+        return this.slopeForm;
+    }
+    getGeneralForm(): string {
+        return this.generalForm;
+    }
+    getSegmentForm(): string {
+        return this.segmentForm;
+    }
+
 
 }
 

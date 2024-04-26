@@ -59,7 +59,6 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
     const handleGenerateGraph = async () => {
         setShowGraph(true);
-        console.log(showGraph);
         setLoading(true);
         const graphContainer = document.getElementById('graph-container');
         if (graphContainer) {
@@ -199,9 +198,15 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 </div>
                                 <ArticleBorder />
                                 <div className="flex flex-col w-full items-start md:items-center">
-                                    <div><b>Wzory Viete'a:</b></div>
-                                    <Formula formula={quadraticFormula.getVietasSumCalculations()} />
-                                    <Formula formula={quadraticFormula.getVietasProductCalculations()} />
+                                    {quadraticFormula.getDelta() >= 0 && (<>
+                                        <div><b>Wzory Viete'a:</b></div>
+                                        <Formula formula={quadraticFormula.getVietasSumCalculations()} />
+                                        <Formula formula={quadraticFormula.getVietasProductCalculations()} />
+                                    </>)}
+                                    {quadraticFormula.getDelta() < 0 && (<>
+                                        <div><b>Wzory Viete'a:</b></div>
+                                        <p>brak pierwiastków trójmianu kwadratowego</p>
+                                    </>)}
                                 </div>
                                 <ArticleBorder />
                                 <div className="flex flex-wrap justify-center flex-row text-center gap-2">

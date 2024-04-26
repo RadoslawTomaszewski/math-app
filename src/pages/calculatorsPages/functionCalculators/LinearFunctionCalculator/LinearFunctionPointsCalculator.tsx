@@ -60,7 +60,6 @@ const LinearFunctionPointsCalculator: FC = () => {
     };
     const handleGenerateGraph = async () => {
         setShowGraph(true);
-        console.log(showGraph);
         setLoading(true);
         const graphContainer = document.getElementById('graph-container');
         if (graphContainer) {
@@ -147,77 +146,80 @@ const LinearFunctionPointsCalculator: FC = () => {
                             <Formula formula={`B=(${watchX2};${watchY2})`} />
                         </div>
                     </div>
-                    <div><b>Wzór funkcji</b></div>
-                    <Formula formula={'f(x)=\\frac{y_2-y_1}{x_2-x_1}\\cdot x + \\frac{y_1 \\cdot x_2 - y_2 \\cdot x_1}{x_2 - x_1}'} styles="min-w-[310px]" />
-                    <Formula formula={linearFunction.getSubstitutionEquation()} styles="min-w-[540px]" />
-                    <Formula formula={linearFunction.getEquation()} styles="min-w-[540px]" />
-                    <ArticleBorder styles="w-full" />
-                    <div className="flex flex-wrap justify-center flex-row text-center gap-2">
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
-                            <p><b>Dziedzina:</b></p>
-                            <Formula formula={"D_f: x\\in \\mathbb{R}"} />
+                    <ArticleBorder />
+                    {watchX1 === watchX2 && watchY1 !== watchY2 && (<p className="text-[red] text-center">To nie jest funkcja liniowa</p>)}
+                    {watchX1 === watchX2 && watchY1 === watchY2 && (<p className="text-[red] text-center">Wprowadź dwa różne punkty</p>)}
+                    {watchX1 !== watchX2 && (<>
+                        <div className="w-full overflow-x-auto ">
+                            <div className="flex flex-col min-w-[540px] items-start md:items-center"><p className="text-center"><b>Wzór funkcji:</b></p>
+                                <Formula formula={'f(x)=\\frac{y_2-y_1}{x_2-x_1}\\cdot x + \\frac{y_1 \\cdot x_2 - y_2 \\cdot x_1}{x_2 - x_1}'} />
+                                <Formula formula={linearFunction.getSubstitutionEquation()} />
+                                <Formula formula={linearFunction.getEquation()} />
+                            </div>
                         </div>
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]"><p><b>Zbiór wartości funkcji:</b></p>
-                            <Formula formula={"ZW_f: y\\in \\mathbb{R}"} />
-                        </div>
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
-                            <div><b>Monotoniczność funkcji:</b></div>
-                            {linearFunction.getA() < 0 && (
-                                <p>Funkcja malejąca</p>
-                            )}
-                            {linearFunction.getA() === 0 && (
-                                <p>Funkcja stała</p>
-                            )}
-                            {linearFunction.getA() > 0 && (
-                                <p>Funkcja rosnąca</p>
-                            )}
-                        </div>
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
-                            <p><b>Miejsca zerowe:</b></p>
+                        <div className="flex w-full items-start">
                             <div className="flex items-start">
-                                {linearFunction.getA() === 0 &&
-                                    <>
-                                        {linearFunction.getB() === 0 && <span>Nieskończenie wiele miejsc zerowych</span>}
-                                        {linearFunction.getB() !== 0 && <span>Brak</span>}
-                                    </>
-                                }
-                                {linearFunction.getA() !== 0 &&
-                                    <>
-                                        <div className="flex items-start">
-                                            <Formula formula={`11111111111`} />
-                                        </div>
-                                    </>
-                                }
+                                <Formula formula={`a=${linearFunction.getA().getFractionString()}`} styles="min-h-[62px] items-center" />
+                                <Formula formula={`b=${linearFunction.getB().getFractionString()}`} styles="min-h-[62px] items-center" />
                             </div>
                         </div>
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
-                            <p><b>Kąt nachylenia prostej do osi OX:</b></p>
-                            <div className="flex items-start">
-                                <Formula formula={`1111111111`} styles="min-w-[216px]" />
+                        <ArticleBorder styles="w-full" />
+                        <div className="flex flex-wrap justify-center flex-row text-center gap-2">
+                            <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
+                                <p><b>Dziedzina:</b></p>
+                                <Formula formula={"D_f: x\\in \\mathbb{R}"} />
                             </div>
-                        </div>
-                        {linearFunction.getA() === 0 && (
-                            <div className="min-w-full lg:min-w-[210px]">
-                                <p><b>Pozostałe cechy:</b></p>
-                                <p>funkcja parzysta</p>
+                            <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]"><p><b>Zbiór wartości funkcji:</b></p>
+                                <Formula formula={"ZW_f: y\\in \\mathbb{R}"} />
                             </div>
-                        )}
+                            <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
+                                <div><b>Monotoniczność funkcji:</b></div>
+                                {!linearFunction.getA().getIsFractionPositive() && (
+                                    <p>Funkcja malejąca</p>
+                                )}
+                                {linearFunction.getA().getNominator() === 0 && (
+                                    <p>Funkcja stała</p>
+                                )}
+                                {linearFunction.getA().getNominator() !== 0 && linearFunction.getA().getIsFractionPositive() && (
+                                    <p>Funkcja rosnąca</p>
+                                )}
+                            </div>
+                            <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[280px]">
+                                <p><b>Miejsca zerowe:</b></p>
+                                <div className="flex flex-col items-start md:items-center  w-full overflow-x-auto ">
+                                    <Formula formula={linearFunction.getX0Calculations()} />
+                                </div>
+                            </div>
+                            <div className="min-w-full lg:min-w-[280px]">
+                                <div className="flex flex-col items-start md:items-center w-full overflow-x-auto ">
+                                    <p><b>Kąt nachylenia prostej do osi OX:</b></p>
+                                    <Formula formula={linearFunction.getSlopeAlphaCalculation()} />
+                                </div>
+                            </div>
+                            {linearFunction.getA().getNominator() === 0 && (
+                                <div className="min-w-full lg:min-w-[210px]">
+                                    <p><b>Pozostałe cechy:</b></p>
+                                    <p>funkcja parzysta</p>
+                                    {linearFunction.getA().getNominator() === 0 && linearFunction.getB().getNominator() === 0 && (<p>funkcja nieparzysta</p>)}
+                                </div>
+                            )}
 
-                    </div>
+                        </div>
+                    </>)}
                     <ArticleBorder styles="w-full" />
                     <div className="flex flex-wrap justify-center flex-row text-center gap-2">
                         <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
                             <div><b>równanie prostej w postaci kierunkowej:</b></div>
-                            <Formula formula={'111111111111'} />
+                            <Formula formula={linearFunction.getSlopeForm()} />
                         </div>
                         <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
                             <div><b>równanie prostej w postaci ogólnej:</b></div>
-                            <Formula formula={'1111111111111'} />
+                            <Formula formula={linearFunction.getGeneralForm()} />
                         </div>
                         <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
                             <div><b>równanie prostej w postaci odcinkowej:</b></div>
-                            {!(linearFunction.getA() === 0 || linearFunction.getA() === 0) && <Formula formula={'11111111111111'} />}
-                            {(linearFunction.getA() === 0 || linearFunction.getA() === 0) && <p>nie istnieje</p>}
+                            {(linearFunction.getA().getNominator() !== 0 && linearFunction.getB().getNominator() !== 0) && <Formula formula={linearFunction.getSegmentForm()} />}
+                            {(linearFunction.getA().getNominator() === 0 || linearFunction.getB().getNominator() === 0) && <p>nie istnieje</p>}
                         </div>
                     </div>
                     <ArticleBorder styles="w-full" />
@@ -234,7 +236,7 @@ const LinearFunctionPointsCalculator: FC = () => {
                             {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                         </button>
                         <div className="flex flex-col">
-                            <span><b>problem 01:</b> Brak znaku przybliżenia dla kąta alfa</span>
+                            <span>Kalkulator został napisany 27 kwietnia 2024, może zawierać błędy. Jeśli zauważysz, że coś działa nieprawidłowo, koniecznie daj mi znać :)</span>
                             <br />
                         </div>
                     </div>

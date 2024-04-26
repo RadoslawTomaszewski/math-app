@@ -2,10 +2,10 @@ import Fraction from "../Fraction/Fraction";
 
 class LinearFormula {
     private standardForm: string = '';
-    private slopeForm: string = '';
     private x0: Fraction = new Fraction(0, 1);
     private alphaRad: number = 0;
     private alphaDeg: number = 0;
+    private slopeForm: string = '';
     private generalForm: string = '';
     private segmentForm: string = '';
 

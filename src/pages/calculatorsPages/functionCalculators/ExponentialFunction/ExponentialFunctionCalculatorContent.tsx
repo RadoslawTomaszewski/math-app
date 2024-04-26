@@ -49,7 +49,6 @@ const ExponentialFunctionCalculatorContent: FC = () => {
     };
     const handleGenerateGraph = async () => {
         setShowGraph(true);
-        console.log(showGraph);
         setLoading(true);
         const graphContainer = document.getElementById('graph-container');
         if (graphContainer) {

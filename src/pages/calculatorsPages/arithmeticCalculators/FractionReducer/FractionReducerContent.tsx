@@ -75,9 +75,9 @@ const FractionReducerContent: FC = () => {
                         {(Math.abs(fraction.getGCD()) !== 1) ? `Ten ułamek można skrócić przez ${fraction.getGCD()}` : "Nie da się skrócić tego ułamka"}
                         {(Math.abs(fraction.getGCD()) !== 1)
                             ?
-                            <Formula formula={joinUniqueWithEquals(fraction.getStep0(), fraction.getStep1(), fraction.getStep2(), fraction.getFractionString())} />
+                            <Formula formula={joinUniqueWithEquals(fraction.getStep0(), fraction.getoriginalFractionNegative(), fraction.getStep2(), fraction.getFractionString())} />
                             :
-                            <Formula formula={joinUniqueWithEquals(fraction.getStep0(), fraction.getStep1(), fraction.getFractionString())} />}
+                            <Formula formula={joinUniqueWithEquals(fraction.getStep0(), fraction.getoriginalFractionNegative(), fraction.getFractionString())} />}
 
                         <span>Dokładna lub przybliżona wartość tego ułamka to:</span>
                         {fraction.getIsValueApproximate()
