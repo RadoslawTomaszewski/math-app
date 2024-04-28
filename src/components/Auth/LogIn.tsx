@@ -1,5 +1,5 @@
 import { auth, googleProvider } from "../../config/firebase";
-import { sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { NavLink, useNavigate } from "react-router-dom"
 import Title from "../articleItems/Title"
 import { BlueButtonStyle } from "../../utilities/styles"
@@ -9,6 +9,7 @@ import { useState } from "react";
 import GoogleIcon from "../../assets/icons/google.svg"
 import ImageComponent from "../articleItems/ImageComponent";
 import ArticleBorder from "../articleItems/ArticleBorder";
+import { LoginFormInputs } from "./styles";
 
 interface IUserCredentials {
     email: string;
@@ -66,9 +67,9 @@ export const LogIn = () => {
                     <p className="w-full text-center"><b>lub</b></p>
 
                     <p><b>*e-mail:</b></p>
-                    <input placeholder="np. euler.leonhard@majza.eu" onChange={(e) => { handleCredentials(e) }} name="email" className="rounded border-2 border-black px-3 py-2 mb-2 w-full" type="mail" />
+                    <input onChange={(e) => { handleCredentials(e) }} name="email" className={LoginFormInputs} placeholder="np. euler.leonhard@majza.eu" type="mail" />
                     <p><b>*hasło:</b></p>
-                    <input placeholder="np. !M@jza.eu07" type="password" onChange={(e) => { handleCredentials(e) }} name="password" className="rounded border-2 border-black px-3 py-2 mb-2 w-full" />
+                    <input placeholder="np. !M@jza.eu07" type="password" onChange={(e) => { handleCredentials(e) }} name="password" className={LoginFormInputs} />
                     <button onClick={(e) => { handleSignIn(e) }} className={classNames(BlueButtonStyle, "w-full mb-3")}>Zaloguj się</button>
                     <p className="text-sm">* pola wymagane</p>
                     {error && <p className="text-[red] text-center">{error}</p>}

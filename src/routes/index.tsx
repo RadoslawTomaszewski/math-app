@@ -70,6 +70,7 @@ import LoginPage from "../pages/loginPages/LoginPage";
 import ForumPage from "../pages/forumPages/ForumPage";
 import RegistrationPage from "../pages/loginPages/RegistrationPage";
 import ResetPasswordPage from "../pages/loginPages/ResetPasswordPage";
+import PrivacyPolicyPage from "../pages/privacyPolicyPage/PrivacyPolicyPage";
 
 
 
@@ -147,6 +148,7 @@ export const Router: FC = () => {
                     <Route path="logowanie" element={<LoginPage />} />
                     <Route path="rejestracja" element={<RegistrationPage />} />
                     <Route path="odzyskiwanie-hasla" element={<ResetPasswordPage />} />
+                    <Route path="polityka-prywatnosci" element={<PrivacyPolicyPage />} />
                     <Route path="forum" element={<ForumPage />} />
                     <Route path="*" element={<WorkInProgress />} />
                 </Route>

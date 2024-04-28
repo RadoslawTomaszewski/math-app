@@ -46,7 +46,7 @@ export default function HomePage() {
               </CoreCurriculum><br />
               <b>UWAGA</b><p>powyższe oznaczenia mają jedynie charakter orientacyjny, niektóre definicje mogą wykraczać poza oznaczony zakres.</p>
               <ArticleBorder />
-              <Title text="Co nowego?" type="submain-article" />
+              <Title text="Co nowego?" type="main-article" />
               <p>Aktualizacja całego rozdziału <NavLink to="baza-wiedzy/arytmetyka" className="hover:underline"><b>z operacjami arytmetycznymi</b></NavLink></p>
               <p>Aktualizacja <NavLink to="kalkulatory/funkcji-kwadratowej" className="hover:underline"><b>kalkulatora funkcji kwadratowej</b></NavLink></p>
               <p>Aktualizacja <NavLink to="baza-wiedzy/funkcja-kwadratowa" className="hover:underline"><b>artykułu o funkcji kwadratowej</b></NavLink></p>
@@ -56,9 +56,12 @@ export default function HomePage() {
               <br />
               <p>Aktualizacja <NavLink to="kalkulatory/funkcji-liniowej" className="hover:underline"><b>kalkulatora funkcji liniowej</b></NavLink></p>
               <p>Możliwość zakładania kont i wpisywania się do <NavLink to="forum" className="hover:underline"><b>księgi gości</b></NavLink> (matematyczne forum w budowie)</p>
-              <p className="italic">aktualizacja: 29/04/2024</p>
+              <br /><p className="italic">aktualizacja: 29/04/2024</p>
               <ArticleBorder />
-              <Title text="Znalazłeś błąd?" type="submain-article" />
+              <Title text="Regulamin i Polityka prywatności" type="main-article" />
+              <p>Przeczytaj: <NavLink to="polityka-prywatnosci" className="hover:underline"><b>Polityka prywatności</b></NavLink></p>
+              <ArticleBorder />
+              <Title text="Znalazłeś błąd?" type="main-article" />
               <p>Jestem autorem każdego artykułu jaki znajdziesz na <b>majza.eu</b>. Jest bardzo prawdopodobne, że znajdziesz błąd, którego nie byłem w stanie wyłapać. Może to być błąd gramatyczny lub, co gorsze, merytoryczny.</p>
               <p>W takim przypadku daj mi koniecznie o tym znać pisząc maila na <b>rtomaszewski@majza.eu</b></p>
               <p> Z góry dziękuję :)</p>

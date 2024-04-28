@@ -9,6 +9,7 @@ import { useState } from "react";
 import GoogleIcon from "../../assets/icons/google.svg"
 import ImageComponent from "../articleItems/ImageComponent";
 import ArticleBorder from "../articleItems/ArticleBorder";
+import { LoginFormInputs } from "./styles";
 
 interface IUserCredentials {
     email: string;
@@ -61,18 +62,19 @@ export const Register = () => {
                         <b>rejestracja za pomocą</b>
                         <img src={GoogleIcon} className="mx-2" alt="logo google" width="25" height="25" />
                     </button>
-                    <p className="text-sm m-2">Po zarejestrowaniu konta za pomocą konta google będziesz mógł zmienić automatycznie wygenerowany nick.</p>
-                    <p className="w-full text-center"><b>lub</b></p>
-                    <p><b>*nick</b> (widoczny dla innych użytkowników forum)</p>
-                    <input placeholder="np. euler1707" className="rounded border-2 border-black px-3 py-2 mb-2 w-full" type="text" />
-                    <p><b>*e-mail:</b></p>
-                    <input placeholder="np. euler.leonhard@majza.eu" onChange={(e) => { handleCredentials(e) }} name="email" className="rounded border-2 border-black px-3 py-2 mb-2 w-full" type="mail" />
-                    <p><b>*hasło:</b></p>
-                    <input placeholder="np. !M@jza.eu07" type="password" onChange={(e) => { handleCredentials(e) }} name="password" className="rounded border-2 border-black px-3 py-2 mb-2 w-full" />
-                    <button onClick={(e) => { handleSignUp(e) }} className={classNames(BlueButtonStyle, "w-full mb-3")}>Stwórz konto</button>
-                    <p className="text-sm">* pola wymagane</p>
-                    {error && <p className="text-[red] text-center">{error}</p>}
-
+                    <form>
+                        <p className="text-sm m-2">Po zarejestrowaniu konta za pomocą konta google będziesz mógł zmienić automatycznie wygenerowany nick.</p>
+                        <p className="w-full text-center"><b>lub</b></p>
+                        <p><b>*nick</b> (widoczny dla innych użytkowników forum)</p>
+                        <input placeholder="np. euler1707" className={LoginFormInputs} type="text" />
+                        <p><b>*e-mail:</b></p>
+                        <input placeholder="np. euler.leonhard@majza.eu" onChange={(e) => { handleCredentials(e) }} name="email" className={LoginFormInputs} type="mail" />
+                        <p><b>*hasło:</b></p>
+                        <input placeholder="np. !M@jza.eu07" type="password" onChange={(e) => { handleCredentials(e) }} name="password" className={LoginFormInputs} />
+                        <button onClick={(e) => { handleSignUp(e) }} className={classNames(BlueButtonStyle, "w-full mb-3")}>Stwórz konto</button>
+                        <p className="text-sm">* pola wymagane</p>
+                        {error && <p className="text-[red] text-center">{error}</p>}
+                    </form>
                     <ArticleBorder />
                     <ImageComponent src={majzaLogo} alt={"logo majza.eu"} styles="max-h-[50px] my-2" />
                 </div>
