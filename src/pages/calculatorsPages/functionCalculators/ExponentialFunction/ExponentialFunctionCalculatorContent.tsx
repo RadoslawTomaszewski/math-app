@@ -68,6 +68,9 @@ const ExponentialFunctionCalculatorContent: FC = () => {
 
         const equation1 = `y=${watchA}^x`;
         calculator.setExpression({ id: 'graph1', latex: equation1 });
+
+        const Poy = { id: 'Poy', latex: `P_{OY}=(0,1)` };
+        calculator.setExpression(Poy);
         setLoading(false);
     };
 
@@ -181,6 +184,7 @@ const ExponentialFunctionCalculatorContent: FC = () => {
 
 
                         <div className="w-full">
+                            <ArticleBorder />
                             {showGraph && (
                                 <>
                                     {loading && <Loader />}

@@ -54,7 +54,9 @@ export default function HomePage() {
               <br />
               <NavLink to="kalkulatory/funkcji-logarytmicznej" className="hover:underline"><b>Kalkulator funkcji logarytmicznej</b></NavLink>
               <br />
-              <p className="italic">aktualizacja: 21/04/2024</p>
+              <p>Aktualizacja <NavLink to="kalkulatory/funkcji-liniowej" className="hover:underline"><b>kalkulatora funkcji liniowej</b></NavLink></p>
+              <p>Możliwość zakładania kont i wpisywania się do <NavLink to="forum" className="hover:underline"><b>księgi gości</b></NavLink> (matematyczne forum w budowie)</p>
+              <p className="italic">aktualizacja: 29/04/2024</p>
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="submain-article" />
               <p>Jestem autorem każdego artykułu jaki znajdziesz na <b>majza.eu</b>. Jest bardzo prawdopodobne, że znajdziesz błąd, którego nie byłem w stanie wyłapać. Może to być błąd gramatyczny lub, co gorsze, merytoryczny.</p>

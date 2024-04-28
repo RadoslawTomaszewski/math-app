@@ -69,7 +69,9 @@ const LogarithmicFunctionCalculatorContent: FC = () => {
         const calculator = Desmos.GraphingCalculator(elt);
 
         const equation1 = `y=\\log_{${watchA}}x`;
+        const Pox = { id: 'x2', latex: `P_{OX}=(1,0)` };
         calculator.setExpression({ id: 'graph1', latex: equation1 });
+        calculator.setExpression(Pox);
         setLoading(false);
     };
 
@@ -182,8 +184,8 @@ const LogarithmicFunctionCalculatorContent: FC = () => {
                             </>)
                         }
 
-
                         <div className="w-full">
+                            <ArticleBorder />
                             {showGraph && (
                                 <>
                                     {loading && <Loader />}

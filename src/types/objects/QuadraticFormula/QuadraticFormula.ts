@@ -136,7 +136,7 @@ class QuadraticFormula {
             this.factoredForm = this.canonicalForm;
             return;
         }
-        this.factoredForm = "nie istnieje"
+        this.factoredForm = ""
 
     }
     private setVietasFormulas = (): void => {

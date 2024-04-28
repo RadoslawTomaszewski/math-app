@@ -66,11 +66,17 @@ import PointPage from "../pages/knowledgeBasePages/geometryPages/PointPage/Point
 import TetrationPage from "../pages/knowledgeBasePages/arithmeticPages/tetration/TetrationPage";
 import ExponentialFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/ExponentialFunction/ExponentialFunctionCalculatorPage";
 import LogarithmicFunctionCalculatorPage from "../pages/calculatorsPages/functionCalculators/LogarithmicFunction/LogarithmicFunctionCalculatorPage";
+import LoginPage from "../pages/loginPages/LoginPage";
+import ForumPage from "../pages/forumPages/ForumPage";
+import RegistrationPage from "../pages/loginPages/RegistrationPage";
+import ResetPasswordPage from "../pages/loginPages/ResetPasswordPage";
+
 
 
 
 
 export const Router: FC = () => {
+
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
@@ -113,9 +119,6 @@ export const Router: FC = () => {
                         <Route path="pochodna-funkcji" element={<DerivedFunctionPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
-                    <Route path="cke" element={<CKEPage />} />
-                    <Route path="wsparcie" element={<CoffeePage />} />
-                    <Route path="pogotowie" element={<HelplinePage />} />
                     <Route path="kalkulatory" element={<CalculatorsLayout />}>
                         <Route index element={<CalculatorsPage />} />
                         <Route path="kalkulator-dlugosci" element={<LengthConverterPage />} />
@@ -138,6 +141,13 @@ export const Router: FC = () => {
                         <Route path="gra-w-zycie" element={<GameOfLifePage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
+                    <Route path="cke" element={<CKEPage />} />
+                    <Route path="wsparcie" element={<CoffeePage />} />
+                    <Route path="pogotowie" element={<HelplinePage />} />
+                    <Route path="logowanie" element={<LoginPage />} />
+                    <Route path="rejestracja" element={<RegistrationPage />} />
+                    <Route path="odzyskiwanie-hasla" element={<ResetPasswordPage />} />
+                    <Route path="forum" element={<ForumPage />} />
                     <Route path="*" element={<WorkInProgress />} />
                 </Route>
             </Routes>

@@ -75,9 +75,32 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
         const Desmos = window.Desmos;
         const calculator = Desmos.GraphingCalculator(elt);
+        const equation1 = quadraticFormula.getStandardForm();
+        const equation2 = quadraticFormula.getCanonicalForm();
+        const equation3 = quadraticFormula.getFactoredForm();
+        const W = { id: 'W', latex: `W=(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()})` };
+        const Poy = { id: 'Poy', latex: `P_{OY}=(0,${quadraticFormula.getC()})` };
 
-        const equation1 = `y=${watchA}x^2${Number(watchB) >= 0 ? '+' : ''}${watchB}x${Number(watchC) >= 0 ? '+' : ''}${watchC}`;
         calculator.setExpression({ id: 'graph1', latex: equation1 });
+        calculator.setExpression({ id: 'graph2', latex: equation2 });
+        calculator.setExpression({ id: 'graph3', latex: equation3 });
+
+        calculator.setExpression(W);
+        calculator.setExpression(Poy);
+
+        if (quadraticFormula.getDelta() > 0) {
+            const x1 = { id: 'x1', latex: `x_1=(${quadraticFormula.getX1().getResultString()},0)` };
+            const x2 = { id: 'x2', latex: `x_2=(${quadraticFormula.getX2().getResultString()},0)` };
+            calculator.setExpression(x1);
+            calculator.setExpression(x2);
+        }
+        if (quadraticFormula.getDelta() === 0) {
+            const x0 = { id: 'x0', latex: `x_0=(${quadraticFormula.getPResult()},${quadraticFormula.getQResult()})` };
+            calculator.setExpression(x0);
+        }
+
+        const lineXEquals1 = { id: 'lineXEquals1', latex: `x=${quadraticFormula.getPResult()}`, lineStyle: Desmos.Styles.DASHED };
+        calculator.setExpression(lineXEquals1);
         setLoading(false);
     };
 
@@ -137,7 +160,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         )
                     ))}
                 </div>
-                {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli funkcję liniową?</span>}
+                {(errors.a && Number(watchA) === 0) && <span>Czy masz na myśli <NavLink to="../funkcji-liniowej" className="hover:underline"><b>funkcję liniową?</b></NavLink></span>}
                 {(!errors.a && !errors.b && !errors.c && watchA && watchB && watchC) && (
                     <>
                         <div className="flex items-start overflow-x-auto overflow-y-hidden w-full">

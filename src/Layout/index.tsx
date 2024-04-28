@@ -2,12 +2,14 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { Outlet } from "react-router-dom";
 import CookiesInfo from "../components/CookiesInfo/CookiesInfo";
+import AccountBar from "../components/AccountBar/AccountBar";
 
 export const Layout = () => {
   return (
     <div>
       <div className="relative">
         <Navbar />
+        <AccountBar />
         <div className="min-h-[calc(100vh-114px)] max-w-[full]  bg-bgColor">
           <CookiesInfo />
           <Outlet />
