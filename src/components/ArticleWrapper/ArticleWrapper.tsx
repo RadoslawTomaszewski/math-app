@@ -10,7 +10,7 @@ export const ArticleWrapper: FC<IArticleWrapperProps> = ({ children, className }
   return (
     <div
       className={classNames(
-        "p-3 flex flex-col border-2 border-navColor bg-articleColor rounded max-w-full items-center",
+        "p-3 min-h-full flex flex-col border-2 border-navColor bg-articleColor rounded max-w-full items-center",
         className || ""
       )}
     >

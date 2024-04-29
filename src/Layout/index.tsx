@@ -6,16 +6,16 @@ import AccountBar from "../components/Auth/AccountBar";
 
 export const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="relative flex-grow">
+    <div>
+      <div className="relative">
         <Navbar />
         <AccountBar />
-        <div className="min-h-full max-w-full bg-bgColor flex-grow">
+        <div className="min-h-[calc(100vh-190px)] lg:min-h-[calc(100vh-154px)] max-w-[full]  bg-bgColor">
           <CookiesInfo />
           <Outlet />
         </div>
       </div>
-      <div className="relative">
+      <div className="relative bottom-0 w-full">
         <Footer />
       </div>
     </div>
