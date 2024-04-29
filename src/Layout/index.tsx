@@ -2,20 +2,20 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { Outlet } from "react-router-dom";
 import CookiesInfo from "../components/CookiesInfo/CookiesInfo";
-import AccountBar from "../components/AccountBar/AccountBar";
+import AccountBar from "../components/Auth/AccountBar";
 
 export const Layout = () => {
   return (
-    <div>
-      <div className="relative">
+    <div className="flex flex-col min-h-screen">
+      <div className="relative flex-grow">
         <Navbar />
         <AccountBar />
-        <div className="min-h-[calc(100vh-114px)] max-w-[full]  bg-bgColor">
+        <div className="min-h-full max-w-full bg-bgColor flex-grow">
           <CookiesInfo />
           <Outlet />
         </div>
       </div>
-      <div className="relative bottom-0 w-full">
+      <div className="relative">
         <Footer />
       </div>
     </div>

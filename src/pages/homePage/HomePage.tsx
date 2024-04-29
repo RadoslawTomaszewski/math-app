@@ -58,7 +58,7 @@ export default function HomePage() {
               <p>Możliwość zakładania kont i wpisywania się do <NavLink to="forum" className="hover:underline"><b>księgi gości</b></NavLink> (matematyczne forum w budowie)</p>
               <br /><p className="italic">aktualizacja: 29/04/2024</p>
               <ArticleBorder />
-              <Title text="Regulamin i Polityka prywatności" type="main-article" />
+              <Title text="Polityka prywatności" type="main-article" />
               <p>Przeczytaj: <NavLink to="polityka-prywatnosci" className="hover:underline"><b>Polityka prywatności</b></NavLink></p>
               <ArticleBorder />
               <Title text="Znalazłeś błąd?" type="main-article" />

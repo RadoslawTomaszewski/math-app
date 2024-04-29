@@ -34,7 +34,7 @@ const LinearFunctionContent: FC = () => {
         <b>Miejsce zerowe</b> funkcji liniowej wyraża się wzorem:
       </p>
       <Formula formula={`x_0 = \\frac{-b}{a}`} />
-      <Proof steps={zeroPlaceProof} text="Dowód" />
+      <Proof steps={zeroPlaceProof} text="Dowód" styles="min-w-[86px]" />
       <ArticleBorder />
       <p>
         <b>Współczynnik kierunkowy</b> funkcji liniowej określa jej

@@ -26,7 +26,6 @@ export const LogIn = () => {
     const handleCredentials = (e: React.ChangeEvent<HTMLInputElement>) => {
         setError("");
         setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
-        console.log(userCredentials);
     }
 
     const handleSignIn = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -34,8 +33,11 @@ export const LogIn = () => {
         signInWithEmailAndPassword(auth, userCredentials.email, userCredentials.password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
-                navigate('/..');
+                if (user && !user.emailVerified) {
+                    setError("Twój adres e-mail nie został zweryfikowany. Sprawdź skrzynkę pocztową.");
+                } else {
+                    navigate('/..');
+                }
             })
             .catch((error) => {
                 setError(error.message);
@@ -66,12 +68,11 @@ export const LogIn = () => {
 
                     <p className="w-full text-center"><b>lub</b></p>
 
-                    <p><b>*e-mail:</b></p>
+                    <p><b>e-mail:</b></p>
                     <input onChange={(e) => { handleCredentials(e) }} name="email" className={LoginFormInputs} placeholder="np. euler.leonhard@majza.eu" type="mail" />
-                    <p><b>*hasło:</b></p>
+                    <p><b>hasło:</b></p>
                     <input placeholder="np. !M@jza.eu07" type="password" onChange={(e) => { handleCredentials(e) }} name="password" className={LoginFormInputs} />
                     <button onClick={(e) => { handleSignIn(e) }} className={classNames(BlueButtonStyle, "w-full mb-3")}>Zaloguj się</button>
-                    <p className="text-sm">* pola wymagane</p>
                     {error && <p className="text-[red] text-center">{error}</p>}
                     <div className="text-center m-5"><NavLink to="../odzyskiwanie-hasla" className="hover:underline"><p><b>Nie pamiętam hasła</b></p></NavLink></div>
                     <div className="text-center m-5">Nie masz jeszcze konta?<NavLink to="../rejestracja" className="hover:underline"><p><b> Zarejestruj się</b></p></NavLink></div>

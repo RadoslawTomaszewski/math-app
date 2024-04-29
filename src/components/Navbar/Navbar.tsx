@@ -5,6 +5,8 @@ import { ReactComponent as Hamburger } from "../../assets/icons/hamburger.svg";
 import GraphImage from "../articleItems/GraphImage";
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
+import { classNames } from "../../utilities";
+import { LoginButton, LogoutButton } from "../Auth/styles";
 
 const Navbar: FC = () => {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
@@ -90,9 +92,9 @@ const Navbar: FC = () => {
               </li>
               <li className="mx-4 z-20 whitespace-nowrap">
                 <NavLink to="/logowanie" onClick={handleShowNavbar}>
-                  {!currentUserEmail && <button className="text-white">Logowanie</button>}
+                  {!currentUserEmail && <button className={classNames(LoginButton, "hidden lg:block")}>Logowanie</button>}
                 </NavLink>
-                {currentUserEmail && <button onClick={logout} className="text-white">Wyloguj</button>}
+                {currentUserEmail && <button onClick={logout} className={classNames(LogoutButton, "hidden lg:block")}>Wyloguj</button>}
               </li>
             </ul>
           </div>
