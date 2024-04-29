@@ -197,12 +197,6 @@ const LinearFunctionPointsCalculator: FC = () => {
                                     <Formula formula={linearFunction.getX0Calculations()} />
                                 </div>
                             </div>
-                            <div className="min-w-full lg:min-w-[280px]">
-                                <div className="flex flex-col items-start md:items-center w-full overflow-x-auto ">
-                                    <p><b>Kąt nachylenia prostej do osi OX:</b></p>
-                                    <Formula formula={linearFunction.getSlopeAlphaCalculation()} />
-                                </div>
-                            </div>
                             {linearFunction.getA().getNominator() === 0 && (
                                 <div className="min-w-full lg:min-w-[210px]">
                                     <p><b>Pozostałe cechy:</b></p>
@@ -213,40 +207,47 @@ const LinearFunctionPointsCalculator: FC = () => {
 
                         </div>
                     </>)}
-                    <ArticleBorder styles="w-full" />
-                    <div className="flex flex-wrap justify-center flex-row text-center gap-2">
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
-                            <div><b>równanie prostej w postaci kierunkowej:</b></div>
-                            <Formula formula={linearFunction.getSlopeForm()} />
+                    {(watchX1 !== watchX2 || watchY1 !== watchY2) && (<>
+                        <ArticleBorder styles="w-full" />
+                        <div className="flex flex-wrap justify-center flex-row text-center gap-2">
+                            <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
+                                <div><b>równanie prostej w postaci kierunkowej:</b></div>
+                                <Formula formula={linearFunction.getSlopeForm()} />
+                            </div>
+                            <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
+                                <div><b>równanie prostej w postaci ogólnej:</b></div>
+                                <Formula formula={linearFunction.getGeneralForm()} />
+                            </div>
+                            <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
+                                <div><b>równanie prostej w postaci odcinkowej:</b></div>
+                                {(linearFunction.getA().getNominator() !== 0 && linearFunction.getB().getNominator() !== 0) && watchX1 !== watchX2 ? <Formula formula={linearFunction.getSegmentForm()} /> : <p>nie istnieje</p>}
+                            </div>
+                            <div className="min-w-full lg:min-w-[280px]">
+                                <div className="flex flex-col items-start md:items-center w-full overflow-x-auto ">
+                                    <p><b>Kąt nachylenia prostej do osi OX:</b></p>
+                                    {watchX1 === watchX2 ? <Formula formula={"\\alpha=90^{\\circ}"} /> : <Formula formula={linearFunction.getSlopeAlphaCalculation()} />}
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
-                            <div><b>równanie prostej w postaci ogólnej:</b></div>
-                            <Formula formula={linearFunction.getGeneralForm()} />
+                        <ArticleBorder styles="w-full" />
+                        <div className="w-full">
+                            {showGraph && (
+                                <>
+                                    {loading && <Loader />}
+                                    <div id="graph-container" />
+                                </>
+                            )}
                         </div>
-                        <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[320px]">
-                            <div><b>równanie prostej w postaci odcinkowej:</b></div>
-                            {(linearFunction.getA().getNominator() !== 0 && linearFunction.getB().getNominator() !== 0) && <Formula formula={linearFunction.getSegmentForm()} />}
-                            {(linearFunction.getA().getNominator() === 0 || linearFunction.getB().getNominator() === 0) && <p>nie istnieje</p>}
+                        <div className="w-full text-center">
+                            <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
+                                {showGraph ? 'odśwież wykres' : 'generuj wykres'}
+                            </button>
+                            <div className="flex flex-col">
+                                <span>Kalkulator został napisany 27 kwietnia 2024, może zawierać błędy. Jeśli zauważysz, że coś działa nieprawidłowo, koniecznie daj mi znać :)</span>
+                                <br />
+                            </div>
                         </div>
-                    </div>
-                    <ArticleBorder styles="w-full" />
-                    <div className="w-full">
-                        {showGraph && (
-                            <>
-                                {loading && <Loader />}
-                                <div id="graph-container" />
-                            </>
-                        )}
-                    </div>
-                    <div className="w-full text-center">
-                        <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
-                            {showGraph ? 'odśwież wykres' : 'generuj wykres'}
-                        </button>
-                        <div className="flex flex-col">
-                            <span>Kalkulator został napisany 27 kwietnia 2024, może zawierać błędy. Jeśli zauważysz, że coś działa nieprawidłowo, koniecznie daj mi znać :)</span>
-                            <br />
-                        </div>
-                    </div>
+                    </>)}
                 </div>
             )}
         </>

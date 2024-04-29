@@ -157,10 +157,16 @@ class LinearFormulaFromPoints {
         return slopeAlphaFormulaA + slopeAlphaFormulaB;
     }
     getSlopeForm(): string {
-        if (this.x1 === this.x2) return "";
+        if (this.x1 === this.x2) return `x=${this.x1}`;
         return this.slopeForm;
     }
     getGeneralForm(): string {
+        if (this.x1 === this.x2) {
+            if (this.x1 > 0) return `x-${this.x1}=0`;
+            else if (this.x1 === 0) return 'x=0';
+            else return `x+${this.x1 * (-1)}=0`
+        }
+
         return this.generalForm;
     }
     getSegmentForm(): string {

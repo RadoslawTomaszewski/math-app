@@ -90,12 +90,12 @@ const Navbar: FC = () => {
                   <b>Wsparcie</b>
                 </NavLink>
               </li>
-              <li className="mx-4 z-20 whitespace-nowrap">
+              <div className="mx-4 z-20 whitespace-nowrap">
                 <NavLink to="/logowanie" onClick={handleShowNavbar}>
                   {!currentUserEmail && <button className={classNames(LoginButton, "hidden lg:block")}>Logowanie</button>}
                 </NavLink>
                 {currentUserEmail && <button onClick={logout} className={classNames(LogoutButton, "hidden lg:block")}>Wyloguj</button>}
-              </li>
+              </div>
             </ul>
           </div>
         </div>
