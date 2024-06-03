@@ -75,6 +75,14 @@ export enum GeometryEquations {
     quadrilateral_interior_angles_theorem = `\\alpha + \\beta + \\gamma + \\delta = 360^{\\circ} `,
     ptolemeusTheory = `a \\cdot c + b \\cdot d = d_1 \\cdot d_2`,
 
+
+    //Theorems
+    sinusesLaw = `\\frac{a}{\\sin{\\alpha}}=\\frac{b}{\\sin{\\beta}}=\\frac{c}{\\sin{\\gamma}} = 2R`,
+    sinusesLaw2 = `\\frac{\\sin{\\alpha}}{a}=\\frac{\\sin{\\beta}}{b}=\\frac{\\sin{\\gamma}}{c}`,
+    cosinusesLaw = `a^2=b^2+c^2-2bc\\cdot \\cos{\\alpha}`,
+    cosinusesLaw2 = `b^2=a^2+c^2-2ac\\cdot \\cos{\\beta}`,
+    cosinusesLaw3 = `c^2=a^2+b^2-2ab\\cdot \\cos{\\gamma}`,
+
 }
 export enum linearEquations {
     X0 = "x_0=\\frac{-b}{a}",

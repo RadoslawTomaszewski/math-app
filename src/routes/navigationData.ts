@@ -55,7 +55,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             { to: "trapez-rozwartokatny", text: "Trójkąt rozwartokątny", color: gray },
             { to: "trojkat-ostrokatny", text: "Trójkąt ostrokątny", color: gray },
             { to: "relacja-z-okregiem", text: "Relacja z okręgiem", color: gray },
-            { to: "twierdzenia", text: "Twierdzenia", color: gray },
+            { to: "twierdzenia", text: "Twierdzenia" },
         ],
     },
     {
