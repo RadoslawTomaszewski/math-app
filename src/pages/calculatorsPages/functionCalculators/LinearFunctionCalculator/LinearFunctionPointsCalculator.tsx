@@ -242,10 +242,6 @@ const LinearFunctionPointsCalculator: FC = () => {
                             <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
                                 {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                             </button>
-                            <div className="flex flex-col">
-                                <span>Kalkulator został napisany 27 kwietnia 2024, może zawierać błędy. Jeśli zauważysz, że coś działa nieprawidłowo, koniecznie daj mi znać :)</span>
-                                <br />
-                            </div>
                         </div>
                     </>)}
                 </div>

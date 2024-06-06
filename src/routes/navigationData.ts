@@ -124,6 +124,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
             { to: "granica-funkcji", text: "Granica Funkcji", color: gray },
             { to: "asymptoty", text: "Asymptoty", color: gray },
             { to: "pochodna-funkcji", text: "Pochodna Funkcji" },
+            { to: "ekstremum", text: "Ekstremum" },
             { to: "calki", text: "Całki", color: gray },
         ],
     },

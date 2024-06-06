@@ -176,7 +176,7 @@ const LinearFunctionCoefficientsCalculator: FC = () => {
                         <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
                             <p><b>Kąt nachylenia prostej do osi OX:</b></p>
                             <div className="flex items-start">
-                                <Formula formula={`${linearEquations.SLOPE}${linearFunction.getSlopeAlphaCalculation()}`} styles="min-w-[216px]" />
+                                <Formula formula={`${linearFunction.getSlopeAlphaCalculation()}`} styles="min-w-[216px]" />
                             </div>
                         </div>
                         {linearFunction.getA() === 0 && (
@@ -215,10 +215,6 @@ const LinearFunctionCoefficientsCalculator: FC = () => {
                     <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
                         {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                     </button>
-                    <div className="flex flex-col">
-                        <span><b>problem 01:</b> Brak znaku przybliżenia dla kąta alfa</span>
-                        <br />
-                    </div>
                 </>
             )}
         </>

@@ -1,3 +1,4 @@
+import { linearEquations } from "../../equations";
 import Fraction from "../Fraction/Fraction";
 
 class LinearFormula {
@@ -50,7 +51,8 @@ class LinearFormula {
         const tanAlpha = this.a;
         this.alphaRad = Math.atan(tanAlpha);
         this.alphaDeg = this.alphaRad * (180 / Math.PI);
-        if (this.alphaDeg < 0) this.alphaDeg += 360;
+        if (this.alphaDeg < 0) this.alphaDeg += 180;
+        if (this.alphaDeg > 180) this.alphaDeg -= 180;
     }
 
     private setGeneralForm = (): void => {
@@ -119,12 +121,13 @@ class LinearFormula {
         return this.alphaDeg;
     }
     getSlopeAlphaCalculation(): string {
-        let slopeAlphaFormulaA = `\\Leftrightarrow\\alpha=`
-        let slopeAlphaFormulaB = `${Math.floor(this.getAlphaDeg() * 100) / 100}^{\\circ}`;
+        let slopeAlphaFormulaA = '';
+        if (this.alphaDeg % 1 === 0) slopeAlphaFormulaA = `${linearEquations.SLOPE}\\Leftrightarrow\\alpha=`;
+        else slopeAlphaFormulaA = `${linearEquations.SLOPE}\\Leftrightarrow\\alpha \\approx`;
 
+        let slopeAlphaFormulaB = `${Math.floor(this.alphaDeg * 100) / 100}^{\\circ}`;
         return slopeAlphaFormulaA + slopeAlphaFormulaB;
     }
-
 }
 
 export default LinearFormula;

@@ -78,7 +78,8 @@ class LinearFormulaFromPoints {
         const tanAlpha = this.a.getValue();
         this.alphaRad = Math.atan(tanAlpha);
         this.alphaDeg = this.alphaRad * (180 / Math.PI);
-        if (this.alphaDeg < 0) this.alphaDeg += 360;
+        if (this.alphaDeg < 0) this.alphaDeg += 180;
+        if (this.alphaDeg > 180) this.alphaDeg -= 180;
     }
     private setGeneralForm = (): void => {
         if (this.a.getNominator() === 0 && this.b.getNominator() === 0) {

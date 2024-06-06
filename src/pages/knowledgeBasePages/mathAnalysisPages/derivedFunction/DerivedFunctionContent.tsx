@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import Explanation from "../../../../components/articleItems/Explanation";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import Proof from "../../../../components/articleItems/Proof";
-import { derivedOfPowerFunctionNaturalEqual0, derivedOfPowerFunctionNaturalEqual1, derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralMinus1, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../types/proofs";
+import { derivedOfPowerFunctionNaturalEqual0, derivedOfPowerFunctionNaturalEqual1, derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralMinus1, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfChainRuleDerivatives, proofOfChainRuleDerivativesSimplified, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../types/proofs";
 import { iFrameStyle } from "../../../../utilities/styles";
 
 const DerivedFunctionContent: FC = () => {
@@ -24,19 +24,23 @@ const DerivedFunctionContent: FC = () => {
             <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
                 <p><b>Pochodna funkcji w punkcie</b> definiowana jest jako następująca granica ilorazu różnicowego:</p>
                 <GraphImage src={DerivedFunctionGraph} alt={"Definicja pochodnej funkcji jednoargumentowej"} styles="w-[500px] max-w-full" />
+                <p><b>(1) definicja (wersja, gdzie h→0) </b></p>
                 <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition} styles="min-w-[240px]" />
-                <p>gdzie:</p>
-                <LegendParagraph type={"top"} notation={"f(x)"} explanation={"Funkcja, której pochodna jest szukana"} />
-                <LegendParagraph type={"top"} notation={"f'(x)"} explanation={"Pochodna funkcji f w punkcie"} />
+                <LegendParagraph type={"top"} notation={"f(x)"} explanation={"funkcja pierwotna, której pochodna jest szukana"} />
+                <LegendParagraph type={"top"} notation={"f'(x)"} explanation={"pochodna funkcji f(x)"} />
                 <LegendParagraph type={"short"} notation={"x_0"} explanation={"rzędna punktu, w którym liczona jest pochodna"} />
-                <LegendParagraph type={"top"} notation={"h"} explanation={"przyrost argumentu (spotyka się również oznaczenie Δx)"} />
+                <LegendParagraph type={"top"} notation={"h"} explanation={"przyrost argumentu (stosuje się również oznaczenie Δx)"} />
                 <br />
-                <p>Istnieje alternatywna forma definicji pochodnej w punkcie, w którym przyjmuje się zależność:</p>
+                <p><b>(2) definicja (wersja, gdzie x→x<sub>0</sub>) </b></p>
+                <p>Istnieje alternatywna forma definicji pochodnej w punkcie, w której założenie, że przyrost <b>h→0</b> jest równoważne z założeniem, że <b>x→x<sub>0</sub></b></p>
+                <br />
+                <p>Odnosząc się do pierwszej definicji wystarczy dokonać podstawień:</p>
                 <Formula formula={"x=x_0+h"} />
-                <p>W takim przypadku, założenie, że przyrost <b>h</b> dąży do zera jest równoważne z założeniem, że <b>x</b> dąży do <b>x<sub>0</sub></b>, a granica ilorazu różnicowego ma postać:</p>
+                <Formula formula={"h=x-x_0"} />
+                <p>wówczas granica ilorazu różnicowego ma postać:</p>
                 <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_2} styles="min-w-[240px]" />
                 <Explanation text={"Wyjaśnienie"}>
-                    <p className="flex flex-wrap wrap">W kontekście tej definicji należy traktować pochodną funkcji jako wskaźnik tempa przyrostu wartości funkcji w danym punkcie.</p>
+                    <p className="flex flex-wrap wrap">W kontekście tej definicji należy traktować pochodną funkcji jako wskaźnik tempa monotoniczności funkcji w danym punkcie.</p>
                     <p className="mt-2">Aby móc lepiej wyobrazić sobie to pojęcie można posłużyć się wizualizacją tego wskaźnika za pomocą <NavLink to="../prosta"><b>stycznej</b></NavLink> do wykresu funkcji w punkcie,
                         którą da się wyrazić <NavLink to="../funkcja-liniowa"><b>równaniem prostej w postaci kierunkowej.</b></NavLink></p>
                     <br />
@@ -46,32 +50,39 @@ const DerivedFunctionContent: FC = () => {
                         <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_pointA} styles="min-w-[125px]" />
                         <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_pointB} styles="min-w-[200px]" />
                     </div>
-                    <p>gdzie <b>h</b> to przyrost argumentu, który zgodnie z powyższymi ustaleniami dąży do zera, co w konsekwencji sprowadza oba punkty do jednego punktu o tych samych współrzędnych.</p>
+                    <p>gdzie <b>h</b> to przyrost argumentu, który dąży do zera, co w konsekwencji sprowadza rozmieszczenie obu punktów do jednego punktu o tych samych współrzędnych.</p>
                     <br />
-                    <p>Oba punkty jednak są niezbędne w celu wyznaczenia stopnia <b>nachylenia prostej</b> do osi rzędnych. Im większy stopień nachylenia (potocznie można stwierdzić, że prosta jest bardziej stroma) tym szybszy jest wzrost (lub spadek) wartości funkcji.</p>
-                    <p>Z informacji o prostej wiadomo, że:</p>
+                    <p>Punkt <b>B</b> jest niezbędny w celu wyznaczenia stopnia <b>nachylenia prostej</b> do osi rzędnych. Im większy stopień nachylenia, tym szybszy jest wzrost (lub spadek) wartości funkcji.</p>
+                    <br />
+                    <p>Z informacji o prostej zapisanej w postaci kierunkowej wiadomo, że:</p>
                     <Formula formula={linearEquations.SLOPE} />
-                    <LegendParagraph type={"short"} notation={"a"} explanation={"współczynnik kierunkowy prostej, któa jest styczną w punkcie A"} />
-                    <LegendParagraph type={"short"} notation={"\\alpha"} explanation={"kąt nachylenia prostej do osi rzędnych (OX)"} /><br />
-                    <p>Tangens kąta <b>α</b> można wyznaczyć tworząc odpowiedni stosunek przyprostokątnych trójkąta prostokątnego opartego na tych punktach. Długości tych przyprostokątnych są tzw. <b>różniczkami</b>, czyli nieskończenie małymi zmianami danej zmiennej: </p>
+                    <LegendParagraph type={"short"} notation={"a"} explanation={`współczynnik kierunkowy prostej, która jest styczną w punkcie A`} />
+                    <LegendParagraph type={"short"} notation={"\\alpha"} explanation={"kąt nachylenia prostej do dodatniej półosi rzędnych (OX)"} /><br />
+                    <p>Tangens kąta <b>α</b> można wyznaczyć zapisując stosunek przyprostokątnych trójkąta prostokątnego opartego na tych punktach. Długości przyprostokątnych są tzw. <b>różniczkami</b>, czyli nieskończenie małymi zmianami danej zmiennej: </p>
                     <div className="w-full flex justify-center flex-wrap">
                         <Formula formula={mathematicalAnalyticsFormulas.DeltaX} styles="min-w-[150px]" />
                         <Formula formula={mathematicalAnalyticsFormulas.DeltaY} styles="min-w-[200px]" />
                     </div>
                     <LegendParagraph type={"top"} notation={"\\Delta x"} explanation={"różniczka zmiennej x"} />
                     <LegendParagraph type={"top"} notation={"\\Delta y"} explanation={"różniczka zmiennej y"} /><br />
-                    <p>Zatem tangens kąta <b>α</b> określa równanie, w którym prawa strona równania to tzw. <b>iloraz różnicowy</b>:</p>
+
+                    <p>alternatywny zapis - stosowany dla definicji (2):</p>
+                    <div className="w-full flex justify-center flex-wrap">
+                        <Formula formula={"\\Delta x = x - x_0"} styles="min-w-[200px]" />
+                        <Formula formula={"\\Delta f(x) = f(x) - f(x_0)"} styles="min-w-[200px]" />
+                    </div>
+                    <p>umożliwia to zapisanie <b>ilorazu różnicowego</b> definiowanego jako tangens kąta <b>α</b>:</p>
                     <Formula formula={mathematicalAnalyticsFormulas.differentaliQuotient} />
-                    <p>co prowadzi do postaci:</p>
+                    <p>co prowadzi można rozpisać:</p>
                     <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinition_tangens} styles="min-w-[228px]" />
-                    <p>Uwzględniając założenie, że <b>h</b> dąży do zera otrzymujemy ostatecznie:</p>
+                    <p>Uwzględniając wzór na nachylenie prostej oraz założenie, że <b>h</b> dąży do zera można zapisać definicję:</p>
                     <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinitionLong} styles="min-w-[350px]" />
                 </Explanation>
-            </CoreCurriculum>
+            </CoreCurriculum >
             <ArticleBorder />
             <Title text={"Równanie stycznej do funkcji w punkcie"} type={"main-article"} />
             <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
-                <p>Na początku tego artykułu został zdefiniowany sposób wyznaczania współczynnika kierunkowego równania stycznej (funkcji liniowej) do wykresu funkcji w wybranym punkcie. Wyznaczenie <b>wyrazu wolnego</b>, w przypadku podanych współczynnika kierunkowego oraz punktu należącego do tej prostej, jest już stosunkowo proste:</p>
+                <p>Na początku tego artykułu został zdefiniowany sposób wyznaczania współczynnika kierunkowego równania stycznej (funkcji liniowej) do wykresu funkcji w wybranym punkcie. Wyznaczenie <b>wyrazu wolnego</b>, w przypadku podanych współczynnika kierunkowego oraz punktu należącego do tej prostej sprowadza się do rozwiązania problemu z zakresu geometrii analitycznej polegającego na wyzaczeniu równania prostej o znanym współczynniku kierunkowym przez punkt o znanych obu współrzędnych:</p>
                 <Formula formula={mathematicalAnalyticsFormulas.equationOfTheTangentToFunction_b} styles="min-w-[185px]" />
                 <Proof steps={proofOfEquationOfTheTangentToFunction_b} text={"Dowód"} styles="min-w-[185px]" />
                 <p>Po wyznaczeniu współczynnika kierunkowego oraz wyrazu wolnego pozostaje zapisać <b>równanie stycznej do wykresu funkcji w punkcie <b>x<sub>0</sub>:</b></b></p>
@@ -84,6 +95,36 @@ const DerivedFunctionContent: FC = () => {
                 </div>
             </CoreCurriculum>
             <ArticleBorder />
+            <Title text={"Wzór pochodnej funkcji"} type={"main-article"} />
+            <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
+                <p>Wyznaczenie <b>wzoru ogólnego pochodnej funkcji f(x)</b> liczy się tak samo, jak wartość pochodnej funkcji w punkcie podstawiając w miejsce <b>x<sub>0</sub></b> argument <b>x:</b>
+                </p>
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFunctionDefinitionUniversal} styles="min-w-[240px]" />
+                <p>Jednak ma to sens matematyczny tylko przy założeniu, że funkcja w całej swojej dziedzinie jest <b>różniczkowalna.</b></p>
+                <br />
+                <p>Polecam kalkulator liczenia wzorów pochodnych funkcji <NavLink to="https://www.wolframalpha.com/input?i2d=true&i=derivative+%5C%2891%29tutaj+wpisz+wz%C3%B3r+funkcji%5C%2893%29%5C%2844%29+np.+derivative+Power%5Bx%2C3%5D" className={'text:underline'}><b>wolframapha.com</b></NavLink></p>
+                <p>Aby wyliczyć pochodną, należy użyć słowa kluczowego: <i>derivative</i>.</p>
+            </CoreCurriculum>
+            <ArticleBorder />
+            <Title text={"Notacje pochodnej funkcji"} type={"main-article"} />
+            <CoreCurriculum type={CoreCurriculumTypes.extra}>
+                <p>W tym artykule podczas definiowania pochodnej funkcji została zastosowana <b>Notacja Lagrange'a</b>. Zależnie od kontekstu wykorzystania pochodnej funkcji stosowanych jest kilka równoważnych notacji:</p>
+                <p><b>(1) Notacja Lagrange'a:</b></p>
+                <p>Najczęściej używana przy liczeniu prostych pochodnych funkcji przyjmującej jeden argument.</p>
+                <Formula formula={"f'(x)"} />
+                <p><b>(2) Notacja Newtona:</b></p>
+                <p>Stosowana w fizyce dla określenia pochodnych funkcji z parametrem czasowym <b>t</b>.</p>
+                <Formula formula={"\\dot x"} />
+                <p><b>(3) Notacja Leibniza:</b></p>
+                <p>Wygodniejsza przy liczeniu całek oraz analizie funkcji wielu zmiennych, ponieważ wskazuje w mianowniku zmienną różniczkowania.</p>
+                <Formula formula={"\\frac{df(x)}{dx}=\\frac{d}{dx}f(x)"} />
+                <p>W przypadku liczenia <b>pochodnych cząstkowych</b> stosuje się zmodyfikowaną notację Leibniza, aby podkreślić, że jest to pochodna funkcji wieloargumentowej.</p>
+                <Formula formula={"\\frac{\\partial f(x,y)}{\\partial x} = \\frac{\\partial}{\\partial x} f(x,y)"} />
+                <p><b>(4) Notacja Eulera:</b></p>
+                <p>Wygodna w przypadku rozwiązywania liniowych równań różniczkowych.</p>
+                <Formula formula={"Df(x)"} />
+            </CoreCurriculum>
+            <ArticleBorder />
             <Title text={"Pochodna funkcji potęgowej"} type={"main-article"} />
             <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
                 <b>Pochodna funkcji potęgowej o wykładniku rzeczywistym</b> jest równa iloczynowi wykładnika i potęgi o podstawie identycznej, jak ta w funkcji, której pochodna jest liczona ale o wykładniku pomniejszonym o jeden.
@@ -93,56 +134,68 @@ const DerivedFunctionContent: FC = () => {
             </CoreCurriculum>
             <CoreCurriculum type={CoreCurriculumTypes.extra}>
                 <Explanation text={"Dowody"}>
-                    <p><b>(1) Pochodna funkcji potęgowej o wykładniku naturalnym</b> - w przypadku funkcji jednomianowej jej pochodna odpowiada iloczynowi wykładnika jednomianu i jednomianu stopnia o jeden mniejszego. W przypadku wykładników większych od jednego w dowodzie można skorzystać z <b>dwumianu Netwona</b>.</p>
-                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionNatural} styles="min-w-[380px]" />
+                    <p><b>(1) Pochodna funkcji potęgowej o wykładniku naturalnym:</b></p>
+                    <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionNatural} styles="min-w-[130px]" />
                     <p>założenie:</p>
                     <Formula formula={"n \\in \\mathbb{N}"} />
-                    <Proof steps={derivedOfPowerFunctionNaturalFrom2} text={"Dowód dla n>1"} styles="min-w-[666px]" />
-                    <Proof steps={derivedOfPowerFunctionNaturalEqual1} text={"Dowód dla n=1"} styles="min-w-[165px]" />
-                    <Proof steps={derivedOfPowerFunctionNaturalEqual0} text={"Dowód dla n=0"} styles="min-w-[146px]" />
-                    <p><b>(2) Pochodna funkcji potęgowej o wykładniku całkowitym ujemnym</b> - wzór na pochodną funkcji potęgowej o wykładniku rzeczywistym ma zastosowanie również w przypadku wykładników całkowitych ujemnych. Tak jak w poprzednim przypadku można w dowodzie zastosować dwumian Newtona.</p>
+                    <Proof steps={derivedOfPowerFunctionNaturalFrom2} text={"Dowód"} styles="min-w-[670px]">
+                        W dowodzie został wykorzystany <b>dwumianu Netwona</b>
+                    </Proof>
+                    <p><b>(2) Pochodna funkcji potęgowej o wykładniku całkowitym ujemnym:</b></p>
                     <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionNegativeIntegral} styles="min-w-[126px]" />
                     <p>założenie:</p>
                     <Formula formula={"n \\in \\mathbb{N}"} />
-                    <Proof steps={derivedOfPowerFunctionNegativeIntegralToMinus2} text={"Dowód dla n>1"} styles="min-w-[740px]" />
-                    <Proof steps={derivedOfPowerFunctionNegativeIntegralMinus1} text={"Dowód dla n=1"} styles="min-w-[321px]" />
-                    <p><b>(3) Pochodna funkcji potęgowej o wykładniku wymiernym</b> - w przypadku liczenia pochodnej dla funkcji potęgowej o wykładniku wymiernym ogólny dowód jest znacznie bardziej skomplikowany. Używa się do niego <b>uogólnionego na wykładniki rzeczywiste lub zespolone dwumianu Newtona</b>, który to bazuje na uogólnionej definicji <b>symbolu Newtona</b>  z wykorzystaniem <b>funkcji Gamma Eulera</b>, która to jest <b>uogólnieniem silni na zbiór liczb rzeczywistych i zespolonych</b></p>
+                    <Proof steps={derivedOfPowerFunctionNegativeIntegralToMinus2} text={"Dowód"} styles="min-w-[745px]" >
+                        W dowodzie został wykorzystany <b>dwumianu Netwona</b>
+                    </Proof>
+                    <p><b>(3) Pochodna funkcji potęgowej o wykładniku wymiernym:</b></p>
                     <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionRational} styles="min-w-[154px]" />
                     <p>założenie:</p>
                     <Formula formula={"m,n \\in \\mathbb{Z} \\land n\\neq 0"} />
-                    <Proof steps={derivedOfPowerFunctionRational} text={"Dowód"} styles="min-w-[698px]" />
-                    <p><b>(4) Pochodna funkcji potęgowej o wykładniku rzeczywistym</b> - wreszcie wszystkie wyżej wymienione dowody można zastąpić jednym uniwersalnym, który wykorzystuje <b>regułę łańcuchową</b>, pochodną <b>funkcji eksponencjalnej</b> oraz pochodną <b>funkcji logarytmu naturalnego</b>.</p>
+                    <Proof steps={derivedOfPowerFunctionRational} text={"Dowód"} styles="min-w-[705px]" >
+                        <p>W dowodzie zastosowano <b>uogólniony na wykładniki rzeczywiste i zespolone dwumian Newtona</b>, który bazuje na <b>funkcji Gamma Eulera</b> - uogólnienionej silni na zbiór liczb rzeczywistych i zespolonych.</p>
+                    </Proof>
+                    <p><b>(4) Pochodna funkcji potęgowej o wykładniku rzeczywistym:</b></p>
                     <Formula formula={mathematicalAnalyticsFormulas.derivedOfPowerFunctionReal} />
                     <p>założenie:</p>
                     <Formula formula={"a \\in \\mathbb{R}"} />
-                    <Proof steps={derivedOfPowerFunctionReal} text={"Dowód"} styles="min-w-[100px]" />
+                    <Proof steps={derivedOfPowerFunctionReal} text={"Dowód"} styles="min-w-[100px]" >
+                        <p>W dowodzie zastosowano <b>regułę łańcuchową</b>, pochodną <b>funkcji eksponencjalnej</b> oraz pochodną <b>funkcji logarytmu naturalnego</b></p>
+                    </Proof>
                 </Explanation>
-            </CoreCurriculum>
+            </CoreCurriculum >
             <ArticleBorder />
             <Title text={"Szczególne przypadki pochodnej funkcji potęgowej"} type={"main-article"} />
             <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
                 <p>Poniżej zostały wymienione najczęściej używane szczególne przypadki wykorzystania wzoru na pochodną funkcji potęgowej.</p><br />
                 <p><b>(1) przypadek gdy a = 3</b></p>
                 <Formula formula={"\\left(x^3\\right)'=3x^2"} />
+                <Proof steps={["\\left( x^3 \\right)'", "3 \\cdot x^{3-1}", "3x^2"]} text={"Dowód"} styles="min-w-[185px]" />
                 <p><b>(2) przypadek gdy a = 2</b></p>
                 <Formula formula={"\\left(x^2\\right)'=2x"} />
+                <Proof steps={["\\left( x^2 \\right)'", "2 \\cdot x^{2-1}", "2x"]} text={"Dowód"} styles="min-w-[185px]" />
                 <p><b>(3) przypadek gdy a = 1</b></p>
                 <Formula formula={"\\left(x\\right)'=1"} />
+                <Proof steps={["\\left( x^1 \\right)'", "1 \\cdot x^{1-1}", "1\\cdot 1", "1"]} text={"Dowód"} styles="min-w-[185px]" />
                 <p><b>(4) przypadek gdy a = 0.5</b></p>
                 <Formula formula={"\\left(\\sqrt{x}\\right)'=\\frac{1}{2\\sqrt{x}}"} />
+                <Proof steps={["\\left( \\sqrt{x} \\right)'", "\\left( x^{\\frac{1}{2}} \\right)'", "\\frac{1}{2} \\cdot x^{\\frac{1}{2}-1}", "\\frac{1}{2} \\cdot x^{-\\frac{1}{2}}", "\\frac{1}{2} \\cdot \\frac{1}{x^{\\frac{1}{2}}}", "\\frac{1}{2\\sqrt{x}}"]} text={"Dowód"} styles="min-w-[185px]" />
                 <p><b>(5) przypadek gdy a = 0.(3)</b></p>
                 <Formula formula={"\\left(\\sqrt[3]{x}\\right)'=\\frac{1}{3\\sqrt[3]{x^2}}"} />
+                <Proof steps={["\\left( \\sqrt[3]{x} \\right)'", "\\left( x^{\\frac{1}{3}} \\right)'", "\\frac{1}{3} \\cdot x^{\\frac{1}{3}-1}", "\\frac{1}{3} \\cdot x^{-\\frac{2}{3}}", "\\frac{1}{3} \\cdot \\frac{1}{x^{\\frac{2}{3}}}", "\\frac{1}{3\\sqrt[3]{x^2}}"]} text={"Dowód"} styles="min-w-[185px]" />
                 <p><b>(6) przypadek gdy a = 0</b></p>
                 <Formula formula={"\\left(1\\right)'=0"} />
+                <Proof steps={["\\left( 1 \\right)'", "\\left( x^0 \\right)'", "0 \\cdot x^{0-1}", "0"]} text={"Dowód"} styles="min-w-[185px]" />
                 <p><b>(7) przypadek gdy a = -1</b></p>
                 <Formula formula={"\\left(\\frac{1}{x}\\right)'=-\\frac{1}{x^2}"} />
+                <Proof steps={["\\left( \\frac{1}{x} \\right)'", "\\left( x^{-1} \\right)'", "-1 \\cdot x^{-1-1}", "- x^{-2}", "- \\frac{1}{x^2}"]} text={"Dowód"} styles="min-w-[185px]" />
                 <p><b>(8) przypadek gdy a = -2</b></p>
                 <Formula formula={"\\left(\\frac{1}{x^2}\\right)'=-\\frac{2}{x^3}"} />
+                <Proof steps={["\\left( \\frac{1}{x^2} \\right)'", "\\left( x^{-2} \\right)'", "-2 \\cdot x^{-2-1}", "-2\\cdot x^{-3}", "- \\frac{2}{x^3}"]} text={"Dowód"} styles="min-w-[185px]" />
             </CoreCurriculum>
             <ArticleBorder />
             <Title text={"Zależności pochodnych"} type={"main-article"} />
             <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
-                {/* <Formula formula={`\\left(\\frac{1}{f\\left(x\\right)}\\right)' = -\\frac{f'\\left(x\\right)}{\\left(f\\left(x\\right)\\right)^2}`} /> */}
                 <p>Zakładając, że <b>f(x)</b> oraz <b>g(x)</b> to funkcje różniczkowalne prawdziwe są równania:</p>
                 <p><b>(1) Pochodna sumy funkcji</b></p>
                 <Formula formula={mathematicalAnalyticsFormulas.sumRuleForDerivatives} styles="min-w-[257px]" />
@@ -157,7 +210,16 @@ const DerivedFunctionContent: FC = () => {
                 <Formula formula={`\\left(\\frac{f\\left(x\\right)}{g\\left(x\\right)}\\right)' = \\frac{f'\\left(x\\right)\\cdot g\\left(x\\right) - f\\left(x\\right)\\cdot g'\\left(x\\right)}{\\left(g\\left(x\\right)\\right)^2}`} styles="min-w-[328px]" />
                 <Proof steps={proofOfTheQuotientRuleForDerivatives} text={"Dowód"} styles="min-w-[705px]" />
                 <p><b>(5) Pochodna funkcji złożonej (reguła łańcucha)</b></p>
+                <p className="ml-5">(a) Zapisana w notacji Lagrange'a</p>
                 <Formula formula={`\\left(\\left(f\\circ g\\right)(x)\\right)'=\\left(f\\left(g\\left(x\\right)\\right)\\right)' = f'\\left(g\\left(x\\right)\\right)\\cdot g'\\left(x\\right)`} styles="min-w-[380px]" />
+                <p className="ml-5">(b) Zapisana w notacji Leibniza - przyjęto skrócony zapis <b>f</b>, zamiast <b>f(g(x))</b></p>
+                <Formula formula={`\\frac{df}{dx} = \\frac{df}{dg} \\cdot \\frac{dg}{dx}`} styles="min-w-[130px]" />
+                <Proof steps={proofOfChainRuleDerivatives} text={"Dowód"} styles="min-w-[310px]">
+                    W dowodzie zastosowano definicję pochodnej (iloraz różnicowy). Kluczowe jest wnioskowanie, że jeżeli różniczka <b>Δx</b> dąży do zera, to również <b>Δg(x)</b> dąży do zera.
+                </Proof>
+                <Proof steps={proofOfChainRuleDerivativesSimplified} text={"Dowód (uproszczony zapis)"} styles="min-w-[220px]">
+                    W dowodzie zastosowano definicję pochodnej (iloraz różnicowy). Kluczowe jest wnioskowanie, że jeżeli różniczka <b>Δx</b> dąży do zera, to również <b>Δg</b> dąży do zera.
+                </Proof>
             </CoreCurriculum>
 
             {/* <ArticleBorder /> */}

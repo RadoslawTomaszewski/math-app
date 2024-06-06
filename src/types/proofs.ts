@@ -436,5 +436,22 @@ export const proofOfEquationOfTheTangentToFunction_b = [
     "f(x_0)=f'(x_0) \\cdot x_0 +b",
     "b=f(x_0)-f'(x_0) \\cdot x_0",
 ];
+export const proofOfChainRuleDerivatives = [
+    "\\frac{d}{dx} f(g(x))",
+    "\\frac{df(g(x))}{dx}",
+    "\\lim_{\\Delta x \\rightarrow 0}{\\frac{\\Delta f(g(x))}{\\Delta x}}",
+    "\\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta f(g(x))}{\\Delta g(x)}\\cdot \\frac{\\Delta g(x)}{\\Delta x}\\right)}",
+    "\\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta f(g(x))}{\\Delta g(x)}\\right)}\\cdot \\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta g(x)}{\\Delta x}\\right)} ",
+    "\\lim_{\\Delta g(x) \\rightarrow 0}{\\left(\\frac{\\Delta f(g(x))}{\\Delta g(x)}\\right)}\\cdot \\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta g(x)}{\\Delta x}\\right)} ",
+    "\\frac{df(g(x))}{dg(x)} \\cdot \\frac{dg(x)}{dx}",
+]
+export const proofOfChainRuleDerivativesSimplified = [
+    "\\frac{df}{dx}",
+    "\\lim_{\\Delta x \\rightarrow 0}{\\frac{\\Delta f}{\\Delta x}}",
+    "\\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta f}{\\Delta g}\\cdot \\frac{\\Delta g}{\\Delta x}\\right)}",
+    "\\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta f}{\\Delta g}\\right)}\\cdot \\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta g}{\\Delta x}\\right)} ",
+    "\\lim_{\\Delta g \\rightarrow 0}{\\left(\\frac{\\Delta f}{\\Delta g}\\right)}\\cdot \\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta g}{\\Delta x}\\right)} ",
+    "\\frac{df}{dg} \\cdot \\frac{dg}{dx}",
+]
 
 
