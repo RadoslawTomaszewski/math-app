@@ -453,5 +453,34 @@ export const proofOfChainRuleDerivativesSimplified = [
     "\\lim_{\\Delta g \\rightarrow 0}{\\left(\\frac{\\Delta f}{\\Delta g}\\right)}\\cdot \\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta g}{\\Delta x}\\right)} ",
     "\\frac{df}{dg} \\cdot \\frac{dg}{dx}",
 ]
+export const proofOfDerivedSinus = [
+    "\\left( \\sin{x}\\right)'",
+    "\\lim_{h\\rightarrow 0}{\\frac{\\sin{\\left(x+h\\right)}-\\sin{x}}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\frac{\\sin{x}\\cdot \\cos{h} + \\sin{h} \\cdot \\cos{x}-\\sin{x}}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\frac{\\sin{x}\\left( \\cos{h}-1 \\right) + \\sin{h} \\cdot \\cos{x}}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\sin{x} \\cdot \\frac{ \\cos{h}-1 }{h}+ \\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\sin{x} \\cdot \\frac{ \\cos{h}-1 }{h} \\cdot 1 + \\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\sin{x} \\cdot \\frac{ \\cos{h}-1 }{h} \\cdot \\frac{\\cos{h}+1}{\\cos{h}+1} + \\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\sin{x} \\cdot \\frac{\\cos^2{h}-1}{h \\cdot \\left(\\cos{h}+1\\right)} + \\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\sin{x} \\cdot \\frac{\\cos^2{h}-\\left(\\sin^2{h}+\\cos^2{h}\\right)}{h \\cdot \\left(\\cos{h}+1\\right)} + \\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\sin{x} \\cdot \\frac{-\\sin^2{h}}{h \\cdot \\left(\\cos{h}+1\\right)} + \\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(- \\sin{x} \\cdot \\frac{\\sin{h}}{h} \\cdot \\frac{\\sin{h}}{\\cos{h}+1} + \\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(- \\sin{x} \\cdot \\frac{\\sin{h}}{h} \\cdot \\frac{\\sin{h}}{\\cos{h}+1} \\right)} + \\lim_{h\\rightarrow 0} {\\left(\\cos{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "- \\sin{x} \\cdot 1 \\cdot \\frac{0}{1+1} + \\cos{x} \\cdot 1",
+    "0 + \\cos{x}",
+    "\\cos{x}",
+]
+export const proofOfDerivedCosinus = [
+    "\\left( \\sin{x}\\right)'",
+    ""
+]
+export const proofOfDerivedTanges = [
+    "\\left( \\sin{x}\\right)'",
+    ""
+]
+export const proofOfDerivedCotanges = [
+    "\\left( \\sin{x}\\right)'",
+    ""
+]
 
 

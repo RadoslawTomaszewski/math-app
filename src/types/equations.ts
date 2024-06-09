@@ -167,6 +167,10 @@ export enum mathematicalAnalyticsFormulas {
     equationOfTheTangentToFunction_2 = "y = f'(x_0)\\cdot x +f(x_0)-f'(x_0) \\cdot x_0",
     equationOfTheTangentToFunction_b = "b=f(x_0)-f'(x_0) \\cdot x_0",
     equationOfTheTangentToFunction_a = "a=f'(x_0)",
+    derivedFuncionSinus = "\\left( \\sin{x}\\right)' = \\cos{x}",
+    derivedFuncionCosinus = "\\left( \\cos{x}\\right)' = -\\sin{x}",
+    derivedFuncionTangens = "\\left( \\tan{x}\\right)' = \\frac{1}{\\cos^2{x}} = 1 + \\tan^2{x}",
+    derivedFuncionCotangens = "\\left( \\cot{x}\\right)' = \\frac{1}{\\sin^2{x}}",
 
 
 }

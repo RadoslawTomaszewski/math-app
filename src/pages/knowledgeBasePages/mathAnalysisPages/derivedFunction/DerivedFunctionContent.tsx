@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import Explanation from "../../../../components/articleItems/Explanation";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import Proof from "../../../../components/articleItems/Proof";
-import { derivedOfPowerFunctionNaturalEqual0, derivedOfPowerFunctionNaturalEqual1, derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralMinus1, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfChainRuleDerivatives, proofOfChainRuleDerivativesSimplified, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../types/proofs";
+import { derivedOfPowerFunctionNaturalEqual0, derivedOfPowerFunctionNaturalEqual1, derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralMinus1, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfChainRuleDerivatives, proofOfChainRuleDerivativesSimplified, proofOfDerivedCosinus, proofOfDerivedCotanges, proofOfDerivedSinus, proofOfDerivedTanges, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../types/proofs";
 import { iFrameStyle } from "../../../../utilities/styles";
 
 const DerivedFunctionContent: FC = () => {
@@ -196,20 +196,28 @@ const DerivedFunctionContent: FC = () => {
             <ArticleBorder />
             <Title text={"Zależności pochodnych"} type={"main-article"} />
             <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
-                <p>Zakładając, że <b>f(x)</b> oraz <b>g(x)</b> to funkcje różniczkowalne prawdziwe są równania:</p>
-                <p><b>(1) Pochodna sumy funkcji</b></p>
+                <p>Zakładając, że <b>f(x)</b> oraz <b>g(x)</b> to funkcje różniczkowalne, a <b>c</b> to dowolna liczba rzeczywista, prawdziwe są równania:</p>
+                <br /><p><b>(1) Pochodna funkcji stałej </b></p>
+                <Formula formula={"\\left( c \\right)' = 0"} styles="min-w-[257px]" />
+                <Proof steps={["\\left( c \\right)'", "\\lim_{h\\rightarrow 0}{\\frac{c-c}{h}}", "\\lim_{h\\rightarrow 0}{\\frac{0}{h}}", "0"]} text={"Dowód"} styles="min-w-[78px]" />
+                <p><b>(2) Wyłączenie stałej przed pochodną </b></p>
+                <Formula formula={"\\left( c \\cdot f(x) \\right)' = c \\cdot f'(x)"} styles="min-w-[257px]" />
+                <Proof steps={["\\left( c \\cdot f(x) \\right)'", "(c)'\\cdot f(x) + c \\cdot f'(x)", "0 \\cdot f(x) + c \\cdot f'(x)", " c \\cdot f'(x)"]} text={"Dowód"} styles="min-w-[165px]" >
+                    W dowodzie został użyty wzór na pochodną iloczynu funkcji (4)
+                </Proof>
+                <p><b>(3) Pochodna sumy funkcji</b></p>
                 <Formula formula={mathematicalAnalyticsFormulas.sumRuleForDerivatives} styles="min-w-[257px]" />
                 <Proof steps={proofOfTheSumRuleForDerivatives} text={"Dowód"} styles="min-w-[400px]" />
-                <p><b>(2) Pochodna różnicy funkcji</b></p>
+                <p><b>(4) Pochodna różnicy funkcji</b></p>
                 <Formula formula={`\\left(f\\left(x\\right) - g\\left(x\\right)\\right)' = f'\\left(x\\right) - g'\\left(x\\right)`} styles="min-w-[257px]" />
                 <Proof steps={proofOfTheDifferenceRuleForDerivatives} text={"Dowód"} styles="min-w-[400px]" />
-                <p><b>(3) Pochodna iloczynu funkcji</b></p>
+                <p><b>(5) Pochodna iloczynu funkcji</b></p>
                 <Formula formula={mathematicalAnalyticsFormulas.productRuleForDerivatives} styles="min-w-[350px]" />
                 <Proof steps={proofOfTheProductRuleForDerivatives} text={"Dowód"} styles="min-w-[580px]" />
-                <p><b>(4) Pochodna ilorazu funkcji</b></p>
+                <p><b>(6) Pochodna ilorazu funkcji</b></p>
                 <Formula formula={`\\left(\\frac{f\\left(x\\right)}{g\\left(x\\right)}\\right)' = \\frac{f'\\left(x\\right)\\cdot g\\left(x\\right) - f\\left(x\\right)\\cdot g'\\left(x\\right)}{\\left(g\\left(x\\right)\\right)^2}`} styles="min-w-[328px]" />
                 <Proof steps={proofOfTheQuotientRuleForDerivatives} text={"Dowód"} styles="min-w-[705px]" />
-                <p><b>(5) Pochodna funkcji złożonej (reguła łańcucha)</b></p>
+                <p><b>(7) Pochodna funkcji złożonej (reguła łańcucha)</b></p>
                 <p className="ml-5">(a) Zapisana w notacji Lagrange'a</p>
                 <Formula formula={`\\left(\\left(f\\circ g\\right)(x)\\right)'=\\left(f\\left(g\\left(x\\right)\\right)\\right)' = f'\\left(g\\left(x\\right)\\right)\\cdot g'\\left(x\\right)`} styles="min-w-[380px]" />
                 <p className="ml-5">(b) Zapisana w notacji Leibniza - przyjęto skrócony zapis <b>f</b>, zamiast <b>f(g(x))</b></p>
@@ -221,24 +229,46 @@ const DerivedFunctionContent: FC = () => {
                     W dowodzie zastosowano definicję pochodnej (iloraz różnicowy). Kluczowe jest wnioskowanie, że jeżeli różniczka <b>Δx</b> dąży do zera, to również <b>Δg</b> dąży do zera.
                 </Proof>
             </CoreCurriculum>
+            <ArticleBorder />
+            <Title text={"Pochodne wybranych funkcji"} type={"main-article"} />
+            <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
+                <p></p>
+                <br /><p><b>(1) Pochodna funkcji sinus</b></p>
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionSinus} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedSinus} text={"Dowód"} styles="min-w-[78px]" >
+                    W dowodzie wykorzystano <b>wzór na sinus sumy</b> oraz tożsamość:
+                    <Formula formula={"\\lim_{x\\rightarrow 0}{\\frac{\\sin{x}}{x}}=1"} />
+                </Proof>
+                <br /><p><b>(2) Pochodna funkcji kosinus</b></p>
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionCosinus} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedCosinus} text={"Dowód"} styles="min-w-[78px]" />
+                <br /><p><b>(3) Pochodna funkcji tangens</b></p>
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionTangens} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedTanges} text={"Dowód"} styles="min-w-[78px]" />
+            </CoreCurriculum>
+            <CoreCurriculum type={CoreCurriculumTypes.extra}>
+                <br /><p><b>(4) Pochodna funkcji kotangens</b></p>
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionCotangens} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedCotanges} text={"Dowód"} styles="min-w-[78px]" />
+                <br /><p><b>(5) Pochodna funkcji wykładniczej</b></p>
+                <Formula formula={`\\left(a^x\\right)' = a^x \\cdot \\ln{a}`} />
+                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
+                <br /><p><b>(5.1) Pochodna funkcji eksponencjalnej</b></p>
+                <Formula formula={`\\left(e^x\\right)' = e^x`} />
+                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
+                <br /><p><b>(6) Pochodna funkcji logarytmicznej</b></p>
+                <Formula formula={`\\left(\\log_{a}{x} \\right)' = \\frac{1}{x \\cdot \\ln{a}}`} />
+                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
+                <br /><p><b>(6.1) Pochodna logarytmu naturalnego</b></p>
+                <Formula formula={`\\left(\\ln{x}\\right)' = \\frac{1}{x}`} />
+                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
 
+            </CoreCurriculum>
             {/* <ArticleBorder /> */}
-            {/* <Formula formula={`\\left(c\\right)' = 0`} />
-            <Formula formula={`\\left(x^n\\right)' = n \\cdot x^{n-1}`} />
-            <Formula formula={`\\left(e^x\\right)' = e^x`} />
-            <Formula formula={`\\left(a^x\\right)' = a^x \\cdot \\ln\\left(a\\right)`} />
-            <Formula formula={`\\left(\\ln\\left(x\\right)\\right)' = \\frac{1}{x}`} />
-            <Formula formula={`\\left(\\log_a\\left(x\\right)\\right)' = \\frac{1}{x \\cdot \\ln\\left(a\\right)}`} />
-            <Formula formula={`\\left(\\sqrt{x}\\right)' = \\frac{1}{2\\sqrt{x}}`} />
-            <Formula formula={`\\left(\\frac{1}{x}\\right)' = -\\frac{1}{x^2}`} />
-            <Formula formula={`\\left(\\log_{a}\\left(x\\right)\\right)' = \\frac{1}{x \\cdot \\ln\\left(a\\right)}`} />
-            <Formula formula={`\\left(\\sin\\left(x\\right)\\right)' = \\cos\\left(x\\right)`} />
-            <Formula formula={`\\left(\\cos\\left(x\\right)\\right)' = -\\sin\\left(x\\right)`} />
-            <Formula formula={`\\left(\\tan\\left(x\\right)\\right)' = \\frac{1}{\\cos^2\\left(x\\right)}`} />
-            <Formula formula={`\\left(\\cot\\left(x\\right)\\right)' = -\\frac{1}{\\sin^2\\left(x\\right)}`} />
             <Formula formula={`\\left(\\arcsin\\left(x\\right)\\right)' = \\frac{1}{\\sqrt{1-x^2}}`} />
             <Formula formula={`\\left(\\arccos\\left(x\\right)\\right)' = -\\frac{1}{\\sqrt{1-x^2}}`} />
-            <Formula formula={`\\left(\\arctan\\left(x\\right)\\right)' = \\frac{1}{1+x^2}`} /> */}
+            <Formula formula={`\\left(\\arctan\\left(x\\right)\\right)' = \\frac{1}{1+x^2}`} />
+            {/* */}
         </>
     );
 };
