@@ -57,7 +57,9 @@ export default function HomePage() {
               <p>Aktualizacja <NavLink to="kalkulatory/funkcji-liniowej" className="hover:underline"><b>kalkulatora funkcji liniowej</b></NavLink></p>
               <p>Możliwość zakładania kont i wpisywania się do <NavLink to="forum" className="hover:underline"><b>księgi gości</b></NavLink> (matematyczne forum w budowie)</p>
               <p>Artykuł dotyczący <NavLink to="baza-wiedzy/twierdzenia" className="hover:underline"><b>twierdzenia opisujące własności trójkątów</b></NavLink></p>
-              <br /><p className="italic">aktualizacja: 04/06/2024</p>
+              <p>Akutalizacja <NavLink to="baza-wiedzy/pochodna-funkcji" className="hover:underline"><b>artykułu o funkcji pochodnej funkcji</b></NavLink></p>
+              <p>Artykuł o <NavLink to="baza-wiedzy/monotonicznosc-i-ekstremum" className="hover:underline"><b>monotoniczności funkcji</b></NavLink></p>
+              <br /><p className="italic">aktualizacja: 11/06/2024</p>
               <ArticleBorder />
               <Title text="Polityka prywatności" type="main-article" />
               <p>Przeczytaj: <NavLink to="polityka-prywatnosci" className="hover:underline"><b>Polityka prywatności</b></NavLink></p>

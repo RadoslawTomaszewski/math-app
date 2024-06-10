@@ -437,7 +437,6 @@ export const proofOfEquationOfTheTangentToFunction_b = [
     "b=f(x_0)-f'(x_0) \\cdot x_0",
 ];
 export const proofOfChainRuleDerivatives = [
-    "\\frac{d}{dx} f(g(x))",
     "\\frac{df(g(x))}{dx}",
     "\\lim_{\\Delta x \\rightarrow 0}{\\frac{\\Delta f(g(x))}{\\Delta x}}",
     "\\lim_{\\Delta x \\rightarrow 0}{\\left(\\frac{\\Delta f(g(x))}{\\Delta g(x)}\\cdot \\frac{\\Delta g(x)}{\\Delta x}\\right)}",
@@ -471,16 +470,91 @@ export const proofOfDerivedSinus = [
     "\\cos{x}",
 ]
 export const proofOfDerivedCosinus = [
-    "\\left( \\sin{x}\\right)'",
-    ""
+    "\\left( \\cos{x}\\right)'",
+    "\\lim_{h\\rightarrow 0}{\\frac{\\cos{\\left(x+h\\right)}-\\cos{x}}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\frac{\\cos{x} \\cdot \\cos{h} - \\sin{h} \\cdot \\sin{x} - \\cos{x}}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\frac{\\cos{x}\\left( \\cos{h}-1 \\right) - \\sin{h} \\cdot \\sin{x}}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\cos{x} \\cdot \\frac{ \\cos{h}-1 }{h} - \\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\cos{x} \\cdot \\frac{ \\cos{h}-1 }{h} \\cdot 1 - \\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\cos{x} \\cdot \\frac{ \\cos{h}-1 }{h} \\cdot \\frac{\\cos{h}+1}{\\cos{h}+1} - \\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\cos{x} \\cdot \\frac{\\cos^2{h}-1}{h \\cdot \\left(\\cos{h}+1\\right)} - \\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\cos{x} \\cdot \\frac{\\cos^2{h}-\\left(\\sin^2{h}+\\cos^2{h}\\right)}{h \\cdot \\left(\\cos{h}+1\\right)} - \\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\cos{x} \\cdot \\frac{-\\sin^2{h}}{h \\cdot \\left(\\cos{h}+1\\right)} - \\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(- \\cos{x} \\cdot \\frac{\\sin{h}}{h} \\cdot \\frac{\\sin{h}}{\\cos{h}+1} - \\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left(- \\cos{x} \\cdot \\frac{\\sin{h}}{h} \\cdot \\frac{\\sin{h}}{\\cos{h}+1} \\right)} - \\lim_{h\\rightarrow 0} {\\left(\\sin{x} \\cdot \\frac{\\sin{h}}{h}\\right)}",
+    "- \\cos{x} \\cdot 1 \\cdot \\frac{0}{1+1} - \\sin{x} \\cdot 1",
+    "0 - \\sin{x}",
+    "-\\sin{x}",
 ]
-export const proofOfDerivedTanges = [
-    "\\left( \\sin{x}\\right)'",
-    ""
+export const proofOfDerivedTanges1 = [
+    "\\left( \\tan{x}\\right)'",
+    "\\left( \\frac{\\sin{x}}{\\cos{x}} \\right)'",
+    "\\frac{\\left( \\sin{x} \\right)' \\cdot \\cos{x} - \\sin{x} \\cdot \\left(\\cos{x}\\right)'}{\\cos^2{x}}",
+    "\\frac{\\cos^2{x}+\\sin^2{x}}{\\cos^2{x}}",
+    "\\frac{1}{\\cos^2{x}}"
 ]
-export const proofOfDerivedCotanges = [
-    "\\left( \\sin{x}\\right)'",
-    ""
+export const proofOfDerivedTanges2 = [
+    "\\left( \\tan{x}\\right)'",
+    "\\left( \\frac{\\sin{x}}{\\cos{x}} \\right)'",
+    "\\frac{\\left( \\sin{x} \\right)' \\cdot \\cos{x} - \\sin{x} \\cdot \\left(\\cos{x}\\right)'}{\\cos^2{x}}",
+    "\\frac{\\cos^2{x}+\\sin^2{x}}{\\cos^2{x}}",
+    "\\frac{\\cos^2{x}}{\\cos^2{x}}+\\frac{\\sin^2{x}}{\\cos^2{x}}",
+    "1+\\tan^2{x}"
+]
+export const proofOfDerivedCotanges1 = [
+    "\\left( \\cot{x}\\right)'",
+    "\\left( \\frac{\\cos{x}}{\\sin{x}} \\right)'",
+    "\\frac{\\left( \\cos{x} \\right)' \\cdot \\sin{x} - \\cos{x} \\cdot \\left(\\sin{x}\\right)'}{\\sin^2{x}}",
+    "\\frac{-\\sin^2{x}-\\cos^2{x}}{\\sin^2{x}}",
+    "\\frac{-\\left(\\sin^2{x}+\\cos^2{x}\\right)}{\\sin^2{x}}",
+    "-\\frac{1}{\\sin^2{x}}"
+]
+export const proofOfDerivedCotanges2 = [
+    "\\left( \\cot{x}\\right)'",
+    "\\left( \\frac{\\cos{x}}{\\sin{x}} \\right)'",
+    "\\frac{\\left( \\cos{x} \\right)' \\cdot \\sin{x} - \\cos{x} \\cdot \\left(\\sin{x}\\right)'}{\\sin^2{x}}",
+    "\\frac{-\\sin^2{x}-\\cos^2{x}}{\\sin^2{x}}",
+    "-\\frac{\\sin^2{x}}{\\sin^2{x}}-\\frac{\\cos^2{x}}{\\sin^2{x}}",
+    "-1-\\cot^2{x}",
+    "-\\left(1+\\cot^2{x}\\right)",
+]
+
+export const proofOfDerivedLog = [
+    "\\left(\\log_{a}{x} \\right)'",
+    "\\lim_{h\\rightarrow 0}{\\frac{\\log_{a}{\\left(x+h\\right)-\\log_{a}{x}}}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\left(\\frac{1}{h} \\cdot \\log_{a}{\\frac{x+h}{x}}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left( \\log_{a}{\\left( \\frac{x+h}{x} \\right)^{\\frac{1}{h}}}\\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left( 1 \\cdot \\log_{a}{\\left( \\frac{x+h}{x} \\right)^{\\frac{1}{h}}} \\right)}",
+    "\\lim_{h\\rightarrow 0}{\\left( \\frac{1}{x} \\cdot x \\cdot \\log_{a}{\\left( \\frac{x+h}{x} \\right)^{\\frac{1}{h}}} \\right)}",
+    "\\frac{1}{x} \\cdot \\lim_{h\\rightarrow 0}{\\left(  \\log_{a}{\\left( 1 + \\frac{h}{x} \\right)^{\\frac{x}{h}}} \\right)}",
+    "\\frac{1}{x} \\cdot \\lim_{h\\rightarrow 0}{\\left(  \\log_{a}{\\left( 1 + \\frac{h}{x} \\right)^{\\frac{1}{\\frac{h}{x}}}} \\right)}",
+    "\\frac{1}{x} \\cdot \\log_{a}{e}",
+    "\\frac{1}{x} \\cdot \\frac{\\ln{e}}{\\ln{a}}",
+    "\\frac{1}{x\\cdot \\ln{a}}"
+]
+
+export const proofOfDerivedLn = [
+    "\\left(\\ln{x}\\right)'",
+    "\\left(\\log_{e}{x} \\right)'",
+    "\\frac{1}{x\\cdot \\ln{e}}",
+    "\\frac{1}{x\\cdot 1}",
+    "\\frac{1}{x}",
+]
+
+export const proofOfDerivedExponent = [
+    "\\left(a^x \\right)'",
+    "\\lim_{h\\rightarrow 0}{\\frac{a^{x+h}-a^x}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\frac{a^x \\cdot a^h -a^x}{h}}",
+    "\\lim_{h\\rightarrow 0}{\\frac{a^x \\left( a^h - 1 \\right)}{h}}",
+    "a^x \\cdot \\lim_{h\\rightarrow 0}{\\frac{a^h - 1}{h}}",
+    "a^x \\cdot \\ln{a}",
+]
+
+export const proofOfDerivedExponente = [
+    "\\left(e^x \\right)'",
+    "e^x \\cdot \\ln{e}",
+    "e^x \\cdot 1",
+    "e^x",
 ]
 
 

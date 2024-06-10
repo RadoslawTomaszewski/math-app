@@ -169,8 +169,10 @@ export enum mathematicalAnalyticsFormulas {
     equationOfTheTangentToFunction_a = "a=f'(x_0)",
     derivedFuncionSinus = "\\left( \\sin{x}\\right)' = \\cos{x}",
     derivedFuncionCosinus = "\\left( \\cos{x}\\right)' = -\\sin{x}",
-    derivedFuncionTangens = "\\left( \\tan{x}\\right)' = \\frac{1}{\\cos^2{x}} = 1 + \\tan^2{x}",
-    derivedFuncionCotangens = "\\left( \\cot{x}\\right)' = \\frac{1}{\\sin^2{x}}",
+    derivedFuncionTangens1 = "\\left( \\tan{x}\\right)' = \\frac{1}{\\cos^2{x}}",
+    derivedFuncionTangens2 = "\\left( \\tan{x}\\right)' = 1 + \\tan^2{x}",
+    derivedFuncionCotangens1 = "\\left( \\cot{x}\\right)' = \\frac{1}{\\sin^2{x}}",
+    derivedFuncionCotangens2 = "\\left( \\cot{x}\\right)' = - \\left(1 + \\cot^2{x}\\right)",
 
 
 }

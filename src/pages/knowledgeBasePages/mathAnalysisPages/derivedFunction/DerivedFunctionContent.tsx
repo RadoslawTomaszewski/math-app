@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import Explanation from "../../../../components/articleItems/Explanation";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import Proof from "../../../../components/articleItems/Proof";
-import { derivedOfPowerFunctionNaturalEqual0, derivedOfPowerFunctionNaturalEqual1, derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralMinus1, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfChainRuleDerivatives, proofOfChainRuleDerivativesSimplified, proofOfDerivedCosinus, proofOfDerivedCotanges, proofOfDerivedSinus, proofOfDerivedTanges, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../types/proofs";
+import { derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfChainRuleDerivatives, proofOfChainRuleDerivativesSimplified, proofOfDerivedCosinus, proofOfDerivedCotanges1, proofOfDerivedCotanges2, proofOfDerivedExponent, proofOfDerivedExponente, proofOfDerivedLn, proofOfDerivedLog, proofOfDerivedSinus, proofOfDerivedTanges1, proofOfDerivedTanges2, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../types/proofs";
 import { iFrameStyle } from "../../../../utilities/styles";
 
 const DerivedFunctionContent: FC = () => {
@@ -117,9 +117,9 @@ const DerivedFunctionContent: FC = () => {
                 <Formula formula={"\\dot x"} />
                 <p><b>(3) Notacja Leibniza:</b></p>
                 <p>Wygodniejsza przy liczeniu całek oraz analizie funkcji wielu zmiennych, ponieważ wskazuje w mianowniku zmienną różniczkowania.</p>
-                <Formula formula={"\\frac{df(x)}{dx}=\\frac{d}{dx}f(x)"} />
+                <Formula formula={"\\frac{df(x)}{dx}"} />
                 <p>W przypadku liczenia <b>pochodnych cząstkowych</b> stosuje się zmodyfikowaną notację Leibniza, aby podkreślić, że jest to pochodna funkcji wieloargumentowej.</p>
-                <Formula formula={"\\frac{\\partial f(x,y)}{\\partial x} = \\frac{\\partial}{\\partial x} f(x,y)"} />
+                <Formula formula={"\\frac{\\partial f(x,y)}{\\partial x}"} />
                 <p><b>(4) Notacja Eulera:</b></p>
                 <p>Wygodna w przypadku rozwiązywania liniowych równań różniczkowych.</p>
                 <Formula formula={"Df(x)"} />
@@ -235,40 +235,53 @@ const DerivedFunctionContent: FC = () => {
                 <p></p>
                 <br /><p><b>(1) Pochodna funkcji sinus</b></p>
                 <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionSinus} styles="min-w-[125px]" />
-                <Proof steps={proofOfDerivedSinus} text={"Dowód"} styles="min-w-[78px]" >
+                <Proof steps={proofOfDerivedSinus} text={"Dowód"} styles="min-w-[520px]" >
                     W dowodzie wykorzystano <b>wzór na sinus sumy</b> oraz tożsamość:
                     <Formula formula={"\\lim_{x\\rightarrow 0}{\\frac{\\sin{x}}{x}}=1"} />
                 </Proof>
                 <br /><p><b>(2) Pochodna funkcji kosinus</b></p>
                 <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionCosinus} styles="min-w-[125px]" />
-                <Proof steps={proofOfDerivedCosinus} text={"Dowód"} styles="min-w-[78px]" />
-                <br /><p><b>(3) Pochodna funkcji tangens</b></p>
-                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionTangens} styles="min-w-[125px]" />
-                <Proof steps={proofOfDerivedTanges} text={"Dowód"} styles="min-w-[78px]" />
+                <Proof steps={proofOfDerivedCosinus} text={"Dowód"} styles="min-w-[520px]" >
+                    W dowodzie wykorzystano <b>wzór na kosinus sumy</b> oraz tożsamość:
+                    <Formula formula={"\\lim_{x\\rightarrow 0}{\\frac{\\sin{x}}{x}}=1"} />
+                </Proof>
+                <br /><p><b>(3) Pochodna funkcji tangens</b> - wzór w dwóch formach</p>
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionTangens1} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedTanges1} text={"Dowód"} styles="min-w-[250px]" />
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionTangens2} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedTanges2} text={"Dowód"} styles="min-w-[250px]" />
             </CoreCurriculum>
             <CoreCurriculum type={CoreCurriculumTypes.extra}>
-                <br /><p><b>(4) Pochodna funkcji kotangens</b></p>
-                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionCotangens} styles="min-w-[125px]" />
-                <Proof steps={proofOfDerivedCotanges} text={"Dowód"} styles="min-w-[78px]" />
+                <br /><p><b>(4) Pochodna funkcji kotangens</b> - wzór w dwóch formach</p>
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionCotangens1} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedCotanges1} text={"Dowód"} styles="min-w-[250px]" />
+                <Formula formula={mathematicalAnalyticsFormulas.derivedFuncionCotangens2} styles="min-w-[125px]" />
+                <Proof steps={proofOfDerivedCotanges2} text={"Dowód"} styles="min-w-[250px]" />
                 <br /><p><b>(5) Pochodna funkcji wykładniczej</b></p>
                 <Formula formula={`\\left(a^x\\right)' = a^x \\cdot \\ln{a}`} />
-                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
-                <br /><p><b>(5.1) Pochodna funkcji eksponencjalnej</b></p>
+                <Proof steps={proofOfDerivedExponent} text={"Dowód"} styles="min-w-[78px]" >
+                    W dowodzie wykorzystano tożsamość:
+                    <Formula formula={"\\lim_{x\\rightarrow 0}{\\frac{a^x-1}{x}}=\\ln{a}"} />
+                </Proof>
+                <br /><p><b>(5.1) Pochodna funkcji eksponencjalnej</b> - szczególny przypadek wzoru (5)</p>
                 <Formula formula={`\\left(e^x\\right)' = e^x`} />
-                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
+                <Proof steps={proofOfDerivedExponente} text={"Dowód"} styles="min-w-[78px]" />
                 <br /><p><b>(6) Pochodna funkcji logarytmicznej</b></p>
                 <Formula formula={`\\left(\\log_{a}{x} \\right)' = \\frac{1}{x \\cdot \\ln{a}}`} />
-                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
-                <br /><p><b>(6.1) Pochodna logarytmu naturalnego</b></p>
-                <Formula formula={`\\left(\\ln{x}\\right)' = \\frac{1}{x}`} />
-                <Proof steps={[""]} text={"Dowód"} styles="min-w-[78px]" />
-
+                <Proof steps={proofOfDerivedLog} text={"Dowód"} styles="min-w-[78px]" >
+                    <p>W dowodzie wykorzystano <NavLink to="../logarytmowanie"> <b>zależności logarytmiczne</b></NavLink> oraz tożsamość:</p>
+                    <Formula formula={"e=\\lim_{x\\rightarrow 0}{\\left(1+x\\right)^{\\frac{1}{x}}}"} />
+                </Proof>
+                <br /><p><b>(6.1) Pochodna logarytmu naturalnego</b> - szczególny przypadek wzoru (6)</p>
+                <Formula formula={`\\left(\\ln{x} \\right)' = \\frac{1}{x}`} />
+                <Proof steps={proofOfDerivedLn} text={"Dowód"} styles="min-w-[78px]" >
+                </Proof>
+                <br /><p><b>(7) Pochodne funkcji cyklometrycznych</b></p>
+                <Formula formula={`\\left(\\arcsin{x}\\right)' = \\frac{1}{\\sqrt{1-x^2}}`} />
+                <Formula formula={`\\left(\\arccos{x}\\right)' = \\frac{-1}{\\sqrt{1-x^2}}`} />
+                <Formula formula={`\\left(\\arctan{x}\\right)' = \\frac{1}{x^2+1}`} />
+                <Formula formula={`\\left(\\text{arccot}\\ {x}\\right)' = \\frac{-1}{x^2+1}`} />
             </CoreCurriculum>
-            {/* <ArticleBorder /> */}
-            <Formula formula={`\\left(\\arcsin\\left(x\\right)\\right)' = \\frac{1}{\\sqrt{1-x^2}}`} />
-            <Formula formula={`\\left(\\arccos\\left(x\\right)\\right)' = -\\frac{1}{\\sqrt{1-x^2}}`} />
-            <Formula formula={`\\left(\\arctan\\left(x\\right)\\right)' = \\frac{1}{1+x^2}`} />
-            {/* */}
         </>
     );
 };

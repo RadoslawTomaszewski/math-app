@@ -72,6 +72,7 @@ import RegistrationPage from "../pages/loginPages/RegistrationPage";
 import ResetPasswordPage from "../pages/loginPages/ResetPasswordPage";
 import PrivacyPolicyPage from "../pages/privacyPolicyPage/PrivacyPolicyPage";
 import TheoremsPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TheoremsPage";
+import MonotonicityExtremumPage from "../pages/knowledgeBasePages/mathAnalysisPages/monotonicityExtremum/monotonicityExtremumPage";
 
 
 
@@ -119,6 +120,7 @@ export const Router: FC = () => {
                         <Route path="kwadrat" element={<SquarePage />} />
                         <Route path="relacja-z-okregiem" element={<CirclesRelationsPage />} />
                         <Route path="pochodna-funkcji" element={<DerivedFunctionPage />} />
+                        <Route path="monotonicznosc-i-ekstremum" element={<MonotonicityExtremumPage />} />
                         <Route path="twierdzenia" element={<TheoremsPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
