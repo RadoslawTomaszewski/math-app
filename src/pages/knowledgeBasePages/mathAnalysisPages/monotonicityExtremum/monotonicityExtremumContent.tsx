@@ -1,9 +1,6 @@
 import { FC } from "react";
 import Title from "../../../../components/articleItems/Title";
-import GraphImage from "../../../../components/articleItems/GraphImage";
-import DerivedFunctionGraph from "../../../../assets/images/knowledge_base/math_analytics/derived_definition.png"
 import Formula from "../../../../components/articleItems/Formula";
-import { mathematicalAnalyticsFormulas } from "../../../../types/equations";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import ImageComponent from "../../../../components/articleItems/ImageComponent";
@@ -13,7 +10,10 @@ import FunkcjaStala from "../../../../assets/images/knowledge_base/math_analytic
 import FunkcjaNierosnaca from "../../../../assets/images/knowledge_base/math_analytics/funkcja_nierosnaca.png";
 import FunkcjaNiemalejaca from "../../../../assets/images/knowledge_base/math_analytics/funkcja_niemalejaca.png";
 import FunkcjaPochodnaWykres from "../../../../assets/images/knowledge_base/math_analytics/funkcja_i_pochodna.png";
+import MinimumMaksimum from "../../../../assets/images/knowledge_base/math_analytics/minimum_maximum.png";
+import Przyklad01a from "../../../../assets/images/knowledge_base/math_analytics/przyklad01a.png";
 import { NavLink } from "react-router-dom";
+import Explanation from "../../../../components/articleItems/Explanation";
 
 const MonotonicityExtremumContent: FC = () => {
     return (
@@ -97,6 +97,181 @@ const MonotonicityExtremumContent: FC = () => {
                 <Formula formula={"f'(x)<0"} />
                 <br />
                 <p>Przejdź do artykułu o <NavLink to="../pochodna-funkcji" className={"hover:underline"}><b>pochodnej funkcji</b></NavLink></p>
+            </CoreCurriculum>
+            <ArticleBorder />
+            <Title text={"Ekstremum"} type={"main-article"} />
+            <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
+                <ImageComponent src={MinimumMaksimum} alt={"Minimum lokalne, maksium lokalne, minimum globalne"} styles="max-h-[300px]" />
+                <p><b>Ekstremum lokalne</b> funkcji to wartość przyjmowana dla pewnego punktu <b>x<sub>0</sub></b>, która jest największa lub najmniejsza w porównaniu do otaczających ten punkt argumentów zanjdujących się w pewnym otwartym przedziale.</p>
+                <br /><p>Wyróżnia się dwa rodzaje ekstremum:</p>
+                <p className="ml-5"><b>(1) Minimum</b> - gdy wartość funkcji jest najmniejsza,</p>
+                <p className="ml-5"><b>(2) Maximum</b> - gdy wartość funkcji jest największa.</p>
+                <br /><p>Jeżeli dana wartość funkcji jest największa lub najmniejsza w całej dziedzinie funkcji takie ekstremum nosi nazwę <b>ekstremum globalnego.</b></p>
+            </CoreCurriculum>
+            <ArticleBorder />
+            <Title text={"Wyznaczanie ekstremum za pomocą pochodnej"} type={"main-article"} />
+            <CoreCurriculum type={CoreCurriculumTypes.CKEPR}>
+
+                <p><b>Ekstremum lokalne</b> funkcji można wyznaczyć za pomocą pochodnej funkcji.</p>
+                <br /><p className="flex w-full justify-center"><b>Warunek konieczny istnienia ekstremum</b></p>
+                <p>Jeżeli funkcja jest różniczkowalna w punkcie <b>x<sub>0</sub></b> oraz spełnia warunek</p>
+                <Formula formula={"f'(x_0)=0"} />
+                <p>to w tym punkcie istnieje tzw. <b>punkt stacjonarny</b> (używa się również określenia punkt krytyczny) i jest możliwe istnienie w nim ekstremum. </p>
+                <br />
+                <p className="flex w-full justify-center"><b>Warunek wystarczający istnienia ekstremum</b></p>
+                <p>Zakładając, że <b>ε</b> to dowolna mała liczba rzeczywista dodatnia pozwalająca określić wystarczająco bliskie otoczenie punktu stacjonarnego <b>x<sub>0</sub></b>, ekstremum w punkcie <b>x<sub>0</sub></b> będzie istniało gdy w przedziałach <b>(x<sub>0</sub>-ε)</b> oraz <b>(x<sub>0</sub>+ε)</b> wartość pochodnej funkcji przyjmuje wartości o przeciwnych znakach.</p>
+                <br />
+                <p>W praktyce najczęściej stosuje się tabelę pomocniczą, która może wystąpić w 4 wariantach:</p>
+                <p className="ml-5"><b>(1) tabela w sytuacji gdy istnieje minimum</b></p>
+                <div className="flex justify-center overflow-x-auto">
+                    <div className="min-w-[400px]">
+                        <table className="border-2 border-collapse border-black m-2 bg-white">
+                            <tr className="border-2 border-collapse border-black m-2" >
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"x"} /></th>
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0-\\varepsilon;x_0\\right)"} /></th>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"x_0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0;x_0+\\varepsilon\\right)"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f'(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"-"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"+"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\searrow"} /></td>
+                                <td className="border-2 border-collapse border-black m-2 min-w-[100px] text-center"><b>minimum</b></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\nearrow"} /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p className="ml-5"><b>(2) tabela w sytuacji gdy istnieje maximum</b></p>
+                <div className="flex justify-center overflow-x-auto">
+                    <div className="min-w-[400px]">
+                        <table className="border-2 border-collapse border-black m-2 bg-white">
+                            <tr className="border-2 border-collapse border-black m-2" >
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"x"} /></th>
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0-\\varepsilon;x_0\\right)"} /></th>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"x_0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0;x_0+\\varepsilon\\right)"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f'(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"+"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"-"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\nearrow"} /></td>
+                                <td className="border-2 border-collapse border-black m-2 min-w-[100px] text-center"><b>maximum</b></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\searrow"} /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p className="ml-5"><b>(3) tabela w sytuacji gdy nie istnieje ekstremum (wariant 1)</b></p>
+                <div className="flex justify-center overflow-x-auto">
+                    <div className="min-w-[400px]">
+                        <table className="border-2 border-collapse border-black m-2 bg-white">
+                            <tr className="border-2 border-collapse border-black m-2" >
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"x"} /></th>
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0-\\varepsilon;x_0\\right)"} /></th>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"x_0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0;x_0+\\varepsilon\\right)"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f'(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"+"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"-"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\nearrow"} /></td>
+                                <td className="border-2 border-collapse border-black m-2 min-w-[100px] text-center"><b>brak</b><br /><b>ekstremum</b></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\nearrow"} /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p className="ml-5"><b>(4) tabela w sytuacji gdy nie istnieje ekstremum (wariant 2)</b></p>
+                <div className="flex justify-center overflow-x-auto">
+                    <div className="min-w-[400px]">
+                        <table className="border-2 border-collapse border-black m-2 bg-white">
+                            <tr className="border-2 border-collapse border-black m-2" >
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"x"} /></th>
+                                <th className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0-\\varepsilon;x_0\\right)"} /></th>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"x_0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(x_0;x_0+\\varepsilon\\right)"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f'(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"+"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"0"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"-"} /></td>
+                            </tr>
+                            <tr className="border-2 border-collapse border-black m-2">
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"f(x)"} /></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\searrow"} /></td>
+                                <td className="border-2 border-collapse border-black m-2 min-w-[100px] text-center"><b>brak</b><br /><b>ekstremum</b></td>
+                                <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\searrow"} /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <Explanation text={"Przykład"}>
+                    <p>Dana jest różniczkowalna w zbiorze liczb rzeczywistych funkcja:</p>
+                    <Formula formula={"f(x)=x\\cdot(x-1)^3"} />
+                    <p>W celu wyznaczenia ekstremum lokalnych funkcji w pierwszym kroku należy wyznaczyć pochodną. </p>
+                    <br /><p>W tym przypadku najlepiej wykorzystać <b>wzór na pochodną iloczynu</b> oraz <b>regułę łańcuchową</b> (pochodną funkcji złożonej).</p>
+                    <Formula formula={"f'(x)=(x)' \\cdot (x-1)^3 + x \\cdot \\left((x-1)^3\\right)'"} />
+                    <Formula formula={"f'(x)=1 \\cdot (x-1)^3 + x \\cdot 3(x-1)^2"} />
+                    <Formula formula={"f'(x)=(x-1)^2 \\cdot \\left( \\left(x-1\\right) + 3x\\right)"} />
+                    <Formula formula={"f'(x)=(x-1)^2 \\cdot \\left(4x-1\\right)"} />
+                    <p>Kolejnym etapem jest wyznaczenie pierwiastków pochodnej funkcji oraz ustalenie ich krotności.</p>
+                    <Formula formula={"f'(x)=0"} />
+                    <Formula formula={"(x-1)^2 \\cdot \\left(4x-1\\right)=0"} />
+                    <Formula formula={"x=\\frac{1}{4}_{(1)} \\vee x=1_{(2)}"} />
+                    <p>Szkicując wykres wielomianu można ustalić przedziały, dla których pochodna funkcji przyjmuje wartości dodatnie, a dla których ujemne.</p>
+                    <ImageComponent src={Przyklad01a} alt={"Szkic funkcji f(x)=(x-1)^2(4x+1)"} styles="max-h-[200px]" />
+                    <p>Tabela utworzona na podstawie szkicu</p>
+                    <div className="flex justify-center overflow-x-auto">
+                        <div className="min-w-[600px]">
+                            <table className="border-2 border-collapse border-black m-2 bg-white">
+                                <tr className="border-2 border-collapse border-black m-2" >
+                                    <th className="border-2 border-collapse border-black m-2"><Formula formula={"x"} /></th>
+                                    <th className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(-\\infty;\\frac{1}{4}\\right)"} /></th>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\frac{1}{4}"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(\\frac{1}{4};1\\right)"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"1"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\left(1;\\infty\\right)"} /></td>
+                                </tr>
+                                <tr className="border-2 border-collapse border-black m-2">
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"f'(x)"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"-"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"0"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"+"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"0"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"+"} /></td>
+                                </tr>
+                                <tr className="border-2 border-collapse border-black m-2">
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"f(x)"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\searrow"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2 min-w-[100px] text-center"><b>minimum</b></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\nearrow"} /></td>
+                                    <td className="border-2 border-collapse border-black m-2 min-w-[100px] text-center"><b>brak</b><br /><b>ekstremum</b></td>
+                                    <td className="border-2 border-collapse border-black m-2"><Formula formula={"\\nearrow"} /></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <p>Z przykładu wiadomo, że istnieją dwa punkty stacjonarne, ale tylko jeden z nich jest ekstremum.</p>
+                    <br />
+                    <p>Wykres analizowanej funkcji oraz wykres jej pochodnej prezentują się następująco:</p>
+                </Explanation>
             </CoreCurriculum>
         </>
     );
