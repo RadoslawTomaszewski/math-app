@@ -73,6 +73,7 @@ export enum GeometryEquations {
     trapezoid_in_circle = `\\alpha + \\gamma = \\beta + \\delta = 180^{\\circ}`,
     trapezoid_on_circle = `a + c = b + d`,
     quadrilateral_interior_angles_theorem = `\\alpha + \\beta + \\gamma + \\delta = 360^{\\circ} `,
+    triangle_interior_angles_theorem = `\\alpha + \\beta + \\gamma = 180^{\\circ} `,
     ptolemeusTheory = `a \\cdot c + b \\cdot d = d_1 \\cdot d_2`,
 
 
@@ -82,7 +83,6 @@ export enum GeometryEquations {
     cosinusesLaw = `a^2=b^2+c^2-2bc\\cdot \\cos{\\alpha}`,
     cosinusesLaw2 = `b^2=a^2+c^2-2ac\\cdot \\cos{\\beta}`,
     cosinusesLaw3 = `c^2=a^2+b^2-2ab\\cdot \\cos{\\gamma}`,
-
 }
 export enum linearEquations {
     X0 = "x_0=\\frac{-b}{a}",

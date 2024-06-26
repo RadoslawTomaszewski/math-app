@@ -23,12 +23,12 @@ export default function HomePage() {
               </p>
               <ArticleBorder />
               <Title text="Kim jestem?" type="main-article" />
-              <p>Jestem studentem Informatyki (Wydział Zastosowań Matematyki i Informatyki) na SGGW i od 4 lat udzielam korepetycji z matematyki</p>
+              <p>Jestem studentem Informatyki (Wydział Zastosowań Matematyki i Informatyki) na SGGW i od 5 lat udzielam korepetycji z matematyki</p>
               <ArticleBorder />
               <Title text="A komu to potrzebne? A dlaczego?" type="main-article" />
               <p>Matematyka jest fundamentem wielu dziedzin nauki i życia codziennego. Serwis tworzę z myślą wsparcia procesu nauki matematyki na każdym etapie edukacyjnym i w myśl zasady, że wszystko należy upraszczać jak tylko można, ale nie bardziej.</p>
               <br />
-              <p>Artykuły zawarte w <NavLink to="baza-wiedzy" className="hover:underline"><b>bazie wiedzy</b></NavLink> można traktować jak notatki matematyczne. Szersze wytłumaczenie zadadnień w nich opisywanych oraz więcej przykładów znajdziesz w innych źródłach. Tutaj zamieściłem same konkrety: wzory, zależności, twierdzenia i ich dowody.</p>
+              <p>Artykuły zawarte w <NavLink to="baza-wiedzy" className="hover:underline"><b>bazie wiedzy</b></NavLink> można traktować jak notatki matematyczne. Szersze wytłumaczenie zagadnień w nich opisywanych oraz więcej przykładów znajdziesz w innych źródłach. Tutaj zamieściłem same konkrety: wzory, zależności, twierdzenia i ich dowody.</p>
               <br />
               <p>Część informacji zawartych w artykułach można utrwalić oraz zweryfikować samemu dzięki dynamicznym <NavLink to="kalkulatory" className="hover:underline"><b>kalkulatorom</b></NavLink></p>
               <p>Dla mnie projekt majza.eu jest okazją do rozwijania umiejętności programowania. Z pewnością będzie rozwijany w wolnych chwilach jako projekt hobbystyczny.</p>
@@ -59,7 +59,9 @@ export default function HomePage() {
               <p>Artykuł dotyczący <NavLink to="baza-wiedzy/twierdzenia" className="hover:underline"><b>twierdzenia opisujące własności trójkątów</b></NavLink></p>
               <p>Akutalizacja <NavLink to="baza-wiedzy/pochodna-funkcji" className="hover:underline"><b>artykułu o funkcji pochodnej funkcji</b></NavLink></p>
               <p>Artykuł o <NavLink to="baza-wiedzy/monotonicznosc-i-ekstremum" className="hover:underline"><b>monotoniczności funkcji</b></NavLink></p>
-              <br /><p className="italic">aktualizacja: 11/06/2024</p>
+              <p>Rozdział poświęcony <NavLink to="baza-wiedzy/trojkaty" className="hover:underline"><b>trójkątom</b></NavLink></p>
+
+              <br /><p className="italic">aktualizacja: 27/06/2024</p>
               <ArticleBorder />
               <Title text="Polityka prywatności" type="main-article" />
               <p>Przeczytaj: <NavLink to="polityka-prywatnosci" className="hover:underline"><b>Polityka prywatności</b></NavLink></p>

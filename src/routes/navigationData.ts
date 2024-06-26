@@ -48,12 +48,10 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
     {
         category: { to: "trojkaty", text: "Trójkąty" },
         links: [
-            { to: "trojkat-roznoboczny", text: "Trójkąt różnoboczny", color: gray },
-            { to: "trojkat-rownoramienny", text: "Trójkąt równoramienny", color: gray },
-            { to: "trojkat-rownoboczny", text: "Trójkąt równoboczny", color: gray },
+            { to: "podzial-trojkatow", text: "Podział trójkątów" },
+            { to: "trojkat-rownoboczny", text: "Trójkąt równoboczny" },
             { to: "trojkat-prostokatny", text: "Trójkąt prostokątny", color: gray },
-            { to: "trapez-rozwartokatny", text: "Trójkąt rozwartokątny", color: gray },
-            { to: "trojkat-ostrokatny", text: "Trójkąt ostrokątny", color: gray },
+            { to: "pole-trojkata", text: "Pole trójkąta" },
             { to: "relacja-z-okregiem", text: "Relacja z okręgiem", color: gray },
             { to: "twierdzenia", text: "Twierdzenia" },
         ],

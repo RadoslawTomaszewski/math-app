@@ -28,6 +28,10 @@ export default function CKEPage() {
                   <b>Karta ze wzorami</b>
                 </NavLink>
                 <div className={CKELinkStyle}>
+                  <p><b><NavLink to={CKElinks2023.maj2024PP}>Maj 2024 Poziom Podstawowy</NavLink></b></p>
+                  <p><b><NavLink to={CKElinks2023.maj2024PR}>Maj 2024 Poziom Rozszerzony</NavLink></b></p>
+                </div>
+                <div className={CKELinkStyle}>
                   <p><b><NavLink to={CKElinks2023.maj2023PP}>Maj 2023 Poziom Podstawowy</NavLink></b></p>
                   <p><b><NavLink to={CKElinks2023.maj2023PR}>Maj 2023 Poziom Rozszerzony</NavLink></b></p>
                 </div>
@@ -38,7 +42,10 @@ export default function CKEPage() {
                 <GraphImage size={"smallest"} src={sampleCard2} alt={"Karta wzorów matematycznych 2015"} />
                 <p><NavLink to={CKElinks2015.wzoryMatematyczne}><b>Karta ze wzorami</b></NavLink></p>
               </div>
-
+              <div className={CKELinkStyle}>
+                <p><b><NavLink to={CKElinks2015.maj2024PP}>Maj 2024 Poziom Podstawowy</NavLink></b></p>
+                <p><b><NavLink to={CKElinks2015.maj2024PR}>Maj 2024 Poziom Rozszerzony</NavLink></b></p>
+              </div>
               <div className={CKELinkStyle}>
                 <p><b><NavLink to={CKElinks2015.maj2023PP}>Maj 2023 Poziom Podstawowy</NavLink></b></p>
                 <p><b><NavLink to={CKElinks2015.maj2023PR}>Maj 2023 Poziom Rozszerzony</NavLink></b></p>

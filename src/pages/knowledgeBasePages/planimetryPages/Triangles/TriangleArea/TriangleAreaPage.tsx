@@ -1,15 +1,15 @@
 import { FC } from "react";
-import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
-import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
-import TheoremsContent from "./TheoremsContent";
+import Breadcrumb from "../../../../../components/Breadcrumb/Breadcrumb";
+import { ArticleWrapper } from "../../../../../components/ArticleWrapper/ArticleWrapper";
+import TriangleAreaContent from "./TriangleAreaContent";
 
-const TheoremsPage: FC = () => {
+const TriangleAreaPage: FC = () => {
     const grandparent = { link: "../", name: "Baza Wiedzy" };
     const parent = {
-        link: "../trójkąty",
+        link: "../trojkaty",
         name: "Trójkąty",
     };
-    const childName = "Twierdzenia";
+    const childName = "Pole trójkąta";
 
     return (
         <div className="p-2 justify-center flex flex-col">
@@ -19,10 +19,10 @@ const TheoremsPage: FC = () => {
                 childName={childName}
             />
             <ArticleWrapper>
-                <TheoremsContent />
+                <TriangleAreaContent />
             </ArticleWrapper>
         </div>
     );
 };
 
-export default TheoremsPage;
+export default TriangleAreaPage;

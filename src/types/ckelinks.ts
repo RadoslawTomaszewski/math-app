@@ -1,9 +1,13 @@
 export enum CKElinks2023 {
+    maj2024PP = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Matematyka/poziom_podstawowy/MMAP-P0-100-A-2405-arkusz.pdf",
+    maj2024PR = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Matematyka/poziom_rozszerzony/MMAP-R0-100-A-2405-arkusz.pdf",
     maj2023PP = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Matematyka/poziom_podstawowy/MMAP-P0-100-2305.pdf",
     maj2023PR = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Matematyka/poziom_rozszerzony/MMAP-R0-100-2305.pdf",
-    wzoryMatematyczne = "https://www.oke.waw.pl/files/oke_waw_3498wybrane_wzory_matematyczne_EM2023.pdf.pdf",
+    wzoryMatematyczne = "https://www.cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/wybrane_wzory_matematyczne_EM2023.pdf",
 }
 export enum CKElinks2015 {
+    maj2024PP = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Matematyka/poziom_podstawowy/EMAP-P0-100-A-2405-arkusz.pdf",
+    maj2024PR = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Matematyka/poziom_rozszerzony/EMAP-R0-100-A-2405-arkusz.pdf",
     maj2023PP = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2023/Matematyka/poziom_podstawowy/EMAP-P0-100-2305.pdf",
     maj2023PR = "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2023/Matematyka/poziom_rozszerzony/EMAP-R0-100-2305.pdf",
     maj2022PP = "http://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Matematyka/poziom_podstawowy/EMAP-P0-100-2205.pdf",

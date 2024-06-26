@@ -71,8 +71,12 @@ import ForumPage from "../pages/forumPages/ForumPage";
 import RegistrationPage from "../pages/loginPages/RegistrationPage";
 import ResetPasswordPage from "../pages/loginPages/ResetPasswordPage";
 import PrivacyPolicyPage from "../pages/privacyPolicyPage/PrivacyPolicyPage";
-import TheoremsPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TheoremsPage";
+import TheoremsPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/Theorems/TheoremsPage";
 import MonotonicityExtremumPage from "../pages/knowledgeBasePages/mathAnalysisPages/monotonicityExtremum/monotonicityExtremumPage";
+import EquilateralTrianglePage from "../pages/knowledgeBasePages/planimetryPages/Triangles/EquilateralTriangle/EquilateralTrianglePage";
+import TrianglesPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TrianglesPage";
+import TriangleAreaPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TriangleArea/TriangleAreaPage";
+import TriangleCategoryPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TriangleCategories/TriangleCategoriesPage";
 
 
 
@@ -122,6 +126,10 @@ export const Router: FC = () => {
                         <Route path="pochodna-funkcji" element={<DerivedFunctionPage />} />
                         <Route path="monotonicznosc-i-ekstremum" element={<MonotonicityExtremumPage />} />
                         <Route path="twierdzenia" element={<TheoremsPage />} />
+                        <Route path="trojkaty" element={<TrianglesPage />} />
+                        <Route path="podzial-trojkatow" element={<TriangleCategoryPage />} />
+                        <Route path="trojkat-rownoboczny" element={<EquilateralTrianglePage />} />
+                        <Route path="pole-trojkata" element={<TriangleAreaPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="kalkulatory" element={<CalculatorsLayout />}>
