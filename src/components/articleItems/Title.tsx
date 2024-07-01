@@ -12,8 +12,8 @@ const Title: FC<ITitleProps> = ({ text, type, color }) => {
 
   switch (type) {
     case "main-article":
-      // styles = "font-amatic text-4xl text-center font-bold pb-2";
-      styles = "text-3xl text-center font-bold pb-2";
+      styles = "font-amatic text-4xl text-center font-bold pb-2";
+      // styles = "text-3xl text-center font-bold pb-2";
       break;
     case "submain-article":
       styles = "font-amatic text-2xl text-center font-bold pb-2";

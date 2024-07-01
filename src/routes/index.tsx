@@ -77,6 +77,7 @@ import EquilateralTrianglePage from "../pages/knowledgeBasePages/planimetryPages
 import TrianglesPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TrianglesPage";
 import TriangleAreaPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TriangleArea/TriangleAreaPage";
 import TriangleCategoryPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TriangleCategories/TriangleCategoriesPage";
+import BankDepositCalculatorPage from "../pages/calculatorsPages/otherCalculators/BankDepositCalculator/BankDepositCalculatorPage";
 
 
 
@@ -152,6 +153,7 @@ export const Router: FC = () => {
                         <Route path="funkcji-wykladniczej" element={<ExponentialFunctionCalculatorPage />} />
                         <Route path="funkcji-logarytmicznej" element={<LogarithmicFunctionCalculatorPage />} />
                         <Route path="gra-w-zycie" element={<GameOfLifePage />} />
+                        <Route path="lokaty" element={<BankDepositCalculatorPage />} />
                         <Route path="*" element={<WorkInProgress />} />
                     </Route>
                     <Route path="cke" element={<CKEPage />} />
