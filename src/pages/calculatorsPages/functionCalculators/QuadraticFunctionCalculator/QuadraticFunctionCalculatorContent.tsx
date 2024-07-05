@@ -106,10 +106,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
     return (
         <>
-            <Title
-                text="Kalkulator funkcji kwadratowej"
-                type="main-article"
-            />
+            <Title text="Kalkulator funkcji kwadratowej" type="main-article" />
             <form className="flex flex-col justify-center items-center max-w-full">
                 <div className="flex justify-center w-full">
                     <label className="flex pt-4 flex-col flex-wrap items-center">

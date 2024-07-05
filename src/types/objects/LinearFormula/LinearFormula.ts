@@ -81,7 +81,7 @@ class LinearFormula {
             this.segmentForm = '';
             return;
         }
-        let segmentFormA = `\\frac{x}{${this.x0.getAbsFractionString()}}`;
+        let segmentFormA = `\\frac{x}{${this.x0.getAbsFractionReducedString()}}`;
         const minusSign = '-';
         if (Math.abs(this.x0.getValue()) === 1) segmentFormA = `x`;
         if (!this.x0.getIsFractionPositive()) segmentFormA = minusSign + segmentFormA;

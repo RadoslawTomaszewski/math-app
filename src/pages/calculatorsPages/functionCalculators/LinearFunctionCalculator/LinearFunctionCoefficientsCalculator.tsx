@@ -167,7 +167,7 @@ const LinearFunctionCoefficientsCalculator: FC = () => {
                                 {linearFunction.getA() !== 0 &&
                                     <>
                                         <div className="flex items-start">
-                                            <Formula formula={`${linearEquations.X0}=${linearFunction.getX0().getFractionString()}`} />
+                                            <Formula formula={`${linearEquations.X0}=${linearFunction.getX0().getFractionReducedString()}`} />
                                         </div>
                                     </>
                                 }

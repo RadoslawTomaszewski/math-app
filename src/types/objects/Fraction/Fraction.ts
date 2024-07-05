@@ -1,155 +1,153 @@
+import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../../utilities";
 import PrimeFactors from "../PrimeFactors/PrimeFactors";
 import TwoNumberPrimeFactors from "../PrimeFactors/TwoNumberPrimeFactors";
 
 class Fraction {
-    private fraction: number[] = [];
     private isFractionPositive: boolean = true;
+    private sign: string = "";
     private GCD: number = 1;
     private value: number = 0;
     //Dokladnosc do 14 miejsc po przecinku
     private isValueApproximate: boolean = false;
-    //Step 1
-    private originalFractionNegative: string = "";
-    //Step 2 ulamek w pierwotnej formie z zapisem dzielenia przez NWD
-    private step2: string = "";
-    //Step 3 ulamek w skroconej formie z wylaczonym minusem
-    private step3: string = "";
-    //AbstStep 3 modul ulamka w skroconej formie
-    private absStep3: string = "";
+
+    private fractionWithOriginalPlacedSign = "";
+    private originalFractionString: string = "";
+    private originalFractionStringReducedByGCD: string = "";
+    private fractionReducedString: string = "";
+    private mixedFractionString: string = "";
+
+    private absFractionReducedString: string = "";
+    private calculations: string = "";
 
     constructor(private nominator: number, private denominator: number) {
-        if (denominator !== 0) {
-            this.setFraction(nominator, denominator);
+        if (Number.isInteger(nominator) && Number.isInteger(denominator) && denominator !== 0) {
+            this.setFractionWithOriginalPlacedSign();
             this.calculate();
             this.checkIsFractionPositive();
             this.reduceMinuses();
             this.setGCD();
-            this.setoriginalFractionNegative();
-            this.setStep2();
+            this.setOriginalFractionString();
+            this.setOriginalFractionStringReducedByGCD();
             this.reduceFraction();
-            this.setStep3();
-            this.setAbsStep3();
+            this.setabsFractionReducedString();
+            this.setFractionReducedString();
+            this.setMixedFractionString();
+            this.setCalculations();
         }
     }
-    private setFraction(nominator: number, denominator: number): void {
-        this.nominator = nominator;
-        this.denominator = denominator;
-        this.fraction = [nominator, denominator];
+    private setFractionWithOriginalPlacedSign(): void {
+        this.fractionWithOriginalPlacedSign = `\\frac{${this.nominator}}{${this.denominator}}`;
     }
+
     private calculate(): void {
-        if (this.fraction[1] !== 0) this.value = this.fraction[0] / this.fraction[1]
+        this.value = this.nominator / this.denominator
         const roundedValue = Number(this.value.toFixed(14));
-        this.isValueApproximate = (roundedValue === this.value);
+        this.isValueApproximate = !(roundedValue === this.value);
     }
     private checkIsFractionPositive(): void {
-        if (this.fraction[0] * this.fraction[1] >= 0) this.isFractionPositive = true;
-        else this.isFractionPositive = false;
+        if (this.nominator * this.denominator >= 0) {
+            this.isFractionPositive = true;
+            this.sign = "";
+        }
+        else {
+            this.isFractionPositive = false;
+            this.sign = "-";
+        }
     }
     private reduceMinuses(): void {
-        this.fraction[0] = Math.abs(this.fraction[0]);
-        this.fraction[1] = Math.abs(this.fraction[1]);
+        this.nominator = Math.abs(this.nominator);
+        this.denominator = Math.abs(this.denominator);
     }
     private setGCD(): void {
-        const GCD = new TwoNumberPrimeFactors(new PrimeFactors(this.fraction[0]), new PrimeFactors(this.fraction[1])).getGCD();
+        const GCD = new TwoNumberPrimeFactors(new PrimeFactors(this.nominator), new PrimeFactors(this.denominator)).getGCD();
         this.GCD = GCD;
     }
     private reduceFraction(): void {
         if (this.GCD !== 0) {
-            this.fraction[0] = this.fraction[0] / this.GCD;
-            this.fraction[1] = this.fraction[1] / this.GCD;
+            this.nominator = this.nominator / this.GCD;
+            this.denominator = this.denominator / this.GCD;
         }
     }
-    private setoriginalFractionNegative(): void {
-        let minus = "";
-        if (!this.isFractionPositive) minus = '-';
-
-        if (this.fraction[0] === 0) {
-            this.originalFractionNegative = '0';
+    private setOriginalFractionString(): void {
+        if (this.nominator === 0) {
+            this.originalFractionString = '0';
             return;
         }
-
-        if (this.fraction[1] === 1) {
-            this.originalFractionNegative = `${minus}${this.fraction[0]}`;
+        if (this.denominator === 1) {
+            this.originalFractionString = `${this.sign}${this.nominator}`;
             return
         }
-
-        this.originalFractionNegative = `${minus}\\frac{${this.fraction[0]}}{${this.fraction[1]}}`;
+        this.originalFractionString = `${this.sign}\\frac{${this.nominator}}{${this.denominator}}`;
     }
-    private setStep2(): void {
-        let minus = "";
-        if (!this.isFractionPositive) minus = '-';
-
-        if (this.fraction[0] === 0) {
-            this.step2 = '0';
+    private setOriginalFractionStringReducedByGCD(): void {
+        if (this.nominator === 0) {
+            this.originalFractionStringReducedByGCD = '0';
             return;
         }
-
-        if (this.fraction[1] === 1) {
-            this.step2 = `${minus}${this.fraction[0]}`;
+        if (this.denominator === 1) {
+            this.originalFractionStringReducedByGCD = `${this.sign}${this.nominator}`;
             return
         }
-
-        this.step2 = `${minus}\\frac{${this.fraction[0]}:${this.GCD}}{${this.fraction[1]}:${this.GCD}}`;
+        if (this.GCD === 1) {
+            this.originalFractionStringReducedByGCD = this.originalFractionString;
+            return;
+        }
+        this.originalFractionStringReducedByGCD = `${this.sign}\\frac{${this.nominator}:${this.GCD}}{${this.denominator}:${this.GCD}}`;
     }
-    private setStep3(): void {
-        let minus = "";
-        if (!this.isFractionPositive) minus = '-';
-
-        if (this.fraction[0] === 0) {
-            this.step3 = '0';
+    private setabsFractionReducedString(): void {
+        if (this.nominator === 0) {
+            this.absFractionReducedString = '0';
             return;
         }
-
-        if (this.fraction[1] === 1) {
-            this.step3 = `${minus}${this.fraction[0]}`;
+        if (this.denominator === 1) {
+            this.absFractionReducedString = `${this.nominator}`;
             return
         }
-
-        this.step3 = `${minus}\\frac{${this.fraction[0]}}{${this.fraction[1]}}`;
+        this.absFractionReducedString = `\\frac{${this.nominator}}{${this.denominator}}`;
     }
-    private setAbsStep3(): void {
-        if (this.fraction[0] === 0) {
-            this.absStep3 = '0';
-            return;
+    private setFractionReducedString(): void {
+        this.fractionReducedString = `${this.sign}${this.absFractionReducedString}`;
+    }
+
+    private setMixedFractionString(): void {
+        const wholePart = Math.floor(Math.abs(this.value));
+        const fractionalPart = Math.abs(this.value) - wholePart;
+        if (fractionalPart === 0) {
+            this.mixedFractionString = `${this.sign}${wholePart}`;
+        } else if (wholePart === 0) {
+            this.mixedFractionString = `${this.fractionReducedString}`;
+        } else {
+            this.mixedFractionString = `${this.sign}${wholePart} \\frac{${this.nominator - wholePart * this.denominator}}{${this.denominator}}`;
         }
-        if (this.fraction[1] === 1) {
-            this.absStep3 = `${this.fraction[0]}`;
-            return
-        }
-        this.absStep3 = `\\frac{${this.fraction[0]}}{${this.fraction[1]}}`;
+    }
+    private setCalculations(): void {
+        const calculations = joinUniqueWithEquals(this.fractionWithOriginalPlacedSign, this.originalFractionString, this.originalFractionStringReducedByGCD, this.fractionReducedString, this.mixedFractionString);
+        if (this.isValueApproximate) this.calculations = joinUniqueWithApproximations(calculations, `${this.value}`);
+        else if (Number.isInteger(this.value)) this.calculations = calculations;
+        else this.calculations = joinUniqueWithEquals(calculations, `${this.value}`);
     }
     multiplyByInt(num: number): Fraction {
         const newNominator = this.nominator * num;
         const result = new Fraction(newNominator, this.denominator);
         return result;
     }
-
     multiplyByOtherFraction(otherFraction: Fraction): Fraction {
         const newNominator = this.nominator * otherFraction.nominator;
         const newDenominator = this.denominator * otherFraction.denominator;
-
         const result = new Fraction(newNominator, newDenominator);
-
         return result;
     }
-
     dividedByOtherFraction(otherFraction: Fraction): Fraction {
         const newNominator = this.nominator * otherFraction.denominator;
         const newDenominator = this.denominator * otherFraction.nominator;
-
         const result = new Fraction(newNominator, newDenominator);
-
         return result;
     }
-
     getNominator(): number {
         return this.nominator;
     }
     getDenominator(): number {
         return this.denominator;
-    }
-    getFraction(): number[] {
-        return this.fraction;
     }
     getValue(): number {
         return this.value;
@@ -163,34 +161,26 @@ class Fraction {
     getIsFractionPositive(): boolean {
         return this.isFractionPositive;
     }
-    getStep0(): string {
-        return `\\frac{${this.nominator}}{${this.denominator}}`
+    getFractionWithOriginalPlacedSign(): string {
+        return this.fractionWithOriginalPlacedSign;
     }
-    getoriginalFractionNegative(): string {
-        return this.originalFractionNegative;
+    getOriginalFractionString(): string {
+        return this.originalFractionString;
     }
-    getStep2(): string {
-        return this.step2;
+    getOriginalFractionStringReducedByGCD(): string {
+        return this.originalFractionStringReducedByGCD;
     }
-    getFractionString(): string {
-        return this.step3;
+    getFractionReducedString(): string {
+        return this.fractionReducedString;
     }
-    getAbsFractionString(): string {
-        return this.absStep3;
+    getAbsFractionReducedString(): string {
+        return this.absFractionReducedString;
     }
-    getMixedFraction(): string {
-        const wholePart = Math.floor(Math.abs(this.value));
-        const fractionalPart = Math.abs(this.value) - wholePart;
-        let fractionSign = '';
-        if (!this.isFractionPositive) fractionSign = '-';
-
-        if (fractionalPart === 0) {
-            return `${fractionSign}${wholePart}`;
-        } else if (wholePart === 0) {
-            return `${this.step3}`;
-        } else {
-            return `${fractionSign}${wholePart} \\frac{${this.fraction[0] - wholePart * this.fraction[1]}}{${this.fraction[1]}}`;
-        }
+    getMixedFractionString(): string {
+        return this.mixedFractionString
+    }
+    getCalculations(): string {
+        return this.calculations;
     }
 }
 export default Fraction;

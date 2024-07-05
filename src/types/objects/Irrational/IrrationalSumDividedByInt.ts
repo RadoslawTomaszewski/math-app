@@ -93,7 +93,7 @@ class IrrationalSumDividedByInt {
         }
     }
     private setFirstIntegerEqualZeroResult() {
-        let resultA = `${new Fraction(this.results[2], this.results[4]).getFractionString()}`;
+        let resultA = `${new Fraction(this.results[2], this.results[4]).getFractionReducedString()}`;
         let resultB = `\\sqrt{${this.nominator.getSquareRoot().getUnderRoot()}}`;
         this.firstIntegerEqualZeroResult = resultA + resultB;
     }
@@ -156,7 +156,7 @@ class IrrationalSumDividedByInt {
         return joinUniqueWithEquals(substitution, this.reducedForm);
     }
     getResultString(): string {
-        if (this.isFraction) return this.fractionResult.getFractionString()
+        if (this.isFraction) return this.fractionResult.getFractionReducedString()
         return this.reducedForm;
     }
     getAbsResultString(): string {

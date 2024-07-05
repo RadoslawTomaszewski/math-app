@@ -73,9 +73,9 @@ class QuadraticFormula {
         if (this.p.getNominator() === 0) {
             canonicalFormP = `x^2`;
         }
-        else canonicalFormP = `\\left(x${signBeforeP}${this.p.getAbsFractionString()}\\right)^2`;
+        else canonicalFormP = `\\left(x${signBeforeP}${this.p.getAbsFractionReducedString()}\\right)^2`;
 
-        if (this.q.getNominator() !== 0) canonicalFormQ = `${signBeforeQ}${this.q.getAbsFractionString()}`;
+        if (this.q.getNominator() !== 0) canonicalFormQ = `${signBeforeQ}${this.q.getAbsFractionReducedString()}`;
 
         this.canonicalForm = 'f(x)=' + canonicalFormA + canonicalFormP + canonicalFormQ;
     }
@@ -94,17 +94,17 @@ class QuadraticFormula {
             else factoredFormC = `\\left(x+${this.x2.getAbsResultString()}\\right)`;
 
             if (this.x1.getIsFraction()) {
-                if (((-1) * this.b - Math.sqrt(this.delta)) / this.a >= 0) factoredFormB = `\\left(x-${(this.x1.getFractionResult().getAbsFractionString())}\\right)`;
-                else factoredFormB = `\\left(x+${(this.x1.getFractionResult().getAbsFractionString())}\\right)`;
-                if (this.b === 0 && this.a > 0) factoredFormB = `\\left(x-${(this.x1.getFractionResult().getAbsFractionString())}\\right)`;
-                if (this.b === 0 && this.a < 0) factoredFormB = `\\left(x+${(this.x1.getFractionResult().getAbsFractionString())}\\right)`;
+                if (((-1) * this.b - Math.sqrt(this.delta)) / this.a >= 0) factoredFormB = `\\left(x-${(this.x1.getFractionResult().getAbsFractionReducedString())}\\right)`;
+                else factoredFormB = `\\left(x+${(this.x1.getFractionResult().getAbsFractionReducedString())}\\right)`;
+                if (this.b === 0 && this.a > 0) factoredFormB = `\\left(x-${(this.x1.getFractionResult().getAbsFractionReducedString())}\\right)`;
+                if (this.b === 0 && this.a < 0) factoredFormB = `\\left(x+${(this.x1.getFractionResult().getAbsFractionReducedString())}\\right)`;
             }
 
             if (this.x2.getIsFraction()) {
-                if (((-1) * this.b + Math.sqrt(this.delta)) / this.a >= 0) factoredFormC = `\\left(x-${(this.x2.getFractionResult().getAbsFractionString())}\\right)`;
-                else factoredFormC = `\\left(x+${(this.x2.getFractionResult().getAbsFractionString())}\\right)`;
-                if (this.b === 0 && this.a > 0) factoredFormC = `\\left(x+${(this.x2.getFractionResult().getAbsFractionString())}\\right)`;
-                if (this.b === 0 && this.a < 0) factoredFormC = `\\left(x-${(this.x2.getFractionResult().getAbsFractionString())}\\right)`;
+                if (((-1) * this.b + Math.sqrt(this.delta)) / this.a >= 0) factoredFormC = `\\left(x-${(this.x2.getFractionResult().getAbsFractionReducedString())}\\right)`;
+                else factoredFormC = `\\left(x+${(this.x2.getFractionResult().getAbsFractionReducedString())}\\right)`;
+                if (this.b === 0 && this.a > 0) factoredFormC = `\\left(x+${(this.x2.getFractionResult().getAbsFractionReducedString())}\\right)`;
+                if (this.b === 0 && this.a < 0) factoredFormC = `\\left(x-${(this.x2.getFractionResult().getAbsFractionReducedString())}\\right)`;
             }
 
             if (!this.x1.getIsFirstInteger()) {
@@ -177,7 +177,7 @@ class QuadraticFormula {
         return this.p;
     }
     getPResult(): string {
-        return this.p.getMixedFraction();
+        return this.p.getMixedFractionString();
     }
     getPCalculations(): string {
         let substA = `\\frac{-${this.b}}`;
@@ -189,13 +189,13 @@ class QuadraticFormula {
             substB = `{2\\cdot\\left(${this.a}\\right)}`;
         }
         const substitution = substA + substB;
-        return joinUniqueWithEquals(substitution, this.p.getoriginalFractionNegative(), this.p.getFractionString(), this.p.getMixedFraction());
+        return joinUniqueWithEquals(substitution, this.p.getOriginalFractionString(), this.p.getFractionReducedString(), this.p.getMixedFractionString());
     }
     getQ(): Fraction {
         return this.q;
     }
     getQResult(): string {
-        return this.q.getMixedFraction();
+        return this.q.getMixedFractionString();
     }
     getQCalculations(): string {
         let substA = `\\frac{${this.delta}}`;
@@ -207,7 +207,7 @@ class QuadraticFormula {
             substB = `{4\\cdot\\left(${this.a}\\right)}`;
         }
         const substitution = substA + substB;
-        return joinUniqueWithEquals(substitution, this.q.getoriginalFractionNegative(), this.q.getFractionString(), this.q.getMixedFraction());
+        return joinUniqueWithEquals(substitution, this.q.getOriginalFractionString(), this.q.getFractionReducedString(), this.q.getMixedFractionString());
     }
     getX0(): Fraction {
         return this.x0;
@@ -222,10 +222,10 @@ class QuadraticFormula {
             substB = `{2\\cdot\\left(${this.a}\\right)}`;
         }
         const substitution = substA + substB;
-        return joinUniqueWithEquals(substitution, this.p.getoriginalFractionNegative(), this.p.getFractionString(), this.p.getMixedFraction());
+        return joinUniqueWithEquals(substitution, this.p.getOriginalFractionString(), this.p.getFractionReducedString(), this.p.getMixedFractionString());
     }
     getX0Result() {
-        return this.p.getFractionString();
+        return this.p.getFractionReducedString();
     }
     getX1(): IrrationalSumDividedByInt {
         return this.x1;
@@ -261,11 +261,11 @@ class QuadraticFormula {
         return this.factoredForm;
     }
     getVietasProductCalculations(): string {
-        if (this.delta === 0) return joinUniqueWithEquals("x_0 \\cdot x_0", "\\frac{c}{a}", `\\frac{${this.c}}{${this.a}}`, this.vietasProduct.getFractionString());
-        return joinUniqueWithEquals("x_1 \\cdot x_2", "\\frac{c}{a}", `\\frac{${this.c}}{${this.a}}`, this.vietasProduct.getFractionString());
+        if (this.delta === 0) return joinUniqueWithEquals("x_0 \\cdot x_0", "\\frac{c}{a}", `\\frac{${this.c}}{${this.a}}`, this.vietasProduct.getFractionReducedString());
+        return joinUniqueWithEquals("x_1 \\cdot x_2", "\\frac{c}{a}", `\\frac{${this.c}}{${this.a}}`, this.vietasProduct.getFractionReducedString());
     }
     getVietasProduct(): string {
-        return this.vietasProduct.getFractionString();
+        return this.vietasProduct.getFractionReducedString();
     }
     getVietasSumCalculations(): string {
         let substA = `\\frac{-${this.b}}`;
@@ -273,11 +273,11 @@ class QuadraticFormula {
             substA = `\\frac{-\\left(${this.b}\\right)}`;
         }
         const substitution = substA + `{${this.a}}`;
-        if (this.delta === 0) return joinUniqueWithEquals("x_0+x_0", "\\frac{-b}{a}", substitution, this.vietasSum.getFractionString());
-        return joinUniqueWithEquals("x_1 + x_2", "\\frac{-b}{a}", substitution, this.vietasSum.getFractionString());
+        if (this.delta === 0) return joinUniqueWithEquals("x_0+x_0", "\\frac{-b}{a}", substitution, this.vietasSum.getFractionReducedString());
+        return joinUniqueWithEquals("x_1 + x_2", "\\frac{-b}{a}", substitution, this.vietasSum.getFractionReducedString());
     }
     getVietasSum(): string {
-        return this.vietasSum.getFractionString();
+        return this.vietasSum.getFractionReducedString();
     }
     getX1Result(): string {
         return this.x1Result;

@@ -51,12 +51,12 @@ class LinearFormulaFromPoints {
             this.a = new Fraction((this.y2 - this.y1), (this.x2 - this.x1));
             this.b = new Fraction((this.y1 * this.x2 - this.y2 * this.x1), (this.x2 - this.x1));
 
-            let equationA = `${this.a.getFractionString()}x`;
+            let equationA = `${this.a.getFractionReducedString()}x`;
             if (this.a.getValue() === 1) equationA = `x`;
             if (this.a.getValue() === -1) equationA = `-x`;
 
-            let equationB = `+ ${this.b.getFractionString()}`;
-            if (!this.b.getIsFractionPositive()) equationB = `${this.b.getFractionString()}`;
+            let equationB = `+ ${this.b.getFractionReducedString()}`;
+            if (!this.b.getIsFractionPositive()) equationB = `${this.b.getFractionReducedString()}`;
             if (this.y1 * this.x2 - this.y2 * this.x1 === 0) equationB = "";
 
             this.equation = `f(x)=${equationA} ${equationB}`;
@@ -91,7 +91,7 @@ class LinearFormulaFromPoints {
         if (Math.abs(this.b.getDenominator()) > greaterDenominator) greaterDenominator = Math.abs(this.b.getDenominator());
 
 
-        let generalFormA = `${this.a.multiplyByInt(greaterDenominator).getFractionString()}x`;
+        let generalFormA = `${this.a.multiplyByInt(greaterDenominator).getFractionReducedString()}x`;
         if (this.a.getNominator() === 0) generalFormA = '';
         if (Math.abs(this.a.getNominator()) === 1 && this.a.getIsFractionPositive()) generalFormA = 'x';
         if (Math.abs(this.a.getNominator()) === 1 && !this.a.getIsFractionPositive()) generalFormA = '-x';
@@ -103,8 +103,8 @@ class LinearFormulaFromPoints {
         if (B === -1) generalFormB = '-y';
         if (B === 1) generalFormB = '+y';
 
-        let generalFormC = `+ ${this.b.multiplyByInt(greaterDenominator).getFractionString()}`;
-        if (this.b.getValue() < 0) generalFormC = `${this.b.multiplyByInt(greaterDenominator).getFractionString()}`;
+        let generalFormC = `+ ${this.b.multiplyByInt(greaterDenominator).getFractionReducedString()}`;
+        if (this.b.getValue() < 0) generalFormC = `${this.b.multiplyByInt(greaterDenominator).getFractionReducedString()}`;
         if (this.b.getNominator() === 0) generalFormC = ``;
 
         this.generalForm = `${generalFormA}${generalFormB}${generalFormC}=0`;
@@ -114,13 +114,13 @@ class LinearFormulaFromPoints {
             this.segmentForm = '\\text{nie istnieje}';
             return;
         }
-        let segmentFormA = `\\frac{x}{${this.x0.getAbsFractionString()}}`;
+        let segmentFormA = `\\frac{x}{${this.x0.getAbsFractionReducedString()}}`;
         const minusSign = '-';
         if (Math.abs(this.x0.getValue()) === 1) segmentFormA = `x`;
         if (!this.x0.getIsFractionPositive()) segmentFormA = minusSign + segmentFormA;
 
-        let segmentFormB = `+\\frac{y}{${this.b.getFractionString()}}=1`;
-        if (this.b.getValue() < 0) segmentFormB = `-\\frac{y}{${this.b.getAbsFractionString()}}=1`;
+        let segmentFormB = `+\\frac{y}{${this.b.getFractionReducedString()}}=1`;
+        if (this.b.getValue() < 0) segmentFormB = `-\\frac{y}{${this.b.getAbsFractionReducedString()}}=1`;
         if (this.b.getValue() === 1) segmentFormB = `+y=1`;
         if (this.b.getValue() === -1) segmentFormB = `-y=1`;
         this.segmentForm = segmentFormA + segmentFormB;
@@ -130,7 +130,7 @@ class LinearFormulaFromPoints {
             if (this.a.getNominator() === 0 && this.b.getNominator() === 0) return '\\infty';
             if (this.a.getNominator() === 0 && this.b.getNominator() !== 0) return '\\text{brak}';
             const minusB = this.b.multiplyByInt(-1);
-            return joinUniqueWithEquals("x_0", "\\frac{-b}{a}", `\\frac{${minusB.getFractionString()}}{${this.a.getFractionString()}}`, this.x0.getFractionString());
+            return joinUniqueWithEquals("x_0", "\\frac{-b}{a}", `\\frac{${minusB.getFractionReducedString()}}{${this.a.getFractionReducedString()}}`, this.x0.getFractionReducedString());
         }
         return '';
     }

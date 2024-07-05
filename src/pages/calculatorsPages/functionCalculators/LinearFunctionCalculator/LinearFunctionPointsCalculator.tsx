@@ -166,8 +166,8 @@ const LinearFunctionPointsCalculator: FC = () => {
                         </div>
                         <div className="flex w-full items-start">
                             <div className="flex items-start">
-                                <Formula formula={`a=${linearFunction.getA().getFractionString()}`} styles="min-h-[62px] items-center" />
-                                <Formula formula={`b=${linearFunction.getB().getFractionString()}`} styles="min-h-[62px] items-center" />
+                                <Formula formula={`a=${linearFunction.getA().getFractionReducedString()}`} styles="min-h-[62px] items-center" />
+                                <Formula formula={`b=${linearFunction.getB().getFractionReducedString()}`} styles="min-h-[62px] items-center" />
                             </div>
                         </div>
                         <ArticleBorder styles="w-full" />

@@ -75,16 +75,16 @@ const FractionReducerContent: FC = () => {
                         {(Math.abs(fraction.getGCD()) !== 1) ? `Ten ułamek można skrócić przez ${fraction.getGCD()}` : "Nie da się skrócić tego ułamka"}
                         {(Math.abs(fraction.getGCD()) !== 1)
                             ?
-                            <Formula formula={joinUniqueWithEquals(fraction.getStep0(), fraction.getoriginalFractionNegative(), fraction.getStep2(), fraction.getFractionString())} />
+                            <Formula formula={joinUniqueWithEquals(fraction.getFractionWithOriginalPlacedSign(), fraction.getOriginalFractionString(), fraction.getOriginalFractionStringReducedByGCD(), fraction.getFractionReducedString())} />
                             :
-                            <Formula formula={joinUniqueWithEquals(fraction.getStep0(), fraction.getoriginalFractionNegative(), fraction.getFractionString())} />}
+                            <Formula formula={joinUniqueWithEquals(fraction.getFractionWithOriginalPlacedSign(), fraction.getOriginalFractionString(), fraction.getFractionReducedString())} />}
 
                         <span>Dokładna lub przybliżona wartość tego ułamka to:</span>
-                        {fraction.getIsValueApproximate()
+                        {!fraction.getIsValueApproximate()
                             ?
-                            <Formula formula={joinUniqueWithEquals(joinUniqueWithEquals(fraction.getFractionString(), fraction.getMixedFraction()), `${fraction.getValue()}`)} />
+                            <Formula formula={joinUniqueWithEquals(joinUniqueWithEquals(fraction.getFractionReducedString(), fraction.getMixedFractionString()), `${fraction.getValue()}`)} />
                             :
-                            <Formula formula={joinUniqueWithApproximations(joinUniqueWithEquals(fraction.getFractionString(), fraction.getMixedFraction()), `${fraction.getValue()}`)} />
+                            <Formula formula={joinUniqueWithApproximations(joinUniqueWithEquals(fraction.getFractionReducedString(), fraction.getMixedFractionString()), `${fraction.getValue()}`)} />
                         }
                         <ArticleBorder />
                     </>

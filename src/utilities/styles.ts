@@ -8,6 +8,10 @@ export const InputNaturalNumberStyle = "m-2 text-center w-[150px] font-math bg-a
 
 export const InputCoefficientStyle = "text-center w-[60px] font-math bg-articleColor border-2 mx-1 border-black rounded appearance-none focus:outline-none";
 
+export const InputBankDepositStyle = "text-center w-[150px] font-math bg-articleColor border-2 mx-1 border-black rounded appearance-none focus:outline-none";
+
+export const InputCapitalizationStyle = "text-center w-[150px] bg-articleColor border-2 mx-1 border-black rounded focus:outline-none";
+
 export const InputNaturalNumbersStyle = "m-2 flex w-[150px] font-math bg-articleColor border-2 border-black rounded appearance-none focus:outline-none";
 
 export const ArticleWrapperStyle = "p-3 flex flex-col border-2 border-navColor bg-articleColor rounded max-w-full";

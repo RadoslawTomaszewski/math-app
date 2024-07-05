@@ -47,7 +47,7 @@ const PrimeFactorCalculatorContent: FC = () => {
                         placeholder="0"
                         type="number"
                         min="0"
-                        {...register("naturalNumber", numberRegisterOptions.primeFactorNumber)}
+                        {...register("naturalNumber", numberRegisterOptions.naturalNumber)}
                         onChange={handleInputChange}
                     />
                 </label>

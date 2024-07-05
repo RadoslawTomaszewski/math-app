@@ -6,11 +6,14 @@ interface IIntegerFormData {
   nominator: string;
   denominator: string;
   numberGCDandLCM: number;
-  primeFactorNumber: string;
+  naturalNumber: string;
+  naturalNumberMax200: string;
   coefficientNotZero: string;
   exponentialCoefficient: string;
   logarithmicCoefficient: string;
   coefficient: string;
+  cash: string;
+  percentMax100: string;
 }
 
 export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
@@ -87,10 +90,24 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
       message: "Wprowadzona wartość musi być liczbą całkowitą",
     },
   },
-  primeFactorNumber: {
+  naturalNumber: {
     max: {
       value: 1_000_000_000_000,
       message: "Maksymalna wartość to 1'000'000'000'000 (bilion)",
+    },
+    min: {
+      value: 0,
+      message: "Minimalna wartość to 0",
+    },
+    pattern: {
+      value: /^\d+$/,
+      message: "Wprowadzona wartość musi być liczbą całkowitą",
+    },
+  },
+  naturalNumberMax200: {
+    max: {
+      value: 200,
+      message: "Maksymalna wartość to 200",
     },
     min: {
       value: 0,
@@ -122,6 +139,34 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
     max: {
       value: 100000,
       message: "Maksymalna wartość to 100000",
+    },
+    min: {
+      value: 0,
+      message: "Minimalna wartość to 0",
+    },
+    pattern: {
+      value: /^-?\d+(\.\d+)?(e)?$/,
+      message: "Wprowadzona wartość musi być liczbą",
+    },
+  },
+  cash: {
+    max: {
+      value: 100000000000,
+      message: "Maksymalna wartość to 100 bilionów",
+    },
+    min: {
+      value: 0,
+      message: "Minimalna wartość to 0",
+    },
+    pattern: {
+      value: /^-?\d+(\.\d+)?(e)?$/,
+      message: "Wprowadzona wartość musi być liczbą",
+    },
+  },
+  percentMax100: {
+    max: {
+      value: 100,
+      message: "Maksymalna wartość to 100%",
     },
     min: {
       value: 0,
