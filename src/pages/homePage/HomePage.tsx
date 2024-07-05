@@ -60,8 +60,8 @@ export default function HomePage() {
               <p>Akutalizacja <NavLink to="baza-wiedzy/pochodna-funkcji" className="hover:underline"><b>artykułu o funkcji pochodnej funkcji</b></NavLink></p>
               <p>Artykuł o <NavLink to="baza-wiedzy/monotonicznosc-i-ekstremum" className="hover:underline"><b>monotoniczności funkcji</b></NavLink></p>
               <p>Rozdział poświęcony <NavLink to="baza-wiedzy/trojkaty" className="hover:underline"><b>trójkątom</b></NavLink></p>
-
-              <br /><p className="italic">aktualizacja: 27/06/2024</p>
+              <p><NavLink to="kalkulatory/lokaty"><b>Kalkulator zysku z lokat / kont oszczędnościowych</b></NavLink></p>
+              <br /><p className="italic">aktualizacja: 05/07/2024</p>
               <ArticleBorder />
               <Title text="Polityka prywatności" type="main-article" />
               <p>Przeczytaj: <NavLink to="polityka-prywatnosci" className="hover:underline"><b>Polityka prywatności</b></NavLink></p>

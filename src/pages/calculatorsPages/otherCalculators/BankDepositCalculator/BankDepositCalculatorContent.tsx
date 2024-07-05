@@ -146,15 +146,15 @@ const BankDepositCalculatorContent = () => {
         <ArticleBorder />
         <span>Zysk brutto:</span>
         <Formula formula={bankDeposit.getProfitBrutto().toString()} />
-        <span>Zysk netto:</span>
-        <Formula formula={bankDeposit.getProfitNetto().toString()} />
-        <span>Kapitał zgromadzony po {watchN} kapitalizacjach po odtrąceniu podatku od zysku kapitałowych (tzw. podatek Belki) <b>19%</b> :</span>
+        <span>Zysk netto po odtrąceniu <b>19%</b> podatku od zysków kapitałowych (tzw. podatek Belki) </span>
+        <Formula formula={bankDeposit.getProfitNetto()} />
+        <span>Kapitał zgromadzony po {watchN} kapitalizacjach po odtrąceniu <b>19%</b> podatku od zysków kapitałowych (tzw. podatek Belki) :</span>
         <Formula formula={bankDeposit.getResultNetto().toString()} />
         <ArticleBorder />
 
       </>)}
 
-      <p>Lokata bankowa to najbezpieczniejsza forma pomnożenia Twoich oszczędności. Zysk brutto liczy się stosując <b>procent składany</b></p>
+      <p>Lokata bankowa i konto oszczędnościowe to najbezpieczniejsze formy pomnożenia Twoich oszczędności. Zysk brutto liczy się stosując <b>procent składany</b></p>
       <Formula formula={"K_n = K_0 \\cdot \\left(1 + \\frac{p}{100} \\right)^{n}"} styles="min-w-[225px]" />
       <LegendParagraph type={"top"} notation={"K_n"} explanation={"Kapitał po n okresach kapitalizacji"} />
       <LegendParagraph type={"top"} notation={"K_0"} explanation={"Kapitał zdeponowany w chwili rozpoczęcia lokaty"} />

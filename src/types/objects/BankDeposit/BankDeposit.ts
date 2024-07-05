@@ -120,8 +120,8 @@ class BankDeposit {
     getProfitBrutto(): number {
         return this.roundToTwoDecimalPlaces(this.profitBrutto);
     }
-    getProfitNetto(): number {
-        return this.roundToTwoDecimalPlaces(this.profitNetto);
+    getProfitNetto(): string {
+        return `\\frac{81}{100} \\cdot ${this.roundToTwoDecimalPlaces(this.profitBrutto)} = ${this.roundToTwoDecimalPlaces(this.profitNetto)}`;
     }
     getResultNetto(): number {
         return this.roundToTwoDecimalPlaces(this.resultNetto);
