@@ -19,6 +19,7 @@ class BankDeposit {
     private profitBrutto: number = 0;
     private profitNetto: number = 0;
     private resultNetto: number = 0;
+    private taxAmount: number = 0;
 
     private TAX = 0.19;
 
@@ -40,7 +41,8 @@ class BankDeposit {
         this.reducedPercentPlus1 = this.reducedPercent.getValue() + 1;
         this.result = this.K0 * (Math.pow(this.reducedPercentPlus1, this.n));
         this.profitBrutto = this.result - this.K0;
-        this.profitNetto = this.profitBrutto * 0.81
+        this.taxAmount = this.TAX * this.profitBrutto;
+        this.profitNetto = this.profitBrutto * (1 - this.TAX);
         this.resultNetto = this.K0 + this.profitNetto;
 
     }
@@ -50,16 +52,16 @@ class BankDeposit {
         else this.formula = `K_{${this.n}}=${this.K0} \\cdot \\left(1+ \\frac{${roundedFormula}}{100 }\\right)^{${this.n}}`
 
         const roundedReducentPercentFormula = this.roundToFiveDecimalPlaces(this.reducedPercent.getValue());
-        if (this.isApproximate) this.reducentPercentFormula = `K_{${this.n}}\\approx${this.K0} \\cdot \\left(1+ ${roundedReducentPercentFormula}\\right)^{${this.n}}`
-        else this.reducentPercentFormula = `K_{${this.n}}=${this.K0} \\cdot \\left(1+ ${roundedReducentPercentFormula}\\right)^{${this.n}}`
+        if (this.isApproximate) this.reducentPercentFormula = `\\approx${this.K0} \\cdot \\left(1+ ${roundedReducentPercentFormula}\\right)^{${this.n}}`
+        else this.reducentPercentFormula = `=${this.K0} \\cdot \\left(1+ ${roundedReducentPercentFormula}\\right)^{${this.n}}`
 
         const roundedReducentPercentFormulaPlus1 = this.roundToFiveDecimalPlaces(this.reducedPercentPlus1);
-        if (this.isApproximate) this.reducentPercentFormulaPlus1 = `K_{${this.n}}\\approx${this.K0} \\cdot \\left(${roundedReducentPercentFormulaPlus1}\\right)^{${this.n}}`
-        else this.reducentPercentFormulaPlus1 = `K_{${this.n}}=${this.K0} \\cdot \\left(${roundedReducentPercentFormulaPlus1}\\right)^{${this.n}}`
+        if (this.isApproximate) this.reducentPercentFormulaPlus1 = `\\approx${this.K0} \\cdot \\left(${roundedReducentPercentFormulaPlus1}\\right)^{${this.n}}`
+        else this.reducentPercentFormulaPlus1 = `=${this.K0} \\cdot \\left(${roundedReducentPercentFormulaPlus1}\\right)^{${this.n}}`
 
         const roundedResult = this.roundToTwoDecimalPlaces(this.result);
-        if (this.isApproximate) this.resultString = `K_{${this.n}}\\approx${roundedResult}`
-        else this.resultString = `K_{${this.n}}=${roundedResult}`
+        if (this.isApproximate) this.resultString = `\\approx${roundedResult.toFixed(2)}`
+        else this.resultString = `=${roundedResult.toFixed(2)}`
     }
     private roundToFiveDecimalPlaces(value: number): number {
         const roundedValue = Math.round(value * 100000) / 100000;
@@ -120,11 +122,17 @@ class BankDeposit {
     getProfitBrutto(): number {
         return this.roundToTwoDecimalPlaces(this.profitBrutto);
     }
-    getProfitNetto(): string {
-        return `\\frac{81}{100} \\cdot ${this.roundToTwoDecimalPlaces(this.profitBrutto)} = ${this.roundToTwoDecimalPlaces(this.profitNetto)}`;
+    getProfitNettoCalculation(): string {
+        return `81\\% \\cdot ${this.roundToTwoDecimalPlaces(this.profitBrutto)} = ${this.roundToTwoDecimalPlaces(this.profitNetto)}`;
+    }
+    getProfitNettoResult(): string {
+        return this.roundToTwoDecimalPlaces(this.profitNetto).toString();
     }
     getResultNetto(): number {
         return this.roundToTwoDecimalPlaces(this.resultNetto);
+    }
+    getTaxAmount(): number {
+        return this.roundToTwoDecimalPlaces(this.taxAmount);
     }
 }
 

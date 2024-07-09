@@ -228,8 +228,8 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
     {
         category: { to: "Ciągi", text: "Ciągi" },
         links: [
-            { to: "ciagu-arytmetycznego", text: "Ciąg arytmetyczny", color: gray },
-            { to: "ciagu-geometrycznego", text: "Ciąg geometryczny", color: gray },
+            { to: "ciagu-arytmetycznego", text: "Ciąg arytmetyczny" },
+            { to: "ciagu-geometrycznego", text: "Ciąg geometryczny" },
             { to: "ciągu fibonacciego", text: "Ciąg Fibonacciego", color: gray },
         ],
     },

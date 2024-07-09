@@ -14,6 +14,9 @@ interface IIntegerFormData {
   coefficient: string;
   cash: string;
   percentMax100: string;
+  naturalNumberMax200NotZero: string;
+  rationalNumber2places: string;
+  rationalNumber2placesNotZero: string;
 }
 
 export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
@@ -118,6 +121,20 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
       message: "Wprowadzona wartość musi być liczbą całkowitą",
     },
   },
+  naturalNumberMax200NotZero: {
+    max: {
+      value: 200,
+      message: "Maksymalna wartość to 200",
+    },
+    min: {
+      value: 1,
+      message: "Minimalna wartość to 1",
+    },
+    pattern: {
+      value: /^\d+$/,
+      message: "Wprowadzona wartość musi być liczbą całkowitą",
+    },
+  },
   coefficientNotZero: {
     validate: {
       notZero: value => parseInt(value) !== 0 || "To nie jest funkcja kwadratowa",
@@ -203,6 +220,37 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
     pattern: {
       value: /^-?[0-9]+$/,
       message: "Wprowadzona wartość musi być liczbą całkowitą",
+    },
+  },
+  rationalNumber2places: {
+    max: {
+      value: 1000,
+      message: "Maksymalna wartość to 1000",
+    },
+    min: {
+      value: -1000,
+      message: "Minimalna wartość to -1000",
+    },
+    pattern: {
+      value: /^-?\d+(\.\d{1,2})?$/,
+      message: "Wprowadzona wartość musi być liczbą z maksymalnie dwoma miejscami po przecinku",
+    },
+  },
+  rationalNumber2placesNotZero: {
+    validate: {
+      notZero: value => Number(value) !== 0 || "Liczba nie może być równa zero",
+    },
+    max: {
+      value: 1000,
+      message: "Maksymalna wartość to 1000",
+    },
+    min: {
+      value: -1000,
+      message: "Minimalna wartość to -1000",
+    },
+    pattern: {
+      value: /^-?\d+(\.\d{1,2})?$/,
+      message: "Wprowadzona wartość musi być liczbą z maksymalnie dwoma miejscami po przecinku",
     },
   },
 };

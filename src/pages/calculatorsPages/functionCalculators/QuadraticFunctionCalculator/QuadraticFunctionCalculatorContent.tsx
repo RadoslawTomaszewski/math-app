@@ -207,7 +207,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <div className="flex flex-col w-full items-start md:items-center">
                                     <div><b>Postać iloczynowa:</b></div>
                                     {quadraticFormula.getDelta() < 0 &&
-                                        <span>{quadraticFormula.getFactoredForm()}</span>
+                                        <span>nie istnieje</span>
                                     }
                                     {quadraticFormula.getDelta() === 0 &&
                                         <Formula formula={`${quadraticFormula.getFactoredForm()}`} />

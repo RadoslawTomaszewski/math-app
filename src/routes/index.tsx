@@ -78,6 +78,8 @@ import TrianglesPage from "../pages/knowledgeBasePages/planimetryPages/Triangles
 import TriangleAreaPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TriangleArea/TriangleAreaPage";
 import TriangleCategoryPage from "../pages/knowledgeBasePages/planimetryPages/Triangles/TriangleCategories/TriangleCategoriesPage";
 import BankDepositCalculatorPage from "../pages/calculatorsPages/otherCalculators/BankDepositCalculator/BankDepositCalculatorPage";
+import ArithmeticSequencesCalculatorPage from "../pages/calculatorsPages/sequencesCalculators/arithmeticSequenceCalculator/ArithmeticSequenceCalculatorPage";
+import GeometricSequencesCalculatorPage from "../pages/calculatorsPages/sequencesCalculators/geometricSequenceCalculator/GeometricSequenceCalculatorPage";
 
 
 
@@ -152,6 +154,8 @@ export const Router: FC = () => {
                         <Route path="funkcji-liniowej" element={<LinearFunctionCalculatorPage />} />
                         <Route path="funkcji-wykladniczej" element={<ExponentialFunctionCalculatorPage />} />
                         <Route path="funkcji-logarytmicznej" element={<LogarithmicFunctionCalculatorPage />} />
+                        <Route path="ciagu-arytmetycznego" element={<ArithmeticSequencesCalculatorPage />} />
+                        <Route path="ciagu-geometrycznego" element={<GeometricSequencesCalculatorPage />} />
                         <Route path="gra-w-zycie" element={<GameOfLifePage />} />
                         <Route path="lokaty" element={<BankDepositCalculatorPage />} />
                         <Route path="*" element={<WorkInProgress />} />
