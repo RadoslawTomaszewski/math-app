@@ -10,16 +10,17 @@ class ArithmeticSequence {
     private an: number = 0;
     private sequenceArray: number[] = [];
     private sequence: string[] = [];
-    private sum: number = 0;
+    private proof: string[] = [];
 
     constructor(private a1: number, private r: number) {
         this.setFormula();
         this.setReducedFormula();
+        // this.setProof();
     }
 
     private setFormula() {
-        if (this.r === 0) this.formula = `${this.a1}`
-        if (this.r > 0) this.formula = this.formula = `a_n=${this.a1}+(n-1)\\cdot ${this.r}`;
+        if (this.r === 0) this.formula = `a_n=${this.a1}`
+        else if (this.r > 0) this.formula = this.formula = `a_n=${this.a1}+(n-1)\\cdot ${this.r}`;
         else this.formula = `a_n=${this.a1}+(n-1)\\cdot \\left( ${this.r} \\right)`;
     }
 
@@ -56,32 +57,31 @@ class ArithmeticSequence {
     }
 
     setSequence(n: number): void {
-        this.an = this.roundToTwoDecimalPlaces(this.a * n + this.b);
-        const term = [];
+        this.an = this.roundToTwoDecimalPlaces(this.a1 + (n - 1) * this.r);
+        const term = [`a_1=${this.a1}`];
         const term2 = [];
-        if (this.b === 0) {
-            for (let i = 1; i <= n; i++) {
-                const result = this.roundToTwoDecimalPlaces(this.a * i + this.b);
-                term.push(`a_{${i}} = ${this.a} * ${i} = ${result}`);
+        if (this.r === 0) {
+            for (let i = 2; i <= n; i++) {
+                term.push(`a_{${i}} = ${this.a1}`);
+                term2.push(this.a1);
+            }
+            this.sequence = term;
+            this.sequenceArray = term2;
+            return;
+        }
+        else if (this.r < 0) {
+            for (let i = 2; i <= n; i++) {
+                const result = this.roundToTwoDecimalPlaces(this.a1 + (i - 1) * this.r);
+                term.push(`a_{${i}} = ${this.a1} + ${i - 1} \\cdot (${this.r})= ${result}`);
                 term2.push(result);
             }
             this.sequence = term;
             this.sequenceArray = term2;
             return;
         }
-        else if (this.b < 0) {
-            for (let i = 1; i <= n; i++) {
-                const result = this.roundToTwoDecimalPlaces(this.a * i + this.b);
-                term.push(`a_{${i}} = ${this.a} * ${i} ${this.b}= ${result}`);
-                term2.push(result);
-            }
-            this.sequence = term;
-            this.sequenceArray = term2;
-            return;
-        }
-        else for (let i = 1; i <= n; i++) {
-            const result = this.roundToTwoDecimalPlaces(this.a * i + this.b);
-            term.push(`a_{${i}} = ${this.a} * ${i} + ${this.b} = ${result}`);
+        else for (let i = 2; i <= n; i++) {
+            const result = this.roundToTwoDecimalPlaces(this.a1 + (i - 1) * this.r);
+            term.push(`a_{${i}} = ${this.a1} + ${i - 1} \\cdot ${this.r}= ${result}`);
             term2.push(result);
         }
         this.sequence = term;
@@ -91,6 +91,34 @@ class ArithmeticSequence {
     private roundToTwoDecimalPlaces(value: number): number {
         const roundedValue = Math.round(value * 100) / 100;
         return roundedValue;
+    }
+
+    // private setProof(): void {
+    //     this.proof.push("a_{n+1}-a_{n}");
+
+    //     const aPlusOneStr = this.a === 1 ? 'n+1' : (this.a === -1 ? '-(n+1)' : `${this.a}(n+1)`);
+    //     const aNStr = this.a === 1 ? 'n' : (this.a === -1 ? '-n' : `${this.a}n`);
+
+    //     if (this.a === 0) {
+    //         this.proof.push(`${this.a1}-${this.a1}`);
+    //     } else if (this.b > 0) {
+    //         this.proof.push(`(${aPlusOneStr}+${this.b})-(${aNStr}+${this.b})`);
+    //         this.proof.push(`${aNStr}+${this.a}+${this.b} - ${aNStr}-${this.b}`);
+    //     } else if (this.b === 0) {
+    //         this.proof.push(`${aPlusOneStr}-${aNStr}`);
+    //         this.proof.push(`${aNStr}+${this.a} - ${aNStr}`);
+    //     } else {
+    //         this.proof.push(`(${aPlusOneStr}${this.b})-(${aNStr}${this.b})`);
+    //         this.proof.push(`${aNStr}+${this.a}${this.b} - ${aNStr} + ${Math.abs(this.b)}`);
+    //     }
+
+    //     this.proof.push(`${this.r}`);
+    //     this.proof.push("\\text{const.}");
+    // }
+
+
+    getProof(): string[] {
+        return this.proof;
     }
 
     getFormula(): string {
@@ -115,6 +143,12 @@ class ArithmeticSequence {
 
     getAn(): number {
         return this.an;
+    }
+    getA(): number {
+        return this.a;
+    }
+    getB(): number {
+        return this.b;
     }
 
     getSequence(n: number): string[] {

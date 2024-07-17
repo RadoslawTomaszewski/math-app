@@ -7,6 +7,7 @@ import Formula from "../../../../components/articleItems/Formula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import Loader from "../../../../components/Loader/Loader";
 import ArithmeticSequence from "../../../../types/objects/Sequences/ArithmeticSequence";
+import Proof from "../../../../components/articleItems/Proof";
 
 interface FormData {
     a1: string;
@@ -140,15 +141,22 @@ const ArithmeticSequencesCalculatorContent: FC = () => {
                                     <div><b>Wzór ogólny ciągu:</b></div>
                                     <Formula formula={`a_n = a_1 + (n-1) \\cdot r`} />
                                     <Formula formula={arithmeticSequence.getFormula()} />
-                                    <span>zredukowana postać:</span>
-                                    <Formula formula={arithmeticSequence.getReducedFormula()} />
-                                    <div><b>Monotoniczność ciągu:</b></div>
-                                    {Number(watchR) > 0 && (<span>rosnący</span>)}
-                                    {Number(watchR) === 0 && (<span>stały</span>)}
-                                    {Number(watchR) < 0 && (<span>malejący</span>)}
+                                    {arithmeticSequence.getR() !== 0 && (
+                                        <>
+                                            <span>zredukowana postać:</span>
+                                            <Formula formula={arithmeticSequence.getReducedFormula()} />
+                                        </>)
+                                    }
+
                                 </div>
                             </div>
                         </div>
+                        <ArticleBorder styles="w-full" />
+                        <div><b>Monotoniczność ciągu:</b></div>
+                        {Number(watchR) > 0 && (<span>rosnący</span>)}
+                        {Number(watchR) === 0 && (<span>stały</span>)}
+                        {Number(watchR) < 0 && (<span>malejący</span>)}
+                        {Number(watchR) < 0 && (<span>malejący</span>)}
                         <ArticleBorder styles="w-full" />
                         <div className="flex justify-center w-full">
                             <label className="flex flex-col flex-wrap items-center">
@@ -178,7 +186,12 @@ const ArithmeticSequencesCalculatorContent: FC = () => {
                                 <span>Suma <b>n</b> początkowych wyrazów:</span>
                                 <Formula formula={"S_n=\\frac{a_1+a_n}{2}\\cdot n"} />
 
-                                <Formula formula={`S_{${watchN}}=\\frac{${arithmeticSequence.getA1()}+${arithmeticSequence.getAn()}}{2}\\cdot ${watchN}${arithmeticSequence.getSumFormula()}`} />
+                                {arithmeticSequence.getAn() < 0
+                                    ?
+                                    <Formula formula={`S_{${watchN}}=\\frac{${arithmeticSequence.getA1()}+(${arithmeticSequence.getAn()})}{2}\\cdot ${watchN}${arithmeticSequence.getSumFormula()}`} />
+                                    :
+                                    <Formula formula={`S_{${watchN}}=\\frac{${arithmeticSequence.getA1()}+${arithmeticSequence.getAn()}}{2}\\cdot ${watchN}${arithmeticSequence.getSumFormula()}`} />
+                                }
                                 <div className="w-full">
                                     {showGraph && (
                                         <>
@@ -191,6 +204,13 @@ const ArithmeticSequencesCalculatorContent: FC = () => {
                                 <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
                                     {showGraph ? 'odśwież wykres' : `generuj wykres dla ${watchN} wyrazów`}
                                 </button>
+                                {/* TODO: */}
+                                {/* <div className="max-w-full">
+                                    <Proof steps={arithmeticSequence.getProof()} text={"Dowód, że ciąg jest arytmetyczny"} styles="min-w-[200px]">
+                                        Teza:<Formula formula={"a_{n+1}-a_{n}=\\text{const.}"} />
+                                        Dowód:
+                                    </Proof>
+                                </div> */}
                             </>
                         )}
                         {errors.n && (

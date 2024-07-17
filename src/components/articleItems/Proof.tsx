@@ -20,7 +20,7 @@ const Proof: FC<IProofProps> = ({ steps, text, styles, children }) => {
 
   return (
     <>
-      <button onClick={toggleExpansion} className="flex overflow-y-hidden items-center w-full justify-center">
+      <button type="button" onClick={toggleExpansion} className="flex overflow-y-hidden items-center w-full justify-center">
         {expanded ? (
           <>
             <div className="flex flex-row border-[#12874a] border-2 p-[2px] px-2 w-fit rounded-xl m-2 font-bold bg-white">
