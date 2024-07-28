@@ -5,6 +5,11 @@
   height: 400px;
   background-color: white;
 }
+.page-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .loader {
   border: 6px solid #f3f3f3;

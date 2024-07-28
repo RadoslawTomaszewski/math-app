@@ -99,7 +99,7 @@ export const sidebarLinksKnowledgeBase: SidebarCategory[] = [
         category: { to: "wyrazenia-algebraiczne", text: "Wyrażenia Algebraiczne" },
         links: [
             { to: "wzory-skroconego-mnozenia", text: "Wzory skróconego mnożenia" },
-            { to: "wielomiany", text: "Wielomiany", color: gray },
+            { to: "wielomiany", text: "Wielomiany" },
             { to: "rownania", text: "Równania", color: gray },
             { to: "nierownosci", text: "Nierówności", color: gray },
         ],

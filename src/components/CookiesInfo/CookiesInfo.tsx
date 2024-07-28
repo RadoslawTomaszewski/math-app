@@ -5,23 +5,23 @@ import { classNames } from "../../utilities";
 import ReactGA from "react-ga4";
 
 export default function CookiesInfo() {
-    const [isVisible, setIsVisible] = useState(localStorage.getItem("cookiesInfoVisible") !== "false");
+    const [isVisible, setIsVisible] = useState(sessionStorage.getItem("cookiesInfoVisible") === "true");
 
     useEffect(() => {
-        const consentGiven = localStorage.getItem("cookiesConsentGiven") === "true";
+        const consentGiven = sessionStorage.getItem("cookiesConsentGiven") === "true";
         if (!consentGiven) {
             setIsVisible(true);
         }
     }, []);
 
     const handleAccept = () => {
-        localStorage.setItem("cookiesConsentGiven", "true");
+        sessionStorage.setItem("cookiesConsentGiven", "true");
         setIsVisible(false);
         initializeGoogleAnalytics();
     };
 
     const handleClose = () => {
-        localStorage.setItem("cookiesInfoVisible", "false");
+        sessionStorage.setItem("cookiesInfoVisible", "false");
         window.location.href = "https://google.com";
     };
 
@@ -30,7 +30,7 @@ export default function CookiesInfo() {
     };
 
     useEffect(() => {
-        if (localStorage.getItem("cookiesConsentGiven") === "true") {
+        if (sessionStorage.getItem("cookiesConsentGiven") === "true") {
             initializeGoogleAnalytics();
         }
     }, []);

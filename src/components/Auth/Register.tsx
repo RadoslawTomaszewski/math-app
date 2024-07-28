@@ -1,15 +1,16 @@
-import { auth, googleProvider } from "../../config/firebase";
+import { auth, db, googleProvider } from "../../config/firebase";
 import { createUserWithEmailAndPassword, signInWithPopup, sendEmailVerification } from 'firebase/auth';
 import { useNavigate } from "react-router-dom"
 import Title from "../articleItems/Title"
 import { BlueButtonStyle } from "../../utilities/styles"
 import { classNames } from "../../utilities"
 import majzaLogo from "../../assets/images/majza.eu_logo.png";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import GoogleIcon from "../../assets/icons/google.svg"
 import ImageComponent from "../articleItems/ImageComponent";
 import ArticleBorder from "../articleItems/ArticleBorder";
 import { LoginFormInputs } from "./styles";
+import { collection, setDoc, doc, query, where, getDocs } from "firebase/firestore";
 
 interface IUserCredentials {
     email: string;
@@ -25,13 +26,21 @@ export const Register = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const usersCollectionRef = useMemo(() => collection(db, "Users"), []);
+
     const handleCredentials = (e: React.ChangeEvent<HTMLInputElement>) => {
         setError("");
         setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
     }
-    const handleSignUp = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.preventDefault();
-        setError("");
+
+    const checkNickAvailability = async (nick: string) => {
+        const q = query(usersCollectionRef, where("nick", "==", nick));
+        const querySnapshot = await getDocs(q);
+        return querySnapshot.empty;
+    }
+
+
+    const handleSignUp = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         if (!userCredentials.email.trim() || !userCredentials.password.trim() || !userCredentials.nick.trim()) {
             setError("Wszystkie pola muszą być wypełnione");
             return;
@@ -41,20 +50,56 @@ export const Register = () => {
             setError("Wprowadzone hasła nie są identyczne");
             return;
         }
+        e.preventDefault();
+        try {
+            const isNickAvailable = await checkNickAvailability(userCredentials.nick);
+            if (!isNickAvailable) {
+                setError("Podany nick jest już zajęty.");
+                return;
+            }
+            await createUserWithEmailAndPassword(auth, userCredentials.email, userCredentials.password);
+            const user = auth.currentUser;
+            if (user) {
+                await setDoc(doc(usersCollectionRef, user.uid), {
+                    nick: userCredentials.nick,
+                    email: userCredentials.email,
+                    createdAt: new Date(),
+                    posts: 0,
+                    comments: 0,
+                    isPremium: false,
+                    isAdmin: false,
+                    isGoogleAccount: false,
+                });
 
-        createUserWithEmailAndPassword(auth, userCredentials.email, userCredentials.password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                if (user) {
-                    sendEmailVerification(user).then(() => {
-                        setVerificationSent(true);
-                    });
-                    auth.signOut();
+                try {
+                    await sendEmailVerification(user);
+                    setVerificationSent(true);
                 }
-            })
-            .catch((error) => {
+                catch (verificationError) {
+                    if (verificationError instanceof Error) {
+                        setError(verificationError.message);
+                    } else {
+                        setError("Wystąpił błąd podczas wysyłania emaila weryfikacyjnego.");
+                    }
+                }
+
+                try {
+                    await auth.signOut();
+                } catch (signOutError) {
+                    if (signOutError instanceof Error) {
+                        setError(signOutError.message);
+                    } else {
+                        setError("Wystąpił błąd podczas wylogowywania.");
+                    }
+                }
+            }
+        } catch (error) {
+            if (error instanceof Error) {
                 setError(error.message);
-            });
+            } else {
+                setError("An unknown error occurred during user registration.");
+            }
+        }
     }
 
     const handleRepeatPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,7 +127,7 @@ export const Register = () => {
                         <img src={GoogleIcon} className="mx-2" alt="logo google" width="25" height="25" />
                     </button>
                     <form>
-                        <p className="text-sm m-2">Po zarejestrowaniu konta za pomocą konta google będziesz mógł zmienić automatycznie wygenerowany nick.</p>
+                        <p className="text-sm m-2">Po zarejestrowaniu konta za pomocą konta google będziesz mógł ustawić nick w <b>moje konto</b></p>
                         <p className="w-full text-center"><b>lub</b></p>
                         <p><b>nick</b> (widoczny dla innych użytkowników forum)</p>
                         <input placeholder="np. euler1707" className={LoginFormInputs} onChange={(e) => { handleCredentials(e) }} name="nick" type="text" required />

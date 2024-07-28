@@ -80,7 +80,10 @@ import TriangleCategoryPage from "../pages/knowledgeBasePages/planimetryPages/Tr
 import BankDepositCalculatorPage from "../pages/calculatorsPages/otherCalculators/BankDepositCalculator/BankDepositCalculatorPage";
 import ArithmeticSequencesCalculatorPage from "../pages/calculatorsPages/sequencesCalculators/arithmeticSequenceCalculator/ArithmeticSequenceCalculatorPage";
 import GeometricSequencesCalculatorPage from "../pages/calculatorsPages/sequencesCalculators/geometricSequenceCalculator/GeometricSequenceCalculatorPage";
-
+import PolynomialPage from "../pages/knowledgeBasePages/algebraicExpressionPages/polynomial/PolynomialPage";
+import AccountPage from "../pages/accountPage/AccountPage";
+import PrivateRoute from "./PrivateRoute";
+import MyAccountRoute from "./MyAccountRoute";
 
 
 
@@ -100,6 +103,7 @@ export const Router: FC = () => {
                         <Route path="ciag-arytmetyczny" element={<ArithmeticSequencePage />} />
                         <Route path="ciag-geometryczny" element={<GeometricSequencePage />} />
                         <Route path="wzory-skroconego-mnozenia" element={<ShortMultiplicationPage />} />
+                        <Route path="wielomiany" element={<PolynomialPage />} />
                         <Route path="liczba-pi" element={<PiNumberPage />} />
                         <Route path="liczby-naturalne" element={<NaturalNumberPage />} />
                         <Route path="arytmetyka" element={<ArithmeticPage />} />
@@ -163,11 +167,18 @@ export const Router: FC = () => {
                     <Route path="cke" element={<CKEPage />} />
                     <Route path="wsparcie" element={<CoffeePage />} />
                     <Route path="pogotowie" element={<HelplinePage />} />
-                    <Route path="logowanie" element={<LoginPage />} />
-                    <Route path="rejestracja" element={<RegistrationPage />} />
+                    <Route element={<MyAccountRoute />}>
+                        <Route path="logowanie" element={<LoginPage />} />
+                    </Route>
+                    <Route element={<MyAccountRoute />}>
+                        <Route path="rejestracja" element={<RegistrationPage />} />
+                    </Route>
                     <Route path="odzyskiwanie-hasla" element={<ResetPasswordPage />} />
                     <Route path="polityka-prywatnosci" element={<PrivacyPolicyPage />} />
                     <Route path="forum" element={<ForumPage />} />
+                    <Route element={<PrivateRoute />}>
+                        <Route path="moje-konto" element={<AccountPage />} />
+                    </Route>
                     <Route path="*" element={<WorkInProgress />} />
                 </Route>
             </Routes>
