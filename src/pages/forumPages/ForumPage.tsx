@@ -1,28 +1,27 @@
 import { useEffect, useState, useMemo } from "react";
-import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
-import Title from "../../components/articleItems/Title";
 import { auth, db } from "../../config/firebase";
-import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
+import { collection, getDocs, doc, Timestamp } from "firebase/firestore";
 import ArticleBorder from "../../components/articleItems/ArticleBorder";
-import DeleteIcon from "../../assets/icons/delete.svg";
 import { NavLink } from "react-router-dom";
+import { BlueButtonStyle } from "../../utilities/styles";
+import { classNames } from "../../utilities";
 
 export default function ForumPage() {
-
-    //TODO: fix typing from any
     const [topicsList, setTopicsList] = useState<Array<any>>([]);
-    const [newTopicTitle, setNewTopicTitle] = useState("");
-    const [newTopicContent, setNewTopicContent] = useState("");
-
-    const topicsCollectionRef = useMemo(() => collection(db, "topics"), []);
+    const [searchQuery, setSearchQuery] = useState<string>('');
+    const topicsCollectionRef = useMemo(() => collection(db, "Topics"), []);
 
     const getTopicsList = async () => {
         try {
             const data = await getDocs(topicsCollectionRef);
-            const filteredData = data.docs.map((doc) => ({
-                ...doc.data(),
-                id: doc.id,
-            }));
+            const filteredData = data.docs.map((doc) => {
+                const docData = doc.data();
+                return {
+                    ...docData,
+                    id: doc.id,
+                    createdAt: docData.createdAt instanceof Timestamp ? docData.createdAt.toDate() : docData.createdAt,
+                };
+            });
             setTopicsList(filteredData);
         } catch (err) {
             console.log(err);
@@ -33,69 +32,108 @@ export default function ForumPage() {
         getTopicsList();
     }, [topicsCollectionRef]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const onSubmitTopic = async () => {
-        try {
-            await addDoc(topicsCollectionRef, { title: newTopicTitle, content: newTopicContent });
-            getTopicsList();
-        } catch (err) {
-            console.log(err);
-        }
-    };
-    //TODO: FIX ANY
-    const deleteTopic = async (topicId: any) => {
-        try {
-            await deleteDoc(doc(db, "topics", topicId));
-            getTopicsList();
-        } catch (err) {
-            console.log(err);
-        }
+    const highlightText = (text: string, query: string) => {
+        if (!query.trim()) return text;
+
+        const parts = text.split(new RegExp(`(${query})`, 'gi'));
+        return parts.map((part, index) =>
+            part.toLowerCase() === query.toLowerCase() ? (
+                <mark key={index} className="bg-yellow-300">
+                    {part}
+                </mark>
+            ) : (
+                part
+            )
+        );
     };
 
+    const truncateText = (text: string, length: number) => {
+        if (text.length <= length) return text;
+        return text.substring(0, length) + "...";
+    };
+
+    const handleCategoryClick = (category: string) => {
+        setSearchQuery(category);
+    };
+
+    // Sort topicsList by postNumber in descending order
+    const sortedTopicsList = topicsList.sort((a, b) => b.postNumber - a.postNumber);
+
+    const filteredTopics = sortedTopicsList.filter(topic =>
+        topic.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        topic.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        topic.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        topic.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    const uniqueCategories = Array.from(new Set(topicsList.map(topic => topic.category)));
+
     return (
-        <div className="p-3 justify-center flex flex-col items-center">
-            <ArticleWrapper>
-                <div className="flex flex-col items-center bg-articleColor">
-                    <Title text={"Forum majza.eu"} type="main-article" />
-                    {topicsList.map((topic) => (
-                        <div key={topic.id} className="flex flex-row justify-between border-2 border-black p-4 my-2 w-full shadow-md">
-                            <div>
-                                <h2 className="text-lg font-semibold">{topic.title}</h2>
-                                <p className="text-base">{topic.content}</p>
-                            </div>
-                            {auth.currentUser?.email && (
-                                <button onClick={() => deleteTopic(topic.id)}>
-                                    <img src={DeleteIcon} alt="przycisk kasujący wątek" width="30" height="30" />
-                                </button>
-                            )}
-                        </div>
-                    ))}
-                    <ArticleBorder styles="w-full" />
-                    {!auth.currentUser?.email && (
-                        <p><NavLink to="../logowanie" className="hover:underline"><b>Zaloguj się </b></NavLink> aby mieć możliwość dodawania i komentowania postów na forum</p>
-                    )}
-                    {auth.currentUser?.email && (
-                        <div className="w-full max-w-md p-4">
-                            <input
-                                onChange={(e) => setNewTopicTitle(e.target.value)}
-                                type="text"
-                                placeholder="Tytuł wątku"
-                                className="w-full border border-gray-400 rounded-md p-2 mb-2"
-                            />
-                            <textarea
-                                onChange={(e) => setNewTopicContent(e.target.value)}
-                                placeholder="Treść wątku"
-                                className="w-full border border-gray-400 rounded-md p-2 mb-2"
-                            ></textarea>
-                            <button
-                                className="bg-blue-500 text-white w-full px-4 py-2 rounded-md hover:bg-blue-600"
-                                onClick={onSubmitTopic}
-                            >
-                                Dodaj temat
-                            </button>
-                        </div>
-                    )}
+        <>
+            <div className="w-full p-4">
+                <input
+                    type="text"
+                    placeholder="Wyszukiwanie po słowach kluczowych"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full border border-gray-400 rounded-md p-2 mb-2"
+                />
+            </div>
+
+            {filteredTopics.map((topic) => (
+                <div key={topic.id} className={`flex flex-row justify-between border-2 border-black p-4 my-2 w-full shadow-md ${topic.author === 'radek44413' ? 'bg-[#7dcbf9]' : ''}`}>
+                    <div>
+                        <NavLink to={`topic/${topic.id}`}>
+                            <span><b>#{topic.postNumber} </b></span>
+                            <span>{topic.author}</span>
+                            <span> / {new Date(topic.createdAt).toLocaleDateString()}</span>
+                            <span> / {topic.category}</span>
+                            <h2 className="text-lg font-semibold">
+                                {highlightText(truncateText(topic.title, 200), searchQuery)}
+                            </h2>
+                            <p className="text-base">
+                                {highlightText(truncateText(topic.content, 200), searchQuery)}
+                            </p>
+                        </NavLink>
+                    </div>
                 </div>
-            </ArticleWrapper>
-        </div>
+            ))}
+
+            <div className="w-full p-4">
+                <p>Kategorie:</p>
+                <div className="flex flex-wrap gap-2">
+                    {uniqueCategories.map((category) => (
+                        <button
+                            key={category}
+                            onClick={() => handleCategoryClick(category)}
+                            className="bg-blue-200 hover:bg-blue-300 text-blue-800 font-semibold px-3 py-1 rounded-md"
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {!auth.currentUser?.email && (
+                <>
+                    <ArticleBorder styles="w-full" />
+                    <p>
+                        <NavLink to="../logowanie" className="hover:underline">
+                            <b>Zaloguj się </b>
+                        </NavLink>{" "}
+                        aby mieć możliwość dodawania i komentowania postów na forum
+                    </p>
+                </>
+            )}
+
+            {auth.currentUser?.email && (
+                <NavLink to={"nowy-watek"}>
+                    <button className={classNames(BlueButtonStyle, "w-full mb-3")}>
+                        Nowy wątek
+                    </button>
+                </NavLink>
+            )}
+
+        </>
     );
 }

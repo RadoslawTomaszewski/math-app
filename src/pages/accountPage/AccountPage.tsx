@@ -7,6 +7,7 @@ import { classNames } from "../../utilities";
 import { BlueButtonStyle } from "../../utilities/styles";
 import { LoginFormInputs } from "../../components/Auth/styles";
 import PageLoader from "../../components/Loader/PageLoader";
+import CountUserPosts from "../../components/counters/CountUserPosts";
 
 interface User {
     nick: string;
@@ -116,6 +117,7 @@ const AccountPage: FC = () => {
                 });
                 setSuccessMessage("Nick został zaktualizowany.");
                 setErrorMessage(null);
+                window.location.reload();
             } catch (error) {
                 console.error("Error updating nick:", error);
                 setErrorMessage("Błąd podczas zapisywania nicku.");
@@ -146,7 +148,7 @@ const AccountPage: FC = () => {
                                 <span><b>Data dołączenia do forum:</b></span>
                                 <span>{new Date(userInfo.createdAt).toLocaleDateString()}</span>
                                 <span><b>Ilość postów:</b></span>
-                                <span> {userInfo.posts}</span>
+                                <span> <CountUserPosts nick={userInfo.nick} /></span>
                                 <span><b>Ilość komentarzy:</b></span>
                                 <span> {userInfo.comments}</span>
                                 <span><b>Sposób logowania:</b></span>

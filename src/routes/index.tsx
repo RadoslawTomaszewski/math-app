@@ -84,6 +84,9 @@ import PolynomialPage from "../pages/knowledgeBasePages/algebraicExpressionPages
 import AccountPage from "../pages/accountPage/AccountPage";
 import PrivateRoute from "./PrivateRoute";
 import MyAccountRoute from "./MyAccountRoute";
+import NewPostForm from "../pages/forumPages/NewPostFormPage/NewPostFormPage";
+import { ForumLayout } from "../Layout/forumLayout";
+import PostDetailPage from "../pages/forumPages/PostDetailPage/PostDetailPage";
 
 
 
@@ -175,7 +178,11 @@ export const Router: FC = () => {
                     </Route>
                     <Route path="odzyskiwanie-hasla" element={<ResetPasswordPage />} />
                     <Route path="polityka-prywatnosci" element={<PrivacyPolicyPage />} />
-                    <Route path="forum" element={<ForumPage />} />
+                    <Route path="forum" element={<ForumLayout />}>
+                        <Route index element={<ForumPage />} />
+                        <Route path="nowy-watek" element={<NewPostForm />} />
+                        <Route path="topic/:id" element={<PostDetailPage />} />
+                    </Route>
                     <Route element={<PrivateRoute />}>
                         <Route path="moje-konto" element={<AccountPage />} />
                     </Route>

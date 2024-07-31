@@ -21,11 +21,18 @@ const MyAccountRoute: FC = () => {
         return () => unsubscribe();
     }, []);
 
+    const isUserVerifiedOrGoogle = (user: any) => {
+        if (!user) return false;
+        const emailVerified = user.emailVerified;
+        const googleProvider = user.providerData.some((provider: any) => provider.providerId === 'google.com');
+        return emailVerified || googleProvider;
+    };
+
     if (loading) {
         return <PageLoader />;
     }
 
-    if (user) {
+    if (user && isUserVerifiedOrGoogle(user)) {
         return <Navigate to="/moje-konto" replace />;
     }
 

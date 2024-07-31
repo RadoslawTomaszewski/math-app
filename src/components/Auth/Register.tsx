@@ -97,7 +97,7 @@ export const Register = () => {
             if (error instanceof Error) {
                 setError(error.message);
             } else {
-                setError("An unknown error occurred during user registration.");
+                setError("Wystąpił nieznany błąd.");
             }
         }
     }
