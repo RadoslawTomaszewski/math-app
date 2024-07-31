@@ -1,5 +1,5 @@
-import { joinUniqueWithEquals } from "../../../utilities";
-import { linearEquations } from "../../equations";
+import { joinUniqueWithEquals } from "../../utilities";
+import { linearEquations } from "../../data/equations";
 import Fraction from "../Fraction/Fraction";
 
 

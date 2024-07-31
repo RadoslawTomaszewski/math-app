@@ -3,10 +3,10 @@ import Title from "../../../../../components/articleItems/Title";
 import GraphImage from "../../../../../components/articleItems/GraphImage";
 import Diamond from "../../../../../assets/images/quadrangles/diamond.png";
 import Formula from "../../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
 import Proof from "../../../../../components/articleItems/Proof";
-import { ParallelogramAreaDiamondProof, TrapeziumAreaParallelogramProof, TrapezoidAreaDiamondProof } from "../../../../../types/proofs";
+import { ParallelogramAreaDiamondProof, TrapeziumAreaParallelogramProof, TrapezoidAreaDiamondProof } from "../../../../../data/proofs";
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
 
 const DiamondContent: FC = () => (

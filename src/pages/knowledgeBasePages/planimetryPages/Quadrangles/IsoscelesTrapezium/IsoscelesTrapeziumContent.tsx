@@ -2,9 +2,9 @@ import { FC } from "react";
 import Title from "../../../../../components/articleItems/Title";
 import GraphImage from "../../../../../components/articleItems/GraphImage";
 import Formula from "../../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
-import { isoscelesTrapezoidLongerSegmentProof, isoscelesTrapezoidProof } from "../../../../../types/proofs";
+import { isoscelesTrapezoidLongerSegmentProof, isoscelesTrapezoidProof } from "../../../../../data/proofs";
 import TrapezeRegular from "../../../../../assets/images/quadrangles/trapeze_regular.png"
 import TrapezeRegularShortX from "../../../../../assets/images/quadrangles/trapeze_regular_shortx.png";
 import TrapezeRegularLongX from "../../../../../assets/images/quadrangles/trapeze_regular_longx.png";

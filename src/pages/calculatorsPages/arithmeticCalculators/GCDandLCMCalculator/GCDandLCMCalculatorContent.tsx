@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/styles";
-import PrimeFactors from "../../../../types/objects/PrimeFactors/PrimeFactors";
+import PrimeFactors from "../../../../types/PrimeFactors/PrimeFactors";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import TwoNumberPrimeFactors from "../../../../types/objects/PrimeFactors/TwoNumberPrimeFactors";
+import TwoNumberPrimeFactors from "../../../../types/PrimeFactors/TwoNumberPrimeFactors";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {

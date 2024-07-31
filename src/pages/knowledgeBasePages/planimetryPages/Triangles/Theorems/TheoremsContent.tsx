@@ -12,7 +12,7 @@ import CosinusesLawImage2 from "../../../../../assets/images/knowledge_base/plan
 import CosinusesLawImage3 from "../../../../../assets/images/knowledge_base/planimetry/trojkat_rozwartokatny.png";
 import CentroidTheorem from "../../../../../assets/images/knowledge_base/planimetry/Twierdzenie_o_srodkowych.png";
 import Formula from "../../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
 import ImageComponent from "../../../../../components/articleItems/ImageComponent";
 import Explanation from "../../../../../components/articleItems/Explanation";

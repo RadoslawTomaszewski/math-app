@@ -16,7 +16,7 @@ import Quadrangle1 from "../../../../assets/images/quadrangles/Quadrangles_01.pn
 import Quadrangle2 from "../../../../assets/images/quadrangles/Quadrangles_02.png";
 import GraphImage from "../../../../components/articleItems/GraphImage";
 import Formula from "../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../types/equations";
+import { GeometryEquations } from "../../../../data/equations";
 import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
 
 

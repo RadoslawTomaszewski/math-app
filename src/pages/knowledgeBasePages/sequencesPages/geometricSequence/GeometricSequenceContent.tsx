@@ -4,8 +4,8 @@ import LegendParagraph from "../../../../components/articleItems/LegendParagraph
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Proof from "../../../../components/articleItems/Proof";
-import { geometricSequenceRatioProof, geometricSequenceRatio_sumProof, geometricThreeConsecutiveTermsProof } from "../../../../types/proofs";
-import { GeometricSequencesEquations } from "../../../../types/equations";
+import { geometricSequenceRatioProof, geometricSequenceRatio_sumProof, geometricThreeConsecutiveTermsProof } from "../../../../data/proofs";
+import { GeometricSequencesEquations } from "../../../../data/equations";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import MathExpression from "../../../../components/articleItems/MathExpression";
 import graph1_1 from "../../../../assets/images/knowledge_base/sequences/geometricSequence_1.1.png";

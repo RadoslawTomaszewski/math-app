@@ -5,7 +5,7 @@ import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/style
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Loader from "../../../../components/Loader/Loader";
 import Formula from "../../../../components/articleItems/Formula";
-import LogarithmicFormula from "../../../../types/objects/LogharitmicFormula/LogarithmicFormula";
+import LogarithmicFormula from "../../../../types/LogharitmicFormula/LogarithmicFormula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import Explanation from "../../../../components/articleItems/Explanation";
 

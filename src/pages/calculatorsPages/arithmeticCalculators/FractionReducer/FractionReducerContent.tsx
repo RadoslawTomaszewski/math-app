@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
 import { numberRegisterOptions } from "../../../../utilities/validation";
-import Fraction from "../../../../types/objects/Fraction/Fraction";
+import Fraction from "../../../../types/Fraction/Fraction";
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../../../utilities";

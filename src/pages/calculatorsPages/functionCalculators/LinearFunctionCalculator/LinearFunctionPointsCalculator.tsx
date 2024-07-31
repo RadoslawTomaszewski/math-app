@@ -4,7 +4,7 @@ import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/style
 import Loader from "../../../../components/Loader/Loader";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
-import LinearFormulaFromPoints from "../../../../types/objects/LinearFormula/LinearFormulaFromPoints";
+import LinearFormulaFromPoints from "../../../../types/LinearFormula/LinearFormulaFromPoints";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 
 

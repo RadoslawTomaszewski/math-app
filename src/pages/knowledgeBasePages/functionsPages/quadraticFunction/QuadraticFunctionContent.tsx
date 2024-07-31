@@ -13,8 +13,8 @@ import POY from "../../../../assets/images/knowledge_base/functions/quadratic_fu
 import osSymetrii from "../../../../assets/images/knowledge_base/functions/quadratic_function/osSymetrii.png";
 import deltaA from "../../../../assets/images/knowledge_base/functions/quadratic_function/delta_a.png";
 import deltaA2 from "../../../../assets/images/knowledge_base/functions/quadratic_function/delta_a_2.png";
-import { QuadraticFunction_VieteProductProof, QuadraticFunction_VieteSumProof, QuadraticFunction_pProof, QuadraticFunction_qProof, QuadraticFunction_zeroPlaceProof } from "../../../../types/proofs";
-import { quadraticEquations } from "../../../../types/equations";
+import { QuadraticFunction_VieteProductProof, QuadraticFunction_VieteSumProof, QuadraticFunction_pProof, QuadraticFunction_qProof, QuadraticFunction_zeroPlaceProof } from "../../../../data/proofs";
+import { quadraticEquations } from "../../../../data/equations";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import ImageComponent from "../../../../components/articleItems/ImageComponent";
 import { NavLink } from "react-router-dom";

@@ -5,7 +5,7 @@ import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/style
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Loader from "../../../../components/Loader/Loader";
 import Formula from "../../../../components/articleItems/Formula";
-import ExponentialFormula from "../../../../types/objects/ExponentialFormula/ExponentialFormula";
+import ExponentialFormula from "../../../../types/ExponentialFormula/ExponentialFormula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {

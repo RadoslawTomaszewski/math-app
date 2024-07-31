@@ -3,7 +3,7 @@ import Title from "../../../../../components/articleItems/Title";
 import GraphImage from "../../../../../components/articleItems/GraphImage";
 import Trapezoid from "../../../../../assets/images/quadrangles/trapezoid.png"
 import Formula from "../../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
 import { NavLink } from "react-router-dom";
 

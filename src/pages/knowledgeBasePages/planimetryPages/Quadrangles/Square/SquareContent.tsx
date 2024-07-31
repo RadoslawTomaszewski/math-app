@@ -4,9 +4,9 @@ import GraphImage from "../../../../../components/articleItems/GraphImage";
 import Square from "../../../../../assets/images/quadrangles/square.png"
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
 import Formula from "../../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import Proof from "../../../../../components/articleItems/Proof";
-import { ParallelogramAreaSquareProof, TrapeziumAreaSquareProof, TrapezoidAreaSquareProof } from "../../../../../types/proofs";
+import { ParallelogramAreaSquareProof, TrapeziumAreaSquareProof, TrapezoidAreaSquareProof } from "../../../../../data/proofs";
 
 const SquareContent: FC = () => (
     <>

@@ -2,7 +2,7 @@ import { FC, useState, ChangeEvent } from "react";
 import Decimal from "decimal.js";
 import ConverterInputField from "./ConverterInputField";
 import Title from "../../../components/articleItems/Title";
-import { unitTime, unitTimeLabels } from "../../../types/units";
+import { unitTime, unitTimeLabels } from "../../../data/units";
 import { NavLink } from "react-router-dom";
 import { ArticleWrapper } from "../../../components/ArticleWrapper/ArticleWrapper";
 

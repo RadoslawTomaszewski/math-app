@@ -3,12 +3,12 @@ import Title from "../../../../../components/articleItems/Title";
 import GraphImage from "../../../../../components/articleItems/GraphImage";
 import Formula from "../../../../../components/articleItems/Formula";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
 import Paralellogram from "../../../../../assets/images/quadrangles/Parallelogram.png";
 import Proof from "../../../../../components/articleItems/Proof";
 import ParallelogramAngles from "../../../../../assets/images/quadrangles/Parallelogram_angles.png"
-import { TrapeziumAreaParallelogramProof } from "../../../../../types/proofs";
+import { TrapeziumAreaParallelogramProof } from "../../../../../data/proofs";
 import { NavLink } from "react-router-dom";
 
 

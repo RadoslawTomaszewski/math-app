@@ -1,8 +1,8 @@
-import { joinUniqueWithEquals } from "../../../utilities";
+import { joinUniqueWithEquals } from "../../utilities";
 import Fraction from "../Fraction/Fraction";
 import IrrationalSum from "../Irrational/IrrationalSum";
 import IrrationalSumDividedByInt from "../Irrational/IrrationalSumDividedByInt";
-import SquareRootNumber from "../Irrational/RootNumber/SquareRootNumber";
+import SquareRootNumber from "../RootNumber/SquareRootNumber";
 
 class QuadraticFormula {
     private delta: number = 0;

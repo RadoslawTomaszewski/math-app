@@ -1,4 +1,4 @@
-import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../../utilities";
+import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../utilities";
 import Fraction from "./Fraction";
 
 

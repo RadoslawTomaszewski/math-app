@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Title from "../../components/articleItems/Title";
 import { SidebarCategory } from "../../components/Sidebar/SidebarCategoryItem";
-import { sidebarLinksCalculators } from "../../routes/navigationData";
+import { sidebarLinksCalculators } from "../../data/navigationData";
 import Masonry from "react-masonry-css";
 
 export default function CalculatorsPage() {

@@ -3,14 +3,14 @@ import Title from "../../../../components/articleItems/Title";
 import GraphImage from "../../../../components/articleItems/GraphImage";
 import DerivedFunctionGraph from "../../../../assets/images/knowledge_base/math_analytics/derived_definition.png"
 import Formula from "../../../../components/articleItems/Formula";
-import { linearEquations, mathematicalAnalyticsFormulas } from "../../../../types/equations";
+import { linearEquations, mathematicalAnalyticsFormulas } from "../../../../data/equations";
 import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
 import Explanation from "../../../../components/articleItems/Explanation";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import Proof from "../../../../components/articleItems/Proof";
-import { derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfChainRuleDerivatives, proofOfChainRuleDerivativesSimplified, proofOfDerivedCosinus, proofOfDerivedCotanges1, proofOfDerivedCotanges2, proofOfDerivedExponent, proofOfDerivedExponente, proofOfDerivedLn, proofOfDerivedLog, proofOfDerivedSinus, proofOfDerivedTanges1, proofOfDerivedTanges2, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../types/proofs";
+import { derivedOfPowerFunctionNaturalFrom2, derivedOfPowerFunctionNegativeIntegralToMinus2, derivedOfPowerFunctionRational, derivedOfPowerFunctionReal, proofOfChainRuleDerivatives, proofOfChainRuleDerivativesSimplified, proofOfDerivedCosinus, proofOfDerivedCotanges1, proofOfDerivedCotanges2, proofOfDerivedExponent, proofOfDerivedExponente, proofOfDerivedLn, proofOfDerivedLog, proofOfDerivedSinus, proofOfDerivedTanges1, proofOfDerivedTanges2, proofOfEquationOfTheTangentToFunction_b, proofOfTheDifferenceRuleForDerivatives, proofOfTheProductRuleForDerivatives, proofOfTheQuotientRuleForDerivatives, proofOfTheSumRuleForDerivatives } from "../../../../data/proofs";
 import { iFrameStyle } from "../../../../utilities/styles";
 
 const DerivedFunctionContent: FC = () => {

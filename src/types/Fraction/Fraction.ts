@@ -1,4 +1,4 @@
-import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../../utilities";
+import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../utilities";
 import PrimeFactors from "../PrimeFactors/PrimeFactors";
 import TwoNumberPrimeFactors from "../PrimeFactors/TwoNumberPrimeFactors";
 

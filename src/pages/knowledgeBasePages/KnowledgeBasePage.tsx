@@ -1,6 +1,6 @@
 import Title from "../../components/articleItems/Title";
 import { NavLink } from "react-router-dom";
-import { sidebarLinksKnowledgeBase } from "../../routes/navigationData";
+import { sidebarLinksKnowledgeBase } from "../../data/navigationData";
 import { SidebarCategory } from "../../components/Sidebar/SidebarCategoryItem";
 import Masonry from "react-masonry-css";
 

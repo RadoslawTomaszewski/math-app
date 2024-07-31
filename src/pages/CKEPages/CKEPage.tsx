@@ -2,7 +2,7 @@ import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
 import Title from "../../components/articleItems/Title";
 import ArticleBorder from "../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";
-import { CKE8egz, CKElinks2005, CKElinks2015, CKElinks2023, gimegz } from "../../types/ckelinks";
+import { CKE8egz, CKElinks2005, CKElinks2015, CKElinks2023, gimegz } from "../../data/ckelinks";
 import { CKELinkStyle } from "../../utilities/styles";
 import sampleCard from "../../assets/images/CKE/karta_wzorow_2005.png";
 import sampleCard2 from "../../assets/images/CKE/karta_wzorow_2015.png";

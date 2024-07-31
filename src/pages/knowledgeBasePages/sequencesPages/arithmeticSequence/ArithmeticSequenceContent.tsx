@@ -4,8 +4,8 @@ import LegendParagraph from "../../../../components/articleItems/LegendParagraph
 import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Proof from "../../../../components/articleItems/Proof";
-import { arithmeticThreeConsecutiveTermsProof } from "../../../../types/proofs";
-import { arithmeticSequencesEquations } from "../../../../types/equations";
+import { arithmeticThreeConsecutiveTermsProof } from "../../../../data/proofs";
+import { arithmeticSequencesEquations } from "../../../../data/equations";
 
 const ArithmeticSequenceContent: FC = () => {
 

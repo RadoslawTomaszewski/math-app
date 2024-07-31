@@ -6,7 +6,7 @@ import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import ImageComponent from "../../../../components/articleItems/ImageComponent";
 import TrojkatRoznoramienny from "../../../../assets/images/knowledge_base/planimetry/twierdzenie_cosinusow.png";
 import Formula from "../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../types/equations";
+import { GeometryEquations } from "../../../../data/equations";
 import TriangleCategoryContent from "./TriangleCategories/TriangleCategoriesContent";
 import Proof from "../../../../components/articleItems/Proof";
 import { triangleConditionProof } from "./proofsAndEquations";

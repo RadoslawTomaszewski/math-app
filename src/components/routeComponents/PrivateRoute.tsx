@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { auth } from '../config/firebase';
+import { auth } from '../../config/firebase';
 
 
 const PrivateRoute: FC = () => {

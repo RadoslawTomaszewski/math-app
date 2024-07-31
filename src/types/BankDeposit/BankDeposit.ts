@@ -1,5 +1,6 @@
-import { CapitalizationType } from "../../../pages/calculatorsPages/otherCalculators/BankDepositCalculator/utilities";
-import { joinUniqueWithEquals } from "../../../utilities";
+
+import { CapitalizationType } from "../../pages/calculatorsPages/otherCalculators/BankDepositCalculator/utilities";
+import { joinUniqueWithEquals } from "../../utilities";
 import Fraction from "../Fraction/Fraction";
 import FractionFloat from "../Fraction/FractionFloat";
 

@@ -24,7 +24,7 @@ import cycling_symetric_Trapezoid1 from "../../../../../assets/images/quadrangle
 import cycling_symetric_Trapezoid2 from "../../../../../assets/images/quadrangles/cycling_symetric_Trapezoid2.png";
 
 
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 
 const CirclesRelationsContent: FC = () => (
     <>

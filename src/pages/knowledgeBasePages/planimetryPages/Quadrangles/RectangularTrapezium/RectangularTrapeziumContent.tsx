@@ -6,7 +6,7 @@ import LegendParagraph from "../../../../../components/articleItems/LegendParagr
 import RectangularTrapezium from "../../../../../assets/images/quadrangles/rectangular_trapezoid.png"
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
 import RectangularTrapeziumX from "../../../../../assets/images/quadrangles/rectangular_trapezium_x.png";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import { NavLink } from "react-router-dom";
 const RectangularTrapeziumContent: FC = () => {
 

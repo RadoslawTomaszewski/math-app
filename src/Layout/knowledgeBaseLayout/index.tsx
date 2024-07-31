@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
-import { sidebarLinksKnowledgeBase } from "../../routes/navigationData";
+import { sidebarLinksKnowledgeBase } from "../../data/navigationData";
 
 export const KnowledgeBaseLayout = () => {
   return (

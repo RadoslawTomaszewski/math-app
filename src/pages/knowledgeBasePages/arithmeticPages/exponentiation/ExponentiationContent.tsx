@@ -4,7 +4,7 @@ import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
 import Proof from "../../../../components/articleItems/Proof";
-import { exp1Proof, exp2Proof, exp3Proof, exp4Proof, exp5Proof } from "../../../../types/proofs";
+import { exp1Proof, exp2Proof, exp3Proof, exp4Proof, exp5Proof } from "../../../../data/proofs";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import { NavLink } from "react-router-dom";
 

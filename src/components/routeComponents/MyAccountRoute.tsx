@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { auth } from '../config/firebase';
-import PageLoader from '../components/Loader/PageLoader';
+import { auth } from '../../config/firebase';
+import PageLoader from '../Loader/PageLoader';
 
 const MyAccountRoute: FC = () => {
     const [loading, setLoading] = useState(true);

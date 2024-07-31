@@ -211,7 +211,7 @@ export const sidebarLinksCalculators: SidebarCategory[] = [
             { to: "rozklad-na-czynniki-pierwsze", text: "Rozkład na czynniki pierwsze" },
             { to: "nww-i-nwd", text: "NWW i NWD" },
             { to: "skracanie-ulamkow", text: "Skracanie ułamków" },
-            { to: "generator-liczb-pierwszych", text: "Liczby pierwsze", color: gray },
+            { to: "dzielniki", text: "Dzielniki" },
         ],
     },
     {

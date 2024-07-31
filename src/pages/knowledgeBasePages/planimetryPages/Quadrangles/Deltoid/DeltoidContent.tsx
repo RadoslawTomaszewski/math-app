@@ -6,8 +6,8 @@ import Deltoid2 from "../../../../../assets/images/quadrangles/deltoid_2.png";
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../../components/articleItems/Formula";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
-import { GeometryEquations } from "../../../../../types/equations";
-import { DeltoidAreaProof, TrapezoidAreaDiamondProof } from "../../../../../types/proofs";
+import { GeometryEquations } from "../../../../../data/equations";
+import { DeltoidAreaProof, TrapezoidAreaDiamondProof } from "../../../../../data/proofs";
 import Proof from "../../../../../components/articleItems/Proof";
 
 

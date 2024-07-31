@@ -3,7 +3,7 @@ import Title from "../../../../../components/articleItems/Title";
 import GraphImage from "../../../../../components/articleItems/GraphImage";
 import Trapeze from "../../../../../assets/images/quadrangles/trapeze.png"
 import Formula from "../../../../../components/articleItems/Formula";
-import { GeometryEquations } from "../../../../../types/equations";
+import { GeometryEquations } from "../../../../../data/equations";
 import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
 import TrapezeHalf from "../../../../../assets/images/quadrangles/tapeze_half.png";
 import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";

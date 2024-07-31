@@ -2,7 +2,7 @@ import { FC } from "react";
 import Title from "../../../../components/articleItems/Title";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
-import { statisticEquations } from "../../../../types/equations";
+import { statisticEquations } from "../../../../data/equations";
 import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
 
 const AveragesContent: FC = () => {

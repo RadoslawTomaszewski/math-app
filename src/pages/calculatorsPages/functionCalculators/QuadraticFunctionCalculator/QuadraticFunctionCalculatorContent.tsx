@@ -4,9 +4,9 @@ import Title from "../../../../components/articleItems/Title";
 import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
-import QuadraticFormula from "../../../../types/objects/QuadraticFormula/QuadraticFormula";
+import QuadraticFormula from "../../../../types/QuadraticFormula/QuadraticFormula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
-import { quadraticEquations } from "../../../../types/equations";
+import { quadraticEquations } from "../../../../data/equations";
 import Loader from "../../../../components/Loader/Loader";
 import { NavLink } from "react-router-dom";
 

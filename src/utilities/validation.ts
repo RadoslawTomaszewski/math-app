@@ -8,6 +8,7 @@ interface IIntegerFormData {
   numberGCDandLCM: number;
   naturalNumber: string;
   naturalNumberMax200: string;
+  naturalNumberMaxMillion: string;
   coefficientNotZero: string;
   exponentialCoefficient: string;
   logarithmicCoefficient: string;
@@ -111,6 +112,20 @@ export const numberRegisterOptions: RegisterFormOptions<IIntegerFormData> = {
     max: {
       value: 200,
       message: "Maksymalna wartość to 200",
+    },
+    min: {
+      value: 0,
+      message: "Minimalna wartość to 0",
+    },
+    pattern: {
+      value: /^\d+$/,
+      message: "Wprowadzona wartość musi być liczbą całkowitą",
+    },
+  },
+  naturalNumberMaxMillion: {
+    max: {
+      value: 1000000,
+      message: "Maksymalna wartość to 1'000'000",
     },
     min: {
       value: 0,

@@ -1,4 +1,4 @@
-import { linearEquations } from "../../equations";
+import { linearEquations } from "../../data/equations";
 import Fraction from "../Fraction/Fraction";
 
 class LinearFormula {

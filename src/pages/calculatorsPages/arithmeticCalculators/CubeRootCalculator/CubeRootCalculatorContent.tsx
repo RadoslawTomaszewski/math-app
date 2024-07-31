@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/articleItems/Title";
 import Formula from "../../../../components/articleItems/Formula";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
-import CubeRootNumber from "../../../../types/objects/Irrational/RootNumber/CubeRootNumber";
+import CubeRootNumber from "../../../../types/RootNumber/CubeRootNumber";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { NavLink } from "react-router-dom";

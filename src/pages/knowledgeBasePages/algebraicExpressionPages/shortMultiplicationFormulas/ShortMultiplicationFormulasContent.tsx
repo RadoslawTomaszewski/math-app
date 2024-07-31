@@ -6,8 +6,8 @@ import Proof from "../../../../components/articleItems/Proof";
 import skroconeMnozenie from "../../../../assets/images/function-graphs/skroconeMnozenie.png";
 import skroconeMnozenie3 from "../../../../assets/images/function-graphs/skroconeMnozenie3.png";
 import GraphImage from "../../../../components/articleItems/GraphImage";
-import { cubeOfTheDifference, cubeOfTheSum, differenceOfCubes, differenceOfSquares, squareOfTheDifference, squareOfTheSum, sumOfCubes } from "../../../../types/proofs";
-import { shortmultiplicationFormulas } from "../../../../types/equations";
+import { cubeOfTheDifference, cubeOfTheSum, differenceOfCubes, differenceOfSquares, squareOfTheDifference, squareOfTheSum, sumOfCubes } from "../../../../data/proofs";
+import { shortmultiplicationFormulas } from "../../../../data/equations";
 
 const ShortMultiplicationContent: FC = () => {
 

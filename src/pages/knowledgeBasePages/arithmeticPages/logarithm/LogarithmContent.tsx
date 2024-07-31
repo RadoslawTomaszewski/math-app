@@ -6,8 +6,8 @@ import LegendParagraph from "../../../../components/articleItems/LegendParagraph
 import { NavLink } from "react-router-dom";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 import Proof from "../../../../components/articleItems/Proof";
-import { arithmeticEquations } from "../../../../types/equations";
-import { changeOfBaseForLogarithmProof, logarithmDivideProof, logarithmProductProof, logarithmicBaseExpressedAsPowerProof, logarithmicBaseExpressedAsPower_1Proof1, logarithmicBaseExpressedAsPower_1Proof2, logarithmicBaseExpressedAsRootProof, switchOfBaseForLogarithmProof1, switchOfBaseForLogarithmProof2 } from "../../../../types/proofs";
+import { arithmeticEquations } from "../../../../data/equations";
+import { changeOfBaseForLogarithmProof, logarithmDivideProof, logarithmProductProof, logarithmicBaseExpressedAsPowerProof, logarithmicBaseExpressedAsPower_1Proof1, logarithmicBaseExpressedAsPower_1Proof2, logarithmicBaseExpressedAsRootProof, switchOfBaseForLogarithmProof1, switchOfBaseForLogarithmProof2 } from "../../../../data/proofs";
 
 const LogarithmContent: FC = () => {
   return (

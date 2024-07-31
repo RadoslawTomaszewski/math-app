@@ -7,8 +7,8 @@ import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import { useForm } from "react-hook-form";
 import { CapitalizationType } from "./utilities";
 import { numberRegisterOptions } from "../../../../utilities/validation";
-import BankDeposit from "../../../../types/objects/BankDeposit/BankDeposit";
-import BankDepositYears from "../../../../types/objects/BankDeposit/BankDepositYears";
+import BankDeposit from "../../../../types/BankDeposit/BankDeposit";
+import BankDepositYears from "../../../../types/BankDeposit/BankDepositYears";
 
 interface FormData {
   K0: string;

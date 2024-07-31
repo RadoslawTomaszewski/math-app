@@ -4,7 +4,7 @@ import Formula from "../../../../components/articleItems/Formula";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import GraphImage from "../../../../components/articleItems/GraphImage";
 import PiGif from "../../../../assets/images/function-graphs/pi.gif";
-import { mathConstants } from "../../../../types/equations";
+import { mathConstants } from "../../../../data/equations";
 import { NavLink } from "react-router-dom";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 

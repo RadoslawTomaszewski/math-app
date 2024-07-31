@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from "react";
 
-import LinearFormula from "../../../../types/objects/LinearFormula/LinearFormula";
+import LinearFormula from "../../../../types/LinearFormula/LinearFormula";
 import { useForm } from "react-hook-form";
 import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
 import Loader from "../../../../components/Loader/Loader";
 import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
-import { linearEquations } from "../../../../types/equations";
+import { linearEquations } from "../../../../data/equations";
 
 
 interface FormData {

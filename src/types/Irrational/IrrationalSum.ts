@@ -1,7 +1,7 @@
-import { joinUniqueWithEquals } from "../../../utilities";
+import { joinUniqueWithEquals } from "../../utilities";
 import PrimeFactors from "../PrimeFactors/PrimeFactors";
 import TwoNumberPrimeFactors from "../PrimeFactors/TwoNumberPrimeFactors";
-import SquareRootNumber from "./RootNumber/SquareRootNumber";
+import SquareRootNumber from "../RootNumber/SquareRootNumber";
 
 //IN:   A+sqrt(B) 
 //OUT:  C(D+sqrt(E))

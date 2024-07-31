@@ -6,7 +6,7 @@ import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
 import Formula from "../../../../components/articleItems/Formula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import Loader from "../../../../components/Loader/Loader";
-import GeometricSequence from "../../../../types/objects/Sequences/GeometricSequence";
+import GeometricSequence from "../../../../types/Sequences/GeometricSequence";
 
 interface FormData {
     a1: string;
