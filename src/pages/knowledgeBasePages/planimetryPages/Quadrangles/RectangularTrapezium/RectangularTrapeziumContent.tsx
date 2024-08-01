@@ -1,10 +1,10 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
-import Formula from "../../../../../components/articleItems/Formula";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
+import Formula from "../../../../../components/Formula/Formula";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
 import RectangularTrapezium from "../../../../../assets/images/quadrangles/rectangular_trapezoid.png"
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
 import RectangularTrapeziumX from "../../../../../assets/images/quadrangles/rectangular_trapezium_x.png";
 import { GeometryEquations } from "../../../../../data/equations";
 import { NavLink } from "react-router-dom";

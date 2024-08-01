@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
-import Title from "../../components/articleItems/Title";
+import { ArticleWrapper } from "../../components/Wrappers/ArticleWrapper";
+import Title from "../../components/Title/Title";
 
 export default function PrivacyPolicyPage() {
     return (

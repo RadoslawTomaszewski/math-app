@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
+import Title from "../../../../components/Title/Title";
 
 const PointContent: FC = () => {
 

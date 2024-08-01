@@ -8,4 +8,14 @@ export interface Topic {
     content: string;
     category: string;
     postNumber: string;
+    latexContent: string;
+}
+
+export interface Comment {
+    id: string;
+    postId: string;
+    author: string;
+    content: string;
+    latexContent?: string;
+    createdAt: Timestamp;
 }

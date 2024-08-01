@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import Title from "../../../../components/articleItems/Title";
+import Title from "../../../../components/Title/Title";
 import LinearFunctionCoefficientsCalculator from "./LinearFunctionCoefficientsCalculator";
 import LinearFunctionPointsCalculator from "./LinearFunctionPointsCalculator";
 

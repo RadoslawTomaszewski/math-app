@@ -1,12 +1,12 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
-import Formula from "../../../../../components/articleItems/Formula";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
+import Formula from "../../../../../components/Formula/Formula";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
 import { GeometryEquations } from "../../../../../data/equations";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
 import Paralellogram from "../../../../../assets/images/quadrangles/Parallelogram.png";
-import Proof from "../../../../../components/articleItems/Proof";
+import Proof from "../../../../../components/ProofAndExplanation/Proof";
 import ParallelogramAngles from "../../../../../assets/images/quadrangles/Parallelogram_angles.png"
 import { TrapeziumAreaParallelogramProof } from "../../../../../data/proofs";
 import { NavLink } from "react-router-dom";

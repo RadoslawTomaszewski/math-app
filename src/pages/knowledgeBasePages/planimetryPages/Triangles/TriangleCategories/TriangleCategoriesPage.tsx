@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Breadcrumb from "../../../../../components/Breadcrumb/Breadcrumb";
-import { ArticleWrapper } from "../../../../../components/ArticleWrapper/ArticleWrapper";
+import { ArticleWrapper } from "../../../../../components/Wrappers/ArticleWrapper";
 import TriangleCategoryContent from "./TriangleCategoriesContent";
 const TriangleCategoryPage: FC = () => {
     const grandparent = { link: "../", name: "Baza Wiedzy" };

@@ -1,12 +1,13 @@
 import React, { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Title from "../../../../components/articleItems/Title";
-import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Formula from "../../../../components/articleItems/Formula";
+import Title from "../../../../components/Title/Title";
+import { ErrorMessage, InputCoefficientStyle } from "../../../../styles/styles";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Formula from "../../../../components/Formula/Formula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import Loader from "../../../../components/Loader/Loader";
 import ArithmeticSequence from "../../../../types/Sequences/ArithmeticSequence";
+import PremiumContent from "../../../../components/PremiumContent/PremiumContent";
 
 interface FormData {
     a1: string;
@@ -129,95 +130,97 @@ const ArithmeticSequencesCalculatorContent: FC = () => {
                 </div>
                 {(!errors.a1 && !errors.r && watchA1 && watchR) && (
                     <>
-                        <div className="flex items-start overflow-x-auto overflow-y-hidden w-full">
-                            <div className="md:min-w-[700px] w-full">
-                                <div className="flex flex-row w-full items-start">
-                                    <Formula formula={`a_1=${arithmeticSequence.getA1()}`} />
-                                    <Formula formula={`r=${arithmeticSequence.getR()}`} />
-                                </div>
+                        <PremiumContent>
+                            <div className="flex items-start overflow-x-auto overflow-y-hidden w-full">
+                                <div className="md:min-w-[700px] w-full">
+                                    <div className="flex flex-row w-full items-start">
+                                        <Formula formula={`a_1=${arithmeticSequence.getA1()}`} />
+                                        <Formula formula={`r=${arithmeticSequence.getR()}`} />
+                                    </div>
 
-                                <div className="flex flex-col items-center w-full">
-                                    <div><b>Wzór ogólny ciągu:</b></div>
-                                    <Formula formula={`a_n = a_1 + (n-1) \\cdot r`} />
-                                    <Formula formula={arithmeticSequence.getFormula()} />
-                                    {arithmeticSequence.getR() !== 0 && (
-                                        <>
-                                            <span>zredukowana postać:</span>
-                                            <Formula formula={arithmeticSequence.getReducedFormula()} />
-                                        </>)
-                                    }
+                                    <div className="flex flex-col items-center w-full">
+                                        <div><b>Wzór ogólny ciągu:</b></div>
+                                        <Formula formula={`a_n = a_1 + (n-1) \\cdot r`} />
+                                        <Formula formula={arithmeticSequence.getFormula()} />
+                                        {arithmeticSequence.getR() !== 0 && (
+                                            <>
+                                                <span>zredukowana postać:</span>
+                                                <Formula formula={arithmeticSequence.getReducedFormula()} />
+                                            </>)
+                                        }
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <ArticleBorder styles="w-full" />
-                        <div><b>Monotoniczność ciągu:</b></div>
-                        {Number(watchR) > 0 && (<span>rosnący</span>)}
-                        {Number(watchR) === 0 && (<span>stały</span>)}
-                        {Number(watchR) < 0 && (<span>malejący</span>)}
-                        {Number(watchR) < 0 && (<span>malejący</span>)}
-                        <ArticleBorder styles="w-full" />
-                        <div className="flex justify-center w-full">
-                            <label className="flex flex-col flex-wrap items-center">
-                                <span className="text-wrap">Wprowadź liczbę <b>n</b> początkowych wyrazów ciągu:</span>
-                                <div className="InputsWrapper flex flex-row flex-wrap items-end mt-2">
-                                    <div>
-                                        <span><b>n&nbsp;=</b></span>
-                                        <input
-                                            className={InputCoefficientStyle}
-                                            type="number"
-                                            {...register("n", numberRegisterOptions.naturalNumberMax200NotZero)}
-                                            onChange={handleInputChange}
-                                        />
+                            <ArticleBorder styles="w-full" />
+                            <div><b>Monotoniczność ciągu:</b></div>
+                            {Number(watchR) > 0 && (<span>rosnący</span>)}
+                            {Number(watchR) === 0 && (<span>stały</span>)}
+                            {Number(watchR) < 0 && (<span>malejący</span>)}
+                            {Number(watchR) < 0 && (<span>malejący</span>)}
+                            <ArticleBorder styles="w-full" />
+                            <div className="flex justify-center w-full">
+                                <label className="flex flex-col flex-wrap items-center">
+                                    <span className="text-wrap">Wprowadź liczbę <b>n</b> początkowych wyrazów ciągu:</span>
+                                    <div className="InputsWrapper flex flex-row flex-wrap items-end mt-2">
+                                        <div>
+                                            <span><b>n&nbsp;=</b></span>
+                                            <input
+                                                className={InputCoefficientStyle}
+                                                type="number"
+                                                {...register("n", numberRegisterOptions.naturalNumberMax200NotZero)}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            </label>
-                        </div>
+                                </label>
+                            </div>
 
-                        {watchN && !errors.n && (
-                            <>
-                                <ArticleBorder styles="w-full" />
-                                {arithmeticSequence.getSequence(Number(watchN)).map((sequence, index) => (
-                                    <div key={index}>
-                                        <Formula formula={sequence} />
+                            {watchN && !errors.n && (
+                                <>
+                                    <ArticleBorder styles="w-full" />
+                                    {arithmeticSequence.getSequence(Number(watchN)).map((sequence, index) => (
+                                        <div key={index}>
+                                            <Formula formula={sequence} />
+                                        </div>
+                                    ))}
+                                    <span>Suma <b>n</b> początkowych wyrazów:</span>
+                                    <Formula formula={"S_n=\\frac{a_1+a_n}{2}\\cdot n"} />
+
+                                    {arithmeticSequence.getAn() < 0
+                                        ?
+                                        <Formula formula={`S_{${watchN}}=\\frac{${arithmeticSequence.getA1()}+(${arithmeticSequence.getAn()})}{2}\\cdot ${watchN}${arithmeticSequence.getSumFormula()}`} />
+                                        :
+                                        <Formula formula={`S_{${watchN}}=\\frac{${arithmeticSequence.getA1()}+${arithmeticSequence.getAn()}}{2}\\cdot ${watchN}${arithmeticSequence.getSumFormula()}`} />
+                                    }
+                                    <div className="w-full">
+                                        {showGraph && (
+                                            <>
+                                                {loading && <Loader />}
+                                                <div id="graph-container" />
+                                            </>
+                                        )}
                                     </div>
-                                ))}
-                                <span>Suma <b>n</b> początkowych wyrazów:</span>
-                                <Formula formula={"S_n=\\frac{a_1+a_n}{2}\\cdot n"} />
 
-                                {arithmeticSequence.getAn() < 0
-                                    ?
-                                    <Formula formula={`S_{${watchN}}=\\frac{${arithmeticSequence.getA1()}+(${arithmeticSequence.getAn()})}{2}\\cdot ${watchN}${arithmeticSequence.getSumFormula()}`} />
-                                    :
-                                    <Formula formula={`S_{${watchN}}=\\frac{${arithmeticSequence.getA1()}+${arithmeticSequence.getAn()}}{2}\\cdot ${watchN}${arithmeticSequence.getSumFormula()}`} />
-                                }
-                                <div className="w-full">
-                                    {showGraph && (
-                                        <>
-                                            {loading && <Loader />}
-                                            <div id="graph-container" />
-                                        </>
-                                    )}
-                                </div>
-
-                                <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
-                                    {showGraph ? 'odśwież wykres' : `generuj wykres dla ${watchN} wyrazów`}
-                                </button>
-                                {/* TODO: */}
-                                {/* <div className="max-w-full">
+                                    <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
+                                        {showGraph ? 'odśwież wykres' : `generuj wykres dla ${watchN} wyrazów`}
+                                    </button>
+                                    {/* TODO: */}
+                                    {/* <div className="max-w-full">
                                     <Proof steps={arithmeticSequence.getProof()} text={"Dowód, że ciąg jest arytmetyczny"} styles="min-w-[200px]">
                                         Teza:<Formula formula={"a_{n+1}-a_{n}=\\text{const.}"} />
                                         Dowód:
                                     </Proof>
                                 </div> */}
-                            </>
-                        )}
-                        {errors.n && (
-                            <div>
-                                <span className={ErrorMessage}>{errors.n?.message}</span>
-                                <br />
-                            </div>
-                        )}
+                                </>
+                            )}
+                            {errors.n && (
+                                <div>
+                                    <span className={ErrorMessage}>{errors.n?.message}</span>
+                                    <br />
+                                </div>
+                            )}
+                        </PremiumContent>
                     </>)}
             </form >
         </>

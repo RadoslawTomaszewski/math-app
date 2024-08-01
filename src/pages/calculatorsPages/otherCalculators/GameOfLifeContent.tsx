@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Title from "../../../components/articleItems/Title";
-import { BlueButtonStyle, GreenButtonStyle, RedButtonStyle } from "../../../utilities/styles";
-import ArticleBorder from "../../../components/articleItems/ArticleBorder";
+import Title from "../../../components/Title/Title";
+import { BlueButtonStyle, GreenButtonStyle, RedButtonStyle } from "../../../styles/styles";
+import ArticleBorder from "../../../components/ArticleBorder/ArticleBorder";
 import { classNames } from "../../../utilities";
 
 const numRows = 30;

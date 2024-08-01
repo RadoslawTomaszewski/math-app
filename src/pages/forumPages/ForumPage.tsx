@@ -1,14 +1,17 @@
 import { useEffect, useState, useMemo } from "react";
 import { auth, db } from "../../config/firebase";
-import { collection, getDocs, doc, Timestamp } from "firebase/firestore";
-import ArticleBorder from "../../components/articleItems/ArticleBorder";
+import { collection, getDocs, Timestamp } from "firebase/firestore";
+import ArticleBorder from "../../components/ArticleBorder/ArticleBorder";
 import { NavLink } from "react-router-dom";
-import { BlueButtonStyle } from "../../utilities/styles";
+import { BlueButtonStyle } from "../../styles/styles";
 import { classNames } from "../../utilities";
+import NavigateTo from "../../components/NavigateTo/NavigateTo";
 
 export default function ForumPage() {
     const [topicsList, setTopicsList] = useState<Array<any>>([]);
     const [searchQuery, setSearchQuery] = useState<string>('');
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const topicsPerPage = 12;
     const topicsCollectionRef = useMemo(() => collection(db, "Topics"), []);
 
     const getTopicsList = async () => {
@@ -56,7 +59,10 @@ export default function ForumPage() {
         setSearchQuery(category);
     };
 
-    // Sort topicsList by postNumber in descending order
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    };
+
     const sortedTopicsList = topicsList.sort((a, b) => b.postNumber - a.postNumber);
 
     const filteredTopics = sortedTopicsList.filter(topic =>
@@ -65,6 +71,11 @@ export default function ForumPage() {
         topic.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
         topic.category.toLowerCase().includes(searchQuery.toLowerCase())
     );
+
+    const indexOfLastTopic = currentPage * topicsPerPage;
+    const indexOfFirstTopic = indexOfLastTopic - topicsPerPage;
+    const currentTopics = filteredTopics.slice(indexOfFirstTopic, indexOfLastTopic);
+    const totalPages = Math.ceil(filteredTopics.length / topicsPerPage);
 
     const uniqueCategories = Array.from(new Set(topicsList.map(topic => topic.category)));
 
@@ -80,8 +91,16 @@ export default function ForumPage() {
                 />
             </div>
 
-            {filteredTopics.map((topic) => (
-                <div key={topic.id} className={`flex flex-row justify-between border-2 border-black p-4 my-2 w-full shadow-md ${topic.author === 'radek44413' ? 'bg-[#7dcbf9]' : ''}`}>
+            {auth.currentUser?.email && (
+                <NavLink to={"nowy-watek"}>
+                    <button className={classNames(BlueButtonStyle, "w-full mb-3")}>
+                        Nowy wątek
+                    </button>
+                </NavLink>
+            )}
+
+            {currentTopics.map((topic) => (
+                <div key={topic.id} className={`flex flex-row justify-between border-2 rounded border-black p-4 my-2 w-full shadow-md ${topic.author === 'radek44413' ? 'bg-[#7dcbf9]' : ''}`}>
                     <div>
                         <NavLink to={`topic/${topic.id}`}>
                             <span><b>#{topic.postNumber} </b></span>
@@ -114,26 +133,27 @@ export default function ForumPage() {
                 </div>
             </div>
 
+            <div className="flex justify-center my-4">
+                {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                    <button
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`mx-1 px-3 py-1 rounded ${page === currentPage ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
+                    >
+                        {page}
+                    </button>
+                ))}
+            </div>
+
             {!auth.currentUser?.email && (
                 <>
                     <ArticleBorder styles="w-full" />
                     <p>
-                        <NavLink to="../logowanie" className="hover:underline">
-                            <b>Zaloguj się </b>
-                        </NavLink>{" "}
-                        aby mieć możliwość dodawania i komentowania postów na forum
+                        <NavigateTo to="../logowanie">Zaloguj się</NavigateTo>
+                        &nbsp;aby mieć możliwość dodawania i komentowania postów na forum
                     </p>
                 </>
             )}
-
-            {auth.currentUser?.email && (
-                <NavLink to={"nowy-watek"}>
-                    <button className={classNames(BlueButtonStyle, "w-full mb-3")}>
-                        Nowy wątek
-                    </button>
-                </NavLink>
-            )}
-
         </>
     );
 }

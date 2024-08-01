@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import GraphImage from "../../../../components/articleItems/GraphImage";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import GraphImage from "../../../../components/imageComponents/GraphImage";
 import PiGif from "../../../../assets/images/function-graphs/pi.gif";
 import { mathConstants } from "../../../../data/equations";
 import { NavLink } from "react-router-dom";

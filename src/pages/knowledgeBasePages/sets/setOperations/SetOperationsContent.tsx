@@ -1,7 +1,7 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import Asupply from "../../../../assets/images/setsExample/A'.png";
 import Bsupply from "../../../../assets/images/setsExample/B'.png";
 import AnB from "../../../../assets/images/setsExample/AnB.png";
@@ -9,7 +9,7 @@ import AuB from "../../../../assets/images/setsExample/AuB.png";
 import DefaultAandB from "../../../../assets/images/setsExample/default.png";
 import A_without_B from "../../../../assets/images/setsExample/a_without_b.png";
 import B_without_A from "../../../../assets/images/setsExample/b_without_a.png";
-import GraphImage from "../../../../components/articleItems/GraphImage";
+import GraphImage from "../../../../components/imageComponents/GraphImage";
 
 const SetOperationsContent: FC = () => {
 

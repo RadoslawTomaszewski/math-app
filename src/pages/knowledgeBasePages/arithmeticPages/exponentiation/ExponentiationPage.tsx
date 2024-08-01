@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
 import ExponentiationContent from "./ExponentiationContent";
-import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
+import { ArticleWrapper } from "../../../../components/Wrappers/ArticleWrapper";
 
 const ExponentiationPage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };

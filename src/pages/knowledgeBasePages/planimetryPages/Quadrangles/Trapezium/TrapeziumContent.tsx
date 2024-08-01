@@ -1,12 +1,12 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
 import Trapeze from "../../../../../assets/images/quadrangles/trapeze.png"
-import Formula from "../../../../../components/articleItems/Formula";
+import Formula from "../../../../../components/Formula/Formula";
 import { GeometryEquations } from "../../../../../data/equations";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
 import TrapezeHalf from "../../../../../assets/images/quadrangles/tapeze_half.png";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
 import TrapeziumAngles from "../../../../../assets/images/quadrangles/trapezium_angles.png";
 import { NavLink } from "react-router-dom";
 

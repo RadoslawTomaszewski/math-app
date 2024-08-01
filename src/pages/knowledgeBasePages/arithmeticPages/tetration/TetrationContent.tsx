@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
+import Title from "../../../../components/Title/Title";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
-import Formula from "../../../../components/articleItems/Formula";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Formula from "../../../../components/Formula/Formula";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 
 
 const TetrationContent: FC = () => (

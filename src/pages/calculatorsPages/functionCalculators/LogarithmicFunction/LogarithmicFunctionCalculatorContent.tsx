@@ -1,13 +1,13 @@
 import React, { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Title from "../../../../components/articleItems/Title";
-import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Title from "../../../../components/Title/Title";
+import { ErrorMessage, InputCoefficientStyle } from "../../../../styles/styles";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import Loader from "../../../../components/Loader/Loader";
-import Formula from "../../../../components/articleItems/Formula";
+import Formula from "../../../../components/Formula/Formula";
 import LogarithmicFormula from "../../../../types/LogharitmicFormula/LogarithmicFormula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
-import Explanation from "../../../../components/articleItems/Explanation";
+import Explanation from "../../../../components/ProofAndExplanation/Explanation";
 
 
 interface FormData {

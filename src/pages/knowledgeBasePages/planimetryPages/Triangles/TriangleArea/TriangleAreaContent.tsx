@@ -1,10 +1,10 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import Formula from "../../../../../components/articleItems/Formula";
+import Title from "../../../../../components/Title/Title";
+import Formula from "../../../../../components/Formula/Formula";
 
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../../components/CoreCurriculum/CoreCurriculum";
-import ImageComponent from "../../../../../components/articleItems/ImageComponent";
+import ImageComponent from "../../../../../components/imageComponents/ImageComponent";
 import pole1 from "../../../../../assets/images/knowledge_base/planimetry/pole_trojkata_1.png";
 import pole2 from "../../../../../assets/images/knowledge_base/planimetry/pole_trojkata_2.png";
 import pole3 from "../../../../../assets/images/knowledge_base/planimetry/pole_trojkata_3.png";
@@ -12,7 +12,7 @@ import pole4 from "../../../../../assets/images/knowledge_base/planimetry/pole_t
 import pole5 from "../../../../../assets/images/knowledge_base/planimetry/pole_trojkata_5.png";
 import pole6 from "../../../../../assets/images/knowledge_base/planimetry/pole_trojkata_6.png";
 import pole7 from "../../../../../assets/images/knowledge_base/planimetry/pole_trojkata_7.png";
-import Proof from "../../../../../components/articleItems/Proof";
+import Proof from "../../../../../components/ProofAndExplanation/Proof";
 import { HeronProof } from "../proofsAndEquations";
 
 

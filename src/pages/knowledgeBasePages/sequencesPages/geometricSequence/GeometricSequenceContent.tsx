@@ -1,13 +1,13 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Proof from "../../../../components/articleItems/Proof";
+import Title from "../../../../components/Title/Title";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Proof from "../../../../components/ProofAndExplanation/Proof";
 import { geometricSequenceRatioProof, geometricSequenceRatio_sumProof, geometricThreeConsecutiveTermsProof } from "../../../../data/proofs";
 import { GeometricSequencesEquations } from "../../../../data/equations";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
-import MathExpression from "../../../../components/articleItems/MathExpression";
+import MathExpression from "../../../../components/MathExpression/MathExpression";
 import graph1_1 from "../../../../assets/images/knowledge_base/sequences/geometricSequence_1.1.png";
 import graph1_2 from "../../../../assets/images/knowledge_base/sequences/geometricSequence_1.2.png";
 import graph1_3 from "../../../../assets/images/knowledge_base/sequences/geometricSequence_1.3.png";
@@ -23,7 +23,7 @@ import graph3_4 from "../../../../assets/images/knowledge_base/sequences/geometr
 import graph3_5 from "../../../../assets/images/knowledge_base/sequences/geometricSequence_3.5.png";
 import graph3_6 from "../../../../assets/images/knowledge_base/sequences/geometricSequence_3.6.png";
 import graph3_7 from "../../../../assets/images/knowledge_base/sequences/geometricSequence_3.7.png";
-import GraphImage from "../../../../components/articleItems/GraphImage";
+import GraphImage from "../../../../components/imageComponents/GraphImage";
 
 const GeometricSequenceContent: FC = () => {
 

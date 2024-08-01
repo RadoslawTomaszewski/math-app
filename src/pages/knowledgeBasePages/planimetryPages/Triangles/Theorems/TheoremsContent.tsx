@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import Title from "../../../../../components/articleItems/Title";
+import Title from "../../../../../components/Title/Title";
 import SinusesLawImage from "../../../../../assets/images/knowledge_base/planimetry/twierdzenie_sinusow.png";
 import SinusesLawImage2 from "../../../../../assets/images/knowledge_base/planimetry/twierdzenie_sinusow_2.png";
 import SinusesLawImage3 from "../../../../../assets/images/knowledge_base/planimetry/twierdzenie_sinusow_3.png";
@@ -11,14 +11,14 @@ import CosinusesLawImage from "../../../../../assets/images/knowledge_base/plani
 import CosinusesLawImage2 from "../../../../../assets/images/knowledge_base/planimetry/twierdzenie_cosinusow_2.png";
 import CosinusesLawImage3 from "../../../../../assets/images/knowledge_base/planimetry/trojkat_rozwartokatny.png";
 import CentroidTheorem from "../../../../../assets/images/knowledge_base/planimetry/Twierdzenie_o_srodkowych.png";
-import Formula from "../../../../../components/articleItems/Formula";
+import Formula from "../../../../../components/Formula/Formula";
 import { GeometryEquations } from "../../../../../data/equations";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
-import ImageComponent from "../../../../../components/articleItems/ImageComponent";
-import Explanation from "../../../../../components/articleItems/Explanation";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
+import ImageComponent from "../../../../../components/imageComponents/ImageComponent";
+import Explanation from "../../../../../components/ProofAndExplanation/Explanation";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../../components/CoreCurriculum/CoreCurriculum";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
-import Proof from "../../../../../components/articleItems/Proof";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
+import Proof from "../../../../../components/ProofAndExplanation/Proof";
 
 const TheoremsContent: FC = () => {
 

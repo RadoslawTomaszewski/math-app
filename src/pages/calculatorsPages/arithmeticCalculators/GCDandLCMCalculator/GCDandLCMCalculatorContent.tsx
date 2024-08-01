@@ -1,10 +1,10 @@
 import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import { ErrorMessage, InputNaturalNumberStyle } from "../../../../utilities/styles";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import { ErrorMessage, InputNaturalNumberStyle } from "../../../../styles/styles";
 import PrimeFactors from "../../../../types/PrimeFactors/PrimeFactors";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import TwoNumberPrimeFactors from "../../../../types/PrimeFactors/TwoNumberPrimeFactors";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 

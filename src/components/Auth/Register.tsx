@@ -1,14 +1,14 @@
 import { auth, db, googleProvider } from "../../config/firebase";
 import { createUserWithEmailAndPassword, signInWithPopup, sendEmailVerification } from 'firebase/auth';
 import { useNavigate } from "react-router-dom"
-import Title from "../articleItems/Title"
-import { BlueButtonStyle } from "../../utilities/styles"
+import Title from "../Title/Title"
+import { BlueButtonStyle } from "../../styles/styles"
 import { classNames } from "../../utilities"
 import majzaLogo from "../../assets/images/majza.eu_logo.png";
 import { useMemo, useState } from "react";
 import GoogleIcon from "../../assets/icons/google.svg"
-import ImageComponent from "../articleItems/ImageComponent";
-import ArticleBorder from "../articleItems/ArticleBorder";
+import ImageComponent from "../imageComponents/ImageComponent";
+import ArticleBorder from "../ArticleBorder/ArticleBorder";
 import { LoginFormInputs } from "./styles";
 import { collection, setDoc, doc, query, where, getDocs } from "firebase/firestore";
 
@@ -64,8 +64,6 @@ export const Register = () => {
                     nick: userCredentials.nick,
                     email: userCredentials.email,
                     createdAt: new Date(),
-                    posts: 0,
-                    comments: 0,
                     isPremium: false,
                     isAdmin: false,
                     isGoogleAccount: false,

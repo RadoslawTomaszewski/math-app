@@ -1,14 +1,14 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
 import Deltoid from "../../../../../assets/images/quadrangles/deltoid.png";
 import Deltoid2 from "../../../../../assets/images/quadrangles/deltoid_2.png";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
-import Formula from "../../../../../components/articleItems/Formula";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
+import Formula from "../../../../../components/Formula/Formula";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
 import { GeometryEquations } from "../../../../../data/equations";
 import { DeltoidAreaProof, TrapezoidAreaDiamondProof } from "../../../../../data/proofs";
-import Proof from "../../../../../components/articleItems/Proof";
+import Proof from "../../../../../components/ProofAndExplanation/Proof";
 
 
 

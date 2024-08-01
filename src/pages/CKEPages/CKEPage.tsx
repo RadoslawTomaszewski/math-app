@@ -1,13 +1,13 @@
-import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
-import Title from "../../components/articleItems/Title";
-import ArticleBorder from "../../components/articleItems/ArticleBorder";
+import { ArticleWrapper } from "../../components/Wrappers/ArticleWrapper";
+import Title from "../../components/Title/Title";
+import ArticleBorder from "../../components/ArticleBorder/ArticleBorder";
 import { NavLink } from "react-router-dom";
 import { CKE8egz, CKElinks2005, CKElinks2015, CKElinks2023, gimegz } from "../../data/ckelinks";
-import { CKELinkStyle } from "../../utilities/styles";
+import { CKELinkStyle } from "../../styles/styles";
 import sampleCard from "../../assets/images/CKE/karta_wzorow_2005.png";
 import sampleCard2 from "../../assets/images/CKE/karta_wzorow_2015.png";
 import sampleCard3 from "../../assets/images/CKE/karta_wzorow_2023.png";
-import GraphImage from "../../components/articleItems/GraphImage";
+import GraphImage from "../../components/imageComponents/GraphImage";
 
 export default function CKEPage() {
   return (

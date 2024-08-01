@@ -2,10 +2,10 @@ import { FC, useEffect, useState } from "react";
 
 import LinearFormula from "../../../../types/LinearFormula/LinearFormula";
 import { useForm } from "react-hook-form";
-import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
+import { ErrorMessage, InputCoefficientStyle } from "../../../../styles/styles";
 import Loader from "../../../../components/Loader/Loader";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Formula from "../../../../components/articleItems/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Formula from "../../../../components/Formula/Formula";
 import { linearEquations } from "../../../../data/equations";
 
 

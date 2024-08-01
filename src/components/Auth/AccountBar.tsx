@@ -6,6 +6,7 @@ import { LoginButton, LogoutButton } from "./styles";
 import { classNames } from "../../utilities";
 import { getDoc, doc } from "firebase/firestore";
 import PageLoader from "../Loader/PageLoader";
+import NavigateTo from "../NavigateTo/NavigateTo";
 
 const AccountBar: FC = () => {
     const [currentUserNick, setCurrentUserNick] = useState<string | null>(null);
@@ -50,7 +51,7 @@ const AccountBar: FC = () => {
             {loading ? <PageLoader /> : (
                 <>
                     {!currentUserNick && <p>Jesteś niezalogowany</p>}
-                    {currentUserNick && <p>Jesteś zalogowany jako <NavLink to="moje-konto" className="hover:underline"><b>{currentUserNick}</b></NavLink></p>}
+                    {currentUserNick && <p>Jesteś zalogowany jako <NavigateTo to="moje-konto">{currentUserNick}</NavigateTo></p>}
                     {nickIsNull && <p className="text-[red]">Aby mieć dostęp do forum <NavLink to="moje-konto" className="hover:underline"><b>ustaw nick</b></NavLink></p>}
                     <NavLink to="/logowanie">
                         {!currentUserNick && (

@@ -1,10 +1,10 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
 import Trapezoid from "../../../../../assets/images/quadrangles/trapezoid.png"
-import Formula from "../../../../../components/articleItems/Formula";
+import Formula from "../../../../../components/Formula/Formula";
 import { GeometryEquations } from "../../../../../data/equations";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
 import { NavLink } from "react-router-dom";
 
 const TrapezoidContent: FC = () => {

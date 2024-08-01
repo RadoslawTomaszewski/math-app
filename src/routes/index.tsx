@@ -1,5 +1,4 @@
 import { FC } from "react";
-import "../styles/navbar.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 //LAYOUTS
 import { Layout } from "../Layout";
@@ -18,7 +17,7 @@ import ForumPage from "../pages/forumPages/ForumPage";
 import RegistrationPage from "../pages/loginPages/RegistrationPage";
 import ResetPasswordPage from "../pages/loginPages/ResetPasswordPage";
 import PrivacyPolicyPage from "../pages/privacyPolicyPage/PrivacyPolicyPage";
-import AccountPage from "../pages/accountPage/AccountPage";
+import AccountPage from "../pages/accountPages/AccountPage";
 import PrivateRoute from "../components/routeComponents/PrivateRoute";
 import MyAccountRoute from "../components/routeComponents/MyAccountRoute";
 import NewPostForm from "../pages/forumPages/NewPostFormPage/NewPostFormPage";
@@ -26,6 +25,7 @@ import { ForumLayout } from "../Layout/forumLayout";
 import PostDetailPage from "../pages/forumPages/PostDetailPage/PostDetailPage";
 import { knowledgeBaseRoutes } from "./KnowledgeBaseRoutes";
 import { calculatorRoutes } from "./CalculatorsRoutes";
+import ActivatePremiumPage from "../pages/accountPages/ActivatePremiumPage";
 
 export const Router: FC = () => {
 
@@ -63,6 +63,7 @@ export const Router: FC = () => {
                     </Route>
                     <Route element={<PrivateRoute />}>
                         <Route path="moje-konto" element={<AccountPage />} />
+                        <Route path="premium" element={<ActivatePremiumPage />} />
                     </Route>
                     <Route path="cke" element={<CKEPage />} />
                     <Route path="wsparcie" element={<CoffeePage />} />

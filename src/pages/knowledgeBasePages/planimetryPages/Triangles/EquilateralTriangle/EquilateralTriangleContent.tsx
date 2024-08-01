@@ -1,16 +1,16 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import Formula from "../../../../../components/articleItems/Formula";
+import Title from "../../../../../components/Title/Title";
+import Formula from "../../../../../components/Formula/Formula";
 
 
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../../components/CoreCurriculum/CoreCurriculum";
 import TrojkatRownoboczny from "../../../../../assets/images/knowledge_base/planimetry/trojkat_rownoboczny.png";
 import TrojkatRownoboczny2 from "../../../../../assets/images/knowledge_base/planimetry/trojkat_rownoboczny_2.png";
 import TrojkatRownoboczny3 from "../../../../../assets/images/knowledge_base/planimetry/trojkat_rownoboczny_3.png";
-import ImageComponent from "../../../../../components/articleItems/ImageComponent";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
+import ImageComponent from "../../../../../components/imageComponents/ImageComponent";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
 import { NavLink } from "react-router-dom";
-import Proof from "../../../../../components/articleItems/Proof";
+import Proof from "../../../../../components/ProofAndExplanation/Proof";
 
 
 const EquilateralTriangleContent: FC = () => {

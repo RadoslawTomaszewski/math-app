@@ -1,15 +1,16 @@
 import { auth, googleProvider } from "../../config/firebase";
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { NavLink, useNavigate } from "react-router-dom"
-import Title from "../articleItems/Title"
-import { BlueButtonStyle } from "../../utilities/styles"
+import Title from "../Title/Title"
+import { BlueButtonStyle } from "../../styles/styles"
 import { classNames } from "../../utilities"
 import majzaLogo from "../../assets/images/majza.eu_logo.png";
 import { useState } from "react";
 import GoogleIcon from "../../assets/icons/google.svg"
-import ImageComponent from "../articleItems/ImageComponent";
-import ArticleBorder from "../articleItems/ArticleBorder";
+import ImageComponent from "../imageComponents/ImageComponent";
+import ArticleBorder from "../ArticleBorder/ArticleBorder";
 import { LoginFormInputs } from "./styles";
+import NavigateTo from "../NavigateTo/NavigateTo";
 
 interface IUserCredentials {
     email: string;
@@ -74,7 +75,7 @@ export const LogIn = () => {
                     <input placeholder="np. !M@jza.eu07" type="password" onChange={(e) => { handleCredentials(e) }} name="password" className={LoginFormInputs} />
                     <button onClick={(e) => { handleSignIn(e) }} className={classNames(BlueButtonStyle, "w-full mb-3")}>Zaloguj się</button>
                     {error && <p className="text-[red] text-center">{error}</p>}
-                    <div className="text-center m-5"><NavLink to="../odzyskiwanie-hasla" className="hover:underline"><p><b>Nie pamiętam hasła</b></p></NavLink></div>
+                    <div className="text-center m-5"><NavigateTo to="../odzyskiwanie-hasla">Nie pamiętam hasła</NavigateTo></div>
                     <div className="text-center m-5">Nie masz jeszcze konta?<NavLink to="../rejestracja" className="hover:underline"><p><b> Zarejestruj się</b></p></NavLink></div>
                     <ArticleBorder />
                     <ImageComponent src={majzaLogo} alt={"logo majza.eu"} styles="max-h-[50px] my-2" />

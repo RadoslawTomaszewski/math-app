@@ -1,11 +1,11 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
 import Square from "../../../../../assets/images/quadrangles/square.png"
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
-import Formula from "../../../../../components/articleItems/Formula";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
+import Formula from "../../../../../components/Formula/Formula";
 import { GeometryEquations } from "../../../../../data/equations";
-import Proof from "../../../../../components/articleItems/Proof";
+import Proof from "../../../../../components/ProofAndExplanation/Proof";
 import { ParallelogramAreaSquareProof, TrapeziumAreaSquareProof, TrapezoidAreaSquareProof } from "../../../../../data/proofs";
 
 const SquareContent: FC = () => (

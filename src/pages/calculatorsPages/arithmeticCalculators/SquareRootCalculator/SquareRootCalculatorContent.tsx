@@ -1,10 +1,10 @@
 import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import { ErrorMessage, InputShortNumberStyle } from "../../../../styles/styles";
 import SquareRootNumber from "../../../../types/RootNumber/SquareRootNumber";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import { NavLink } from "react-router-dom";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 

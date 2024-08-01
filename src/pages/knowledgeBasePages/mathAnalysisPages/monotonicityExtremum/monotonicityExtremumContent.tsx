@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import ImageComponent from "../../../../components/articleItems/ImageComponent";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import ImageComponent from "../../../../components/imageComponents/ImageComponent";
 import FunkcjaRosnaca from "../../../../assets/images/knowledge_base/math_analytics/funkcja_rosnaca.png";
 import FunkcjaMalejaca from "../../../../assets/images/knowledge_base/math_analytics/funkcja_malejaca.png";
 import FunkcjaStala from "../../../../assets/images/knowledge_base/math_analytics/funkcja_stala.png";
@@ -17,7 +17,7 @@ import Przyklad02a from "../../../../assets/images/knowledge_base/math_analytics
 import Przyklad02b from "../../../../assets/images/knowledge_base/math_analytics/przyklad02b.png"
 
 import { NavLink } from "react-router-dom";
-import Explanation from "../../../../components/articleItems/Explanation";
+import Explanation from "../../../../components/ProofAndExplanation/Explanation";
 
 const MonotonicityExtremumContent: FC = () => (
     <>

@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Formula from "../../../../components/articleItems/Formula";
+import Title from "../../../../components/Title/Title";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Formula from "../../../../components/Formula/Formula";
 import { statisticEquations } from "../../../../data/equations";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
 
 const AveragesContent: FC = () => {
   return (

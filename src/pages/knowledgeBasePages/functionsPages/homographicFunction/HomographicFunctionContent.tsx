@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Title from "../../../../components/Title/Title";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 
 const HomographicFunctionContent: FC = () => {

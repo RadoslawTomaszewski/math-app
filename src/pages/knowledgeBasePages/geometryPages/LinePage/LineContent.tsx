@@ -1,12 +1,12 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
+import Title from "../../../../components/Title/Title";
 import Tangent from "../../../../assets/images/knowledge_base/geometry/tangent.png";
 import Secant from "../../../../assets/images/knowledge_base/geometry/secant.png";
 import Line from "../../../../assets/images/knowledge_base/geometry/line.png";
 import Normal from "../../../../assets/images/knowledge_base/geometry/normal.png";
 import Bisection from "../../../../assets/images/knowledge_base/geometry/bisection.png";
-import GraphImage from "../../../../components/articleItems/GraphImage";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import GraphImage from "../../../../components/imageComponents/GraphImage";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 
 

@@ -1,14 +1,14 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
+import Title from "../../../../../components/Title/Title";
 
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../../components/CoreCurriculum/CoreCurriculum";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
-import ImageComponent from "../../../../../components/articleItems/ImageComponent";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
+import ImageComponent from "../../../../../components/imageComponents/ImageComponent";
 
 import TrojkatRownoramienny from "../../../../../assets/images/knowledge_base/planimetry/trojkat_rownoramienny.png";
 import RelacjaKatBok from "../../../../../assets/images/knowledge_base/planimetry/relacja_kat_bok_trojkat.png";
 import PodzialTrojkatow from "../../../../../assets/images/knowledge_base/planimetry/podzial_trojkatow.png";
-import Formula from "../../../../../components/articleItems/Formula";
+import Formula from "../../../../../components/Formula/Formula";
 
 
 

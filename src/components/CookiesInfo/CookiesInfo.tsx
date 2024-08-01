@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { BlueButtonStyle, RedButtonStyle } from "../../utilities/styles";
+import { BlueButtonStyle, RedButtonStyle } from "../../styles/styles";
 import { classNames } from "../../utilities";
 import ReactGA from "react-ga4";
 

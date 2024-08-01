@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
-import Formula from "../../../../../components/articleItems/Formula";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
+import Formula from "../../../../../components/Formula/Formula";
 import TrapezoidInCircle from "../../../../../assets/images/quadrangles/trapezoid_in_circle.png";
 import TrapezoidOnCircle from "../../../../../assets/images/quadrangles/trapezoid_on_circle.png";
 import TrapezoidInCircle2 from "../../../../../assets/images/quadrangles/trapezoid_in_circle_2.png";

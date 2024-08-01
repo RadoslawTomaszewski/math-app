@@ -1,9 +1,9 @@
 import React, { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Title from "../../../../components/articleItems/Title";
-import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Formula from "../../../../components/articleItems/Formula";
+import Title from "../../../../components/Title/Title";
+import { ErrorMessage, InputCoefficientStyle } from "../../../../styles/styles";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Formula from "../../../../components/Formula/Formula";
 import QuadraticFormula from "../../../../types/QuadraticFormula/QuadraticFormula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import { quadraticEquations } from "../../../../data/equations";
@@ -295,13 +295,6 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <button type="button" className="my-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleGenerateGraph}>
                             {showGraph ? 'odśwież wykres' : 'generuj wykres'}
                         </button>
-                        <div className="flex flex-col">
-                            <span><b>Znane błędy:</b></span>
-                            <p>(01) nieprawidłowa postać iloczynowa, gdy b=0</p>
-                            <br />
-                            <span>Nie wiesz co tu się dzieje?</span>
-                            <span> Przeczytaj artykuł o <NavLink to="../../baza-wiedzy/funkcja-kwadratowa"><b>funkcji kwadratowej</b></NavLink></span>
-                        </div>
                     </>)}
             </form >
         </>

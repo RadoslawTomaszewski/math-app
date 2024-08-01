@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
 import GeometricSequenceContent from "./GeometricSequenceContent";
-import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
+import { ArticleWrapper } from "../../../../components/Wrappers/ArticleWrapper";
 
 const GeometricSequencePage: FC = () => {
   const grandparent = { link: "../", name: "Baza Wiedzy" };

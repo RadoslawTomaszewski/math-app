@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import Proof from "../../../../components/articleItems/Proof";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
+import Proof from "../../../../components/ProofAndExplanation/Proof";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
 
 const AdditionContent: FC = () => {

@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import MathExpression from "../../../../components/articleItems/MathExpression";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import MathExpression from "../../../../components/MathExpression/MathExpression";
 import { useMediaQuery } from "@mui/material";
 
 const NaturalNumberContent: FC = () => {

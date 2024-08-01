@@ -1,6 +1,7 @@
 import { FC, ReactNode, useState } from "react";
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg";
 import { ReactComponent as CollapseIcon } from "../../assets/icons/collapse.svg";
+import PremiumContent from "../PremiumContent/PremiumContent";
 
 export interface IExplanationProps {
     text: string;
@@ -35,7 +36,9 @@ const Explanation: FC<IExplanationProps> = ({ children, text, styles }) => {
             <div>
                 {expanded && (
                     <>
-                        {children}
+                        <PremiumContent>
+                            {children}
+                        </PremiumContent>
                     </>
                 )}
             </div>

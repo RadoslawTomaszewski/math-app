@@ -1,17 +1,22 @@
 import React, { FC, useState, useRef, useEffect } from "react";
+import './navbar.css';
 import Brand from "../../assets/images/majza.eu_logo.png";
+import BrandPremium from "../../assets/images/majza.eu_logo_premium_black.png";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Hamburger } from "../../assets/icons/hamburger.svg";
-import GraphImage from "../articleItems/GraphImage";
+import GraphImage from "../imageComponents/GraphImage";
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
 import { classNames } from "../../utilities";
 import { LoginButton, LogoutButton } from "../Auth/styles";
+import usePremiumStatus from "../../hooks/usePremiumStatus";
+
 
 const Navbar: FC = () => {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
   const navbarRef = useRef<HTMLDivElement>(null);
   const [currentUserEmail, setCurrentUserEmail] = useState<string | null>(String(auth.currentUser?.email));
+  const { isPremium, loading } = usePremiumStatus();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -57,7 +62,8 @@ const Navbar: FC = () => {
         <div className="container max-w-[1100px] my-0 mx-auto flex justify-between items-center h-full flex-row">
 
           <NavLink to="/">
-            <GraphImage size={"logo"} src={Brand} alt={"Logo majza.eu"} />
+            {(loading || !isPremium) && <GraphImage size={"logo"} src={Brand} alt={"Logo majza.eu"} />}
+            {(!loading && isPremium) && <GraphImage size={"logo"} src={BrandPremium} alt={"Logo majza.eu premium"} />}
           </NavLink>
 
           <div className="menu-icon" onClick={handleShowNavbar}>

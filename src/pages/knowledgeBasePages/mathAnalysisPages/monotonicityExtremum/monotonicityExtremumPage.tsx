@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
-import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
+import { ArticleWrapper } from "../../../../components/Wrappers/ArticleWrapper";
 import MonotonicityExtremumContent from "./monotonicityExtremumContent";
 
 const MonotonicityExtremumPage: FC = () => {

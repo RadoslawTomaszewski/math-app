@@ -1,11 +1,11 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Title from "../../../../components/Title/Title";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
-import Formula from "../../../../components/articleItems/Formula";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import { Form, NavLink } from "react-router-dom";
-import Explanation from "../../../../components/articleItems/Explanation";
+import Formula from "../../../../components/Formula/Formula";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
+import Explanation from "../../../../components/ProofAndExplanation/Explanation";
+import NavigateTo from "../../../../components/NavigateTo/NavigateTo";
 
 
 const PolynomialContent: FC = () => {
@@ -48,15 +48,15 @@ const PolynomialContent: FC = () => {
           <Formula formula={"W(x)=a"} />
           <p>założenie:</p>
           <Formula formula={"a \\in \\mathbb{R}-\\{0\\}"} />
-          <p><b>(3) Dwumian liniowy - </b> wielomian stopnia pierwszego, <NavLink to={"../funkcja-kwadratowa"}>funkcja liniowa</NavLink></p>
+          <p><b>(3) Dwumian liniowy - </b> wielomian stopnia pierwszego, <NavigateTo to="../funkcja-liniowa">funkcja liniowa</NavigateTo></p>
           <Formula formula={"W(x)=ax+b"} />
           <p>założenie:</p>
           <Formula formula={"a \\in \\mathbb{R}-\\{0\\}"} />
-          <p><b>(4) Trójmian kwadratowy</b>  - wielomian stopnia drugiego, <NavLink to={"../funkcja-kwadratowa"}>funkcja kwadratowa</NavLink></p>
+          <p><b>(4) Trójmian kwadratowy</b>  - wielomian stopnia drugiego, <NavigateTo to="../funkcja-kwadratowa">funkcja kwadratowa</NavigateTo></p>
           <Formula formula={"W(x)=ax^2+bx+c"} />
           <p>założenie:</p>
           <Formula formula={"a \\in \\mathbb{R}-\\{0\\}"} />
-          <p><b>(4) Czworomian sześcienny</b>  - wielomian stopnia trzeciego, <NavLink to={"../funkcja-kwadratowa"}>funkcja sześcienna</NavLink></p>
+          <p><b>(4) Czworomian sześcienny</b>  - wielomian stopnia trzeciego, <NavigateTo to="../funkcja-szescienna">funkcja sześcienna</NavigateTo></p>
           <Formula formula={"W(x)=ax^3+bx^2+cx+d"} />
           <p>założenie:</p>
           <Formula formula={"a \\in \\mathbb{R}-\\{0\\}"} />
@@ -78,7 +78,7 @@ const PolynomialContent: FC = () => {
         </CoreCurriculum>
         <ArticleBorder />
         <CoreCurriculum type={CoreCurriculumTypes.extra}>
-          <p>Postać uporządkowaną wielomianu można zapisać równoważnie z użyciem symbolu <NavLink to={"../dodawanie"}><b>sumy</b></NavLink></p>
+          <p>Postać uporządkowaną wielomianu można zapisać równoważnie z użyciem symbolu <NavigateTo to="../dodawanie">sumy</NavigateTo></p>
           <Formula formula={"\\sum_{i=0}^{n} a_i\\cdot x^i"} />
         </CoreCurriculum>
       </div>

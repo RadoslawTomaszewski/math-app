@@ -1,11 +1,11 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Proof from "../../../../components/articleItems/Proof";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Proof from "../../../../components/ProofAndExplanation/Proof";
 import skroconeMnozenie from "../../../../assets/images/function-graphs/skroconeMnozenie.png";
 import skroconeMnozenie3 from "../../../../assets/images/function-graphs/skroconeMnozenie3.png";
-import GraphImage from "../../../../components/articleItems/GraphImage";
+import GraphImage from "../../../../components/imageComponents/GraphImage";
 import { cubeOfTheDifference, cubeOfTheSum, differenceOfCubes, differenceOfSquares, squareOfTheDifference, squareOfTheSum, sumOfCubes } from "../../../../data/proofs";
 import { shortmultiplicationFormulas } from "../../../../data/equations";
 

@@ -1,10 +1,10 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Proof from "../../../../components/articleItems/Proof";
-import MathExpression from "../../../../components/articleItems/MathExpression";
+import Title from "../../../../components/Title/Title";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Proof from "../../../../components/ProofAndExplanation/Proof";
+import MathExpression from "../../../../components/MathExpression/MathExpression";
 import quadraticSad from "../../../../assets/images/knowledge_base/functions/quadratic_function/parableSad.png";
 import quadraticSmile from "../../../../assets/images/knowledge_base/functions/quadratic_function/parableSmile.png";
 import wierzcholek from "../../../../assets/images/knowledge_base/functions/quadratic_function/wierzcholek.png";
@@ -16,7 +16,7 @@ import deltaA2 from "../../../../assets/images/knowledge_base/functions/quadrati
 import { QuadraticFunction_VieteProductProof, QuadraticFunction_VieteSumProof, QuadraticFunction_pProof, QuadraticFunction_qProof, QuadraticFunction_zeroPlaceProof } from "../../../../data/proofs";
 import { quadraticEquations } from "../../../../data/equations";
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
-import ImageComponent from "../../../../components/articleItems/ImageComponent";
+import ImageComponent from "../../../../components/imageComponents/ImageComponent";
 import { NavLink } from "react-router-dom";
 
 const QuadraticFunctionContent: FC = () => {

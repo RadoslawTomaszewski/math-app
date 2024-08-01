@@ -1,6 +1,6 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Title from "../../../../components/Title/Title";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 
 import TrapezoidContent from "./Trapezoid/TrapezoidContent";
 import TrapeziumContent from "./Trapezium/TrapeziumContent";
@@ -14,10 +14,10 @@ import DeltoidContent from "./Deltoid/DeltoidContent";
 import CirclesRelationsContent from "./CirclesRelations/CirclesRelationsContent";
 import Quadrangle1 from "../../../../assets/images/quadrangles/Quadrangles_01.png";
 import Quadrangle2 from "../../../../assets/images/quadrangles/Quadrangles_02.png";
-import GraphImage from "../../../../components/articleItems/GraphImage";
-import Formula from "../../../../components/articleItems/Formula";
+import GraphImage from "../../../../components/imageComponents/GraphImage";
+import Formula from "../../../../components/Formula/Formula";
 import { GeometryEquations } from "../../../../data/equations";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
 
 
 const QuadranglesContent: FC = () => {

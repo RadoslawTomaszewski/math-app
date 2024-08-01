@@ -1,11 +1,11 @@
 import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Title from "../../../../components/articleItems/Title";
-import { ErrorMessage, InputShortNumberStyle } from "../../../../utilities/styles";
+import Title from "../../../../components/Title/Title";
+import { ErrorMessage, InputShortNumberStyle } from "../../../../styles/styles";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import Fraction from "../../../../types/Fraction/Fraction";
-import Formula from "../../../../components/articleItems/Formula";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Formula from "../../../../components/Formula/Formula";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import { joinUniqueWithApproximations, joinUniqueWithEquals } from "../../../../utilities";
 import { NavLink } from "react-router-dom";
 

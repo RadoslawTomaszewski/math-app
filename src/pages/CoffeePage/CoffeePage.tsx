@@ -1,8 +1,8 @@
-import { ArticleWrapper } from "../../components/ArticleWrapper/ArticleWrapper";
-import Title from "../../components/articleItems/Title";
+import { ArticleWrapper } from "../../components/Wrappers/ArticleWrapper";
+import Title from "../../components/Title/Title";
 import { NavLink } from "react-router-dom";
-import Formula from "../../components/articleItems/Formula";
-import GraphImage from "../../components/articleItems/GraphImage";
+import Formula from "../../components/Formula/Formula";
+import GraphImage from "../../components/imageComponents/GraphImage";
 import TankQ from "../../assets/images/coffee/thank-you.svg";
 
 export default function CoffeePage() {

@@ -1,14 +1,14 @@
 import { FC } from "react";
-import Title from "../../../../components/articleItems/Title";
+import Title from "../../../../components/Title/Title";
 
 import { CoreCurriculum, CoreCurriculumTypes } from "../../../../components/CoreCurriculum/CoreCurriculum";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import ImageComponent from "../../../../components/articleItems/ImageComponent";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import ImageComponent from "../../../../components/imageComponents/ImageComponent";
 import TrojkatRoznoramienny from "../../../../assets/images/knowledge_base/planimetry/twierdzenie_cosinusow.png";
-import Formula from "../../../../components/articleItems/Formula";
+import Formula from "../../../../components/Formula/Formula";
 import { GeometryEquations } from "../../../../data/equations";
 import TriangleCategoryContent from "./TriangleCategories/TriangleCategoriesContent";
-import Proof from "../../../../components/articleItems/Proof";
+import Proof from "../../../../components/ProofAndExplanation/Proof";
 import { triangleConditionProof } from "./proofsAndEquations";
 import EquilateralTriangleContent from "./EquilateralTriangle/EquilateralTriangleContent";
 import TheoremsContent from "./Theorems/TheoremsContent";

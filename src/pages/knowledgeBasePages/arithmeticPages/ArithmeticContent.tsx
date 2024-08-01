@@ -1,6 +1,6 @@
 import { FC } from "react";
-import Title from "../../../components/articleItems/Title";
-import ArticleBorder from "../../../components/articleItems/ArticleBorder";
+import Title from "../../../components/Title/Title";
+import ArticleBorder from "../../../components/ArticleBorder/ArticleBorder";
 import AdditionContent from "./addition/AdditionContent";
 import SubtractionContent from "./subtraction/SubtractionContent";
 import MultiplicationContent from "./multiplication/MultiplicationContent";

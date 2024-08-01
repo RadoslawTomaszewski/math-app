@@ -1,13 +1,13 @@
 import { FC } from "react";
-import Title from "../../../../../components/articleItems/Title";
-import GraphImage from "../../../../../components/articleItems/GraphImage";
+import Title from "../../../../../components/Title/Title";
+import GraphImage from "../../../../../components/imageComponents/GraphImage";
 import Diamond from "../../../../../assets/images/quadrangles/diamond.png";
-import Formula from "../../../../../components/articleItems/Formula";
+import Formula from "../../../../../components/Formula/Formula";
 import { GeometryEquations } from "../../../../../data/equations";
-import LegendParagraph from "../../../../../components/articleItems/LegendParagraph";
-import Proof from "../../../../../components/articleItems/Proof";
+import LegendParagraph from "../../../../../components/LegendParagraph/LegendParagraph";
+import Proof from "../../../../../components/ProofAndExplanation/Proof";
 import { ParallelogramAreaDiamondProof, TrapeziumAreaParallelogramProof, TrapezoidAreaDiamondProof } from "../../../../../data/proofs";
-import ArticleBorder from "../../../../../components/articleItems/ArticleBorder";
+import ArticleBorder from "../../../../../components/ArticleBorder/ArticleBorder";
 
 const DiamondContent: FC = () => (
     <>

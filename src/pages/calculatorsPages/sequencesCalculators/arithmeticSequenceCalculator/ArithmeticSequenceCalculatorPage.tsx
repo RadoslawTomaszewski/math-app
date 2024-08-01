@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ArticleWrapper } from "../../../../components/ArticleWrapper/ArticleWrapper";
+import { ArticleWrapper } from "../../../../components/Wrappers/ArticleWrapper";
 import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
 import ArithmeticSequencesCalculatorContent from "./ArithmeticSequenceCalculatorContent";
 

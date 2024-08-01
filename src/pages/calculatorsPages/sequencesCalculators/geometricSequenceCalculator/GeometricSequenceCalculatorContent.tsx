@@ -1,9 +1,9 @@
 import React, { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Title from "../../../../components/articleItems/Title";
-import { ErrorMessage, InputCoefficientStyle } from "../../../../utilities/styles";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
-import Formula from "../../../../components/articleItems/Formula";
+import Title from "../../../../components/Title/Title";
+import { ErrorMessage, InputCoefficientStyle } from "../../../../styles/styles";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
+import Formula from "../../../../components/Formula/Formula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import Loader from "../../../../components/Loader/Loader";
 import GeometricSequence from "../../../../types/Sequences/GeometricSequence";

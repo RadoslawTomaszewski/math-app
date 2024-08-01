@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Title from "../../../../components/articleItems/Title";
-import Formula from "../../../../components/articleItems/Formula";
-import LegendParagraph from "../../../../components/articleItems/LegendParagraph";
-import { ErrorMessage, InputBankDepositStyle, InputCapitalizationStyle, InputCoefficientStyle } from "../../../../utilities/styles";
-import ArticleBorder from "../../../../components/articleItems/ArticleBorder";
+import Title from "../../../../components/Title/Title";
+import Formula from "../../../../components/Formula/Formula";
+import LegendParagraph from "../../../../components/LegendParagraph/LegendParagraph";
+import { ErrorMessage, InputBankDepositStyle, InputCapitalizationStyle, InputCoefficientStyle } from "../../../../styles/styles";
+import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import { useForm } from "react-hook-form";
 import { CapitalizationType } from "./utilities";
 import { numberRegisterOptions } from "../../../../utilities/validation";
