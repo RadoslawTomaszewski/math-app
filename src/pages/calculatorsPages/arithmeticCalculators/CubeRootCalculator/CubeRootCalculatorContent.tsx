@@ -7,6 +7,7 @@ import CubeRootNumber from "../../../../types/RootNumber/CubeRootNumber";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import { NavLink } from "react-router-dom";
+import Explanation from "../../../../components/ProofAndExplanation/Explanation";
 
 interface FormData {
     rootNumber: string;
@@ -37,43 +38,48 @@ const CubeRootCalculatorContent: FC = () => {
 
     return (
         <>
-            <Title
-                text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
-                type="main-article"
-            />
-            <form className="text-center">
-                <label className="flex pt-4 flex-col items-center">
-                    Wprowadź liczbę naturalną pod pierwiastkiem:
-                    <input
-                        className={InputShortNumberStyle}
-                        placeholder="0"
-                        type="number"
-                        {...register("rootNumber", numberRegisterOptions.cubeRootNumber)}
-                        onChange={handleInputChange}
-                    />
-                </label>
-                {errors.rootNumber ? (
-                    <span className={ErrorMessage}>{errors.rootNumber.message}</span>
-                ) : (
-                    <>
-                        <ArticleBorder />
-                        {cubeRoot.getAllUniqueSteps().map((step, index) => (
-                            <Formula key={index} formula={step} />
-                        ))}
-                        {(cubeRoot.getAllUniqueSteps().length < 3 && cubeRoot.getSign() !== "-") && <span>Nie da się wyciągnąć całkowitego czynnika z tego pierwiastka</span>}
-                    </>
-                )}
-                <ArticleBorder />
-                <Title text="Jak wyciągać czynnik przed pierwiastek sześcienny?" type="submain-article" />
-                <span>Wyciąganie czynnika przed pierwiastek sześcienny polega na rozłożeniu liczby pod pierwiastkiem na czynniki, wśród których są sześciany liczb. </span>
-                <br />
-                <Formula formula={"\\sqrt[3]{x^3 \\cdot y}=\\sqrt[3]{x^3} \\cdot \\sqrt[3]{y}=x\\sqrt[3]{y}"} />
-                <span>Następnie zgodnie z powyższą regułą można odseparować pierwiastki z sześcianów, a następnie obliczyć ich wartość.</span>
-                <br />
-                <span>Aby znaleźć wszystkie możliwe do uzyskania sześciany należy dokonać <NavLink to="../rozklad-na-czynniki-pierwsze"><b>rozkładu na czynniki pierwsze (faktoryzacji)</b></NavLink> liczby pod pierwiastkiem.</span>
-                <br />
-                <span>Ten kalkulator wykorzystuje faktoryzację, a następnie łączy identyczne czynniki w trójki w celu znalezienia sześcianów liczb.</span>
-            </form>
+            <div className="w-full">
+                <Title
+                    text="Wyciąganie czynnika całkowitego przed pierwiastek sześcienny"
+                    type="main-article"
+                />
+                <form className="text-center">
+                    <label className="flex pt-4 flex-col items-center">
+                        Wprowadź liczbę naturalną pod pierwiastkiem:
+                        <input
+                            className={InputShortNumberStyle}
+                            placeholder="0"
+                            type="number"
+                            {...register("rootNumber", numberRegisterOptions.cubeRootNumber)}
+                            onChange={handleInputChange}
+                        />
+                    </label>
+                    {errors.rootNumber ? (
+                        <span className={ErrorMessage}>{errors.rootNumber.message}</span>
+                    ) : (
+                        <>
+                            <ArticleBorder />
+                            <div className="min-h-[180px] flex flex-col justify-center items-center">
+                                {cubeRoot.getAllUniqueSteps().map((step, index) => (
+                                    <Formula key={index} formula={step} />
+                                ))}
+                                {watchRootNumber !== "1" && (cubeRoot.getAllUniqueSteps().length < 3 && cubeRoot.getSign() !== "-") && <span>Nie da się wyciągnąć całkowitego czynnika z tego pierwiastka</span>}
+                            </div>
+                        </>
+                    )}
+                    <ArticleBorder />
+                    <Explanation text={"Jak wyciągać czynnik przed pierwiastek sześcienny?"}>
+                        <span>Wyciąganie czynnika przed pierwiastek sześcienny polega na rozłożeniu liczby pod pierwiastkiem na czynniki, wśród których są sześciany liczb. </span>
+                        <br />
+                        <Formula formula={"\\sqrt[3]{x^3 \\cdot y}=\\sqrt[3]{x^3} \\cdot \\sqrt[3]{y}=x\\sqrt[3]{y}"} />
+                        <span>Następnie zgodnie z powyższą regułą można odseparować pierwiastki z sześcianów, a następnie obliczyć ich wartość.</span>
+                        <br />
+                        <span>Aby znaleźć wszystkie możliwe do uzyskania sześciany należy dokonać <NavLink to="../rozklad-na-czynniki-pierwsze"><b>rozkładu na czynniki pierwsze (faktoryzacji)</b></NavLink> liczby pod pierwiastkiem.</span>
+                        <br />
+                        <span>Ten kalkulator wykorzystuje faktoryzację, a następnie łączy identyczne czynniki w trójki w celu znalezienia sześcianów liczb.</span>
+                    </Explanation>
+                </form>
+            </div>
         </>
     );
 };

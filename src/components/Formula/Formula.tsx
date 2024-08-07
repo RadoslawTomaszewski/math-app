@@ -19,7 +19,7 @@ const Formula: FC<IFormulaProps> = ({ formula, margin, styles }) => {
       );
     return (
       <div className="overflow-x-auto">
-        <div className={classNames("flex justify-center my-3", styles)}>
+        <div className={classNames("min-w-max flex justify-center items-center my-3", styles)}>
           <div className="flex justify-center m-3">
             <MathComponent tex={formula} />
           </div>

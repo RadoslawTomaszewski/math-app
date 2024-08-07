@@ -105,7 +105,7 @@ const ArticleComments: FC = () => {
             ) : (
                 <p className='text-center'>
                     <NavigateTo to="/logowanie">Zaloguj się</NavigateTo>
-                    &nbsp;aby mieć możliwość dodawania i komentowania postów na forum
+                    &nbsp;aby mieć możliwość komentowania.
                 </p>
             )}
         </div>

@@ -50,26 +50,11 @@ export default function HomePage() {
               <b>UWAGA</b><p>powyższe oznaczenia mają jedynie charakter orientacyjny, niektóre definicje mogą wykraczać poza oznaczony zakres.</p>
               <ArticleBorder />
               <Title text="Co nowego?" type="main-article" />
-              <p>Aktualizacja całego rozdziału <NavLink to="baza-wiedzy/arytmetyka" className="hover:underline"><b>z operacjami arytmetycznymi</b></NavLink></p>
-              <p>Aktualizacja <NavLink to="kalkulatory/funkcji-kwadratowej" className="hover:underline"><b>kalkulatora funkcji kwadratowej</b></NavLink></p>
-              <p>Aktualizacja <NavLink to="baza-wiedzy/funkcja-kwadratowa" className="hover:underline"><b>artykułu o funkcji kwadratowej</b></NavLink></p>
-              <NavLink to="kalkulatory/funkcji-wykladniczej" className="hover:underline"><b>Kalkulator funkcji wykładniczej</b></NavLink>
-              <br />
-              <NavLink to="kalkulatory/funkcji-logarytmicznej" className="hover:underline"><b>Kalkulator funkcji logarytmicznej</b></NavLink>
-              <br />
-              <p>Aktualizacja <NavLink to="kalkulatory/funkcji-liniowej" className="hover:underline"><b>kalkulatora funkcji liniowej</b></NavLink></p>
-              <p>Możliwość zakładania kont i wpisywania się do <NavLink to="forum" className="hover:underline"><b>księgi gości</b></NavLink> (matematyczne forum w budowie)</p>
-              <p>Artykuł dotyczący <NavLink to="baza-wiedzy/twierdzenia" className="hover:underline"><b>twierdzenia opisujące własności trójkątów</b></NavLink></p>
-              <p>Akutalizacja <NavLink to="baza-wiedzy/pochodna-funkcji" className="hover:underline"><b>artykułu o funkcji pochodnej funkcji</b></NavLink></p>
-              <p>Artykuł o <NavLink to="baza-wiedzy/monotonicznosc-i-ekstremum" className="hover:underline"><b>monotoniczności funkcji</b></NavLink></p>
-              <p>Rozdział poświęcony <NavLink to="baza-wiedzy/trojkaty" className="hover:underline"><b>trójkątom</b></NavLink></p>
-              <p><NavLink to="kalkulatory/lokaty"><b>Kalkulator zysku z lokat / kont oszczędnościowych</b></NavLink></p>
-              <p><NavLink to="kalkulatory/ciagu-arytmetycznego"><b>Kalkulator ciągu arytmetycznego</b></NavLink></p>
-              <p><NavLink to="kalkulatory/ciagu-geometrycznego"><b>Kalkulator ciągu geometrycznego</b></NavLink></p>
-              <p><NavLink to="kalkulatory/dzielniki"><b>Kalkulator wypisujący dzielniki liczby</b></NavLink></p>
-              <p><NavigateTo to="\forum">Forum</NavigateTo> nareszcie oddane do użytku [faza testów]</p>
-              <p>Wdrożenie funkcji konta<NavigateTo to="\premium">Premium</NavigateTo> (obecnie w pełni darmowe, wystarczy założyć konto i rozwiązać zagadkę)</p>
-              <br /><p className="italic">aktualizacja: 01/08/2024</p>
+              <p>[01/08/2024] <NavigateTo to="kalkulatory/dzielniki"><b>Kalkulator wypisujący dzielniki liczby</b></NavigateTo></p>
+              <p>[02/08/2024] <NavigateTo to="\forum">Forum</NavigateTo> gotowe :)</p>
+              <p>[02/08/2024] Wdrożenie funkcji konta <NavigateTo to="./premium">Premium</NavigateTo> (obecnie w pełni darmowe, wystarczy założyć konto i rozwiązać zagadkę)</p>
+              <p>[08/08/2024] Naprawa błędów</p>
+              <br /><p className="italic">aktualizacja: 08/08/2024</p>
               <ArticleBorder />
               <Title text="Polityka prywatności" type="main-article" />
               <p>Przeczytaj: <NavLink to="polityka-prywatnosci" className="hover:underline"><b>Polityka prywatności</b></NavLink></p>

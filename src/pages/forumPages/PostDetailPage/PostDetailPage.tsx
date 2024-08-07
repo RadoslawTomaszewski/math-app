@@ -208,13 +208,16 @@ const PostDetailPage: FC = () => {
                         placeholder="Dodaj treść komentarza"
                         className="w-full border border-gray-400 rounded-md p-2 mb-2 min-h-[130px]"
                     ></textarea>
+                    <p>Jeśli nie znasz dobrze LaTeX zerknij tutaj: <NavigateTo to="https://pl.wikibooks.org/wiki/LaTeX/Matematyka" target='_blank'>ściąga LaTex</NavigateTo></p>
                     <textarea
                         value={newCommentLatex}
                         onChange={(e) => setNewCommentLatex(e.target.value)}
                         placeholder="To pole nie jest obowiązkowe. Możesz zapisać obliczenia w języku LaTex. Dzięki temu zapis matetyczny będzie bardziej przejrzysty."
-                        className="w-full border border-gray-400 rounded-md p-2 mb-2 min-h-[130px]"
+                        className="w-full border border-gray-400 rounded-md p-2 mb-2 min-h-[180px] md:min-h-[100px]"
                     ></textarea>
-                    <Formula formula={newCommentLatex} styles={`min-w-[1000px]`} />
+                    {newCommentLatex ? <div className=""><Formula formula={newCommentLatex} /></div> : <div className='h-[60.39px]'></div>}
+
+
                     <div className="w-full flex justify-center">
                         <button
                             type="submit"

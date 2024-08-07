@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { ArticleWrapper } from "../../components/Wrappers/ArticleWrapper";
 import Title from "../../components/Title/Title";
+import { GeneralWrapper } from "../../components/Wrappers/GeneralWrapper";
 
 export default function PrivacyPolicyPage() {
     return (
         <div className="p-3 justify-center flex flex-col items-center">
-            <ArticleWrapper>
+            <GeneralWrapper>
                 <div className="flex flex-col bg-articleColor p-4">
                     <Title text={"Polityka Prywatności"} type="main-article" />
                     <p><b>(1) Administrator danych osobowych.</b></p>
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
                     <br />
                     <p>Dziękuję za korzystanie z <b>majza.eu</b>.</p>
                 </div>
-            </ArticleWrapper >
+            </GeneralWrapper>
         </div >
     );
 }

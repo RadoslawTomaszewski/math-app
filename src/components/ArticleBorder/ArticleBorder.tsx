@@ -7,7 +7,7 @@ export interface IArticleBorderProps {
 }
 
 const ArticleBorder: FC<IArticleBorderProps> = ({ styles }) => {
-  let styleWrapper = "flex justify-center m-3";
+  let styleWrapper = "flex justify-center m-3 w-full";
   if (styles) styleWrapper = classNames(styleWrapper, styles);
 
 

@@ -41,7 +41,7 @@ const MultiplicationContent: FC = () => {
         <Formula formula="\frac{a}{b} \cdot \frac{c}{d}=\frac{ac}{bd}"></Formula>
       </CoreCurriculum>
       <ArticleBorder />
-      <CoreCurriculum type={CoreCurriculumTypes.CKEPP}>
+      <CoreCurriculum type={CoreCurriculumTypes.extra}>
         <p>Do zapisu wyrażenia iloczynu wielu czynników (wyrazów ciągu) stosuje się zapis z <b>pi (Π):</b></p>
         <Formula formula="\prod_{i=1}^{n} a_i=a_1 \cdot a_2 \cdot ... \cdot a_n" styles="min-w-[171px]" />
         <Proof steps={["\\prod_{i=1}^{4} i^2=1^2 \\cdot 2^2 \\cdot 3^2 \\cdot 4^2=576"]} text={"Przykład"} styles="min-w-[235px]" />

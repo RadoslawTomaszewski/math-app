@@ -135,16 +135,16 @@ const NewPostForm: FC = () => {
                     placeholder="Treść wątku"
                     className="w-full border border-gray-400 rounded-md p-2 mb-2 min-h-[400px] md:min-h-[200px]"
                 ></textarea>
+                <p>Jeśli nie znasz dobrze LaTeX zerknij tutaj: <NavigateTo to="https://pl.wikibooks.org/wiki/LaTeX/Matematyka" target='_blank'>ściąga LaTex</NavigateTo></p>
                 <span className='w-[100px]'><b>LaTeX: </b></span>
                 <textarea
                     name="latexContent"
                     value={postCredentials.latexContent}
                     onChange={handleChange}
                     placeholder="To pole nie jest obowiązkowe. Możesz zapisać obliczenia w języku LaTex. Dzięki temu zapis matetyczny będzie bardziej przejrzysty."
-                    className="w-full border border-gray-400 rounded-md p-2 mb-2 min-h-[100px] md:min-h-[100px]"
+                    className="w-full border border-gray-400 rounded-md p-2 mb-2 min-h-[180px] md:min-h-[100px]"
                 ></textarea>
-                <p>Jeśli nie znasz dobrze LaTeX zerknij tutaj: <NavigateTo to="https://pl.wikibooks.org/wiki/LaTeX/Matematyka" target='_blank'>ściąga LaTex</NavigateTo></p>
-                <Formula formula={postCredentials.latexContent} styles={`min-w-[${calculateMinWidth(postCredentials.latexContent)}]`} />
+                {postCredentials.latexContent ? <Formula formula={postCredentials.latexContent} styles={`min-w-[${calculateMinWidth(postCredentials.latexContent)}]`} /> : <div className='h-[60.39px]'></div>}
                 <div className='w-full flex justify-center'>
                     <button className={BlueButtonStyle} type='submit'>
                         Dodaj temat

@@ -26,11 +26,13 @@ import PostDetailPage from "../pages/forumPages/PostDetailPage/PostDetailPage";
 import { knowledgeBaseRoutes } from "./KnowledgeBaseRoutes";
 import { calculatorRoutes } from "./CalculatorsRoutes";
 import ActivatePremiumPage from "../pages/accountPages/ActivatePremiumPage";
+import ScrollToTop from "../components/routeComponents/ScrollToTop";
 
 export const Router: FC = () => {
 
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
