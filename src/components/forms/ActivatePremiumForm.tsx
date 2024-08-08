@@ -53,7 +53,7 @@ const NewPostForm: FC = () => {
                 ) : (
                     <>
                         <p>Aktualnie konto premium jest darmowe. Wystarczy, że rozwiążesz poprawnie poniższą zagadkę i zapiszesz wynik słownie.</p><br />
-                        <Formula formula={'8 : 2 \\left(2+2)\\right)='} />
+                        <Formula formula={'8 : 2 \\left(2+2\\right)='} />
                         <div className='flex flex-col justify-center items-center flex-wrap'>
                             <input
                                 name="answer"
