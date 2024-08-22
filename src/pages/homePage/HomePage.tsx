@@ -32,7 +32,7 @@ export default function HomePage() {
               <br />
               <p>Część informacji zawartych w artykułach można utrwalić oraz zweryfikować samemu dzięki dynamicznym <NavLink to="kalkulatory" className="hover:underline"><b>kalkulatorom</b></NavLink></p>
               <br />
-              <p>Zachęcam do odwiedzenia <NavigateTo to="\forum">forum </NavigateTo> i zakładania wątków związanych z szeroko pojętą matematyką lub związanych z działaniem platformy.</p>
+              <p>Zachęcam do odwiedzenia <NavigateTo to="forum">forum </NavigateTo> i zakładania wątków związanych z szeroko pojętą matematyką lub związanych z działaniem platformy.</p>
               <br />
               <p>Dla mnie projekt majza.eu jest okazją do rozwijania umiejętności programowania. Z pewnością będzie rozwijany w wolnych chwilach jako projekt hobbystyczny.</p>
               <ArticleBorder />
@@ -51,7 +51,7 @@ export default function HomePage() {
               <ArticleBorder />
               <Title text="Co nowego?" type="main-article" />
               <p>[01/08/2024] <NavigateTo to="kalkulatory/dzielniki"><b>Kalkulator wypisujący dzielniki liczby</b></NavigateTo></p>
-              <p>[02/08/2024] <NavigateTo to="\forum">Forum</NavigateTo> gotowe :)</p>
+              <p>[02/08/2024] <NavigateTo to="forum">Forum</NavigateTo> gotowe :)</p>
               <p>[02/08/2024] Wdrożenie funkcji konta <NavigateTo to="./premium">Premium</NavigateTo> (obecnie w pełni darmowe, wystarczy założyć konto i rozwiązać zagadkę)</p>
               <p>[08/08/2024] Naprawa błędów</p>
               <br /><p className="italic">aktualizacja: 08/08/2024</p>
@@ -62,7 +62,7 @@ export default function HomePage() {
               <Title text="Znalazłeś błąd?" type="main-article" />
               <p>Jestem autorem każdego artykułu jaki znajdziesz na <b>majza.eu</b>. Jest bardzo prawdopodobne, że znajdziesz błąd, którego nie byłem w stanie wyłapać. Może to być błąd gramatyczny lub, co gorsze, merytoryczny. W takim przypadku daj mi koniecznie o tym znać na jeden z poniższych sposobów:</p>
               <p><b>(1)</b> pisząc komentarz na podstronie, której błąd dotyczy (Baza Wiedzy / Kalkulatory)</p>
-              <p><b>(2)</b> tworząc nowy wątekna <NavigateTo to="\forum">Forum</NavigateTo></p>
+              <p><b>(2)</b> tworząc nowy wątekna <NavigateTo to="forum">Forum</NavigateTo></p>
               <p><b>(3)</b> wysyłając maila na <b>rtomaszewski@majza.eu</b></p>
               <br /><p> Z góry dziękuję :)</p>
             </div>

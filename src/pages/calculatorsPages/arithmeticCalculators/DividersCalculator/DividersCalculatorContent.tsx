@@ -4,7 +4,7 @@ import Title from "../../../../components/Title/Title";
 import { ErrorMessage, InputShortNumberStyle } from "../../../../styles/styles";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
-import Dividers from "../../../../types/Dividers/Dividers";
+import Dividers from "../../../../MajzaMath/Dividers/Dividers";
 import Explanation from "../../../../components/ProofAndExplanation/Explanation";
 import NavigateTo from "../../../../components/NavigateTo/NavigateTo";
 import Formula from "../../../../components/Formula/Formula";

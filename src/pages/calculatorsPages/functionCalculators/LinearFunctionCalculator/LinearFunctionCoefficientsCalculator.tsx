@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 
-import LinearFormula from "../../../../types/LinearFormula/LinearFormula";
+import LinearFormula from "../../../../MajzaMath/LinearFormula/LinearFormula";
 import { useForm } from "react-hook-form";
 import { ErrorMessage, InputCoefficientStyle } from "../../../../styles/styles";
 import Loader from "../../../../components/Loader/Loader";

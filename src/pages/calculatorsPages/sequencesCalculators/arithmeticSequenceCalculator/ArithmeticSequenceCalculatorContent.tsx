@@ -6,7 +6,7 @@ import ArticleBorder from "../../../../components/ArticleBorder/ArticleBorder";
 import Formula from "../../../../components/Formula/Formula";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 import Loader from "../../../../components/Loader/Loader";
-import ArithmeticSequence from "../../../../types/Sequences/ArithmeticSequence";
+import ArithmeticSequence from "../../../../MajzaMath/Sequences/ArithmeticSequence";
 import PremiumContent from "../../../../components/PremiumContent/PremiumContent";
 
 interface FormData {

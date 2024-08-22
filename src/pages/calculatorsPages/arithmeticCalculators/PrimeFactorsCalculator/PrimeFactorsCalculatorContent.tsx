@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../components/Title/Title";
 import Formula from "../../../../components/Formula/Formula";
 import { ErrorMessage, InputNaturalNumberStyle } from "../../../../styles/styles";
-import PrimeFactors from "../../../../types/PrimeFactors/PrimeFactors";
+import PrimeFactors from "../../../../MajzaMath/PrimeFactors/PrimeFactors";
 import { numberRegisterOptions } from "../../../../utilities/validation";
 
 interface FormData {
