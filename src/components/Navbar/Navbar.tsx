@@ -82,18 +82,13 @@ const Navbar: FC = () => {
                 </NavLink>
               </li>
               <li className="mx-4 z-20 whitespace-nowrap">
-                <NavLink to="/forum" onClick={handleShowNavbar}>
-                  <b>Forum</b>
-                </NavLink>
-              </li>
-              <li className="mx-4 z-20 whitespace-nowrap">
-                <NavLink to="/cke" onClick={handleShowNavbar}>
-                  <b>Materiały od CKE</b>
+                <NavLink to="/zadania-maturalne" onClick={handleShowNavbar}>
+                  <b>Zadania maturalne</b>
                 </NavLink>
               </li>
               <li className="mx-4 z-20 whitespace-nowrap">
                 <NavLink to="/wsparcie" onClick={handleShowNavbar}>
-                  <b>Wsparcie</b>
+                  <b>Współpraca</b>
                 </NavLink>
               </li>
               <div className="mx-4 z-20 whitespace-nowrap">

@@ -27,6 +27,10 @@ import { knowledgeBaseRoutes } from "./KnowledgeBaseRoutes";
 import { calculatorRoutes } from "./CalculatorsRoutes";
 import ActivatePremiumPage from "../pages/accountPages/ActivatePremiumPage";
 import ScrollToTop from "../components/routeComponents/ScrollToTop";
+import MaturaExercisesPage from "../pages/maturaExercises/MaturaExercisesPage";
+import { MaturaExercisesLayout } from "../Layout/maturaExercisesLayout";
+import NewExerciseFormPage from "../pages/maturaExercises/NewExerciseFormPage/NewExerciseFormPage";
+import ExerciseDetailPage from "../pages/maturaExercises/PostDetailPage/ExerciseDetailPage";
 
 export const Router: FC = () => {
 
@@ -58,6 +62,11 @@ export const Router: FC = () => {
                     </Route>
                     <Route path="odzyskiwanie-hasla" element={<ResetPasswordPage />} />
                     <Route path="polityka-prywatnosci" element={<PrivacyPolicyPage />} />
+                    <Route path="zadania-maturalne" element={<MaturaExercisesLayout />}>
+                    <Route index element={<MaturaExercisesPage />} />
+                    <Route path="nowe-zadanie" element={<NewExerciseFormPage />} />
+                    <Route path="exercise/:id" element={<ExerciseDetailPage />} />
+                    </Route>
                     <Route path="forum" element={<ForumLayout />}>
                         <Route index element={<ForumPage />} />
                         <Route path="nowy-watek" element={<NewPostForm />} />

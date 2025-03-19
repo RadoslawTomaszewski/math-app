@@ -9,6 +9,7 @@ import { numberRegisterOptions } from "../../../../utilities/validation";
 import { quadraticEquations } from "../../../../data/equations";
 import Loader from "../../../../components/Loader/Loader";
 import { NavLink } from "react-router-dom";
+import FormulaNew from "../../../../components/Formula/FormulaNew";
 
 interface FormData {
     a: string;
@@ -163,26 +164,26 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                         <div className="flex items-start overflow-x-auto overflow-y-hidden w-full">
                             <div className="min-w-[700px]">
                                 <div className="flex flex-row w-full items-start">
-                                    <Formula formula={`a=${quadraticFormula.getA()}`} />
-                                    <Formula formula={`b=${quadraticFormula.getB()}`} />
-                                    <Formula formula={`c=${quadraticFormula.getC()}`} />
+                                    <FormulaNew formula={`a=${quadraticFormula.getA()}`} />
+                                    <FormulaNew formula={`b=${quadraticFormula.getB()}`} />
+                                    <FormulaNew formula={`c=${quadraticFormula.getC()}`} />
                                 </div>
 
                                 <div className="flex flex-col w-full items-start md:items-center">
                                     <div><b>Postać ogólna:</b></div>
-                                    <Formula formula={quadraticFormula.getStandardForm()} />
+                                    <FormulaNew formula={quadraticFormula.getStandardForm()} />
                                 </div>
                                 <div className="w-full">
                                     <ArticleBorder />
                                 </div>
                                 <div className="flex flex-col w-full items-start overflow-x-auto">
-                                    <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
-                                    <Formula formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
-                                    <Formula formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
+                                    <FormulaNew formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
+                                    <FormulaNew formula={`${quadraticEquations.P} = ${quadraticFormula.getPCalculations()}`} />
+                                    <FormulaNew formula={`${quadraticEquations.Q} = ${quadraticFormula.getQCalculations()}`} />
                                 </div>
                                 <div className="flex flex-col w-full items-start md:items-center">
                                     <div><b>Postać kanoniczna:</b></div>
-                                    <Formula formula={quadraticFormula.getCanonicalForm()} />
+                                    <FormulaNew formula={quadraticFormula.getCanonicalForm()} />
                                 </div>
                                 <div className="w-full">
                                     <ArticleBorder />
@@ -190,16 +191,16 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <div className="flex flex-col w-full items-start">
                                     <div className="flex flex-col items-start">
                                         <>
-                                            <Formula formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
+                                            <FormulaNew formula={`${quadraticEquations.DELTA} = ${quadraticFormula.getDeltaCalculations()}`} />
                                             {quadraticFormula.getDelta() > 0 &&
                                                 <>
-                                                    <Formula formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
-                                                    <Formula formula={`${quadraticEquations.X1}=${quadraticFormula.getX1Calculations()}`} />
-                                                    <Formula formula={`${quadraticEquations.X2}=${quadraticFormula.getX2Calculations()}`} />
+                                                    <FormulaNew formula={`\\sqrt{\\Delta}=${quadraticFormula.getSqrtDeltaCalculations()}`} />
+                                                    <FormulaNew formula={`${quadraticEquations.X1}=${quadraticFormula.getX1Calculations()}`} />
+                                                    <FormulaNew formula={`${quadraticEquations.X2}=${quadraticFormula.getX2Calculations()}`} />
                                                 </>
                                             }
                                             {quadraticFormula.getDelta() === 0 &&
-                                                <Formula formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
+                                                <FormulaNew formula={`${quadraticEquations.X0}=${quadraticFormula.getX0Calculations()}`} />
                                             }
                                         </>
                                     </div>
@@ -220,8 +221,8 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <div className="flex flex-col w-full items-start md:items-center">
                                     {quadraticFormula.getDelta() >= 0 && (<>
                                         <div><b>Wzory Viete'a:</b></div>
-                                        <Formula formula={quadraticFormula.getVietasSumCalculations()} />
-                                        <Formula formula={quadraticFormula.getVietasProductCalculations()} />
+                                        <FormulaNew formula={quadraticFormula.getVietasSumCalculations()} />
+                                        <FormulaNew formula={quadraticFormula.getVietasProductCalculations()} />
                                     </>)}
                                     {quadraticFormula.getDelta() < 0 && (<>
                                         <div><b>Wzory Viete'a:</b></div>
@@ -232,7 +233,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                 <div className="flex flex-wrap justify-center flex-row text-center gap-2">
                                     <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
                                         <p><b>Dziedzina:</b></p>
-                                        <Formula formula={"D_f: x\\in \\mathbb{R}"} />
+                                        <FormulaNew formula={"D_f: x\\in \\mathbb{R}"} />
                                     </div>
                                     <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]"><p><b>Zbiór wartości funkcji:</b></p>
                                         {quadraticFormula.getA() > 0 && (<Formula formula={`ZW_f: y\\in \\left[${quadraticFormula.getQResult()};\\infty\\right)`} />)}
@@ -243,19 +244,19 @@ const QuadraticFunctionCalculatorContent: FC = () => {
                                         {quadraticFormula.getA() > 0 && (
                                             <>
                                                 <p>Funkcja maleje w przedziale:</p>
-                                                <Formula formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} />
+                                                <FormulaNew formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} />
 
                                                 <p>Funkcja rośnie w przedziale:</p>
-                                                <Formula formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} />
+                                                <FormulaNew formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} />
                                             </>
                                         )}
                                         {quadraticFormula.getA() < 0 && (
                                             <>
                                                 <p>Funkcja rośnie w przedziale:</p>
-                                                <Formula formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} />
+                                                <FormulaNew formula={`x \\in \\left( - \\infty ; ${quadraticFormula.getPResult()} \\right]`} />
 
                                                 <p>Funkcja maleje w przedziale:</p>
-                                                <Formula formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} />
+                                                <FormulaNew formula={`x \\in \\left[ ${quadraticFormula.getPResult()}; \\infty \\right)`} />
                                             </>
                                         )}
                                     </div>
@@ -269,7 +270,7 @@ const QuadraticFunctionCalculatorContent: FC = () => {
 
                                     <div className="flex flex-col items-start md:items-center min-w-full lg:min-w-[210px]">
                                         <p><b>oś symetrii:</b></p>
-                                        <Formula formula={`x=${quadraticFormula.getPResult()}`} />
+                                        <FormulaNew formula={`x=${quadraticFormula.getPResult()}`} />
                                     </div>
 
 
